@@ -1,0 +1,97 @@
+$font-stack: DM Sans, sans serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+* {
+    font: 100% $font-stack;
+}
+#leftPanel {
+  background-color: $dark-blue;
+}
+
+// .wrapper {
+//     width: 100%;
+//     height: 100%;
+// }
+.content {
+    padding: 4em;
+    margin-left: 5em;
+    height: auto;
+    background-color: var(--bs-white);
+    
+    .backBtn {
+        border: none;
+        border-radius: 100%;
+        background-color: $light-blue;
+        width: 50%;
+        height: auto;
+        padding: 0.3em;
+        
+        .backIcon{
+            color: white;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .title {
+    width: 100%;
+    height: 100%;
+    color: $text;
+    font-weight: 800;
+    font-size: 2em;
+    }
+    
+    .fieldLabel {
+    color: #707070;
+}
+}
+
+.marker {
+    height: 2em;
+    background-color: $mid-blue;
+    
+    .markerText{
+        color: white;
+        font-size: 1.3em;
+    }
+}
+
+.statusCheck {
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.remarkDrop {
+    background-color: none;
+    border: 1px solid #D1D3E2;
+}
+
+.controlBtn {
+    background-color: red;
+    width: 6em;
+    color: white;
+}
+
+#submitBtn {
+    background-color: blue;
+}
+
+@media screen and (max-width: 576px) {
+    .content {
+        margin-left: 2em;
+        padding: 2em;
+    }
+    .fieldLabel {
+        white-space: nowrap; 
+        width: 200px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}

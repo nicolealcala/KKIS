@@ -1,0 +1,227 @@
+$font-stack: DM Sans, sans serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+#leftPanel {
+  background-color: $dark-blue;
+}
+
+#content {
+  padding: 4em;
+  background-color: var(--bs-white);
+    
+    #title {
+    color: $text;
+    font: 100% $font-stack;
+    font-weight: 800;
+    font-size: 2em;
+    }
+}
+
+.stretched-link::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0,0,0,0);
+}
+//--DASHBOARD
+.categories {
+    height: 13em;
+    overflow: hidden;
+    border-radius: 1em;
+    transition: all .2s ease-in-out;
+    
+    .categoryBody {
+    padding-right: 0;
+    }
+    
+    .categoryCount, .categoryDesc {
+    font: 100% $font-stack;
+    color: white;
+    }
+    
+    .card-title {
+    font-size: 2em;
+    font-weight: 600;
+    }
+}
+
+.categories:hover {
+  transform: scale(1.05);
+}
+
+
+#categoryRow1 {
+    width: 100%;
+    margin: 0;
+    
+    #categoryHouseholds {
+    background-color: $light-blue;
+    }
+
+    #categoryPwd {
+        background-color: $mid-blue;
+    }
+
+    #categorySenior {
+        background-color: $dark-blue;
+    }
+
+    #categoryAdult {
+        background-color: $light-yellow;
+    }
+
+    #categoryYouth {
+        background-color: $mid-yellow;
+    }
+
+    #categoryChildren {
+        background-color: $dark-yellow;
+    }
+}
+
+//--DOCUMENTS
+.documentHeadingRow {
+    width: 100%;
+    margin: 0;
+    
+    .optionCol{
+        margin: auto;
+        padding: 0;
+        
+    }
+    .optionWrapper {
+    padding: 0;
+    margin: auto;
+    border-radius: 15em;
+    width: 100%;
+    height: 3em;
+    background-color: $mid-blue;
+    overflow: hidden;
+ 
+        
+        .options {
+        position: relative;
+        display: flex;
+        padding-left: 0.1em;
+        width: 100%;
+        height: inherit;
+        border: none;    
+            
+            .optionLinkContainer {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                border-radius: 25em;
+                transition: 0.3s;
+            }
+            
+            // .qrButtonContainer {
+            //     width: auto;
+            // }
+            .optionLinks {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                height: 100%;
+                text-decoration: none;
+                color: white;
+                font-size: 1em;
+                transition: 0.3s;
+            }
+            
+            .qrButton {
+                border: none;
+                border-radius: 0 25em 25em 0;
+                padding: 0.3em 1em;
+                width: auto;
+                height: 100%;
+                background: $dark-blue;
+            }
+            
+           .optionLinkContainer:hover, .optionLinkContainer:focus {
+                font-weight: bold;
+                color: $mid-blue !important;
+                cursor: pointer;
+                height: 90%;
+                background-color: white;
+                border-radius: 25em;
+            }
+        }
+    }
+}
+
+.qrScanner {
+    color: white;
+    width: auto;
+    height: 2em;
+}
+.generateBody {
+    // position: relative;
+    // width: inherit;
+    // height: auto;
+    padding: 0;
+    margin: 2em 0;
+    
+    
+    .docDetails {
+        width: 50%;
+        height: 100%;
+        float: left;
+        padding: 0;
+        
+        .subTitle {
+            font: 100% $font-stack;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: $text;
+        }
+    }
+    .docPreview {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: right;
+        background-color: red;
+    }
+}
+
+#brgyClearanceDiv, #certResidencyDiv, #certIndigencyDiv  {
+    display: none;
+}
+
+.infoRow {
+    width: 100%;
+    margin: 1em 0;
+    align-contents: center;
+    
+    .form-label {
+    font: $font-stack;
+    color: $text;
+    margin-bottom: 0.2em;;
+    font-weight: 500;
+    }
+    
+    .userInput {
+    height: 2.5em;
+    width: 100%;
+    }
+}
+
+//---TRANSACTION HISTORY
+
+
+
+

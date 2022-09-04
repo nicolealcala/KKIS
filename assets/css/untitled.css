@@ -1,0 +1,24 @@
+.optionLinks:nth-child(1).active ~ .optionLinks-active {
+  transform: translateX(0);
+}
+
+.optionLinks:nth-child(2).active ~ .optionLinks-active {
+  transform: translateX(100%);
+}
+
+.optionLinks:nth-child(3).active ~ .optionLinks-active {
+  transform: translateX(200%);
+}
+
+.optionLinks:nth-child(4).active ~ .optionLinks-active {
+  transform: translateX(300%);
+}
+
+.optionLinks:nth-child(5).active ~ .optionLinks-active {
+  transform: translateX(400%);
+}
+
+.optionLinks:nth-child(1).active ~ .optionLinks-active {
+  transform: translateX(0%);
+}
+
