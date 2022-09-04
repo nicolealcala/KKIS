@@ -83,14 +83,15 @@ $text: #393737;
     background-color: blue;
 }
 
-@media screen and (max-width: 576px) {
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
     .content {
         margin-left: 2em;
         padding: 2em;
     }
     .fieldLabel {
         white-space: nowrap; 
-        width: 200px; 
+        width: 100px; 
         overflow: hidden;
         text-overflow: ellipsis; 
     }
