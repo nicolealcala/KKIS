@@ -109,11 +109,10 @@ $text: #393737;
     border-radius: 15em;
     z-index: 1
 }
-
 .options {
     width: 100%;
     min-width: 4.25em;
-    font-size: 1.2rem;
+    font-size: 1em;
     display: inline-block;
     cursor: pointer;
     position: relative;
@@ -212,9 +211,9 @@ $text: #393737;
     }
 }
 
-.form-label {
+.col-form-label {
 font: $font-stack;
-color: $text;
+color: #707070;
 margin-bottom: 0.2em;;
 font-weight: 500;
 }
@@ -226,6 +225,19 @@ width: 100%;
 
 .idFilter {
     width: 30%;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .content {
+        margin-left: 2em;
+        padding: 2em;
+    }
+    .col-form-label {
+        white-space: nowrap; 
+        width: 100px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
 }
 
 
