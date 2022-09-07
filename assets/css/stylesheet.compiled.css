@@ -1,0 +1,120 @@
+* {
+  font: DM Sans, sans serif;
+}
+
+#sidenav {
+  color: #04496A;
+}
+#sidenav li {
+  color: #04496A;
+}
+
+.dashboard-title {
+  padding: 3em 0em 0em 8em;
+}
+.dashboard-title h1 {
+  font-size: 50px;
+}
+
+.gradient-line {
+  padding-top: 1em;
+}
+
+#dashboard-summary {
+  padding: 3em 8em 0em 8em;
+}
+#dashboard-summary div {
+  border-radius: 1em;
+}
+#dashboard-summary #texts {
+  padding-top: 1rem;
+}
+#dashboard-summary #texts h1 {
+  color: #fff;
+  padding-left: 1rem;
+  font-size: 80px;
+}
+#dashboard-summary #texts p {
+  color: #fff;
+  padding-left: 1rem;
+  font-size: 22px;
+}
+#dashboard-summary #dashboard-img {
+  padding: 8em 1em 0em 0em;
+}
+#dashboard-summary .category {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 257px;
+}
+#dashboard-summary #row1 #total-youth {
+  background-color: #8ECAE6;
+}
+#dashboard-summary #row1 #enrolled-youth {
+  background-color: #219EBC;
+}
+#dashboard-summary #row1 #enrolled-youth #dashboard-img {
+  padding: 6em 1em 0em 0em;
+}
+#dashboard-summary #row1 #out-of-school-youth {
+  background-color: #04496A;
+}
+#dashboard-summary #row1 #out-of-school-youth #dashboard-img {
+  padding: 6em 1em 0em 0em;
+}
+#dashboard-summary #row2 {
+  padding-top: 3em;
+}
+#dashboard-summary #row2 #working-student {
+  background-color: #E9C46A;
+}
+#dashboard-summary #row2 #working-student #dashboard-img {
+  padding: 6.9em 1em 0em 0em;
+}
+#dashboard-summary #row2 #employed {
+  background-color: #FFB703;
+}
+#dashboard-summary #row2 #employed #dashboard-img {
+  padding: 8.5em 1em 0em 0em;
+}
+#dashboard-summary #row2 #unemployed {
+  background-color: #FB8500;
+}
+#dashboard-summary #row2 #unemployed #dashboard-img {
+  padding: 4.5em 1em 0em 0em;
+}
+#dashboard-summary #row3 {
+  padding-top: 3em;
+}
+#dashboard-summary #row3 .registered-voters {
+  background-color: #8ECAE6;
+}
+#dashboard-summary #row3 .unregistered-voters {
+  background-color: #219EBC;
+}
+#dashboard-summary #row3 .pwd {
+  background-color: #04496A;
+}
+#dashboard-summary #row3 .pwd #dashboard-img {
+  padding: 6em 0em 0em 0em;
+}
+
+@media only screen and (max-width: 1208px) {
+  .dashboard-title {
+    padding: 2em 0em 0em 3em;
+  }
+
+  #dashboard-summary {
+    padding: 0em 3em 0em 3em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dashboard-title {
+    padding: 1.5em 0em 0em 1em;
+  }
+
+  #dashboard-summary {
+    padding: 0em 1em 0em 1em;
+  }
+}

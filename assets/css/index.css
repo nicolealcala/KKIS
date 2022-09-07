@@ -1,0 +1,71 @@
+* {
+  font: DM Sans, sans serif;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.log-in-page {
+  padding: 0em 0em 0em 6em;
+}
+
+.log-in-page .topnav #kkis-logo {
+  height: 70px;
+  margin: 1.5em 0em 1em 0em;
+}
+
+.log-in-page .title {
+  margin: 5em 0em 1em 0em;
+}
+
+.log-in-page .title h1 {
+  color: #FB8500;
+  font-size: 5rem;
+  margin-bottom: .5em;
+}
+
+.log-in-page .side-panel {
+  z-index: 10;
+  margin-top: -30em;
+  margin-left: 67em;
+}
+
+.log-in-page #login-page {
+  width: 50%;
+}
+
+.log-in-page #login-page #login-panel {
+  border: none;
+}
+
+.log-in-page #login-page #login-panel .input-panel {
+  margin-bottom: 8em;
+}
+
+.log-in-page #login-page #login-panel .input-panel input {
+  width: 50%;
+  background-color: #EBEBEB;
+  border: none;
+  box-shadow: inset 0 0 5px #C6C6C6;
+}
+
+.log-in-page #login-page #login-panel .input-panel p {
+  float: left;
+  font-size: 22px;
+}
+
+.log-in-page #login-page #login-button {
+  background-color: #FFB703;
+  border-radius: 3em;
+  width: 35%;
+  height: 3em;
+}
+
+.log-in-page #login-page #login-button p {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font: DM Sans, sans serif;
+}
+/*# sourceMappingURL=index.css.map */

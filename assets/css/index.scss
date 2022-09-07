@@ -1,0 +1,92 @@
+$font-stack: DM Sans, sans serif;
+$primary-color: #04496A;
+$secondary-color:#FFB703;
+$true-blue:#219EBC;
+$sky-blue:#8ECAE6;
+$tangerine:#FB8500;
+$mellow-yellow:#E9C46A;
+
+*{
+    font:$font-stack;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+// LOGIN PAGE
+.log-in-page{
+    // top left bottom right
+    padding: 0em 0em 0em 6em;
+
+    .topnav{
+        #kkis-logo{
+            //width: 4%;
+            height: 70px;
+            // top right bottom left
+            margin: 1.5em 0em 1em 0em;
+        }
+    }
+    
+    .title{
+        // top right bottom left
+        margin: 5em 0em 1em 0em;
+    
+        h1{
+            color: $tangerine;
+            font-size: 5rem;
+            margin-bottom: .5em;
+        }
+    
+    }
+
+    .side-panel{
+        z-index: 10;
+        margin-top: -30em;
+        margin-left: 67em;
+    }
+    
+    #login-page{
+        width: 50%;
+    
+        #login-panel{
+            border: none;
+
+            .input-panel{
+                margin-bottom: 8em;
+
+                input{
+                    width: 50%;
+                    background-color: #EBEBEB;
+                    border: none;
+                    -webkit-box-shadow:inset 0 0 5px #C6C6C6;
+                    -moz-box-shadow:inset 0 0 5px #C6C6C6;
+                    box-shadow:inset 0 0 5px #C6C6C6;
+             
+             
+                
+                }
+
+                p{
+                    float: left;
+                    font-size: 22px;
+                }
+            }
+
+        }
+    
+        #login-button{
+            background-color: $secondary-color;
+            border-radius: 3em;
+            width: 35%;
+            height: 3em;
+            
+            p{
+                color: #fff;
+                font-size: 1.25rem;
+                font-weight: bold;
+                font:$font-stack;
+            }
+        }
+    }
+}

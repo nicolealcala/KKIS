@@ -1,0 +1,175 @@
+$font-stack: DM Sans, sans serif;
+$primary-color: #04496A;
+$secondary-color:#FFB703;
+$true-blue:#219EBC;
+$sky-blue:#8ECAE6;
+$tangerine:#FB8500;
+$mellow-yellow:#E9C46A;
+
+*{
+    font:$font-stack;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.dashboard-title{
+    padding:3em 0em 0em 8em;
+    
+    h1{
+        font-size: 50px;
+    }
+}
+
+.gradient-line{
+    padding-top:1em;
+}
+
+#dashboard-summary{
+    padding: 3em 8em 0em 8em;
+    
+    .category{
+        border-radius:1em;
+        border:none;
+        height:257px;
+        width: 100%;
+        margin-right:2em;
+    }
+    
+    .texts{
+        padding-top:1rem;
+        
+        h4{
+            color:#fff;
+            padding-left:1rem;
+            font-size: 3rem;
+            //margin:0em;
+            //float:left;
+        }
+        
+        p{
+            color:#fff;
+            padding-left:1rem;
+            font-size: 1rem;
+            //float:left;
+        }
+    }
+    
+    .dashboard-vectors{
+        float:right;
+    }
+    
+    #row1{
+        #total-youth {
+            background-color: $sky-blue;
+        }
+        
+        #enrolled-youth {
+            background-color: $true-blue;
+            
+            #dashboard-img{
+                padding:6em 1em 0em 0em;
+            }
+        }
+        
+        #out-of-school-youth {
+            background-color:$primary-color;
+            // top right bottom left
+            margin: 0em 0em 0em 0em;
+            
+        }
+    }
+    
+    #row2{
+        padding-top:3em;
+        
+        #working-student {
+            background-color: $mellow-yellow;
+            
+            #dashboard-img{
+                padding:6.9em 1em 0em 0em;
+            }
+        }
+        
+        #employed {
+            background-color: $secondary-color;
+            
+            #dashboard-img{
+                padding:8.5em 1em 0em 0em;
+            }
+        }
+        
+        #unemployed{
+            background-color: $tangerine;
+            // top right bottom left
+            margin: 0em 0em 0em 0em;
+                
+                #dashboard-img{
+                    padding:4.5em 1em 0em 0em;
+                }
+        }
+    }
+    
+    #row3{
+        padding-top:3em;
+        
+        #registered-voters {
+            background-color: $sky-blue;
+        }
+        
+        #unregistered-voters {
+            background-color: $true-blue;
+        }
+        
+        #pwd {
+            background-color: $primary-color;
+            // top right bottom left
+            margin: 0em 0em 0em 0em;
+            
+            #dashboard-img{
+                padding:6em 0em 0em 0em;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1208px){
+    .dashboard-title{
+        padding: 2em 0em 0em 3em
+    }
+    #dashboard-summary{
+        padding: 0em 3em 0em 3em;
+
+        /*
+        #texts{
+            padding-top:1rem;
+            
+            h1{
+                color:#fff;
+                padding-left:1rem;
+                font-size: 50px;
+                //margin:0em;
+                //float:left;
+            }
+            
+            p{
+                color:#fff;
+                padding-left:1rem;
+                font-size: 18px;
+                //float:left;
+            }
+        }
+        */
+    }
+}
+
+@media only screen and (max-width: 880px){
+    .dashboard-title{
+        padding: 1.5em 0em 0em 1em
+    }
+    #dashboard-summary{
+        padding: 0em 1em 0em 1em;
+    }
+}
