@@ -1,0 +1,37 @@
+* {
+  font: 100% DM Sans, sans serif;
+}
+
+#modalView {
+  margin: auto;
+  color: #393737;
+}
+#modalView .modal-header {
+  color: #393737;
+}
+#modalView .modal-body {
+  margin: 1em 0.5em;
+  padding: 3em;
+}
+#modalView .modal-body .rowMain {
+  height: auto;
+}
+#modalView .modal-body .rowMain .rowInfo {
+  display: inline-flex;
+}
+#modalView .modal-body .rowMain .rowInfo .textName {
+  font-weight: bold;
+  width: 100%;
+  font-size: 2em;
+}
+#modalView .modal-body .rowMain .rowInfo .textAge {
+  width: 100%;
+}
+#modalView .modal-body .rowMain .rowInfo .imgQR {
+  width: 100%;
+  height: 100%;
+}
+#modalView .modal-body .detailsDiv {
+  width: 100%;
+  margin: auto;
+}

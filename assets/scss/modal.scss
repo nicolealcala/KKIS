@@ -1,0 +1,60 @@
+$font-stack: DM Sans, sans serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+
+* {
+    font: 100% $font-stack;
+}
+#modalView {
+    margin: auto;
+    color: $text;
+    
+    .modal-header {
+        color: $text;
+        
+    }
+    
+    .modal-body{
+        margin: 1em 0.5em;
+        padding: 3em;
+        
+        .rowMain {
+            height: auto;
+            
+            .rowInfo {
+                display: inline-flex;
+            
+                .textName {
+                    font-weight: bold;
+                    width: 100%;
+                    font-size: 2em;
+                }
+        
+                .textAge {
+                    width: 100%;
+                    
+                }
+        
+                .imgQR {
+                width: 100%;
+                height: 100%;
+                }
+            }
+        }
+        .detailsDiv{
+            width: 100%;
+            margin: auto;
+        }
+        
+        .rowSub {
+            
+        }
+    }
+}
+

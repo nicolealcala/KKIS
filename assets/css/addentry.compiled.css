@@ -45,6 +45,11 @@
   font-size: 1.3em;
 }
 
+.disabilityCheck {
+  display: block;
+  height: 1.3em;
+}
+
 .statusCheck {
   width: 20px;
   height: 20px;
@@ -66,16 +71,26 @@
   background-color: blue;
 }
 
-@media only screen and (min-width: 576px) and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .content {
     margin-left: 2em;
     padding: 2em;
   }
 
+  .backBtn {
+    width: 100%;
+  }
+
   .fieldLabel {
     white-space: nowrap;
-    width: 100px;
+    width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 564px) {
+  .content {
+    margin-left: 0;
+    padding: 2em;
   }
 }
