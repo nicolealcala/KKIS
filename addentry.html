@@ -7,9 +7,10 @@
     <title>Dashboard - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="assets/css/addentry.compiled.css">
     <link rel="stylesheet" href="assets/css/documents.compiled.css">
+    <link rel="stylesheet" href="assets/css/modal.compiled.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
 </head>
 
@@ -54,9 +55,9 @@
                             <!-- Start: MName -->
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Middle Name</label><input class="form-control" type="text"></div><!-- End: MName -->
                             <!-- Start: LName -->
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control" type="text"></div><!-- End: LName -->
+                            <div class="col col-lg-3 col-md-3 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control" type="text"></div><!-- End: LName -->
                             <!-- Start: EName -->
-                            <div class="col col-lg-1 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select">
+                            <div class="col col-lg-1 col-md-3 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select">
                                     <optgroup label="Extension">
                                         <option value="1" selected="">Jr.</option>
                                         <option value="2">Sr.</option>
@@ -65,14 +66,6 @@
                                         <option value="5">III</option>
                                     </optgroup>
                                 </select></div><!-- End: EName -->
-                            <!-- Start: sex -->
-                            <div class="col col-lg-2 col-md-2 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Sex<br></label><select class="form-select">
-                                    <optgroup label="Sex">
-                                        <option value="1" selected="">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Intersex</option>
-                                    </optgroup>
-                                </select></div><!-- End: sex -->
                             <!-- Start: Gender Preference -->
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Gender Preference<br></label><select class="form-select">
                                     <optgroup label="Gender">
@@ -84,29 +77,49 @@
                                     </optgroup>
                                 </select></div><!-- End: Gender Preference -->
                             <!-- Start: birthday -->
-                            <div class="col col-lg-2 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthday</label><input class="form-control" type="date"></div><!-- End: birthday -->
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthday</label><input class="form-control" type="date"></div><!-- End: birthday -->
                             <!-- Start: birthplace -->
-                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Birthplace</label><input class="form-control" type="text"></div><!-- End: birthplace -->
-                            <!-- Start: religion -->
-                            <div class="col col-lg-3 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Religion<br></label><select class="form-select">
-                                    <optgroup label="This is a group">
-                                        <option value="12" selected="">This is item 1</option>
-                                        <option value="13">This is item 2</option>
-                                        <option value="14">This is item 3</option>
-                                    </optgroup>
-                                </select></div><!-- End: religion -->
+                            <div class="col col-lg-3 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthplace</label><input class="form-control" type="text"></div><!-- End: birthplace -->
                             <!-- Start: marital status -->
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Marital Status<br></label><select class="form-select">
-                                    <optgroup label="Extension">
-                                        <option value="1" selected="">Jr.</option>
-                                        <option value="2">Sr.</option>
-                                        <option value="3">I</option>
-                                        <option value="4">II</option>
-                                        <option value="5">III</option>
+                                    <optgroup label="Marital Status">
+                                        <option value="1" selected="">Single</option>
+                                        <option value="2">Married</option>
+                                        <option value="3">Live-in</option>
+                                        <option value="4">Separated</option>
+                                        <option value="5">Annuled</option>
                                     </optgroup>
                                 </select></div><!-- End: marital status -->
+                            <!-- Start: religion -->
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Religion<br></label><select class="form-select">
+                                    <optgroup label="Choose religion">
+                                        <option value="1" selected="">Atheist</option>
+                                        <option value="2">Buddhist</option>
+                                        <option value="3">Christian</option>
+                                        <option value="4">Muslim</option>
+                                    </optgroup>
+                                </select></div><!-- End: religion -->
+                            <!-- Start: disability -->
+                            <div class="col col-lg-3 col-md-3 col-sm-6 col-12"><label class="form-label d-lg-flex align-items-lg-center fieldLabel w-100">Disability</label><select class="form-select">
+                                    <optgroup label="Disability Type">
+                                        <option value="1" selected="">None</option>
+                                        <option value="2">Communication disability</option>
+                                        <option value="3">Disability due to chronic illnes</option>
+                                        <option value="4">Learning disability</option>
+                                        <option value="5">Mental disability</option>
+                                        <option value="6">Orthopedic disability</option>
+                                        <option value="">Psychosocial Disability</option>
+                                    </optgroup>
+                                </select></div><!-- End: disability -->
                             <!-- Start: contact -->
-                            <div class="col col-lg-3 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Contact No.</label><input class="form-control" type="text"></div><!-- End: contact -->
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Contact No.</label><input class="form-control" type="text" placeholder="09XXXXXXXXX"></div><!-- End: contact -->
+                            <!-- Start: contact -->
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Voter Type</label><select class="form-select">
+                                    <optgroup label="Voter Type">
+                                        <option value="1" selected="">Registered</option>
+                                        <option value="2">Unregistered</option>
+                                    </optgroup>
+                                </select></div><!-- End: contact -->
                             <!-- Start: address -->
                             <div class="col col-lg-3 col-md-6 col-sm-8 col-12"><label class="form-label fieldLabel w-100">House No./Street/Subdivision<br></label><input class="form-control" type="text"></div><!-- End: address -->
                             <!-- Start: purok -->
@@ -122,13 +135,13 @@
                                     </optgroup>
                                 </select></div><!-- End: purok -->
                             <!-- Start: organization -->
-                            <div class="col col-lg-4 col-md-4 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Organization (if any)<br></label><input class="form-control" type="text"></div><!-- End: organization -->
+                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Organization (if any)<br></label><input class="form-control" type="text"></div><!-- End: organization -->
                         </div><!-- End: row1 -->
                     </form><!-- End: persnal Info form -->
                 </div><!-- End: personal info -->
                 <!-- Start: edu/employ status -->
                 <div class="mt-5">
-                    <div class="row gy-3 gx-3">
+                    <div class="row my-3 gy-3 gx-3">
                         <!-- Start: educ status -->
                         <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center marker rounded-4"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
@@ -198,14 +211,8 @@
                                     <!-- Start: level -->
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Employee Type</label><select class="form-select">
                                             <optgroup label="Educational Level">
-                                                <option value="1" selected="">Pre-elementary</option>
-                                                <option value="2">Elementary</option>
-                                                <option value="3">Junior High School</option>
-                                                <option value="4">Senior High School</option>
-                                                <option value="5">Alternative Learning System (ALS)</option>
-                                                <option value="6">Diploma Course</option>
-                                                <option value="7">College</option>
-                                                <option value="8">Graduate Studies</option>
+                                                <option value="1" selected="">Employed</option>
+                                                <option value="2">Unemployed</option>
                                             </optgroup>
                                         </select></div><!-- End: level -->
                                     <!-- Start: public/private -->
@@ -246,13 +253,13 @@
                     <!-- Start: housedecla -->
                     <form>
                         <!-- Start: row1 -->
-                        <div class="row my-3">
+                        <div class="row my-3 gy-3 gx-3">
                             <!-- Start: Fname -->
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">First Name</label><input class="form-control w-100" type="text"></div><!-- End: Fname -->
+                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">First Name</label><input class="form-control w-100" type="text"></div><!-- End: Fname -->
                             <!-- Start: MName -->
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">Middle Name</label><input class="form-control" type="text"></div><!-- End: MName -->
+                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">Middle Name</label><input class="form-control" type="text"></div><!-- End: MName -->
                             <!-- Start: LName -->
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">Last Name<br></label><input class="form-control" type="text"></div><!-- End: LName -->
+                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">Last Name<br></label><input class="form-control" type="text"></div><!-- End: LName -->
                             <!-- Start: EName -->
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">Extension<br></label><select class="form-select">
                                     <optgroup label="Extension">
@@ -264,7 +271,7 @@
                                     </optgroup>
                                 </select></div><!-- End: EName -->
                             <!-- Start: remarks -->
-                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel">Remarks<br></label>
+                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel">Remarks<br></label>
                                 <div class="dropdown show w-100"><button class="btn dropdown-toggle text-start d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xl-end align-items-xl-center remarkDrop w-100" aria-expanded="true" data-bs-toggle="dropdown" type="button">&nbsp; &nbsp; &nbsp;</button>
                                     <div class="dropdown-menu show w-100 p-2" data-bs-popper="none">
                                         <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Solo Parent</label></div>
@@ -273,8 +280,9 @@
                                 </div>
                             </div><!-- End: remarks -->
                             <!-- Start: no. members -->
-                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel">No.&nbsp; of Family Members<br></label><select class="form-select">
+                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel">No.&nbsp; of Family Members<br></label><select class="form-select">
                                     <optgroup label="Family Members">
+                                        <option value="1">Less than 4</option>
                                         <option value="2">5 to 10</option>
                                         <option value="3">11 to 15</option>
                                         <option value="4">16 to 18</option>

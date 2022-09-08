@@ -7,31 +7,46 @@
   color: #393737;
 }
 #modalView .modal-header {
-  color: #393737;
+  background-color: #04496A;
+  color: white;
 }
 #modalView .modal-body {
   margin: 1em 0.5em;
   padding: 3em;
 }
-#modalView .modal-body .rowMain {
+#modalView .modal-body .textName {
+  font-size: 2em;
+  font-weight: bold;
+  color: #FFB703;
+}
+#modalView .modal-body .textAge, #modalView .modal-body .textGender {
+  font-size: normal;
+  font-weight: normal;
+}
+#modalView .modal-body .imgContainer {
+  width: 100%;
   height: auto;
 }
-#modalView .modal-body .rowMain .rowInfo {
-  display: inline-flex;
+#modalView .modal-body .markerContainer {
+  background-color: #04496A;
 }
-#modalView .modal-body .rowMain .rowInfo .textName {
-  font-weight: bold;
-  width: 100%;
-  font-size: 2em;
+#modalView .modal-body .modalMarker {
+  color: white;
 }
-#modalView .modal-body .rowMain .rowInfo .textAge {
+#modalView .modal-body .modalLabel {
+  font-size: small;
+  font-weight: normal;
+  color: #888;
   width: 100%;
 }
-#modalView .modal-body .rowMain .rowInfo .imgQR {
-  width: 100%;
-  height: 100%;
+#modalView .modal-body .textRetrieved {
+  font-size: 1.2em;
+  font-weight: 500;
 }
-#modalView .modal-body .detailsDiv {
-  width: 100%;
-  margin: auto;
+
+@media only screen and (max-width: 564px) {
+  .content {
+    margin-left: 0;
+    padding: 2em;
+  }
 }

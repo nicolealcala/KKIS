@@ -16,7 +16,8 @@ $text: #393737;
     color: $text;
     
     .modal-header {
-        color: $text;
+        background-color: $dark-blue;
+        color: white;
         
     }
     
@@ -24,37 +25,48 @@ $text: #393737;
         margin: 1em 0.5em;
         padding: 3em;
         
-        .rowMain {
-            height: auto;
-            
-            .rowInfo {
-                display: inline-flex;
-            
-                .textName {
-                    font-weight: bold;
-                    width: 100%;
-                    font-size: 2em;
-                }
-        
-                .textAge {
-                    width: 100%;
-                    
-                }
-        
-                .imgQR {
-                width: 100%;
-                height: 100%;
-                }
-            }
+        .textName {
+            font-size: 2em;
+            font-weight: bold;
+            color: $mid-yellow;
         }
-        .detailsDiv{
+        
+        .textAge, .textGender {
+            font-size: normal;
+            font-weight: normal;
+            
+        }
+        
+        .imgContainer {
             width: 100%;
-            margin: auto;
+            height: auto;
         }
         
-        .rowSub {
-            
+        .markerContainer {
+            background-color: $dark-blue;
         }
+        .modalMarker {
+            color: white;
+        }
+        
+        .modalLabel {
+            font-size: small;
+            font-weight: normal;
+            color: #888;
+            width: 100%;
+        }
+        
+        .textRetrieved {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+    }
+}
+
+@media only screen and (max-width: 564px) {
+    .content {
+        margin-left: 0;
+        padding: 2em;
     }
 }
 
