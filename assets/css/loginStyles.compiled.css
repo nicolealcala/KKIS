@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+* p {
+  font: DM Sans, sans serif;
+}
+
+#left-panel {
+  margin-left: 3em;
+}
+#left-panel #kkis-logo {
+  height: 60px;
+  margin: 1.5em 0em 1em 0em;
+}
+#left-panel #title #line-gradient {
+  width: 20%;
+}
+#left-panel #welcome-txt {
+  color: #FB8500;
+  margin-top: 2em;
+}
+#left-panel #form-panel {
+  margin-top: 3em;
+}
+#left-panel #form-panel input {
+  background-color: #EBEBEB;
+  border: none;
+  -webkit-box-shadow: inset 0 0 5px #C6C6C6;
+  -moz-box-shadow: inset 0 0 5px #C6C6C6;
+  box-shadow: inset 0 0 5px #C6C6C6;
+}
+#left-panel #form-panel p {
+  color: #4D5A4D;
+  text-align: left;
+}
+#left-panel #form-panel #login-btn {
+  margin-top: 1.5em;
+}
+#left-panel #form-panel #login-btn button {
+  background-color: #FFB703;
+  font-weight: bold;
+  font: DM Sans, sans serif;
+  height: 3em;
+  border-radius: 1.5em;
+  border: none;
+  border-color: transparent;
+}
+
+#side-panel {
+  width: 100%;
+  padding: 0em 0em 0em 0em;
+  height: 100%;
+  float: right;
+}
+
+@media (min-width: 1400px) {
+  #left-panel #kkis-logo {
+    height: 40px;
+    margin: 0.5em 0em 0.5em 0em;
+  }
+  #left-panel #form-panel #username {
+    margin-bottom: 1em;
+  }
+  #left-panel #form-panel #div-btn {
+    margin-top: 4em;
+  }
+}
+@media (min-width: 1200px) {
+  #left-panel #form-panel #username {
+    margin-bottom: 1em;
+  }
+  #left-panel #form-panel #div-btn {
+    margin-top: 3em;
+  }
+}
+@media (min-width: 992px) {
+  #left-panel #form-panel #div-btn {
+    margin-top: 3em;
+  }
+}
+@media (min-width: 576px) {
+  #left-panel #kkis-logo {
+    height: 50px;
+    margin: 1em 0em 1em 0em;
+  }
+  #left-panel #title {
+    margin-top: -2em;
+  }
+  #left-panel #form-panel {
+    margin-top: 2em;
+  }
+  #left-panel #form-panel input {
+    background-color: #EBEBEB;
+    border: none;
+    -webkit-box-shadow: inset 0 0 5px #C6C6C6;
+    -moz-box-shadow: inset 0 0 5px #C6C6C6;
+    box-shadow: inset 0 0 5px #C6C6C6;
+    width: 100%;
+    height: 2em;
+  }
+  #left-panel #form-panel p {
+    color: #4D5A4D;
+    text-align: left;
+    font-size: 15px;
+  }
+  #left-panel #form-panel #login-btn {
+    margin-top: 1em;
+  }
+  #left-panel #form-panel #login-btn button {
+    font: DM Sans, sans serif;
+    height: 2.5em;
+    border-radius: 1.25em;
+  }
+}
+@media (max-width: 360px) {
+  #side-panel {
+    display: none;
+  }
+
+  #left-panel {
+    margin-left: 1em;
+  }
+  #left-panel #kkis-logo {
+    height: 40px;
+    margin: 0.5em 0em 0.5em 0em;
+  }
+  #left-panel #title {
+    margin-top: -3em;
+  }
+  #left-panel #title #line-gradient {
+    width: 50%;
+  }
+  #left-panel #form-panel {
+    margin-top: 2em;
+  }
+  #left-panel #form-panel input {
+    background-color: #EBEBEB;
+    border: none;
+    -webkit-box-shadow: inset 0 0 5px #C6C6C6;
+    -moz-box-shadow: inset 0 0 5px #C6C6C6;
+    box-shadow: inset 0 0 5px #C6C6C6;
+    width: 100%;
+    height: 2em;
+  }
+  #left-panel #form-panel p {
+    color: #4D5A4D;
+    text-align: left;
+    font-size: 15px;
+    width: 10em;
+    margin-right: 4em;
+  }
+  #left-panel #form-panel #login-btn {
+    margin-top: 1em;
+    width: 6em;
+  }
+  #left-panel #form-panel #login-btn button {
+    font: DM Sans, sans serif;
+    height: 2em;
+    border-radius: 1.25em;
+  }
+}
