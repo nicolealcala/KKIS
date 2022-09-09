@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWDs Table</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/kkis-logo.svg">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/scss/addentry.css">
+    <link rel="stylesheet" href="/assets/css/Sidebar-Menu-sidebar.css">
+    <link rel="stylesheet" href="/assets/css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="/assets/css/documents.compiled.css">
+    <link rel="stylesheet" href="/assets/css/modal.compiled.css">
+    <link rel="stylesheet" href="/assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="/assets/scss/dashboardYouthTbl.css">
+</head>
+
+<body>
+    <!-- Start of Sidenav -->
+    <div id="wrapper" class="sidenav">
+        <div id="sidebar-wrapper" style="width: 74px;">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End of Sidenav -->
+
+    <div class="container-fluid content">
+        <div class="row documentHeadingRow p-0 m-0" style="position: sticky;">
+            <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-8 p-0">
+                <div class="d-flex justify-content-xxl-start align-items-xxl-center headContainer w-100">
+                    <div class="col col-lg-1 col-md-1 col-sm-1"><a href="dashboard.html"><button class="btn d-xxl-flex backBtn"
+                            type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em"
+                                height="1em" fill="currentColor" class="backIcon">
+                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z">
+                                </path>
+                            </svg></button></a></div>
+                    <div class="col-xxl-4 d-xxl-flex align-items-xxl-center col-lg-11 col-md-11 col-sm-11 p-0 w-auto">
+                        <h1 class="d-xxl-flex title pt-1">PWDs</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--GRADIENT LINE-->
+        <div class="dashboard-title">
+            <img class="gradient-line" style="padding-right: 23px;margin-bottom: 15px;padding-bottom: 20px;"
+                src="/assets/img/decorative.png">
+        </div>
+
+        <!--SORT BUTTON-->
+        <div class="sort-panel row">
+            <div class="sort-title col">
+                <p>Sort by</p>
+            </div>
+            <select id="sort-btn" class="select col-4" style="margin-left: 5em;">
+                <option disabled selected></option>
+                <option value="A-Z">A-Z</option>
+                <option value="Age">Age</option>
+                <option value="Purok">Purok</option>
+            </select>
+        </div>
+
+        <!--TABLES-->
+<section class="tbl-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-sm-5 col-md-6 col-lg-6 col-xl-9 col-xxl-9"></div>
+            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-1 col-xxl-1 me-xxl-1 ms-xxl-1 me-xl-1 ms-xl-1 me-lg-1 ms-lg-1 me-md-1 ms-md-1 me-sm-1 ms-sm-1 me-1 ms-1">
+                
+            </div>
+        </div>
+    </div><!-- End: 1 Row 3 Columns -->
+    <div></div>
+    <div class="row">
+        <div class="col-sm-11 col-md-11 col-lg-10 col-xl-11 col-xxl-11 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-4" id="transac-table" style="margin-top: 1px;padding-top: 0px;">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr id="row-title" class="row-title">
+                            <th style="padding-right: 0px;margin-right: 2px;margin-left: 0px;padding-left: 20px;font-family: 'DM Sans', sans-serif;font-weight: bold;">Name</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Purok</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Birthplace</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Birthdate</th>
+                            <th style="font-weight: bold;font-family: 'DM Sans', sans-serif;">Religion</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Sex</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Gender Preference</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Educational Status</th>
+                            <th style="font-weight: bold;font-family: 'DM Sans', sans-serif;">Civil Status</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold;">Household Salary/Month</th>
+                            <th style="font-family: 'DM Sans', sans-serif;font-weight: bold; ">Action</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Name" style="margin-bottom: 0px;padding-bottom: 30px;" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" style="padding-bottom: 30px;" class="pb-md-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pt-md-2 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pt-md-2 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pt-md-2 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Purok" class="pt-md-2 pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthplace" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Birthdate" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Religion" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Sex" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Gender Preference" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Educational Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Civil Status" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="Household Salary/Month" class="pb-md-4 pb-sm-4 pb-4"></td>
+                            <td data-label="view more" class="pb-md-4 pb-sm-4 pb-4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>        
+</body>
+
+</html>
