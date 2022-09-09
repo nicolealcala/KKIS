@@ -17,7 +17,7 @@
 #modalView .modal-body .textName {
   font-size: 2em;
   font-weight: bold;
-  color: #FFB703;
+  color: #219EBC;
 }
 #modalView .modal-body .textAge, #modalView .modal-body .textGender {
   font-size: normal;
@@ -28,7 +28,7 @@
   height: auto;
 }
 #modalView .modal-body .markerContainer {
-  background-color: #04496A;
+  background-color: #FFB703;
 }
 #modalView .modal-body .modalMarker {
   color: white;
@@ -42,6 +42,11 @@
 #modalView .modal-body .textRetrieved {
   font-size: 1.2em;
   font-weight: 500;
+}
+
+.closeBtn {
+  background-color: #219EBC;
+  color: white;
 }
 
 @media only screen and (max-width: 564px) {

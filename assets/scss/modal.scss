@@ -28,7 +28,7 @@ $text: #393737;
         .textName {
             font-size: 2em;
             font-weight: bold;
-            color: $mid-yellow;
+            color: $mid-blue;
         }
         
         .textAge, .textGender {
@@ -43,7 +43,7 @@ $text: #393737;
         }
         
         .markerContainer {
-            background-color: $dark-blue;
+            background-color: $mid-yellow;
         }
         .modalMarker {
             color: white;
@@ -63,6 +63,10 @@ $text: #393737;
     }
 }
 
+.closeBtn {
+    background-color: $mid-blue;
+    color: white;
+}
 @media only screen and (max-width: 564px) {
     .content {
         margin-left: 0;
