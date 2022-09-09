@@ -54,7 +54,7 @@
 }
 
 #left-panel #form-panel #login-btn {
-  margin-top: 6em;
+  margin-top: 3em;
 }
 
 #left-panel #form-panel #login-btn button {
@@ -110,21 +110,24 @@
   #left-panel #form-panel #div-btn {
     margin-top: 3em;
   }
+  #left-panel #form-panel p {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 790px) {
   * {
     overflow: visible;
   }
-  #left-panel {
-    margin-left: 1.5em;
-  }
-  #left-panel #form-panel input {
-    margin-left: 2em;
-  }
   #side-panel {
     display: none;
     visibility: hidden;
+  }
+  #left-panel {
+    margin-left: 4.5em;
+  }
+  #left-panel #form-panel input {
+    margin-left: 2em;
   }
 }
 
