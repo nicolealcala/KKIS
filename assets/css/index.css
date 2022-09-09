@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 * p {
@@ -111,12 +112,19 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
+  * {
+    overflow: visible;
+  }
   #left-panel {
     margin-left: 1.5em;
   }
   #left-panel #form-panel input {
     margin-left: 2em;
+  }
+  #side-panel {
+    display: none;
+    visibility: hidden;
   }
 }
 
@@ -160,9 +168,6 @@
 }
 
 @media (max-width: 360px) {
-  #side-panel {
-    display: none;
-  }
   #left-panel {
     margin-left: 1em;
   }
@@ -199,11 +204,12 @@
   }
   #left-panel #form-panel #login-btn {
     margin-top: -1em;
-    width: 6em;
+    width: 10em;
+    font-size: 1rem;
   }
   #left-panel #form-panel #login-btn button {
     font: DM Sans, sans serif;
-    height: 2em;
+    height: 2.5em;
     border-radius: 1.25em;
   }
 }

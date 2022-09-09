@@ -1,0 +1,86 @@
+#wrapper {
+  display: flex;
+}
+
+.content {
+  padding: 4em;
+  margin-left: 5em;
+  height: auto;
+  background-color: var(--bs-white);
+}
+
+.documentHeadingRow {
+  width: 100%;
+  position: sticky;
+}
+
+.title {
+  font-size: 32px;
+  font-family: dm sans;
+  width: 100%;
+  height: 100%;
+  color: #393737;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.dropdown {
+  text-align: right;
+  background: #e1e1e1;
+  border-radius: 10px;
+  border-width: 0.5px;
+  border-color: #C8C8C8;
+  border-right-width: 0.5px;
+  border-right-color: #c8c8c8;
+}
+
+#hr {
+  padding-bottom: 11px;
+  margin-top: 13px;
+}
+
+#sortTitle {
+  padding-bottom: 11px;
+  padding-top: 5px;
+}
+
+.sortbtn {
+  height: 38px;
+  background: #e1e1e1;
+  color: black;
+  border-color: #c8c8c8;
+}
+
+.residentsTable {
+  border-width: 13px;
+}
+
+.rowResidentsTable {
+  margin-top: 11px;
+}
+
+td {
+  height: 44px;
+}
+
+tr {
+  border-color: #212529;
+  vertical-align: middle;
+}
+
+.actionBtn {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  border-color: #fb8500;
+  background: #fb8500;
+}
+
+@media (max-width: 1200px) {
+  #sortTitle {
+    font-size: 16px;
+  }
+}
+.select {
+  width: 50.328px;
+}
