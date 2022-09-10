@@ -1,0 +1,156 @@
+// Colors
+$darkerBlue: #01364F;
+$darkBlue: #04496A;
+$darkGrey: #393737;
+$white: #FFFFFF;
+
+// CSS
+* {
+    margin: 0;
+    padding: 0;
+    // font-family
+}
+body {
+    background: $white;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    .sidebar {
+        background: $darkBlue;
+        height: 100%;
+        width: 74px;
+        transition: all 0.5s ease;
+        @media screen and (min-width:1367px) {
+            .divProfile {
+                margin-top: 415px;
+            }
+            #listLogOut {
+            margin-top: 520px;
+            // padding: 0;
+            }
+        }
+        @media screen and (max-width:1366px) {
+            .divProfile {
+                margin-top: 115px;
+            }
+            #listLogOut {
+                margin-top: 220px;
+            // padding: 0;
+            }
+        }
+            
+        // padding: 6px 14px;
+        .hamburger {
+            .btn {
+                padding: 0;
+                border: none;
+                box-shadow: none;
+                
+                
+            }
+        }
+        ul {
+            margin-top: 19px;
+            padding: 0; //not sure pa
+            li {
+                position: relative;
+                list-style: none;
+                width: 100%;
+                height: 61px;
+                line-height: 61px;
+                a{
+                    color: $white;
+                    display: flex;
+                    align-item: center;
+                    text-decoration: none;
+                    font-size: 25px;
+                    transition: all 0.4s ease;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    .divIcon {
+                        // width: 100%;
+                        padding-left: 11px;
+                        img {
+                        // height: 61px;
+                        // min-width: 50px;
+                        // line-height: 61px;
+                        
+                        padding: 10px;
+                        } 
+                    }
+                    .divTab {
+                        .tabName {
+                        // height: 61px;
+                        // min-width: 50px;
+                        // line-height: 61px;
+                        
+                        margin-left: 12px;
+                        } 
+                    }
+                }
+                a:hover {
+                    background: $white;
+                    color: $darkGrey;
+                    // font-weight: 500;
+//                     #img { 
+//                     }
+                }
+                a:focus {
+                    background: $white;
+                    color: $darkGrey;
+                    // font-weight: 500;
+//                     #img { 
+//                     }
+                }
+            }
+        }
+        .divProfile {
+            background: $darkerBlue;
+            position: absolute;
+            color: $white;
+            width: inherit;
+            // margin-top: 415px;
+            .profile {
+                position: relative;
+                height: 71px;
+                .profileContent {
+                    display: flex;
+                    align-items: center;
+                    .divProfilePic {
+                        padding: 12px;
+                        img {
+                            
+                        }
+                    }
+                    .divAdmin {
+                        margin-left: 12px;
+                        .spanProfile {
+                        font-size: 25px;
+                        line-height: 10px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    // .page_content {
+    //     position: absolute;
+    //     height: 100%;
+    //     width: calc(100%-309px);
+    //     left: 309px;
+    //     span {
+    //         font-size: 50px;
+    //         overflow: hidden;
+    //         white-space: nowrap;
+    //     }
+    // }
+    
+    .sidebar.active {
+        width: 309px;
+    }
+}
