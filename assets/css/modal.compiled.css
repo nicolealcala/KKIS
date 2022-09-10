@@ -44,14 +44,11 @@
   font-weight: 500;
 }
 
-.closeBtn {
-  background-color: #219EBC;
-  color: white;
-}
-
-@media only screen and (max-width: 564px) {
-  .content {
-    margin-left: 0;
-    padding: 2em;
+@media only screen and (max-width: 768px) {
+  .modalLabel, .textRetrieved {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

@@ -71,9 +71,9 @@
   background-color: blue;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1920px) {
   .content {
-    margin-left: 2em;
+    margin-left: 6em;
     padding: 2em;
   }
 
@@ -89,10 +89,15 @@
   }
 }
 @media only screen and (max-width: 768px) {
-  .modalLabel, .textRetrieved {
-    white-space: nowrap;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .content {
+    margin-top: 2em;
+    margin-left: 0;
+    padding: 2em;
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 578px) {
+  .content {
+    margin-left: 0;
+    padding: 1em;
   }
 }
