@@ -1,6 +1,25 @@
-@media only screen and (max-width: 564px){
-    .content{
+@media only screen and (min-width: 1920px) {
+    .content {
+        margin-left: 6em;
+        padding: 2em;
+    }
+    .backBtn {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1920px){
+    .fieldLabel {
+        white-space: nowrap; 
+        width: 90%; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+    .content {
         margin: 0;
-        padding: 1em;
+        padding: 0;
     }
 }
