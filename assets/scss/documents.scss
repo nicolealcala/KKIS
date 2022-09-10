@@ -7,90 +7,97 @@ $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
 
-#leftPanel {
-  background-color: $dark-blue;
-}
+// #leftPanel {
+//   background-color: $dark-blue;
+// }
 
-#content {
-  padding: 4em;
-  background-color: var(--bs-white);
+// #content {
+//   padding: 4em;
+//   background-color: var(--bs-white);
     
-    #title {
-    color: $text;
-    font: 100% $font-stack;
-    font-weight: 800;
-    font-size: 2em;
-    }
-}
+//     #title {
+//     color: $text;
+//     font: 100% $font-stack;
+//     font-weight: 800;
+//     font-size: 2em;
+//     }
+// }
 
-.stretched-link::after{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: auto;
-    content: "";
-    background-color: rgba(0,0,0,0);
-}
+// .stretched-link::after{
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: 1;
+//     pointer-events: auto;
+//     content: "";
+//     background-color: rgba(0,0,0,0);
+// }
 //--DASHBOARD
-.categories {
-    height: 13em;
-    overflow: hidden;
-    border-radius: 1em;
-    transition: all .2s ease-in-out;
+// .categories {
+//     height: 13em;
+//     overflow: hidden;
+//     border-radius: 1em;
+//     transition: all .2s ease-in-out;
     
-    .categoryBody {
-    padding-right: 0;
-    }
+//     .categoryBody {
+//     padding-right: 0;
+//     }
     
-    .categoryCount, .categoryDesc {
-    font: 100% $font-stack;
-    color: white;
-    }
+//     .categoryCount, .categoryDesc {
+//     font: 100% $font-stack;
+//     color: white;
+//     }
     
-    .card-title {
-    font-size: 2em;
-    font-weight: 600;
-    }
-}
+//     .card-title {
+//     font-size: 2em;
+//     font-weight: 600;
+//     }
+// }
 
-.categories:hover {
-  transform: scale(1.05);
-}
+// .categories:hover {
+//   transform: scale(1.05);
+// }
 
 
-#categoryRow1 {
-    width: 100%;
-    margin: 0;
+// #categoryRow1 {
+//     width: 100%;
+//     margin: 0;
     
-    #categoryHouseholds {
-    background-color: $light-blue;
-    }
+//     #categoryHouseholds {
+//     background-color: $light-blue;
+//     }
 
-    #categoryPwd {
-        background-color: $mid-blue;
-    }
+//     #categoryPwd {
+//         background-color: $mid-blue;
+//     }
 
-    #categorySenior {
-        background-color: $dark-blue;
-    }
+//     #categorySenior {
+//         background-color: $dark-blue;
+//     }
 
-    #categoryAdult {
-        background-color: $light-yellow;
-    }
+//     #categoryAdult {
+//         background-color: $light-yellow;
+//     }
 
-    #categoryYouth {
-        background-color: $mid-yellow;
-    }
+//     #categoryYouth {
+//         background-color: $mid-yellow;
+//     }
 
-    #categoryChildren {
-        background-color: $dark-yellow;
-    }
-}
+//     #categoryChildren {
+//         background-color: $dark-yellow;
+//     }
+// }
 
 //--DOCUMENTS
+
+.content {
+    padding: 4em;
+    margin-left: 5em;
+    height: auto;
+}
+
 .documentHeadingRow {
     width: 100%;
     margin: 0;
@@ -211,7 +218,7 @@ $text: #393737;
     }
 }
 
-.col-form-label {
+.fieldLabel {
 font: $font-stack;
 color: #707070;
 margin-bottom: 0.2em;;

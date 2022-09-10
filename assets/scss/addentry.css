@@ -10,7 +10,6 @@
   padding: 4em;
   margin-left: 5em;
   height: auto;
-  background-color: var(--bs-white);
 }
 .content .backBtn {
   border: none;
