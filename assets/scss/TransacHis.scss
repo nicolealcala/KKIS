@@ -21,10 +21,18 @@ hr {
   opacity: .75;
 }
 
+#SelDel {
+    margin-left: 20px;
+}
+
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-left: 120px;
+}
+
+#transac-table {
+    margin-left: -40px;
 }
 
 #row-title {
@@ -33,10 +41,6 @@ hr {
 
 #action-col {
   margin-left: 80px;
-}
-
-#transac-table {
-  /*margin-right: 10px;*/
 }
 
 .btn {
