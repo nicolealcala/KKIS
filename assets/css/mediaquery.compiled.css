@@ -1,0 +1,6 @@
+@media only screen and (max-width: 564px) {
+  .content {
+    margin: 0;
+    padding: 1em;
+  }
+}
