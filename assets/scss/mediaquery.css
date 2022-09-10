@@ -1,0 +1,15 @@
+@media only screen and (max-width: 1920px) {
+  .content {
+    margin-left: 6em;
+    padding: 2em;
+  }
+  .backBtn {
+    width: 100%;
+  }
+  .fieldLabel {
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}/*# sourceMappingURL=mediaquery.css.map */

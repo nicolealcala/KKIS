@@ -1,0 +1,182 @@
+#leftPanel {
+  background-color: #04496A;
+}
+
+#content {
+  padding: 4em;
+  background-color: var(--bs-white);
+}
+#content #title {
+  color: #393737;
+  font: 100% DM Sans, sans serif;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.categories {
+  height: 13em;
+  overflow: hidden;
+  border-radius: 1em;
+  transition: all 0.2s ease-in-out;
+}
+.categories .categoryBody {
+  padding-right: 0;
+}
+.categories .categoryCount, .categories .categoryDesc {
+  font: 100% DM Sans, sans serif;
+  color: white;
+}
+.categories .card-title {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.categories:hover {
+  transform: scale(1.05);
+}
+
+#categoryRow1 {
+  width: 100%;
+  margin: 0;
+}
+#categoryRow1 #categoryHouseholds {
+  background-color: #8ECAE6;
+}
+#categoryRow1 #categoryPwd {
+  background-color: #219EBC;
+}
+#categoryRow1 #categorySenior {
+  background-color: #04496A;
+}
+#categoryRow1 #categoryAdult {
+  background-color: #F3CB69;
+}
+#categoryRow1 #categoryYouth {
+  background-color: #FFB703;
+}
+#categoryRow1 #categoryChildren {
+  background-color: #FB8500;
+}
+
+.documentHeadingRow {
+  width: 100%;
+  margin: 0;
+}
+.documentHeadingRow .optionCol {
+  margin: auto;
+  padding: 0;
+}
+.documentHeadingRow .optionWrapper {
+  padding: 0;
+  margin: auto;
+  border-radius: 15em;
+  width: 100%;
+  height: 3em;
+  background-color: #219EBC;
+  overflow: hidden;
+}
+.documentHeadingRow .optionWrapper .options {
+  position: relative;
+  display: flex;
+  padding-left: 0.1em;
+  width: 100%;
+  height: inherit;
+  border: none;
+}
+.documentHeadingRow .optionWrapper .options .optionLinkContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 25em;
+  transition: 0.3s;
+}
+.documentHeadingRow .optionWrapper .options .optionLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  transition: 0.3s;
+}
+.documentHeadingRow .optionWrapper .options .qrButton {
+  border: none;
+  border-radius: 0 25em 25em 0;
+  padding: 0.3em 1em;
+  width: auto;
+  height: 100%;
+  background: #04496A;
+}
+.documentHeadingRow .optionWrapper .options .optionLinkContainer:hover, .documentHeadingRow .optionWrapper .options .optionLinkContainer:focus {
+  font-weight: bold;
+  color: #219EBC !important;
+  cursor: pointer;
+  height: 90%;
+  background-color: white;
+  border-radius: 25em;
+}
+
+.qrScanner {
+  color: white;
+  width: auto;
+  height: 2em;
+}
+
+.generateBody {
+  padding: 0;
+  margin: 2em 0;
+}
+.generateBody .docDetails {
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding: 0;
+}
+.generateBody .docDetails .subTitle {
+  font: 100% DM Sans, sans serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #393737;
+}
+.generateBody .docPreview {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: right;
+  background-color: red;
+}
+
+#brgyClearanceDiv, #certResidencyDiv, #certIndigencyDiv {
+  display: none;
+}
+
+.infoRow {
+  width: 100%;
+  margin: 1em 0;
+  align-contents: center;
+}
+.infoRow .form-label {
+  font: DM Sans, sans serif;
+  color: #393737;
+  margin-bottom: 0.2em;
+  font-weight: 500;
+}
+.infoRow .userInput {
+  height: 2.5em;
+  width: 100%;
+}/*# sourceMappingURL=ksis.css.map */

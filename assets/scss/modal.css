@@ -1,0 +1,54 @@
+* {
+  font: 100% DM Sans, sans serif;
+}
+
+#modalView {
+  margin: auto;
+  color: #393737;
+}
+#modalView .modal-header {
+  background-color: #04496A;
+  color: white;
+}
+#modalView .modal-body {
+  margin: 1em 0.5em;
+  padding: 3em;
+}
+#modalView .modal-body .textName {
+  font-size: 2em;
+  font-weight: bold;
+  color: #219EBC;
+}
+#modalView .modal-body .textAge, #modalView .modal-body .textGender {
+  font-size: normal;
+  font-weight: normal;
+}
+#modalView .modal-body .imgContainer {
+  width: 100%;
+  height: auto;
+}
+#modalView .modal-body .markerContainer {
+  background-color: #FFB703;
+}
+#modalView .modal-body .modalMarker {
+  color: white;
+}
+#modalView .modal-body .modalLabel {
+  font-size: small;
+  font-weight: normal;
+  color: #888;
+  width: 100%;
+}
+#modalView .modal-body .textRetrieved {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  .modalLabel, .textRetrieved {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}/*# sourceMappingURL=modal.css.map */

@@ -88,33 +88,33 @@ $text: #393737;
 }
 
 
-@media only screen and (max-width: 1920px) {
-    .content {
-        margin-left: 6em;
-        padding: 2em;
-    }
-    .backBtn {
-        width: 100%;
-    }
-    .fieldLabel {
-        white-space: nowrap; 
-        width: 90%; 
-        overflow: hidden;
-        text-overflow: ellipsis; 
-    }
-}
+// @media only screen and (max-width: 1920px) {
+//     .content {
+//         margin-left: 6em;
+//         padding: 2em;
+//     }
+//     .backBtn {
+//         width: 100%;
+//     }
+//     .fieldLabel {
+//         white-space: nowrap; 
+//         width: 90%; 
+//         overflow: hidden;
+//         text-overflow: ellipsis; 
+//     }
+// }
 
-@media only screen and (max-width: 768px) {
-    .content {
-        margin-top: 2em;
-        margin-left: 0;
-        padding: 2em;
-    }
-}
-@media only screen and (min-width: 360px) and (max-width: 578px) {
-    .content {
-        margin-left: 0;
-        padding: 1em;
-    }
-}
+// @media only screen and (max-width: 768px) {
+//     .content {
+//         margin-top: 2em;
+//         margin-left: 0;
+//         padding: 2em;
+//     }
+// }
+// @media only screen and (min-width: 360px) and (max-width: 578px) {
+//     .content {
+//         margin-left: 0;
+//         padding: 1em;
+//     }
+// }
 
