@@ -23,7 +23,7 @@
             <div class="row documentHeadingRow p-0 m-0" style="position: sticky;">
                 <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-8 p-0">
                     <div class="d-flex justify-content-xxl-start align-items-xxl-center headContainer w-100">
-                        <div class="col col-lg-1 col-md-1 col-sm-1"><button class="btn d-xxl-flex backBtn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon">
+                        <div class="col col-lg-1 col-md-1 col-sm-1"><button class="btn d-xxl-flex backBtn w-100 h-auto" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon">
                                     <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                     <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
                                 </svg></button></div>
@@ -49,8 +49,8 @@
                     </div><!-- End: personal information -->
                     <!-- Start: persnal Info form -->
                     <form>
-                        <!-- Start: row1 -->
-                        <div class="row my-3 gy-3 gx-3">
+                        <!-- Start: fields -->
+                        <div class="row m-0 my-3 gy-3 gx-3">
                             <!-- Start: Fname -->
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control w-100" type="text"></div><!-- End: Fname -->
                             <!-- Start: MName -->
@@ -137,18 +137,18 @@
                                 </select></div><!-- End: purok -->
                             <!-- Start: organization -->
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Organization (if any)<br></label><input class="form-control" type="text"></div><!-- End: organization -->
-                        </div><!-- End: row1 -->
+                        </div><!-- End: fields -->
                     </form><!-- End: persnal Info form -->
                 </div><!-- End: personal info -->
                 <!-- Start: edu/employ status -->
                 <div class="mt-5">
-                    <div class="row my-3 gy-3 gx-3">
+                    <div class="row m-0 my-3 gy-3 gx-3 p-0">
                         <!-- Start: educ status -->
-                        <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center marker rounded-4"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
+                        <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 ms-0 ps-0">
+                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center marker rounded-4 m-0"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
                             <form>
-                                <!-- Start: educRow1 -->
-                                <div class="row my-3 gy-3 gx-3">
+                                <!-- Start: fields -->
+                                <div class="row m-0 my-3 gy-3 gx-3">
                                     <!-- Start: stud status -->
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Student Status</label><select class="form-select">
                                             <optgroup label="Educational Status">
@@ -192,15 +192,15 @@
                                                 <option value="">More than 50,000</option>
                                             </optgroup>
                                         </select></div><!-- End: salary range -->
-                                </div><!-- End: educRow1 -->
+                                </div><!-- End: fields -->
                             </form>
                         </div><!-- End: educ status -->
                         <!-- Start: employ status -->
-                        <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 me-0 pe-0">
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center marker rounded-4"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Employment Status</span></div>
                             <form>
-                                <!-- Start: employRow1 -->
-                                <div class="row my-3 gy-3 gx-3">
+                                <!-- Start: fields -->
+                                <div class="row m-0 my-3 gy-3 gx-3">
                                     <!-- Start: stud status -->
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Employee Status</label><select class="form-select">
                                             <optgroup label="Educational Status">
@@ -238,7 +238,7 @@
                                                 <option value="">More than 50,000</option>
                                             </optgroup>
                                         </select></div><!-- End: salary range -->
-                                </div><!-- End: employRow1 -->
+                                </div><!-- End: fields -->
                             </form>
                         </div><!-- End: employ status -->
                     </div>
@@ -253,8 +253,8 @@
                     </div><!-- End: house declaration -->
                     <!-- Start: housedecla -->
                     <form>
-                        <!-- Start: row1 -->
-                        <div class="row my-3 gy-3 gx-3">
+                        <!-- Start: fields -->
+                        <div class="row m-0 my-3 gy-3 gx-3">
                             <!-- Start: Fname -->
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel">First Name</label><input class="form-control w-100" type="text"></div><!-- End: Fname -->
                             <!-- Start: MName -->
@@ -290,7 +290,7 @@
                                         <option value="5">More than 20</option>
                                     </optgroup>
                                 </select></div><!-- End: no. members -->
-                        </div><!-- End: row1 -->
+                        </div><!-- End: fields -->
                     </form><!-- End: housedecla -->
                 </div><!-- End: house declaration -->
                 <!-- Start: buttonRow -->

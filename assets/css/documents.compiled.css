@@ -1,3 +1,7 @@
+* {
+  font: 100% DM Sans, sans serif;
+}
+
 .documentHeadingRow {
   width: 100%;
   margin: 0;
@@ -7,35 +11,40 @@
   padding: 0;
 }
 
+.title {
+  width: 100%;
+  height: 100%;
+  color: #393737;
+  font-weight: 800;
+  font-size: 2em;
+}
+
 .optionWrapper {
   display: block;
   width: 100%;
   height: 3em;
   background-color: #219EBC;
   border-radius: 15em;
+  border: none;
   z-index: 1;
 }
 
 .options {
-  width: 100%;
-  min-width: 4.25em;
+  color: white;
   font-size: 1em;
-  display: inline-block;
   cursor: pointer;
-  position: relative;
   z-index: 5;
   border: none;
   transition: 0.3s;
   border-radius: 15em;
-  color: white;
 }
 
 .qrScannerBtn {
   position: relative;
-  border: none;
   padding: 0.5em 1em;
   background: #04496A;
   border-radius: 0 15em 15em 0;
+  border: none;
 }
 .qrScannerBtn .qrIcon {
   width: 100%;
@@ -44,83 +53,55 @@
 }
 
 .qrScannerBtn:hover {
+  background-color: white;
+}
+.qrScannerBtn:hover .qrIcon {
+  color: #04496A;
+}
+
+.qrScannerBtn:focus {
   background: black;
 }
 
-.qrScannerBtn:focus, .qrScannerBtn:focus > .qrIcon {
-  background: black;
+.qrScannerBtn:focus > .qrIcon {
   color: #FFB703;
 }
 
-.slider {
-  display: flex;
-  position: absolute;
-  margin: 0.25em;
-  background: white;
-  height: 2em;
-  font-size: 1.2rem;
-  width: 17%;
-  border-radius: inherit;
-  min-width: 4.25em;
-  transition: 0.3s;
-  z-index: 3;
-}
-
-.options:active {
+.options:active, .options:focus {
   color: #219EBC;
   font-weight: bold;
-}
-
-.options:nth-child(1).active ~ .slider {
-  transform: translateX(0);
-}
-
-.options:nth-child(2).active ~ .slider {
-  transform: translateX(100%);
-}
-
-.options:nth-child(1):hover ~ .slider {
-  transform: translateX(0%);
-}
-
-.options:nth-child(2):hover ~ .slider {
-  transform: translateX(100%);
+  background-color: white;
 }
 
 .generateBody {
   padding: 0;
   margin: 2em 0;
 }
-.generateBody .docDetails {
-  width: 100%;
-  height: 100%;
-}
-.generateBody .docDetails .subTitle {
-  font: 100% DM Sans, sans serif;
+.generateBody .subTitle {
   font-size: 1.2em;
-  font-weight: 600;
   color: #393737;
-}
-.generateBody .docDetails .controlButtons {
-  width: 6em;
-}
-.generateBody .docPreview {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-color: pink;
+  font-weight: 600;
 }
 
-.col-form-label {
+.previewContainer {
+  width: 80%;
+  height: auto;
+  border: 0.5px solid #393737;
+}
+
+.controlButtons {
+  width: 6em;
+}
+
+.fieldLabel {
   font: DM Sans, sans serif;
-  color: #707070;
+  color: #909090;
   margin-bottom: 0.2em;
   font-weight: 500;
 }
 
 .userInput {
   height: 2.5em;
-  width: 100%;
 }
 
 .idFilter {

@@ -19,10 +19,10 @@ $text: #393737;
 //     height: 100%;
 // }
 .content {
-    padding: 4em;
-    margin-left: 5em;
-    height: auto;
-    background-color: var(--bs-white);
+    // padding: 4em;
+    // margin-left: 5em;
+    // height: auto;
+    // background-color: var(--bs-white);
     
     .backBtn {
         border: none;
@@ -48,8 +48,9 @@ $text: #393737;
     }
     
     .fieldLabel {
-    color: #707070;
-}
+        color: #909090;
+        font-weight: normal;
+    }
 }
 
 .marker {
@@ -86,35 +87,4 @@ $text: #393737;
 #submitBtn {
     background-color: blue;
 }
-
-
-// @media only screen and (max-width: 1920px) {
-//     .content {
-//         margin-left: 6em;
-//         padding: 2em;
-//     }
-//     .backBtn {
-//         width: 100%;
-//     }
-//     .fieldLabel {
-//         white-space: nowrap; 
-//         width: 90%; 
-//         overflow: hidden;
-//         text-overflow: ellipsis; 
-//     }
-// }
-
-// @media only screen and (max-width: 768px) {
-//     .content {
-//         margin-top: 2em;
-//         margin-left: 0;
-//         padding: 2em;
-//     }
-// }
-// @media only screen and (min-width: 360px) and (max-width: 578px) {
-//     .content {
-//         margin-left: 0;
-//         padding: 1em;
-//     }
-// }
 
