@@ -12,6 +12,7 @@
 
 .dashboard-title h1 {
   font-size: 50px;
+  color: #393737;
 }
 
 .gradient-line {
@@ -142,4 +143,3 @@
     padding: 0em 1em 0em 1em;
   }
 }
-/*# sourceMappingURL=dashboard.css.map */
