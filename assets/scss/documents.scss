@@ -10,21 +10,6 @@ $text: #393737;
 *{
     font: 100% $font-stack;
 }
-// #leftPanel {
-//   background-color: $dark-blue;
-// }
-
-// #content {
-//   padding: 4em;
-//   background-color: var(--bs-white);
-    
-//     #title {
-//     color: $text;
-//     font: 100% $font-stack;
-//     font-weight: 800;
-//     font-size: 2em;
-//     }
-// }
 
 // .stretched-link::after{
 //     position: absolute;
@@ -37,144 +22,67 @@ $text: #393737;
 //     content: "";
 //     background-color: rgba(0,0,0,0);
 // }
-// //--DASHBOARD
-// .categories {
-//     height: 13em;
-//     overflow: hidden;
-//     border-radius: 1em;
-//     transition: all .2s ease-in-out;
-    
-//     .categoryBody {
-//     padding-right: 0;
-//     }
-    
-//     .categoryCount, .categoryDesc {
-//     font: 100% $font-stack;
-//     color: white;
-//     }
-    
-//     .card-title {
-//     font-size: 2em;
-//     font-weight: 600;
-//     }
-// }
 
-// .categories:hover {
-//   transform: scale(1.05);
-// }
-
-
-// #categoryRow1 {
-//     width: 100%;
-//     margin: 0;
-    
-//     #categoryHouseholds {
-//     background-color: $light-blue;
-//     }
-
-//     #categoryPwd {
-//         background-color: $mid-blue;
-//     }
-
-//     #categorySenior {
-//         background-color: $dark-blue;
-//     }
-
-//     #categoryAdult {
-//         background-color: $light-yellow;
-//     }
-
-//     #categoryYouth {
-//         background-color: $mid-yellow;
-//     }
-
-//     #categoryChildren {
-//         background-color: $dark-yellow;
-//     }
-// }
 
 //--DOCUMENTS
 .documentHeadingRow {
     width: 100%;
     margin: 0;
     
-    .optionCol{
-        margin: auto;
-        padding: 0;
-    }
-}
-
-.title {
+    .title {
         width: 100%;
         height: 100%;
         color: $text;
         font-weight: 800;
-        font-size: 2em;
+        font-size: 3em;
+    }
 }
 
-.optionWrapper {
-    display: block;
-    width: 100%;
-    height: 3em;
+//Small Nav
+.divNav {
     background-color: $mid-blue;
-    border-radius: 15em;
-    border: none;
-    z-index: 1
-}
-.options {
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    z-index: 5;
-    border: none;
-    transition: 0.3s;
-    border-radius: 15em;
-}
-
-.qrScannerBtn{
-    position: relative;
-    padding: 0.5em 1em;;
-    background: $dark-blue;
-    border-radius: 0 15em 15em 0;
+    border-radius: 15em 0 0 15em;
+    height: auto;
+    width: 90%;
     border: none;
     
-    .qrIcon {
+    .linkContainer{
+        height: inherit;
+        padding: 0.5em;
+        width: 50%;
+        height: 98%;
+        overflow: hidden;
+        border-radius: 15em;
+        background-color: $light-yellow;
+        
+        .optionLink {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+.qrBtn {
+    border-radius: 0 15em 15em 0;
+    width: 10%;
+    padding: 5px;
+    height: inherit;
+    background-color: $dark-blue; 
+        
+    .qrIcon{
         width: 100%;
-        height: 100%;
+        heigt: 100%;
         color: white;
     }
 }
 
-.qrScannerBtn:hover { 
-    background-color: white;
-    
-    .qrIcon{
-        color: $dark-blue;
-    }
-}
-
-.qrScannerBtn:focus, {
-    background: black;
-}
-.qrScannerBtn:focus > .qrIcon {
-    color: $mid-yellow;
-}
-
-.options:active, .options:focus,{
-    color: $mid-blue;
-    font-weight: bold;
-    background-color: white;
-}
-
-//documentpage  contents
-.generateBody {
+.referral {
     padding: 0;
     margin: 2em 0;
     
     .subTitle {
         font-size: 1.2em;
         color: $text;
-        font-weight: 600;
+        font-weight: 500;
     }
     
     .userInput {

@@ -1,9 +1,17 @@
 @media only screen and (min-width: 200px) and (max-width: 1920px) {
-  .fieldLabel, .options {
+  .fieldLabel, .optionLink {
     white-space: nowrap;
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .divNav {
+    width: 85%;
+  }
+
+  .qrBtn {
+    width: 15%;
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 1920px) {
