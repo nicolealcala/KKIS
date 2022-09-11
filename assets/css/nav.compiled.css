@@ -3,6 +3,26 @@
   padding: 0;
 }
 
+@media screen and (min-width: 1367px) {
+  #listProfile {
+    margin-top: 415px;
+  }
+}
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+  #listProfile {
+    margin-top: 215px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
+}
 body {
   background: #FFFFFF;
   position: relative;
@@ -16,26 +36,16 @@ body .sidebar {
   width: 74px;
   transition: all 0.5s ease;
 }
-@media screen and (min-width: 1367px) {
-  body .sidebar .divProfile {
-    margin-top: 415px;
-  }
-  body .sidebar #listLogOut {
-    margin-top: 520px;
-  }
-}
-@media screen and (max-width: 1366px) {
-  body .sidebar .divProfile {
-    margin-top: 115px;
-  }
-  body .sidebar #listLogOut {
-    margin-top: 220px;
-  }
-}
 body .sidebar .hamburger .btn {
   padding: 0;
   border: none;
   box-shadow: none;
+}
+body .sidebar hr {
+  height: 2px;
+  border-width: 0px;
+  color: #787878;
+  background-color: #787878;
 }
 body .sidebar ul {
   margin-top: 19px;
@@ -75,31 +85,35 @@ body .sidebar ul li a:focus {
   background: #FFFFFF;
   color: #393737;
 }
-body .sidebar .divProfile {
+body .sidebar ul #listProfile .divProfile {
   background: #01364F;
   position: absolute;
   color: #FFFFFF;
   width: inherit;
 }
-body .sidebar .divProfile .profile {
+body .sidebar ul #listProfile .divProfile .profile {
   position: relative;
   height: 71px;
 }
-body .sidebar .divProfile .profile .profileContent {
+body .sidebar ul #listProfile .divProfile .profile .profileContent {
   display: flex;
   align-items: center;
 }
-body .sidebar .divProfile .profile .profileContent .divProfilePic {
-  padding: 12px;
+body .sidebar ul #listProfile .divProfile .profile .profileContent .divProfilePic {
+  padding-left: 12px;
+  padding-top: 2px;
 }
-body .sidebar .divProfile .profile .profileContent .divAdmin {
+body .sidebar ul #listProfile .divProfile .profile .profileContent .divAdmin {
   margin-left: 12px;
 }
-body .sidebar .divProfile .profile .profileContent .divAdmin .spanProfile {
+body .sidebar ul #listProfile .divProfile .profile .profileContent .divAdmin .spanProfile {
   font-size: 25px;
   line-height: 10px;
   overflow: hidden;
   white-space: nowrap;
+}
+body .sidebar ul #listLogOut {
+  margin-top: 15px;
 }
 body .sidebar.active {
   width: 309px;

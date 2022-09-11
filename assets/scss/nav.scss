@@ -2,6 +2,7 @@
 $darkerBlue: #01364F;
 $darkBlue: #04496A;
 $darkGrey: #393737;
+$grey: #787878;
 $white: #FFFFFF;
 
 // CSS
@@ -10,37 +11,62 @@ $white: #FFFFFF;
     padding: 0;
     // font-family
 }
+@media screen and (min-width:1367px) {
+    #listProfile {
+        margin-top: 415px;
+    }
+            // #listLogOut {
+            //     margin-top: 15px;
+            // // padding: 0;
+            // }
+}
+@media screen and (max-width:1366px) and (min-width:769px) {
+    #listProfile {
+        margin-top: 215px;
+            }
+            // #listLogOut {
+            //     margin-top: 220px;
+            // // padding: 0;
+            // }
+        }
+        @media screen and (max-width:768px) and (min-width:481px) {
+            // #listProfile {
+            //     margin-top: 215px;
+            // }
+            // #listLogOut {
+            //     margin-top: 220px;
+            // // padding: 0;
+            // }
+            .sidebar{
+                display: none;
+            }
+        }
+        @media screen and (max-width:480px) {
+            .sidebar{
+                display: none;
+            }
+            // #listProfile {
+            //     margin-top: 215px;
+            // }
+            // #listLogOut {
+            //     margin-top: 220px;
+            // // padding: 0;
+            // }
+        }
 body {
     background: $white;
     position: relative;
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
+    
     .sidebar {
         background: $darkBlue;
         height: 100%;
         width: 74px;
         transition: all 0.5s ease;
-        @media screen and (min-width:1367px) {
-            .divProfile {
-                margin-top: 415px;
-            }
-            #listLogOut {
-            margin-top: 520px;
-            // padding: 0;
-            }
-        }
-        @media screen and (max-width:1366px) {
-            .divProfile {
-                margin-top: 115px;
-            }
-            #listLogOut {
-                margin-top: 220px;
-            // padding: 0;
-            }
-        }
-            
         // padding: 6px 14px;
+        
         .hamburger {
             .btn {
                 padding: 0;
@@ -49,6 +75,13 @@ body {
                 
                 
             }
+        }
+        hr {
+            height: 2px;
+        // width: 100%;
+            border-width: 0px;
+            color: $grey;
+            background-color: $grey;
         }
         ul {
             margin-top: 19px;
@@ -103,40 +136,47 @@ body {
 //                     #img { 
 //                     }
                 }
+                
             }
-        }
-        .divProfile {
-            background: $darkerBlue;
-            position: absolute;
-            color: $white;
-            width: inherit;
-            // margin-top: 415px;
-            .profile {
-                position: relative;
-                height: 71px;
-                .profileContent {
-                    display: flex;
-                    align-items: center;
-                    .divProfilePic {
-                        padding: 12px;
-                        img {
+            #listProfile {
+                
+                .divProfile {
+                    background: $darkerBlue;
+                    position: absolute;
+                    color: $white;
+                    width: inherit;
+                    .profile {
+                        position: relative;
+                        height: 71px;
+                        .profileContent {
+                            display: flex;
+                            align-items: center;
+                            .divProfilePic {
+                                padding-left: 12px;
+                                padding-top: 2px;
+                                // img {
                             
+                                // }
+                            }
+                            .divAdmin {
+                                margin-left: 12px;
+                                .spanProfile {
+                                    font-size: 25px;
+                                    line-height: 10px;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                }
+                            }
                         }
                     }
-                    .divAdmin {
-                        margin-left: 12px;
-                        .spanProfile {
-                        font-size: 25px;
-                        line-height: 10px;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        }
-                    }
-                    
                 }
             }
-        }
-        
+            #listLogOut {
+                margin-top: 15px;
+            // padding: 0;
+            }
+    }
+
     }
     // .page_content {
     //     position: absolute;
