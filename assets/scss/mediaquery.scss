@@ -32,7 +32,7 @@
         }
         
         .markerText, .subTitle{
-            font-size: 1em;
+            font-size: 1.3em;
         }
         .docPreview {
             padding-left: 0;
@@ -52,6 +52,11 @@
         .eStatus {
             margin: 0;
             padding: 0;
+        }
+        
+        #kkidMarker, #referralMarker{
+            margin-top: 2em;
+            margin-lft: 0;
         }
     }  
 }

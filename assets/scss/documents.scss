@@ -25,6 +25,10 @@ $text: #393737;
 
 
 //--DOCUMENTS
+
+.content {
+    // margin: 4em;
+}
 .documentHeadingRow {
     width: 100%;
     margin: 0;
@@ -80,9 +84,13 @@ $text: #393737;
     margin: 2em 0;
     
     .subTitle {
-        font-size: 1.2em;
+        font-size: 1.5em;
         color: $text;
         font-weight: 500;
+    }
+    
+    .categoryCheck {
+        font-size: 1.3em;
     }
     
     .userInput {
@@ -93,7 +101,8 @@ $text: #393737;
 .previewContainer{
     width: 80%;
     height: auto;
-    border: 0.5px solid $text;
+    border-radius: 1em;
+    border: none;
 }
 
 .controlButtons {

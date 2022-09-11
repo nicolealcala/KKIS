@@ -53,9 +53,12 @@
   margin: 2em 0;
 }
 .referral .subTitle {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #393737;
   font-weight: 500;
+}
+.referral .categoryCheck {
+  font-size: 1.3em;
 }
 .referral .userInput {
   width: 95%;
@@ -64,7 +67,8 @@
 .previewContainer {
   width: 80%;
   height: auto;
-  border: 0.5px solid #393737;
+  border-radius: 1em;
+  border: none;
 }
 
 .controlButtons {
