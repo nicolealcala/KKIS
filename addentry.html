@@ -21,13 +21,12 @@
         <div class="container-fluid content">
             <!-- Start: Title and DocNav -->
             <div class="row documentHeadingRow p-0 m-0" style="position: sticky;">
-                <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-8 p-0">
-                    <div class="d-flex justify-content-xxl-start align-items-xxl-center headContainer w-100">
-                        <div class="col col-lg-1 col-md-1 col-sm-1"><button class="btn d-xxl-flex backBtn w-100 h-auto" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon">
-                                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                    <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
-                                </svg></button></div>
-                        <div class="col-xxl-4 d-xxl-flex align-items-xxl-center col-lg-11 col-md-11 col-sm-11 p-0 w-auto">
+                <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-12 p-0">
+                    <div class="d-flex justify-content-xxl-start align-items-xxl-center headContainer"><button class="btn d-xxl-flex backBtn w-100" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon w-auto" style="width: auto;height: auto;">
+                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
+                            </svg></button>
+                        <div class="col-xxl-4 d-xxl-flex align-items-xxl-center col-10 p-0 w-100">
                             <h1 class="d-xxl-flex title pt-1">Add Entry</h1>
                         </div>
                     </div>
@@ -60,21 +59,21 @@
                             <!-- Start: EName -->
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select">
                                     <optgroup label="Extension">
-                                        <option value="1" selected="">Jr.</option>
-                                        <option value="2">Sr.</option>
-                                        <option value="3">I</option>
-                                        <option value="4">II</option>
-                                        <option value="5">III</option>
+                                        <option value="Jr." selected="">Jr.</option>
+                                        <option value="Sr.">Sr.</option>
+                                        <option value="I">I</option>
+                                        <option value="II">II</option>
+                                        <option value="III">III</option>
                                     </optgroup>
                                 </select></div><!-- End: EName -->
                             <!-- Start: Gender Preference -->
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Gender Preference<br></label><select class="form-select">
                                     <optgroup label="Gender">
-                                        <option value="1" selected="">Man</option>
-                                        <option value="2">Woman</option>
-                                        <option value="3">Transgender</option>
-                                        <option value="Prefer not to respond">Non-binary/Non-conforming</option>
-                                        <option value="5">III</option>
+                                        <option value="Man" selected="">Man</option>
+                                        <option value="Woman">Woman</option>
+                                        <option value="Transgender">Transgender</option>
+                                        <option value="Non-binary/Non-conforming">Non-binary/Non-conforming</option>
+                                        <option value="Prefer not to say">Prefer not to say</option>
                                     </optgroup>
                                 </select></div><!-- End: Gender Preference -->
                             <!-- Start: birthday -->
@@ -84,32 +83,33 @@
                             <!-- Start: marital status -->
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Marital Status<br></label><select class="form-select">
                                     <optgroup label="Marital Status">
-                                        <option value="1" selected="">Single</option>
-                                        <option value="2">Married</option>
-                                        <option value="3">Live-in</option>
-                                        <option value="4">Separated</option>
-                                        <option value="5">Annuled</option>
+                                        <option value="Single" selected="">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Live-in">Live-in</option>
+                                        <option value="Separated">Separated</option>
+                                        <option value="Annuled">Annuled</option>
                                     </optgroup>
                                 </select></div><!-- End: marital status -->
                             <!-- Start: religion -->
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Religion<br></label><select class="form-select">
                                     <optgroup label="Choose religion">
-                                        <option value="1" selected="">Atheist</option>
-                                        <option value="2">Buddhist</option>
-                                        <option value="3">Christian</option>
-                                        <option value="4">Muslim</option>
+                                        <option value="Atheist" selected="">Atheist</option>
+                                        <option value="Buddhist">Buddhist</option>
+                                        <option value="Christian">Christian</option>
+                                        <option value="Muslim">Muslim</option>
                                     </optgroup>
                                 </select></div><!-- End: religion -->
                             <!-- Start: disability -->
                             <div class="col col-lg-3 col-md-3 col-sm-6 col-12"><label class="form-label d-lg-flex align-items-lg-center fieldLabel w-100">Disability</label><select class="form-select">
                                     <optgroup label="Disability Type">
-                                        <option value="1" selected="">None</option>
-                                        <option value="2">Communication disability</option>
-                                        <option value="3">Disability due to chronic illnes</option>
-                                        <option value="4">Learning disability</option>
-                                        <option value="5">Mental disability</option>
-                                        <option value="6">Orthopedic disability</option>
-                                        <option value="">Psychosocial Disability</option>
+                                        <option value="None" selected="">None</option>
+                                        <option value="Communication disability">Communication disability</option>
+                                        <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
+                                        <option value="Learning disability">Learning disability</option>
+                                        <option value="Mental disability">Mental disability</option>
+                                        <option value="Orthopedic disability">Orthopedic disability</option>
+                                        <option value="Psychosocial disability">Psychosocial disability</option>
+                                        <option value="Vission disability">Vission disability</option>
                                     </optgroup>
                                 </select></div><!-- End: disability -->
                             <!-- Start: contact -->
@@ -117,8 +117,8 @@
                             <!-- Start: contact -->
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Voter Type</label><select class="form-select">
                                     <optgroup label="Voter Type">
-                                        <option value="1" selected="">Registered</option>
-                                        <option value="2">Unregistered</option>
+                                        <option value="Registered" selected="">Registered</option>
+                                        <option value="Unregistered">Unregistered</option>
                                     </optgroup>
                                 </select></div><!-- End: contact -->
                             <!-- Start: address -->
@@ -144,83 +144,83 @@
                 <div class="mt-5">
                     <div class="row m-0 my-3 gy-3 gx-3 p-0">
                         <!-- Start: educ status -->
-                        <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 ms-0 ps-0">
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center marker rounded-4 m-0"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
                             <form>
                                 <!-- Start: fields -->
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <!-- Start: stud status -->
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Student Status</label><select class="form-select">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Student Status</label><select class="form-select educInput">
                                             <optgroup label="Educational Status">
-                                                <option value="1" selected="">Enrolled</option>
-                                                <option value="2">Out-of-school Youth</option>
-                                                <option value="3">Working student</option>
+                                                <option value="Enrolled" selected="">Enrolled</option>
+                                                <option value="Out-of-school Youth">Out-of-school Youth</option>
+                                                <option value="Working student">Working student</option>
                                             </optgroup>
                                         </select></div><!-- End: stud status -->
                                     <!-- Start: level -->
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Level</label><select class="form-select">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Level</label><select class="form-select educInput">
                                             <optgroup label="Educational Level">
-                                                <option value="1" selected="">Pre-elementary</option>
-                                                <option value="2">Elementary</option>
-                                                <option value="3">Junior High School</option>
-                                                <option value="4">Senior High School</option>
-                                                <option value="5">Alternative Learning System (ALS)</option>
-                                                <option value="6">Diploma Course</option>
-                                                <option value="7">College</option>
-                                                <option value="8">Graduate Studies</option>
+                                                <option value="Pre-elementary" selected="">Pre-elementary</option>
+                                                <option value="Elementary">Elementary</option>
+                                                <option value="Junior High School">Junior High School</option>
+                                                <option value="Senior High School">Senior High School</option>
+                                                <option value="Alternative Learning System (ALS)">Alternative Learning System (ALS)</option>
+                                                <option value="Diploma Course">Diploma Course</option>
+                                                <option value="College">College</option>
+                                                <option value="Graduate Studies">Graduate Studies</option>
                                             </optgroup>
                                         </select></div><!-- End: level -->
                                     <!-- Start: public/private -->
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel">Public/Private</label><select class="form-select">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel">Public/Private</label><select class="form-select educInput">
                                             <optgroup label="School Type">
-                                                <option value="1" selected="">Private</option>
-                                                <option value="2">Public</option>
+                                                <option value="Private" selected="">Private</option>
+                                                <option value="Public">Public</option>
                                             </optgroup>
                                         </select></div><!-- End: public/private -->
                                     <!-- Start: name of school -->
-                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12"><label class="form-label fieldLabel">Name of School</label><input class="form-control" type="text"></div><!-- End: name of school -->
+                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12"><label class="form-label fieldLabel">Name of School</label><input class="form-control educInput" type="text"></div><!-- End: name of school -->
                                     <!-- Start: occupation -->
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel">Occupation</label><input class="form-control" type="text"></div><!-- End: occupation -->
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel">Occupation</label><input class="form-control educInput" type="text"></div><!-- End: occupation -->
                                     <!-- Start: salary range -->
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel">Salary Range</label><select class="form-select">
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel">Salary Range</label><select class="form-select educInput">
                                             <optgroup label="Salary Range">
-                                                <option value="1" selected="">Less than 10,000</option>
-                                                <option value="2">10,000-20,000</option>
-                                                <option value="3">21,000-30,000</option>
-                                                <option value="4">31,000-40,000</option>
-                                                <option value="6">41,000-50,000</option>
-                                                <option value="">More than 50,000</option>
+                                                <option value="Less than 10,000" selected="">Less than 10,000</option>
+                                                <option value="10,000-20,000">10,000-20,000</option>
+                                                <option value="21,000-30,000">21,000-30,000</option>
+                                                <option value="31,000-40,000">31,000-40,000</option>
+                                                <option value="41,000-50,000">41,000-50,000</option>
+                                                <option value="More than 50,000">More than 50,000</option>
                                             </optgroup>
                                         </select></div><!-- End: salary range -->
                                 </div><!-- End: fields -->
                             </form>
                         </div><!-- End: educ status -->
                         <!-- Start: employ status -->
-                        <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 me-0 pe-0">
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center marker rounded-4"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Employment Status</span></div>
                             <form>
                                 <!-- Start: fields -->
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <!-- Start: stud status -->
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Employee Status</label><select class="form-select">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Employee Status</label><select class="form-select employInput">
                                             <optgroup label="Educational Status">
-                                                <option value="1" selected="">Employed</option>
-                                                <option value="2">Unemployed</option>
-                                                <option value="3">Self-employed</option>
+                                                <option value="Employed" selected="">Employed</option>
+                                                <option value="Unemployed">Unemployed</option>
                                             </optgroup>
                                         </select></div><!-- End: stud status -->
                                     <!-- Start: level -->
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Employee Type</label><select class="form-select">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel">Employee Type</label><select class="form-select employInput">
                                             <optgroup label="Educational Level">
-                                                <option value="1" selected="">Employed</option>
-                                                <option value="2">Unemployed</option>
+                                                <option value="Regular" selected="">Regular</option>
+                                                <option value="Contractual">Contractual</option>
+                                                <option value="Job Order">Job Order</option>
                                             </optgroup>
                                         </select></div><!-- End: level -->
                                     <!-- Start: public/private -->
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel">Public/Private</label><select class="form-select">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel">Public/Private</label><select class="form-select employInput">
                                             <optgroup label="School Type">
-                                                <option value="1" selected="">Private</option>
-                                                <option value="2">Public</option>
+                                                <option value="Private" selected="">Private</option>
+                                                <option value="Public">Public</option>
                                             </optgroup>
                                         </select></div><!-- End: public/private -->
                                     <!-- Start: name of school -->
@@ -230,12 +230,12 @@
                                     <!-- Start: salary range -->
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel">Salary Range</label><select class="form-select">
                                             <optgroup label="Salary Range">
-                                                <option value="1" selected="">Less than 10,000</option>
-                                                <option value="2">10,000-20,000</option>
-                                                <option value="3">21,000-30,000</option>
-                                                <option value="4">31,000-40,000</option>
-                                                <option value="6">41,000-50,000</option>
-                                                <option value="">More than 50,000</option>
+                                                <option value="Less than 10,000" selected="">Less than 10,000</option>
+                                                <option value="10,000-20,000">10,000-20,000</option>
+                                                <option value="21,000-30,000">21,000-30,000</option>
+                                                <option value="31,000-40,000">31,000-40,000</option>
+                                                <option value="41,000-50,000">41,000-50,000</option>
+                                                <option value="More than 50,000">More than 50,000</option>
                                             </optgroup>
                                         </select></div><!-- End: salary range -->
                                 </div><!-- End: fields -->
@@ -248,7 +248,7 @@
                     <!-- Start: house declaration -->
                     <div class="row m-0">
                         <div class="col col-12 p-0">
-                            <div class="d-xxl-flex align-items-xxl-center marker rounded-4"><span class="markerText ms-3">House Declaration</span></div>
+                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center marker rounded-4"><span class="markerText ms-3">House Declaration</span></div>
                         </div>
                     </div><!-- End: house declaration -->
                     <!-- Start: housedecla -->
@@ -273,8 +273,8 @@
                                 </select></div><!-- End: EName -->
                             <!-- Start: remarks -->
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel">Remarks<br></label>
-                                <div class="dropdown show w-100"><button class="btn dropdown-toggle text-start d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xl-end align-items-xl-center remarkDrop w-100" aria-expanded="true" data-bs-toggle="dropdown" type="button">&nbsp; &nbsp; &nbsp;</button>
-                                    <div class="dropdown-menu show w-100 p-2" data-bs-popper="none">
+                                <div class="dropdown w-100"><button class="btn dropdown-toggle text-end d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-evenly justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center align-items-lg-center align-items-xl-center remarkDrop w-100" aria-expanded="false" data-bs-toggle="dropdown" type="button">&nbsp; &nbsp; &nbsp;</button>
+                                    <div class="dropdown-menu w-100 p-2">
                                         <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Solo Parent</label></div>
                                         <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Teenage Pregnancy</label></div>
                                     </div>
@@ -283,11 +283,11 @@
                             <!-- Start: no. members -->
                             <div class="col col-lg-2 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel">No.&nbsp; of Family Members<br></label><select class="form-select">
                                     <optgroup label="Family Members">
-                                        <option value="1">Less than 4</option>
-                                        <option value="2">5 to 10</option>
-                                        <option value="3">11 to 15</option>
-                                        <option value="4">16 to 18</option>
-                                        <option value="5">More than 20</option>
+                                        <option value="Less than 5">Less than 5</option>
+                                        <option value="5 to 10">5 to 10</option>
+                                        <option value="11 to 15">11 to 15</option>
+                                        <option value="16 to 18">16 to 18</option>
+                                        <option value="More than 20">More than 20</option>
                                     </optgroup>
                                 </select></div><!-- End: no. members -->
                         </div><!-- End: fields -->

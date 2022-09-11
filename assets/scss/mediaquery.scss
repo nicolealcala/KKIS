@@ -23,7 +23,7 @@
             font-size: 1.5em;
         }
         
-        .subTitle{
+        .markerText, .subTitle{
             font-size: 1em;
         }
         .docPreview {
@@ -41,8 +41,9 @@
         margin: 3em 0 0 0;
         padding: 1.5em;
         
-        // .optionCol {
-        //     margin: 2em 0;
-        // }
+        .eStatus {
+            margin: 0;
+            padding: 0;
+        }
     }  
 }

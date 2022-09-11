@@ -20,7 +20,7 @@
   .content .title {
     font-size: 1.5em;
   }
-  .content .subTitle {
+  .content .markerText, .content .subTitle {
     font-size: 1em;
   }
   .content .docPreview {
@@ -34,5 +34,9 @@
   .content {
     margin: 3em 0 0 0;
     padding: 1.5em;
+  }
+  .content .eStatus {
+    margin: 0;
+    padding: 0;
   }
 }
