@@ -1,17 +1,6 @@
-* {
-  font: 100% DM Sans, sans serif;
-}
-
 .documentHeadingRow {
   width: 100%;
   margin: 0;
-}
-.documentHeadingRow .title {
-  width: 100%;
-  height: 100%;
-  color: #393737;
-  font-weight: 800;
-  font-size: 3em;
 }
 
 .divNav {
@@ -28,11 +17,13 @@
   height: 98%;
   overflow: hidden;
   border-radius: 15em;
-  background-color: #F3CB69;
+  background-color: white;
 }
 .divNav .linkContainer .optionLink {
+  font: 100% DM Sans, sans-serif;
   text-decoration: none;
-  color: white;
+  color: #219EBC;
+  font-weight: bold;
 }
 
 .qrBtn {
@@ -53,6 +44,7 @@
   margin: 2em 0;
 }
 .referral .subTitle {
+  font: 100% DM Sans, sans-serif;
   font-size: 1.5em;
   color: #393737;
   font-weight: 500;
@@ -76,7 +68,7 @@
 }
 
 .fieldLabel {
-  font: DM Sans, sans serif;
+  font: Poppins, sans-serif;
   color: #909090;
   margin-bottom: 0.2em;
   font-weight: 500;

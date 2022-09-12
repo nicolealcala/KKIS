@@ -1,4 +1,4 @@
-$font-stack: DM Sans, sans serif;
+$font-stack: Poppins, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
@@ -8,9 +8,6 @@ $light-yellow: #F3CB69;
 $text: #393737;
 
 
-* {
-    font: 100% $font-stack;
-}
 #modalView {
     margin: auto;
     color: $text;

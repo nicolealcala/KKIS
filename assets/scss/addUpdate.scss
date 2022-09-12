@@ -1,0 +1,83 @@
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+.content {
+    // padding: 4em;
+    // margin-left: 5em;
+    // height: auto;
+    // background-color: var(--bs-white);
+    
+    .headContainer{
+        width: 100%;
+        
+        .backBtn {
+            border: none;
+            border-radius: 50%;
+            background-color: $light-blue;
+            padding: 0.3em;
+        
+            .backIcon{
+                color: white;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        .title {
+            font: $font-stack-sub;
+        }
+    }
+    
+    .fieldLabel {
+        color: #909090;
+        font-weight: normal;
+    }
+}
+
+.markerAdd {
+    height: 2em;
+    background-color: $mid-blue;
+}
+
+.markerUpdate {
+    height: 2em;
+    background-color: #3361AC;
+}
+
+.markerText{
+        color: white;
+        font-size: 1.3em;
+    }
+
+.disabilityCheck {
+    display: block;
+    height: 1.3em;
+}
+.statusCheck {
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.remarkDrop {
+    background-color: none;
+    border: 1px solid #D1D3E2;
+}
+
+.controlBtn {
+    background-color: red;
+    width: 6em;
+    color: white;
+}
+
+#submitBtn {
+    background-color: blue;
+}
+

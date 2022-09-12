@@ -1,4 +1,5 @@
-$font-stack: DM Sans, sans serif;
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
@@ -6,10 +7,6 @@ $dark-blue: #04496A;
 $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
-
-*{
-    font: 100% $font-stack;
-}
 
 // .stretched-link::after{
 //     position: absolute;
@@ -33,13 +30,13 @@ $text: #393737;
     width: 100%;
     margin: 0;
     
-    .title {
-        width: 100%;
-        height: 100%;
-        color: $text;
-        font-weight: 800;
-        font-size: 3em;
-    }
+    // .title {
+    //     width: 100%;
+    //     height: 100%;
+    //     color: $text;
+    //     font-weight: 800;
+    //     // font-size: 3em;
+    // }
 }
 
 //Small Nav
@@ -57,11 +54,14 @@ $text: #393737;
         height: 98%;
         overflow: hidden;
         border-radius: 15em;
-        background-color: $light-yellow;
+        background-color: white;
         
         .optionLink {
+            font: 100% $font-stack-sub;
             text-decoration: none;
-            color: white;
+            color: $mid-blue;
+            font-weight: bold
+            
         }
     }
 }
@@ -84,6 +84,7 @@ $text: #393737;
     margin: 2em 0;
     
     .subTitle {
+        font: 100% $font-stack-sub;
         font-size: 1.5em;
         color: $text;
         font-weight: 500;
