@@ -26,7 +26,9 @@ $text: #393737;
     }
     
     #titleUpdateEntry {
+        margin: auto;
         margin-left: 0.3em;
+  
     }
     .fieldLabel, .optionLink{
         white-space: nowrap; 
@@ -88,10 +90,6 @@ $text: #393737;
         
         .title {
             font-size: 1.5em;
-        }
-        
-        #titleAddEntry {
-            margin-left: 0.5em;
         }
         
         .backBtn {

@@ -15,6 +15,7 @@
   }
 
   #titleUpdateEntry {
+    margin: auto;
     margin-left: 0.3em;
   }
 
@@ -73,9 +74,6 @@
   }
   .content .title {
     font-size: 1.5em;
-  }
-  .content #titleAddEntry {
-    margin-left: 0.5em;
   }
   .content .backBtn {
     width: 1.5em;
