@@ -19,6 +19,10 @@
   color: #909090;
   font-weight: normal;
 }
+.content .userInput {
+  color: #393737;
+  font-size: auto;
+}
 
 .markerAdd {
   height: 2em;

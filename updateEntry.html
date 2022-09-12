@@ -42,10 +42,10 @@
                     </div>
                     <form>
                         <div class="row m-0 my-3 gy-3 gx-3">
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control w-100" type="text"></div>
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Middle Name</label><input class="form-control" type="text"></div>
-                            <div class="col col-lg-3 col-md-3 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control" type="text"></div>
-                            <div class="col col-lg-1 col-md-3 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select">
+                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control userInput text-uppercase w-100" type="text" autofocus="" required=""></div>
+                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Middle Name</label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
+                            <div class="col col-lg-3 col-md-3 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
+                            <div class="col col-lg-1 col-md-3 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select userInput text-uppercase w-100">
                                     <optgroup label="Extension">
                                         <option value="Jr." selected="">Jr.</option>
                                         <option value="Sr.">Sr.</option>
@@ -54,7 +54,7 @@
                                         <option value="III">III</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-2 col-md-2 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Gender Preference<br></label><select class="form-select">
+                            <div class="col col-lg-2 col-md-2 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Gender Preference<br></label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Gender">
                                         <option value="Man" selected="">Man</option>
                                         <option value="Woman">Woman</option>
@@ -63,18 +63,18 @@
                                         <option value="Prefer not to say">Prefer not to say</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthday</label><input class="form-control" type="date"></div>
-                            <div class="col col-lg-3 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthplace</label><input class="form-control" type="text"></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Marital Status<br></label><select class="form-select">
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthday</label><input class="form-control userInput text-uppercase w-100" type="date" required=""></div>
+                            <div class="col col-lg-3 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthplace</label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Marital Status<br></label><select class="form-select userInput text-capitalize w-100" required="">
                                     <optgroup label="Marital Status">
-                                        <option value="Single" selected="">Single</option>
+                                        <option value="Single">Single</option>
                                         <option value="Married">Married</option>
                                         <option value="Live-in">Live-in</option>
                                         <option value="Separated">Separated</option>
                                         <option value="Annuled">Annuled</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Religion<br></label><select class="form-select">
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Religion<br></label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Choose religion">
                                         <option value="Atheist" selected="">Atheist</option>
                                         <option value="Buddhist">Buddhist</option>
@@ -82,7 +82,7 @@
                                         <option value="Muslim">Muslim</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-3 col-md-3 col-sm-6 col-12"><label class="form-label d-lg-flex align-items-lg-center fieldLabel w-100">Disability</label><select class="form-select">
+                            <div class="col col-lg-3 col-md-3 col-sm-6 col-12"><label class="form-label d-lg-flex align-items-lg-center fieldLabel w-100">Disability</label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Disability Type">
                                         <option value="None" selected="">None</option>
                                         <option value="Communication disability">Communication disability</option>
@@ -94,15 +94,15 @@
                                         <option value="Vission disability">Vission disability</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Contact No.</label><input class="form-control" type="text" placeholder="09XXXXXXXXX"></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Voter Type</label><select class="form-select">
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Contact No.</label><input class="form-control userInput text-uppercase w-100" type="text" placeholder="09XXXXXXXXX" required="" inputmode="numeric"></div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Voter Type</label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Voter Type">
                                         <option value="Registered" selected="">Registered</option>
                                         <option value="Unregistered">Unregistered</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-3 col-md-6 col-sm-8 col-12"><label class="form-label fieldLabel w-100">House No./Street/Subdivision<br></label><input class="form-control" type="text"></div>
-                            <div class="col col-lg-2 col-md-2 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Purok</label><select class="form-select">
+                            <div class="col col-lg-3 col-md-6 col-sm-8 col-12"><label class="form-label fieldLabel w-100">House No./Street/Subdivision<br></label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
+                            <div class="col col-lg-2 col-md-2 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Purok</label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Purok">
                                         <option value="1" selected="">1</option>
                                         <option value="2">2</option>
@@ -113,7 +113,7 @@
                                         <option value="7">7</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Organization (if any)<br></label><input class="form-control" type="text"></div>
+                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Organization (if any)<br></label><input class="form-control userInput text-uppercase w-100" type="text"></div>
                         </div>
                     </form>
                 </div>
@@ -123,14 +123,14 @@
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerUpdate rounded-4 m-0" id="markerEduc"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
                             <form class="eForm">
                                 <div class="row m-0 my-3 gy-3 gx-3">
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Student Status</label><select class="form-select educInput">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Student Status</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Educational Status">
                                                 <option value="Enrolled" selected="">Enrolled</option>
                                                 <option value="Out-of-school Youth">Out-of-school Youth</option>
                                                 <option value="Working student">Working student</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Level</label><select class="form-select educInput">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Level</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Educational Level">
                                                 <option value="Pre-elementary" selected="">Pre-elementary</option>
                                                 <option value="Elementary">Elementary</option>
@@ -142,15 +142,15 @@
                                                 <option value="Graduate Studies">Graduate Studies</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Public/Private</label><select class="form-select educInput">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Public/Private</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="School Type">
                                                 <option value="Private" selected="">Private</option>
                                                 <option value="Public">Public</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Name of School</label><input class="form-control educInput" type="text"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Occupation</label><input class="form-control educInput" type="text"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Salary Range</label><select class="form-select educInput">
+                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Name of School</label><input class="form-control userInput text-uppercase w-100" type="text"></div>
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Occupation</label><input class="form-control userInput text-uppercase w-100" type="text"></div>
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Salary Range</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Salary Range">
                                                 <option value="Less than 10,000" selected="">Less than 10,000</option>
                                                 <option value="10,000-20,000">10,000-20,000</option>
@@ -167,20 +167,20 @@
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerUpdate rounded-4" id="markerEmploy"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Employment Status</span></div>
                             <form class="eForm">
                                 <div class="row m-0 my-3 gy-3 gx-3">
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Employee Status</label><select class="form-select employInput">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Employee Status</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Educational Status">
                                                 <option value="Employed" selected="">Employed</option>
                                                 <option value="Unemployed">Unemployed</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Employee Type</label><select class="form-select employInput">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Employee Type</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Educational Level">
                                                 <option value="Regular" selected="">Regular</option>
                                                 <option value="Contractual">Contractual</option>
                                                 <option value="Job Order">Job Order</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Public/Private</label><select class="form-select employInput">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Public/Private</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="School Type">
                                                 <option value="Private" selected="">Private</option>
                                                 <option value="Public">Public</option>
@@ -188,7 +188,7 @@
                                         </select></div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Name of Employer/Company/Business</label><input class="form-control" type="text"></div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Occupation</label><input class="form-control" type="text"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Salary Range</label><select class="form-select">
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Salary Range</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Salary Range">
                                                 <option value="Less than 10,000" selected="">Less than 10,000</option>
                                                 <option value="10,000-20,000">10,000-20,000</option>
@@ -211,10 +211,10 @@
                     </div>
                     <form>
                         <div class="row m-0 my-3 gy-3 gx-3">
-                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control w-100" type="text"></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Middle Name</label><input class="form-control" type="text"></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control" type="text"></div>
-                            <div class="col col-lg-1 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select">
+                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control userInput text-uppercase w-100" type="text"></div>
+                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Middle Name</label><input class="form-control userInput text-uppercase w-100" type="text"></div>
+                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control userInput text-uppercase w-100" type="text"></div>
+                            <div class="col col-lg-1 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select userInput text-uppercase w-100">
                                     <optgroup label="Extension">
                                         <option value="1" selected="">Jr.</option>
                                         <option value="2">Sr.</option>
@@ -231,7 +231,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel w-100">No.&nbsp; of Family Members<br></label><select class="form-select">
+                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12"><label class="form-label fieldLabel w-100">No.&nbsp; of Family Members<br></label><select class="form-select userInput text-uppercase w-100">
                                     <optgroup label="Family Members">
                                         <option value="Less than 5">Less than 5</option>
                                         <option value="5 to 10">5 to 10</option>

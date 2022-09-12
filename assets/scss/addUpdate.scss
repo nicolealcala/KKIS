@@ -39,6 +39,11 @@ $text: #393737;
         color: #909090;
         font-weight: normal;
     }
+    
+    .userInput {
+        color: $text;
+        font-size: auto;
+    }
 }
 
 .markerAdd {
