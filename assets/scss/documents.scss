@@ -58,6 +58,7 @@ $text: #393737;
     }
 }
 .qrBtn {
+    border: none;
     border-radius: 0 15em 15em 0;
     width: 10%;
     padding: 5px;
@@ -71,7 +72,7 @@ $text: #393737;
     }
 }
 
-.referral {
+.documentBody  {
     padding: 0;
     margin: 2em 0;
     
@@ -111,7 +112,6 @@ font-weight: 500;
 
 .userInput {
 height: 2.5em;
-// width: 100%;
 }
 
 .idFilter {

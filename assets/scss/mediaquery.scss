@@ -32,7 +32,7 @@ $text: #393737;
     }
     .fieldLabel, .optionLink{
         white-space: nowrap; 
-        width: 90%; 
+        width: 85%; 
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -52,7 +52,7 @@ $text: #393737;
 
 @media only screen and (min-width: 769px) and (max-width: 1920px){
     .content{
-        margin: 4em 4em 2em 8em;
+        margin: 2em 4em 2em 8em;
         padding: 1em;
     }
     
