@@ -1,29 +1,38 @@
-/*NOTES:
-    -yung back button, hindi pa responsive
-    -di ko pa natatry na nasosort yung data na nasa list
-    -not yet 100% responsive table (nagkicreate mng horizontal scrolling)
-*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
 
 @font-face {
-    font-family: DM Sans, sans serif;
-    src: url(https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap);
+    font-family: "Poppins";
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
 }
 
-$mid-blue: #219ebc;
-$mid-yellow: #ffb703;
-$light-blue: #8ecae6;
-$dark-blue: #04496a;
-$dark-yellow: #fb8500;
-$light-yellow: #f3cb69;
-$text: #393737;
-$font-stack: DM Sans;
+@font-face {
+    font-family: "DM Sans";
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+}
 
-* {
-    font: $font-stack;
+$headings-font: "Poppins";
+$content-font:"DM Sans";
+$primary-color: #04496A;
+$secondary-color:#FFB703;
+$true-blue:#219EBC;
+$sky-blue:#8ECAE6;
+$tangerine:#FB8500;
+$mellow-yellow:#E9C46A;
+$text: #393737;
+
+*{
+    h1{
+        font-family: $headings-font;
+    }
+
+    p{
+        font-family: $content-font;
+    }
 }
 
 .sidenav {
-    background-color: $dark-blue;
+    background-color: $primary-color;
 }
 
 .gradient-line {
@@ -39,7 +48,7 @@ $font-stack: DM Sans;
     .backBtn {
         border: none;
         border-radius: 100%;
-        background-color: $light-blue;
+        background-color: $sky-blue;
         width: 50%;
         height: auto;
         padding: 0.3em;
@@ -65,6 +74,7 @@ $font-stack: DM Sans;
     }
 }
 
+// SORT BUTTON
 .sort-panel {
     display: flex;
     position: relative;
@@ -87,7 +97,7 @@ $font-stack: DM Sans;
         background-color: #e1e1e1;
         border: #c8c8c8;
         border-radius: 0.5em;
-        font: $font-stack;
+        font-family: $content-font;
     }
     .select:focus {
         outline: none;
@@ -95,8 +105,10 @@ $font-stack: DM Sans;
     }
 }
 
+// TABLE FORM
 .heading {
     margin-left: 20px;
+    font-family: $headings-font;
 }
 
 .tbl-section {
@@ -142,6 +154,8 @@ thead{
     /*margin-right: 10px;*/
 }
 
+
+// START OF MEDIA QUERY
 @media only screen and (max-width: 1200px) {
     .sidenav {
         display: none;

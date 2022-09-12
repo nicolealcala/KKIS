@@ -1,4 +1,18 @@
-$font-stack: DM Sans, sans serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
+
+@font-face {
+    font-family: "Poppins";
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+}
+
+$headings-font: "Poppins";
+$content-font:"DM Sans";
 $primary-color: #04496A;
 $secondary-color:#FFB703;
 $true-blue:#219EBC;
@@ -8,8 +22,14 @@ $mellow-yellow:#E9C46A;
 
 *{
     box-sizing: border-box;
+
+    h1{
+        font-family: $headings-font;
+        color: $tangerine;
+    }
+
     p{
-        font:$font-stack;
+        font-family:$content-font;
     }
 
     a{
@@ -19,15 +39,16 @@ $mellow-yellow:#E9C46A;
     overflow: hidden;
 }
 
+// LEFT CONTENT
 #left-panel{
     margin-left:6em;
-    
+
     #kkis-logo {
-      height: 60px;
-      margin: 1em 0em 1em 0em;
-    }
-    
-    #title{
+        height: 60px;
+        margin: 1em 0em 1em 0em;
+      }
+
+      #title{
         margin-top: -2em;
 
         h1{
@@ -43,6 +64,7 @@ $mellow-yellow:#E9C46A;
         }
     }
 
+// LOGIN FORM STYLESHEET
     #form-panel{
         margin-top:5em;
 
@@ -54,26 +76,27 @@ $mellow-yellow:#E9C46A;
             box-shadow:inset 0 0 5px #C6C6C6;
             margin-bottom: 2em;
         }
-        
+
         p{
             color: #4D5A4D;
             text-align: left;
             font-size: 1.5rem;
         }
-        
+// LOGIN BUTTON
         #login-btn{
             margin-top:3em;
-            
+
             button{
                 background-color:$secondary-color;
                 font-weight:bold;
-                font:$font-stack;
+                font-family:$content-font;
                 height: 3em;
                 border-radius:1.5em;
                 border: none;
                 border-color: transparent;
 
                 a{
+                    text-decoration: none;
                     color: #fff;
                     font-size: 1.25rem;
                 }
@@ -82,7 +105,7 @@ $mellow-yellow:#E9C46A;
     }
 }
 
-
+// SIDE PANEL IMAGE - GRADIENT PANEL
 .side-img{
     padding: 0em;
     margin-left: -50em;
@@ -95,11 +118,11 @@ $mellow-yellow:#E9C46A;
         margin-left: -30px;
         //float:right;
         height: 910px;
-    --bs-gutter-x: 0rem;
-    
+        --bs-gutter-x: 0rem;
     }
 }
 
+// START OF MEDIA QUERY
 @media (max-width:1200px) {
     #left-panel{
         #title{
@@ -120,8 +143,7 @@ $mellow-yellow:#E9C46A;
     }
 }
 
-@media (max-width:992px) {
-
+@media (max-width:992px){
     #left-panel{
         #title{
             margin-top:-3em;
@@ -129,6 +151,7 @@ $mellow-yellow:#E9C46A;
                 width:50%;
             }
         }
+
         #form-panel{
             #div-btn{
                 margin-top:3em;
@@ -145,6 +168,7 @@ $mellow-yellow:#E9C46A;
     *{
         overflow: visible;
     }
+
     #side-panel{
         display: none;
         visibility: hidden;
@@ -160,13 +184,13 @@ $mellow-yellow:#E9C46A;
             }
         }
     }
-    
 }
 
 @media (max-width: 576px){
     #side-panel{
         display:none;
     }
+
     #left-panel{
         margin-left:1.5em;
         
@@ -174,10 +198,11 @@ $mellow-yellow:#E9C46A;
           height: 50px;
           margin: 1em 0em 1em 0em;
         }
-        
+
         #title{
             margin-top:-2em;
         }
+
         #form-panel{
             margin-top:2em;
             
@@ -190,18 +215,18 @@ $mellow-yellow:#E9C46A;
                 width:100%;
                 height:2em;
             }
-            
+
             p{
                 color: #4D5A4D;
                 text-align: left;
                 font-size:15px;
             }
-            
+
             #login-btn{
-                margin-top:1em;
+                margin-top: 1em;
 
                 button{
-                    font:$font-stack;
+                    font-family: $content-font;
                     height: 2.5em;
                     border-radius:1.25em;
                 }
@@ -211,10 +236,6 @@ $mellow-yellow:#E9C46A;
 }
 
 @media (max-width: 360px){
-    // #side-panel{
-    //     display:none;
-    // }
-    
     #left-panel{
         margin-left:1em;
         
@@ -222,7 +243,7 @@ $mellow-yellow:#E9C46A;
           height: 40px;
           margin: .5em 0em .5em 0em;
         }
-        
+
         #title{
             margin-top:-2em;
 
@@ -233,20 +254,20 @@ $mellow-yellow:#E9C46A;
                 width:50%;
             }
         }
+
         #form-panel{
             margin-top:2em;
-            
-             input{
+
+            input{
                 background-color: #EBEBEB;
                 border: none;
                 -webkit-box-shadow:inset 0 0 5px #C6C6C6;
                 -moz-box-shadow:inset 0 0 5px #C6C6C6;
                 box-shadow:inset 0 0 5px #C6C6C6;
-                width:100%;
-                height:2em;
-                margin-left: 2em;
+                width: 100%;
+                height: 2em;
             }
-            
+
             p{
                 color: #4D5A4D;
                 text-align: left;
@@ -254,14 +275,14 @@ $mellow-yellow:#E9C46A;
                 width:10em;
                 margin-right:4em;
             }
-            
+
             #login-btn{
                 margin-top:-1em;
                 width:10em;
                 font-size: 1rem;
 
                 button{
-                    font:$font-stack;
+                    font-family: $content-font;
                     height: 2.5em;
                     border-radius:1.25em;
                 }

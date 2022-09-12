@@ -1,4 +1,18 @@
-$font-stack: DM Sans, sans serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
+
+@font-face {
+    font-family: "Poppins";
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+}
+
+$headings-font: "Poppins";
+$content-font:"DM Sans";
 $primary-color: #04496A;
 $secondary-color:#FFB703;
 $true-blue:#219EBC;
@@ -7,10 +21,17 @@ $tangerine:#FB8500;
 $mellow-yellow:#E9C46A;
 
 *{
-    font:$font-stack;
 
     a{
         text-decoration: none;
+    }
+
+    h1{
+        font-family: $headings-font;
+    }
+
+    p{
+        font-family:$content-font;
     }
 }
 
@@ -19,6 +40,7 @@ $mellow-yellow:#E9C46A;
     
     h1{
         font-size: 50px;
+        color: #393737;
     }
 }
 
@@ -35,7 +57,7 @@ $mellow-yellow:#E9C46A;
     }
     
     #texts{
-        padding-top:1rem;
+        padding-top:1.5rem;
         
         h1{
             color:#fff;
@@ -50,6 +72,7 @@ $mellow-yellow:#E9C46A;
             color:#fff;
             padding-left:1.5rem;
             padding-right:1.5rem;
+            margin-top: -.5em;
             font-size: 22px;
             //float:left;
         }
@@ -139,7 +162,7 @@ $mellow-yellow:#E9C46A;
             background-color: $primary-color;
             
             #dashboard-img{
-                padding:2em 0em 0em 0em;
+                padding:5.25em 0em 0em 0em;
             }
         }
     }
