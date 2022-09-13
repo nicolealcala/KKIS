@@ -73,7 +73,7 @@
   background-color: #04496A;
 }
 .qrBtn .qrIcon {
-  width: 70%;
+  width: 60%;
   height: auto;
   color: white;
 }
@@ -119,4 +119,23 @@
 
 .idFilter {
   width: 30%;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #dcdcdc;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #808080;
+  /* creates padding around scroll thumb */
 }

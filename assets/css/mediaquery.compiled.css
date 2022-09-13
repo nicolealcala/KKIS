@@ -106,3 +106,15 @@
     margin-lft: 0;
   }
 }
+@media only screen and (max-width: 300px) {
+  .divNav .slider {
+    width: 60%;
+  }
+
+  .fieldLabel, .optionLink {
+    white-space: nowrap;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
