@@ -98,7 +98,7 @@
     margin: 3em 0 0 0;
     padding: 1.5em;
   }
-  .content .markerText, .content .subTitle {
+  .content .markerText, .content .subTitle, .content .categoryCheck {
     font-size: 1em;
   }
   .content #kkidMarker, .content #referralMarker {

@@ -5,17 +5,32 @@ linkScholar.addEventListener("click", documentReferral);
 const linkID = document.getElementById('linkKkid');
 linkID.addEventListener("click", documentID);
 
+var kkidDiv = document.getElementById('kkidPage');
+
+kkidDiv.style.display='none';
+
+var referralDiv = document.getElementById('referralPage');
+
+// Loop through the links and add the active class to the current/clicked button
+for (var i = 0; i < menuLink.length; i++) {
+  menuLink[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 //Onclick functions
 function documentReferral(){
-    document.getElementById ('referralPage').style.display='';
-    document.getElementById('kkidPage').style.display='none';
+   referralDiv.style.display='';
+   kkidDiv.style.display='none';
 
 }
 function documentID(){
-    document.getElementById('referralPage').style.display='none';
-    document.getElementById('kkidPage').style.display='';
+   referralDiv.style.display='none';
+    kkidDiv.style.display='';
     document.getElementById('rowBtn').style.marginTop='50px';
 }
+
 
 //for KKID
 var purokChecker = document.getElementById('checkPurok');
