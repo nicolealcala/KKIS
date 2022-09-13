@@ -21,7 +21,7 @@
 
   .fieldLabel, .optionLink {
     white-space: nowrap;
-    width: 85%;
+    width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
   }

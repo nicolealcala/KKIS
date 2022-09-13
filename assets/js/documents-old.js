@@ -11,20 +11,18 @@ kkidDiv.style.display='none';
 
 var referralDiv = document.getElementById('referralPage');
 
-//Jquery
-$(document).ready(function() {
-    $(".linkContainer").on('click', function(){
-        $(".linkContainer").removeClass("active");
-        $(this).addClass("active");
-    })
-});
-
-
+// Loop through the links and add the active class to the current/clicked button
+for (var i = 0; i < menuLink.length; i++) {
+  menuLink[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 //Onclick functions
 function documentReferral(){
    referralDiv.style.display='';
    kkidDiv.style.display='none';
-     document.getElementById('rowBtn').style.marginTop='30px';
 
 }
 function documentID(){

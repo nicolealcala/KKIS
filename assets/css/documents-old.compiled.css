@@ -6,27 +6,17 @@
 .divNav {
   background-color: #219EBC;
   border-radius: 15em 0 0 15em;
-  height: 100%;
+  height: auto;
   width: 90%;
   border: none;
-  padding: 1px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 20px auto;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
 }
 .divNav .linkContainer {
-  position: relative;
+  height: inherit;
+  padding: 0.5em;
+  width: 50%;
+  height: 98%;
+  overflow: hidden;
   border-radius: 15em;
-  width: 100%;
-  margin: 2px 0;
-  cursor: pointer;
-  z-index: 5;
-  transition: 0.3s;
 }
 .divNav .linkContainer .optionLink {
   font: 100% DM Sans, sans-serif;
@@ -35,46 +25,17 @@
   font-weight: normal;
 }
 
-.divNav .slider {
-  margin: 3px 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15em;
-  background: #f88a8a;
-  height: 85%;
-  width: 49.3%;
-  transition: 0.3s;
-  z-index: 3;
-}
-
-.linkContainer:nth-child(1).active ~ .slider {
-  transform: translateX(0);
-}
-
-.linkContainer:nth-child(2).active ~ .slider {
-  transform: translateX(100%);
-}
-
-.linkContainer:nth-child(1):hover ~ .slider {
-  transform: translateX(0%);
-}
-
-.linkContainer:nth-child(2):hover ~ .slider {
-  transform: translateX(100%);
-}
-
 .qrBtn {
   border: none;
   border-radius: 0 15em 15em 0;
   width: 10%;
   padding: 5px;
-  height: auto;
+  height: inherit;
   background-color: #04496A;
 }
 .qrBtn .qrIcon {
-  width: 70%;
-  height: auto;
+  width: 100%;
+  height: 70%;
   color: white;
 }
 
