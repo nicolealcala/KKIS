@@ -46,14 +46,13 @@ $text: #393737;
         height: 98%;
         overflow: hidden;
         border-radius: 15em;
-        background-color: white;
+        // background-color: white;
         
         .optionLink {
             font: 100% $font-stack-sub;
             text-decoration: none;
-            color: $mid-blue;
-            font-weight: bold
-            
+            color: white;
+            font-weight: normal;
         }
     }
 }

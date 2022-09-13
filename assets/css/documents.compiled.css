@@ -17,13 +17,12 @@
   height: 98%;
   overflow: hidden;
   border-radius: 15em;
-  background-color: white;
 }
 .divNav .linkContainer .optionLink {
   font: 100% DM Sans, sans-serif;
   text-decoration: none;
-  color: #219EBC;
-  font-weight: bold;
+  color: white;
+  font-weight: normal;
 }
 
 .qrBtn {
