@@ -17,24 +17,31 @@
 <body id="page-top">
     <div id="wrapper">
         <div class="container-fluid content">
-            <div class="row documentHeadingRow p-0 m-0" style="position: sticky;">
-                <div class="col d-xxl-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <h1 class="d-xxl-flex title" id="titleAddEntry">Add Entry</h1>
+            <div class="row documentHeadingRow p-0 m-0">
+                <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-12 p-0">
+                    <div class="d-flex align-items-center justify-content-xxl-start align-items-xxl-center headContainer"><button class="btn border rounded-circle border-0 d-flex d-sm-flex d-xxl-flex justify-content-center justify-content-sm-center align-items-sm-center justify-content-md-center justify-content-lg-center backBtn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon" style="width: auto;height: auto;font-size: 28px;">
+                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
+                            </svg></button>
+                        <div class="col-xxl-4 d-xxl-flex align-self-center align-items-xxl-center p-0">
+                            <h1 class="d-xxl-flex title pt-1 w-auto" id="titleUpdateEntry">Update Entry</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row m-0">
-                <div class="col p-0"><img src="assets/img/misc/hr.svg"></div>
+                <div class="col p-0 mt-2"><img src="assets/img/misc/hr.svg"></div>
             </div>
             <div class="generateBody">
                 <div class="sectionDiv">
                     <div class="row m-0 w-100">
                         <div class="col col-12 p-0">
-                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerAdd rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
+                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerUpdate rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
                         </div>
                     </div>
                     <form>
                         <div class="row m-0 my-3 gy-3 gx-3">
-                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
+                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">First Name</label><input class="form-control userInput text-uppercase w-100" type="text" autofocus="" required=""></div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Middle Name</label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Last Name<br></label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Extension<br></label><select class="form-select userInput text-uppercase w-100">
@@ -57,9 +64,9 @@
                                 </select></div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthday</label><input class="form-control userInput text-uppercase w-100" type="date" required=""></div>
                             <div class="col col-lg-3 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Birthplace</label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Marital Status<br></label><select class="form-select userInput text-uppercase w-100" required="">
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Marital Status<br></label><select class="form-select userInput text-capitalize w-100" required="">
                                     <optgroup label="Marital Status">
-                                        <option value="Single" selected="">Single</option>
+                                        <option value="Single">Single</option>
                                         <option value="Married">Married</option>
                                         <option value="Live-in">Live-in</option>
                                         <option value="Separated">Separated</option>
@@ -86,15 +93,15 @@
                                         <option value="Vission disability">Vission disability</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Contact No.</label><input class="form-control userInput text-uppercase w-100" type="text" placeholder="09XXXXXXXXX"></div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Voter Type</label><select class="form-select userInput text-uppercase w-100">
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Contact No.</label><input class="form-control userInput text-uppercase w-100" type="text" placeholder="09XXXXXXXXX" required="" inputmode="numeric"></div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Voter Type</label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Voter Type">
                                         <option value="Registered" selected="">Registered</option>
                                         <option value="Unregistered">Unregistered</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="col col-lg-3 col-md-6 col-sm-8 col-12"><label class="form-label fieldLabel w-100">House No./Street/Subdivision<br></label><input class="form-control userInput text-uppercase w-100" type="text"></div>
-                            <div class="col col-lg-2 col-md-2 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Purok</label><select class="form-select userInput text-uppercase w-100">
+                            <div class="col col-lg-3 col-md-6 col-sm-8 col-12"><label class="form-label fieldLabel w-100">House No./Street/Subdivision<br></label><input class="form-control userInput text-uppercase w-100" type="text" required=""></div>
+                            <div class="col col-lg-2 col-md-2 col-sm-4 col-12"><label class="form-label fieldLabel w-100">Purok</label><select class="form-select userInput text-uppercase w-100" required="">
                                     <optgroup label="Purok">
                                         <option value="1" selected="">1</option>
                                         <option value="2">2</option>
@@ -110,9 +117,9 @@
                     </form>
                 </div>
                 <div class="sectionDiv">
-                    <div class="row m-0 gx-3 p-0" id="eRow">
+                    <div class="row m-0 gx-3 p-0">
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
-                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerAdd rounded-4 m-0" id="markerEduc"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
+                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerUpdate rounded-4 m-0" id="markerEduc"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Educational Status</span></div>
                             <form class="eForm">
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Student Status</label><select class="form-select userInput text-uppercase w-100">
@@ -156,7 +163,7 @@
                             </form>
                         </div>
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="employCol">
-                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerAdd rounded-4" id="markerEmploy"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Employment Status</span></div>
+                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerUpdate rounded-4" id="markerEmploy"><input type="checkbox" class="statusCheck ms-3"><span class="markerText ms-2">Employment Status</span></div>
                             <form class="eForm">
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label fieldLabel w-100">Employee Status</label><select class="form-select userInput text-uppercase w-100">
@@ -180,7 +187,7 @@
                                         </select></div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12"><label class="form-label fieldLabel w-100">Name of Employer/Company/Business</label><input class="form-control" type="text"></div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Occupation</label><input class="form-control" type="text"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Salary Range</label><select class="form-select">
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12"><label class="form-label fieldLabel w-100">Salary Range</label><select class="form-select userInput text-uppercase w-100">
                                             <optgroup label="Salary Range">
                                                 <option value="Less than 10,000" selected="">Less than 10,000</option>
                                                 <option value="10,000-20,000">10,000-20,000</option>
@@ -198,7 +205,7 @@
                 <div class="sectionDiv">
                     <div class="row m-0">
                         <div class="col col-12 p-0">
-                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerAdd rounded-4"><span class="markerText ms-3">House Declaration</span></div>
+                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerUpdate rounded-4"><span class="markerText ms-3">House Declaration</span></div>
                         </div>
                     </div>
                     <form>
