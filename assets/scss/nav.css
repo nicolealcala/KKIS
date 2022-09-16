@@ -1,106 +1,121 @@
-* {
-  margin: 0;
-  padding: 0;
+@media screen and (min-width: 1367px) {
+  #checkSide:checked ~ .divSideNav {
+    width: 309px;
+  }
+  a {
+    font-size: 25px;
+  }
+  a .divSideTab {
+    height: 61px;
+  }
+  #divSideProfile {
+    font-size: 25px;
+    margin-top: 430px;
+  }
 }
 
-body {
-  background: #FFFFFF;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+  #checkSide:checked ~ .divSideNav {
+    width: 250px;
+  }
+  a {
+    font-size: 18px;
+  }
+  a .divSideTab {
+    height: 50px;
+  }
+  #divSideProfile {
+    font-size: 18px;
+    margin-top: 125px;
+  }
 }
-body .sidebar {
-  background: #04496A;
-  height: 100%;
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .divSideNav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .divSideNav {
+    display: none;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body hr {
+  margin: 0px;
+  height: 3px;
+  border-width: 0px;
+  color: #787878;
+  background-color: #787878;
+  line-height: 0px;
+}
+
+body #checkSide {
+  display: none;
+}
+
+body .divSideNav {
   width: 74px;
-  transition: all 0.5s ease;
-}
-@media screen and (min-width: 1367px) {
-  body .sidebar .divProfile {
-    margin-top: 415px;
-  }
-  body .sidebar #listLogOut {
-    margin-top: 520px;
-  }
-}
-@media screen and (max-width: 1366px) {
-  body .sidebar .divProfile {
-    margin-top: 115px;
-  }
-  body .sidebar #listLogOut {
-    margin-top: 220px;
-  }
-}
-body .sidebar .hamburger .btn {
-  padding: 0;
-  border: none;
-  box-shadow: none;
-}
-body .sidebar ul {
-  margin-top: 19px;
-  padding: 0;
-}
-body .sidebar ul li {
-  position: relative;
-  list-style: none;
-  width: 100%;
-  height: 61px;
-  line-height: 61px;
-}
-body .sidebar ul li a {
-  color: #FFFFFF;
-  display: flex;
-  align-item: center;
-  text-decoration: none;
-  font-size: 25px;
+  height: 100vh;
+  background: #04496A;
   transition: all 0.4s ease;
+}
+
+body .divSideNav #top {
+  margin-bottom: 40px;
+}
+
+body .divSideNav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   white-space: nowrap;
 }
-body .sidebar ul li a .divIcon {
-  padding-left: 11px;
-}
-body .sidebar ul li a .divIcon img {
-  padding: 10px;
-}
-body .sidebar ul li a .divTab .tabName {
-  margin-left: 12px;
-}
-body .sidebar ul li a:hover {
-  background: #FFFFFF;
-  color: #393737;
-}
-body .sidebar ul li a:focus {
-  background: #FFFFFF;
-  color: #393737;
-}
-body .sidebar .divProfile {
-  background: #01364F;
-  position: absolute;
-  color: #FFFFFF;
-  width: inherit;
-}
-body .sidebar .divProfile .profile {
-  position: relative;
-  height: 71px;
-}
-body .sidebar .divProfile .profile .profileContent {
+
+body .divSideNav a .divSideTab {
   display: flex;
   align-items: center;
 }
-body .sidebar .divProfile .profile .profileContent .divProfilePic {
-  padding: 12px;
+
+body .divSideNav a .divSideTab img {
+  padding: 10px;
+  margin-left: 11px;
+  margin-right: 15px;
 }
-body .sidebar .divProfile .profile .profileContent .divAdmin {
-  margin-left: 12px;
+
+body .divSideNav a:hover {
+  color: #393737;
+  background: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
-body .sidebar .divProfile .profile .profileContent .divAdmin .spanProfile {
-  font-size: 25px;
-  line-height: 10px;
-  overflow: hidden;
+
+body .divSideNav a:docus {
+  color: #393737;
+  background: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+body .divSideNav #divSideProfile {
+  height: 61px;
+  color: #FFFFFF;
+  background: #01364F;
+  display: flex;
+  align-items: center;
   white-space: nowrap;
 }
-body .sidebar.active {
-  width: 309px;
-}/*# sourceMappingURL=nav.css.map */
+
+body .divSideNav #divSideProfile .profile .profileContent img {
+  padding-left: 12px;
+  padding-right: 16px;
+}
+/*# sourceMappingURL=nav.css.map */

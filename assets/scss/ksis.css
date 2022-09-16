@@ -6,6 +6,7 @@
   padding: 4em;
   background-color: var(--bs-white);
 }
+
 #content #title {
   color: #393737;
   font: 100% DM Sans, sans serif;
@@ -29,15 +30,18 @@
   height: 13em;
   overflow: hidden;
   border-radius: 1em;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
+
 .categories .categoryBody {
   padding-right: 0;
 }
+
 .categories .categoryCount, .categories .categoryDesc {
   font: 100% DM Sans, sans serif;
   color: white;
 }
+
 .categories .card-title {
   font-size: 2em;
   font-weight: 600;
@@ -51,21 +55,27 @@
   width: 100%;
   margin: 0;
 }
+
 #categoryRow1 #categoryHouseholds {
   background-color: #8ECAE6;
 }
+
 #categoryRow1 #categoryPwd {
   background-color: #219EBC;
 }
+
 #categoryRow1 #categorySenior {
   background-color: #04496A;
 }
+
 #categoryRow1 #categoryAdult {
   background-color: #F3CB69;
 }
+
 #categoryRow1 #categoryYouth {
   background-color: #FFB703;
 }
+
 #categoryRow1 #categoryChildren {
   background-color: #FB8500;
 }
@@ -74,10 +84,12 @@
   width: 100%;
   margin: 0;
 }
+
 .documentHeadingRow .optionCol {
   margin: auto;
   padding: 0;
 }
+
 .documentHeadingRow .optionWrapper {
   padding: 0;
   margin: auto;
@@ -87,6 +99,7 @@
   background-color: #219EBC;
   overflow: hidden;
 }
+
 .documentHeadingRow .optionWrapper .options {
   position: relative;
   display: flex;
@@ -95,6 +108,7 @@
   height: inherit;
   border: none;
 }
+
 .documentHeadingRow .optionWrapper .options .optionLinkContainer {
   width: 100%;
   height: 100%;
@@ -102,6 +116,7 @@
   border-radius: 25em;
   transition: 0.3s;
 }
+
 .documentHeadingRow .optionWrapper .options .optionLinks {
   display: flex;
   justify-content: center;
@@ -114,6 +129,7 @@
   font-size: 1em;
   transition: 0.3s;
 }
+
 .documentHeadingRow .optionWrapper .options .qrButton {
   border: none;
   border-radius: 0 25em 25em 0;
@@ -122,6 +138,7 @@
   height: 100%;
   background: #04496A;
 }
+
 .documentHeadingRow .optionWrapper .options .optionLinkContainer:hover, .documentHeadingRow .optionWrapper .options .optionLinkContainer:focus {
   font-weight: bold;
   color: #219EBC !important;
@@ -141,18 +158,21 @@
   padding: 0;
   margin: 2em 0;
 }
+
 .generateBody .docDetails {
   width: 50%;
   height: 100%;
   float: left;
   padding: 0;
 }
+
 .generateBody .docDetails .subTitle {
   font: 100% DM Sans, sans serif;
   font-size: 1.2em;
   font-weight: 600;
   color: #393737;
 }
+
 .generateBody .docPreview {
   position: relative;
   width: 50%;
@@ -170,13 +190,16 @@
   margin: 1em 0;
   align-contents: center;
 }
+
 .infoRow .form-label {
   font: DM Sans, sans serif;
   color: #393737;
   margin-bottom: 0.2em;
   font-weight: 500;
 }
+
 .infoRow .userInput {
   height: 2.5em;
   width: 100%;
-}/*# sourceMappingURL=ksis.css.map */
+}
+/*# sourceMappingURL=ksis.css.map */
