@@ -11,70 +11,74 @@
   border: none;
   padding: 1px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin: 20px auto;
   overflow: hidden;
   position: relative;
   text-align: center;
   white-space: nowrap;
+  z-index: 1;
 }
 
-.divNav .linkContainer {
-  position: relative;
-  border-radius: 15em;
+.divNav label {
   width: 100%;
-  margin: 2px 0;
-  cursor: pointer;
-  z-index: 5;
-  transition: 0.3s;
-}
-
-.divNav .linkContainer .optionLink {
-  font: 100% DM Sans, sans-serif;
-  text-decoration: none;
+  height: 100%;
+  line-height: 33px;
+  font-size: 1em;
   color: white;
-  font-weight: normal;
-}
-
-.divNav .slider {
-  margin: 3px 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
   border-radius: 15em;
-  background: white;
-  height: 85%;
-  width: 49.3%;
-  transition: 0.3s;
-  z-index: 3;
+  margin: 0 5px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 
-.linkContainer:nth-child(1).active ~ .slider {
-  transform: translateX(0);
+.slider {
+  position: absolute;
+  margin: 2px;
+  height: 90%;
+  width: 50%;
+  top: 0;
+  left: 0.5%;
+  background-color: white;
+  border-radius: 15em;
+  transition: all 0.4s cubic-bezier(0.68, 0.1, 0.265, 1.55);
 }
 
-.linkContainer:nth-child(2).active ~ .slider {
-  transform: translateX(100%);
+#referral:checked ~ nav label.referral {
+  color: #219EBC;
+  font-weight: 900;
+}
+
+#kkid:checked ~ nav label.kkid {
+  color: #219EBC;
+  font-weight: 900;
+}
+
+#kkid:checked ~ nav .slider {
+  left: 49%;
 }
 
 .qrBtn {
   border: none;
   border-radius: 0 15em 15em 0;
   width: 10%;
+  height: 100%;
   padding: 5px;
-  height: auto;
   background-color: #04496A;
 }
 
 .qrBtn #qrIcon {
-  width: 60%;
+  width: 3em;
   height: auto;
   color: white;
 }
 
 .qrBtn:hover {
   background-color: #8ECAE6;
+  transition: all 0.8s;
 }
 
 .documentBody {
@@ -141,4 +145,4 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid #808080;
   /* creates padding around scroll thumb */
 }
-/*# sourceMappingURL=documents.css.map */
+/*# sourceMappingURL=newDocuments.css.map */
