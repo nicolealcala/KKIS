@@ -15,11 +15,7 @@ hr {
   background: linear-gradient(to right, #8ECAE6, #FFB703);
   border: 5px;
   padding: 3px;
-  opacity: .75;
-}
-
-#SelDel {
-  margin-left: 20px;
+  opacity: 0.75;
 }
 
 .table-responsive {
@@ -28,16 +24,16 @@ hr {
   margin-left: 120px;
 }
 
-#transac-table {
-  margin-left: -40px;
-}
-
 #row-title {
   text-align: center;
 }
 
 #action-col {
   margin-left: 80px;
+}
+
+#transac-table {
+  /*margin-right: 10px;*/
 }
 
 .btn {
@@ -54,4 +50,31 @@ hr {
 .form-check {
   width: 90px;
 }
-/*# sourceMappingURL=TransacHis.css.map */
+
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table tbody tr td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+  }
+}/*# sourceMappingURL=TransacHis.css.map */
