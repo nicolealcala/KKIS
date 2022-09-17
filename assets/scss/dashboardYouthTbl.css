@@ -1,66 +1,70 @@
-/*NOTES:
-    -yung back button, hindi pa responsive
-    -di ko pa natatry na nasosort yung data na nasa list
-    -not yet 100% responsive table (nagkicreate mng horizontal scrolling)
-*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
 @font-face {
-  font-family: DM Sans, sans serif;
-  src: url(https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap);
+  font-family: "Poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
 }
-* {
-  font: DM Sans;
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
+}
+
+* h1 {
+  font-family: "Poppins";
+}
+
+* p {
+  font-family: "DM Sans";
 }
 
 .sidenav {
-  background-color: #04496a;
+  background-color: #04496A;
 }
 
-.gradient-line {
-  padding-top: 2em;
+.top-panel {
+  padding: 3em 0em 0em 0em;
+  margin-left: -5em;
 }
 
-.content {
-  padding: 4em;
-  margin-left: 10em;
-  height: auto;
-  background-color: var(--bs-white);
-}
-.content .backBtn {
-  border: none;
-  border-radius: 100%;
-  background-color: #8ecae6;
-  width: 50%;
-  height: auto;
-  padding: 0.3em;
-}
-.content .backBtn .backIcon {
-  color: white;
-  width: 100%;
-  height: 100%;
-}
-.content .title {
-  width: 100%;
-  height: 100%;
-  color: #393737;
-  font-weight: semi-bold;
+.top-panel h1 {
   font-size: 3em;
+  color: #393737;
+  font-weight: 600;
 }
-.content .fieldLabel {
-  color: #707070;
+
+.top-panel button {
+  background-color: #8ECAE6;
+  border: none;
+}
+
+.top-panel button:hover {
+  background-color: #219EBC;
+}
+
+.top-panel .gradient-line {
+  padding-top: 1.5em;
+  margin-left: -10em;
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
 }
 
 .sort-panel {
   display: flex;
   position: relative;
   float: right;
-  margin-right: 15em;
+  margin-right: 11em;
+  margin-top: 4em;
 }
+
 .sort-panel .sort-title {
   display: flex;
   justify-content: flex-end;
   margin-right: -5em;
   padding-top: 0.25em;
 }
+
 .sort-panel .select {
   width: 9em;
   height: 2em;
@@ -70,8 +74,9 @@
   background-color: #e1e1e1;
   border: #c8c8c8;
   border-radius: 0.5em;
-  font: DM Sans;
+  font-family: "DM Sans";
 }
+
 .sort-panel .select:focus {
   outline: none;
   border: 1px solid #c8c8c8;
@@ -79,6 +84,7 @@
 
 .heading {
   margin-left: 20px;
+  font-family: "Poppins";
 }
 
 .tbl-section {
@@ -141,12 +147,63 @@ thead {
     margin-right: 8em;
   }
 }
+
 @media only screen and (max-width: 768px) {
-  .modalLabel,
-.textRetrieved {
-    white-space: nowrap;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .top-panel {
+    margin-left: 0em;
   }
-}/*# sourceMappingURL=dashboardYouthTbl.css.map */
+  .top-panel h1 {
+    width: 10em;
+  }
+  .top-panel .gradient-line {
+    padding-top: 1.5em;
+    margin-left: -7em;
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+  }
+  .sort-panel {
+    margin-right: 5em;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .top-panel {
+    margin-left: 0em;
+  }
+  .top-panel .dashboard-title h1 {
+    font-size: 2em;
+  }
+  .top-panel button {
+    float: left;
+  }
+  .top-panel .gradient-line {
+    display: none;
+    padding-top: 2em;
+    margin-left: -8em;
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+  }
+  .sort-panel {
+    margin-top: 6em;
+    margin-left: 3em;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .top-panel .gradient-line {
+    display: none;
+    padding-top: 2em;
+    margin-left: -3.5em;
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+  }
+  .sort-panel {
+    margin-top: 6em;
+    margin-left: 3em;
+    float: left;
+  }
+}
+/*# sourceMappingURL=dashboardYouthTbl.css.map */

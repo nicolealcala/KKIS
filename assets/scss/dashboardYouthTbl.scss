@@ -35,51 +35,44 @@ $text: #393737;
     background-color: $primary-color;
 }
 
-.gradient-line {
-    padding-top: 2em;
-}
+.top-panel{
+    padding:3em 0em 0em 0em;
+    margin-left: -5em;
 
-.content {
-    padding: 4em;
-    margin-left: 10em;
-    height: auto;
-    background-color: var(--bs-white);
 
-    .backBtn {
-        border: none;
-        border-radius: 100%;
+    h1{
+        font-size: 3em;
+        color: #393737;
+        font-weight: 600;
+    }
+
+    button{
         background-color: $sky-blue;
-        width: 50%;
-        height: auto;
-        padding: 0.3em;
+        border: none;
 
-        .backIcon {
-            color: white;
-            width: 100%;
-            height: 100%;
+        &:hover{
+            background-color: $true-blue;
         }
     }
 
-    .title {
-        //padding:3em 0em 0em 8em;
-        width: 100%;
-        height: 100%;
-        color: $text;
-        font-weight: semi-bold;
-        font-size: 3em;
+    .gradient-line {
+        padding-top: 1.5em;
+        margin-left: -10em;
+        display: flex;
+        justify-content: flex-start;
+        position: fixed;
     }
-
-    .fieldLabel {
-        color: #707070;
-    }
+    
 }
+
 
 // SORT BUTTON
 .sort-panel {
     display: flex;
     position: relative;
     float: right;
-    margin-right: 15em;
+    margin-right: 11em;
+    margin-top: 4em;
 
     .sort-title {
         display: flex;
@@ -180,11 +173,75 @@ thead{
 }
 
 @media only screen and (max-width: 768px) {
-    .modalLabel,
-    .textRetrieved {
-        white-space: nowrap;
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .top-panel{
+        margin-left: 0em;
+
+        h1{
+            width: 10em;
+        }
+
+        .gradient-line {
+            padding-top: 1.5em;
+            margin-left: -7em;
+            display: flex;
+            justify-content: flex-start;
+            position: fixed;
+        }
     }
+
+    .sort-panel{
+        margin-right: 5em;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .top-panel{
+        margin-left: 0em;
+
+        .dashboard-title{
+           
+            h1{
+                //width: 5em;
+                font-size: 2em;
+            }
+        }
+
+        button{
+            float: left;
+        }
+
+        .gradient-line {
+            display: none;
+            padding-top: 2em;
+            margin-left: -8em;
+            display: flex;
+            justify-content: flex-start;
+            position: fixed;
+        }
+    }
+
+    .sort-panel{
+        margin-top: 6em;
+        margin-left: 3em;
+        //float: left;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .top-panel{
+        .gradient-line {
+            display: none;
+            padding-top: 2em;
+            margin-left: -3.5em;
+            display: flex;
+            justify-content: flex-start;
+            position: fixed;
+        }
+        }
+        
+        .sort-panel{
+            margin-top: 6em;
+            margin-left: 3em;
+            float: left;
+        } 
 }
