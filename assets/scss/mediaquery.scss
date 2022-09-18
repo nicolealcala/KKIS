@@ -3,6 +3,7 @@ $font-stack-sub: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
+$disabled-blue: #b0def3;
 $dark-blue: #04496A;
 $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
@@ -30,7 +31,7 @@ $text: #393737;
         margin-left: 0.3em;
   
     }
-    .fieldLabel, .linkContainer{
+    .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer{
         white-space: nowrap; 
         width: 80%; 
         overflow: hidden;
@@ -126,7 +127,7 @@ $text: #393737;
         
         #kkidMarker, #referralMarker{
             margin-top: 2em;
-            margin-lft: 0;
+            margin-left: 0;
         }
     }  
 }
@@ -135,7 +136,7 @@ $text: #393737;
     .divNav .slider {
         width: 60%;
     } 
-    .fieldLabel, .linkContainer{
+    .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer{
         white-space: nowrap; 
         width: 70%; 
         overflow: hidden;
