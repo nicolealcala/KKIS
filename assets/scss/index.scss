@@ -19,6 +19,7 @@ $true-blue:#219EBC;
 $sky-blue:#8ECAE6;
 $tangerine:#FB8500;
 $mellow-yellow:#E9C46A;
+$texts:#393737;
 
 *{
     box-sizing: border-box;
@@ -100,8 +101,47 @@ $mellow-yellow:#E9C46A;
                     color: #fff;
                     font-size: 1.25rem;
                 }
+
+                &:hover{
+                    background-color: #EBBB2C;
+                    transition: 350ms all ease-in;
+                    background-color: $tangerine;
+                }
             }
         }
+    }
+
+// SIGNUP BUTTON
+    #signup-btn{
+        margin-top:3em;
+
+            button{
+                //background-color:$secondary-color;
+                font-weight:bold;
+                font-family:$content-font;
+                height: 3em;
+                border-radius:1.5em;
+                //border: #FFB703;
+                border-width: .20em;
+                border-color: #EBBB2C;
+
+                a{
+                    text-decoration: none;
+                    color: #EBBB2C;
+                    font-size: 1.25rem;
+                }
+
+                &:hover{
+                    background-color: #EBBB2C;
+                    transition: 350ms all ease-in;
+
+                    a{
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
     }
 }
 

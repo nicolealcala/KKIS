@@ -90,6 +90,42 @@
   font-size: 1.25rem;
 }
 
+#left-panel #form-panel #login-btn button:hover {
+  background-color: #EBBB2C;
+  transition: 350ms all ease-in;
+  background-color: #FB8500;
+}
+
+#left-panel #signup-btn {
+  margin-top: 3em;
+}
+
+#left-panel #signup-btn button {
+  font-weight: bold;
+  font-family: "DM Sans";
+  height: 3em;
+  border-radius: 1.5em;
+  border-width: .20em;
+  border-color: #EBBB2C;
+}
+
+#left-panel #signup-btn button a {
+  text-decoration: none;
+  color: #EBBB2C;
+  font-size: 1.25rem;
+}
+
+#left-panel #signup-btn button:hover {
+  background-color: #EBBB2C;
+  transition: 350ms all ease-in;
+}
+
+#left-panel #signup-btn button:hover a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
 .side-img {
   padding: 0em;
   margin-left: -50em;
