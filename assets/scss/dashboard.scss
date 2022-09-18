@@ -50,7 +50,8 @@ $mellow-yellow:#E9C46A;
 }
 
 #dashboard-summary{
-    padding: 1em 8em 0em 8em;
+    padding: 1em 7em 0em 8em;
+    // padding: 1em 8em 0em 8em;
 
     
     div{
@@ -79,9 +80,9 @@ $mellow-yellow:#E9C46A;
         }
     }
     
-    #dashboard-img{
+    .dashboard-img{
         //margin:10;
-        padding:8em 1em 0em 0em;
+        padding:8em 0em 0em 0em;
         //float: right;
         //padding:0rem 1rem 1rem 0rem;
     }
@@ -92,6 +93,7 @@ $mellow-yellow:#E9C46A;
         overflow: hidden;
         height:257px;
         width: 100%;
+        //margin-right: 0em;
         //margin-right:2em;
     }
     
@@ -99,21 +101,26 @@ $mellow-yellow:#E9C46A;
         
         #total-youth {
         background-color: $sky-blue;
+        padding-right: 1em;
+
+            .total-youth-img{
+                padding-left: -3em;
+            }
         }
         
         #enrolled-youth {
         background-color: $true-blue;
             
-            #dashboard-img{
-                padding:6em 1em 0em 0em;
+            .dashboard-img{
+                padding:5.5em 1em 0em 0em;
             }
         }
         
         #out-of-school-youth {
         background-color: $primary-color;
             
-             #dashboard-img{
-                padding:6em 1em 0em 0em;
+            .dashboard-img{
+                padding:6em 2em 0em 0em;
             }
         }
     
@@ -122,7 +129,7 @@ $mellow-yellow:#E9C46A;
         #working-student {
         background-color: $mellow-yellow;
             
-            #dashboard-img{
+            .dashboard-img{
                 padding:6.9em 1em 0em 0em;
             }
         }
@@ -130,7 +137,7 @@ $mellow-yellow:#E9C46A;
         #employed {
         background-color: $secondary-color;
             
-            #dashboard-img{
+            .dashboard-img{
                 padding:8.5em 1em 0em 0em;
             }
         }
@@ -138,18 +145,18 @@ $mellow-yellow:#E9C46A;
         #unemployed{
         background-color: $tangerine;
             
-            #dashboard-img{
+            .dashboard-img{
                 padding:4.5em 1em 0em 0em;
             }
         }
 
     
-         padding-top:3em;
+        //padding-top:3em;
         
         #registered-voters {
             background-color: $sky-blue;
 
-            #dashboard-img{
+            .dashboard-img{
                 padding:7.5em 1em 0em 0em;
             }
         }
@@ -162,8 +169,10 @@ $mellow-yellow:#E9C46A;
         #pwd {
             background-color: $primary-color;
             
-            #dashboard-img{
-                padding:5.25em 0em 0em 0em;
+            .dashboard-img{
+                padding:5.75em 2em 0em 0em;
+                // max-width: 100%;
+                // height: auto;
             }
         }
     }
@@ -237,6 +246,10 @@ $mellow-yellow:#E9C46A;
     }
 
     #dashboard-summary{
+        .dashboard-img{
+            display: none;
+        }
+        
         .category{
             height: 180px;
         }
