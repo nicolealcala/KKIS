@@ -15,7 +15,7 @@ hr {
   background: linear-gradient(to right, #8ECAE6, #FFB703);
   border: 5px;
   padding: 3px;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 #SelDel {
@@ -53,5 +53,4 @@ hr {
 
 .form-check {
   width: 90px;
-}
-/*# sourceMappingURL=TransacHis.css.map */
+}/*# sourceMappingURL=TransacHis.css.map */

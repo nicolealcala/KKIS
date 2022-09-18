@@ -4,16 +4,13 @@
   font-family: "Poppins";
   src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
 }
-
 @font-face {
   font-family: "DM Sans";
   src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
 }
-
 * h1 {
   font-family: "Poppins";
 }
-
 * p {
   font-family: "DM Sans";
 }
@@ -26,22 +23,18 @@
   padding: 3em 0em 0em 0em;
   margin-left: -5em;
 }
-
 .top-panel h1 {
   font-size: 3em;
   color: #393737;
   font-weight: 600;
 }
-
 .top-panel button {
   background-color: #8ECAE6;
   border: none;
 }
-
 .top-panel button:hover {
   background-color: #219EBC;
 }
-
 .top-panel .gradient-line {
   padding-top: 1.5em;
   margin-left: -10em;
@@ -57,14 +50,12 @@
   margin-right: 11em;
   margin-top: 4em;
 }
-
 .sort-panel .sort-title {
   display: flex;
   justify-content: flex-end;
   margin-right: -5em;
   padding-top: 0.25em;
 }
-
 .sort-panel .select {
   width: 9em;
   height: 2em;
@@ -76,7 +67,6 @@
   border-radius: 0.5em;
   font-family: "DM Sans";
 }
-
 .sort-panel .select:focus {
   outline: none;
   border: 1px solid #c8c8c8;
@@ -147,7 +137,6 @@ thead {
     margin-right: 8em;
   }
 }
-
 @media only screen and (max-width: 768px) {
   .top-panel {
     margin-left: 0em;
@@ -166,7 +155,6 @@ thead {
     margin-right: 5em;
   }
 }
-
 @media only screen and (max-width: 576px) {
   .top-panel {
     margin-left: 0em;
@@ -190,7 +178,6 @@ thead {
     margin-left: 3em;
   }
 }
-
 @media only screen and (max-width: 540px) {
   .top-panel .gradient-line {
     display: none;
@@ -205,5 +192,4 @@ thead {
     margin-left: 3em;
     float: left;
   }
-}
-/*# sourceMappingURL=dashboardYouthTbl.css.map */
+}/*# sourceMappingURL=dashboardYouthTbl.css.map */

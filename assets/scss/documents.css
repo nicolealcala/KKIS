@@ -19,7 +19,6 @@
   text-align: center;
   white-space: nowrap;
 }
-
 .divNav .linkContainer {
   position: relative;
   border-radius: 15em;
@@ -29,7 +28,6 @@
   z-index: 5;
   transition: 0.3s;
 }
-
 .divNav .linkContainer .optionLink {
   font: 100% DM Sans, sans-serif;
   text-decoration: none;
@@ -66,7 +64,6 @@
   height: auto;
   background-color: #04496A;
 }
-
 .qrBtn #qrIcon {
   width: 60%;
   height: auto;
@@ -81,18 +78,15 @@
   padding: 0;
   margin: 2em 0;
 }
-
 .documentBody .subTitle {
   font: 100% DM Sans, sans-serif;
   font-size: 1.5em;
   color: #393737;
   font-weight: 500;
 }
-
 .documentBody .categoryCheck {
   font-size: 1.3em;
 }
-
 .documentBody .userInput {
   width: 95%;
 }
@@ -124,21 +118,15 @@
 }
 
 body::-webkit-scrollbar {
-  width: 5px;
-  /* width of the entire scrollbar */
+  width: 5px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #dcdcdc;
-  /* color of the tracking area */
+  background: #dcdcdc; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: blue;
-  /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  border: 3px solid #808080;
-  /* creates padding around scroll thumb */
-}
-/*# sourceMappingURL=documents.css.map */
+  background-color: blue; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #808080; /* creates padding around scroll thumb */
+}/*# sourceMappingURL=documents.css.map */

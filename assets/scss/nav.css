@@ -13,7 +13,6 @@
     margin-top: 430px;
   }
 }
-
 @media screen and (max-width: 1366px) and (min-width: 769px) {
   #checkSide:checked ~ .divSideNav {
     width: 250px;
@@ -29,19 +28,16 @@
     margin-top: 125px;
   }
 }
-
 @media screen and (max-width: 768px) and (min-width: 481px) {
   .divSideNav {
     display: none;
   }
 }
-
 @media screen and (max-width: 480px) {
   .divSideNav {
     display: none;
   }
 }
-
 * {
   margin: 0px;
   padding: 0px;
@@ -55,22 +51,18 @@ body hr {
   background-color: #787878;
   line-height: 0px;
 }
-
 body #checkSide {
   display: none;
 }
-
 body .divSideNav {
   width: 74px;
   height: 100vh;
   background: #04496A;
   transition: all 0.4s ease;
 }
-
 body .divSideNav #top {
   margin-bottom: 40px;
 }
-
 body .divSideNav a {
   color: #FFFFFF;
   text-decoration: none;
@@ -79,32 +71,27 @@ body .divSideNav a {
   overflow: hidden;
   white-space: nowrap;
 }
-
 body .divSideNav a .divSideTab {
   display: flex;
   align-items: center;
 }
-
 body .divSideNav a .divSideTab img {
   padding: 10px;
   margin-left: 11px;
   margin-right: 15px;
 }
-
 body .divSideNav a:hover {
   color: #393737;
   background: #FFFFFF;
   text-decoration: none;
   transition: all 0.2s ease;
 }
-
 body .divSideNav a:docus {
   color: #393737;
   background: #FFFFFF;
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 body .divSideNav #divSideProfile {
   height: 61px;
   color: #FFFFFF;
@@ -113,9 +100,7 @@ body .divSideNav #divSideProfile {
   align-items: center;
   white-space: nowrap;
 }
-
 body .divSideNav #divSideProfile .profile .profileContent img {
   padding-left: 12px;
   padding-right: 16px;
-}
-/*# sourceMappingURL=nav.css.map */
+}/*# sourceMappingURL=nav.css.map */
