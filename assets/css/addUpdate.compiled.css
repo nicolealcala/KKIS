@@ -15,13 +15,16 @@
 .content .headContainer .title {
   font: DM Sans, sans-serif;
 }
-.content .fieldLabel {
+.content .fieldLabel, .content .educFieldLabel, .content .employFieldLabel {
   color: #909090;
   font-weight: normal;
 }
-.content .userInput {
+.content .userInput, .content .educUserInput, .content .employUserInput, .content .personalSelectBox, .content .educSelectBox, .content .employSelectBox, .content .houseSelectBox {
   color: #393737;
   font-size: auto;
+}
+.content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
+  color: #cccccc;
 }
 
 .markerDiv {

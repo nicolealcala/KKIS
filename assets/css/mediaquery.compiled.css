@@ -19,7 +19,7 @@
     margin-left: 0.3em;
   }
 
-  .fieldLabel, .linkContainer {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer {
     white-space: nowrap;
     width: 80%;
     overflow: hidden;
@@ -103,7 +103,7 @@
   }
   .content #kkidMarker, .content #referralMarker {
     margin-top: 2em;
-    margin-lft: 0;
+    margin-left: 0;
   }
 }
 @media only screen and (max-width: 300px) {
@@ -111,7 +111,7 @@
     width: 60%;
   }
 
-  .fieldLabel, .linkContainer {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer {
     white-space: nowrap;
     width: 70%;
     overflow: hidden;

@@ -39,15 +39,15 @@ $text: #393737;
         color: #909090;
         font-weight: normal;
     }
-    
-    .educSelectBox:disabled {
-        color: #ffffff;
-        font-size: auto;
-    }
 
-    .userInput, .educUserInput, .employUserInput, .educSelectBox, .employSelectBox {
+    .userInput, .educUserInput, .employUserInput, .personalSelectBox, .educSelectBox, .employSelectBox, .houseSelectBox {
         color: $text;
         font-size: auto;
+    }
+    
+    .educSelectBox:disabled, .employSelectBox:disabled, .educUserInput:disabled, .employUserInput:disabled, {
+        color: #cccccc;
+        // background-color: #f5f5f5 !important;
     }
 }
 
@@ -82,4 +82,5 @@ $text: #393737;
     width: 6em;
     color: #707070;
 }
+
 
