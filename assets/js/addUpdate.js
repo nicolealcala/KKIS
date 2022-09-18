@@ -68,4 +68,3 @@ employStatus.onchange = function changeState() {
         selectEducSalary.disabled = false;
     }
 };
-
