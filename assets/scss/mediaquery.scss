@@ -30,7 +30,7 @@ $text: #393737;
         margin-left: 0.3em;
   
     }
-    .fieldLabel, .optionLink{
+    .fieldLabel, .linkContainer{
         white-space: nowrap; 
         width: 80%; 
         overflow: hidden;
@@ -135,7 +135,7 @@ $text: #393737;
     .divNav .slider {
         width: 60%;
     } 
-    .fieldLabel, .optionLink{
+    .fieldLabel, .linkContainer{
         white-space: nowrap; 
         width: 70%; 
         overflow: hidden;

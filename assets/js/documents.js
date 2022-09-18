@@ -2,6 +2,7 @@
 const linkScholar = document.getElementById('linkReferral');
 linkScholar.addEventListener("click", documentReferral);
 
+
 const linkID = document.getElementById('linkKkid');
 linkID.addEventListener("click", documentID);
 
@@ -34,13 +35,14 @@ const qrIcon = document.getElementById('qrIcon');
 function documentReferral(){
    referralDiv.style.display='';
    kkidDiv.style.display='none';
-    document.getElementById('rowBtn').style.marginTop='30px';
+    document.getElementById('rowBtn').style.marginTop='50px';
 }
+
 //2. for KKID
 function documentID(){
    referralDiv.style.display='none';
     kkidDiv.style.display='';
-    document.getElementById('rowBtn').style.marginTop='50px';
+    document.getElementById('rowBtn').style.marginTop='100px';
 }
 //3. for QR Code Scanning
 function qrClicked(){

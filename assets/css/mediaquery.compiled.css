@@ -19,7 +19,7 @@
     margin-left: 0.3em;
   }
 
-  .fieldLabel, .optionLink {
+  .fieldLabel, .linkContainer {
     white-space: nowrap;
     width: 80%;
     overflow: hidden;
@@ -111,7 +111,7 @@
     width: 60%;
   }
 
-  .fieldLabel, .optionLink {
+  .fieldLabel, .linkContainer {
     white-space: nowrap;
     width: 70%;
     overflow: hidden;

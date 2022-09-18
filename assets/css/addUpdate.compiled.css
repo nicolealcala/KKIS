@@ -39,28 +39,19 @@
   font-size: 1.3em;
 }
 
-.disabilityCheck {
-  display: block;
-  height: 1.3em;
-}
-
 .statusCheck {
   width: 20px;
   height: 20px;
   border: none;
 }
 
-.remarkDrop {
+#remarkDrop {
   background-color: none;
   border: 1px solid #D1D3E2;
 }
 
 .controlBtn {
-  background-color: red;
+  background-color: #f5f5f5;
   width: 6em;
-  color: white;
-}
-
-#submitBtn {
-  background-color: blue;
+  color: #707070;
 }
