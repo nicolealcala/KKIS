@@ -19,6 +19,7 @@ $true-blue:#219EBC;
 $sky-blue:#8ECAE6;
 $tangerine:#FB8500;
 $mellow-yellow:#E9C46A;
+$texts:#393737;
 
 *{
 
@@ -60,6 +61,8 @@ $mellow-yellow:#E9C46A;
     
     #texts{
         padding-top:1.5rem;
+        width: 0%;
+        z-index: 10;
         
         h1{
             color:#fff;
@@ -75,7 +78,9 @@ $mellow-yellow:#E9C46A;
             padding-left:1.5rem;
             padding-right:1.5rem;
             margin-top: -.5em;
-            font-size: 22px;
+            font-size: 1.5rem;
+            width: 15em;
+            z-index: 10;
             //float:left;
         }
     }
@@ -164,13 +169,18 @@ $mellow-yellow:#E9C46A;
         #unregistered-voters {
             background-color: $true-blue;
 
+            .dashboard-img{
+                padding:8.5em 1.25em 0em 0em;
+                // max-width: 100%;
+                // height: auto;
+            }
         }
         
         #pwd {
             background-color: $primary-color;
             
             .dashboard-img{
-                padding:5.75em 2em 0em 0em;
+                padding:5.75em 0em 0em 0em;
                 // max-width: 100%;
                 // height: auto;
             }
@@ -191,12 +201,29 @@ $mellow-yellow:#E9C46A;
     }
 }
 
+@media (max-width:992px){
+    #dashboard-summary{
+        #texts{
+            p{
+                font-size: 1.15rem;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 768px){
     .dashboard-title{
         padding: 1.5em 0em 0em -1em;
     }
     #dashboard-summary{
         padding: 0em 1em 0em -1em;
+
+        #texts{
+            p{
+                font-size: 1.5rem;
+                width: 15em;
+            }
+        }
     }
 }
 
