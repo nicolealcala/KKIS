@@ -4,67 +4,61 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Index</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/kkis-logo.svg">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <!-- BS Login Stylesheet -->
     <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
-<body>
-    <div></div>
-    <!-- START OF LEFT PANEL -->
-    <div class="row no-gutters" id="left-panel">
-        <div class="col col">
-            <div class="row">
-                <div class="col"><img id="kkis-logo" src="assets/img/kkis-logo.svg"></div>
-            </div>
-            <div class="row">
-                <div class="col" id="title">
-                    <h1 id="welcome-txt">Welcome!</h1><img id="line-gradient" src="assets/img/decorative.png">
-                </div>
-            </div>
+<body style="background: url(&quot;assets/img/gradient-bg.png&quot;);">
+    <section class="position-relative py-4 py-xl-5">
 
-            <!-- FORM -->
-            <div class="row" id="form-panel">
-                <div class="col col-9">
-                    <form class="text-center" method="post">
-                        <div class="row" id="username">
-                            <div class="col col-3 col-xxl-3 col-xl-3 col-lg-4 col-md-5 col-sm-4 col-xs-8" id="username">
-                                <p>Username</p>
+        <!-- TOP ROW/PANEL - Logo -->
+        <div class="row mb-5" id="top-panel" style="margin-top: 0px;margin-left: 0px;">
+            <div class="col col-xxl-3 col-xl-3 col-lg-3 col-xs-12"><img class="d-flex justify-content-start" id="logo" src="assets/img/kkis-logo.svg" style="margin-top: -5px;width: 150px;"></div>
+            <div class="col col-xxl-3 col-xl-3 col-lg-3 col-sm-2"></div>
+            <div class="col col-xxl-3 col-xl-3 col-lg-3"></div>
+            <div class="col col-xxl-3 col-xl-3 col-lg-3"></div>
+        </div>
+
+        <!-- FORM PANEL -->
+        <div class="container" id="login-panel">
+            <div class="row d-flex justify-content-center" style="margin-top: 5.5em;">
+                <div class="col-md-6 col-xl-4 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center justify-content-xxl-center col-xxl-6 col-xl-6 col-md-8 col-xs-12">
+                    <div class="card d-xxl-flex justify-content-xxl-center mb-5" style="border-radius: 27px;height: 550px;border-width: 3px;border-top-color: rgb(142);border-right-color: 202,;border-bottom-color: 230;;border-left-color: 202 ;width: 500px;padding: 1em;padding-top: 3em;box-shadow: 0px 0px 20px 0px #aeaeae;">
+                        <div class="card-body d-flex flex-column align-items-center" style="height: 395px;">
+                            <div style="margin-bottom: 3em;">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <h1 class="welcome-sign" style="font-family: poppins;--bs-body-font-weight: bold;color: rgb(255, 183, 3);">Welcome!</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center"><img class="d-xxl-flex" src="assets/img/decorative.png"></div>
+                                </div>
                             </div>
-                            <div class="col col-xxl-6 col-md-7 col-sm-8">
-                                <div class="mb-3"><input class="form-control" type="email" name="email"></div>
-                            </div>
+                            <form class="text-center" id="input-panel" method="post">
+                                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Username"></div>
+                                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                            
+                            <!-- LOGIN BUTTON -->
+                                <div class="mb-2" style="margin-top: 2.5em;"><button class="btn btn-primary d-block w-100 rounded-pill" id="login-btn" type="submit" style="height: 45px;">Log-in</button></div>
+                                <p class="d-xxl-flex justify-content-xxl-center" id="signup-phrase">Don't have an account yet? <a href="#" class="signup-txt"> Sign up</a></p>  
+                            </form>
                         </div>
-                        <div class="row">
-                            <div class="col col-xxl-3 col-xl-3 col-3 col-lg-4 col-md-5 col-sm-4">
-                                <p>Password</p>
-                            </div>
-                            <div class="col col-xxl-6 col-md-7 col-sm-8">
-                                <div class="mb-3"><input class="form-control" type="password" name="password"></div>
-                            </div>
-                        </div>
-                    
-                    <!-- LOGIN & SIGNUP BUTTON -->
-                        <div class="col-6 col-4 col-xxl-4 col-xl-5 col-md-6 col-sm-7 col-xs-8" id="div-btn">
-                            <div id="login-btn" class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="padding-bottom: 5px;padding-top: 2px;"><a href="dashboard.html">Login</a></button></div>
-                            <div id="signup-btn" class="mb-3"><button class="btn btn-outline d-block w-100" type="submit" style="padding-bottom: 5px;padding-top: 2px;"><a href="#">Sign up</a></button></div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- RIGHT PANEL - GRADIENT PANEL -->
-        <div class="col col-5"><img id="side-panel" src="assets/img/side%20panel.png" style="overflow: hidden;margin-left: 3px;margin-right: 2px;"></div>
-    </div>
 
-    <!-- JS -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
