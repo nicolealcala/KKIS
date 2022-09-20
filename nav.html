@@ -4,17 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>nav3.0</title>
+    <title>nav</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="assets/css/nav.compiled.css">
 </head>
 
-<body><input type="checkbox" id="checkSide">
-    <div class="divSideNav"><label class="form-label" id="toggle" style="margin-bottom: 0px;" for="checkSide"><img src="assets/img/Hamburger.svg" width="74" height="61"></label>
+<body><input type="checkbox" id="checkSide"><input type="checkbox" id="checkTop">
+    <div id="sideNav" class="divSideNav"><label class="form-label" id="toggleSide" style="margin-bottom: 0px;" for="checkSide"><img src="assets/img/Hamburger.svg" width="74" height="61"></label>
         <hr id="top"><a id="linkSideDash" href="">
-            <div class="divSideTab"><img src="assets/img/Dashboard.svg" width="51" height="47"><span class="tabName">Dashboard</span></div>
-        </a><a id="linkSideDocs" href="">
-            <div class="divSideTab"><img src="assets/img/Documents.svg" width="51" height="47"><span class="sideTabName">Documents</span></div>
+            <div class="divSideTab"><img src="assets/img/Dashboard.svg" width="51" height="47"><span class="sideTabName">Dashboard</span></div>
+        </a><a id="linkSideExRec" href="">
+            <div class="divSideTab"><img src="assets/img/Documents.svg" width="51" height="47"><span class="sideTabName">Expense Records</span></div>
+        </a><a id="linkSideKKID" href="">
+            <div class="divSideTab"><img src="assets/img/KKID.svg" width="51" height="47"><span class="sideTabName">KKID</span></div>
         </a><a id="linkSideTransacHis" href="">
             <div class="divSideTab"><img src="assets/img/TransacHisto.svg" width="51" height="47"><span class="sideTabName">Transaction History</span></div>
         </a><a id="linkSideResiProf" href="">
@@ -31,7 +34,24 @@
             <div class="divSideTab"><img src="assets/img/LogOut.svg" width="51" height="47"><span class="sideTabName">Log out</span></div>
         </a>
     </div>
-    <nav class="topNav"></nav>
+    <nav id="topNav"><label class="form-label" for="checkTop"><img src="assets/img/Hamburger.svg"></label></nav>
+    <div class="divNavMenu">
+        <hr><a id="linkTopDash" href="#">
+            <div class="divTopTab"><img src="assets/img/mobDash.svg"><span>Dashboard</span></div>
+        </a><a id="linkTopExRec" href="#">
+            <div class="divTopTab"><img src="assets/img/mobDoc.svg"><span>Expense Records</span></div>
+        </a><a id="linkTopKKID" href="#">
+            <div class="divTopTab"><img src="assets/img/mobKKID.svg"><span>KKID</span></div>
+        </a><a id="linkTopTransacHisto" href="#">
+            <div class="divTopTab"><img src="assets/img/mobTransacHis.svg"><span>Transaction History</span></div>
+        </a><a id="linkTopResiProf" href="#">
+            <div class="divTopTab"><img src="assets/img/mobResiProf.svg"><span>Residents Profile</span></div>
+        </a><a id="linkTopAddEnt" href="#">
+            <div class="divTopTab"><img src="assets/img/mobAddEnt.svg"><span>Add Entry</span></div>
+        </a><a id="linkTopLogOut" href="#">
+            <div class="divTopTab"><img src="assets/img/mobLogOut.svg"><span>Log out</span></div>
+        </a>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -6,7 +6,8 @@ $grey: #787878;
 $white: #FFFFFF;
 
 //Media Query
-@media screen and (min-width:1367px) {                                         //fhd screen
+@media screen and (min-width:1367px) {                    //fhd screen
+
     #checkSide:checked ~.divSideNav {
         width: 309px;
     }
@@ -18,10 +19,17 @@ $white: #FFFFFF;
     }
     #divSideProfile {
         font-size: 25px;
-        margin-top: 430px;
+        margin-top: 370px;
+    }
+    #topNav {
+        display: none;
+    }
+    .divNavMenu {
+        display: none;
     }
 }//fhd
 @media screen and (max-width:1366px) and (min-width:769px) {                    //hd screen
+    
     #checkSide:checked ~.divSideNav {
         width: 250px;
     }
@@ -33,12 +41,40 @@ $white: #FFFFFF;
     }
     #divSideProfile {
         font-size: 18px;
-        margin-top: 125px;
+        margin-top: 135px;
+    }
+    #topNav {
+        display: none;
+    }
+    .divNavMenu {
+        display: none;
     }
 }//hd
-@media screen and (max-width:768px) and (min-width:481px) {                 //tablet screen
+@media screen and (max-width:768px) and (min-width:481px) {     //tablet screen
     .divSideNav {
         display: none;
+    }
+    #topNav {
+        height: 50px;
+        label {
+            img {
+                height: 50px;
+            }
+        }
+    }//tabletNav
+    .divNavMenu {
+        a {
+            .divTopTab-tablet {
+                height: 50px;
+                span {
+                    font-size: 17px;
+                }
+            }
+        }//a
+    }
+    #checkTop:checked ~ .divNavMenu {
+        height: 360px;
+        transition: all 0.5s ease;
     }
 }//tablet
     
@@ -46,13 +82,35 @@ $white: #FFFFFF;
     .divSideNav {
         display: none;
     }
+    #topNav {
+        height: 40px;
+        label {
+            img {
+                height: 40px;
+            }
+        }
+    }//tabletNav
+    .divNavMenu {
+        a {
+            .divTopTab-tablet {
+                height: 40px;
+                span {
+                    font-size: 12px;
+                }
+            }
+        }//a
+    }
+    #checkTop:checked ~ .divNavMenu {
+        height: 245px;
+        transition: all 0.5s ease;
+    }
 }//mobile
 
 //SCSS
 * {
     margin: 0px;
     padding: 0px;
-    // text-decoration: none;
+    font: Poppins;
 }
 
 body {
@@ -64,10 +122,13 @@ body {
         background-color: $grey;
         line-height: 0px;
     }//hr
-                                                                                //sideNav
+                                                                //SideNav
     #checkSide {
         display: none;
     }//checkSide
+    #checkTop {
+        display: none;
+    }
     .divSideNav {
         width: 74px;
         height: 100vh;
@@ -90,9 +151,9 @@ body {
                 display: flex;
                 align-items: center;
                 img {
-                    padding: 10px;
-                    margin-left: 11px;
-                    margin-right: 15px;
+                    padding: 8px;
+                    margin-left: 13px;
+                    margin-right: 14px;
                 }//img
             }//divSideMenu
         }//a
@@ -102,7 +163,7 @@ body {
             text-decoration: none;
             transition: all 0.2s ease;
         }
-        a:docus {
+        a:focus {
             color: $darkGrey;
             background: $white;
             text-decoration: none;
@@ -121,14 +182,70 @@ body {
 
                     img {
                         padding-left: 12px;
-                        padding-right: 16px;
+                        margin-right: 18px;
                     }
                 }
             }
         }//divSideProfile
     }//divSideNav
     
-                                                                                //topNav
-    
+                                                            //topNavTablet
+    #topNav {
+        width: 100vw;
+        background: $darkBlue;
+        label {
+            img {
+            }
+        }
+    }//tabletNav
+    .divNavMenu {
+        width: 100vw;
+        height: 0px;
+        background: $darkBlue;
+        overflow: hidden;
+        white-space: nowrap;
+        
+        a {
+            text-decoration: none;
+            color: $white;
+            
+            .divTopTab {
+                display: flex;
+                align-items: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                img {
+                    margin-left: 30px;
+                    
+                }
+                span {
+                    margin-left: 10px;
+
+                }
+            }
+        }//a
+        a:hover {
+            color: $darkGrey;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            .divTopTab {
+                background: $white;
+            }
+        }
+        a:focus {
+            color: $darkGrey;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            .divTopTab {
+                background: $white;
+            }
+        }
+    }//divNavTablet
     
 }//body
+
+// -KKID png icon
+// -Hamburger button
+// -hover & focus
+// -hd screen nav thinner
+// -update figma
