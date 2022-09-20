@@ -33,11 +33,13 @@
 
 #login-panel h1 {
   font-size: 70px;
+  font-weight: 500;
 }
 
 #login-panel input {
   width: 350px;
   height: 45px;
+  font-family: "DM Sans";
 }
 
 #login-panel form #login-btn {
