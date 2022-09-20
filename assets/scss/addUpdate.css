@@ -19,13 +19,12 @@
   color: #909090;
   font-weight: normal;
 }
-.content .educSelectBox:disabled {
-  color: #ffffff;
-  font-size: auto;
-}
-.content .userInput, .content .educUserInput, .content .employUserInput, .content .educSelectBox, .content .employSelectBox {
+.content .userInput, .content .educUserInput, .content .employUserInput, .content .personalSelectBox, .content .educSelectBox, .content .employSelectBox, .content .houseSelectBox {
   color: #393737;
   font-size: auto;
+}
+.content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
+  color: #cccccc;
 }
 
 .markerDiv {
@@ -33,7 +32,7 @@
   background-color: #219EBC;
 }
 
-.markerUpdate {
+.markerDivUpdate {
   height: 2em;
   background-color: #F1A400;
 }

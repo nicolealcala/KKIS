@@ -32,7 +32,7 @@
   background-color: #219EBC;
 }
 
-.markerUpdate {
+.markerDivUpdate {
   height: 2em;
   background-color: #F1A400;
 }
@@ -51,6 +51,12 @@
 #remarkDrop {
   background-color: none;
   border: 1px solid #D1D3E2;
+}
+
+.required label::after {
+  color: #e32;
+  content: " *";
+  display: inline;
 }
 
 .controlBtn {

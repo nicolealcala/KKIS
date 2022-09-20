@@ -74,6 +74,36 @@
   color: #fff;
   font-size: 1.25rem;
 }
+#left-panel #form-panel #login-btn button:hover {
+  background-color: #EBBB2C;
+  transition: 350ms all ease-in;
+  background-color: #FB8500;
+}
+#left-panel #signup-btn {
+  margin-top: 3em;
+}
+#left-panel #signup-btn button {
+  font-weight: bold;
+  font-family: "DM Sans";
+  height: 3em;
+  border-radius: 1.5em;
+  border-width: 0.2em;
+  border-color: #EBBB2C;
+}
+#left-panel #signup-btn button a {
+  text-decoration: none;
+  color: #EBBB2C;
+  font-size: 1.25rem;
+}
+#left-panel #signup-btn button:hover {
+  background-color: #EBBB2C;
+  transition: 350ms all ease-in;
+}
+#left-panel #signup-btn button:hover a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.25rem;
+}
 
 .side-img {
   padding: 0em;
@@ -98,7 +128,7 @@
     margin-bottom: 1em;
   }
   #left-panel #form-panel #div-btn {
-    margin-top: 3em;
+    margin-top: 0.25em;
   }
 }
 @media (max-width: 992px) {
@@ -109,7 +139,7 @@
     width: 50%;
   }
   #left-panel #form-panel #div-btn {
-    margin-top: 3em;
+    margin-top: 0.25em;
   }
   #left-panel #form-panel p {
     font-size: 1.25rem;
@@ -160,9 +190,17 @@
     font-size: 15px;
   }
   #left-panel #form-panel #login-btn {
-    margin-top: 1em;
+    margin-top: 2.5em;
   }
   #left-panel #form-panel #login-btn button {
+    font-family: "DM Sans";
+    height: 2.5em;
+    border-radius: 1.25em;
+  }
+  #left-panel #form-panel #signup-btn {
+    margin-top: 3em;
+  }
+  #left-panel #form-panel #signup-btn button {
     font-family: "DM Sans";
     height: 2.5em;
     border-radius: 1.25em;
@@ -203,11 +241,21 @@
     margin-right: 4em;
   }
   #left-panel #form-panel #login-btn {
-    margin-top: -1em;
+    margin-top: 2.5em;
     width: 10em;
     font-size: 1rem;
   }
   #left-panel #form-panel #login-btn button {
+    font-family: "DM Sans";
+    height: 2.5em;
+    border-radius: 1.25em;
+  }
+  #left-panel #form-panel #signup-btn {
+    margin-top: 2.5em;
+    width: 10em;
+    font-size: 1rem;
+  }
+  #left-panel #form-panel #signup-btn button {
     font-family: "DM Sans";
     height: 2.5em;
     border-radius: 1.25em;

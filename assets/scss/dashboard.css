@@ -32,7 +32,7 @@
 }
 
 #dashboard-summary {
-  padding: 1em 8em 0em 8em;
+  padding: 1em 7em 0em 8em;
 }
 #dashboard-summary div {
   border-radius: 1em;
@@ -53,8 +53,8 @@
   margin-top: -0.5em;
   font-size: 22px;
 }
-#dashboard-summary #dashboard-img {
-  padding: 8em 1em 0em 0em;
+#dashboard-summary .dashboard-img {
+  padding: 8em 0em 0em 0em;
 }
 #dashboard-summary .category {
   display: flex;
@@ -65,45 +65,48 @@
 }
 #dashboard-summary #row1 {
   padding-top: 3em;
-  padding-top: 3em;
 }
 #dashboard-summary #row1 #total-youth {
   background-color: #8ECAE6;
+  padding-right: 1em;
+}
+#dashboard-summary #row1 #total-youth .total-youth-img {
+  padding-left: -3em;
 }
 #dashboard-summary #row1 #enrolled-youth {
   background-color: #219EBC;
 }
-#dashboard-summary #row1 #enrolled-youth #dashboard-img {
-  padding: 6em 1em 0em 0em;
+#dashboard-summary #row1 #enrolled-youth .dashboard-img {
+  padding: 5.5em 1em 0em 0em;
 }
 #dashboard-summary #row1 #out-of-school-youth {
   background-color: #04496A;
 }
-#dashboard-summary #row1 #out-of-school-youth #dashboard-img {
-  padding: 6em 1em 0em 0em;
+#dashboard-summary #row1 #out-of-school-youth .dashboard-img {
+  padding: 6em 2em 0em 0em;
 }
 #dashboard-summary #row1 #working-student {
   background-color: #E9C46A;
 }
-#dashboard-summary #row1 #working-student #dashboard-img {
+#dashboard-summary #row1 #working-student .dashboard-img {
   padding: 6.9em 1em 0em 0em;
 }
 #dashboard-summary #row1 #employed {
   background-color: #FFB703;
 }
-#dashboard-summary #row1 #employed #dashboard-img {
+#dashboard-summary #row1 #employed .dashboard-img {
   padding: 8.5em 1em 0em 0em;
 }
 #dashboard-summary #row1 #unemployed {
   background-color: #FB8500;
 }
-#dashboard-summary #row1 #unemployed #dashboard-img {
+#dashboard-summary #row1 #unemployed .dashboard-img {
   padding: 4.5em 1em 0em 0em;
 }
 #dashboard-summary #row1 #registered-voters {
   background-color: #8ECAE6;
 }
-#dashboard-summary #row1 #registered-voters #dashboard-img {
+#dashboard-summary #row1 #registered-voters .dashboard-img {
   padding: 7.5em 1em 0em 0em;
 }
 #dashboard-summary #row1 #unregistered-voters {
@@ -112,8 +115,8 @@
 #dashboard-summary #row1 #pwd {
   background-color: #04496A;
 }
-#dashboard-summary #row1 #pwd #dashboard-img {
-  padding: 5.25em 0em 0em 0em;
+#dashboard-summary #row1 #pwd .dashboard-img {
+  padding: 5.75em 2em 0em 0em;
 }
 
 @media only screen and (max-width: 1208px) {
@@ -167,6 +170,9 @@
   }
   .dashboard-title h1 {
     font-size: 2em;
+  }
+  #dashboard-summary .dashboard-img {
+    display: none;
   }
   #dashboard-summary .category {
     height: 180px;

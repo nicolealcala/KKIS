@@ -39,16 +39,16 @@
     padding: 1em;
   }
   .title {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .eStatus {
     margin-top: 1em;
     padding: 0;
   }
-  .eStatus #markerEduc, .eStatus #markerEmploy {
+  .eStatus #markerEduc, .eStatus #markerEmploy, .eStatus #markerEducUpdate, .eStatus #markerEmployUpdate {
     width: 99%;
   }
-  .eStatus #markerEmploy {
+  .eStatus #markerEmploy, .eStatus #markerEmployUpdate {
     margin-left: 1%;
   }
   .eStatus .eForm {
