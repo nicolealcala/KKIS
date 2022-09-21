@@ -1,8 +1,8 @@
-//For Educ Radio Btn Preselected
+//For Educ Radio Btn Pre-checked
 $(document).ready(function educ(){
-    // $('#educCheck').change(function(){
-        if ($('#educCheck').is(':checked')){
+    if ($('#educCheck').is(':checked')){
         educRradioClick();
+        enrolledSelected();
     };
 });
 
@@ -10,6 +10,7 @@ $(document).ready(function educ(){
 $(document).ready(function(){
     if($('#educCheck').on('change', function(){
         educRradioClick();
+        enrolledSelected();  
     }));
 });
 
@@ -44,7 +45,14 @@ $(document).ready(function(){
     })
 })
 
-//fxn for clickin #employCheck
+//fxn for pre-selected/selecting option[value=enrolled]
+var enrolledSelected = function(){
+    if ($('#selectEducStatus option[value=enrolled]').is(':selected')){
+        enrolled();
+    };
+};
+
+//fxn for clicking #employCheck
 var employRradioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
@@ -108,9 +116,6 @@ var educRradioClick = function(){
         $('#markerEduc').css("background-color", "#219EBC");
         $('.educFieldLabel').css("color", "#909090");
 }
-
-
-
 
 //fxn for Enrolled 
 var enrolled = function(){
