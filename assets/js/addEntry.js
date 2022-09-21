@@ -1,8 +1,91 @@
-//For Educ Radio Btn
+//For Educ Radio Btn Preselected
+$(document).ready(function educ(){
+    // $('#educCheck').change(function(){
+        if ($('#educCheck').is(':checked')){
+        educRradioClick();
+    };
+});
+
+//For Educ Radio Btn when selected
 $(document).ready(function(){
-    $('#educCheck').change(function(){
-        enrolled();
+    if($('#educCheck').on('change', function(){
+        educRradioClick();
+    }));
+});
+
+//For Employ Radio Btn
+$(document).ready(function(){
+    $('#employCheck').change(function(){
+      employRradioClick();
+    })
+});
+
+//For Educ Status
+$(document).ready(function(){
+    $('#selectEducStatus').on('change', function(){
+        if($('#selectEducStatus option[value=enrolled]').is(':selected')){
+            enrolled();
+        } else if ($('#selectEducStatus option[value=ousYouth]').is(':selected')){
+            ousYouth();
+        } else {
+            workingStudent();
+        }
+    })
+});
+
+//For Employment Status
+$(document).ready(function(){
+    $('#selectEmployStatus').on('change', function(){
+        if($('#selectEmployStatus option[value=employed]').is(':selected')){
+            employed();
+        } else {
+            unemployed();
+        }
+    })
+})
+
+//fxn for clickin #employCheck
+var employRradioClick = function(){
+    $("#selectEducStatus").val("enrolled").change();
+    $("#selectLevel").val("preElem").change();
+    $("#selectSchoolType").val("private").change();
+    $("#selectEducSalary").val("less10").change();
+
+
+    $('#markerEduc').css("background-color", "#c5d4e3");
+    $('.educFieldLabel').css("color", "#dfdfdf");
+        
+    $('.educSelectBox').each(function(){
+        $(this).prop('disabled', true);
+    });
+            
+    $('.educUserInput').each(function(){
+        $(this).prop('disabled', true);
+        $(this).val("");
+    });
+
+    $('.employSelectBox').each(function(){
+        $(this).prop('disabled', false);
+    });
+            
+    $('.employUserInput').each(function(){
+        $(this).prop('disabled', false);
+        $(this).val("");
+    });
+
+    $('#markerEmploy').css("background-color", "#219EBC");
+    $('.employFieldLabel').css("color", "#909090");
+}
+
+//fxn for clicking #educCheck
+var educRradioClick = function(){
+    $("#selectEmployStatus").val("employed").change();
+        $("#selectEmployeeType").val("regular").change();
+        $("#selectCompanyType").val("private").change();
+        $("#selectEmploySalary").val("less10").change();
+        
         $('#markerEmploy').css("background-color", "#c5d4e3");
+        $('.employFieldLabel').css("color", "#dfdfdf");
         
         $('.employSelectBox').each(function(){
             $(this).prop('disabled', true);
@@ -23,102 +106,98 @@ $(document).ready(function(){
         });
 
         $('#markerEduc').css("background-color", "#219EBC");
-    })
-});
+        $('.educFieldLabel').css("color", "#909090");
+}
 
 
-//For Employ Radio Btn
-$(document).ready(function(){
-    $('#employCheck').change(function(){
-        $('#markerEduc').css("background-color", "#c5d4e3");
-        
-        $('.educSelectBox').each(function(){
-            $(this).prop('disabled', true);
-        });
-            
-        $('.educUserInput').each(function(){
-            $(this).prop('disabled', true);
-            $(this).val("");
-        });
 
-        $('.employSelectBox').each(function(){
-            $(this).prop('disabled', false);
-        });
-            
-        $('.employUserInput').each(function(){
-            $(this).prop('disabled', false);
-            $(this).val("");
-        });
-
-        $('#markerEmploy').css("background-color", "#219EBC");
-    })
-});
-
-//For Educ Status
-$(document).ready(function(){
-    $('#selectEducStatus').on('change', function(){
-        if($('#selectEducStatus option[value=enrolled]').is(':selected')){
-            enrolled();
-        } else if ($('#selectEducStatus option[value=ousYouth]').is(':selected')){
-            ousYouth();
-        } else {
-            workingStudent();
-        }
-    })
-})
-
-//For Employment Status
-$(document).ready(function(){
-    $('#selectEmployStatus').on('change', function(){
-        if($('#selectEmployStatus option[value=employed]').is(':selected')){
-            employed();
-        } else {
-            unemployed();
-        }
-    })
-})
 
 //fxn for Enrolled 
-function enrolled(){
-    $('#selectLevel').prop('disabled', false);
-    $('#selectSchoolType').prop('disabled', false);
-    $('#inputSchool').prop('disabled', false);
-    $('#inputEducOccupation').prop('disabled', true);
-    $('#selectEducSalary').prop('disabled', true);
+var enrolled = function(){
+    $('.educSelectBox').each(function(){
+        $(this).prop('disabled', false);
+        if ($(this).attr("id")=="selectEducSalary"){
+            $(this).prop('disabled', true);
+        }
+    });
+
+    $('.educUserInput').each(function(){
+        $(this).prop('disabled', false);
+        if ($(this).attr("id")=="inputEducOccupation"){
+            $(this).prop('disabled', true);
+        }
+    });
+
+    $('#educOccupationLbl').css("color", "#dfdfdf");
+    $('#educSalaryLbl').css("color", "#dfdfdf");
 };
 
 //fxn for Out-of-school youth
-function ousYouth(){
-    $('#selectLevel').prop('disabled', true);
-    $('#selectSchoolType').prop('disabled', true);
-    $('#inputSchool').prop('disabled', true);
-    $('#inputEducOccupation').prop('disabled', true);
-    $('#selectEducSalary').prop('disabled', true);
+var ousYouth = function(){
+    $('.educSelectBox').each(function(){
+        $(this).prop('disabled', true);
+        if ($(this).attr("id")=="selectEducStatus"){
+            $(this).prop('disabled', false);
+        }
+    });
+
+    $('.educUserInput').each(function(){
+        $(this).prop('disabled', true);
+    });
+    
+    $('.educFieldLabel').each(function(){
+        $(this).css("color", "#dfdfdf");
+        if ($(this).attr("id")=="educStatusLbl"){
+            $(this).css("color", "#909090");
+        }
+    });
 }
 
 //fxn for Working Students
-function workingStudent(){
-    $('#selectLevel').prop('disabled', false);
-    $('#selectSchoolType').prop('disabled', false);
-    $('#inputSchool').prop('disabled', false);
-    $('#inputEducOccupation').prop('disabled', false);
-    $('#selectEducSalary').prop('disabled', false);
+var workingStudent = function(){
+    $('.educSelectBox').each(function(){
+        $(this).prop('disabled', false);
+    });
+
+    $('.educUserInput').each(function(){
+        $(this).prop('disabled', false);
+    });
+
+    $('.educFieldLabel').css("color", "#909090");
+}
+
+//fxn for Employed
+var employed = function(){
+    $('.employSelectBox').each(function(){
+        $(this).prop('disabled', false);
+    });
+
+    $('.employUserInput').each(function(){
+        $(this).prop('disabled', false);
+    });
+   
+    $('.employFieldLabel').each(function(){
+        $(this).css("color", "#909090");
+    });
 }
 
 //fxn for Unemployed
-function unemployed(){
-    $('#selectEmployeeType').prop('disabled', false);
-    $('#selectCompanyType').prop('disabled', false);
-    $('#inputEmployer').prop('disabled', false);
-    $('#selectEmploySalary').prop('disabled', false);
-    $('#inputEmployOccupation').prop('disabled', false);    
-}
+var unemployed = function(){
+    $('.employSelectBox').each(function(){
+        $(this).prop('disabled', true);
+        if ($(this).attr("id")=="selectEmployStatus"){
+            $(this).prop('disabled', false);
+        }
+    });
 
-//fxn for Unemployed
-function unemployed(){
-    $('#selectEmployeeType').prop('disabled', true);
-    $('#selectCompanyType').prop('disabled', true);
-    $('#inputEmployer').prop('disabled', true);
-    $('#selectEmploySalary').prop('disabled', true);
-    $('#inputEmployOccupation').prop('disabled', true);    
+    $('.employUserInput').each(function(){
+        $(this).prop('disabled', true);
+    });
+
+    $('.employFieldLabel').each(function(){
+        $(this).css("color", "#dfdfdf");
+        if ($(this).attr("id")=="employStatusLbl"){
+            $(this).css("color", "#909090");
+        }
+    })
 }

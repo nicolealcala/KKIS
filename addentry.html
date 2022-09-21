@@ -114,44 +114,44 @@
                 <div class="sectionDiv">
                     <div class="row m-0 gx-3 p-0" id="eRow">
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
-                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4 m-0" id="markerEduc"><input type="radio" id="educCheck" class="statusCheck ms-3" name="eInfo"><span class="markerText ms-2">Educational Status</span></div>
+                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4 m-0" id="markerEduc"><input type="radio" id="educCheck" class="statusCheck ms-3" name="eInfo" checked=""><span class="markerText ms-2">Educational Status</span></div>
                             <form class="eForm">
                                 <div class="row m-0 my-3 gy-3 gx-3">
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label educFieldLabel w-100">Student Status</label><select class="form-select educSelectBox text-uppercase w-100" id="selectEducStatus" name="">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label educFieldLabel w-100" id="educStatusLbl">Student Status</label><select class="form-select educSelectBox text-uppercase w-100" id="selectEducStatus" name="">
                                             <optgroup label="Educational Status">
                                                 <option value="enrolled" selected="">Enrolled</option>
                                                 <option value="ousYouth">Out-of-school Youth</option>
                                                 <option value="wStudent">Working student</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label educFieldLabel w-100">Level</label><select class="form-select educSelectBox text-uppercase w-100" id="selectLevel">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label educFieldLabel w-100" id="levelLbl">Level</label><select class="form-select educSelectBox text-uppercase w-100" id="selectLevel">
                                             <optgroup label="Educational Level">
-                                                <option value="Pre-elementary" selected="">Pre-elementary</option>
-                                                <option value="Elementary">Elementary</option>
-                                                <option value="Junior High School">Junior High School</option>
-                                                <option value="Senior High School">Senior High School</option>
-                                                <option value="Alternative Learning System (ALS)">Alternative Learning System (ALS)</option>
-                                                <option value="Diploma Course">Diploma Course</option>
-                                                <option value="College">College</option>
-                                                <option value="Graduate Studies">Graduate Studies</option>
+                                                <option value="preElem" selected="">Pre-elementary</option>
+                                                <option value="elem">Elementary</option>
+                                                <option value="jhs">Junior High School</option>
+                                                <option value="shs">Senior High School</option>
+                                                <option value="als">Alternative Learning System (ALS)</option>
+                                                <option value="dc">Diploma Course</option>
+                                                <option value="college">College</option>
+                                                <option value="gradStudies">Graduate Studies</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder"><label class="form-label educFieldLabel w-100">Public/Private</label><select class="form-select educSelectBox text-uppercase w-100" id="selectSchoolType">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder"><label class="form-label educFieldLabel w-100" id="schoolTypeLbl">Public/Private</label><select class="form-select educSelectBox text-uppercase w-100" id="selectSchoolType">
                                             <optgroup label="School Type">
-                                                <option value="Private" selected="">Private</option>
-                                                <option value="Public">Public</option>
+                                                <option value="private" selected="">Private</option>
+                                                <option value="public">Public</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder"><label class="form-label educFieldLabel w-100">Name of School</label><input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label educFieldLabel w-100">Occupation</label><input class="form-control educUserInput text-uppercase w-100" type="text" id="inputEducOccupation"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label educFieldLabel w-100">Salary Range</label><select class="form-select educSelectBox text-uppercase w-100" id="selectEducSalary">
+                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder"><label class="form-label educFieldLabel w-100" id="schoolLbl">Name of School</label><input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool"></div>
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label educFieldLabel w-100" id="educOccupationLbl">Occupation</label><input class="form-control educUserInput text-uppercase w-100" type="text" id="inputEducOccupation"></div>
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label educFieldLabel w-100" id="educSalaryLbl">Salary Range</label><select class="form-select educSelectBox text-uppercase w-100" id="selectEducSalary">
                                             <optgroup label="Salary Range">
-                                                <option value="Less than 10,000" selected="">Less than 10,000</option>
-                                                <option value="10,000-20,000">10,000-20,000</option>
-                                                <option value="21,000-30,000">21,000-30,000</option>
-                                                <option value="31,000-40,000">31,000-40,000</option>
-                                                <option value="41,000-50,000">41,000-50,000</option>
-                                                <option value="More than 50,000">More than 50,000</option>
+                                                <option value="less10" selected="">Less than 10,000</option>
+                                                <option value="bet1020">10,000-20,000</option>
+                                                <option value="bet2130">21,000-30,000</option>
+                                                <option value="bet3139">31,000-40,000</option>
+                                                <option value="bet4150">41,000-50,000</option>
+                                                <option value="more50">More than 50,000</option>
                                             </optgroup>
                                         </select></div>
                                 </div>
@@ -161,35 +161,35 @@
                             <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4" id="markerEmploy"><input type="radio" id="employCheck" class="statusCheck ms-3" name="eInfo"><span class="markerText ms-2">Employment Status</span></div>
                             <form class="eForm">
                                 <div class="row m-0 my-3 gy-3 gx-3" id="formRow">
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label employFieldLabel w-100">Employee Status</label><select class="form-select employSelectBox text-uppercase w-100" id="selectEmployStatus">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label employFieldLabel w-100" id="employStatusLbl">Employee Status</label><select class="form-select employSelectBox text-uppercase w-100" id="selectEmployStatus">
                                             <optgroup label="Educational Status">
                                                 <option value="employed" selected="">Employed</option>
                                                 <option value="unemployed">Unemployed</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label employFieldLabel w-100">Employee Type</label><select class="form-select employSelectBox text-uppercase w-100" id="selectEmployeeType">
+                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder"><label class="form-label employFieldLabel w-100" id="employTypeLbl">Employee Type</label><select class="form-select employSelectBox text-uppercase w-100" id="selectEmployeeType">
                                             <optgroup label="Educational Level">
-                                                <option value="Regular" selected="">Regular</option>
-                                                <option value="Contractual">Contractual</option>
-                                                <option value="Job Order">Job Order</option>
+                                                <option value="regular" selected="">Regular</option>
+                                                <option value="contractual">Contractual</option>
+                                                <option value="jo">Job Order</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder"><label class="form-label employFieldLabel w-100">Public/Private</label><select class="form-select employSelectBox text-uppercase w-100" id="selectCompanyType">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder"><label class="form-label employFieldLabel w-100" id="companyTypeLbl">Public/Private</label><select class="form-select employSelectBox text-uppercase w-100" id="selectCompanyType">
                                             <optgroup label="School Type">
-                                                <option value="Private" selected="">Private</option>
-                                                <option value="Public">Public</option>
+                                                <option value="private" selected="">Private</option>
+                                                <option value="public">Public</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder"><label class="form-label employFieldLabel w-100">Name of Employer/Company/Business</label><input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployer"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label employFieldLabel w-100">Occupation</label><input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployOccupation"></div>
-                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label employFieldLabel w-100">Salary Range</label><select class="form-select employSelectBox text-uppercase w-100" id="selectEmploySalary">
+                                    <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder"><label class="form-label employFieldLabel w-100" id="employerLbl">Name of Employer/Company/Business</label><input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployer"></div>
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label employFieldLabel w-100" id="employOccupationLbl">Occupation</label><input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployOccupation"></div>
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder"><label class="form-label employFieldLabel w-100" id="employSalaryLbl">Salary Range</label><select class="form-select employSelectBox text-uppercase w-100" id="selectEmploySalary">
                                             <optgroup label="Salary Range">
-                                                <option value="Less than 10,000" selected="">Less than 10,000</option>
-                                                <option value="10,000-20,000">10,000-20,000</option>
-                                                <option value="21,000-30,000">21,000-30,000</option>
-                                                <option value="31,000-40,000">31,000-40,000</option>
-                                                <option value="41,000-50,000">41,000-50,000</option>
-                                                <option value="More than 50,000">More than 50,000</option>
+                                                <option value="less10" selected="">Less than 10,000</option>
+                                                <option value="bet1020">10,000-20,000</option>
+                                                <option value="bet2130">21,000-30,000</option>
+                                                <option value="bet3140">31,000-40,000</option>
+                                                <option value="bet4150">41,000-50,000</option>
+                                                <option value="more50">More than 50,000</option>
                                             </optgroup>
                                         </select></div>
                                 </div>
