@@ -17,7 +17,7 @@
     margin: auto;
     margin-left: 0.3em;
   }
-  .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle {
     white-space: nowrap;
     width: 80%;
     overflow: hidden;
@@ -58,6 +58,9 @@
     width: 3em;
     height: 3em;
   }
+  .entryContainer {
+    padding: 2em;
+  }
 }
 @media only screen and (max-width: 820px) {
   .content {
@@ -84,6 +87,9 @@
   .content .imgHR {
     height: 0.5em;
   }
+  .content .entryContainer {
+    padding: 1em;
+  }
 }
 @media only screen and (max-width: 500px) {
   .content {
@@ -102,10 +108,13 @@
   .divNav .slider {
     width: 60%;
   }
-  .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle {
     white-space: nowrap;
     width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .entryContainer {
+    padding: 0;
   }
 }/*# sourceMappingURL=mediaquery.css.map */

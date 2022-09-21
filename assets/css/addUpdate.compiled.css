@@ -26,6 +26,10 @@
 .content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
   color: #cccccc;
 }
+.content input[required] + label:after {
+  content: " *";
+  color: red;
+}
 
 .markerDiv {
   height: 2em;
@@ -51,12 +55,6 @@
 #remarkDrop {
   background-color: none;
   border: 1px solid #D1D3E2;
-}
-
-.required label::after {
-  color: #e32;
-  content: " *";
-  display: inline;
 }
 
 .controlBtn {
