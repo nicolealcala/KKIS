@@ -23,14 +23,6 @@
   color: #393737;
   font-size: auto;
 }
-.content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
-  color: #cccccc;
-}
-
-.required:after {
-  content: " *";
-  color: red;
-}
 
 .markerDiv {
   height: 2em;
@@ -51,11 +43,6 @@
   width: 20px;
   height: 20px;
   border: none;
-}
-
-#remarkDrop {
-  background-color: none;
-  border: 1px solid #D1D3E2;
 }
 
 .controlBtn {

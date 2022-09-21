@@ -46,19 +46,18 @@ $(document).ready(function(){
 })
 
 
-/////////////////////////TRRRYEE//////////////////
+//-------------TRY--------------//
 //For Remarks
-$(document).ready(function() {
-  $('#remarkDrop').multiselect({
-    columns: 1,
-    dropRight: true,
-    maxHeight: true,
-    buttonWidth: '100%',
-    buttonHeight: '80%',
-    placeholder: 'Choose Remarks',
-    includeSelectAllOption: true,
-  });
-});
+// $(document).ready(function() {
+//   $('select[multiple]').multiselect({
+//     columns: 1,
+//     search: true,
+//     maxHeight: true,
+//     buttonWidth: '100%',
+//     includeSelectAllOption: true,
+//   });
+// });
+
 
 
 //fxn for pre-selected/selecting option[value=enrolled]

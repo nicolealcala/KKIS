@@ -5,14 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>KKIS - Add New Entry</title>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="assets/css/addUpdate.compiled.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
     <link rel="stylesheet" href="assets/css/mediaquery.compiled.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script src="assets/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/docs/js/require-2.3.5.min.js"></script>
+    <script src="assets/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.multiselect.js"></script>
+
+    
+   
+    
 </head>
 
 <body id="page-top">
@@ -216,12 +226,16 @@
                                             <option value="5">III</option>
                                         </optgroup>
                                     </select></label></div>
-                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12"><label class="col-form-label fieldLabel required w-100" for="remarkDrop">Remarks<br><select class="form-select text-uppercase w-100 houseSelectBox" id="remarkDrop" multiple="multiple">
-                                        <optgroup label="Choose Remarks">
+                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
+                                <label class="col-form-label fieldLabel required w-100" for="remarkDrop">Remarks<br>
+                                    <select class="form-select text-uppercase w-100 houseSelectBox" id="remarkDrop" multiple="multiple">
                                             <option value="soloParent">Solo Parent</option>
                                             <option value="teenPregnancy">Teenage Pregnancy</option>
-                                        </optgroup>
-                                    </select></label></div>
+                                            <!-- <option value="hello">Hello</option>
+                                            <option value="world">World</option> -->
+                                    </select>
+                                </label>
+                            </div>
                             <div class="col col-lg-2 col-md-6 col-sm-6 col-12"><label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members<br><select class="form-select text-uppercase w-100 houseSelectBox" id="famCount-1">
                                         <optgroup label="Family Members">
                                             <option value="less5">Less than 5</option>
@@ -241,10 +255,11 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/addEntry.js"></script>
-    <script src="assets/js/bootstrap-multiselect.js"></script>
+    
 </body>
 
 </html>
