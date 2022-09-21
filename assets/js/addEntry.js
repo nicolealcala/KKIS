@@ -45,6 +45,17 @@ $(document).ready(function(){
     })
 })
 
+
+
+//For Remarks
+$(document).ready(function() {
+
+  $('#remarkDrop').multiselect({
+    includeSelectAllOption: true
+  });
+});
+
+
 //fxn for pre-selected/selecting option[value=enrolled]
 var enrolledSelected = function(){
     if ($('#selectEducStatus option[value=enrolled]').is(':selected')){

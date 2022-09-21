@@ -26,8 +26,9 @@
 .content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
   color: #cccccc;
 }
-.content input[required] + label:after {
-  content: "*";
+
+.required:after {
+  content: " *";
   color: red;
 }
 
