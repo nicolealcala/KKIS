@@ -1,5 +1,5 @@
 //For Educ Radio Btn Pre-checked
-$(document).ready(function educ(){
+$(document).ready(function(){
     if ($('#educCheck').is(':checked')){
         educRradioClick();
         enrolledSelected();
@@ -46,12 +46,17 @@ $(document).ready(function(){
 })
 
 
-
+/////////////////////////TRRRYEE//////////////////
 //For Remarks
 $(document).ready(function() {
-
   $('#remarkDrop').multiselect({
-    includeSelectAllOption: true
+    columns: 1,
+    dropRight: true,
+    maxHeight: true,
+    buttonWidth: '100%',
+    buttonHeight: '80%',
+    placeholder: 'Choose Remarks',
+    includeSelectAllOption: true,
   });
 });
 
