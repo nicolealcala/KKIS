@@ -1,7 +1,7 @@
 //For Educ Radio Btn Pre-checked
 $(document).ready(function(){
     if ($('#educCheckUpdate').is(':checked')){
-        educRadioClick();
+        educRradioClick();
         enrolledSelected();
     };
 });
@@ -9,19 +9,19 @@ $(document).ready(function(){
 //For Educ Radio Btn when selected
 $(document).ready(function(){
     if($('#educCheckUpdate').on('change', function(){
-        educRadioClick();
+        educRradioClick();
         enrolledSelected();  
     }));
 });
 
 //For Employ Radio Btn
 $(document).ready(function(){
-    $('#employCheckUpdate').change(function(){
-      employRadioClick();
+    $('#employCheck').change(function(){
+      employRradioClick();
     })
 });
 
-//For Educ Status on change
+//For Educ Status
 $(document).ready(function(){
     $('#selectEducStatus').on('change', function(){
         if($('#selectEducStatus option[value=enrolled]').is(':selected')){
@@ -45,47 +45,22 @@ $(document).ready(function(){
     })
 })
 
-//For Remarks
-VirtualSelect.init({ 
+
+//for remarks
+VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true,
-});
+  });
 
+//fxn for pre-selected/selecting option[value=enrolled]
+var enrolledSelected = function(){
+    if ($('#selectEducStatus option[value=enrolled]').is(':selected')){
+        enrolled();
+    };
+};
 
-//fxn for clicking #educCheckUpdate
-var educRadioClick = function(){
-    $("#selectEmployStatus").val("employed").change();
-        $("#selectEmployeeType").val("regular").change();
-        $("#selectCompanyType").val("private").change();
-        $("#selectEmploySalary").val("less10").change();
-        
-        $('#markerEmploy').css("background-color", "#c5d4e3");
-        $('.employFieldLabel').css("color", "#dfdfdf");
-        
-        $('.employSelectBox').each(function(){
-            $(this).prop('disabled', true);
-        });
-            
-        $('.employUserInput').each(function(){
-            $(this).prop('disabled', true);
-            $(this).val("");
-        });
-
-        $('.educSelectBox').each(function(){
-            $(this).prop('disabled', false);
-        });
-            
-        $('.educUserInput').each(function(){
-            $(this).prop('disabled', false);
-            $(this).val("");
-        });
-
-        $('#markerEduc').css("background-color", "#F1A400");
-        $('.educFieldLabel').css("color", "#909090");
-}
-
-//fxn for clicking #employCheckUpdate
-var employRadioClick = function(){
+//fxn for clicking #employCheck
+var employRradioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
     $("#selectSchoolType").val("private").change();
@@ -113,16 +88,41 @@ var employRadioClick = function(){
         $(this).val("");
     });
 
-    $('#markerEmploy').css("background-color", "#F1A400");
+    $('#markerEmploy').css("background-color", "#219EBC");
     $('.employFieldLabel').css("color", "#909090");
 }
 
-//fxn for pre-selected/selecting option[value=enrolled]
-var enrolledSelected = function(){
-    if ($('#selectEducStatus option[value=enrolled]').is(':selected')){
-        enrolled();
-    };
-};
+//fxn for clicking #educCheckUpdate
+var educRradioClick = function(){
+    $("#selectEmployStatus").val("employed").change();
+        $("#selectEmployeeType").val("regular").change();
+        $("#selectCompanyType").val("private").change();
+        $("#selectEmploySalary").val("less10").change();
+        
+        $('#markerEmploy').css("background-color", "#c5d4e3");
+        $('.employFieldLabel').css("color", "#dfdfdf");
+        
+        $('.employSelectBox').each(function(){
+            $(this).prop('disabled', true);
+        });
+            
+        $('.employUserInput').each(function(){
+            $(this).prop('disabled', true);
+            $(this).val("");
+        });
+
+        $('.educSelectBox').each(function(){
+            $(this).prop('disabled', false);
+        });
+            
+        $('.educUserInput').each(function(){
+            $(this).prop('disabled', false);
+            $(this).val("");
+        });
+
+        $('#markerEduc').css("background-color", "#219EBC");
+        $('.educFieldLabel').css("color", "#909090");
+}
 
 //fxn for Enrolled 
 var enrolled = function(){

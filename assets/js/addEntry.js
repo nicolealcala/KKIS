@@ -1,7 +1,7 @@
 //For Educ Radio Btn Pre-checked
 $(document).ready(function(){
     if ($('#educCheck').is(':checked')){
-        educRadioClick();
+        educRradioClick();
         enrolledSelected();
     };
 });
@@ -9,7 +9,7 @@ $(document).ready(function(){
 //For Educ Radio Btn when selected
 $(document).ready(function(){
     if($('#educCheck').on('change', function(){
-        educRadioClick();
+        educRradioClick();
         enrolledSelected();  
     }));
 });
@@ -17,11 +17,11 @@ $(document).ready(function(){
 //For Employ Radio Btn
 $(document).ready(function(){
     $('#employCheck').change(function(){
-      employRadioClick();
+      employRradioClick();
     })
 });
 
-//For Educ Status on change
+//For Educ Status
 $(document).ready(function(){
     $('#selectEducStatus').on('change', function(){
         if($('#selectEducStatus option[value=enrolled]').is(':selected')){
@@ -45,47 +45,22 @@ $(document).ready(function(){
     })
 })
 
-//For Remarks
-VirtualSelect.init({ 
+
+//for remarks
+VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true,
-});
+  });
 
-
-//fxn for clicking #educCheck
-var educRadioClick = function(){
-    $("#selectEmployStatus").val("employed").change();
-        $("#selectEmployeeType").val("regular").change();
-        $("#selectCompanyType").val("private").change();
-        $("#selectEmploySalary").val("less10").change();
-        
-        $('#markerEmploy').css("background-color", "#c5d4e3");
-        $('.employFieldLabel').css("color", "#dfdfdf");
-        
-        $('.employSelectBox').each(function(){
-            $(this).prop('disabled', true);
-        });
-            
-        $('.employUserInput').each(function(){
-            $(this).prop('disabled', true);
-            $(this).val("");
-        });
-
-        $('.educSelectBox').each(function(){
-            $(this).prop('disabled', false);
-        });
-            
-        $('.educUserInput').each(function(){    
-            $(this).prop('disabled', false);
-            $(this).val("");
-        });
-
-        $('#markerEduc').css("background-color", "#219EBC");
-        $('.educFieldLabel').css("color", "#909090");
-}
+//fxn for pre-selected/selecting option[value=enrolled]
+var enrolledSelected = function(){
+    if ($('#selectEducStatus option[value=enrolled]').is(':selected')){
+        enrolled();
+    };
+};
 
 //fxn for clicking #employCheck
-var employRadioClick = function(){
+var employRradioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
     $("#selectSchoolType").val("private").change();
@@ -117,12 +92,37 @@ var employRadioClick = function(){
     $('.employFieldLabel').css("color", "#909090");
 }
 
-//fxn for pre-selected/selecting option[value=enrolled]
-var enrolledSelected = function(){
-    if ($('#selectEducStatus option[value=enrolled]').is(':selected')){
-        enrolled();
-    };
-};
+//fxn for clicking #educCheck
+var educRradioClick = function(){
+    $("#selectEmployStatus").val("employed").change();
+        $("#selectEmployeeType").val("regular").change();
+        $("#selectCompanyType").val("private").change();
+        $("#selectEmploySalary").val("less10").change();
+        
+        $('#markerEmploy').css("background-color", "#c5d4e3");
+        $('.employFieldLabel').css("color", "#dfdfdf");
+        
+        $('.employSelectBox').each(function(){
+            $(this).prop('disabled', true);
+        });
+            
+        $('.employUserInput').each(function(){
+            $(this).prop('disabled', true);
+            $(this).val("");
+        });
+
+        $('.educSelectBox').each(function(){
+            $(this).prop('disabled', false);
+        });
+            
+        $('.educUserInput').each(function(){
+            $(this).prop('disabled', false);
+            $(this).val("");
+        });
+
+        $('#markerEduc').css("background-color", "#219EBC");
+        $('.educFieldLabel').css("color", "#909090");
+}
 
 //fxn for Enrolled 
 var enrolled = function(){
