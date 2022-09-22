@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
-    <link rel="stylesheet" href="assets/css/addUpdate.compiled.css">
+    <link rel="stylesheet" href="assets/scss/addUpdate.css">
     <link rel="stylesheet" href="assets/css/mediaquery.compiled.css">
     
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -318,17 +318,18 @@
                                     </select>
                                 </label>
                             </div>
-                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12" id="colRemarks">
+                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12" id="colRemarks">
                                 <div class="remarkDiv">
                                     <label class="col-form-label fieldLabel required w-100 pb-0 pt-1" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
                                     <select class="text-uppercase w-100 houseSelectBox" multiple name="native-select" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
+                                        <option class="w-100" value="soloLiving">Solo Living</option>
                                         <option class="w-100" value="soloParent">Solo Parent</option>
-                                        <option class="w-100" value="teenPregnancy">Teenage Pregnancy</option> 
+                                        <option class="w-100" value="teenPregnancy">Teenage Pregnancy</option>  
                                     </select>
                                 </div>
                             </div>
-                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members
                                     <select class="form-select text-uppercase w-100 houseSelectBox" id="famCount-1">
                                         <option value="less5">Less than 5</option>
@@ -342,7 +343,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2 mt-5">
+                <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
                     <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
                         <button class="btn disabled controlBtn" id="clearBtncla" type="button" disabled="">Clear All</button>
                     </div>

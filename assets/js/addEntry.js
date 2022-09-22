@@ -47,10 +47,11 @@ $(document).ready(function(){
 
 //For Remarks
 VirtualSelect.init({ 
-    ele: '#remarkDrop' 
+    ele: '#remarkDrop',
+    hideClearButton: true
 });
 
-
+s
 //fxn for clicking #educCheck
 var educRradioClick = function(){
     $("#selectEmployStatus").val("employed").change();
