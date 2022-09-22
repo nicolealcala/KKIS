@@ -23,7 +23,7 @@
   color: #393737;
   font-size: auto;
 }
-.content .userInput:disabled, .content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
+.content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
   color: #cccccc;
 }
 
@@ -51,19 +51,13 @@
 .remarkDiv {
   width: 100%;
 }
+.remarkDiv #remarkDrop {
+  max-width: 100%;
+}
 
 .vscomp-toggle-button {
-  width: inherit;
-  border: 1.5px solid #D1D3E2;
-  border-radius: 6px;
-}
-
-.vscomp-ele-wrapper {
   width: 100%;
-}
-
-#rowBtn {
-  margin-top: 6em;
+  border-radius: 15px solid #D1D3E2;
 }
 
 .controlBtn {
