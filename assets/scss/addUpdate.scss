@@ -77,12 +77,12 @@ $text: #393737;
 
     #remarkDrop{
         max-width: 100%;
+        
+        .vscomp-toggle-button{
+            width: 100%;
+            border-radius: 15px solid #D1D3E2;
+        }
     }
-}
-
-.vscomp-toggle-button{
-    width: 100%;
-    border-radius: 15px solid #D1D3E2;
 }
 
 .controlBtn {

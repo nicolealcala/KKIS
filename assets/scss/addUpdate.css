@@ -54,8 +54,7 @@
 .remarkDiv #remarkDrop {
   max-width: 100%;
 }
-
-.vscomp-toggle-button {
+.remarkDiv #remarkDrop .vscomp-toggle-button {
   width: 100%;
   border-radius: 15px solid #D1D3E2;
 }
