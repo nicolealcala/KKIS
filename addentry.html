@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
     <link rel="stylesheet" href="assets/scss/addUpdate.css">
-    <link rel="stylesheet" href="assets/css/mediaquery.compiled.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
     
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
@@ -318,17 +318,6 @@
                                     </select>
                                 </label>
                             </div>
-                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12" id="colRemarks">
-                                <div class="remarkDiv">
-                                    <label class="col-form-label fieldLabel required w-100 pb-0 pt-1" for="remarkDrop" id="remarksLbl">Remarks</label>
-                                    <!-- Class form-select  removed from select element in Remarks -->
-                                    <select class="text-uppercase w-100 houseSelectBox" multiple name="native-select" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
-                                        <option class="w-100" value="soloLiving">Solo Living</option>
-                                        <option class="w-100" value="soloParent">Solo Parent</option>
-                                        <option class="w-100" value="teenPregnancy">Teenage Pregnancy</option>  
-                                    </select>
-                                </div>
-                            </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members
                                     <select class="form-select text-uppercase w-100 houseSelectBox" id="famCount-1">
@@ -340,6 +329,17 @@
                                     </select>
                                 </label>
                             </div>
+                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12" id="colRemarks">
+                                <div class="remarkDiv">
+                                    <label class="col-form-label fieldLabel required w-100 pb-0 pt-1" for="remarkDrop" id="remarksLbl">Remarks</label>
+                                    <!-- Class form-select  removed from select element in Remarks -->
+                                    <select class="text-uppercase houseSelectBox" multiple name="native-select" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
+                                        <option value="soloLiving">Solo Living</option>
+                                        <option value="soloParent">Solo Parent</option>
+                                        <option value="teenPregnancy">Teenage Pregnancy</option>  
+                                    </select>
+                                </div>
+                            </div> 
                         </div>
                     </form>
                 </div>

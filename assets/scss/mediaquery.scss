@@ -11,6 +11,7 @@ $text: #393737;
 
 .title {
     font: 100% $font-stack;
+    font-size: 2.5em;
 }
 
 * {
@@ -55,10 +56,6 @@ $text: #393737;
     .content{
         margin: 2em 4em 2em 8em;
         padding: 1em;
-    }
-    
-    .title {
-        font-size: 2.5em;
     }
 
     .eStatus{

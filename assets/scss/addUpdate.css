@@ -23,6 +23,9 @@
   color: #393737;
   font-size: auto;
 }
+.content .userInput:disabled, .content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
+  color: #cccccc;
+}
 
 .markerDiv {
   height: 2em;
@@ -45,11 +48,17 @@
   border: none;
 }
 
-#remarkDrop {
+.remarkDiv {
   width: 100%;
 }
 
 .vscomp-toggle-button {
+  width: inherit;
+  border: 1.5px solid #D1D3E2;
+  border-radius: 6px;
+}
+
+.vscomp-ele-wrapper {
   width: 100%;
 }
 

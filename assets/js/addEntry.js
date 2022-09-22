@@ -1,7 +1,7 @@
 //For Educ Radio Btn Pre-checked
 $(document).ready(function(){
     if ($('#educCheck').is(':checked')){
-        educRradioClick();
+        educRadioClick();
         enrolledSelected();
     };
 });
@@ -9,7 +9,7 @@ $(document).ready(function(){
 //For Educ Radio Btn when selected
 $(document).ready(function(){
     if($('#educCheck').on('change', function(){
-        educRradioClick();
+        educRadioClick();
         enrolledSelected();  
     }));
 });
@@ -17,7 +17,7 @@ $(document).ready(function(){
 //For Employ Radio Btn
 $(document).ready(function(){
     $('#employCheck').change(function(){
-      employRradioClick();
+      employRadioClick();
     })
 });
 
@@ -48,12 +48,12 @@ $(document).ready(function(){
 //For Remarks
 VirtualSelect.init({ 
     ele: '#remarkDrop',
-    hideClearButton: true
+    hideClearButton: true,
 });
 
-s
+
 //fxn for clicking #educCheck
-var educRradioClick = function(){
+var educRadioClick = function(){
     $("#selectEmployStatus").val("employed").change();
         $("#selectEmployeeType").val("regular").change();
         $("#selectCompanyType").val("private").change();
@@ -75,7 +75,7 @@ var educRradioClick = function(){
             $(this).prop('disabled', false);
         });
             
-        $('.educUserInput').each(function(){
+        $('.educUserInput').each(function(){    
             $(this).prop('disabled', false);
             $(this).val("");
         });
@@ -85,7 +85,7 @@ var educRradioClick = function(){
 }
 
 //fxn for clicking #employCheck
-var employRradioClick = function(){
+var employRadioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
     $("#selectSchoolType").val("private").change();

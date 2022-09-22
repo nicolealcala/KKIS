@@ -45,6 +45,9 @@ $text: #393737;
         font-size: auto;
     }
 
+    .userInput:disabled, .educSelectBox:disabled, .employSelectBox:disabled, .educUserInput:disabled, .employUserInput:disabled {
+        color: #cccccc;
+      }
     
 }
 
@@ -69,10 +72,17 @@ $text: #393737;
     border: none;
 }
 
-#remarkDrop{
+.remarkDiv {
     width: 100%;
 }
+
 .vscomp-toggle-button{
+    width: inherit;
+    border: 1.5px solid #D1D3E2;
+    border-radius: 6px;
+}
+
+.vscomp-ele-wrapper{
     width: 100%;
 }
 

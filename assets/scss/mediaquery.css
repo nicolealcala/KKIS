@@ -1,5 +1,6 @@
 .title {
   font: 100% Poppins, sans-serif;
+  font-size: 2.5em;
 }
 
 * {
@@ -37,9 +38,6 @@
   .content {
     margin: 2em 4em 2em 8em;
     padding: 1em;
-  }
-  .title {
-    font-size: 2.5em;
   }
   .eStatus {
     margin-top: 1em;
