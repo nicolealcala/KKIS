@@ -66,6 +66,41 @@ var enrolledSelected = function(){
     };
 };
 
+//fxn for clicking #educCheck
+var educRradioClick = function(){
+    $("#selectEmployStatus").val("employed").change();
+        $("#selectEmployeeType").val("regular").change();
+        $("#selectCompanyType").val("private").change();
+        $("#selectEmploySalary").val("less10").change();
+        
+        $('#markerEmploy').css("background-color", "#c5d4e3");
+        $('.employFieldLabel').css("color", "#dfdfdf");
+        
+        $('.employSelectBox').each(function(){
+            $(this).prop('disabled', true);
+        });
+            
+        $('.employUserInput').each(function(){
+            $(this).prop('disabled', true);
+            $(this).val("");
+        });
+
+        $('.educSelectBox').each(function(){
+            $(this).prop('disabled', false);
+        });
+            
+        $('.educUserInput').each(function(){
+            $(this).prop('disabled', false);
+            $(this).val("");
+        });
+
+        $('#markerEduc').css("background-color", "#219EBC");
+        $('.educFieldLabel').css("color", "#909090");
+
+        $('.employFieldLabel').removeClass('required');
+        $('.educFieldLabel').addClass('required');
+}
+
 //fxn for clicking #employCheck
 var employRradioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
@@ -101,61 +136,25 @@ var employRradioClick = function(){
     $('.employFieldLabel').css("color", "#909090");
 }
 
-//fxn for clicking #educCheck
-var educRradioClick = function(){
-    $("#selectEmployStatus").val("employed").change();
-        $("#selectEmployeeType").val("regular").change();
-        $("#selectCompanyType").val("private").change();
-        $("#selectEmploySalary").val("less10").change();
-        
-        $('#markerEmploy').css("background-color", "#c5d4e3");
-        $('.employFieldLabel').css("color", "#dfdfdf");
-        
-        $('.employSelectBox').each(function(){
-            $(this).prop('disabled', true);
-        });
-            
-        $('.employUserInput').each(function(){
-            $(this).prop('disabled', true);
-            $(this).val("");
-        });
-
-        $('.educSelectBox').each(function(){
-            $(this).prop('disabled', false);
-        });
-            
-        $('.educUserInput').each(function(){
-            $(this).prop('disabled', false);
-            $(this).val("");
-        });
-
-        $('#markerEduc').css("background-color", "#219EBC");
-        $('.educFieldLabel').css("color", "#909090");
-
-        $('.employFieldLabel').removeClass('required');
-
-        $('.educFieldLabel').addClass('required');
-        $('.educFieldLabel').each(function(){
-            if (($(this).attr("id")=="educOccupationLbl") || ($(this).attr("id")=="educSalaryLbl")){
-                $(this).removeClass('required');
-            }
-        })
-
-}
-
 //fxn for Enrolled 
 var enrolled = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
         if ($(this).attr("id")=="selectEducSalary"){
             $(this).prop('disabled', true);
-        }
+        } 
     });
 
     $('.educUserInput').each(function(){
         $(this).prop('disabled', false);
         if ($(this).attr("id")=="inputEducOccupation"){
             $(this).prop('disabled', true);
+        }
+    });
+
+    $('.educFieldLabel').each(function(){
+        if (($(this).attr("id")=="educOccupationLbl") || ($(this).attr("id")=="educSalaryLbl")){
+            $(this).removeClass('required');
         }
     });
 
