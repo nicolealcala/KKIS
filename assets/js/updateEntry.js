@@ -13,10 +13,10 @@ $(document).ready(function(){
         enrolledSelected();  
     }));
 });
-
+    
 //For Employ Radio Btn
 $(document).ready(function(){
-    $('#employCheck').change(function(){
+    $('#employCheckUpdate').change(function(){
       employRradioClick();
     })
 });
@@ -59,7 +59,7 @@ var enrolledSelected = function(){
     };
 };
 
-//fxn for clicking #employCheck
+//fxn for clicking #employCheckUpdate
 var employRradioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
@@ -88,7 +88,7 @@ var employRradioClick = function(){
         $(this).val("");
     });
 
-    $('#markerEmploy').css("background-color", "#219EBC");
+    $('#markerEmploy').css("background-color", "#F1A400");
     $('.employFieldLabel').css("color", "#909090");
 }
 
@@ -120,7 +120,7 @@ var educRradioClick = function(){
             $(this).val("");
         });
 
-        $('#markerEduc').css("background-color", "#219EBC");
+        $('#markerEduc').css("background-color", "#F1A400");
         $('.educFieldLabel').css("color", "#909090");
 }
 

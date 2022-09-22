@@ -27,6 +27,11 @@
   color: #cccccc;
 }
 
+.required:after {
+  content: " *";
+  color: red;
+}
+
 .markerDiv {
   height: 2em;
   background-color: #219EBC;
@@ -54,9 +59,14 @@
 .remarkDiv #remarkDrop {
   max-width: 100%;
 }
-.remarkDiv #remarkDrop .vscomp-toggle-button {
+.remarkDiv #remarkDrop .vscomp-ele-wrapper {
+  margin-top: 0;
+}
+.remarkDiv #remarkDrop .vscomp-ele-wrapper .vscomp-toggle-button {
   width: 100%;
-  border-radius: 15px solid #D1D3E2;
+  height: 2.7em;
+  border: 1.3px solid #D1D3E2;
+  border-radius: 6px;
 }
 
 .controlBtn {

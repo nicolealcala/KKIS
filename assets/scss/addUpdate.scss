@@ -51,6 +51,11 @@ $text: #393737;
     }
 }
 
+.required:after {
+    content:" *";
+    color: red;
+}
+
 .markerDiv {
     height: 2em;
     background-color: $mid-blue;
@@ -75,12 +80,18 @@ $text: #393737;
 .remarkDiv {
     width: 100%;
 
-    #remarkDrop{
+    #remarkDrop{   
         max-width: 100%;
-        
-        .vscomp-toggle-button{
-            width: 100%;
-            border-radius: 15px solid #D1D3E2;
+
+        .vscomp-ele-wrapper{
+            margin-top: 0;
+
+            .vscomp-toggle-button{
+                width: 100%;
+                height: 2.7em;
+                border: 1.3px solid #D1D3E2;
+                border-radius: 6px;
+            }
         }
     }
 }
@@ -90,4 +101,3 @@ $text: #393737;
     width: 6em;
     color: #707070;
 }
-

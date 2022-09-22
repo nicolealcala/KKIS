@@ -1,3 +1,10 @@
+//For required
+$(document).ready(function(){
+    $('fieldLabel').addClass('required')
+})
+
+
+
 //For Educ Radio Btn Pre-checked
 $(document).ready(function(){
     if ($('#educCheck').is(':checked')){
@@ -69,6 +76,8 @@ var employRradioClick = function(){
 
     $('#markerEduc').css("background-color", "#c5d4e3");
     $('.educFieldLabel').css("color", "#dfdfdf");
+    
+    $('.educFieldLabel').removeClass('required');
         
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', true);
@@ -122,6 +131,16 @@ var educRradioClick = function(){
 
         $('#markerEduc').css("background-color", "#219EBC");
         $('.educFieldLabel').css("color", "#909090");
+
+        $('.employFieldLabel').removeClass('required');
+
+        $('.educFieldLabel').addClass('required');
+        $('.educFieldLabel').each(function(){
+            if (($(this).attr("id")=="educOccupationLbl") || ($(this).attr("id")=="educSalaryLbl")){
+                $(this).removeClass('required');
+            }
+        })
+
 }
 
 //fxn for Enrolled 
