@@ -1,0 +1,95 @@
+$font-stack-sub: DM Sans, sans-serif;
+$text: #393737;
+$light-yellow: #F3CB69;
+
+body {
+    font: 100% $font-stack-sub;
+}
+
+.idPic {
+    width: 450px;
+    height: auto;
+    border: 1px solid $text;
+    border-radius: 12px;
+}
+
+.idCol{
+    position: relative;
+    
+    .idLogo {
+        position: absolute;
+        width: 50px;
+        height: auto;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .skTitle {  
+        font-weight: 700;
+        font-size: 30px;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 25px;
+        left: 75px;
+        color: white;
+    }
+    
+    .idNo {
+        font-weight: 500;
+        font-size: 30px;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 115px;
+        left: 20px;
+        color: $light-yellow;
+    }
+    .idName {
+        font-weight: 500;
+        font-size: 19px;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 166px;
+        left: 45px;
+        color: white;
+    }
+
+    .idBday {
+        font-weight: 400;
+        font-size: 19px;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 199px;
+        left: 45px;
+        color: white;
+    }
+    
+    .idPurok {
+        font-weight: 400;
+        font-size: 19px;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 231px;
+        left: 45px;
+        color: white;
+    }
+    
+    .qrContainer {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 86px;
+        left: 330px;
+        color: white;
+        background-color: gray;
+        
+        .qrImg{
+            width: inherit;
+            height: inherit;
+        }
+    }
+}

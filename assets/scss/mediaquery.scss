@@ -31,7 +31,7 @@ $text: #393737;
         margin-left: 0.3em;
   
     }
-    .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer{
+    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle{
         white-space: nowrap; 
         width: 80%; 
         overflow: hidden;
@@ -58,18 +58,18 @@ $text: #393737;
     }
     
     .title {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     .eStatus{
         margin-top: 1em;
         padding: 0;
         
-        #markerEduc, #markerEmploy {
+        #markerEduc, #markerEmploy, #markerEducUpdate, #markerEmployUpdate {
             width: 99%;
         }
         
-        #markerEmploy {
+        #markerEmploy, #markerEmployUpdate {
             margin-left: 1%;
         }
         
@@ -81,6 +81,10 @@ $text: #393737;
     .backBtn {
         width: 3em;
         height: 3em;
+    }
+    
+    .entryContainer {
+        padding: 2em;
     }
 }
 
@@ -113,6 +117,10 @@ $text: #393737;
         .imgHR{
             height: 0.5em;
         }
+        
+        .entryContainer{
+            padding: 1em;
+        }
     }  
 }
 
@@ -136,10 +144,15 @@ $text: #393737;
     .divNav .slider {
         width: 60%;
     } 
-    .fieldLabel, .educFieldLabel, .employFieldLabel, .linkContainer{
+    
+    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle{
         white-space: nowrap; 
         width: 70%; 
         overflow: hidden;
         text-overflow: ellipsis;
-        }
+    }
+    
+    .entryContainer{
+            padding: 0;
+    }
 }
