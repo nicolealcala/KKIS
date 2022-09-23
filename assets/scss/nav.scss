@@ -11,38 +11,109 @@ $white: #FFFFFF;
     #checkSide:checked ~.divSideNav {
         width: 309px;
     }
-    a {
-        font-size: 25px;
-        .divSideTab {
-                height: 61px;
+    .divSideNav {
+        width: 74px;
+        #toggle {
+            img {
+                width: 74px;
+            }
+            
         }
-    }
-    #divSideProfile {
-        font-size: 25px;
-        margin-top: 370px;
-    }
+        a {
+            font-size: 25px;
+            .divSideTab {
+                height: 61px;
+                img {
+                    margin-left: 13px;
+                }
+            }
+        }
+        .bottomPartSideNav {
+            position:absolute; bottom:0;
+            margin-bottom: 10px;
+            width: inherit;
+            #divSideProfile {
+                height: 61px;
+                color: $white;
+                background: $darkerBlue;
+                display: flex;
+                align-items: center;
+                .profile {
+                    .profileContent {
+                        img {
+                            padding-left: 12px;
+                            margin-right: 18px;
+                        }
+                        span {
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }//divSideProfile
+        }//bottomPartSideNav
+    }//divSideNav
+   
+    
+    // #divSideProfile {
+    //     font-size: 25px;
+    //     margin-top: 370px;
+    // }
     #topNav {
         display: none;
     }
     .divNavMenu {
         display: none;
     }
+    
 }//fhd
 @media screen and (max-width:1366px) and (min-width:769px) {                    //hd screen
     
     #checkSide:checked ~.divSideNav {
         width: 250px;
     }
-    a {
-        font-size: 18px;
-        .divSideTab {
-                height: 50px;
+    
+    .divSideNav {
+        width: 50px;
+        #toggle {
+            img {
+                width: 50px;
+            }
         }
+        a {
+            font-size: 18px;
+            .divSideTab {
+                height: 50px;
+                img {
+                    height: 38px;
+                }
+            }
+        }
+        .bottomPartSideNav {
+            position:absolute; bottom:0;
+            margin-bottom: 10px;
+            width: inherit;
+            #divSideProfile {
+                height: 61px;
+                color: $white;
+                background: $darkerBlue;
+                display: flex;
+                align-items: center;
+                .profile {
+                    .profileContent {
+                        img {
+                            padding-left: 5px;
+                            margin-right: 18px;
+                            height: 40px;
+                        }
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }//divSideProfile
+        }//bottomPartSideNav
     }
-    #divSideProfile {
-        font-size: 18px;
-        margin-top: 135px;
-    }
+    
     #topNav {
         display: none;
     }
@@ -57,7 +128,7 @@ $white: #FFFFFF;
     #topNav {
         height: 50px;
         label {
-            img {
+            #toggle {
                 height: 50px;
             }
         }
@@ -73,11 +144,10 @@ $white: #FFFFFF;
         }//a
     }
     #checkTop:checked ~ .divNavMenu {
-        height: 360px;
+        height: 250px;
         transition: all 0.5s ease;
     }
 }//tablet
-    
 @media screen and (max-width:480px) {                                      //mobile  screen
     .divSideNav {
         display: none;
@@ -85,7 +155,7 @@ $white: #FFFFFF;
     #topNav {
         height: 40px;
         label {
-            img {
+            #toggle {
                 height: 40px;
             }
         }
@@ -110,7 +180,6 @@ $white: #FFFFFF;
 * {
     margin: 0px;
     padding: 0px;
-    font: Poppins;
 }
 
 body {
@@ -130,11 +199,12 @@ body {
         display: none;
     }
     .divSideNav {
-        width: 74px;
         height: 100vh;
         background: $darkBlue;
         transition: all 0.4s ease;
-        
+        position:relative;
+        overflow: hidden;
+        white-space: nowrap;
         #top {
             margin-bottom: 40px;
         }
@@ -146,57 +216,64 @@ body {
             align-items: center;
             overflow: hidden;
             white-space: nowrap;
+            
             .divSideTab {
                 // height: 61px;
                 display: flex;
                 align-items: center;
+            
                 img {
                     padding: 8px;
-                    margin-left: 13px;
+                    // margin-left: 13px;
                     margin-right: 14px;
                 }//img
-            }//divSideMenu
-        }//a
-        a:hover {
-            color: $darkGrey;
-            background: $white;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        a:focus {
-            color: $darkGrey;
-            background: $white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        #divSideProfile {
-            height: 61px;
-            color: $white;
-            background: $darkerBlue;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            .profile {
-                
-                .profileContent {
 
-                    img {
-                        padding-left: 12px;
-                        margin-right: 18px;
+            }//divSideTab
+        }//a
+        
+        a:hover,a:focus {
+            color: $darkGrey;
+            background: $white;
+            text-decoration: none;
+            transition: 0.5s ease;
+            
+        }
+        
+        .bottomPartSideNav {
+            position:absolute; bottom:0;
+            margin-bottom: 10px;
+            width: inherit;
+            #divSideProfile {
+                height: 61px;
+                color: $white;
+                background: $darkerBlue;
+                display: flex;
+                align-items: center;
+                .profile {
+                    .profileContent {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            // padding-left: 12px;
+                            margin-right: 18px;
+                        }
+                        span {
+                            
+                        }
                     }
                 }
-            }
-        }//divSideProfile
+            }//divSideProfile
+        }//bottomPartSideNav
     }//divSideNav
-    
                                                             //topNavTablet
     #topNav {
         width: 100vw;
         background: $darkBlue;
         label {
-            img {
+            #toggle {
             }
         }
+        
     }//tabletNav
     .divNavMenu {
         width: 100vw;
@@ -208,40 +285,43 @@ body {
         a {
             text-decoration: none;
             color: $white;
-            
+            position: relative;
+            z-index: 0;
+            background: $darkBlue;
             .divTopTab {
                 display: flex;
                 align-items: center;
                 padding-top: 5px;
                 padding-bottom: 5px;
+                
                 img {
                     margin-left: 30px;
                     
                 }
                 span {
                     margin-left: 10px;
-
                 }
             }
+            
         }//a
-        a:hover {
+        a:hover,a:focus {
             color: $darkGrey;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: 0.5s ease;
             .divTopTab {
                 background: $white;
+                transition: 0.5s ease;
             }
         }
-        a:focus {
-            color: $darkGrey;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            .divTopTab {
-                background: $white;
-            }
-        }
+//         a:focus {
+//             color: $darkGrey;
+//             text-decoration: none;
+
+//             .divTopTab {
+//                 background: $white;
+//             }
+//         }
     }//divNavTablet
-    
 }//body
 
 // -KKID png icon
