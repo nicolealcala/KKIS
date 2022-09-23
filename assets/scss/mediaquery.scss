@@ -60,7 +60,8 @@ $text: #393737;
     .title {
         font-size: 2.5em;
     }
-
+    
+    //Add and Update Entry
     .eStatus{
         margin-top: 1em;
         padding: 0;
@@ -78,13 +79,15 @@ $text: #393737;
         }
     }
     
+    //Update Entry
     .backBtn {
         width: 3em;
         height: 3em;
     }
     
-    .entryContainer {
-        padding: 2em;
+    //Declared Household
+    .familiesBody, .overviewBody {
+        margin-top: 5em;
     }
 }
 
