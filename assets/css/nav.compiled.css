@@ -3,16 +3,40 @@
     width: 309px;
   }
 
-  a {
+  .divSideNav {
+    width: 74px;
+  }
+  .divSideNav #toggle img {
+    width: 74px;
+  }
+  .divSideNav a {
     font-size: 25px;
   }
-  a .divSideTab {
+  .divSideNav a .divSideTab {
     height: 61px;
   }
-
-  #divSideProfile {
+  .divSideNav a .divSideTab img {
+    margin-left: 13px;
+  }
+  .divSideNav .bottomPartSideNav {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    width: inherit;
+  }
+  .divSideNav .bottomPartSideNav #divSideProfile {
+    height: 61px;
+    color: #FFFFFF;
+    background: #01364F;
+    display: flex;
+    align-items: center;
+  }
+  .divSideNav .bottomPartSideNav #divSideProfile .profile .profileContent img {
+    padding-left: 12px;
+    margin-right: 18px;
+  }
+  .divSideNav .bottomPartSideNav #divSideProfile .profile .profileContent span {
     font-size: 25px;
-    margin-top: 370px;
   }
 
   #topNav {
@@ -28,16 +52,41 @@
     width: 250px;
   }
 
-  a {
+  .divSideNav {
+    width: 50px;
+  }
+  .divSideNav #toggle img {
+    width: 50px;
+  }
+  .divSideNav a {
     font-size: 18px;
   }
-  a .divSideTab {
+  .divSideNav a .divSideTab {
     height: 50px;
   }
-
-  #divSideProfile {
+  .divSideNav a .divSideTab img {
+    height: 38px;
+  }
+  .divSideNav .bottomPartSideNav {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    width: inherit;
+  }
+  .divSideNav .bottomPartSideNav #divSideProfile {
+    height: 61px;
+    color: #FFFFFF;
+    background: #01364F;
+    display: flex;
+    align-items: center;
+  }
+  .divSideNav .bottomPartSideNav #divSideProfile .profile .profileContent img {
+    padding-left: 5px;
+    margin-right: 18px;
+    height: 40px;
+  }
+  .divSideNav .bottomPartSideNav #divSideProfile .profile .profileContent span {
     font-size: 18px;
-    margin-top: 135px;
   }
 
   #topNav {
@@ -56,7 +105,7 @@
   #topNav {
     height: 50px;
   }
-  #topNav label img {
+  #topNav label #toggle {
     height: 50px;
   }
 
@@ -68,7 +117,7 @@
   }
 
   #checkTop:checked ~ .divNavMenu {
-    height: 360px;
+    height: 250px;
     transition: all 0.5s ease;
   }
 }
@@ -80,7 +129,7 @@
   #topNav {
     height: 40px;
   }
-  #topNav label img {
+  #topNav label #toggle {
     height: 40px;
   }
 
@@ -116,10 +165,12 @@ body #checkTop {
   display: none;
 }
 body .divSideNav {
-  width: 74px;
   height: 100vh;
   background: #04496A;
   transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
 }
 body .divSideNav #top {
   margin-bottom: 40px;
@@ -138,31 +189,32 @@ body .divSideNav a .divSideTab {
 }
 body .divSideNav a .divSideTab img {
   padding: 8px;
-  margin-left: 13px;
   margin-right: 14px;
 }
-body .divSideNav a:hover {
+body .divSideNav a:hover, body .divSideNav a:focus {
   color: #393737;
   background: #FFFFFF;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: 0.5s ease;
 }
-body .divSideNav a:focus {
-  color: #393737;
-  background: #FFFFFF;
-  text-decoration: none;
-  transition: all 0.3s ease;
+body .divSideNav .bottomPartSideNav {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: inherit;
 }
-body .divSideNav #divSideProfile {
+body .divSideNav .bottomPartSideNav #divSideProfile {
   height: 61px;
   color: #FFFFFF;
   background: #01364F;
   display: flex;
   align-items: center;
-  white-space: nowrap;
 }
-body .divSideNav #divSideProfile .profile .profileContent img {
-  padding-left: 12px;
+body .divSideNav .bottomPartSideNav #divSideProfile .profile .profileContent {
+  display: flex;
+  align-items: center;
+}
+body .divSideNav .bottomPartSideNav #divSideProfile .profile .profileContent img {
   margin-right: 18px;
 }
 body #topNav {
@@ -179,6 +231,9 @@ body .divNavMenu {
 body .divNavMenu a {
   text-decoration: none;
   color: #FFFFFF;
+  position: relative;
+  z-index: 0;
+  background: #04496A;
 }
 body .divNavMenu a .divTopTab {
   display: flex;
@@ -192,19 +247,12 @@ body .divNavMenu a .divTopTab img {
 body .divNavMenu a .divTopTab span {
   margin-left: 10px;
 }
-body .divNavMenu a:hover {
+body .divNavMenu a:hover, body .divNavMenu a:focus {
   color: #393737;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: 0.5s ease;
 }
-body .divNavMenu a:hover .divTopTab {
+body .divNavMenu a:hover .divTopTab, body .divNavMenu a:focus .divTopTab {
   background: #FFFFFF;
-}
-body .divNavMenu a:focus {
-  color: #393737;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-body .divNavMenu a:focus .divTopTab {
-  background: #FFFFFF;
+  transition: 0.5s ease;
 }
