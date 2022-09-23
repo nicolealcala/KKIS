@@ -21,41 +21,48 @@
 <body id="page-top">
     <div id="wrapper">
         <div class="container-fluid content">
-            <div class="row documentHeadingRow p-0 m-0">
+            <div class="row kkidHeadingRow p-0 m-0">
                 <div class="col col-12 p-0 mb-4">
                     <h1 class="title h-auto mb-0">KK ID Card</h1><img src="assets/img/misc/hr.svg">
                 </div>
             </div>
-            <div class="generateBody">
-                <div class="row documentBody m-0 p-0 gy-2" id="kkidPage">
-                    <div class="col docDetails col-lg-6 col-md-12 col-sm-12 col-12 p-0">
+            <div class="generateBody m-0">
+                <div class="row kkidBody p-0 gy-2" id="kkidPage">
+                    <div class="col col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                         <h1 class="subTitle mb-3">Batch Printing</h1>
                         <form class="m-0 mt-5">
-                            <div class="row d-xl-flex justify-content-center align-items-center justify-content-xl-center m-auto gy-3 p-3 w-100">
-                                <div class="col text-start col-3 p-0">
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkPurok"><label class="form-check-label categoryCheck" for="checkPurok">Purok</label></div>
+                            <div class="categoryCol row d-xl-flex justify-content-center align-items-center justify-content-xl-center gy-3 w-100">
+                                <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
+                                    <div class="form-check categoryDiv w-75">
+                                        <input class="form-check-input" type="checkbox" id="checkPurok">
+                                        <label class="form-check-label categoryLbl" for="checkPurok">Purok</label>
+                                    </div>
                                 </div>
-                                <div class="col col-8 p-0"><select class="form-select" id="selectPurok" disabled="">
-                                        <optgroup label="This is a group">
-                                            <option value="12" selected="">This is item 1</option>
-                                            <option value="13">This is item 2</option>
-                                            <option value="14">This is item 3</option>
-                                        </optgroup>
-                                    </select></div>
-                                <div class="col col-3 p-0">
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkAge"><label class="form-check-label categoryCheck" for="checkAge">Age</label></div>
+                                <div class="col col-lg-9 col-md-9 col-sm-6 col-8 p-0">
+                                    <select class="form-select categoryOption" id="selectPurok" disabled="">
+                                        <option value="12" selected="">1</option>
+                                        <option value="13">2</option>
+                                        <option value="14">3</option>
+                                    </select>
                                 </div>
-                                <div class="col col-8 p-0"><select class="form-select" id="selectAge" disabled="">
-                                        <optgroup label="This is a group">
-                                            <option value="12" selected="">This is item 1</option>
-                                            <option value="13">This is item 2</option>
-                                            <option value="14">This is item 3</option>
-                                        </optgroup>
-                                    </select></div>
+                                
+                                <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
+                                    <div class="form-check categoryDiv w-75">
+                                        <input class="form-check-input" type="checkbox" id="checkAge">
+                                        <label class="form-check-label categoryLbl" for="checkAge">Age</label>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-9 col-md-9 col-sm-6 col-8 p-0">
+                                    <select class="form-select categoryOption" id="selectAge" disabled="">
+                                        <option value="12" selected="">This is item 1</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </select>
+                                </div>
                             </div>
                         </form>
                     </div>
-                    <div class="col text-start d-xl-flex docPreview col-lg-6 col-md-12 col-sm-12 col-12 p-0">
+                    <div class="col idPreview col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                         <div class="row m-0 w-100">
                             <div class="col p-0" id="kkidMarker">
                                 <h1 class="text-start subTitle mb-3">Katipunan ng Kabataan ID</h1>

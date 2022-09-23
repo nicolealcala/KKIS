@@ -103,6 +103,23 @@
     margin-top: 2em;
     margin-left: 0;
   }
+  .content .familiesBody, .content .overviewBody {
+    margin: 1em;
+  }
+  .kkidBody .categoryCol .categoryDiv {
+    margin-left: 0;
+  }
+  .kkidBody .categoryCol .categoryDiv .categoryOption {
+    width: 100%;
+  }
+  .kkidBody .categoryCol .categoryDiv .categoryLbl {
+    font-size: 1em;
+    margin-left: 1px;
+  }
+  .controlButtons {
+    padding: 2px;
+    width: 5.5em;
+  }
 }
 @media only screen and (max-width: 300px) {
   .divNav .slider {

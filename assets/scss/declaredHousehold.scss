@@ -66,6 +66,11 @@ $text: #393737;
     font-weight: 900;
 }
 
+.familiesBody, .overviewBody {
+    margin: 3em;
+}
+
+
 #overview:checked ~ div label.report {
     color: $mid-blue;
     font-weight: 900;

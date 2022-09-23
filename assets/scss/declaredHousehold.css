@@ -54,6 +54,10 @@
   font-weight: 900;
 }
 
+.familiesBody, .overviewBody {
+  margin: 3em;
+}
+
 #overview:checked ~ div label.report {
   color: #219EBC;
   font-weight: 900;

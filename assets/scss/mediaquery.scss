@@ -140,7 +140,34 @@ $text: #393737;
             margin-top: 2em;
             margin-left: 0;
         }
+
+        .familiesBody, .overviewBody {
+            margin: 1em;
+        }
+        
     }  
+    .kkidBody  {
+    
+        .categoryCol {
+            .categoryDiv{
+                margin-left: 0;
+            
+                .categoryOption{
+                    width: 100%;
+                }
+                
+                .categoryLbl {
+                    font-size: 1em;
+                    margin-left: 1px;
+                }
+            }
+        }
+    }
+
+    .controlButtons {
+        padding: 2px;
+        width: 5.5em;
+    }
 }
 
 @media only screen and (max-width: 300px){

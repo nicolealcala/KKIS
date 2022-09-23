@@ -1,4 +1,4 @@
-.documentHeadingRow {
+.kkidHeadingRow {
   width: 100%;
   margin: 0;
 }
@@ -48,47 +48,29 @@
   z-index: 3;
 }
 
-.linkContainer:nth-child(1).active ~ .slider {
-  transform: translateX(0);
-}
-
-.linkContainer:nth-child(2).active ~ .slider {
-  transform: translateX(100%);
-}
-
-.qrBtn {
-  border: none;
-  border-radius: 0 15em 15em 0;
-  width: 10%;
-  padding: 5px;
-  height: auto;
-  background-color: #04496A;
-}
-.qrBtn #qrIcon {
-  width: 60%;
-  height: auto;
-  color: white;
-}
-
-.qrBtn:hover {
-  background-color: #8ECAE6;
-}
-
-.documentBody {
+.kkidBody {
   padding: 0;
-  margin: 2em 0;
+  margin: 2em;
+  margin-bottom: 5em;
 }
-.documentBody .subTitle {
+.kkidBody .subTitle {
   font: 100% DM Sans, sans-serif;
   font-size: 1.5em;
   color: #393737;
   font-weight: 500;
 }
-.documentBody .categoryCheck {
-  font-size: 1.3em;
+.kkidBody .categoryCol {
+  margin: 0;
 }
-.documentBody .userInput {
-  width: 95%;
+.kkidBody .categoryCol .categoryDiv {
+  margin-left: 2em;
+}
+.kkidBody .categoryCol .categoryDiv .categoryLbl {
+  font-size: 1em;
+  margin-left: 1px;
+}
+.kkidBody .categoryCol .categoryDiv .categoryOption {
+  width: 70%;
 }
 
 .previewContainer {
@@ -100,21 +82,6 @@
 
 .controlButtons {
   width: 6em;
-}
-
-.fieldLabel {
-  font: Poppins, sans-serif;
-  color: #909090;
-  margin-bottom: 0.2em;
-  font-weight: 500;
-}
-
-.userInput {
-  height: 2.5em;
-}
-
-.idFilter {
-  width: 30%;
 }
 
 body::-webkit-scrollbar {
