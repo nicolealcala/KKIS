@@ -74,63 +74,8 @@ $text: #393737;
     left:49%;
 }
 
-.documentBody  {
-    padding: 0;
-    margin: 2em 0;
-    
-    .subTitle {
-        font: 100% $font-stack-sub;
-        font-size: 1.5em;
-        color: $text;
-        font-weight: 500;
-    }
-    
-    .accountHead, .accountTitle{
-        font-size: 1.3em;
-        color: $text;
-        font-weight: 400;
-        width: 100%;
-    }
-    
-    .accountTitle {
-        font-size: 1em;
-    }
-    
-    .categoryCheck {
-        font-size: 1.3em;
-    }
-    
-    .entryInput {
-        padding: 0 0.5em;
-        border-radius: 0.5em;
-        border: 1px solid $text;
-    }
-}
-
-.previewContainer{
-    width: 80%;
-    height: auto;
-    border-radius: 1em;
-    border: none;
-}
-
-.controlButtons {
-    width: 6em;
-} 
-
-.fieldLabel {
-font: $font-stack;
-color: #909090;
-margin-bottom: 0.2em;;
-font-weight: 500;
-}
-
-.userInput {
-height: 2.5em;
-}
-
-.idFilter {
-    width: 30%;
+.familiesBody, .overviewBody {
+    margin-top: 5em;
 }
 
 body::-webkit-scrollbar {

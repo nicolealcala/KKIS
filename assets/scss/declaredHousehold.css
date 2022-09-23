@@ -63,58 +63,8 @@
   left: 49%;
 }
 
-.documentBody {
-  padding: 0;
-  margin: 2em 0;
-}
-.documentBody .subTitle {
-  font: 100% DM Sans, sans-serif;
-  font-size: 1.5em;
-  color: #393737;
-  font-weight: 500;
-}
-.documentBody .accountHead, .documentBody .accountTitle {
-  font-size: 1.3em;
-  color: #393737;
-  font-weight: 400;
-  width: 100%;
-}
-.documentBody .accountTitle {
-  font-size: 1em;
-}
-.documentBody .categoryCheck {
-  font-size: 1.3em;
-}
-.documentBody .entryInput {
-  padding: 0 0.5em;
-  border-radius: 0.5em;
-  border: 1px solid #393737;
-}
-
-.previewContainer {
-  width: 80%;
-  height: auto;
-  border-radius: 1em;
-  border: none;
-}
-
-.controlButtons {
-  width: 6em;
-}
-
-.fieldLabel {
-  font: Poppins, sans-serif;
-  color: #909090;
-  margin-bottom: 0.2em;
-  font-weight: 500;
-}
-
-.userInput {
-  height: 2.5em;
-}
-
-.idFilter {
-  width: 30%;
+.familiesBody, .overviewBody {
+  margin-top: 5em;
 }
 
 body::-webkit-scrollbar {
