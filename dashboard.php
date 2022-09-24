@@ -40,7 +40,7 @@
         <div class="row" id="row1" style="height: 257px;">
         
         <!-- CATEGORY 1 -->
-            <a href="tblTotalYouth.html">
+            <a href="tblTotalYouth.php">
                 <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
                 <div id="total-youth" class="category"> <!-- style="width: 4px; height: 257px;"-->
                     <div id="texts">
@@ -54,7 +54,7 @@
 
         <!-- CATEGORY 2 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblEnrolled.html">
+                <a href="tblEnrolled.php">
                     <div id="enrolled-youth" class="category">
                     <div id="texts">
                         <h1>2716</h1>
@@ -67,7 +67,7 @@
 
         <!-- CATEGORY 3 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblOutOfSchool.html">
+                <a href="tblOutOfSchool.php">
                 <div id="out-of-school-youth" class="category">
                     <div id="texts">
                         <h1>2716</h1>
@@ -80,7 +80,7 @@
 
         <!-- CATEGORY 4 -->    
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblWorkingStudent.html">
+                <a href="tblWorkingStudent.php">
                 <div id="working-student" class="category">
                     <div id="texts">
                         <h1>2716</h1>
@@ -93,7 +93,7 @@
         
         <!-- CATEGORY 5 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblEmployed.html">
+                <a href="tblEmployed.php">
                 <div id="employed" class="category">
                     <div id="texts" style="height: 257px;">
                         <h1>2716</h1>
@@ -106,7 +106,7 @@
     
         <!-- CATEGORY 6 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblUnemployed.html">
+                <a href="tblUnemployed.php">
                     <div id="unemployed" class="category">
                     <div id="texts">
                         <h1>2716</h1>
@@ -119,7 +119,7 @@
 
         <!-- CATEGORY 7 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblRegistedVoters.html">
+                <a href="tblRegistedVoters.php">
                 <div id="registered-voters" class="category">
                     <div id="texts">
                         <h1>2716</h1>
@@ -132,7 +132,7 @@
          
         <!-- CATEGORY 8 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblUnregistedVoters.html">
+                <a href="tblUnregistedVoters.php">
                 <div id="unregistered-voters" class="category">
                     <div id="texts" style="height: 257px;">
                         <h1>2716</h1>
@@ -145,7 +145,7 @@
     
         <!-- CATEGORY 9 -->
             <div class="col-lg-4 col-md-4" style="padding-bottom: 3em;margin-bottom: -1px;padding-top: 0px;">
-                <a href="tblPWD.html">
+                <a href="tblPWD.php">
                 <div id="pwd" class="category">
                     <div id="texts">
                         <h1>2716</h1>
