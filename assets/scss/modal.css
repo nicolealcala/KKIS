@@ -1,12 +1,8 @@
-#modalAdded {
+#modalAdded, #modalUpdated {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   margin: auto auto;
-}
-#modalAdded #addedHeader {
-  background-color: white;
-  border: none;
 }
 
 #modalView {
@@ -59,6 +55,12 @@
     text-overflow: ellipsis;
   }
 }
+.modalAlert {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #393737;
+}
+
 .checkmark__circle, .checkmark__circleUpdate {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
@@ -71,11 +73,11 @@
 }
 
 .checkmark, .checkmarkUpdate {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: block;
-  stroke-width: 2;
+  stroke-width: 5;
   stroke: #fff;
   stroke-miterlimit: 10;
   margin: 10% auto;
@@ -128,8 +130,4 @@
   100% {
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
-}
-.modalAlert {
-  font-size: 2em;
-  color: #393737;
 }/*# sourceMappingURL=modal.css.map */

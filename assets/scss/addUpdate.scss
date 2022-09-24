@@ -105,7 +105,8 @@ $text: #393737;
 }
 
 #submitBtn:hover {
-    background-color: white;
+    background-color: $mid-yellow;
+    border: none;
     width: 6em;
     color: #707070;
 }

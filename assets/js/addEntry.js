@@ -11,7 +11,7 @@ $(document).ready(function(){
 //For Educ Radio Btn Pre-checked or is selected on change
 $(document).ready(function(){
     if ($('#educCheck').is(':checked')){
-        educRradioClick();
+        educRadioClick();
         enrolledSelected();
     };
 });
@@ -19,7 +19,7 @@ $(document).ready(function(){
 //For Educ Radio Btn when selected
 $(document).ready(function(){
     if($('#educCheck').on('change', function(){
-        educRradioClick();
+        educRadioClick();
         enrolledSelected();
     }));
 });
@@ -27,7 +27,7 @@ $(document).ready(function(){
 //For Employ Radio Btn
 $(document).ready(function(){
     $('#employCheck').change(function(){
-      employRradioClick();
+      employRadioClick();
     });
 });
 
@@ -54,7 +54,7 @@ $(document).ready(function(){
         }
     })
 })
-
+employRadioClick
 //JS Library for remarks
 VirtualSelect.init({
     ele: '#remarkDrop',
@@ -62,7 +62,7 @@ VirtualSelect.init({
   });
 
 //fxn for clicking #educCheck
-var educRradioClick = function(){
+var educRadioClick = function(){
     $("#selectEmployStatus").val("employed").change();
         $("#selectEmployeeType").val("regular").change();
         $("#selectCompanyType").val("private").change();
@@ -97,7 +97,7 @@ var educRradioClick = function(){
 }
 
 //fxn for clicking #employCheck
-var employRradioClick = function(){
+var employRadioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
     $("#selectSchoolType").val("private").change();
@@ -146,6 +146,7 @@ var enrolled = function(){
         $(this).prop('disabled', false);
         if ($(this).attr("id")=="selectEducSalary"){
             $(this).prop('disabled', true);
+            $(this).removeAttr("required");
         } 
     });
 
@@ -153,6 +154,7 @@ var enrolled = function(){
         $(this).prop('disabled', false);
         if ($(this).attr("id")=="inputEducOccupation"){
             $(this).prop('disabled', true);
+            $(this).removeAttr("required");
         }
     });
 

@@ -11,7 +11,7 @@ $(document).ready(function(){
 //For Educ Radio Btn Pre-checked
 $(document).ready(function(){
     if ($('#educCheckUpdate').is(':checked')){
-        educRradioClick();
+        educRadioClick();
         enrolledSelected();
     };
 });
@@ -19,7 +19,7 @@ $(document).ready(function(){
 //For Educ Radio Btn when selected
 $(document).ready(function(){
     if($('#educCheckUpdate').on('change', function(){
-        educRradioClick();
+        educRadioClick();
         enrolledSelected();  
     }));
 });
@@ -27,7 +27,7 @@ $(document).ready(function(){
 //For Employ Radio Btn
 $(document).ready(function(){
     $('#employCheckUpdate').change(function(){
-      employRradioClick();
+      employRadioClick();
     });
 });
 
@@ -62,7 +62,7 @@ VirtualSelect.init({
   });
 
 //fxn for clicking #educCheckUpdate
-var educRradioClick = function(){
+var educRadioClick = function(){
     $("#selectEmployStatus").val("employed").change();
     $("#selectEmployeeType").val("regular").change();
     $("#selectCompanyType").val("private").change();
@@ -99,7 +99,7 @@ var educRradioClick = function(){
 }
 
 //fxn for clicking #employCheckUpdate
-var employRradioClick = function(){
+var employRadioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
     $("#selectSchoolType").val("private").change();

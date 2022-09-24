@@ -78,7 +78,8 @@
 }
 
 #submitBtn:hover {
-  background-color: white;
+  background-color: #FFB703;
+  border: none;
   width: 6em;
   color: #707070;
 }/*# sourceMappingURL=addUpdate.css.map */
