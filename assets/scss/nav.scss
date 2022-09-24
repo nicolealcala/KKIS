@@ -9,7 +9,7 @@ $white: #FFFFFF;
 @media screen and (min-width:1367px) {                    //fhd screen
 
     #checkSide:checked ~.divSideNav {
-        width: 335px;
+        width: 370px;
     }
     .divSideNav {
         width: 74px;
@@ -63,7 +63,7 @@ $white: #FFFFFF;
 @media screen and (max-width:1366px) and (min-width:769px) {                    //hd screen
     
     #checkSide:checked ~.divSideNav {
-        width: 250px;
+        width: 280px;
     }
     
     .divSideNav {
@@ -129,6 +129,7 @@ $white: #FFFFFF;
     }//tabletNav
     .divNavMenu {
         a {
+            height: 50px;
             .divTopTab-tablet {
                 height: 50px;
                 span {
