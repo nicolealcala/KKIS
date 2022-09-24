@@ -1,20 +1,31 @@
-//for disabling fields in KKID
-var purokChecker = document.getElementById('checkPurok');
-var purokOption = document.getElementById('selectPurok');
-purokChecker.onchange = function enableBtn() {
-    if(this.checked){
-        purokOption.disabled = false;
-    } else {
-        purokOption.disabled = true;
-    }
-};
+//for disabling categories in KKID
+$(document).ready(function(){
+    $('#checkPurok').on('change', function(){
+        if ($(this).is(':checked')){
+            $('#selectPurok').prop('disabled', false);
+        } else {
+            $('#selectPurok').prop('disabled', true);
+        }
+    })
+    
+})
 
-var ageChecker = document.getElementById('checkAge');
-var ageOption = document.getElementById('selectAge');
-ageChecker.onchange = function enableBtn() {
-    if(this.checked){
-        ageOption.disabled = false;
-    } else {
-       ageOption.disabled = true;
-    }
-};
+$(document).ready(function(){
+    $('#checkAge').on('change', function(){
+        if ($(this).is(':checked')){
+            $('#selectAge').prop('disabled', false);
+        } else {
+            $('#selectAge').prop('disabled', true);
+        }
+    })
+    
+})
+
+$(document).ready(function(){
+    $('.qrBtn').on('click', function(){
+        $(this).css("background-color", "#219EBC");
+        $(this).css("color", "white");
+        $('.iconContainer').css("background-color", "black");
+        $('.iconContainer').css("color", "#FFB703");
+    })
+})

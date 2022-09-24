@@ -3,55 +3,41 @@
   margin: 0;
 }
 
-.divNav {
+.qrBtnContainer {
+  display: flex;
+  margin: auto 0;
+}
+.qrBtnContainer .qrBtn {
+  width: 9em;
+  height: 3em;
+  background-color: white;
+  border-radius: 5em 0 0 5em;
+  border: 2px solid #219EBC;
+  font-size: 1em;
+  color: #393737;
+}
+.qrBtnContainer .iconContainer {
   background-color: #219EBC;
-  border-radius: 15em 0 0 15em;
-  height: 100%;
-  width: 90%;
+  border-radius: 0 5em 5em 0;
+  height: 3em;
+  width: 3.5em;
+  color: white;
   border: none;
-  padding: 1px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 20px auto;
-  overflow: hidden;
   position: relative;
-  text-align: center;
-  white-space: nowrap;
-}
-.divNav .linkContainer {
-  position: relative;
-  border-radius: 15em;
-  width: 100%;
-  margin: 2px 0;
-  cursor: pointer;
-  z-index: 5;
-  transition: 0.3s;
-}
-.divNav .linkContainer .optionLink {
-  font: 100% DM Sans, sans-serif;
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
 }
 
-.divNav .slider {
-  margin: 3px 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15em;
-  background: white;
-  height: 85%;
-  width: 49.3%;
-  transition: 0.3s;
-  z-index: 3;
+.qrBtn:hover {
+  background-color: #219EBC;
+  color: white;
 }
 
 .kkidBody {
   padding: 0;
-  margin: 2em;
-  margin-bottom: 5em;
+  margin: 1em;
+  margin-bottom: 1.5em;
 }
 .kkidBody .subTitle {
   font: 100% DM Sans, sans-serif;
@@ -60,7 +46,7 @@
   font-weight: 500;
 }
 .kkidBody .categoryCol {
-  margin: 0;
+  margin: 0 auto;
 }
 .kkidBody .categoryCol .categoryDiv {
   margin-left: 2em;
@@ -69,19 +55,45 @@
   font-size: 1em;
   margin-left: 1px;
 }
-.kkidBody .categoryCol .categoryDiv .categoryOption {
-  width: 70%;
+.kkidBody .categoryCol .categoryOption {
+  width: 80%;
+}
+.kkidBody .categoryCol .customCategory {
+  padding: 0 2em;
+  width: 90%;
 }
 
 .previewContainer {
-  width: 80%;
+  width: 100%;
   height: auto;
-  border-radius: 1em;
+  border-radius: 1.5em;
   border: none;
+  box-shadow: -3px 3px 10px;
 }
 
-.controlButtons {
+.controlBtn {
+  margin-top: 1em;
+  font-size: large;
+  background-color: #8ECAE6;
+  border: none;
   width: 6em;
+  color: white;
+}
+
+#clearBtn {
+  background-color: #F3CB69;
+}
+
+#submitBtn:hover {
+  background-color: #219EBC;
+  color: white;
+  font-weight: 500;
+}
+
+#clearBtn:hover {
+  background-color: #FFB703;
+  color: white;
+  font-weight: 500;
 }
 
 body::-webkit-scrollbar {

@@ -45,10 +45,7 @@ $text: #393737;
     .divNav {
         width: 100%;
     }
-    
-    .qrBtn {
-        width: 15%;
-    }
+
 }
 
 @media only screen and (min-width: 769px) and (max-width: 7680px){
@@ -125,6 +122,7 @@ $text: #393737;
             padding: 1em;
         }
     }  
+
 }
 
 @media only screen and (max-width: 500px){
@@ -146,6 +144,7 @@ $text: #393737;
         }
         
     }  
+    //KKID 
     .kkidBody  {
     
         .categoryCol {
@@ -161,12 +160,10 @@ $text: #393737;
                     margin-left: 1px;
                 }
             }
+            .categoryOption {
+                width: 100%;
+            }
         }
-    }
-
-    .controlButtons {
-        padding: 2px;
-        width: 5.5em;
     }
 }
 

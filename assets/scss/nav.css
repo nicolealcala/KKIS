@@ -1,6 +1,6 @@
 @media screen and (min-width: 1367px) {
   #checkSide:checked ~ .divSideNav {
-    width: 335px;
+    width: 370px;
   }
   .divSideNav {
     width: 74px;
@@ -46,7 +46,7 @@
 }
 @media screen and (max-width: 1366px) and (min-width: 769px) {
   #checkSide:checked ~ .divSideNav {
-    width: 250px;
+    width: 280px;
   }
   .divSideNav {
     width: 50px;
@@ -99,6 +99,9 @@
     height: 50px;
   }
   #topNav label #toggle {
+    height: 50px;
+  }
+  .divNavMenu a {
     height: 50px;
   }
   .divNavMenu a .divTopTab-tablet {

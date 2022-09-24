@@ -29,9 +29,6 @@
   .divNav {
     width: 100%;
   }
-  .qrBtn {
-    width: 15%;
-  }
 }
 @media only screen and (min-width: 769px) and (max-width: 7680px) {
   .content {
@@ -116,9 +113,8 @@
     font-size: 1em;
     margin-left: 1px;
   }
-  .controlButtons {
-    padding: 2px;
-    width: 5.5em;
+  .kkidBody .categoryCol .categoryOption {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 300px) {
