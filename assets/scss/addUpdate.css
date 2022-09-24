@@ -72,14 +72,26 @@
 }
 
 .controlBtn {
-  background-color: white;
+  margin-top: 2em;
+  font-size: large;
+  background-color: #8ECAE6;
+  border: none;
   width: 6em;
-  color: #707070;
+  color: white;
+}
+
+#clearBtn {
+  background-color: #F3CB69;
 }
 
 #submitBtn:hover {
+  background-color: #219EBC;
+  color: white;
+  font-weight: 500;
+}
+
+#clearBtn:hover {
   background-color: #FFB703;
-  border: none;
-  width: 6em;
-  color: #707070;
+  color: white;
+  font-weight: 500;
 }/*# sourceMappingURL=addUpdate.css.map */

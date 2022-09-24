@@ -99,14 +99,30 @@ $text: #393737;
 }
 
 .controlBtn {
-    background-color: white;
+    margin-top: 2em;
+    font-size: large;
+    background-color: $light-blue;
+    border: none;
     width: 6em;
-    color: #707070;
+    color: white;
+}
+
+#clearBtn {
+    background-color: $light-yellow;
 }
 
 #submitBtn:hover {
-    background-color: $mid-yellow;
-    border: none;
-    width: 6em;
-    color: #707070;
+    background-color: $mid-blue;
+    color: white;
+    font-weight: 500;
 }
+
+#clearBtn:hover {
+    background-color: $mid-yellow;
+    color: white;
+    font-weight: 500;
+}
+
+
+
+

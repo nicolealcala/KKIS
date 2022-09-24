@@ -17,7 +17,7 @@ $text: #393737;
     font: 100% $font-stack-sub;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 1920px){
+@media only screen and (min-width: 200px) and (max-width: 7680px){
     
     .title {
         width: 100%;
@@ -51,7 +51,7 @@ $text: #393737;
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1920px){
+@media only screen and (min-width: 769px) and (max-width: 7680px){
     .content{
         margin: 2em 4em 2em 8em;
         padding: 1em;
