@@ -98,7 +98,6 @@ $text: #393737;
     margin-top: 1em;
     font-size: large;
     background-color: $light-blue;
-    border: none;
     width: 6em;
     color: white;
 }
@@ -107,14 +106,20 @@ $text: #393737;
     background-color: $light-yellow;
 }
 
+#clearBtn:disabled {
+    background-color: white;
+}
+
 #submitBtn:hover {
     background-color: $mid-blue;
+    border: none;
     color: white;
     font-weight: 500;
 }
 
 #clearBtn:hover {
     background-color: $mid-yellow;
+    border: none;
     color: white;
     font-weight: 500;
 }

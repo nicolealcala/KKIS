@@ -78,7 +78,6 @@
   margin-top: 1em;
   font-size: large;
   background-color: #8ECAE6;
-  border: none;
   width: 6em;
   color: white;
 }
@@ -87,14 +86,20 @@
   background-color: #F3CB69;
 }
 
+#clearBtn:disabled {
+  background-color: white;
+}
+
 #submitBtn:hover {
   background-color: #219EBC;
+  border: none;
   color: white;
   font-weight: 500;
 }
 
 #clearBtn:hover {
   background-color: #FFB703;
+  border: none;
   color: white;
   font-weight: 500;
 }
