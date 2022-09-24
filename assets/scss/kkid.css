@@ -62,6 +62,9 @@
   padding: 0 2em;
   width: 90%;
 }
+.kkidBody .categoryCol .customForm {
+  margin: 1em;
+}
 
 .previewContainer {
   width: 100%;

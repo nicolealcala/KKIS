@@ -50,7 +50,7 @@
                             <div class="categoryCol row d-xl-flex justify-content-center align-items-center gy-3 w-100">
                                 <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
                                     <div class="form-check categoryDiv w-75">
-                                        <input class="form-check-input" type="checkbox" id="checkAge">
+                                        <input class="form-check-input checkboxCategory" type="checkbox" id="checkAge">
                                         <label class="form-check-label categoryLbl" for="checkAge">Age</label>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
 
                                 <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
                                     <div class="form-check categoryDiv w-75">
-                                        <input class="form-check-input" type="checkbox" id="checkPurok">
+                                        <input class="form-check-input checkboxCategory" type="checkbox" id="checkPurok">
                                         <label class="form-check-label categoryLbl" for="checkPurok">Purok</label>
                                     </div>
                                 </div>
@@ -90,19 +90,35 @@
 
                                 <div class="col col-lg-12 col-md-12 col-sm-12 col-12 p-0">
                                     <div class="form-check categoryDiv">
-                                        <input class="form-check-input" type="checkbox" id="checkCustom">
-                                        <label class="form-check-label categoryLbl" for="checkCustom">Custom</label>
+                                        <input class="form-check-input checkboxCategory" type="checkbox" id="checkCustom">
+                                        <label class="form-check-label categoryLbl" for="customForm">Custom</label>
                                     </div>
                                 </div>
-                                <div class="customForm mt-3">
-                                    <form class="p-3" action="">
-                                        <div class="row customCategory m-0">
-                                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">Last Name</label>
+                                <div class="customForm mt-3 d-none">
+                                    <form class="" action="">
+                                        <div class="row customCategory m-0 gy-3">
+                                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
+                                                <label class="col-form-label" for="headLname">First Name</label>
                                             </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12 p-0">
+                                            <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
                                                 <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
                                             </div>
+
+                                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
+                                                <label class="col-form-label" for="headLname">Middle Name</label>
+                                            </div>
+                                            <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
+                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
+                                            </div>
+
+                                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
+                                                <label class="col-form-label" for="headLname">Last Name</label>
+                                            </div>
+                                            <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
+                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
+                                            </div>
+
+                                            
                                         </div>
                                     </form>
                                 </div>
