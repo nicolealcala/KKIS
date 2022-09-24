@@ -1,12 +1,3 @@
-// $(document).ready(function(){
-//     $('#submitBtn').attr('disabled', 'dsiabled');
-
-//     if ($('input').attr("required")){
-//         submitBtn();
-//     }
-    
-// })
-
 //For required fields
 $(document).ready(function(){
     $('.fieldLabel').each(function(){
@@ -69,46 +60,6 @@ VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true,
   });
-
-
-
-
-// var submitEnable = function() {
-//     $('.eform > input').keyup(function() {
-
-//         var empty = false;
-//         $('.eform > input').each(function() {
-//             if ($(this).val() == '') {
-//                 empty = true;
-//             }
-//         });
-
-//         if (empty) {
-//             $('#submitBtn').attr('disabled', 'disabled');
-//         } else {
-//             $('#submitBtn').removeAttr('disabled');
-//         }
-//     });
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //fxn for clicking #educCheck
