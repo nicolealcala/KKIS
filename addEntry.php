@@ -31,7 +31,6 @@
     </div>
 
     <!-- pageContent -->
-    <div class="pageContent">
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">
@@ -337,7 +336,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     
