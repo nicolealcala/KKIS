@@ -48,7 +48,7 @@ $text: #393737;
 
 }
 
-@media only screen and (min-width: 769px) and (max-width: 7680px){
+@media screen and (min-width:1367px)    {      //fhd
     .content{
         margin: 2em 4em 2em 8em;
         padding: 1em;
@@ -88,7 +88,11 @@ $text: #393737;
     }
 }
 
-@media only screen and (max-width: 820px){
+@media screen and (max-width:1366px) and (min-width:769px) {      //hd
+    #wrapper {
+        padding-left: 5em;
+    }
+    
     .content{
         margin: 3em 0 0 0;
         padding: 2.5em;
@@ -125,7 +129,9 @@ $text: #393737;
 
 }
 
-@media only screen and (max-width: 500px){
+
+
+@media screen and (max-width:768px) and (min-width:481px) {          //tablet
     .content{
         margin: 3em 0 0 0;
         padding: 1.5em;
@@ -167,7 +173,11 @@ $text: #393737;
     }
 }
 
-@media only screen and (max-width: 300px){
+@media screen and (max-width:480px) {          //mobile
+    #wrapper {
+        padding-top: 3em;
+    }
+    
     .divNav .slider {
         width: 60%;
     } 

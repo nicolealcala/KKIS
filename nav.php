@@ -15,20 +15,20 @@
     <input type="checkbox" id="checkSide"><input type="checkbox" id="checkTop">
     <!-- sideNav -->
     <div id="sideNav" class="divSideNav"><label class="form-label" id="toggle" style="margin-bottom: 0px;" for="checkSide"><img src="assets/img/ToggleTransparent.svg" width="" height=""></label>
-        <hr id="top">
+        <hr class="line" id="top">
         <a id="linkSideDash" href="dashboard.php">
             <div class="divSideTab"><img src="assets/img/Dashboard.svg" width="51" height="47"><span class="sideTabName">Dashboard</span></div>
         </a>
-        <a id="linkSideDecHouse" href="#">
+        <a id="linkSideDecHouse" href="declaredHousehold.php">
             <div class="divSideTab"><img src="assets/img/Documents.svg" width="51" height="47"><span class="sideTabName">Declared Households</span></div>
         </a>
         <a id="linkSideResiProf" href="#">
             <div class="divSideTab"><img src="assets/img/ResiProf.svg" width="51" height="47"><span class="sideTabName">Residents Profile</span></div>
         </a>
-        <a id="linkSideAddEntry" href="#">
+        <a id="linkSideAddEntry" href="addEntry.php">
             <div class="divSideTab"><img src="assets/img/AddEntry.svg" width="51" height="47"><span class="sideTabName">Add Entry</span></div>
         </a>
-        <a id="linkSideTransacHis" href="#">
+        <a id="linkSideTransacHis" href="transachis.php">
             <div class="divSideTab"><img src="assets/img/TransacHisto.svg" width="51" height="47"><span class="sideTabName">Transaction History</span></div>
         </a>
         <a id="linkSideKKID" href="#">
@@ -52,16 +52,16 @@
         <a href="dashboard.php">
             <div class="divTopTab" id="linkTopDash"><img src="assets/img/mobDash.svg"><span>Dashboard</span></div>
         </a>
-        <a href="#">
+        <a href="declaredHousaehold.php">
             <div class="divTopTab" id="linkTopDecHouse"><img src="assets/img/mobDoc.svg"><span>Declared Households</span></div>
         </a>
         <a href="#">
             <div class="divTopTab" id="linkTopResiProf"><img src="assets/img/mobResiProf.svg"><span>Residents Profile</span></div>
         </a>
-        <a href="#">
+        <a href="addEntry.php">
             <div class="divTopTab" id="linkTopAddEnt"><img src="assets/img/mobAddEnt.svg"><span>Add Entry</span></div>
         </a>
-        <a href="#">
+        <a href="transachis.php">
             <div class="divTopTab" id="linkTopTransacHisto"><img src="assets/img/mobTransacHis.svg"><span>Transaction History</span></div>
         </a>
         <a href="#">
