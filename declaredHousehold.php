@@ -38,7 +38,7 @@
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">
                 <div class="col col-lg-6 col-md-6 col-sm-12 col-12 p-0 mb-4">
-                    <h1 class="title h-auto mb-0">Declared Households</h1><img src="assets/img/misc/hr.svg">
+                    <h1 class="title h-auto">Declared Households</h1><img src="assets/img/misc/hr.svg">
                 </div>
                 <div class="col d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center col-lg-6 col-md-6 col-sm-12 col-12 p-0 m-0">
                     <input type="radio" id="families" class="d-none" name="slider" checked="">
