@@ -157,7 +157,7 @@ html ::-webkit-scrollbar-thumb {
         margin-left: -10em;
         display: flex;
         justify-content: flex-start;
-        position: fixed;
+        position: absolute;
     }
     
 }
@@ -256,7 +256,7 @@ html ::-webkit-scrollbar-thumb {
             margin-left: -7em;
             display: flex;
             justify-content: flex-start;
-            position: fixed;
+            position: absolute;
             
         }
     }
@@ -288,7 +288,7 @@ html ::-webkit-scrollbar-thumb {
             margin-left: -8em;
             display: flex;
             justify-content: flex-start;
-            position: fixed;
+            position: absolute;
         }
     }
 
@@ -307,7 +307,7 @@ html ::-webkit-scrollbar-thumb {
             margin-left: -3.5em;
             display: flex;
             justify-content: flex-start;
-            position: fixed;
+            position: absolute;
         }
         }
         
