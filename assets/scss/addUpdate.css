@@ -72,7 +72,12 @@
   margin-top: 2em;
   font-size: large;
   width: 6em;
+  border: none;
   color: white;
+}
+
+.controlBtn:disabled {
+  border: none;
 }
 
 #submitBtn {
