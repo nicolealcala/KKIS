@@ -28,11 +28,7 @@ hr {
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-left: 120px;
-}
-
-#transac-table {
-  margin-left: -40px;
+  margin-left: 80px;
 }
 
 #row-title {
@@ -56,4 +52,23 @@ hr {
 
 .form-check {
   width: 90px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: white;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #c9c9c9;
+  /* creates padding around scroll thumb */
 }
