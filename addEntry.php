@@ -42,7 +42,7 @@
             <div class="row m-0">
                 <div class="col p-0"><img src="assets/img/misc/hr.svg"></div>
             </div>
-            <div class="generateBody">
+            <div class="pageBody">
                 <div class="sectionDiv">
                     <div class="row m-0 w-100">
                         <div class="col col-12 p-0">

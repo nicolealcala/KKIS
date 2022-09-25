@@ -123,7 +123,7 @@ html ::-webkit-scrollbar-thumb:hover {
   margin-left: -10em;
   display: flex;
   justify-content: flex-start;
-  position: fixed;
+  position: absolute;
 }
 
 .sort-panel {
@@ -203,7 +203,7 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-left: -7em;
     display: flex;
     justify-content: flex-start;
-    position: fixed;
+    position: absolute;
   }
   .sort-panel {
     margin-right: 5em;
@@ -225,7 +225,7 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-left: -8em;
     display: flex;
     justify-content: flex-start;
-    position: fixed;
+    position: absolute;
   }
   .sort-panel {
     margin-top: 6em;
@@ -239,7 +239,7 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-left: -3.5em;
     display: flex;
     justify-content: flex-start;
-    position: fixed;
+    position: absolute;
   }
   .sort-panel {
     margin-top: 6em;
