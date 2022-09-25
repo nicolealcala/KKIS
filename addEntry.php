@@ -12,15 +12,26 @@
 
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
-    <link rel="stylesheet" href="assets/scss/addUpdate.css">
-    <link rel="stylesheet" href="assets/scss/mediaquery.css">
-    
+    <link rel="stylesheet" href="assets/css/addUpdate.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
+
+    <!-- navAddUpdate CSS -->
+    <link rel="stylesheet" href="assets/css/navAddUpdate.css">
+
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
 
 <body id="page-top">
+
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
+
+    <!-- pageContent -->
+    <div class="pageContent">
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">
@@ -327,6 +338,8 @@
             </div>
         </div>
     </div>
+    </div>
+
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>

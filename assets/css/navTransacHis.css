@@ -1,0 +1,23 @@
+body {
+    /* display: flex; */
+    position: relative;
+}
+
+.navDiv {
+    position: fixed;
+    z-index: 70;
+
+    
+}
+
+.navDiv .divSideNav #linkSideTransacHis, .navDiv .divNavMenu #linkTopTransacHisto {
+    background: white;
+    color: #393737;
+}
+
+.pageContent {
+    z-index: 0;
+    position: absolute;
+    /* padding-left: 5em; */
+    
+}

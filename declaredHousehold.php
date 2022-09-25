@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     
-    <link rel="stylesheet" href="assets/scss/declaredHousehold.css">
-    <link rel="stylesheet" href="assets/scss/mediaquery.css">
+    <link rel="stylesheet" href="assets/css/declaredHousehold.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
+
+    <!-- navAddUpdate CSS -->
+    <link rel="stylesheet" href="assets/css/navDecHouse.css">
     
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
@@ -20,6 +23,17 @@
 </head>
 
 <body id="page-top">
+
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
+    
+    <!-- Nav -->
+    <div class="pageContent">
+        
+    </div>
+
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">
