@@ -139,7 +139,7 @@
                     <!-- MODAL -->
                     <div class="modal fade" role="dialog" tabindex="-1" id="viewMore" >
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content" style="transform: translate(0%, 70%);">
+                            <div class="modal-content" style="transform: translate(0%, 50%);">
                                 <div class="modal-body m-0 px-4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     <div class="row m-0 ">
@@ -148,18 +148,49 @@
                                             <br>
                                             <table class="modalAlert">
                                                 <thead class="table-light row" style="background-color: transparent;">
-                                                    <tr class="row">
-                                                        <th class="col-12" style="max-width:100%;"></th>
-                                                        <th class="col-12" style="max-width:100%;">Birthplace</th>
-                                                        <th class="col-12">Religion</th>
-                                                        <th class="col-12">Sex</th>
-                                                        <th class="col-12">Educational Status</th>
-                                                        <th class="col-12">Household Monthly Salary</th>
-                                                        <th class="col-12">Number of People in Household</th>
-                                                        <th class="col-12">Contact Number</th>
-                                                        <th class="col-12">Organization</th>
-                                                        <th class="col-12">Guardian</th>
-                                                        <th class="col-12">Remarks</th>
+                                                <!-- fake lang to, para lang maipakita yung itsura ng table if ever 
+                                                     connected na sa database -->   
+                                                <tr class="row">
+                                                        <th class="col-6" style="max-width:100%;">
+                                                            Birthplace
+                                                            <td class="col-6">Cabuyao, Laguna</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Religion
+                                                            <td class="col-6">Catholic</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Sex
+                                                            <td class="col-6">Female</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Educational Status
+                                                            <td class="col-6">Enrolled</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Household Monthly Salary
+                                                            <td class="col-6">90,000-100,000</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Number of People in Household
+                                                            <td class="col-6">4</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Contact Number
+                                                            <td class="col-6">09364587426</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Organization
+                                                            <td class="col-6">None</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Guardian
+                                                            <td class="col-6">Malou Pantoja</td>
+                                                        </th>
+                                                        <th class="col-6">
+                                                            Remarks
+                                                            <td class="col-6">None</td>
+                                                        </th>
                                                     </tr>
                                                 </thead>
 

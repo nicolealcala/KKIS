@@ -1,15 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Index</title>
+    <title>Login</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/kkis-logo.svg">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <!-- AJAX -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
     <!-- BS Login Stylesheet -->
     <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
     <!-- Custom Stylesheet -->
@@ -44,11 +49,12 @@
                                 </div>
                             </div>
                             <form class="text-center" id="input-panel" method="post">
-                                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Username"></div>
-                                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                                <!--put action="./check-login.php" inside the form tag pag koconnect na-->
+                                <div class="mb-3"><input class="form-control" id="username" type="text" name="username" placeholder="Username" required=""></div>
+                                <div class="mb-3"><input class="form-control" id="password" type="password" name="password" placeholder="Password" required=""></div>
                             
                             <!-- LOGIN BUTTON -->
-                                <div class="mb-2" style="margin-top: 2.5em;"><a href="/dashboard.html"><button class="btn btn-primary d-block w-100 rounded-pill" id="login-btn" type="submit" style="height: 45px;">Log-in</button></a></div>
+                                <div class="mb-2" style="margin-top: 2.5em;"><button class="btn btn-primary d-block w-100 rounded-pill" id="login-btn" type="submit" style="height: 45px;"><a href="/dashboard.php" style="color:#fff;">Log-in</a></button></div>
                                 <p class="d-xxl-flex justify-content-xxl-center" id="signup-phrase">Don't have an account yet? <a href="#" class="signup-txt"> Sign up</a></p>  
                             </form>
                         </div>
@@ -60,6 +66,11 @@
 
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="https://github.com/pipwerks/PDFObject/blob/master/pdfobject.min.js"></script>
 </body>
 
 </html>
