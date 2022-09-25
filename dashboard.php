@@ -10,16 +10,17 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <!-- BS SideNav Stylesheet -->
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="assets/css/navDash.css">
+    <!-- <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css"> -->
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
 
-<body style="padding-left: 100px; padding-right:50px;">
-
+<body>
+<!-- style="padding-left: 100px; padding-right:50px;" -->
     <!-- TEMPORARY SIDENAV -->
-    <div id="wrapper" class="sidenav">
+    <!-- <div id="wrapper" class="sidenav">
         <div id="sidebar-wrapper" style="width: 74px;">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"> </li>
@@ -28,11 +29,18 @@
                 <li> </li>
             </ul>
         </div>
+    </div> -->
+
+
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
     </div>
 
+    <div class="pageContent">
     <!-- TITLE + GRADIENT LINE -->
     <div class="dashboard-title">
-        <h1 class="title">Dashboard</h1><img class="gradient-line" style="padding-right: 23px;margin-bottom: 15px;padding-bottom: 20px;" src="assets/img/decorative.png">
+        <h1 class="title">Dashboard</h1><img class="gradient-line" style="padding-right: 23px;padding-bottom: 20px;" src="assets/img/decorative.png">
     </div>
     
     <!--CATEGORIES-->
@@ -161,6 +169,8 @@
 
         
     </section>
+    </div>
+
 
     <!-- JS -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
