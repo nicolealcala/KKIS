@@ -101,10 +101,12 @@ $text: #393737;
 .controlBtn {
     margin-top: 2em;
     font-size: large;
-    background-color: $light-blue;
-    border: none;
     width: 6em;
     color: white;
+}
+
+#submitBtn {
+    background-color: $light-blue;
 }
 
 #clearBtn {
@@ -123,6 +125,18 @@ $text: #393737;
     font-weight: 500;
 }
 
-
+body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: white;        /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #c9c9c9;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #c9c9c9;  /* creates padding around scroll thumb */
+}
 
 

@@ -74,20 +74,23 @@ var educRadioClick = function(){
         
         $('.employSelectBox').each(function(){
             $(this).prop('disabled', true);
+            $(this).removeAttr("required");
         });
             
         $('.employUserInput').each(function(){
             $(this).prop('disabled', true);
+            $(this).removeAttr("required");
             $(this).val("");
         });
 
         $('.educSelectBox').each(function(){
             $(this).prop('disabled', false);
+            $(this).attr("required", "required");
         });
             
         $('.educUserInput').each(function(){
             $(this).prop('disabled', false);
-            $(this).val("");
+            $(this).attr("required", "required");
         });
 
         $('#markerEduc').css("background-color", "#219EBC");
@@ -111,20 +114,24 @@ var employRadioClick = function(){
         
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', true);
+        $(this).removeAttr("required");
     });
             
     $('.educUserInput').each(function(){
         $(this).prop('disabled', true);
+        $(this).removeAttr("required");
         $(this).val("");
     });
 
     $('.employSelectBox').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
     });
             
     $('.employUserInput').each(function(){
         $(this).prop('disabled', false);
-        $(this).val("");
+        $(this).attr("required", "required");
+        // $(this).val("");
     });
 
     $('#markerEmploy').css("background-color", "#219EBC");
@@ -145,6 +152,7 @@ var enrolledSelected = function(){
 var enrolled = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
         if ($(this).attr("id")=="selectEducSalary"){
             $(this).prop('disabled', true);
             $(this).removeAttr("required");
@@ -153,6 +161,7 @@ var enrolled = function(){
 
     $('.educUserInput').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
         if ($(this).attr("id")=="inputEducOccupation"){
             $(this).prop('disabled', true);
             $(this).removeAttr("required");
@@ -171,13 +180,16 @@ var enrolled = function(){
 var ousYouth = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', true);
+        $(this).removeAttr("required");
         if ($(this).attr("id")=="selectEducStatus"){
             $(this).prop('disabled', false);
+            $(this).attr("required", "required");
         }
     });
 
     $('.educUserInput').each(function(){
         $(this).prop('disabled', true);
+        $(this).removeAttr("required");
     });
     
     $('.educFieldLabel').each(function(){
@@ -194,10 +206,12 @@ var ousYouth = function(){
 var workingStudent = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
     });
 
     $('.educUserInput').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
     });
 
     $('.educFieldLabel').addClass('required');
@@ -208,10 +222,12 @@ var workingStudent = function(){
 var employed = function(){
     $('.employSelectBox').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
     });
 
     $('.employUserInput').each(function(){
         $(this).prop('disabled', false);
+        $(this).attr("required", "required");
     });
    
     $('.employFieldLabel').each(function(){
@@ -224,13 +240,16 @@ var employed = function(){
 var unemployed = function(){
     $('.employSelectBox').each(function(){
         $(this).prop('disabled', true);
+        $(this).removeAttr("required");
         if ($(this).attr("id")=="selectEmployStatus"){
             $(this).prop('disabled', false);
+            $(this).attr("required", "required");
         }
     });
 
     $('.employUserInput').each(function(){
         $(this).prop('disabled', true);
+        $(this).removeAttr("required");
     });
 
     $('.employFieldLabel').each(function(){
@@ -239,7 +258,6 @@ var unemployed = function(){
         if ($(this).attr("id")=="employStatusLbl"){
             $(this).addClass('required');
             $(this).css("color", "#909090");
-            
         }
     });
 }
