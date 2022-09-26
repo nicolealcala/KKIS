@@ -10,17 +10,23 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <!-- BS SideNav Stylesheet -->
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
+    <!-- <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css"> -->
+    <link rel="stylesheet" href="assets/css/navDash.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/scss/dashboard.css">
     <!-- Stylesheet for Titles -->
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 </head>
 
-<body style="padding-left: 100px; padding-right:50px;">
+<body>
+<!-- style="padding-left: 100px; padding-right:50px;" -->
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
 
-
+    <div class="pageContent">
     <div class="wrapper">
         <div class="content">
             <!-- TITLE + GRADIENT LINE -->
@@ -155,6 +161,7 @@
                 
             </section>
         </div>
+    </div>
     </div>
    
     <!-- JS -->

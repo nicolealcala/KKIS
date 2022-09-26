@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>nav</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/navMediaQuery.css">
+    <link rel="stylesheet" href="assets/scss/navbar.css">
+    <link rel="stylesheet" href="assets/scss/navMediaQuery.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <a id="linkSideDecHouse" href="declaredHousehold.php">
             <div class="divSideTab"><img src="assets/img/Documents.svg" width="51" height="47"><span class="sideTabName">Declared Households</span></div>
         </a>
-        <a id="linkSideResiProf" href="#">
+        <a id="linkSideResiProf" href="residentsProfile.php">
             <div class="divSideTab"><img src="assets/img/ResiProf.svg" width="51" height="47"><span class="sideTabName">Residents Profile</span></div>
         </a>
         <a id="linkSideAddEntry" href="addEntry.php">
@@ -41,7 +41,7 @@
                     <div class="profileContent"><img src="assets/img/kkis-logo-admin.svg"><span class="spanProfile">Admin</span></div>
                 </div>
             </div>
-            <hr><a id="linkSideLogOut" href="#">
+            <hr><a id="linkSideLogOut" href="index.php">
                 <div class="divSideTab"><img src="assets/img/LogOut.svg" width="51" height="47"><span class="sideTabName">Log out</span></div>
             </a>
         </div>
@@ -56,7 +56,7 @@
         <a href="declaredHousehold.php">
             <div class="divTopTab" id="linkTopDecHouse"><img src="assets/img/mobDoc.svg"><span>Declared Households</span></div>
         </a>
-        <a href="#">
+        <a href="residentsProfile.php">
             <div class="divTopTab" id="linkTopResiProf"><img src="assets/img/mobResiProf.svg"><span>Residents Profile</span></div>
         </a>
         <a href="addEntry.php">
@@ -68,7 +68,7 @@
         <a href="kkid.php">
             <div class="divTopTab" id="linkTopKKID"><img src="assets/img/mobKKID.svg"><span>KKID</span></div>
         </a>
-        <a href="#">
+        <a href="index.php">
             <div class="divTopTab" id="linkTopLogOut"><img src="assets/img/mobLogOut.svg"><span><span id="spanLogOut">Log out</span><span id="adminTopNav">&nbsp;Admin</span></span></div>
         </a>
     </div>

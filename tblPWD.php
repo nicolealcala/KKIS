@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
     <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="assets/css/navDash.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/scss/dashboardYouthTbl.css">
     <!-- DATA TABLES CDN -->
@@ -38,6 +39,10 @@
 </head>
 
 <body>
+
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
     <div class="wrapper">
         <div class="content">
             <!-- Start of Sidenav 

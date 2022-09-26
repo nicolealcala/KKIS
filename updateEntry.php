@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/scss/addUpdate.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <link rel="stylesheet" href="assets/css/modal.compiled.css">
+    <link rel="stylesheet" href="assets/css/navAddUpdate.css">
         
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
@@ -23,6 +24,11 @@
 
 <body id="page-top">
     
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
+
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">

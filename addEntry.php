@@ -12,11 +12,11 @@
 
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
-    <link rel="stylesheet" href="assets/css/addUpdate.css">
-    <link rel="stylesheet" href="assets/css/mediaquery.css">
+    <link rel="stylesheet" href="assets/css/addEntry.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
-    <link rel="stylesheet" href="assets/css/navAddUpdate.css">
+    <link rel="stylesheet" href="assets/css/navAddEntry.css">
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     

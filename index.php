@@ -18,7 +18,7 @@
     <!-- BS Login Stylesheet -->
     <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/scss/index.css">
 </head>
 
 <body style="background: url(&quot;assets/img/gradient-bg.webp&quot;);">

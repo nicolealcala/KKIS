@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
     <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="assets/css/navResiProf.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/css/residentsProfile.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.scss">
@@ -38,7 +39,7 @@
 
 <body>
     <!-- Start of Sidenav -->
-    <div id="wrapper" class="sidenav">
+    <!-- <div id="wrapper" class="sidenav">
         <div id="sidebar-wrapper" style="width: 74px;">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"> </li>
@@ -47,8 +48,15 @@
                 <li> </li>
             </ul>
         </div>
-    </div>
+    </div> -->
     <!-- End of Sidenav -->
+    
+    <!-- Nav -->
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
+
 
     <!-- TITLE , BACK BTN & GRADIENT LINE-->
     <div class="row top-panel">
