@@ -29,11 +29,11 @@
         <a id="linkSideAddEntry" href="addEntry.php">
             <div class="divSideTab"><img src="assets/img/AddEntry.svg" width="51" height="47"><span class="sideTabName">Add Entry</span></div>
         </a>
-        <a id="linkSideTransacHis" href="transachis.php">
-            <div class="divSideTab"><img src="assets/img/TransacHisto.svg" width="51" height="47"><span class="sideTabName">Transaction History</span></div>
-        </a>
         <a id="linkSideKKID" href="kkid.php">
             <div class="divSideTab"><img src="assets/img/navIconKKID.svg" width="51" height="47"><span class="sideTabName">KKID</span></div>
+        </a>
+        <a id="linkSideTransacHis" href="transachis.php">
+            <div class="divSideTab"><img src="assets/img/TransacHisto.svg" width="51" height="47"><span class="sideTabName">Transaction History</span></div>
         </a>
         <div class="bottomPartSideNav">
             <div id="divSideProfile">

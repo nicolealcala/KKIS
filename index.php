@@ -54,8 +54,8 @@
                                 <div class="mb-3"><input class="form-control" id="password" type="password" name="password" placeholder="Password" required=""></div>
                             
                             <!-- LOGIN BUTTON -->
-                                <div class="mb-2" style="margin-top: 2.5em;"><button class="btn btn-primary d-block w-100 rounded-pill" id="login-btn" type="submit" style="height: 45px;"><a href="/dashboard.php" style="color:#fff;">Log-in</a></button></div>
-                                <p class="d-xxl-flex justify-content-xxl-center" id="signup-phrase">Don't have an account yet? <a href="#" class="signup-txt"> Sign up</a></p>  
+                                <div class="mb-2" style="margin-top: 2.5em;"><button class="btn btn-primary d-block w-100 rounded-pill" id="login-btn" Type="submit" style="height: 45px;"><a href="dashboard.php" style="color:#fff;">Log-in</a></button></div>
+                                <p class="d-xxl-flex justify-content-xxl-center" id="signup-phrase">Don't have an account yet? <a href="dashboard.php" class="signup-txt"> Sign up</a></p>  
                             </form>
                         </div>
                     </div>
