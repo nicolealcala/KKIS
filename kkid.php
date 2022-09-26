@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
-    <link rel="stylesheet" href="assets/css/kkid.css">
-    <link rel="stylesheet" href="assets/css/idtcpdf.css">
-    <link rel="stylesheet" href="assets/css/mediaquery.css">
-
-    <!-- navAddUpdate CSS -->
-    <link rel="stylesheet" href="assets/css/navKKID.css">
+    <link rel="stylesheet" href="assets/scss/kkid.css">
+    <link rel="stylesheet" href="assets/scss/idtcpdf.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -24,17 +21,6 @@
 </head>
 
 <body id="page-top">
-
-    <!-- Nav -->
-    <div class="navDiv">
-        <?php include 'nav.php' ?>
-    </div>
-
-    <!-- <div class="navSpace"> </div> -->
-
-    <!-- pageContent -->
-    <div class="pageContent">
-    
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row kkidHeadingRow p-0 m-0">
@@ -160,7 +146,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
