@@ -87,7 +87,7 @@ $text: #393737;
 }
 
 .previewContainer{
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 1.5em;
     border: none;
@@ -125,17 +125,17 @@ $text: #393737;
 }
 
 body::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
+    width: 10px;               /* width of the entire scrollbar */
 }
-
+  
 body::-webkit-scrollbar-track {
-  background: #dcdcdc;        /* color of the tracking area */
+    background: white;        /* color of the tracking area */
 }
-
+  
 body::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #808080;  /* creates padding around scroll thumb */
+    background-color: #c9c9c9;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #c9c9c9;  /* creates padding around scroll thumb */
 }
 
 
