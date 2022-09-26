@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="generateBody m-0">
-                <div class="row kkidBody p-0 gy-2" id="kkidPage">
+                <div class="row kkidBody p-0 m-0 gy-2" id="kkidPage">
                     <div class="col col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                         <h1 class="subTitle mb-3">Batch Printing</h1>
                         <form class="m-0 mt-4">
