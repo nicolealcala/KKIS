@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="assets/scss/TransacHis.scss">
+    <link rel="stylesheet" href="assets/scss/TransacHis.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 </head>
 
 <body>
     <div id="wrapper">
-        <div class="container content">
-            <div class="row">
+        <div class="container-fluid content">
+            <div class="row m-0">
                 <div class="col d-xxl-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
                     <h1 class="title">Transaction History</h1>
                 </div>
@@ -26,25 +26,25 @@
                 <div class="col p-0"><img src="assets/img/misc/hr.svg"></div>
             </div>
 
-            <div class="container" id="SelDel">
-                <div class="row">
+            <div class="row m-0" id="SelDel">
+                <div class="row m-0">
                     <div class="col-3 col-sm-5 col-md-7 col-lg-8 col-xl-9 col-xxl-9"></div>
                     <div class="col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1 col-xxl-1">
-                        <div class="form-check user-select-all" style="margin-top: 3px;"><input class="form-check-input" type="checkbox" id="selectAll"><label class="form-check-label" for="formCheck-1" style="font-size: 14px;font-family: 'DM Sans', sans-serif;">Select all</label></div>
+                        <div class="form-check user-select-all"><input class="form-check-input" type="checkbox" id="selectAll"><label class="form-check-label" for="formCheck-1">Select All</label></div>
                     </div>
-                    <div class="col-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 col-xxl-1 ps-xl-1 pe-xl-1"><button class="btn btn-outline-dark btn-sm delete ps-xxl-1 pe-xxl-1" type="button"><i class="far fa-trash-alt me-xxl-1 me-xl-1 me-lg-1 me-md-1 me-sm-1 me-1"></i>Delete</button></div>
+                    <div class="col-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 col-xxl-1 ps-xl-1 pe-xl-1"><button class="btn btn-primary delete ps-xxl-1 pe-xxl-1" type="button"><i class="far fa-trash-alt me-xxl-1 me-xl-1 me-lg-1 me-md-1 me-sm-1 me-1"></i>Delete</button></div>
                 </div>
             </div>
 
-
-                <div class="container col-sm-11 col-md-11 col-lg-10 col-xl-11 col-xxl-11 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-4 d-none d-lg-block" id="transac-table">
+            <div class="row m-0">
+                <div class="col-sm-11 col-md-11 col-lg-10 col-xl-11 col-xxl-11 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-4 d-none d-lg-block" id="transac-table">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="pe-xxl-0 ms-xxl-0 me-xxl-0" style="font-weight: bold; text-align: center;">Transaction ID</th>
-                                    <th class="ms-xxl-0 me-xxl-1" style="width: 600px; font-weight: bold; text-align: center;">Name</th>
-                                    <th style="font-weight: bold; text-align: center;">Issued On</th>
+                                    <th class="pe-xxl-0 ms-xxl-0 me-xxl-0">Transaction ID</th>
+                                    <th class="ms-xxl-0 me-xxl-1" style="width: 600px;">Name</th>
+                                    <th>Issued On</th>
                                     <th style="width: 40.5px;"></th>
                                 </tr>
                             </thead>
@@ -112,8 +112,10 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div>           
+            </div>
 
+            <div class="row m-0">
                 <div class="col me-md-5 pe-md5">
                     <div class="accordion d-block d-xxl-none d-xl-none d-lg-none pe-md-3 me-md-0" role="tablist" id="accordion-1">
                         <div class="accordion-item">
@@ -366,6 +368,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+                
         </div>
 
     </div>

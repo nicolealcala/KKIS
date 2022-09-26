@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,MAAM,EAAE,SAAS,EAAE,KAAK,EACpB,AAAA,UAAU,AAAA,CACR,OAAO,CAAE,IAAI,CAChB,CAGH,MAAM,EAAE,SAAS,EAAE,KAAK,EACpB,AAAA,SAAS,AAAC,CACR,OAAO,CAAE,IAAI,CACd",
+    "sources": [
+        "../assets/scss/trial4.scss"
+    ],
+    "names": [],
+    "file": "trial4.min.css"
+}
