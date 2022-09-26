@@ -29,11 +29,8 @@
         <?php include 'nav.php' ?>
     </div>
     
-    <!-- Nav -->
-    <div class="pageContent">
-        
-    </div>
-
+    <!-- pageContent -->
+    <!-- <div class="pageContent"> -->
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">
@@ -251,6 +248,9 @@
             </div>
         </div>
     </div>
+    <!-- </div> -->
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/declaredHousehold.js"></script>
 </body>
