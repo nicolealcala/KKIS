@@ -22,7 +22,7 @@ $mellow-yellow:#E9C46A;
 $texts:#393737;
 
 *{
-    
+
     a{
         text-decoration: none;
     }
@@ -37,7 +37,7 @@ $texts:#393737;
 }
 
 .dashboard-title{
-    // padding:3em 0em 0em 0em;
+    padding:3em 0em 0em 8em;
     
     h1{
         font-size: 50px;
@@ -51,9 +51,8 @@ $texts:#393737;
 }
 
 #dashboard-summary{
-    padding: 1em 6em 0em 8em;
+    padding: 1em 7em 0em 8em;
     // padding: 1em 8em 0em 8em;
-    text-decoration: none;
 
     
     div{
@@ -64,7 +63,6 @@ $texts:#393737;
         padding-top:1.5rem;
         width: 0%;
         z-index: 10;
-        
         
         h1{
             color:#fff;
@@ -191,19 +189,17 @@ $texts:#393737;
     }
 }
 
-@media screen and (min-width:1367px) {
+@media only screen and (max-width: 1208px){
     .sidenav{
         display: none;
     }
 
     .dashboard-title{
-        padding: 2em 0em 0em 7em;
+        padding: 2em 0em 0em 0em;
     }
     #dashboard-summary{
-        padding: 0em 3em 0em 7em;
-        
+        padding: 0em 3em 0em 0em;
     }
-
 }
 
 @media (max-width:992px){
@@ -216,9 +212,9 @@ $texts:#393737;
     }
 }
 
-@media screen and (max-width:1366px) and (min-width:769px){
+@media only screen and (max-width: 768px){
     .dashboard-title{
-        padding: 1.5em 0em 0em 5em;
+        padding: 1.5em 0em 0em -1em;
     }
     #dashboard-summary{
         padding: 0em 1em 0em -1em;
@@ -232,14 +228,13 @@ $texts:#393737;
     }
 }
 
-@media screen and (max-width:768px) and (min-width:481px) {
+@media only screen and (max-width: 576px){
     .dashboard-title{
-        padding: 4em 0em 0em 2em;
-        // margin-left: -3em;
+        padding: 1.5em 0em 0em -1em;
+        margin-left: -3em;
 
         h1{
             font-size: 2em;
-            margin-bottom: 0;
         }
     }
 
@@ -249,7 +244,7 @@ $texts:#393737;
 
     #dashboard-summary{
         // top right bottom left
-        padding-left: 5em;
+        padding-left: 0em;
         margin: -3em;
 
         #dashboard-img{
@@ -268,9 +263,9 @@ $texts:#393737;
     }
 }
 
-@media screen and (max-width:480px) {
+@media only screen and (max-width: 360px){
     .dashboard-title{
-        padding: 3em 0em 0em 5em;
+        padding: 1.5em 0em 0em -1em;
         margin-left: -3em;
 
         h1{
@@ -279,13 +274,6 @@ $texts:#393737;
     }
 
     #dashboard-summary{
-        padding-left: 1em;
-        padding-right: 1em;
-
-        #row1 {
-            padding-top: 0;
-        }
-
         .dashboard-img{
             display: none;
         }
