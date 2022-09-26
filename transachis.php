@@ -10,11 +10,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="assets/css/TransacHis.compiled.css">
+    <link rel="stylesheet" href="assets/scss/TransacHis.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.scss">
+    <link rel="stylesheet" href="assets/css/navTransacHistory.css">
 </head>
 
 <body style="backdrop-filter: opacity(1);border-radius: 0px;border-color: var(--bs-white);">
+    
+    <!-- Nav -->
+    <div class="navDiv">
+        <?php include 'nav.php' ?>
+    </div>
+
+    <div class="pageContent">
     <h1 id="title" class="title" style="font-weight: bold;font-family: Poppins;font-size: 2em;">Transaction History</h1><img src="assets/img/decorative.png" width="350" height="7" style="margin-right: 11px;padding-right: 166px;padding-left: 0px;margin-left: 80px;"><!-- Start: 1 Row 3 Columns -->
     <div class="container">
         <div class="row" id="SelDel">
@@ -377,6 +385,7 @@
                     </div>
                 </div>
             </div>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/TransacHis.js"></script>
