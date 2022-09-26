@@ -31,6 +31,7 @@
 
     <div id="wrapper">
         <div class="container-fluid content">
+            <!-- Copy this -->
             <div class="row documentHeadingRow p-0 m-0">
                 <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-12 p-0">
                     <div class="d-flex align-items-center justify-content-xxl-start align-items-xxl-center headContainer">
@@ -46,6 +47,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Copy end -->
             <div class="row m-0">
                 <div class="col p-0 mt-2"><img src="assets/img/misc/hr.svg"></div>
             </div>
