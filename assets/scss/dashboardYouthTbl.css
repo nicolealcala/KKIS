@@ -4,16 +4,20 @@
   font-family: "Poppins";
   src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
 }
+
 @font-face {
   font-family: "DM Sans";
   src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap");
 }
+
 * ol, * ul, * li {
   text-decoration: none;
 }
+
 * h1 {
   font-family: "Poppins";
 }
+
 * p {
   font-family: "DM Sans";
 }
@@ -27,6 +31,7 @@ html ::-webkit-scrollbar-thumb {
   width: 10px;
   border-radius: 5px;
 }
+
 html ::-webkit-scrollbar-thumb:hover {
   background: #379dc3;
   cursor: pointer;
@@ -55,6 +60,7 @@ html ::-webkit-scrollbar-thumb:hover {
   font-size: 20px;
   text-align: center;
 }
+
 .totop:hover {
   line-height: 40px;
   color: #fff;
@@ -71,6 +77,7 @@ html ::-webkit-scrollbar-thumb:hover {
   text-align: center;
   z-index: 9999;
 }
+
 .header_part h4 {
   color: #fff;
   padding: 10px;
@@ -79,10 +86,11 @@ html ::-webkit-scrollbar-thumb:hover {
 .dataTable {
   max-width: 83%;
 }
+
 .dataTable .dataPanel {
   margin-top: 2em;
-  margin-left: 2em;
 }
+
 .dataTable .data_table {
   max-width: 100%;
   background: #fff;
@@ -90,10 +98,12 @@ html ::-webkit-scrollbar-thumb:hover {
   box-shadow: 1px 3px 5px #aaa;
   border-radius: 5px;
 }
+
 .dataTable .data_table .btn {
   padding: 5px 10px;
   margin: 10px 3px 10px 0;
 }
+
 .dataTable .data_table .appearInMobile {
   display: none;
 }
@@ -106,18 +116,22 @@ html ::-webkit-scrollbar-thumb:hover {
   padding: 3em 0em 0em 0em;
   margin-left: -5em;
 }
+
 .top-panel h1 {
   font-size: 3em;
   color: #393737;
   font-weight: 600;
 }
+
 .top-panel button {
   background-color: #8ECAE6;
   border: none;
 }
+
 .top-panel button:hover {
   background-color: #219EBC;
 }
+
 .top-panel .gradient-line {
   padding-top: 1.5em;
   margin-left: -10em;
@@ -133,12 +147,14 @@ html ::-webkit-scrollbar-thumb:hover {
   margin-right: 11em;
   margin-top: 4em;
 }
+
 .sort-panel .sort-title {
   display: flex;
   justify-content: flex-end;
   margin-right: -5em;
   padding-top: 0.25em;
 }
+
 .sort-panel .select {
   width: 9em;
   height: 2em;
@@ -150,6 +166,7 @@ html ::-webkit-scrollbar-thumb:hover {
   border-radius: 0.5em;
   font-family: "DM Sans";
 }
+
 .sort-panel .select:focus {
   outline: none;
   border: 1px solid #c8c8c8;
@@ -182,6 +199,7 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-right: 8em;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .appearInMobile {
     display: contents;
@@ -209,12 +227,13 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-right: 5em;
   }
 }
+
 @media only screen and (max-width: 576px) {
   .top-panel {
     margin-left: 0em;
   }
   .top-panel .dashboard-title h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   .top-panel button {
     float: left;
@@ -222,7 +241,7 @@ html ::-webkit-scrollbar-thumb:hover {
   .top-panel .gradient-line {
     display: none;
     padding-top: 2em;
-    margin-left: -8em;
+    margin-left: -5em;
     display: flex;
     justify-content: flex-start;
     position: absolute;
@@ -232,18 +251,20 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-left: 3em;
   }
 }
-@media only screen and (max-width: 540px) {
-  .top-panel .gradient-line {
+
+@media only screen and (max-width: 360px) {
+  .dashboard-title {
+    padding: 1.5em 0em 0em -1em;
+    margin-left: -3em;
+  }
+  .dashboard-title h1 {
+    font-size: 2em;
+  }
+  #dashboard-summary .dashboard-img {
     display: none;
-    padding-top: 2em;
-    margin-left: -3.5em;
-    display: flex;
-    justify-content: flex-start;
-    position: absolute;
   }
-  .sort-panel {
-    margin-top: 6em;
-    margin-left: 3em;
-    float: left;
+  #dashboard-summary .category {
+    height: 180px;
   }
-}/*# sourceMappingURL=dashboardYouthTbl.css.map */
+}
+/*# sourceMappingURL=dashboardYouthTbl.css.map */

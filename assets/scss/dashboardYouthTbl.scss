@@ -102,7 +102,7 @@ html ::-webkit-scrollbar-thumb {
 
     .dataPanel{
         margin-top: 2em;
-        margin-left: 2em;
+        //margin-left: 0em;
     }
 
     .data_table{
@@ -274,7 +274,7 @@ html ::-webkit-scrollbar-thumb {
            
             h1{
                 //width: 5em;
-                font-size: 2em;
+                font-size: 1.5em;
             }
         }
 
@@ -285,7 +285,7 @@ html ::-webkit-scrollbar-thumb {
         .gradient-line {
             display: none;
             padding-top: 2em;
-            margin-left: -8em;
+            margin-left: -5em;
             display: flex;
             justify-content: flex-start;
             position: absolute;
@@ -299,21 +299,24 @@ html ::-webkit-scrollbar-thumb {
     }
 }
 
-@media only screen and (max-width: 540px){
-    .top-panel{
-        .gradient-line {
-            display: none;
-            padding-top: 2em;
-            margin-left: -3.5em;
-            display: flex;
-            justify-content: flex-start;
-            position: absolute;
+
+@media only screen and (max-width: 360px){
+    .dashboard-title{
+        padding: 1.5em 0em 0em -1em;
+        margin-left: -3em;
+
+        h1{
+            font-size: 2em;
         }
+    }
+
+    #dashboard-summary{
+        .dashboard-img{
+            display: none;
         }
         
-        .sort-panel{
-            margin-top: 6em;
-            margin-left: 3em;
-            float: left;
-        } 
+        .category{
+            height: 180px;
+        }
+    }
 }
