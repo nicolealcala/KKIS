@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/TransacHis.compiled.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.scss">
 </head>
 
 <body style="backdrop-filter: opacity(1);border-radius: 0px;border-color: var(--bs-white);">
@@ -25,8 +26,8 @@
         </div>
     </div><!-- End: 1 Row 3 Columns -->
     <div></div>
-    <div class="row">
-        <div class="col-sm-11 col-md-11 col-lg-10 col-xl-11 col-xxl-11 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-4 d-none d-lg-block" id="transac-table" style="width: 100%;">
+    <div id= "wrapper" class="row" style="width: 100%;">
+        <div class="content col-sm-11 col-md-11 col-lg-10 col-xl-11 col-xxl-11 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mt-4 d-none d-lg-block" id="transac-table">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -102,7 +103,6 @@
                 </table>
             </div>
         </div>
-        <div class="col me-md-5 pe-md-5">
             <div class="accordion d-block d-xxl-none d-xl-none d-lg-none pe-md-3 me-md-0" role="tablist" id="accordion-1">
                 <div class="accordion-item">
                     <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1" style="margin-left: 70px;font-family: 'DM Sans', sans-serif;font-weight: bold;">Name</button></h2>
@@ -377,7 +377,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/TransacHis.js"></script>

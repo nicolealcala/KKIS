@@ -9,6 +9,8 @@ $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
 
+
+
 .title {
     font: 100% $font-stack;
 }
@@ -18,7 +20,7 @@ $text: #393737;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 7680px){
-    
+
     .title {
         width: 100%;
         height: 100%;
@@ -51,9 +53,15 @@ $text: #393737;
 }
 
 @media screen and (min-width:769px) and (max-width:7680px){
+
+    #wrapper {
+        padding-top: 1em;
+        padding-left: 5em;
+    }
+
     .content{
-        margin: 2em 4em 2em 8em;
-        padding: 1em;
+        margin: 0 4em 2em 15em;
+        padding-left: 1em;
     }
     
     .title {
@@ -91,8 +99,14 @@ $text: #393737;
 }
 
 @media screen and (max-width: 768px) {
+
+    #wrapper {
+        padding-top: 1em;
+        padding-left: 3em;
+    }
+
     .content{
-        margin: 3em 0 0 0;
+        margin: 0 0 0 0;
         padding: 2.5em;
         //Add, Update
         .title {
@@ -119,6 +133,12 @@ $text: #393737;
 
 
 @media screen and (max-width: 500px) {          //tablet
+
+    #wrapper {
+        padding-left: 0;
+    }
+
+
     .content{
         margin: 3em 0 0 0;
         padding: 1.5em;
@@ -163,6 +183,17 @@ $text: #393737;
     } 
     
     //Add, Update, Declared
+    #wrapper {
+        padding-left: 0;
+    }
+
+
+
+    .content{
+        margin: 1em 0 0 0;
+        padding: 1.5em;
+    }
+
     .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle{
         white-space: nowrap; 
         width: 70%; 

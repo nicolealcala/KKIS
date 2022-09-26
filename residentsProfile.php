@@ -2,10 +2,10 @@
     $dbServername = "localhost"; //server name
     $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "kkis"; //database name
+    $dbName = "KKIS"; //database name
 
     $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); //connect to database
-    $query = "SELECT * FROM residentsProfile ORDER BY residentID DESC";
+    $query = "SELECT * FROM residentsProfile ORDER BY residentID ASC"; //query to select all data from table
     $result = mysqli_query($conn, $query);
 ?>
 
@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Out-of-School Youth Table</title>
+    <title>Total Youth Table</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/kkis-logo.svg">
     <!-- Bootstrap -->
@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/dashboardYouthTbl.css">
+    <link rel="stylesheet" href="assets/css/residentsProfile.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.scss">
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
@@ -63,7 +64,7 @@
 
         <div class="dashboard-title col back-btn col-md-5 col-sm-1 col-xs-3"
             style="margin: 16px 0px 0px;margin-right: 65px;padding-left: 0px;padding-right: 0px;margin-left: 55px;">
-            <h1 class="title">Out-of-School Youth</h1>
+            <h1 class="title">Residents Profile</h1>
             <div>
                 <img class="gradient-line"
                     style="padding-right: 23px; padding-left: 60px;margin-bottom: 15px;padding-bottom: 20px;"
@@ -72,18 +73,27 @@
         </div>
     </div>
 
-
-    <!--SORT BUTTON-->
+    <!--SORT BUTTON AND SEARCH BUTTON-->
     <div class="sort-panel row">
-        <div class="sort-title col">
+        
+        <div class="sort-title col col-md-4 col-sm-2 col-4">
             <p>Sort by</p>
         </div>
-        <select id="sort-btn" class="select col-4" style="margin-left: 5em;">
+
+        <select id="sort-btn" class="select col-md-4 col-sm-4 col-4" style="margin-left: 5em; alignment:right">
             <option disabled selected></option>
             <option value="A-Z">A-Z</option>
             <option value="Age">Age</option>
             <option value="Purok">Purok</option>
         </select>
+
+        <div class="col col-xxl-6 col-lg-4 col-md-4 col-sm-6 col-4">
+                    <div>
+                        <!-- Start: search -->
+                        <div class="input-group"><input class="form-control" type="text" style="height:28px; border: 0.5px solid #04496a;border-top-left-radius: 25px;border-bottom-left-radius: 25px;" placeholder="Search"><button class="btn btn-primary" type="button" style="height:28px; background: #04496a;border: 1.5px solid #04496a;border-top-right-radius: 25px;border-bottom-right-radius: 25px;"><img class="searchIcon" src="assets/img/searchIcon.svg" style="height: 15px; padding-bottom: 0px;padding-top: 0px;margin-right: 0px;margin-bottom: 5px;"></button></div>
+                        <!-- End: search -->
+                    </div>
+                </div>
     </div>
 
     <br><br><br><br><br><br>
