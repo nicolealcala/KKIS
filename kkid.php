@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="assets/css/kkid.css">
     <link rel="stylesheet" href="assets/css/idtcpdf.css">
-    <link rel="stylesheet" href="assets/css/mediaquery.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navKKID.css">

@@ -32,7 +32,7 @@ body {
 
 @media screen and (max-width:768px) and (min-width:501px) {                   
     .pageContent {
-        
+        margin-left: 5em;
     }
 }
 

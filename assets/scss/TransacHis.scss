@@ -48,20 +48,14 @@
   margin-top: 0px;
 }
 
-.delete:hover{
-    background-color: white !important;
-    border-shadow:0 0 1px blue inset;
-    color: black;
-}
+// .delete:hover{
+//     background-color: white !important;
+//     border-shadow:0 0 1px blue inset;
+// }
 
-.form-check {
-  padding-top: 3px;
-}
-
-.form-check-label {
-  font-size: 14px;
-  font-family: 'DM Sans'
-}
+// .form-check {
+//   width: 20px;
+// }
 
 body::-webkit-scrollbar {
     width: 10px;               /* width of the entire scrollbar */
