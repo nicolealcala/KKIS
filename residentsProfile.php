@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/navResiProf.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/css/residentsProfile.css">
-    <link rel="stylesheet" href="assets/scss/mediaquery.scss">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
@@ -72,7 +72,7 @@
 
         <div class="dashboard-title col back-btn col-md-5 col-sm-1 col-xs-3"
             style="margin: 16px 0px 0px;margin-right: 65px;padding-left: 0px;padding-right: 0px;margin-left: 55px;">
-            <h1 class="title">Residents Profile</h1>
+            <h1 class="title" id="titleResiProf">Residents Profile</h1>
             <div>
                 <img class="gradient-line"
                     style="padding-right: 23px; padding-left: 60px;margin-bottom: 15px;padding-bottom: 20px;"
