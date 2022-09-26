@@ -1,1 +1,12 @@
-@media(min-width: 900px){.noneInWeb{display:none}}@media(max-width: 899px){.noneInLG{display:none}}/*# sourceMappingURL=trial4.css.map */
+@media (min-width: 900px) {
+  .noneInWeb {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .noneInLG {
+    display: none;
+  }
+}
+/*# sourceMappingURL=trial4.css.map */
