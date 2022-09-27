@@ -22,8 +22,11 @@
     <div class="modal fade" role="dialog" tabindex="-1" id="modalUpdated">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-body m-0 px-4">
+                <div class="modal-header border-0">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body m-0 px-4">
+                    
                     <div class="row m-0">
                         <div class="col col-12 p-0">
                             <svg class="checkmarkUpdate my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
