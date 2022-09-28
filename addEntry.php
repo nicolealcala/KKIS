@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="row m-0">
-                <div class="col p-0"><img src="assets/img/misc/hr.svg"></div>
+                <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
             </div>
             <!-- Copy End -->
             <div class="pageBody">
