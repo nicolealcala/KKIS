@@ -1,0 +1,77 @@
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$disabled-blue: #b0def3;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+* { 
+    font: 100% $font-stack-sub;
+}
+
+input[type=checkbox]{
+    margin: 0;
+    height: 100%;
+    width: auto;
+}
+.topBtnLbl{
+    color: $text;
+    font-size: 1.3em; 
+}
+
+#deleteBtn {
+    color: white;
+}
+
+.checkAllDiv {
+    width: 9.5em;
+    height: auto;
+    padding: 0.5em;
+    background-color: $light-yellow;
+    // border: 2px solid #909090;
+    border-radius: 10px;
+
+    #selectAll {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+.checkAllDiv:hover {
+    background: $mid-yellow;
+    border: none;
+}
+
+.tHead{
+    width: 30%;
+    color: $text;
+    font-size: 1.3em;
+
+    #checkEntry {
+        width: 10%;
+    }
+}
+
+.entryRow {
+    font-size: 1.3em;
+    padding: 0.2em;
+}
+
+.checkItem {
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    width: 1em;
+    height: 1.5em;
+}
+
+.accordion-item {
+    .accordHead{
+        color: #858796;
+        font-size: 1.3em;
+    }
+}

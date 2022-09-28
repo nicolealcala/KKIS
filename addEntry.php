@@ -34,7 +34,7 @@
         <div class="container-fluid content">
             <!-- Copy this -->
             <div class="row documentHeadingRow p-0 m-0">
-                <div class="col d-xxl-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
+                <div class="col d-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
                     <h1 class="d-xxl-flex title" id="titleAddEntry">Add Entry</h1>
                 </div>
             </div>
