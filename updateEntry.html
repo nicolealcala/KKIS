@@ -25,9 +25,9 @@
 <body id="page-top">
     
     <!-- Nav -->
-    <div class="navDiv">
+    <!-- <div class="navDiv">
         <?php include 'nav.php' ?>
-    </div>
+    </div> -->
 
     <div id="wrapper">
         <div class="container-fluid content">
@@ -73,7 +73,7 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanLname" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label fieldLabel w-100" for="kabataanEname">Extension</label>
+                                <label class="col-form-label fieldLabel w-100" for="kabataanEname" id="kabataanEnameLbl">Extension</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
@@ -154,7 +154,7 @@
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel w-100" for="organization">Organization (if any)</label>
+                                <label class="col-form-label fieldLabel w-100" for="organization" id="organizationLbl">Organization (if any)</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="organization">
                             </div>
                         </div>
@@ -202,71 +202,73 @@
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Industry</label>
-                                        <!-- <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputEducOccupation"> -->
-                                        <select class="form-select text-uppercase w-100 educSelectBox" placeholder="Select Industry" id="selectEducOccupation">
-                                            <option value="advertise">Accounting</option>
-                                            <option value="advertise">Advertising and Marketing</option>
-                                            <option value="Sr.">Aerospace</option>
-                                            <option value="I">Agriculture</option>
-                                            <option value="II">Animation</option>
-                                            <option value="III">Apparel and Fashion</option>
-                                            <option value="">Architecture and Planning</option>
-                                            <option value="">Arts and Crafts</option>
-                                            <option value="">Automobile Engineering</option>
-                                            <option value="">Auto Mechanics Industry</option>
-                                            <option value="">Aviation</option>
-                                            <option value="">BPO</option>
-                                            <option value="">Buy and Sell</option>
-                                            <option value="">Casinos and Gambling</option>
-                                            <option value="">Chemical Industry</option>
-                                            <option value="">Computer Technology</option>
-                                            <option value="">Construction</option>
-                                            <option value="">Cosmetics</option>
-                                            <option value="">E-commerce</option>
-                                            <option value="">Education</option>
-                                            <option value="">Electrical Power</option>
-                                            <option value="">Electronics</option>
-                                            <option value="">Event Services</option>
-                                            <option value="">Finance and Insurance Services</option>
-                                            <option value="">Fishery</option>
-                                            <option value="">Fitness and Wellness</option>
-                                            <option value="">Furniture</option>
-                                            <option value="">Food and Beverages</option>
-                                            <option value="">Government</option>
-                                            <option value="">Graphic Arts</option>
-                                            <option value="">Healthcare and Welfare</option>
-                                            <option value="">Hospitality Industry</option>
-                                            <option value="">Law Enforcement</option>
-                                            <option value="">Legislative Office</option>
-                                            <option value="">Luxury Good and Jewelry</option>
-                                            <option value="">Manufacturing</option>
-                                            <option value="">Maritime</option>
-                                            <option value="">Military</option>
-                                            <option value="">Mining</option>
-                                            <option value="">Packaging and Containers</option>
-                                            <option value="">Performing Arts</option>
-                                            <option value="">Personal Service</option>
-                                            <option value="">Pharmaceutical</option>
-                                            <option value="">Poultry</option>
-                                            <option value="">Printing and Publishing</option>
-                                            <option value="">Production</option>
-                                            <option value="">Public Safety</option>
-                                            <option value="">Photography and Film</option>
-                                            <option value="">Real Estatee</option>
-                                            <option value="">Recreational Facilities and Services</option>
-                                            <option value="">Religious Institutions</option>
-                                            <option value="">Retail Industrry</option>
-                                            <option value="">Shipping Services</option>
-                                            <option value="">Staffing and Recruiting</option>
-                                            <option value="">Suply Chain Management</option>
-                                            <option value="">Telecommunication</option>
-                                            <option value="">Transportation</option>
-                                            <option value="">Tourism</option>
-                                            <option value="">Utilities</option>
-                                            <option value="">Veterinary</option>
-                                            <option value="">Warehousing</option>
-                                        </select>
+                                        <div class="industryDiv">
+                                            <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Industry</label>
+                                            <!-- Class form-select removed -->
+                                            <select class="text-uppercase w-100 educSelectBox" name="native-select-1" data-search="true" placeholder="Select Industry" data-silent-initial-value-set="true" id="selectEducIndustry">
+                                                <option value="A01">Accounting</option>
+                                                <option value="A02">Advertising and Marketing</option>
+                                                <option value="A03.">Aerospace</option>
+                                                <option value="A04">Agriculture</option>
+                                                <option value="A05">Animation</option>
+                                                <option value="III">Apparel and Fashion</option>
+                                                <option value="">Architecture and Planning</option>
+                                                <option value="">Arts and Crafts</option>
+                                                <option value="">Automobile Engineering</option>
+                                                <option value="">Auto Mechanics Industry</option>
+                                                <option value="">Aviation</option>
+                                                <option value="">BPO</option>
+                                                <option value="">Buy and Sell</option>
+                                                <option value="">Casinos and Gambling</option>
+                                                <option value="">Chemical Industry</option>
+                                                <option value="">Computer Technology</option>
+                                                <option value="">Construction</option>
+                                                <option value="">Cosmetics</option>
+                                                <option value="">E-commerce</option>
+                                                <option value="">Education</option>
+                                                <option value="">Electrical Power</option>
+                                                <option value="">Electronics</option>
+                                                <option value="">Event Services</option>
+                                                <option value="">Finance and Insurance Services</option>
+                                                <option value="">Fishery</option>
+                                                <option value="">Fitness and Wellness</option>
+                                                <option value="">Furniture</option>
+                                                <option value="">Food and Beverages</option>
+                                                <option value="">Government</option>
+                                                <option value="">Graphic Arts</option>
+                                                <option value="">Healthcare and Welfare</option>
+                                                <option value="">Hospitality Industry</option>
+                                                <option value="">Law Enforcement</option>
+                                                <option value="">Legislative Office</option>
+                                                <option value="">Luxury Good and Jewelry</option>
+                                                <option value="">Manufacturing</option>
+                                                <option value="">Maritime</option>
+                                                <option value="">Military</option>
+                                                <option value="">Mining</option>
+                                                <option value="">Packaging and Containers</option>
+                                                <option value="">Performing Arts</option>
+                                                <option value="">Personal Service</option>
+                                                <option value="">Pharmaceutical</option>
+                                                <option value="">Poultry</option>
+                                                <option value="">Printing and Publishing</option>
+                                                <option value="">Production</option>
+                                                <option value="">Public Safety</option>
+                                                <option value="">Photography and Film</option>
+                                                <option value="">Real Estatee</option>
+                                                <option value="">Recreational Facilities and Services</option>
+                                                <option value="">Religious Institutions</option>
+                                                <option value="">Retail Industrry</option>
+                                                <option value="">Shipping Services</option>
+                                                <option value="">Staffing and Recruiting</option>
+                                                <option value="">Suply Chain Management</option>
+                                                <option value="">Telecommunication</option>
+                                                <option value="">Transportation</option>
+                                                <option value="">Tourism</option>
+                                                <option value="">Utilities</option>
+                                                <option value="">Veterinary</option>
+                                                <option value="">Warehousing</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
@@ -358,14 +360,8 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="headLname">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100">Extension</label>
-                                <select class="form-select text-uppercase w-100 houseSelectBox" id="headEname" for="headEname">
-                                    <option value="1" selected="">Jr.</option>
-                                    <option value="2">Sr.</option>
-                                    <option value="3">I</option>
-                                    <option value="4">II</option>
-                                    <option value="5">III</option>
-                                </select>
+                                <label class="col-form-label fieldLabel required w-100" for="headEname" id="headEnameLbl">Extension</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="headEname">
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members</label>

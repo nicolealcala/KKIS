@@ -4,6 +4,8 @@ $(document).ready(function(){
         $(this).addClass('required');
         if (($(this).attr("id")=="remarksLbl") || ($(this).attr("id")=="organizationLbl")){
             $(this).removeClass('required');
+        } else if (($(this).attr("id")=="kabataanEnameLbl") || ($(this).attr("id")=='headEnameLbl')){
+            $(this).removeClass('required');
         }
     });
 });
@@ -59,13 +61,12 @@ $(document).ready(function(){
 VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true
-  });
+});
 
-  VirtualSelect.init({
-    ele: '#selectEducOccupation',
-    multiple: false,
-    search: true
-  })
+VirtualSelect.init({
+    ele: '#selectEducIndustry',
+    hideClearButton: true
+});
 
 
 //fxn for clicking #educCheckUpdate
@@ -159,7 +160,7 @@ var enrolled = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
-        if (($(this).attr("id")=="selectEducSalary") || ($(this).attr("id")=="selectEducOccupation")){
+        if (($(this).attr("id")=="selectEducSalary") || ($(this).attr("id")=="selectEducIndustry")){
             $(this).prop('disabled', true);
             $(this).removeAttr("required");
         } 
