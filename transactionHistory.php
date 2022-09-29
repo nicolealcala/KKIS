@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
-    <link rel="stylesheet" href="assets/css/navAddEntry.css">
+    <!-- <link rel="stylesheet" href="assets/css/navAddEntry.css"> -->
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     

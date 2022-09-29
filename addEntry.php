@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
-
     <link rel="stylesheet" href="assets/scss/addUpdate.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
+
+    <!-- Virtual Select JS library -->
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
 
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navAddEntry.css">

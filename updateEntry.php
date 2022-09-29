@@ -34,15 +34,15 @@
             <!-- Copy this -->
             <div class="row documentHeadingRow p-0 m-0">
                 <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <div class="d-flex align-items-center justify-content-xxl-start align-items-xxl-center headContainer">
+                    <div class="d-flex align-items-center justify-content-xxl-start headContainer">
                         <button class="btn border rounded-circle border-0 d-flex d-sm-flex d-xxl-flex justify-content-center justify-content-sm-center align-items-sm-center justify-content-md-center justify-content-lg-center backBtn" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon" style="width: auto;height: auto;font-size: 28px;">
                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                 <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
                             </svg>
                         </button>
-                        <div class="col-xxl-4 d-xxl-flex align-self-center align-items-xxl-center p-0">
-                            <h1 class="d-xxl-flex title w-auto" id="titleUpdateEntry">Update Entry</h1>
+                        <div class="col-xxl-4 d-flex justify-content-center align-items-center p-0">
+                            <span class="d-flex title w-auto" id="titleUpdateEntry">Update Entry</span>
                         </div>
                     </div>
                 </div>
@@ -61,26 +61,20 @@
                     <form>
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentFname" required="">
+                                <label class="col-form-label fieldLabel required w-100" for="kabataanFname">First Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanFname" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentMname" required="">
+                                <label class="col-form-label fieldLabel required w-100" for="kabataanMname">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanMname" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentLname" required="">
+                                <label class="col-form-label fieldLabel required w-100" for="kabataanLname">Last Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanLname" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label fieldLabel w-100" for="residentEname">Extension</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentEname">
-                                    <option value="Jr." selected="">Jr.</option>
-                                    <option value="Sr.">Sr.</option>
-                                    <option value="I">I</option>
-                                    <option value="II">II</option>
-                                    <option value="III">III</option>
-                                </select>
+                                <label class="col-form-label fieldLabel w-100" for="kabataanEname">Extension</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentGender">Gender Preference</label>
@@ -208,8 +202,71 @@
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="inputEducOccupation">Occupation</label>
-                                        <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputEducOccupation">
+                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Industry</label>
+                                        <!-- <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputEducOccupation"> -->
+                                        <select class="form-select text-uppercase w-100 educSelectBox" placeholder="Select Industry" id="selectEducOccupation">
+                                            <option value="advertise">Accounting</option>
+                                            <option value="advertise">Advertising and Marketing</option>
+                                            <option value="Sr.">Aerospace</option>
+                                            <option value="I">Agriculture</option>
+                                            <option value="II">Animation</option>
+                                            <option value="III">Apparel and Fashion</option>
+                                            <option value="">Architecture and Planning</option>
+                                            <option value="">Arts and Crafts</option>
+                                            <option value="">Automobile Engineering</option>
+                                            <option value="">Auto Mechanics Industry</option>
+                                            <option value="">Aviation</option>
+                                            <option value="">BPO</option>
+                                            <option value="">Buy and Sell</option>
+                                            <option value="">Casinos and Gambling</option>
+                                            <option value="">Chemical Industry</option>
+                                            <option value="">Computer Technology</option>
+                                            <option value="">Construction</option>
+                                            <option value="">Cosmetics</option>
+                                            <option value="">E-commerce</option>
+                                            <option value="">Education</option>
+                                            <option value="">Electrical Power</option>
+                                            <option value="">Electronics</option>
+                                            <option value="">Event Services</option>
+                                            <option value="">Finance and Insurance Services</option>
+                                            <option value="">Fishery</option>
+                                            <option value="">Fitness and Wellness</option>
+                                            <option value="">Furniture</option>
+                                            <option value="">Food and Beverages</option>
+                                            <option value="">Government</option>
+                                            <option value="">Graphic Arts</option>
+                                            <option value="">Healthcare and Welfare</option>
+                                            <option value="">Hospitality Industry</option>
+                                            <option value="">Law Enforcement</option>
+                                            <option value="">Legislative Office</option>
+                                            <option value="">Luxury Good and Jewelry</option>
+                                            <option value="">Manufacturing</option>
+                                            <option value="">Maritime</option>
+                                            <option value="">Military</option>
+                                            <option value="">Mining</option>
+                                            <option value="">Packaging and Containers</option>
+                                            <option value="">Performing Arts</option>
+                                            <option value="">Personal Service</option>
+                                            <option value="">Pharmaceutical</option>
+                                            <option value="">Poultry</option>
+                                            <option value="">Printing and Publishing</option>
+                                            <option value="">Production</option>
+                                            <option value="">Public Safety</option>
+                                            <option value="">Photography and Film</option>
+                                            <option value="">Real Estatee</option>
+                                            <option value="">Recreational Facilities and Services</option>
+                                            <option value="">Religious Institutions</option>
+                                            <option value="">Retail Industrry</option>
+                                            <option value="">Shipping Services</option>
+                                            <option value="">Staffing and Recruiting</option>
+                                            <option value="">Suply Chain Management</option>
+                                            <option value="">Telecommunication</option>
+                                            <option value="">Transportation</option>
+                                            <option value="">Tourism</option>
+                                            <option value="">Utilities</option>
+                                            <option value="">Veterinary</option>
+                                            <option value="">Warehousing</option>
+                                        </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>

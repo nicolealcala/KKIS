@@ -58,8 +58,14 @@ $(document).ready(function(){
 //JS Library for remarks
 VirtualSelect.init({
     ele: '#remarkDrop',
-    hideClearButton: true,
+    hideClearButton: true
   });
+
+  VirtualSelect.init({
+    ele: '#selectEducOccupation',
+    multiple: false,
+    search: true
+  })
 
 
 //fxn for clicking #educCheckUpdate
@@ -153,7 +159,7 @@ var enrolled = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
-        if ($(this).attr("id")=="selectEducSalary"){
+        if (($(this).attr("id")=="selectEducSalary") || ($(this).attr("id")=="selectEducOccupation")){
             $(this).prop('disabled', true);
             $(this).removeAttr("required");
         } 
@@ -162,10 +168,10 @@ var enrolled = function(){
     $('.educUserInput').each(function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
-        if ($(this).attr("id")=="inputEducOccupation"){
-            $(this).prop('disabled', true);
-            $(this).removeAttr("required");
-        }
+        // if ($(this).attr("id")=="inputEducOccupation"){
+        //     $(this).prop('disabled', true);
+        //     $(this).removeAttr("required");
+        // }
     });
 
     $('.educFieldLabel').each(function(){
