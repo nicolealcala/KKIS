@@ -53,27 +53,20 @@
                     <form>
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentFname" required="">
+                                <label class="col-form-label fieldLabel required w-100" for="kabataan">First Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanFname" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentMname" required="">
+                                <label class="col-form-label fieldLabel required w-100" for="kabataanMname">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanMname" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentLname" required="">
+                                <label class="col-form-label fieldLabel required w-100" for="kabataanLname">Last Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanLname" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label fieldLabel w-100" for="residentEname">Extension</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentEname">
-                                    <option value="none" selected>None</option>
-                                    <option value="Jr.">Jr.</option>
-                                    <option value="Sr.">Sr.</option>
-                                    <option value="I">I</option>
-                                    <option value="II">II</option>
-                                    <option value="III">III</option>
-                                </select>
+                                <label class="col-form-label required fieldLabel w-100" for="kabataanEname" id="kabataanEnameLbl">Extension</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname" required="">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentGender">Gender Preference</label>
@@ -201,8 +194,72 @@
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool" required="">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="inputEducOccupation">Occupation</label>
-                                        <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputEducOccupation" required="">
+                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Industry</label>
+                                        <select class="form-select text-uppercase w-100 educSelectBox" id="selectEducIndustry" required="">
+                                            <option value="A01">Accounting</option>
+                                            <option value="A02">Advertising and Marketing</option>
+                                            <option value="A03.">Aerospace</option>
+                                            <option value="A04">Agriculture</option>
+                                            <option value="A05">Animation</option>
+                                            <option value="A06">Apparel and Fashion</option>
+                                            <option value="A07">Architecture and Planning</option>
+                                            <option value="A08">Arts and Crafts</option>
+                                            <option value="A09">Automobile Engineering</option>
+                                            <option value="A10">Auto Mechanics Industry</option>
+                                            <option value="A11">Aviation</option>
+                                            <option value="B01">BPO</option>
+                                            <option value="B02">Buy and Sell</option>
+                                            <option value="C01">Casinos and Gambling</option>
+                                            <option value="C02">Chemical Industry</option>
+                                            <option value="C03">Computer Technology</option>
+                                            <option value="C04">Construction</option>
+                                            <option value="C05">Cosmetics</option>
+                                            <option value="D01">Design</option>
+                                            <option value="E01">E-commerce</option>
+                                            <option value="E02">Education</option>
+                                            <option value="E03">Electrical Power</option>
+                                            <option value="E04">Electronics</option>
+                                            <option value="E05">Event Services</option>
+                                            <option value="F01">Finance and Insurance Services</option>
+                                            <option value="F02">Fishery</option>
+                                            <option value="F03">Fitness and Wellness</option>
+                                            <option value="F04">Furniture</option>
+                                            <option value="F05">Food and Beverages</option>
+                                            <option value="G01">Government</option>
+                                            <option value="G02">Graphic Arts</option>
+                                            <option value="H01">Healthcare and Welfare</option>
+                                            <option value="H02">Hospitality Industry</option>
+                                            <option value="L01">Law Enforcement</option>
+                                            <option value="L02">Legislative Office</option>
+                                            <option value="L03">Luxury Good and Jewelry</option>
+                                            <option value="M01">Manufacturing</option>
+                                            <option value="M02">Maritime</option>
+                                            <option value="M03">Military</option>
+                                            <option value="M04">Mining</option>
+                                            <option value="P01">Packaging and Containers</option>
+                                            <option value="P02">Performing Arts</option>
+                                            <option value="P03">Personal Service</option>
+                                            <option value="P04">Pharmaceutical</option>
+                                            <option value="P05">Poultry</option>
+                                            <option value="P06">Printing and Publishing</option>
+                                            <option value="P07">Production</option>
+                                            <option value="P08">Public Safety</option>
+                                            <option value="P09">Photography and Film</option>
+                                            <option value="Q01">Quick Service Restaurant (QSR)</option>
+                                            <option value="R01">Real Estatee</option>
+                                            <option value="R02">Recreational Facilities and Services</option>
+                                            <option value="R03">Religious Institutions</option>
+                                            <option value="R04">Retail Industrry</option>
+                                            <option value="S01">Shipping Services</option>
+                                            <option value="S02">Staffing and Recruiting</option>
+                                            <option value="S03">Suply Chain Management</option>
+                                            <option value="T01">Telecommunication</option>
+                                            <option value="T02">Transportation</option>
+                                            <option value="T03">Tourism</option>
+                                            <option value="U01">Utilities</option>
+                                            <option value="V01">Veterinary</option>
+                                            <option value="W01">Warehousing</option>
+                                        </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
@@ -252,8 +309,72 @@
                                         <input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployer" required="">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employOccupationLbl" for="inputEmployOccupation">Occupation</label>
-                                        <input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployOccupation" required="">
+                                        <label class="col-form-label employFieldLabel required w-100" id="employOccupationLbl" for="selectEmployOccupation">Industry</label>
+                                        <select class="form-select text-uppercase w-100 employSelectBox" id="selectEmployIndustry" required="">
+                                            <option value="A01">Accounting</option>
+                                            <option value="A02">Advertising and Marketing</option>
+                                            <option value="A03.">Aerospace</option>
+                                            <option value="A04">Agriculture</option>
+                                            <option value="A05">Animation</option>
+                                            <option value="A06">Apparel and Fashion</option>
+                                            <option value="A07">Architecture and Planning</option>
+                                            <option value="A08">Arts and Crafts</option>
+                                            <option value="A09">Automobile Engineering</option>
+                                            <option value="A10">Auto Mechanics Industry</option>
+                                            <option value="A11">Aviation</option>
+                                            <option value="B01">BPO</option>
+                                            <option value="B02">Buy and Sell</option>
+                                            <option value="C01">Casinos and Gambling</option>
+                                            <option value="C02">Chemical Industry</option>
+                                            <option value="C03">Computer Technology</option>
+                                            <option value="C04">Construction</option>
+                                            <option value="C05">Cosmetics</option>
+                                            <option value="D01">Design</option>
+                                            <option value="E01">E-commerce</option>
+                                            <option value="E02">Education</option>
+                                            <option value="E03">Electrical Power</option>
+                                            <option value="E04">Electronics</option>
+                                            <option value="E05">Event Services</option>
+                                            <option value="F01">Finance and Insurance Services</option>
+                                            <option value="F02">Fishery</option>
+                                            <option value="F03">Fitness and Wellness</option>
+                                            <option value="F04">Furniture</option>
+                                            <option value="F05">Food and Beverages</option>
+                                            <option value="G01">Government</option>
+                                            <option value="G02">Graphic Arts</option>
+                                            <option value="H01">Healthcare and Welfare</option>
+                                            <option value="H02">Hospitality Industry</option>
+                                            <option value="L01">Law Enforcement</option>
+                                            <option value="L02">Legislative Office</option>
+                                            <option value="L03">Luxury Good and Jewelry</option>
+                                            <option value="M01">Manufacturing</option>
+                                            <option value="M02">Maritime</option>
+                                            <option value="M03">Military</option>
+                                            <option value="M04">Mining</option>
+                                            <option value="P01">Packaging and Containers</option>
+                                            <option value="P02">Performing Arts</option>
+                                            <option value="P03">Personal Service</option>
+                                            <option value="P04">Pharmaceutical</option>
+                                            <option value="P05">Poultry</option>
+                                            <option value="P06">Printing and Publishing</option>
+                                            <option value="P07">Production</option>
+                                            <option value="P08">Public Safety</option>
+                                            <option value="P09">Photography and Film</option>
+                                            <option value="Q01">Quick Service Restaurant (QSR)</option>
+                                            <option value="R01">Real Estatee</option>
+                                            <option value="R02">Recreational Facilities and Services</option>
+                                            <option value="R03">Religious Institutions</option>
+                                            <option value="R04">Retail Industrry</option>
+                                            <option value="S01">Shipping Services</option>
+                                            <option value="S02">Staffing and Recruiting</option>
+                                            <option value="S03">Suply Chain Management</option>
+                                            <option value="T01">Telecommunication</option>
+                                            <option value="T02">Transportation</option>
+                                            <option value="T03">Tourism</option>
+                                            <option value="U01">Utilities</option>
+                                            <option value="V01">Veterinary</option>
+                                            <option value="W01">Warehousing</option>
+                                        </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
@@ -294,15 +415,8 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="headEname">Extension</label>
-                                <select class="form-select text-uppercase w-100 houseSelectBox" id="headEname" required="">
-                                    <option value="none" selected>None</option>
-                                    <option value="1">Jr.</option>
-                                    <option value="2">Sr.</option>
-                                    <option value="3">I</option>
-                                    <option value="4">II</option>
-                                    <option value="5">III</option>
-                                </select>
+                                <label class="col-form-label fieldLabel required w-100" for="headEname" id="headEnameLbl">Extension</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="headEname" required="">
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members</label>

@@ -63,12 +63,6 @@ VirtualSelect.init({
     hideClearButton: true
 });
 
-VirtualSelect.init({
-    ele: '#selectEducIndustry',
-    hideClearButton: true
-});
-
-
 //fxn for clicking #educCheckUpdate
 var educRadioClick = function(){
     $("#selectEmployStatus").val("employed").change();
@@ -163,7 +157,7 @@ var enrolled = function(){
         if (($(this).attr("id")=="selectEducSalary") || ($(this).attr("id")=="selectEducIndustry")){
             $(this).prop('disabled', true);
             $(this).removeAttr("required");
-        } 
+        }
     });
 
     $('.educUserInput').each(function(){

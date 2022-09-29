@@ -4,6 +4,8 @@ $(document).ready(function(){
         $(this).addClass('required');
         if (($(this).attr("id")=="remarksLbl") || ($(this).attr("id")=="organizationLbl")){
             $(this).removeClass('required');
+        } else if (($(this).attr("id")=="kabataanEnameLbl") || ($(this).attr("id")=='headEnameLbl')){
+            $(this).removeClass('required');
         }
     });
 });
@@ -153,7 +155,7 @@ var enrolled = function(){
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
-        if ($(this).attr("id")=="selectEducSalary"){
+        if (($(this).attr("id")=="selectEducSalary") || ($(this).attr("id")=="selectEducIndustry")){
             $(this).prop('disabled', true);
             $(this).removeAttr("required");
         } 
@@ -162,10 +164,6 @@ var enrolled = function(){
     $('.educUserInput').each(function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
-        if ($(this).attr("id")=="inputEducOccupation"){
-            $(this).prop('disabled', true);
-            $(this).removeAttr("required");
-        }
     });
 
     $('.educFieldLabel').each(function(){
