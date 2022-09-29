@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/navAddEntry.css"> -->
+    <link rel="stylesheet" href="assets/css/navAddEntry.css">
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
@@ -25,9 +25,9 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <!-- <div class="navDiv">
+    <div class="navDiv">
         <?php include 'nav.php' ?>
-    </div> -->
+    </div>
 
     <div id="wrapper">
         <div class="content container-fluid">
@@ -45,15 +45,17 @@
             <div class="pageBody mt-5 m-0">
                 <div class="divBtns row d-flex justify-content-end align-items-center m-0">
                     <!-- <div class="col-3 col-sm-5 col-md-7 col-lg-8 col-xl-9 col-xxl-9"></div> -->
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-6 col-2 d-flex justify-content-end align-items-center">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 d-flex justify-content-end align-items-center justify-content-md-center">
                         <div class="checkAllDiv d-flex justify-content-center align-items-center">
                             <input class="form-check-input mb-1" type="checkbox" id="selectAll">
                             <label class="topBtnLbl ms-2" for="selectAll">Select All</label>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-6 col-2 d-flex justify-content-flex-start align-items-center">
-                        <button class="btn btn-primary delete px-4 topBtnLbl" type="button" id="deleteBtn">
-                        <i class="far fa-trash-alt me-2"></i>Delete</button></div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 d-flex justify-content-flex-start align-items-center">
+                        <button class="btn btn-primary delete px-4" type="button">
+                            <i class="far fa-trash-alt"></i>
+                            <span class="topBtnLbl ms-2" id="deleteBtn">Delete</span>
+                        </button></div>
                 </div>
 
                 <div class="tableDiv row m-0 mt-5 d-none d-lg-block">

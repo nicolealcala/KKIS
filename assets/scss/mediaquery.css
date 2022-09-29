@@ -112,6 +112,13 @@
   .kkidBody .categoryCol .categoryOption {
     width: 100%;
   }
+  .topBtnLbl {
+    display: none;
+  }
+  .accordHead {
+    color: #858796;
+    font-size: 1em;
+  }
 }
 @media screen and (max-width: 300px) {
   .divNav .slider {

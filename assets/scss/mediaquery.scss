@@ -175,6 +175,15 @@ $text: #393737;
             }
         }
     }
+    //Transaction History
+    .topBtnLbl{
+        display: none;
+    }
+
+    .accordHead{
+        color: #858796;
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 300px) {
