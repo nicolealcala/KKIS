@@ -2,36 +2,32 @@
   font: 100% DM Sans, sans-serif;
 }
 
-input[type=checkbox] {
-  margin: 0;
-  height: 100%;
-  width: auto;
-}
-
 .topBtnLbl {
   color: #393737;
   font-size: 1.3em;
+  font-weight: normal;
 }
 
-#deleteBtn {
-  color: white;
-}
-
-.checkAllDiv {
-  width: 9.5em;
-  height: auto;
-  padding: 0.5em;
-  background-color: #F3CB69;
+.checkAllDiv, .deleteDiv {
+  width: 5.5em;
+  padding: 1em;
   border-radius: 10px;
+  cursor: pointer;
 }
-.checkAllDiv #selectAll {
+.checkAllDiv #selectAll, .deleteDiv #selectAll {
+  position: relative;
+  margin: 0 auto;
+  outline: 2px solid #707070;
   width: 1.5em;
   height: 1.5em;
 }
 
-.checkAllDiv:hover {
-  background: #FFB703;
-  border: none;
+.fa-solid {
+  color: #707070;
+}
+
+.checkAllDiv:hover, .deleteDiv:hover {
+  background: #EAECF4;
 }
 
 .tHead {
@@ -46,6 +42,7 @@ input[type=checkbox] {
 .entryRow {
   font-size: 1.3em;
   padding: 0.2em;
+  color: #858796;
 }
 
 .checkItem {
@@ -53,10 +50,18 @@ input[type=checkbox] {
   padding: 0;
   margin: 0;
   width: 1em;
-  height: 1.5em;
+  height: 1em;
 }
 
+.accordion-item .checkDiv {
+  width: 4em;
+  background-color: #EAECF4;
+}
 .accordion-item .accordHead {
   color: #858796;
   font-size: 1.3em;
+}
+
+.transactInfo {
+  margin-left: 2em;
 }/*# sourceMappingURL=transactionHistory.css.map */

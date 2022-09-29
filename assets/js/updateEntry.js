@@ -10,6 +10,13 @@ $(document).ready(function(){
     });
 });
 
+//For backBtn
+$(document).ready(function(){
+    $('.backBtn').click(function(){
+        document.location.href='/residentsProfile.php';
+    })
+})
+
 //For Educ Radio Btn Pre-checked or is selected on change
 $(document).ready(function(){
     if ($('#educCheckUpdate').is(':checked')){

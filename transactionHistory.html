@@ -7,11 +7,12 @@
     <title>Transaction History</title>
     
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-    <link rel="stylesheet" href="assets/scss/th.css">
+    <link rel="stylesheet" href="assets/scss/transactionHistory.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
@@ -25,9 +26,9 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <div class="navDiv">
+    <!-- <div class="navDiv">
         <?php include 'nav.php' ?>
-    </div>
+    </div> -->
 
     <div id="wrapper">
         <div class="content container-fluid">
@@ -45,17 +46,17 @@
             <div class="pageBody mt-5 m-0">
                 <div class="divBtns row d-flex justify-content-end align-items-center m-0">
                     <!-- <div class="col-3 col-sm-5 col-md-7 col-lg-8 col-xl-9 col-xxl-9"></div> -->
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 d-flex justify-content-end align-items-center justify-content-md-center">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 d-flex justify-content-flex-start align-items-center">
                         <div class="checkAllDiv d-flex justify-content-center align-items-center">
-                            <input class="form-check-input mb-1" type="checkbox" id="selectAll">
-                            <label class="topBtnLbl ms-2" for="selectAll">Select All</label>
+                            <input class="form-check-input" type="checkbox" id="selectAll">
+                            <i class="fa-solid fa-caret-down fa-lg ms-3"></i>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 d-flex justify-content-flex-start align-items-center">
-                        <button class="btn btn-primary delete px-4" type="button">
-                            <i class="far fa-trash-alt"></i>
-                            <span class="topBtnLbl ms-2" id="deleteBtn">Delete</span>
-                        </button></div>
+                        <div class="deleteDiv d-flex justify-content-center align-items-center">
+                            <i class="fa-regular fa-trash-can fa-xl m-3 p-0"></i>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tableDiv row m-0 mt-5 d-none d-lg-block">
@@ -134,26 +135,29 @@
                     <div class="col-12">
                         <div class="accordion" role="tablist" id="accordionRow">
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">Nicole Alcala
+                                        Nicole Alcala
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -162,26 +166,29 @@
                             </div>
 
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">Patricia Mae Abrigo
+                                        Patricia Mae Abrigo
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -190,26 +197,29 @@
                             </div>
 
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">Michael John Palalimpa
+                                        Michael John Palalimpa
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -218,26 +228,29 @@
                             </div>
 
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">John Marc Morano
+                                        John Marc Morano
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -246,26 +259,29 @@
                             </div>
 
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">Princess Carl Austria
+                                        Princess Carl Austria
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -274,26 +290,29 @@
                             </div>
 
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">Stephanie Baylon
+                                        >Stephanie Baylon
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -302,26 +321,29 @@
                             </div>
 
                             <div class="accordion-item">
-                                <span class="accordion-header" role="tab">
+                                <span class="accordion-header d-flex p-1" role="tab">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                        <input type="checkbox" class="checkItem">
+                                    </div>
                                     <button class="accordion-button collapsed accordHead" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
-                                        <input type="checkbox" class="checkItem me-3">Jutin Charles Gonzales
+                                        Justin Charles Gonzales
                                     </button>
                                 </span>
                                 <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordionRow">
                                     <div class="accordion-body">
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Transaction ID</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Transaction ID</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
                                         <div class="row m-0 p-2">
-                                            <div class="col-2">
-                                                <h5 class="ms-2">Issued On</h5>
+                                            <div class="col-4">
+                                                <h5 class="transactInfo">Issued On</h5>
                                             </div>
-                                            <div class="col-10">
+                                            <div class="col-8">
                                                 <p></p>
                                             </div>
                                         </div>
@@ -336,6 +358,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
     <script type="text/javascript" src="assets/js/transactionHistory.js"></script>
 </body>
 </html>
