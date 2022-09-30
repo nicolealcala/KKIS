@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="assets/scss/newDashboard.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
-    <!-- Virtual Select JS library -->
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
-
     <!-- navAddUpdate CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/navDash.css"> -->
+    <link rel="stylesheet" href="assets/css/navDash.css">
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
@@ -27,9 +24,9 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <!-- <div class="navDiv">
+    <div class="navDiv">
         <?php include 'nav.php' ?>
-    </div> -->
+    </div>
 
     <div id="wrapper">
         <div class="container-fluid content">

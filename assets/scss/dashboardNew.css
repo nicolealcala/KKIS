@@ -65,4 +65,19 @@ a {
 
 #pwd {
   background-color: #04496A;
-}/*# sourceMappingURL=newDashboard.css.map */
+}
+
+.body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+.body::-webkit-scrollbar-track {
+  background: none; /* color of the tracking area */
+}
+
+.body::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #c9c9c9; /* creates padding around scroll thumb */
+  z-index: -60;
+}/*# sourceMappingURL=dashboardNew.css.map */
