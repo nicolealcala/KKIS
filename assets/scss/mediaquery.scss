@@ -34,10 +34,10 @@ $text: #393737;
   
     }
 
-    //Add, Update, Declared Households
-    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo{
+    //Add, Update, Declared Households, Transaction History, Dashboard
+    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle{
         white-space: nowrap; 
-        width: 80%; 
+        width: 85%; 
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -110,7 +110,7 @@ $text: #393737;
         padding: 2.5em;
         //Add, Update
         .title {
-            font-size: 1.5em;
+            font-size: 2em;
         }
         //Update
         .backBtn {
@@ -126,7 +126,16 @@ $text: #393737;
         .markerText, .subTitle{
             font-size: 1.3em;
         }
-    }  
+    }
+
+    //Dashboard
+    .category {
+        .texts{
+            .count {
+                font-size: 3em;
+            }
+        }
+    }
 
 }
 

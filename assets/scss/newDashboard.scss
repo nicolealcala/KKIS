@@ -1,0 +1,82 @@
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+* {
+    font: 100% $font-stack-sub;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.category {
+    position: relative;
+    border: none;
+    border-radius: 1em;
+    background-color: pink;
+    color: white;
+    overflow: hidden;
+
+    .texts {
+        width: auto;
+        margin: 1em 1.3em;
+        z-index:5;
+
+        .count {
+            font-size: 3.5em;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+    .dashboardImg {
+        margin-right: 1em;
+        width: auto;
+        height: 6em;
+        z-index: 1;
+    }
+}
+
+
+#totalYouth {
+    background-color: $light-blue;
+}
+
+#enrolledYouth {
+    background-color: $mid-blue;
+}  
+
+#ousYouth {
+    background-color: $dark-blue;
+}
+
+#workingStudent {
+    background-color: $light-yellow;
+}
+
+#employed {
+    background-color: $mid-yellow;
+}
+
+#unemployed {
+    background-color: $dark-yellow;
+}
+
+#registeredVoter {
+    background-color: $light-blue;
+}
+
+#unregisteredVoter {
+    background-color: $mid-blue;
+}  
+
+#pwd {
+    background-color: $dark-blue;
+}

@@ -16,9 +16,9 @@
   #titleUpdateEntry, #titleResiProf {
     margin-left: 0.3em;
   }
-  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle {
     white-space: nowrap;
-    width: 80%;
+    width: 85%;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -71,7 +71,7 @@
     padding: 2.5em;
   }
   .content .title {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .content .backBtn {
     width: 1.5em;
@@ -83,6 +83,9 @@
   }
   .content .markerText, .content .subTitle {
     font-size: 1.3em;
+  }
+  .category .texts .count {
+    font-size: 3em;
   }
 }
 @media screen and (max-width: 500px) {

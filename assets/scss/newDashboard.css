@@ -1,0 +1,68 @@
+* {
+  font: 100% DM Sans, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.category {
+  position: relative;
+  border: none;
+  border-radius: 1em;
+  background-color: pink;
+  color: white;
+  overflow: hidden;
+}
+.category .texts {
+  width: auto;
+  margin: 1em 1.3em;
+  z-index: 5;
+}
+.category .texts .count {
+  font-size: 3.5em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.category .dashboardImg {
+  margin-right: 1em;
+  width: auto;
+  height: 6em;
+  z-index: 1;
+}
+
+#totalYouth {
+  background-color: #8ECAE6;
+}
+
+#enrolledYouth {
+  background-color: #219EBC;
+}
+
+#ousYouth {
+  background-color: #04496A;
+}
+
+#workingStudent {
+  background-color: #F3CB69;
+}
+
+#employed {
+  background-color: #FFB703;
+}
+
+#unemployed {
+  background-color: #FB8500;
+}
+
+#registeredVoter {
+  background-color: #8ECAE6;
+}
+
+#unregisteredVoter {
+  background-color: #219EBC;
+}
+
+#pwd {
+  background-color: #04496A;
+}/*# sourceMappingURL=newDashboard.css.map */
