@@ -158,7 +158,7 @@
                     <div class="modal fade" role="dialog" tabindex="-1" id="viewMore" >
                         <div class="modal-dialog" role="document">
                             <div class="modal-content" style="transform: translate(0%, 50%);">
-                                <div class="modal-body m-0 px-4>
+                                <div class="modal-body m-0 px-4">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     <div class="row m-0 ">
                                         <div class="col col-12">
