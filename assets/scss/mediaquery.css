@@ -6,7 +6,7 @@
   font: 100% DM Sans, sans-serif;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 7680px) {
+@media only screen and (max-width: 7680px) {
   .title {
     width: 100%;
     height: 100%;
@@ -16,7 +16,7 @@
   #titleUpdateEntry, #titleResiProf {
     margin-left: 0.3em;
   }
-  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo {
     white-space: nowrap;
     width: 80%;
     overflow: hidden;

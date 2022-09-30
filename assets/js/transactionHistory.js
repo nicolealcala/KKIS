@@ -11,3 +11,13 @@ $(document).ready(function(){
     }
   })
 });
+
+//For shading selected row
+$(document).ready(function(){
+  $('.checkItem').each(function(){
+    if($(this).prop('checked', true)){
+      var tRow = $(this).closest('tr');
+      tRow.css("backgrounc-color", "#858796");
+    }
+  })
+})

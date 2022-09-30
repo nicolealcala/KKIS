@@ -10,23 +10,24 @@
 
 .checkAllDiv, .deleteDiv {
   width: 5.5em;
+  margin: 0;
   padding: 1em;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 .checkAllDiv #selectAll, .deleteDiv #selectAll {
   position: relative;
-  margin: 0 auto;
   outline: 2px solid #707070;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.2em;
+  height: 1.2em;
 }
 
-.fa-solid {
+.fa-trash-can {
   color: #707070;
 }
 
-.checkAllDiv:hover, .deleteDiv:hover {
+.checkAllDiv:hover, .deleteDiv:hover, .checkAllDiv:focus, .deleteDiv:focus {
   background: #EAECF4;
 }
 
@@ -34,6 +35,7 @@
   width: 30%;
   color: #393737;
   font-size: 1.3em;
+  font-weight: 500;
 }
 .tHead #checkEntry {
   width: 10%;
@@ -41,6 +43,7 @@
 
 .entryRow {
   font-size: 1.3em;
+  font-weight: normal;
   padding: 0.2em;
   color: #858796;
 }
@@ -53,11 +56,14 @@
   height: 1em;
 }
 
-.accordion-item .checkDiv {
+.accordion-item .accordion-header {
+  overflow: hidden;
+}
+.accordion-item .accordion-header .checkDiv {
   width: 4em;
   background-color: #EAECF4;
 }
-.accordion-item .accordHead {
+.accordion-item .accordion-header .accordHead {
   color: #858796;
   font-size: 1.3em;
 }

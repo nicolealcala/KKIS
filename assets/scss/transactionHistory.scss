@@ -27,24 +27,25 @@ $text: #393737;
 
 .checkAllDiv, .deleteDiv{
     width: 5.5em;
+    margin: 0;
     padding: 1em;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
 
     #selectAll {
         position: relative;
-        margin: 0 auto;
         outline: 2px solid #707070;
-        width: 1.5em;
-        height: 1.5em;
+        width: 1.2em;
+        height: 1.2em;
     }
 }
 
-.fa-solid{
+.fa-trash-can{
     color: #707070;
 }
 
-.checkAllDiv:hover, .deleteDiv:hover{
+.checkAllDiv:hover, .deleteDiv:hover, .checkAllDiv:focus, .deleteDiv:focus {
     background: #EAECF4;
 }
 
@@ -52,6 +53,7 @@ $text: #393737;
     width: 30%;
     color: $text;
     font-size: 1.3em;
+    font-weight: 500;
 
     #checkEntry {
         width: 10%;
@@ -60,6 +62,7 @@ $text: #393737;
 
 .entryRow {
     font-size: 1.3em;
+    font-weight: normal;
     padding: 0.2em;
     color: #858796;
 }
@@ -75,14 +78,18 @@ $text: #393737;
  
 .accordion-item {
     
-    .checkDiv{
-        width: 4em;
-        background-color: #EAECF4;
-        // border-radius: 6px 0 0 6px
-    }
-    .accordHead{
-        color: #858796;
-        font-size: 1.3em;
+    .accordion-header{
+        overflow:hidden;
+
+        .checkDiv{
+            width: 4em;
+            background-color: #EAECF4;
+            // border-radius: 6px 0 0 6px
+        }
+        .accordHead{
+            color: #858796;
+            font-size: 1.3em;
+        }
     }
 }
 
