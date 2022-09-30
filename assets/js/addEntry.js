@@ -61,7 +61,7 @@ $(document).ready(function(){
 VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true,
-  });
+});
 
 
 //fxn for clicking #educCheck

@@ -27,9 +27,9 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <div class="navDiv">
+    <!-- <div class="navDiv">
         <?php include 'nav.php' ?>
-    </div>
+    </div> -->
 
     <div id="wrapper">
         <div class="container-fluid content">
@@ -432,7 +432,7 @@
                                 <div class="remarkDiv">
                                     <label class="col-form-label fieldLabel required w-100" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
-                                    <select class="text-uppercase houseSelectBox" multiple name="native-select" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop" required="">
+                                    <select class="text-uppercase houseSelectBox" multiple name="native-select" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
                                         <option value="soloLiving">Solo Living</option>
                                         <option value="soloParent">Solo Parent</option>
                                         <option value="teenPregnancy">Teenage Pregnancy</option>  
