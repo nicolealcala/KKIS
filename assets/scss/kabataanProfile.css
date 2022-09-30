@@ -1,3 +1,7 @@
+#filtering {
+  width: 100%;
+}
+
 .sortSearch {
   display: flex;
   justify-content: end;
@@ -10,7 +14,7 @@
   max-width: 100%;
 }
 .sortSearch .filterGroup .dropdown .dropdown-toggle {
-  background-color: #e3e7f5;
+  background-color: #e7eaf6;
 }
 .sortSearch .filterGroup .dropdown .dropdown-menu {
   max-width: 15em;
@@ -29,4 +33,9 @@
 }
 .sortSearch .searchGroup .searchElement .searchBtn .fa-magnifying-glass {
   color: white;
+}
+
+.dataTable {
+  margin: 0;
+  margin-top: 2.3em;
 }/*# sourceMappingURL=kabataanProfile.css.map */
