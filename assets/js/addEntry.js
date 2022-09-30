@@ -64,6 +64,12 @@ VirtualSelect.init({
 });
 
 
+//For validating required forms
+
+
+
+
+
 //fxn for clicking #educCheck
 var educRadioClick = function(){
     $("#selectEmployStatus").val("employed").change();
