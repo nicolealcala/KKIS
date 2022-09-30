@@ -1,0 +1,32 @@
+.sortSearch {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.sortSearch .filterGroup {
+  max-width: 100%;
+}
+.sortSearch .filterGroup .dropdown {
+  max-width: 100%;
+}
+.sortSearch .filterGroup .dropdown .dropdown-toggle {
+  background-color: #e3e7f5;
+}
+.sortSearch .filterGroup .dropdown .dropdown-menu {
+  max-width: 15em;
+}
+.sortSearch .searchGroup .searchElement {
+  width: 100%;
+}
+.sortSearch .searchGroup .searchElement .searchInput {
+  max-width: 100%;
+  border-radius: 6px 0 0 6px;
+}
+.sortSearch .searchGroup .searchElement .searchBtn {
+  max-width: 100%;
+  background-color: #04496A;
+  border-radius: 0 6px 6px 0;
+}
+.sortSearch .searchGroup .searchElement .searchBtn .fa-magnifying-glass {
+  color: white;
+}/*# sourceMappingURL=kabataanProfile.css.map */

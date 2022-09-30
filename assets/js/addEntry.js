@@ -61,13 +61,7 @@ $(document).ready(function(){
 VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true,
-});
-
-
-//For validating required forms
-
-
-
+  });
 
 
 //fxn for clicking #educCheck

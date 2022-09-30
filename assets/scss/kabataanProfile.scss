@@ -1,0 +1,52 @@
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+.sortSearch {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    .filterGroup {
+        max-width: 100%;
+    
+        .dropdown {
+            max-width: 100%;
+            
+            .dropdown-toggle{
+                background-color: #e3e7f5;
+            }
+
+            .dropdown-menu {
+                max-width: 15em;
+            }
+        }
+    }
+    
+    .searchGroup {
+        
+    
+        .searchElement{
+            width: 100%;
+            .searchInput {
+                max-width: 100%;
+                border-radius: 6px 0 0 6px;
+            }
+            .searchBtn {
+                max-width: 100%;
+                background-color: $dark-blue;
+                border-radius: 0 6px 6px 0 ;
+            
+                .fa-magnifying-glass{
+                    color: white;
+                }
+            }
+        }
+    }
+}
