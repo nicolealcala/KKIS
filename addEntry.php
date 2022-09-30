@@ -194,7 +194,7 @@
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool" required="">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Industry</label>
+                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" id="selectEducIndustry" required="">
                                             <option value="A01">Accounting</option>
                                             <option value="A02">Advertising and Marketing</option>
@@ -309,7 +309,7 @@
                                         <input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployer" required="">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employOccupationLbl" for="selectEmployOccupation">Industry</label>
+                                        <label class="col-form-label employFieldLabel required w-100" id="employOccupationLbl" for="selectEmployOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 employSelectBox" id="selectEmployIndustry" required="">
                                             <option value="A01">Accounting</option>
                                             <option value="A02">Advertising and Marketing</option>
