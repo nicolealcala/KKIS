@@ -19,37 +19,24 @@ $text: #393737;
 
     .filterGroup {
         max-width: 100%;
-    
-        .dropdown {
-            max-width: 100%;
-            
-            .dropdown-toggle{
-                background-color: #e7eaf6;
-            }
-
-            .dropdown-menu {
-                max-width: 15em;
-            }
-        }
     }
     
     .searchGroup {
-        
-    
-        .searchElement{
-            width: 100%;
-            .searchInput {
-                max-width: 100%;
-                border-radius: 6px 0 0 6px;
-            }
-            .searchBtn {
-                max-width: 100%;
-                background-color: $dark-blue;
-                border-radius: 0 6px 6px 0 ;
+        max-width: 100%;
+        .searchInput {
+            max-width: 100%;
+            border-radius: 6px 0 0 6px;
+        }
+        .searchBtn {
+            max-width: 100%;
+            height: 100%;
+            padding:auto;
+            background-color: $dark-blue;
+            border-radius: 0 6px 6px 0 ;
             
-                .fa-magnifying-glass{
-                    color: white;
-                }
+            .fa-magnifying-glass{
+                margin: 0.25em auto;
+                color: white;
             }
         }
     }
@@ -58,4 +45,17 @@ $text: #393737;
 .dataTable {
     margin: 0;
     margin-top: 2.3em;
+}
+
+.vscomp-ele-wrapper{
+    margin-top: 0;
+
+    .vscomp-toggle-button{
+        color: $text;
+        width: 100%;
+        border: 1.5px solid #D1D3E2;
+        border-radius: 6px;
+        box-shadow: none;
+    }
+
 }

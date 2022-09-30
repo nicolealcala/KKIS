@@ -18,8 +18,6 @@
 
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navAddEntry.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
@@ -454,7 +452,7 @@
         </div>
     </div>
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
     <script type="text/javascript" src="assets/js/addEntry.js"></script>

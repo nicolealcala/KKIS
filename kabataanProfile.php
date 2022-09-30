@@ -18,17 +18,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Kabataan Profile</title>
     
+   
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
+    <!-- Virtual Select JS library -->
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
+
     <!-- Custom Page Stylesheets -->
     <link rel="stylesheet" href="assets/scss/kabataanProfile.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
-
-    <!-- Bootstrap-Select library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
     <!-- nav.css -->
     <link rel="stylesheet" href="assets/css/navResiProf.css">
@@ -37,10 +38,10 @@
     <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+     
+
 </head>
 
 <body id="page-top">
@@ -68,17 +69,17 @@
                     <!-- Filter -->
                     <div class="col-lg-3 col-md-3 col-sm-12 col-12 filterGroup d-flex justify-content-end align-items-center">
                         <select class="selectpicker text-uppercase w-100" data-live-search="true" title="Filter" id="filtering" multiple>
-                            <optgroup label="Age" data-max-options="1">
+                            <optgroup label="Age">
                                 <option value="bet1419">14-19 Years old</option>
                                 <option value="bet2029">20-29 Years old</option>
                             </optgroup>
-                            <optgroup label="Gender Preference" data-max-options="1">
+                            <optgroup label="Gender Preference">
                                 <option value="man">Man</option>
                                 <option value="woman">Woman</option>
                                 <option value="trans">Transgender</option>
                                 <option value="non">Non-binary/Non-conforming</option>
                             </optgroup>
-                            <optgroup label="Marital Status" data-max-options="1">
+                            <optgroup label="Marital Status">
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="livein">Live-in</option>
@@ -94,12 +95,12 @@
                                 <option value="annuled">Live-in</option>
                                 <option value="widow">Widowed</option>
                             </optgroup> -->
-                            <optgroup label="Educational Status" data-max-options="1">
+                            <optgroup label="Educational Status">
                                 <option value="enrolled">Enrolled</option>
                                 <option value="ousYouth">Out-of-School Youth</option>
                                 <option value="workingStudent">Working Student</option>
                             </optgroup>
-                            <optgroup label="Educational Level" data-max-options="1">
+                            <optgroup label="Educational Level">
                                 <option value="preElem">Pre-elementary</option>
                                 <option value="elem">Elementary</option>
                                 <option value="jhs">Junior High School</option>
@@ -109,20 +110,20 @@
                                 <option value="college">College</option>
                                 <option value="gradStudies">Graduate Studies</option>    
                             </optgroup>
-                            <optgroup label="Employment Status" data-max-options="1">
+                            <optgroup label="Employment Status">
                                 <option value="employed">Employed</option>
                                 <option value="unemployed">Unemployed</option>
                             </optgroup>
-                            <optgroup label="Employee Type" data-max-options="1">
+                            <optgroup label="Employee Type">
                                 <option value="regular">Regular</option>
                                 <option value="contractual">Contranctual</option>
                                 <option value="jo">Job Order</option>
                             </optgroup>
-                            <optgroup label="School/Employer Type" data-max-options="1">
+                            <optgroup label="School/Employer Type">
                                 <option value="private">Private</option>
                                 <option value="public">Public</option>
                             </optgroup>
-                            <optgroup label="Salary Range" data-max-options="1">
+                            <optgroup label="Salary Range">
                                 <option value="less10">Less than 10,000</option>
                                 <option value="bet1020">10,000-20,999</option>
                                 <option value="bet2130">21,000-30,999</option>
@@ -130,7 +131,7 @@
                                 <option value="bet4150">41,000-50,000</option>
                                 <option value="more50">More than 50,000</option>
                             </optgroup>
-                            <optgroup label="Remarks" data-max-options="2">
+                            <optgroup label="Remarks">
                                 <option value="soloLiving">Solo Living</option>
                                 <option value="soloParent">Solo Parent</option>
                                 <option value="teenPregnancy">Teenage Pregnancy</option>  
@@ -289,15 +290,17 @@
         </div>
     </div>
     
-    
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
     <script src="assets/js/vfs_fonts.js"></script>
-    <!-- <script src="assets/js/custom1.js"></script> -->
+    <script src="assets/js/custom1.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="assets/js/kabataanProfile.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    
 </body>
 
 </html>
