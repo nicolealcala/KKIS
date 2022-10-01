@@ -84,8 +84,13 @@
   .content .markerText, .content .subTitle {
     font-size: 1.3em;
   }
-  .category .texts .count {
+  .content .category .texts .count {
     font-size: 3em;
+  }
+  .content .sortSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media screen and (max-width: 500px) {

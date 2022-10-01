@@ -13,9 +13,10 @@ body {
 .navDiv .divSideNav #linkSideResiProf, .navDiv .divNavMenu #linkTopResiProf {
     background: white;
     color: #393737;
-    a {
-        font-weight: 200;
-    }
+}
+
+a {
+    font-weight: 200;
 }
 
 .pageContent {

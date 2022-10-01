@@ -9,30 +9,25 @@ $light-yellow: #F3CB69;
 $text: #393737;
 
 
-#filtering{
-    width: 100%;
-}
 .sortSearch {
     display: flex;
     justify-content: end;
     align-items: center;
 
-    .filterGroup {
-        max-width: 100%;
-    }
     
-    .searchGroup {
-        max-width: 100%;
+    .searchElement {
+        width: 100%;
         .searchInput {
             max-width: 100%;
             border-radius: 6px 0 0 6px;
         }
         .searchBtn {
-            max-width: 100%;
-            height: 100%;
-            padding:auto;
-            background-color: $dark-blue;
             border-radius: 0 6px 6px 0 ;
+            // width: 100%;
+            // height: 100%;
+            padding:auto;
+            background: $dark-blue;
+            
             
             .fa-magnifying-glass{
                 margin: 0.25em auto;
@@ -47,10 +42,16 @@ $text: #393737;
     margin-top: 2.3em;
 }
 
+#filtering{
+    max-width: 100%;
+}
+
 .vscomp-ele-wrapper{
+    width: 100%;
     margin-top: 0;
 
     .vscomp-toggle-button{
+        width: 100%;
         color: $text;
         width: 100%;
         border: 1.5px solid #D1D3E2;

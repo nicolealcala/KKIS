@@ -65,10 +65,19 @@
             <!-- Copy End -->
             <div class="pageBody">
                 <!-- Filter and Search -->
-                <div class="row sortSearch m-0 mt-4 gx-4">
+                <div class="row sortSearch m-0 mt-4 gy-2 gx-4">
+                    <!-- Search -->
+                    <div class="col-lg-3 col-md-6 col-sm-7 col-12">
+                        <div class=" searchElement d-flex justify-content-center align-items-center">
+                            <input class="form-control searchInput" type="text" placeholder="Search">
+                            <button class="btn searchBtn" type="button">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
                     <!-- Filter -->
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 filterGroup d-flex justify-content-end align-items-center">
-                        <select class="selectpicker text-uppercase w-100" data-live-search="true" title="Filter" id="filtering" multiple>
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-12">
+                        <select class="selectpicker text-uppercase " data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true" multiple>
                             <optgroup label="Age">
                                 <option value="bet1419">14-19 Years old</option>
                                 <option value="bet2029">20-29 Years old</option>
@@ -138,15 +147,6 @@
                             </optgroup>
 
                         </select>
-                    </div>
-                    <!-- Search -->
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 searchGroup d-flex justify-content-end align-items-center">
-                        <div class=" searchElement d-flex justify-content-end align-items-center">
-                            <input class="form-control searchInput" type="text" placeholder="Search">
-                            <button class="btn searchBtn" type="button">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 

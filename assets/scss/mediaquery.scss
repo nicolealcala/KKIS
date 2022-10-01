@@ -56,7 +56,6 @@ $text: #393737;
 
     #wrapper {
         padding-top: 1em;
-        // padding-left: 5em;
     }
 
     .content{
@@ -126,17 +125,21 @@ $text: #393737;
         .markerText, .subTitle{
             font-size: 1.3em;
         }
-    }
-
-    //Dashboard
-    .category {
-        .texts{
-            .count {
-                font-size: 3em;
+        //Dashboard
+        .category {
+            .texts{
+                .count {
+                    font-size: 3em;
+                }
             }
         }
+        //KabataanProfile
+        .sortSearch {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
-
 }
 
 
