@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- nav.css -->
-    <link rel="stylesheet" href="assets/css/navResiProf.css">
+    <link rel="stylesheet" href="assets/css/navKabataanProfile.css">
 
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
