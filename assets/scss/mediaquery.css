@@ -6,6 +6,10 @@
   font: 100% DM Sans, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 7680px) {
   .title {
     width: 100%;

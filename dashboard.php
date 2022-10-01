@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
-    <link rel="stylesheet" href="assets/scss/newDashboard.css">
+    <link rel="stylesheet" href="assets/scss/dashboardNew.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
