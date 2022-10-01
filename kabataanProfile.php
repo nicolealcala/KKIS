@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Kabataan Profile</title>
     
-   
+    <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
@@ -290,15 +290,23 @@
         </div>
     </div>
     
-   
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Virtual Select JS Library -->
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
+
+    <!-- Data tables -->
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
     <script src="assets/js/vfs_fonts.js"></script>
     <script src="assets/js/custom1.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+
+    <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/kabataanProfile.js"></script>
     
 </body>
