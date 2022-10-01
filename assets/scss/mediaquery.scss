@@ -155,8 +155,12 @@ $text: #393737;
         margin: 3em 0 0 0;
         padding: 1.5em;
         
+        //All
+        .title{
+            font-size: 1.5em;
+        }
         //Add, Update, KKID
-        .markerText, .subTitle, .categoryCheck{
+        .markerText, .subTitle, .categoryCheck, .menuTitle{
             font-size: 1em;
         }
 
@@ -200,7 +204,7 @@ $text: #393737;
 @media screen and (max-width: 300px) {
     //Declared Households
     .divNav .slider {
-        width: 60%;
+        width: 40%;
     } 
     
     //Add, Update, Declared

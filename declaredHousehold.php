@@ -4,21 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Delared Household</title>
+    <title>Declared Household</title>
+
+    <!-- Fundamental links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     
+    <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/css/declaredHousehold.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navDecHouse.css">
-    
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
-    <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
-
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
 
@@ -29,8 +29,6 @@
         <?php include 'nav.php' ?>
     </div>
     
-    <!-- pageContent -->
-    <!-- <div class="pageContent"> -->
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row documentHeadingRow p-0 m-0">
@@ -244,14 +242,23 @@
                 </div>
             </div>
             <div class="overviewBody d-none" id="">
-                <h4>Chart goes here!</h4>
+                <h4 class="subTitle">Chart goes here!</h4>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
     </div>
-    <!-- </div> -->
+   
 
+    <!-- JQruery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- Custom Script -->
     <script src="assets/js/declaredHousehold.js"></script>
 </body>
 

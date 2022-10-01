@@ -10,7 +10,7 @@ a {
   position: relative;
   border: none;
   border-radius: 1em;
-  background-color: pink;
+  background-color: black;
   color: white;
   overflow: hidden;
 }
@@ -18,6 +18,7 @@ a {
   width: auto;
   margin: 1em 1.3em;
   z-index: 5;
+  text-decoration: none;
 }
 .category .texts .count {
   font-size: 3.5em;
@@ -67,15 +68,15 @@ a {
   background-color: #04496A;
 }
 
-.body::-webkit-scrollbar {
+.content::-webkit-scrollbar {
   width: 10px; /* width of the entire scrollbar */
 }
 
-.body::-webkit-scrollbar-track {
+.content::-webkit-scrollbar-track {
   background: none; /* color of the tracking area */
 }
 
-.body::-webkit-scrollbar-thumb {
+.content::-webkit-scrollbar-thumb {
   background-color: #c9c9c9; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
   border: 3px solid #c9c9c9; /* creates padding around scroll thumb */
