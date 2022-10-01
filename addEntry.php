@@ -48,7 +48,7 @@
                             <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
                         </div>
                     </div>
-                    <form>
+                    <form method="post">
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="kabataan">First Name</label>
@@ -157,7 +157,7 @@
                                 <input type="radio" id="educCheck" class="statusCheck ms-3" name="eInfo" checked="">
                                 <span class="markerText ms-2">Educational Status</span>
                             </div>
-                            <form class="eForm" id="educForm">
+                            <form class="eForm" id="educForm" method="post">
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educStatusLbl" for="selectEducStatus">Student Status</label>
@@ -192,7 +192,7 @@
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" id="inputSchool" required="">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educOccupationLbl" for="selectEducOccupation">Work Industry</label>
+                                        <label class="col-form-label educFieldLabel required w-100" id="educIndustryLbl" for="selectEducOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" id="selectEducIndustry" required="">
                                             <option value="A01">Accounting</option>
                                             <option value="A02">Advertising and Marketing</option>
@@ -278,7 +278,7 @@
                                 <input type="radio" id="employCheck" class="statusCheck ms-3" name="eInfo">
                                 <span class="markerText ms-2">Employment Status</span>
                             </div>
-                            <form class="eForm" id="employForm">
+                            <form class="eForm" id="employForm" method="post">
                                 <div class="row m-0 my-3 gy-3 gx-3" id="formRow">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
@@ -307,7 +307,7 @@
                                         <input class="form-control employUserInput text-uppercase w-100" type="text" id="inputEmployer" required="">
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employOccupationLbl" for="selectEmployOccupation">Work Industry</label>
+                                        <label class="col-form-label employFieldLabel required w-100" id="employIndustryLbl" for="selectEmployOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 employSelectBox" id="selectEmployIndustry" required="">
                                             <option value="A01">Accounting</option>
                                             <option value="A02">Advertising and Marketing</option>
@@ -398,7 +398,7 @@
                             </div>
                         </div>
                     </div>
-                    <form>
+                    <form id="householdForm"    method="post">
                         <div class="row m-0 my-3 gy-3 gx-3" id="householdRow">
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="headFname">First Name</label>
@@ -442,10 +442,10 @@
                 </div>
                 <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
                     <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
-                        <button class="btn controlBtn" id="clearBtn" type="button" disabled="">Clear All</button>
+                        <button class="btn controlBtn" id="clearBtn" type="button">Clear All</button>
                     </div>
                     <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
-                        <button class="btn controlBtn" id="submitBtn" type="button" disabled="">Submit</button>
+                        <button class="btn controlBtn" id="submitBtn" type="submit" form="householdForm">Submit</button>
                     </div>
                 </div>
             </div>
