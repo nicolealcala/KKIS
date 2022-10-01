@@ -23,7 +23,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body m-0 px-4">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="m-0 d-flex justify-content-end align-items-center">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <div class="row m-0">
                         <div class="col col-12 p-0">
                             <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
