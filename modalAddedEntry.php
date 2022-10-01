@@ -19,10 +19,10 @@
             Launch demo modal
         </button>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="modalAdded">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
+        <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
             <div class="modal-content">
-                <div class="modal-body m-0 px-4">
+                <div class="modal-body">
                     <div class="m-0 d-flex justify-content-end align-items-center">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>

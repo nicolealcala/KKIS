@@ -20,17 +20,17 @@
         </button>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="modalUpdated">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
             <div class="modal-content">
-                <div class="modal-body m-0 px-4">
+                <div class="modal-body">
                     <div class="m-0 d-flex justify-content-end align-items-center">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="row m-0">
                         <div class="col col-12 p-0">
-                            <svg class="checkmarkUpdate my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
-                                <circle class="checkmark__circleUpdate" cx="26" cy="26" r="25" fill="none"/>
-                                <path class="checkmark__checkUpdate" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
+                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                               </svg>
                         </div>
                         <div class="col col-12">
