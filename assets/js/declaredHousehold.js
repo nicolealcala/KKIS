@@ -15,6 +15,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     const ctx = $('#overviewChart');
+    
     const overview = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -47,7 +48,7 @@ $(document).ready(function(){
             maintainAspectRatio: true,
             plugins: {
                 legend: {
-                    position: 'right',
+                    position: 'top',
                 },
                 title: {
                     display: true,

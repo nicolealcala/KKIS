@@ -243,7 +243,9 @@
             </div>
             <div class="overviewBody d-none" id="">
                 <!-- <h4 class="subTitle">Chart goes here!</h4> -->
-                <canvas id="overviewChart"></canvas>
+                <div class="overviewDiv">
+                    <canvas id="overviewChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
