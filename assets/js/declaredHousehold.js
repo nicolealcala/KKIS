@@ -14,8 +14,8 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    const ctx = $('#myChart');
-    const myChart = new Chart(ctx, {
+    const ctx = $('#overviewChart');
+    const overview = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -42,24 +42,22 @@ $(document).ready(function(){
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
+            aspectRatio: 1,
             responsive: true,
+            maintainAspectRatio: true,
             plugins: {
                 legend: {
-                    position: 'top',
+                    position: 'right',
                 },
                 title: {
                     display: true,
-                    text: 'Chart.js Pie Chart'
+                    text: 'Declared Households'
                 }
             }
         }
     })
 });
+
 
 
 

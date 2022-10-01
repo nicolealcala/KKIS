@@ -79,18 +79,20 @@ $text: #393737;
     left:49%;
 }
 
-body::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
-}
 
-body::-webkit-scrollbar-track {
-  background: #dcdcdc;        /* color of the tracking area */
+.content::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
 }
-
-body::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #808080;  /* creates padding around scroll thumb */
+  
+.content::-webkit-scrollbar-track {
+    background: none;        /* color of the tracking area */
+}
+  
+.content::-webkit-scrollbar-thumb {
+    background-color: #c9c9c9;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #c9c9c9;  /* creates padding around scroll thumb */
+    z-index: -60;
 }
 
 
