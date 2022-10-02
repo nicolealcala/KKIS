@@ -11,26 +11,9 @@ $(document).ready(function(){
 });
 
 //For required Input Fields
-// $(document).ready(function(){
-//     $("#addForm").submit(function(){
-
-//         var valid = 0; 
-//         $(this).find('input[type=text]').each(function(){
-//           if($(this).val() != "") { 
-//             valid++;
-//             $(this).css("border-color", "initial");
-//           }
-//           else {
-//             $(this).css("border-color", "red");
-//           }
-//         });
-
-//         if (valid > 0) {
-//             return true;
-//         } else {
-//             return false; }
-//     })
-// });
+$(document).ready(function(){
+    
+});
 
 
 //For Educ Radio Btn PRE-CHECKED or is checked on change

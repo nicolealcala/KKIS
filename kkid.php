@@ -96,9 +96,12 @@
                                 </div>
                                 <div class="col col-lg-9 col-md-9 col-sm-6 col-8 p-0">
                                     <select class="form-select categoryOption" id="selectPurok" disabled="">
-                                        <option value="12" selected="">1</option>
-                                        <option value="13">2</option>
-                                        <option value="14">3</option>
+                                        <option value="II" selected="">I</option>
+                                        <option value="III">2</option>
+                                        <option value="IV">3</option>
+                                        <option value="V">3</option>
+                                        <option value="VI">3</option>
+                                        <option value="VII">3</option>
                                     </select>
                                 </div>
 

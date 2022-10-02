@@ -96,14 +96,15 @@
                                 <option value="annuled">Annuled</option>
                                 <option value="widowed">Widowed</option>
                             </optgroup>
-                            <!-- <optgroup label="Purok" data-max-options="1">
-                                <option value="single">Single</option>
-                                <option value="married">Married</option>
-                                <option value="livein">Live-in</option>
-                                <option value="separated">Separated</option>
-                                <option value="annuled">Live-in</option>
-                                <option value="widow">Widowed</option>
-                            </optgroup> -->
+                            <optgroup label="Purok" data-max-options="1">
+                                <option value="1" selected="">I</option>
+                                <option value="2">II</option>
+                                <option value="3">III</option>
+                                <option value="4">IV</option>
+                                <option value="5">V</option>
+                                <option value="6">VI</option>
+                                <option value="7">VII</option>
+                            </optgroup>
                             <optgroup label="Educational Status">
                                 <option value="enrolled">Enrolled</option>
                                 <option value="ousYouth">Out-of-School Youth</option>
