@@ -11,22 +11,21 @@ $(document).ready(function(){
 });
 
 //For required Input Fields
-$(document).ready(function(){
-    $('form input').keyup(function(){
-        var empty = false;  
-        $('form input').each(function(){
-            if ($(this).val("")){
-                empty = true;
-            }
-        });
+// $(document).ready(function(){
+//     $("#addForm").submit(function(){
 
-        if (empty) {
-            $('#submitBtn').attr("disabled", "disabled");
-        } else {
-            $('#submitBtn').removeAttr("disabled");
-        }
-    })
-})  
+//         var valid = 0; 
+//         $(this).find('input[type=text]').each(function(){
+//           if($(this).val() != "") { 
+//             valid++;
+//             $(this).css("border-color", "initial");
+//           }
+//           else {
+//             $(this).css("border-color", "red");
+//           }
+//         });
+//     })
+// });
 
 
 //For Educ Radio Btn PRE-CHECKED or is checked on change
