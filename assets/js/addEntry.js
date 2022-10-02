@@ -12,18 +12,20 @@ $(document).ready(function(){
 
 //For required Input Fields
 $(document).ready(function(){
-    var fields = $('#addForm').elements;
+    $('form input').keyup(function(){
+        var empty = false;  
+        $('form input').each(function(){
+            if ($(this).val("")){
+                empty = true;
+            }
+        });
 
-    $(fields).on (ley)
-    var empty = false;
-
-    $('.userInput').each(function(){
-        if (($(this).attr("required")) && ($(this).val(""))){
-            empty = true;
+        if (empty) {
+            $('#submitBtn').attr("disabled", "disabled");
+        } else {
+            $('#submitBtn').removeAttr("disabled");
         }
-    }) 
-
-    
+    })
 })  
 
 
