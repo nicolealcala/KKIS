@@ -43,12 +43,13 @@
             <!-- Copy End -->
             <div class="pageBody">
                 <div class="sectionDiv">
-                    <div class="row m-0 w-100">
-                        <div class="col col-12 p-0">
-                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
+                    <form method="post" id="addForm">
+                        <div class="row m-0 w-100">
+                            <div class="col col-12 p-0">
+                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
+                            </div>
                         </div>
-                    </div>
-                    <form method="post">
+                    
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="kabataan">First Name</label>
@@ -64,7 +65,7 @@
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
                                 <label class="col-form-label required fieldLabel w-100" for="kabataanEname" id="kabataanEnameLbl">Extension</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentGender">Gender Preference</label>
@@ -148,16 +149,16 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="organization">
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="sectionDiv">
-                    <div class="row m-0 gx-3 p-0" id="eRow">
-                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
-                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4 m-0" id="markerEduc">
-                                <input type="radio" id="educCheck" class="statusCheck ms-3" name="eInfo" checked="">
-                                <span class="markerText ms-2">Educational Status</span>
-                            </div>
-                            <form class="eForm" id="educForm" method="post">
+
+                
+                
+                        <div class="row m-0 gx-3 p-0" id="eRow">
+                            <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
+                                <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4 m-0" id="markerEduc">
+                                    <input type="radio" id="educCheck" class="statusCheck ms-3" name="eInfo" checked="">
+                                    <span class="markerText ms-2">Educational Status</span>
+                                </div>
+                            
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educStatusLbl" for="selectEducStatus">Student Status</label>
@@ -271,14 +272,13 @@
                                         </select>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="employCol">
-                            <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4" id="markerEmploy">
-                                <input type="radio" id="employCheck" class="statusCheck ms-3" name="eInfo">
-                                <span class="markerText ms-2">Employment Status</span>
                             </div>
-                            <form class="eForm" id="employForm" method="post">
+                            <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="employCol">
+                                <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4" id="markerEmploy">
+                                    <input type="radio" id="employCheck" class="statusCheck ms-3" name="eInfo">
+                                    <span class="markerText ms-2">Employment Status</span>
+                                </div>
+                
                                 <div class="row m-0 my-3 gy-3 gx-3" id="formRow">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
@@ -360,8 +360,7 @@
                                             <option value="P09">Photography and Film</option>
                                             <option value="Q01">Quick Service Restaurant (QSR)</option>
                                             <option value="R01">Real Estatee</option>
-                                            <option value="R02">Recreational Facilities and Services</option>
-                                            <option value="R03">Religious Institutions</option>
+                                            <option value="R02">Recreational Facilities and Services</option>                                            <option value="R03">Religious Institutions</option>
                                             <option value="R04">Retail Industrry</option>
                                             <option value="S01">Shipping Services</option>
                                             <option value="S02">Staffing and Recruiting</option>
@@ -386,23 +385,22 @@
                                         </select>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="sectionDiv">
-                    <div class="row m-0">
-                        <div class="col col-12 p-0">
-                            <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4">
-                                <span class="markerText ms-3">House Declaration</span>
                             </div>
                         </div>
-                    </div>
-                    <form id="householdForm"    method="post">
+                
+                
+                        <div class="row m-0">
+                            <div class="col col-12 p-0">
+                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4">
+                                    <span class="markerText ms-3">House Declaration</span>
+                                </div>
+                            </div>
+                        </div>
+                    
                         <div class="row m-0 my-3 gy-3 gx-3" id="householdRow">
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="headFname">First Name</label>
-                                    <input class="form-control userInput text-uppercase w-100" type="text" id="headFname" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="headFname" required="">
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="headMname">Middle Name</label>
@@ -414,7 +412,7 @@
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="headEname" id="headEnameLbl">Extension</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="headEname" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" id="headEname">
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members</label>
@@ -438,16 +436,17 @@
                                 </div>
                             </div> 
                         </div>
+                        <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
+                            <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
+                                <button class="btn controlBtn" id="clearBtn" type="button">Clear All</button>
+                            </div>
+                            <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
+                                    <button class="btn controlBtn" id="submitBtn" type="submit" form="addForm">Submit</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
-                    <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
-                        <button class="btn controlBtn" id="clearBtn" type="button">Clear All</button>
-                    </div>
-                    <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-6 col-6 p-0">
-                        <button class="btn controlBtn" id="submitBtn" type="submit" form="householdForm">Submit</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

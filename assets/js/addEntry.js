@@ -1,4 +1,4 @@
-//For required fields
+//For required fieldLabels
 $(document).ready(function(){
     $('.fieldLabel').each(function(){
         $(this).addClass('required');
@@ -9,6 +9,23 @@ $(document).ready(function(){
         }
     });
 });
+
+//For required Input Fields
+$(document).ready(function(){
+    var fields = $('#addForm').elements;
+
+    $(fields).on (ley)
+    var empty = false;
+
+    $('.userInput').each(function(){
+        if (($(this).attr("required")) && ($(this).val(""))){
+            empty = true;
+        }
+    }) 
+
+    
+})  
+
 
 //For Educ Radio Btn PRE-CHECKED or is checked on change
 $(document).ready(function(){
