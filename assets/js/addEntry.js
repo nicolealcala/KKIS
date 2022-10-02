@@ -24,6 +24,11 @@ $(document).ready(function(){
 //             $(this).css("border-color", "red");
 //           }
 //         });
+
+//         if (valid > 0) {
+//             return true;
+//         } else {
+//             return false; }
 //     })
 // });
 
