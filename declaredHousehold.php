@@ -242,7 +242,7 @@
                 </div>
             </div>
             <div class="overviewBody d-none m-3" id="">
-                <div class="overviewDiv" style="position:relative; height:77vh; width:80vw">
+                <div class="overviewDiv" style="position:relative; height:75vh; width:80vw">
                     <canvas id="overviewChart"></canvas>
                 </div>
             </div>
