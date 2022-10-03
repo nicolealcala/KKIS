@@ -45,7 +45,7 @@ $(document).ready(function(){
         options: {
             aspectRatio: 1,
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'top',
