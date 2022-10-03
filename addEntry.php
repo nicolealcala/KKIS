@@ -68,7 +68,7 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanLname" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label required fieldLabel w-100" for="kabataanEname" id="kabataanEnameLbl">Extension</label>
+                                <label class="col-form-label required fieldLabel w-100" for="kabataanEname" id="kabataanEnameLbl">Suffix</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
@@ -415,7 +415,7 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="headEname" id="headEnameLbl">Extension</label>
+                                <label class="col-form-label fieldLabel required w-100" for="headEname" id="headEnameLbl">Suffix</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" id="headEname">
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
@@ -424,7 +424,7 @@
                                     <option value="less5">Less than 5</option>
                                     <option value="5 to 10">5 to 10</option>
                                     <option value="11 to 15">11 to 15</option>
-                                    <option value="16 to 18">16 to 18</option>
+                                    <option value="16 to 20">16 to 20</option>
                                     <option value="More than 20">More than 20</option>
                                 </select>
                             </div>
