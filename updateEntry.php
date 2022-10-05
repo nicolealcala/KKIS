@@ -209,19 +209,19 @@
                                         <select class="form-select text-uppercase w-100 educSelectBox" id="selectEducIndustry" required="">
                                             <option value="A01">Accounting</option>
                                             <option value="A02">Advertising and Marketing</option>
-                                            <option value="A03.">Aerospace</option>
+                                            <option value="A03">Aerospace</option>
                                             <option value="A04">Agriculture</option>
                                             <option value="A05">Animation</option>
                                             <option value="A06">Apparel and Fashion</option>
                                             <option value="A07">Architecture and Planning</option>
                                             <option value="A08">Arts and Crafts</option>
                                             <option value="A09">Automobile Engineering</option>
-                                            <option value="A10">Auto Mechanics Industry</option>
+                                            <option value="A10">Auto Mechanics</option>
                                             <option value="A11">Aviation</option>
                                             <option value="B01">BPO</option>
                                             <option value="B02">Buy and Sell</option>
                                             <option value="C01">Casinos and Gambling</option>
-                                            <option value="C02">Chemical Industry</option>
+                                            <option value="C02">Chemical</option>
                                             <option value="C03">Computer Technology</option>
                                             <option value="C04">Construction</option>
                                             <option value="C05">Cosmetics</option>
@@ -239,7 +239,7 @@
                                             <option value="G01">Government</option>
                                             <option value="G02">Graphic Arts</option>
                                             <option value="H01">Healthcare and Welfare</option>
-                                            <option value="H02">Hospitality Industry</option>
+                                            <option value="H02">Hospitality</option>
                                             <option value="L01">Law Enforcement</option>
                                             <option value="L02">Legislative Office</option>
                                             <option value="L03">Luxury Good and Jewelry</option>
@@ -324,19 +324,19 @@
                                         <select class="form-select text-uppercase w-100 employSelectBox" id="selectEmployIndustry" required="">
                                             <option value="A01">Accounting</option>
                                             <option value="A02">Advertising and Marketing</option>
-                                            <option value="A03.">Aerospace</option>
+                                            <option value="A03">Aerospace</option>
                                             <option value="A04">Agriculture</option>
                                             <option value="A05">Animation</option>
                                             <option value="A06">Apparel and Fashion</option>
                                             <option value="A07">Architecture and Planning</option>
                                             <option value="A08">Arts and Crafts</option>
                                             <option value="A09">Automobile Engineering</option>
-                                            <option value="A10">Auto Mechanics Industry</option>
+                                            <option value="A10">Auto Mechanics</option>
                                             <option value="A11">Aviation</option>
                                             <option value="B01">BPO</option>
                                             <option value="B02">Buy and Sell</option>
                                             <option value="C01">Casinos and Gambling</option>
-                                            <option value="C02">Chemical Industry</option>
+                                            <option value="C02">Chemical</option>
                                             <option value="C03">Computer Technology</option>
                                             <option value="C04">Construction</option>
                                             <option value="C05">Cosmetics</option>
@@ -354,7 +354,7 @@
                                             <option value="G01">Government</option>
                                             <option value="G02">Graphic Arts</option>
                                             <option value="H01">Healthcare and Welfare</option>
-                                            <option value="H02">Hospitality Industry</option>
+                                            <option value="H02">Hospitality</option>
                                             <option value="L01">Law Enforcement</option>
                                             <option value="L02">Legislative Office</option>
                                             <option value="L03">Luxury Good and Jewelry</option>
