@@ -13,7 +13,7 @@ $(document).ready(function(){
 });
 
 function selects(){
-  var selec=document.getElementsByName('cb');
+  var selec=document.getElementsByName('ck');
   for(var i=0; i<selec.length; i++){
       if(selec[i].type=='checkbox')
           selec[i].checked=true;
@@ -21,7 +21,7 @@ function selects(){
   }
 }
 function deSelect(){
-  var selec=document.getElementsByName('cb');
+  var selec=document.getElementsByName('ck');
   for(var i=0; i<selec.length; i++){
       if(selec[i].type=='checkbox')
           selec[i].checked=false;
