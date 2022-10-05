@@ -12,6 +12,23 @@ $(document).ready(function(){
   })
 });
 
+function selects(){
+  var selec=document.getElementsByName('cb');
+  for(var i=0; i<selec.length; i++){
+      if(selec[i].type=='checkbox')
+          selec[i].checked=true;
+      
+  }
+}
+function deSelect(){
+  var selec=document.getElementsByName('cb');
+  for(var i=0; i<selec.length; i++){
+      if(selec[i].type=='checkbox')
+          selec[i].checked=false;
+
+  }
+}
+
 //For shading selected row
 // $(document).ready(function(){
 //   $('.checkItem').each(function(){

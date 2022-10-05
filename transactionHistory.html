@@ -46,8 +46,8 @@
                 <div class="divBtns d-flex justify-content-end align-items-center m-0">
                     <!-- Select All Btn                    -->
                     <div class="d-flex justify-content-center align-items-center m-0">
-                        <button type="button" class="btn checkAllDiv d-flex justify-content-center align-items-center">
-                            <input class="form-check-input m-2 p-0" type="checkbox" id="selectAll">
+                        <button type="button" class="btn checkAllDiv d-flex justify-content-center align-items-center" onclick="selects()" ondblclick="deSelect()">
+                            <input class="form-check-input m-2 p-0" type="checkbox" name="cb" id="selectAll">
                         </button>
                     </div>
                     <!-- Delete btn -->
@@ -74,56 +74,56 @@
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID001</td>
                                     <td class="entryRow" scope="col" data-label="Name">Nicole Alcala</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID002</td>
                                     <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID003</td>
                                     <td class="entryRow" scope="col" data-label="Name">Michael John Palalimpa</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID004</td>
                                     <td class="entryRow" scope="col" data-label="Name">John Marc Morano</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID005</td>
                                     <td class="entryRow" scope="col" data-label="Name">Princess Carl Austria</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID006</td>
                                     <td class="entryRow" scope="col" data-label="Name">Stephanie Baylon</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID007</td>
                                     <td class="entryRow" scope="col" data-label="Name">Stephanie Baylon</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID008</td>
                                     <td class="entryRow" scope="col" data-label="Name">Justin Charles Gonzales</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox"></td>
+                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="cb"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -136,7 +136,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
                                         <span class="accordHead">Nicole Alcala</span>
@@ -167,7 +167,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-2" aria-expanded="false" aria-controls="accordionRow .item-2">
                                         <span class="accordHead">Patricia Mae Abrigo</span>
@@ -198,7 +198,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-3" aria-expanded="false" aria-controls="accordionRow .item-3">
                                         <span class="accordHead">Michael John Palalimpa</span>
@@ -229,7 +229,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-4" aria-expanded="false" aria-controls="accordionRow .item-4">
                                         <span class="accordHead">John Marc Morano</span>
@@ -260,7 +260,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-5" aria-expanded="false" aria-controls="accordionRow .item-5">
                                         <span class="accordHead">Princess Carl Austria</span>
@@ -291,7 +291,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-6" aria-expanded="false" aria-controls="accordionRow .item-6">
                                         <span class="accordHead">Stephanie Baylon</span>
@@ -322,7 +322,7 @@
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
                                     <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
-                                        <input type="checkbox" class="checkItem">
+                                        <input type="checkbox" class="checkItem" name="cb">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-7" aria-expanded="false" aria-controls="accordionRow .item-7">
                                         <span class="accordHead">Justin Charles Gonzales</span>
