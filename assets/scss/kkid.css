@@ -77,16 +77,19 @@
 .controlBtn {
   margin-top: 1em;
   font-size: large;
-  background-color: #8ECAE6;
   width: 6em;
   color: white;
+}
+
+#submitBtn {
+  background-color: #8ECAE6;
 }
 
 #clearBtn {
   background-color: #F3CB69;
 }
 
-#clearBtn:disabled {
+#clearBtn:disabled, #submitBtn:disabled {
   background-color: white;
 }
 

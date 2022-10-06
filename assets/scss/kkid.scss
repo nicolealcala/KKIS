@@ -97,16 +97,18 @@ $text: #393737;
 .controlBtn {
     margin-top: 1em;
     font-size: large;
-    background-color: $light-blue;
     width: 6em;
     color: white;
 }
 
+#submitBtn {
+    background-color: $light-blue;
+}
 #clearBtn {
     background-color: $light-yellow;
 }
 
-#clearBtn:disabled {
+#clearBtn:disabled, #submitBtn:disabled {
     background-color: white;
 }
 

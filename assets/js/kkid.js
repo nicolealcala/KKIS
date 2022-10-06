@@ -38,42 +38,44 @@ $(document).ready(function(){
     })
     
 })
-
+var filled = 0;
 //For disabling CUSTOM in KKID
 $(document).ready(function(){
     $('#checkCustom').on('change', function(){
-        var filled = 0;
         if ($(this).is(':checked')){
             $('.customDiv').removeClass('d-none');
             $('.checkboxCategory').not(this).prop('checked', false); 
             $('.checkboxCategory').not(this).prop('disabled', true);
 
             $('.userInput').each(function(){
-                if (!$(this).val()){
-                    filled++;
-                    controlBtnState();
-                } else {
-                    filled--;
-                    controlBtnState();
-                }
+                $(this).keyup(function(){
+                    if ($(this).val().length()>=1){
+                        filled++;
+                        controlBtnState();
+                    } else {
+                        filled--;
+                        controlBtnState();
+                    }
+                })
             })
         } else {
             $('.customDiv').addClass('d-none');
             $('.checkboxCategory').not(this).prop('disabled', false); 
             controlBtnState();
         }
-
-        function controlBtnState() {
-            if (filled>0){
-                $('#submitBtn').removeAttr("disabled");
-                $('#clearBtn').removeAttr("disabled");
-            } else {
-                $('#submitBtn').attr("disabled", "disabled")
-                $('#clearBtn').attr("disabled", "disabled")
-            }
-        }
     })
 })
+
+//fxn for control btns
+var controlBtnState = function() {
+    if (filled>=1){
+        $('#submitBtn').removeAttr("disabled");
+        $('#clearBtn').removeAttr("disabled");
+    } else {
+        $('#submitBtn').attr("disabled", "disabled")
+        $('#clearBtn').attr("disabled", "disabled")
+    }
+}
 
 //For clicking Clear Btn
 $(document).ready(function(){
