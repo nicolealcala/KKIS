@@ -51,8 +51,8 @@ $(document).ready(function(){
             $('.customDiv').addClass('d-none');
             $('.checkboxCategory').not(this).prop('disabled', false); 
             // controlBtnState();
-            $('#submitBtn').attr("disabled", "disabled");
-            $('#clearBtn').attr("disabled", "disabled");
+            $('#submitBtn').prop('disabled', true);
+            $('#clearBtn').prop('disabled', true);
         }
     })
 })
