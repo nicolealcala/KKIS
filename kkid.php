@@ -5,21 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>KK ID Card</title>
+
+    <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
-    <link rel="stylesheet" href="assets/css/kkid.css">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="assets/scss/kkid.css">
     <link rel="stylesheet" href="assets/css/idtcpdf.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navKKID.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
 
@@ -30,11 +31,6 @@
         <?php include 'nav.php' ?>
     </div>
 
-    <!-- <div class="navSpace"> </div> -->
-
-    <!-- pageContent -->
-    <div class="pageContent">
-    
     <div id="wrapper">
         <div class="container-fluid content">
             <div class="row kkidHeadingRow p-0 m-0">
@@ -60,7 +56,7 @@
                 <div class="row kkidBody p-0 m-0 gy-2" id="kkidPage">
                     <div class="col col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                         <h1 class="subTitle mb-3">Batch Printing</h1>
-                        <form class="m-0 mt-4">
+                        <form class="m-0 mt-4" id="kkidForm">
                             <div class="categoryCol row d-xl-flex justify-content-center align-items-center gy-3 w-100">
                                 <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
                                     <div class="form-check categoryDiv w-75">
@@ -68,6 +64,7 @@
                                         <label class="form-check-label categoryLbl" for="checkAge">Age</label>
                                     </div>
                                 </div>
+                                <!-- Category: Age -->
                                 <div class="col col-lg-9 col-md-9 col-sm-6 col-8 p-0">
                                     <select class="form-select categoryOption" id="selectAge" disabled="">
                                         <option value="15" selected="">15</option>
@@ -87,7 +84,7 @@
                                         <option value="29">29</option>
                                     </select>
                                 </div>
-
+                                <!-- Category: Purok -->
                                 <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
                                     <div class="form-check categoryDiv w-75">
                                         <input class="form-check-input checkboxCategory" type="checkbox" id="checkPurok">
@@ -96,48 +93,47 @@
                                 </div>
                                 <div class="col col-lg-9 col-md-9 col-sm-6 col-8 p-0">
                                     <select class="form-select categoryOption" id="selectPurok" disabled="">
-                                        <option value="II" selected="">I</option>
-                                        <option value="III">2</option>
-                                        <option value="IV">3</option>
-                                        <option value="V">3</option>
-                                        <option value="VI">3</option>
-                                        <option value="VII">3</option>
+                                        <option value="I" selected="">I</option>
+                                        <option value="II">II</option>
+                                        <option value="II">II</option>
+                                        <option value="III">III</option>
+                                        <option value="IV">IV</option>
+                                        <option value="V">V</option>
+                                        <option value="VI">VI</option>
+                                        <option value="VII">VII</option>
                                     </select>
                                 </div>
-
-                                <div class="col col-lg-12 col-md-12 col-sm-12 col-12 p-0">
+                                <!-- Custom Category -->
+                                <div class="col col-lg-12 col-md-12 col-sm-12 col-12 p-0 h-100">
                                     <div class="form-check categoryDiv">
                                         <input class="form-check-input checkboxCategory" type="checkbox" id="checkCustom">
                                         <label class="form-check-label categoryLbl" for="customDiv">Custom</label>
                                     </div>
                                 </div>
-                                <div class="customDiv mt-3 d-none">
-                                    <form class="" action="" id="customDiv">
-                                        <div class="row customCategory m-0 gy-3">
-                                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">First Name</label>
-                                            </div>
-                                            <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
-                                            </div>
-
-                                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">Middle Name</label>
-                                            </div>
-                                            <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
-                                            </div>
-
-                                            <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">Last Name</label>
-                                            </div>
-                                            <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
-                                            </div>
-
-                                            
+                                <!-- Custom Form -->
+                                <div class="customDiv mt-2 mb-3 d-none">
+                                    <div class="row customCategory m-0 gy-3 d-flex justify-content-end">
+                                        <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
+                                            <label class="col-form-label" for="headLname">First Name</label>
                                         </div>
-                                    </form>
+                                        <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
+                                            <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
+                                        </div>
+
+                                        <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
+                                            <label class="col-form-label" for="headLname">Middle Name</label>
+                                        </div>
+                                        <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
+                                            <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
+                                        </div>
+
+                                        <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
+                                            <label class="col-form-label" for="headLname">Last Name</label>
+                                        </div>
+                                        <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
+                                            <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required="">
+                                        </div>  
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -152,23 +148,26 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-start align-items-md-start justify-content-lg-start align-items-lg-start justify-content-xxl-start gx-2" id="rowBtn">
-                <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-xxl-center col-lg-3 col-md-4 col-sm-6 col-6 p-0">
-                    <button class="btn controlBtn ms-1" id="clearBtn" type="button" disabled="">Clear All</button>
-                </div>
-                <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-xxl-center col-lg-3 col-md-4 col-sm-6 col-6 p-0">
-                    <button class="btn controlBtn me-1" id="submitBtn" type="button" disabled="">Submit</button>
+
+                    <!-- Control buttons -->
+                    <div class="row d-flex justify-content-lg-start justify-content-sm-center m-0">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+                                    <button class="btn controlBtn ms-1" id="clearBtn" type="button" disabled="" form="kkidForm">Clear All</button>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
+                                    <button class="btn controlBtn me-1" id="submitBtn" type="button" disabled="" form="kkidForm">Submit</button>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
     <script src="assets/js/kkid.js"></script>
-    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
