@@ -36,8 +36,8 @@ a {
   
     }
 
-    //Add, Update, Declared Households, Transaction History, Dashboard
-    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle{
+    //Add, Update, Declared Households, Transaction History, Dashboard, KKID
+    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText{
         white-space: nowrap; 
         width: 85%; 
         overflow: hidden;
@@ -147,11 +147,9 @@ a {
 
 
 @media screen and (max-width: 500px) {          //tablet
-
     #wrapper {
         padding-left: 0;
     }
-
 
     .content{
         margin: 3em 0 0 0;

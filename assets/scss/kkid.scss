@@ -68,6 +68,7 @@ $text: #393737;
             .categoryLbl {
                 font-size: 1em;
                 margin-left: 1px;
+                cursor: pointer;
             }
         }
 
@@ -86,10 +87,14 @@ $text: #393737;
     }
 }
 
+input[type="checkbox"]{
+    cursor: pointer;
+}
+
 .previewContainer{
-    width: 80%;
+    width: 90%;
     height: auto;
-    border-radius: 1.5em;
+    border-radius: 1.3em;
     border: none;
     box-shadow: -3px 3px 10px;
 }
@@ -98,7 +103,10 @@ $text: #393737;
     margin-top: 1em;
     font-size: large;
     width: 6em;
-    color: white;
+
+    .btnText {
+        color: white;
+    }
 }
 
 #submitBtn {
@@ -110,6 +118,10 @@ $text: #393737;
 
 #clearBtn:disabled, #submitBtn:disabled {
     background-color: white;
+    
+    .btnText {
+        color: $text;
+    }
 }
 
 #submitBtn:hover {

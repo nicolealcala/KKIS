@@ -27,9 +27,9 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <!-- <div class="navDiv">
+    <div class="navDiv">
         <?php include 'nav.php' ?>
-    </div> -->
+    </div>
 
     <div id="wrapper">
         <div class="container-fluid content">
@@ -52,12 +52,12 @@
                     </div>
                 </div>
             </div>
-            <div class="generateBody m-0">
-                <div class="row kkidBody p-0 m-0 gy-2" id="kkidPage">
+            <div class="m-0">
+                <div class="row kkidBody p-0 m-0 gy-5" id="kkidPage">
                     <div class="col col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                         <h1 class="subTitle mb-3">Batch Printing</h1>
-                        <form class="m-0 mt-4" id="kkidForm">
-                            <div class="categoryCol row d-xl-flex justify-content-center align-items-center gy-3 w-100">
+                        <form class="m-0 mt-4 d-flex justify-content-center align-items-center" id="kkidForm">
+                            <div class="categoryCol row d-flex justify-content-center align-items-center gy-3 w-100">
                                 <div class="col col-lg-3 col-md-3 col-sm-6 col-4 p-0">
                                     <div class="form-check categoryDiv w-75">
                                         <input class="form-check-input checkboxCategory" type="checkbox" id="checkAge">
@@ -107,7 +107,7 @@
                                 <div class="col col-lg-12 col-md-12 col-sm-12 col-12 p-0 h-100">
                                     <div class="form-check categoryDiv">
                                         <input class="form-check-input checkboxCategory" type="checkbox" id="checkCustom">
-                                        <label class="form-check-label categoryLbl" for="customDiv">Custom</label>
+                                        <label class="form-check-label categoryLbl" for="checkCustom">Custom</label>
                                     </div>
                                 </div>
                                 <!-- Custom Form -->
@@ -152,10 +152,10 @@
                     <!-- Control buttons -->
                     <div class="row d-flex justify-content-lg-start justify-content-sm-center m-0">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
-                            <button class="btn controlBtn ms-1" id="clearBtn" type="button" disabled="" form="kkidForm">Clear All</button>
+                            <button class="btn controlBtn" id="clearBtn" type="button" disabled="" form="kkidForm"><span class="btnText">Clear All</span></button>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
-                            <button class="btn controlBtn me-1" id="submitBtn" type="button" disabled="" form="kkidForm">Submit</button>
+                            <button class="btn controlBtn" id="submitBtn" type="button" disabled="" form="kkidForm"><span class="btnText">Submit</span></button>
                         </div>
                     </div>
                 </div>
@@ -166,6 +166,7 @@
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- Custom Script -->
     <script src="assets/js/kkid.js"></script>
 </body>

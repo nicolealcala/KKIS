@@ -20,7 +20,7 @@ a {
   #titleUpdateEntry, #titleResiProf {
     margin-left: 0.3em;
   }
-  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle {
+  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText {
     white-space: nowrap;
     width: 85%;
     overflow: hidden;

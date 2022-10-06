@@ -54,6 +54,7 @@
 .kkidBody .categoryCol .categoryDiv .categoryLbl {
   font-size: 1em;
   margin-left: 1px;
+  cursor: pointer;
 }
 .kkidBody .categoryCol .categoryOption {
   width: 80%;
@@ -66,10 +67,14 @@
   margin: 1em;
 }
 
+input[type=checkbox] {
+  cursor: pointer;
+}
+
 .previewContainer {
-  width: 80%;
+  width: 90%;
   height: auto;
-  border-radius: 1.5em;
+  border-radius: 1.3em;
   border: none;
   box-shadow: -3px 3px 10px;
 }
@@ -78,6 +83,8 @@
   margin-top: 1em;
   font-size: large;
   width: 6em;
+}
+.controlBtn .btnText {
   color: white;
 }
 
@@ -91,6 +98,9 @@
 
 #clearBtn:disabled, #submitBtn:disabled {
   background-color: white;
+}
+#clearBtn:disabled .btnText, #submitBtn:disabled .btnText {
+  color: #393737;
 }
 
 #submitBtn:hover {

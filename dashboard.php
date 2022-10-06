@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Dashboard</title>
     
+    <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
+    <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/dashboardNew.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navDash.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
 
@@ -30,7 +31,6 @@
 
     <div id="wrapper">
         <div class="container-fluid content">
-            <!-- Copy this to all pages-->
             <div class="row documentHeadingRow p-0 m-0">
                 <div class="col d-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
                     <h1 class="d-xxl-flex title" id="titleAddEntry">Dashboard</h1>
@@ -39,7 +39,6 @@
             <div class="row m-0">
                 <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
             </div>
-            <!-- Copy End -->
             <div class="pageBody">
                 <div class="row m-0 mt-5 gx-4 gy-4 p-0 w-100">
                     <!-- Category1 -->
@@ -181,8 +180,10 @@
         </div>
     </div>
 
-    
+    <!-- Fundamental Links -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
     
 </body>
 </html>

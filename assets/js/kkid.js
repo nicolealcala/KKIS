@@ -46,36 +46,16 @@ $(document).ready(function(){
             $('.customDiv').removeClass('d-none');
             $('.checkboxCategory').not(this).prop('checked', false); 
             $('.checkboxCategory').not(this).prop('disabled', true);
-
-            $('.userInput').each(function(){
-                $(this).keyup(function(){
-                    if ($(this).val().length()>=1){
-                        filled++;
-                        controlBtnState();
-                    } else {
-                        filled--;
-                        controlBtnState();
-                    }
-                })
-            })
+            control();
         } else {
             $('.customDiv').addClass('d-none');
             $('.checkboxCategory').not(this).prop('disabled', false); 
-            controlBtnState();
+            // controlBtnState();
+            $('#submitBtn').attr("disabled", "disabled");
+            $('#clearBtn').attr("disabled", "disabled");
         }
     })
 })
-
-//fxn for control btns
-var controlBtnState = function() {
-    if (filled>=1){
-        $('#submitBtn').removeAttr("disabled");
-        $('#clearBtn').removeAttr("disabled");
-    } else {
-        $('#submitBtn').attr("disabled", "disabled")
-        $('#clearBtn').attr("disabled", "disabled")
-    }
-}
 
 //For clicking Clear Btn
 $(document).ready(function(){
@@ -83,14 +63,30 @@ $(document).ready(function(){
         $('.userInput').each(function(){
             $(this).val("");
         });
+        $('#submitBtn').prop('disabled', true);
+        $('#clearBtn').prop('disabled', true);
     });
+    
 })
+
+//fxn for control btns
+var control = function() {
+    $(':text').on('input', function() {
+        if( $(':text').filter(function() { return !!this.value; }).length > 0 ) {
+            $('#submitBtn').prop('disabled', false);
+            $('#clearBtn').prop('disabled', false);
+        } else {
+            $('#submitBtn').prop('disabled', true);
+            $('#clearBtn').prop('disabled', true);
+        }
+    });
+};
 
 //fxn for changing submit state
 var submitBtnState = function (){
     if (($('#checkAge').is(':checked')) || ($('#checkPurok').is(':checked'))){
-        $('#submitBtn').removeAttr("disabled", "disabled");
+        $('#submitBtn').prop('disabled', false);
     } else {
-        $('#submitBtn').attr("disabled", "disabled")
+        $('#submitBtn').prop('disabled', true);
     };
 };
