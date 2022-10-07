@@ -14,7 +14,7 @@
 
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/kkid.css">
-    <link rel="stylesheet" href="assets/css/idtcpdf.css">
+    <link rel="stylesheet" href="assets/scss/idtcpdf.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
