@@ -97,6 +97,7 @@
                                     <option value="Live-in">Live-in</option>
                                     <option value="Separated">Separated</option>
                                     <option value="Annuled">Annuled</option>
+                                    <option value="Widowed">Widowed</option>
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
@@ -271,8 +272,8 @@
                                             <option value="bet1020">10,000-20,999</option>
                                             <option value="bet2130">21,000-30,999</option>
                                             <option value="bet3139">31,000-40,999</option>
-                                            <option value="bet4150">41,000-50,000</option>
-                                            <option value="more50">More than 50,000</option>
+                                            <option value="bet4150">41,000-50,999</option>
+                                            <option value="more50">More than 50,999</option>
                                         </select>
                                     </div>
                                 </div>
@@ -384,8 +385,8 @@
                                             <option value="bet1020">10,000-20,999</option>
                                             <option value="bet2130">21,000-30,999</option>
                                             <option value="bet3140">31,000-40,999</option>
-                                            <option value="bet4150">41,000-50,000</option>
-                                            <option value="more50">More than 50,000</option>
+                                            <option value="bet4150">41,000-50,999</option>
+                                            <option value="more50">More than 50,999</option>
                                         </select>
                                     </div>
                                 </div>
