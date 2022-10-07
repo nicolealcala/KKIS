@@ -106,6 +106,7 @@
                                     <option value="Live-in">Live-in</option>
                                     <option value="Separated">Separated</option>
                                     <option value="Annuled">Annuled</option>
+                                    <option value="Widowed">Widowed</option>
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
@@ -148,13 +149,13 @@
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">Purok
                                 <label class="col-form-label fieldLabel required w-100" for="residentPurok"></label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" id="residentPurok" required="">
-                                    <option value="1" selected="">I</option>
-                                    <option value="2">II</option>
-                                    <option value="3">III</option>
-                                    <option value="4">IV</option>
-                                    <option value="5">V</option>
-                                    <option value="6">VI</option>
-                                    <option value="7">VII</option>
+                                    <option value="I" selected="">I</option>
+                                    <option value="II">II</option>
+                                    <option value="III">III</option>
+                                    <option value="IV">IV</option>
+                                    <option value="V">V</option>
+                                    <option value="VI">VI</option>
+                                    <option value="VII">VII</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
@@ -207,80 +208,81 @@
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educIndustryLbl" for="selectEducOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" id="selectEducIndustry" required="">
-                                            <option value="A01">Accounting</option>
-                                            <option value="A02">Advertising and Marketing</option>
-                                            <option value="A03">Aerospace</option>
-                                            <option value="A04">Agriculture</option>
-                                            <option value="A05">Animation</option>
-                                            <option value="A06">Apparel and Fashion</option>
-                                            <option value="A07">Architecture and Planning</option>
-                                            <option value="A08">Arts and Crafts</option>
-                                            <option value="A09">Automobile Engineering</option>
-                                            <option value="A10">Auto Mechanics</option>
-                                            <option value="A11">Aviation</option>
-                                            <option value="B01">BPO</option>
-                                            <option value="B02">Buy and Sell</option>
-                                            <option value="C01">Casinos and Gambling</option>
-                                            <option value="C02">Chemical</option>
-                                            <option value="C03">Computer Technology</option>
-                                            <option value="C04">Construction</option>
-                                            <option value="C05">Cosmetics</option>
-                                            <option value="D01">Design</option>
-                                            <option value="E01">E-commerce</option>
-                                            <option value="E02">Education</option>
-                                            <option value="E03">Electrical Power</option>
-                                            <option value="E04">Electronics</option>
-                                            <option value="E05">Event Services</option>
-                                            <option value="F01">Finance and Insurance Services</option>
-                                            <option value="F02">Fishery</option>
-                                            <option value="F03">Fitness and Wellness</option>
-                                            <option value="F04">Furniture</option>
-                                            <option value="F05">Food and Beverages</option>
-                                            <option value="G01">Government</option>
-                                            <option value="G02">Graphic Arts</option>
-                                            <option value="H01">Healthcare and Welfare</option>
-                                            <option value="H02">Hospitality</option>
-                                            <option value="L01">Law Enforcement</option>
-                                            <option value="L02">Legislative Office</option>
-                                            <option value="L03">Luxury Good and Jewelry</option>
-                                            <option value="M01">Manufacturing</option>
-                                            <option value="M02">Maritime</option>
-                                            <option value="M03">Military</option>
-                                            <option value="M04">Mining</option>
-                                            <option value="P01">Packaging and Containers</option>
-                                            <option value="P02">Performing Arts</option>
-                                            <option value="P03">Personal Service</option>
-                                            <option value="P04">Pharmaceutical</option>
-                                            <option value="P05">Poultry</option>
-                                            <option value="P06">Printing and Publishing</option>
-                                            <option value="P07">Production</option>
-                                            <option value="P08">Public Safety</option>
-                                            <option value="P09">Photography and Film</option>
-                                            <option value="Q01">Quick Service Restaurant (QSR)</option>
-                                            <option value="R01">Real Estatee</option>
-                                            <option value="R02">Recreational Facilities and Services</option>
-                                            <option value="R03">Religious Institutions</option>
-                                            <option value="R04">Retail Industrry</option>
-                                            <option value="S01">Shipping Services</option>
-                                            <option value="S02">Staffing and Recruiting</option>
-                                            <option value="S03">Suply Chain Management</option>
-                                            <option value="T01">Telecommunication</option>
-                                            <option value="T02">Transportation</option>
-                                            <option value="T03">Tourism</option>
-                                            <option value="U01">Utilities</option>
-                                            <option value="V01">Veterinary</option>
-                                            <option value="W01">Warehousing</option>
+                                            <option value="1" selected>Accounting</option>
+                                            <option value="2">Advertising and Marketing</option>
+                                            <option value="3">Aerospace</option>
+                                            <option value="4">Agriculture</option>
+                                            <option value="5">Animation</option>
+                                            <option value="6">Apparel and Fashion</option>
+                                            <option value="7">Architecture and Planning</option>
+                                            <option value="8">Arts and Crafts</option>
+                                            <option value="9">Automobile Engineering</option>
+                                            <option value="10">Auto Mechanics</option>
+                                            <option value="11">Aviation</option>
+                                            <option value="12">BPO</option>
+                                            <option value="13">Buy and Sell</option>
+                                            <option value="14">Casinos and Gambling</option>
+                                            <option value="15">Chemical</option>
+                                            <option value="16">Computer Technology</option>
+                                            <option value="17">Construction</option>
+                                            <option value="18">Cosmetics</option>
+                                            <option value="19">Design</option>
+                                            <option value="20">E-commerce</option>
+                                            <option value="21">Education</option>
+                                            <option value="22">Electrical Power</option>
+                                            <option value="23">Electronics</option>
+                                            <option value="24">Event Services</option>
+                                            <option value="25">Finance and Insurance Services</option>
+                                            <option value="26">Fishery</option>
+                                            <option value="27">Fitness and Wellness</option>
+                                            <option value="28">Furniture</option>
+                                            <option value="29">Food and Beverages</option>
+                                            <option value="30">Government</option>
+                                            <option value="31">Graphic Arts</option>
+                                            <option value="32">Healthcare and Welfare</option>
+                                            <option value="33">Hospitality Management</option>
+                                            <option value="34">Law Enforcement</option>
+                                            <option value="35">Legislative Office</option>
+                                            <option value="36">Luxury Goods and Jewelry</option>
+                                            <option value="37">Manufacturing</option>
+                                            <option value="38">Maritime</option>
+                                            <option value="39">Military</option>
+                                            <option value="40">Mining</option>
+                                            <option value="41">Packaging and Containers</option>
+                                            <option value="42">Performing Arts</option>
+                                            <option value="43">Personal Service</option>
+                                            <option value="44">Pharmaceutical</option>
+                                            <option value="45">Poultry</option>
+                                            <option value="46">Printing and Publishing</option>
+                                            <option value="47">Production</option>
+                                            <option value="48">Public Safety</option>
+                                            <option value="49">Photography and Film</option>
+                                            <option value="50">Quick Service Restaurant (QSR)</option>
+                                            <option value="51">Real Estate</option>
+                                            <option value="52">Recreational Facilities and Services</option>
+                                            <option value="53">Religious Institutions</option>
+                                            <option value="54">Retail Industry</option>
+                                            <option value="55">Shipping Services</option>
+                                            <option value="56">Staffing and Recruiting</option>
+                                            <option value="57">Supply Chain Management</option>
+                                            <option value="58">Telecommunications</option>
+                                            <option value="59">Transportation</option>
+                                            <option value="60">Tourism</option>
+                                            <option value="61">Utilities</option>
+                                            <option value="62">Veterinary</option>
+                                            <option value="63">Warehousing</option>
+                                            <option value="64">Others</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" id="selectEducSalary" required="">
-                                            <option value="less10" selected="">Less than 10,000</option>
-                                            <option value="bet1020">10,000-20,999</option>
-                                            <option value="bet2130">21,000-30,999</option>
-                                            <option value="bet3139">31,000-40,999</option>
-                                            <option value="bet4150">41,000-50,000</option>
-                                            <option value="more50">More than 50,000</option>
+                                            <option value="1" selected="">Less than 10,000</option>
+                                            <option value="2">10,000-20,999</option>
+                                            <option value="3">21,000-30,999</option>
+                                            <option value="4">31,000-40,999</option>
+                                            <option value="5">41,000-50,999</option>
+                                            <option value="6">More than 50,999</option>
                                         </select>
                                     </div>
                                 </div>
@@ -322,79 +324,81 @@
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employIndustryLbl" for="selectEmployOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 employSelectBox" id="selectEmployIndustry" required="">
-                                            <option value="A01">Accounting</option>
-                                            <option value="A02">Advertising and Marketing</option>
-                                            <option value="A03">Aerospace</option>
-                                            <option value="A04">Agriculture</option>
-                                            <option value="A05">Animation</option>
-                                            <option value="A06">Apparel and Fashion</option>
-                                            <option value="A07">Architecture and Planning</option>
-                                            <option value="A08">Arts and Crafts</option>
-                                            <option value="A09">Automobile Engineering</option>
-                                            <option value="A10">Auto Mechanics</option>
-                                            <option value="A11">Aviation</option>
-                                            <option value="B01">BPO</option>
-                                            <option value="B02">Buy and Sell</option>
-                                            <option value="C01">Casinos and Gambling</option>
-                                            <option value="C02">Chemical</option>
-                                            <option value="C03">Computer Technology</option>
-                                            <option value="C04">Construction</option>
-                                            <option value="C05">Cosmetics</option>
-                                            <option value="D01">Design</option>
-                                            <option value="E01">E-commerce</option>
-                                            <option value="E02">Education</option>
-                                            <option value="E03">Electrical Power</option>
-                                            <option value="E04">Electronics</option>
-                                            <option value="E05">Event Services</option>
-                                            <option value="F01">Finance and Insurance Services</option>
-                                            <option value="F02">Fishery</option>
-                                            <option value="F03">Fitness and Wellness</option>
-                                            <option value="F04">Furniture</option>
-                                            <option value="F05">Food and Beverages</option>
-                                            <option value="G01">Government</option>
-                                            <option value="G02">Graphic Arts</option>
-                                            <option value="H01">Healthcare and Welfare</option>
-                                            <option value="H02">Hospitality</option>
-                                            <option value="L01">Law Enforcement</option>
-                                            <option value="L02">Legislative Office</option>
-                                            <option value="L03">Luxury Good and Jewelry</option>
-                                            <option value="M01">Manufacturing</option>
-                                            <option value="M02">Maritime</option>
-                                            <option value="M03">Military</option>
-                                            <option value="M04">Mining</option>
-                                            <option value="P01">Packaging and Containers</option>
-                                            <option value="P02">Performing Arts</option>
-                                            <option value="P03">Personal Service</option>
-                                            <option value="P04">Pharmaceutical</option>
-                                            <option value="P05">Poultry</option>
-                                            <option value="P06">Printing and Publishing</option>
-                                            <option value="P07">Production</option>
-                                            <option value="P08">Public Safety</option>
-                                            <option value="P09">Photography and Film</option>
-                                            <option value="Q01">Quick Service Restaurant (QSR)</option>
-                                            <option value="R01">Real Estatee</option>
-                                            <option value="R02">Recreational Facilities and Services</option>                                            <option value="R03">Religious Institutions</option>
-                                            <option value="R04">Retail Industrry</option>
-                                            <option value="S01">Shipping Services</option>
-                                            <option value="S02">Staffing and Recruiting</option>
-                                            <option value="S03">Suply Chain Management</option>
-                                            <option value="T01">Telecommunication</option>
-                                            <option value="T02">Transportation</option>
-                                            <option value="T03">Tourism</option>
-                                            <option value="U01">Utilities</option>
-                                            <option value="V01">Veterinary</option>
-                                            <option value="W01">Warehousing</option>
+                                            <option value="1" selected>Accounting</option>
+                                            <option value="2">Advertising and Marketing</option>
+                                            <option value="3">Aerospace</option>
+                                            <option value="4">Agriculture</option>
+                                            <option value="5">Animation</option>
+                                            <option value="6">Apparel and Fashion</option>
+                                            <option value="7">Architecture and Planning</option>
+                                            <option value="8">Arts and Crafts</option>
+                                            <option value="9">Automobile Engineering</option>
+                                            <option value="10">Auto Mechanics</option>
+                                            <option value="11">Aviation</option>
+                                            <option value="12">BPO</option>
+                                            <option value="13">Buy and Sell</option>
+                                            <option value="14">Casinos and Gambling</option>
+                                            <option value="15">Chemical</option>
+                                            <option value="16">Computer Technology</option>
+                                            <option value="17">Construction</option>
+                                            <option value="18">Cosmetics</option>
+                                            <option value="19">Design</option>
+                                            <option value="20">E-commerce</option>
+                                            <option value="21">Education</option>
+                                            <option value="22">Electrical Power</option>
+                                            <option value="23">Electronics</option>
+                                            <option value="24">Event Services</option>
+                                            <option value="25">Finance and Insurance Services</option>
+                                            <option value="26">Fishery</option>
+                                            <option value="27">Fitness and Wellness</option>
+                                            <option value="28">Furniture</option>
+                                            <option value="29">Food and Beverages</option>
+                                            <option value="30">Government</option>
+                                            <option value="31">Graphic Arts</option>
+                                            <option value="32">Healthcare and Welfare</option>
+                                            <option value="33">Hospitality Management</option>
+                                            <option value="34">Law Enforcement</option>
+                                            <option value="35">Legislative Office</option>
+                                            <option value="36">Luxury Goods and Jewelry</option>
+                                            <option value="37">Manufacturing</option>
+                                            <option value="38">Maritime</option>
+                                            <option value="39">Military</option>
+                                            <option value="40">Mining</option>
+                                            <option value="41">Packaging and Containers</option>
+                                            <option value="42">Performing Arts</option>
+                                            <option value="43">Personal Service</option>
+                                            <option value="44">Pharmaceutical</option>
+                                            <option value="45">Poultry</option>
+                                            <option value="46">Printing and Publishing</option>
+                                            <option value="47">Production</option>
+                                            <option value="48">Public Safety</option>
+                                            <option value="49">Photography and Film</option>
+                                            <option value="50">Quick Service Restaurant (QSR)</option>
+                                            <option value="51">Real Estate</option>
+                                            <option value="52">Recreational Facilities and Services</option>
+                                            <option value="53">Religious Institutions</option>
+                                            <option value="54">Retail Industry</option>
+                                            <option value="55">Shipping Services</option>
+                                            <option value="56">Staffing and Recruiting</option>
+                                            <option value="57">Supply Chain Management</option>
+                                            <option value="58">Telecommunications</option>
+                                            <option value="59">Transportation</option>
+                                            <option value="60">Tourism</option>
+                                            <option value="61">Utilities</option>
+                                            <option value="62">Veterinary</option>
+                                            <option value="63">Warehousing</option>
+                                            <option value="64">Others</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" id="selectEmploySalary" required="">
-                                            <option value="less10" selected="">Less than 10,000</option>
-                                            <option value="bet1020">10,000-20,999</option>
-                                            <option value="bet2130">21,000-30,999</option>
-                                            <option value="bet3140">31,000-40,999</option>
-                                            <option value="bet4150">41,000-50,000</option>
-                                            <option value="more50">More than 50,000</option>
+                                            <option value="1" selected>Less than 10,000</option>
+                                            <option value="2">10,000-20,999</option>
+                                            <option value="3">21,000-30,999</option>
+                                            <option value="4">31,000-40,999</option>
+                                            <option value="5">41,000-50,999</option>
+                                            <option value="6">More than 50,999</option>
                                         </select>
                                     </div>
                                 </div>

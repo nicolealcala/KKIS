@@ -76,7 +76,7 @@ var educRadioClick = function(){
     $("#selectEmployStatus").val("employed").change();
     $("#selectEmployeeType").val("regular").change();
     $("#selectCompanyType").val("private").change();
-    $("#selectEmploySalary").val("less10").change();
+    $("#selectEmploySalary").val("1").change();
         
     $('#markerEmploy').css("background-color", "#c5d4e3");
     $('.employFieldLabel').css("color", "#dfdfdf");
@@ -115,7 +115,7 @@ var employRadioClick = function(){
     $("#selectEducStatus").val("enrolled").change();
     $("#selectLevel").val("preElem").change();
     $("#selectSchoolType").val("private").change();
-    $("#selectEducSalary").val("less10").change();
+    $("#selectEducSalary").val("1").change();
 
     $('#markerEduc').css("background-color", "#c5d4e3");
     $('.educFieldLabel').css("color", "#dfdfdf");
