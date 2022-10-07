@@ -4,7 +4,7 @@ $(document).ready(function(){
         $(this).addClass('required');
         if (($(this).attr("id")=="remarksLbl") || ($(this).attr("id")=="organizationLbl")){
             $(this).removeClass('required');
-        } else if (($(this).attr("id")=="kabataanEnameLbl") || ($(this).attr("id")=='headEnameLbl')){
+        } else if (($(this).attr("id")=="kabataanSuffixLbl") || ($(this).attr("id")=='headEnameLbl')){
             $(this).removeClass('required');
         }
     });
@@ -16,6 +16,12 @@ $(document).ready(function(){
         document.location.href='/residentsProfile.php';
     })
 })
+
+//JS Library for disability
+VirtualSelect.init({
+    ele: '#disabilitySelect',
+    disableSelectAll: true
+});
 
 //For Educ Radio Btn Pre-checked or is selected on change
 $(document).ready(function(){
@@ -43,10 +49,10 @@ $(document).ready(function(){
 //For Educ Status
 $(document).ready(function(){
     $('#selectEducStatus').on('change', function(){
-        if($('#selectEducStatus option[value=enrolled]').is(':selected')){
+        if($('#selectEducStatus option[value=Enrolled]').is(':selected')){
             enrolled();
-        } else if ($('#selectEducStatus option[value=ousYouth]').is(':selected')){
-            ousYouth();
+        } else if ($('#selectEducStatus option[value=Out-of-school-Youth]').is(':selected')){
+            ousYouth;
         } else {
             workingStudent();
         }
@@ -56,7 +62,7 @@ $(document).ready(function(){
 //For Employment Status
 $(document).ready(function(){
     $('#selectEmployStatus').on('change', function(){
-        if($('#selectEmployStatus option[value=employed]').is(':selected')){
+        if($('#selectEmployStatus option[value=Employed]').is(':selected')){
             employed();
         } else {
             unemployed();
@@ -64,7 +70,7 @@ $(document).ready(function(){
     })
 })
 
-//JS Library for remarks
+//JS Library for disability
 VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true
@@ -72,9 +78,9 @@ VirtualSelect.init({
 
 //fxn for clicking #educCheckUpdate
 var educRadioClick = function(){
-    $("#selectEmployStatus").val("employed").change();
-        $("#selectEmployeeType").val("regular").change();
-        $("#selectCompanyType").val("private").change();
+    $("#selectEmployStatus").val("Employed").change();
+        $("#selectEmployeeType").val("Regular").change();
+        $("#selectCompanyType").val("Private").change();
         $("#selectEmploySalary").val("1").change();
         
         $('#markerEmploy').css("background-color", "#c5d4e3");
@@ -110,9 +116,9 @@ var educRadioClick = function(){
 
 //fxn for clicking #employCheckUpdate
 var employRadioClick = function(){
-    $("#selectEducStatus").val("enrolled").change();
-    $("#selectLevel").val("preElem").change();
-    $("#selectSchoolType").val("private").change();
+    $("#selectEducStatus").val("Enrolled").change();
+    $("#selectLevel").val("Pre-Elementary").change();
+    $("#selectSchoolType").val("Private").change();
     $("#selectEducSalary").val("1").change();
 
     $('#markerEduc').css("background-color", "#c5d4e3");
@@ -151,7 +157,7 @@ var employRadioClick = function(){
 
 //fxn for pre-selected/selecting option[value=enrolled]
 var enrolledSelected = function(){
-    if ($('#selectEducStatus option[value=enrolled]').is(':selected')){
+    if ($('#selectEducStatus option[value=Enrolled]').is(':selected')){
         enrolled();
     };
 };

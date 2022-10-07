@@ -69,10 +69,10 @@ $text: #393737;
     border: none;
 }
 
-.remarkDiv {
+.remarkDiv, .disabilityDiv {
     width: 100%;
 
-    #remarkDrop{   
+    #remarkDrop, #disability{   
         max-width: 100%;
     }
 }

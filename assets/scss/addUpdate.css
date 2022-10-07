@@ -50,10 +50,10 @@
   border: none;
 }
 
-.remarkDiv {
+.remarkDiv, .disabilityDiv {
   width: 100%;
 }
-.remarkDiv #remarkDrop {
+.remarkDiv #remarkDrop, .remarkDiv #disability, .disabilityDiv #remarkDrop, .disabilityDiv #disability {
   max-width: 100%;
 }
 

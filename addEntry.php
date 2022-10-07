@@ -35,7 +35,6 @@
 
     <div id="wrapper">
         <div class="container-fluid content">
-            <!-- Copy this to all pages-->
             <div class="row documentHeadingRow p-0 m-0">
                 <div class="col d-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
                     <h1 class="title" id="titleAddEntry">Add Entry</h1>
@@ -44,7 +43,6 @@
             <div class="row m-0">
                 <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
             </div>
-            <!-- Copy End -->
             <div class="pageBody">
                 <div class="sectionDiv">
                     <form method="post" id="addForm">
@@ -53,27 +51,27 @@
                                 <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
                             </div>
                         </div>
-                    
+                        <!-- Personal Info -->
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="kabataanFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanFname" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="kFname" type="text" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="kabataanMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanMname" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="kMname" type="text" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="kabataanLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanLname" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="kLname" type="text" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label required fieldLabel w-100" for="kabataanEname" id="kabataanEnameLbl">Suffix</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="kabataanEname">
+                                <label class="col-form-label required fieldLabel w-100" for="kabataanSuffix" id="kabataanSuffixLbl">Suffix</label>
+                                <input class="form-control userInput text-uppercase w-100" name="kSuffix" type="text" id="kabataanSuffix">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentGender">Gender Preference</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentGender" required="">
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" required="">
                                     <option value="Man" selected="">Man</option>
                                     <option value="Woman">Woman</option>
                                     <option value="Transgender">Transgender</option>
@@ -83,15 +81,15 @@
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentBday">Birthday</label>
-                                <input class="form-control text-uppercase w-100 personalSelectBox" id="residentBday" type="date" required="">
+                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" type="date" required="">
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentBplace">Birthplace</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentBplace" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="birthplace" type="text" required="">
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentMstatus">Marital Status</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentMstatus" required="">
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="maritalStatus" required="">
                                     <option value="Single" selected="">Single</option>
                                     <option value="Married">Married</option>
                                     <option value="Live-in">Live-in</option>
@@ -102,7 +100,7 @@
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentReligion">Religion</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentReligion" required="">
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" required="">
                                     <option value="Atheist" selected="">Atheist</option>
                                     <option value="Buddhist">Buddhist</option>
                                     <option value="Christian">Christian</option>
@@ -110,17 +108,20 @@
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentDisability">Disability</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentDisability" required="">
-                                    <option value="None" selected="">None</option>
-                                    <option value="Communication disability">Communication disability</option>
-                                    <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
-                                    <option value="Learning disability">Learning disability</option>
-                                    <option value="Mental disability">Mental disability</option>
-                                    <option value="Orthopedic disability">Orthopedic disability</option>
-                                    <option value="Psychosocial disability">Psychosocial disability</option>
-                                    <option value="Vission disability">Vission disability</option>
-                                </select>
+                                <div class="disabilityDiv">
+                                    <label class="col-form-label fieldLabel required w-100" for="disabilitySelect">Disability</label>
+                                    <!-- Class form-select  removed from select element in Remarks -->
+                                    <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect">
+                                        <option value="None" selected="">None</option>
+                                        <option value="Communication disability">Communication disability</option>
+                                        <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
+                                        <option value="Learning disability">Learning disability</option>
+                                        <option value="Mental disability">Mental disability</option>
+                                        <option value="Orthopedic disability">Orthopedic disability</option>
+                                        <option value="Psychosocial disability">Psychosocial disability</option>
+                                        <option value="Vission disability">Vission disability</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentContact">Contact No.</label>
@@ -155,42 +156,40 @@
                             </div>
                         </div>
 
-                
-                
                         <div class="row m-0 gx-3 p-0" id="eRow">
+                            <!-- Educational Info -->
                             <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
                                 <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4 m-0" id="markerEduc">
                                     <input type="radio" id="educCheck" class="statusCheck ms-3" name="eInfo" checked="">
                                     <span class="markerText ms-2">Educational Status</span>
                                 </div>
-                            
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educStatusLbl" for="selectEducStatus">Student Status</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" id="selectEducStatus" required="">
-                                            <option value="enrolled" selected="">Enrolled</option>
-                                            <option value="ousYouth">Out-of-school Youth</option>
-                                            <option value="wStudent">Working student</option>
+                                            <option value="Enrolled" selected="">Enrolled</option>
+                                            <option value="Out-of-school Youth">Out-of-school Youth</option>
+                                            <option value="Working Student">Working Student</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="levelLbl" for="selectLevel">Level</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" id="selectLevel" required="">
-                                            <option value="preElem" selected="">Pre-elementary</option>
-                                            <option value="elem">Elementary</option>
-                                            <option value="jhs">Junior High School</option>
-                                            <option value="shs">Senior High School</option>
-                                            <option value="als">Alternative Learning System (ALS)</option>
-                                            <option value="dc">Diploma Course</option>
-                                            <option value="college">College</option>
-                                            <option value="gradStudies">Graduate Studies</option>    
+                                            <option value="Pre-Elementary" selected="">Pre-elementary</option>
+                                            <option value="Elementary">Elementary</option>
+                                            <option value="Junior High School">Junior High School</option>
+                                            <option value="Senior High School">Senior High School</option>
+                                            <option value="Alternative Learning System">Alternative Learning System (ALS)</option>
+                                            <option value="Diploma Course">Diploma Course</option>
+                                            <option value="College">College</option>
+                                            <option value="Graduate Studies">Graduate Studies</option> 
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="schoolTypeLbl" for="selectSchoolType">Public/Private</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" id="selectSchoolType" required="">
-                                            <option value="private" selected="">Private</option>
-                                            <option value="public">Public</option>
+                                            <option value="Private" selected="">Private</option>
+                                            <option value="Public">Public</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
@@ -200,7 +199,7 @@
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100" id="educIndustryLbl" for="selectEducOccupation">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" id="selectEducIndustry" required="">
-                                            <option value="1" selected>Accounting</option>
+                                            <option value="1" selected="">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
                                             <option value="3">Aerospace</option>
                                             <option value="4">Agriculture</option>
@@ -279,33 +278,33 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Employment Info -->
                             <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="employCol">
                                 <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4" id="markerEmploy">
                                     <input type="radio" id="employCheck" class="statusCheck ms-3" name="eInfo">
                                     <span class="markerText ms-2">Employment Status</span>
                                 </div>
-                
-                                <div class="row m-0 my-3 gy-3 gx-3" id="formRow">
+                                <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" id="selectEmployStatus" required="">
-                                            <option value="employed" selected="">Employed</option>
-                                            <option value="unemployed">Unemployed</option>
+                                            <option value="Employed" selected="">Employed</option>
+                                            <option value="Unemployed">Unemployed</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" id="selectEmployeeType" required="">
-                                            <option value="regular" selected="">Regular</option>
-                                            <option value="contractual">Contractual</option>
-                                            <option value="jo">Job Order</option>
+                                            <option value="Regular" selected="">Regular</option>
+                                            <option value="Contractual">Contractual</option>
+                                            <option value="Job Order">Job Order</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="companyTypeLbl" for="selectCompanyType">Public/Private</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" id="selectCompanyType" required="">
-                                            <option value="private" selected="">Private</option>
-                                            <option value="public">Public</option>
+                                            <option value="Private" selected="">Private</option>
+                                            <option value="Public">Public</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
@@ -384,7 +383,7 @@
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" id="selectEmploySalary" required="">
-                                            <option value="1" selected="">Less than 10,000</option>
+                                            <option value="1" selected>Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
                                             <option value="3">21,000-30,999</option>
                                             <option value="4">31,000-40,999</option>
@@ -425,7 +424,7 @@
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members</label>
                                 <select class="form-select text-uppercase w-100 houseSelectBox" id="famCount" required="">
-                                    <option value="less5">Less than 5</option>
+                                    <option value="Less than 5">Less than 5</option>
                                     <option value="5 to 10">5 to 10</option>
                                     <option value="11 to 15">11 to 15</option>
                                     <option value="16 to 20">16 to 20</option>
@@ -437,9 +436,9 @@
                                     <label class="col-form-label fieldLabel required w-100" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
                                     <select class="text-uppercase houseSelectBox" multiple name="native-select" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
-                                        <option value="soloLiving">Solo Living</option>
-                                        <option value="soloParent">Solo Parent</option>
-                                        <option value="teenPregnancy">Teenage Pregnancy</option>  
+                                        <option value="Solo Living">Solo Living</option>
+                                        <option value="Solo Parent">Solo Parent</option>
+                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
                                     </select>
                                 </div>
                             </div> 
