@@ -4,7 +4,7 @@ $(document).ready(function(){
         $(this).addClass('required');
         if (($(this).attr("id")=="remarksLbl") || ($(this).attr("id")=="organizationLbl")){
             $(this).removeClass('required');
-        } else if (($(this).attr("id")=="kabataanSuffixLbl") || ($(this).attr("id")=='headEnameLbl')){
+        } else if (($(this).attr("id")=="kabataanSuffixLbl") || ($(this).attr("id")=='headSuffixLbl')){
             $(this).removeClass('required');
         }
     });
@@ -49,7 +49,7 @@ $(document).ready(function(){
     $('#selectEducStatus').on('change', function(){
         if($('#selectEducStatus option[value=Enrolled]').is(':selected')){
             enrolled();
-        } else if ($('#selectEducStatus option[value=Out-of-school Youth]').is(':selected')){
+        } else if ($('#selectEducStatus option[value="Out-of-school Youth"]').is(':selected')){
             ousYouth();
         } else {
             workingStudent();
@@ -80,7 +80,7 @@ VirtualSelect.init({
 var educRadioClick = function(){
     $("#selectEmployStatus").val("Employed").change();
     $("#selectEmployeeType").val("Regular").change();
-    $("#selectCompanyType").val("Private").change();
+    $("#selectEmployerType").val("Private").change();
     $("#selectEmploySalary").val("1").change();
         
     $('#markerEmploy').css("background-color", "#c5d4e3");

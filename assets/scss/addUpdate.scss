@@ -72,7 +72,7 @@ $text: #393737;
 .remarkDiv, .disabilityDiv {
     width: 100%;
 
-    #remarkDrop, #disability{   
+    #remarkDrop, #disabilitySelect{   
         max-width: 100%;
     }
 }
@@ -93,31 +93,20 @@ $text: #393737;
 .controlBtn {
     margin-top: 2em;
     font-size: large;
-    width: 6em;
+    width: 6.5em;
     border: none;
     color: white;
-}
-
-.controlBtn:disabled {
-    border: none;
-}
-
-#submitBtn {
     background-color: $light-blue;
 }
 
-#clearBtn {
-    background-color: $light-yellow;
-}
-
-#submitBtn:hover {
+.controlBtn:hover {
     background-color: $mid-blue;
     color: white;
     font-weight: 500;
 }
 
-#clearBtn:hover {
-    background-color: $mid-yellow;
+.controlBtn:active {
+    background-color: $dark-blue;
     color: white;
     font-weight: 500;
 }

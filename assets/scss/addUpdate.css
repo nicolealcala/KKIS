@@ -53,7 +53,7 @@
 .remarkDiv, .disabilityDiv {
   width: 100%;
 }
-.remarkDiv #remarkDrop, .remarkDiv #disability, .disabilityDiv #remarkDrop, .disabilityDiv #disability {
+.remarkDiv #remarkDrop, .remarkDiv #disabilitySelect, .disabilityDiv #remarkDrop, .disabilityDiv #disabilitySelect {
   max-width: 100%;
 }
 
@@ -71,31 +71,20 @@
 .controlBtn {
   margin-top: 2em;
   font-size: large;
-  width: 6em;
+  width: 6.5em;
   border: none;
   color: white;
-}
-
-.controlBtn:disabled {
-  border: none;
-}
-
-#submitBtn {
   background-color: #8ECAE6;
 }
 
-#clearBtn {
-  background-color: #F3CB69;
-}
-
-#submitBtn:hover {
+.controlBtn:hover {
   background-color: #219EBC;
   color: white;
   font-weight: 500;
 }
 
-#clearBtn:hover {
-  background-color: #FFB703;
+.controlBtn:active {
+  background-color: #04496A;
   color: white;
   font-weight: 500;
 }
