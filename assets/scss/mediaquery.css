@@ -17,7 +17,7 @@ a {
     color: #393737;
     font-weight: 800;
   }
-  #titleUpdateEntry, #titleResiProf {
+  .title-back {
     margin-left: 0.3em;
   }
   .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText {

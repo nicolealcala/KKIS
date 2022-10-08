@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/css/navDash.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/scss/dashboardYouthTbl.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
@@ -70,7 +71,7 @@
                             </svg>
                         </button>
                         <div class="col-10 d-flex justify-content-start align-items-center p-0">
-                            <span class="title w-auto" id="titleUpdateEntry">Registered Voters</span>
+                            <span class="title title-back w-auto">Registered Voters</span>
                         </div>
                     </div>
                 </div>
