@@ -96,61 +96,70 @@
                                 <option value="annuled">Annuled</option>
                                 <option value="widowed">Widowed</option>
                             </optgroup>
-                            <optgroup label="Purok" data-max-options="1">
-                                <option value="1" selected="">I</option>
-                                <option value="2">II</option>
-                                <option value="3">III</option>
-                                <option value="4">IV</option>
-                                <option value="5">V</option>
-                                <option value="6">VI</option>
-                                <option value="7">VII</option>
+                            <optgroup label="Disability">
+                                <option value="None">None</option>
+                                <option value="Communication disability">Communication disability</option>
+                                <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
+                                <option value="Learning disability">Learning disability</option>
+                                <option value="Mental disability">Mental disability</option>
+                                <option value="Orthopedic disability">Orthopedic disability</option>
+                                <option value="Psychosocial disability">Psychosocial disability</option>
+                                <option value="Vission disability">Vission disability</option>
+                            </optgroup>
+                            <optgroup label="Purok">
+                                <option value="I">I</option>
+                                <option value="II">II</option>
+                                <option value="III">III</option>
+                                <option value="IV">IV</option>
+                                <option value="V">V</option>
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
                             </optgroup>
                             <optgroup label="Educational Status">
-                                <option value="enrolled">Enrolled</option>
-                                <option value="ousYouth">Out-of-School Youth</option>
-                                <option value="workingStudent">Working Student</option>
+                                <option value="Enrolled">Enrolled</option>
+                                <option value="Out-of-School Youth">Out-of-School Youth</option>
+                                <option value="Working Student">Working Student</option>
                             </optgroup>
                             <optgroup label="Educational Level">
-                                <option value="preElem">Pre-elementary</option>
-                                <option value="elem">Elementary</option>
-                                <option value="jhs">Junior High School</option>
-                                <option value="shs">Senior High School</option>
-                                <option value="als">Alternative Learning System</option>
-                                <option value="dc">Diploma Course</option>
-                                <option value="college">College</option>
-                                <option value="gradStudies">Graduate Studies</option>    
+                                <option value="Pre-elementary">Pre-elementary</option>
+                                <option value="Elementary">Elementary</option>
+                                <option value="Junior High School">Junior High School</option>
+                                <option value="Senior High School">Senior High School</option>
+                                <option value="Alternative Learning System">Alternative Learning System</option>
+                                <option value="Diploma Course">Diploma Course</option>
+                                <option value="College">College</option>
+                                <option value="Graduate Studies">Graduate Studies</option>    
                             </optgroup>
                             <optgroup label="Employment Status">
-                                <option value="employed">Employed</option>
-                                <option value="unemployed">Unemployed</option>
+                                <option value="Employed">Employed</option>
+                                <option value="Unemployed">Unemployed</option>
                             </optgroup>
                             <optgroup label="Employee Type">
-                                <option value="regular">Regular</option>
-                                <option value="contractual">Contranctual</option>
-                                <option value="jo">Job Order</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Contractual">Contranctual</option>
+                                <option value="Job Order">Job Order</option>
                             </optgroup>
                             <optgroup label="School/Employer Type">
-                                <option value="private">Private</option>
-                                <option value="public">Public</option>
+                                <option value="Private">Private</option>
+                                <option value="Public">Public</option>
                             </optgroup>
                             <optgroup label="Salary Range">
-                                <option value="less10">Less than 10,000</option>
-                                <option value="bet1020">10,000-20,999</option>
-                                <option value="bet2130">21,000-30,999</option>
-                                <option value="bet3140">31,000-40,999</option>
-                                <option value="bet4150">41,000-50,000</option>
-                                <option value="more50">More than 50,000</option>
+                                <option value="1">Less than 10,000</option>
+                                <option value="2">10,000-20,999</option>
+                                <option value="3">21,000-30,999</option>
+                                <option value="4">31,000-40,999</option>
+                                <option value="5">41,000-50,000</option>
+                                <option value="6">More than 50,000</option>
                             </optgroup>
                             <optgroup label="Remarks">
                                 <option value="soloLiving">Solo Living</option>
-                                <option value="soloParent">Solo Parent</option>
-                                <option value="teenPregnancy">Teenage Pregnancy</option>  
+                                <option value="Solo Parent">Solo Parent</option>
+                                <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
                             </optgroup>
 
                         </select>
                     </div>
                 </div>
-                
                 <!-- Table -->
                 <div class="row dataTable gx-4">
                     <div class="col-12">

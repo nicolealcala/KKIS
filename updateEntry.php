@@ -152,13 +152,13 @@
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentPurok">Purok</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" id="residentPurok" required="">
-                                    <option value="1" selected="">I</option>
-                                    <option value="2">II</option>
-                                    <option value="3">III</option>
-                                    <option value="4">IV</option>
-                                    <option value="5">V</option>
-                                    <option value="6">VI</option>
-                                    <option value="7">VII</option>
+                                    <option value="I" selected="">I</option>
+                                    <option value="II">II</option>
+                                    <option value="III">III</option>
+                                    <option value="IV">IV</option>
+                                    <option value="V">V</option>
+                                    <option value="VI">VI</option>
+                                    <option value="VII">VII</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
