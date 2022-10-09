@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="assets/css/index.compiled.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
-    <link rel="stylesheet" href="assets/css/signup.css">
+    <link rel="stylesheet" href="assets/scss/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="assets/scss/signup.css">
 </head>
 
 <body style="background: url(&quot;assets/img/gradient-bg.png&quot;);">
@@ -34,7 +34,7 @@
                             <div style="margin-bottom: 3em;">
                                 <div class="row">
                                     <div class="col d-flex justify-content-center">
-                                        <h1 class="welcome-sign" style="font-family: poppins;--bs-body-font-weight: bold;color: rgb(255, 183, 3);"">Sign-up</h1>
+                                        <h1 class="welcome-sign" style="font-family: poppins;--bs-body-font-weight: bold;color: rgb(255, 183, 3);">Sign-up</h1>
                                     </div>
                                 </div>
                                 <div class="row">

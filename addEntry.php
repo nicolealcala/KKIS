@@ -1,3 +1,25 @@
+<?php
+  include 'connection.php';
+
+  session_start();
+  session_destroy();
+  session_start();
+
+  if(isset($_POST['submitBtn'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+
+    $query = "INSERT INTO `Users`(`username`, `password`, `first_name`, `last_name`) VALUES ('".$username."','".$password."','".$firstname."','".$lastname."')";
+    if(executeQuery($query)){
+      header('Location: login.php');
+    }
+  }
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -443,7 +465,7 @@
                         </div>
                         <div class="row m-0 d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
                             <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
-                                    <button class="btn controlBtn" id="submitBtn" type="submit" form="addForm">Submit</button>
+                                    <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
                             </div>
                         </div>
                     </form>
