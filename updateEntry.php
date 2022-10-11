@@ -1,3 +1,31 @@
+<?php
+  include 'connection.php';
+
+  session_start();
+  session_destroy();
+  session_start();
+
+  if(isset($_POST['submitBtn'])) {
+    $queryPersonal = "INSERT INTO `Kabataan`(`first_name`, `middle_name`, `last_name`, `kabataan_suffix`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`) 
+             VALUES ('".$_POST['kFname']."','".$_POST['kMname']."','".$_POST['kLname']."', '".$_POST['kSuffix']."', '".$_POST['gender']."', '".$_POST['birthday']."', '".$_POST['birthplace']."', '".$_POST['maritalStatus']."', '".$_POST['religion']."', '".$_POST['disability']."', '".$_POST['contact']."', '".$_POST['voterType']."', '".$_POST['address']."' '".$_POST['purok']."')";
+
+    $queryEducation = "INSERT INTO `Educational_info`(`educational_status`, `level`, `school_type`, `school_name`, `kabataan_id`, `industry_id`, `salary_id`) 
+             VALUES ('".$_POST['educStatus']."','".$_POST['educLevel']."','".$_POST['schoolType']."', '".$_POST['schoolName']."', '".$_POST['SECRET']."', '".$_POST['educIndustry']."', '".$_POST['educSalary']."')";
+    
+    $queryEmployment = "INSERT INTO `Employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `kabataan_id`, `industry_id`, `salary_id`) 
+             VALUES ('".$_POST['employStatus']."','".$_POST['employeeType']."','".$_POST['employerlType']."', '".$_POST['employerName']."', '".$_POST['SECRET']."', '".$_POST['employIndustry']."', '".$_POST['employSalary']."')";
+    
+    $queryHousehold = "INSERT INTO `Households`(`head_first_name`, `head_middle_name`, `head_last_name`, `head_suffix`, `head_remarks`, `members_count`) 
+             VALUES ('".$_POST['hFname']."','".$_POST['hMname']."','".$_POST['hLname']."', '".$_POST['hSuffix']."', '".$_POST['remarks']."', '".$_POST['membersCount']."')";
+    
+    
+    
+    // if(executeQuery($queryPersonal, $queryEducation)){
+    //   echo ("Successful");
+    // }
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -136,34 +164,44 @@
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentContact">Contact No.</label>
-                                <input class="form-control text-uppercase w-100" type="text" id="residentContact" placeholder="09XXXXXXXXX" inputmode="numeric" required="">
+                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="residentContact" placeholder="09XXXXXXXXX" inputmode="numeric" required="">
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12" for="residentVote">
                                 <label class="col-form-label fieldLabel required w-100">Voter Type</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentVote" required="">
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required="">
                                     <option value="Registered" selected="">Registered</option>
                                     <option value="Unregistered">Unregistered</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-8 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentAddress">House No./Street/Subdivision</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="residentAddress" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="address" id="residentAddress" required="">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="residentPurok">Purok</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" id="residentPurok" required="">
-                                    <option value="I" selected="">I</option>
-                                    <option value="II">II</option>
-                                    <option value="III">III</option>
-                                    <option value="IV">IV</option>
-                                    <option value="V">V</option>
-                                    <option value="VI">VI</option>
-                                    <option value="VII">VII</option>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required="">
+                                    <option value="Cardinal" selected="">Cardinal</option>
+                                    <option value="Cordillera">Cordillera</option>
+                                    <option value="Doña Petra">Doña Petra</option>
+                                    <option value="Doña Regina 1">Doña Regina 1</option>
+                                    <option value="Doña Regina 2">Doña Regina 2</option>
+                                    <option value="Doña Regina 3">Doña Regina 3</option>
+                                    <option value="Family Village">Family Village</option>
+                                    <option value="Iraq">Iraq</option>
+                                    <option value="Looban">Looban</option>
+                                    <option value="Manggahan">Manggahan</option>
+                                    <option value="Nayon">Nayon</option>
+                                    <option value="Ormoc">Ormoc</option>
+                                    <option value="Pulong Kendi">Pulong Kendi</option>
+                                    <option value="Puting Krus">Puting Krus</option>
+                                    <option value="Saint Anthony ">Saint Anthony </option>
+                                    <option value="Sampaguita St.">IraSampaguita St.</option>
+                                    <option value="Smokey Mountain ">Smokey Mountain </option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel w-100" for="organization" id="organizationLbl">Organization (if any)</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" id="organization">
+                                <label class="col-form-label fieldLabel w-100" for="org" id="organizationLbl">Organization (if any)</label>
+                                <input class="form-control userInput text-uppercase w-100" name="organization" type="text" id="org">
                             </div>
                         </div>
                 
@@ -432,7 +470,7 @@
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members</label>
-                                <select class="form-select text-uppercase w-100 houseSelectBox" name="famCount" required="">
+                                <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required="">
                                     <option value="Less than 5">Less than 5</option>
                                     <option value="5 to 10">5 to 10</option>
                                     <option value="11 to 15">11 to 15</option>

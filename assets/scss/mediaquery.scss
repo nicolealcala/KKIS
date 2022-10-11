@@ -22,6 +22,8 @@ $text: #393737;
 a {
     text-decoration: none;
 }
+
+
 @media only screen and (max-width: 7680px){
 
     .title {
@@ -43,16 +45,16 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    
+    //Add, Update
     .sectionDiv {
         margin-top: 1em;
     }
-    
+    //Add, Update
     .divNav {
         width: 100%;
     }
-
 }
+
 
 @media screen and (min-width:769px) and (max-width:7680px){
 
@@ -99,6 +101,7 @@ a {
     }
 }
 
+
 @media screen and (max-width: 768px) {
 
     #wrapper {
@@ -142,8 +145,20 @@ a {
             align-items: center;
         }
     }
-}
 
+    //Index
+    .indexContent{
+        padding: 1em;
+
+        .card-body{
+            margin: 0;
+        }
+
+        #loginCard, #signupCard{
+            width: auto;
+        }
+    }
+}
 
 
 @media screen and (max-width: 500px) {          //tablet
@@ -202,18 +217,10 @@ a {
 }
 
 @media screen and (max-width: 300px) {
-    //Declared Households
-    .divNav .slider {
-        width: 40%;
-    } 
-    
     //Add, Update, Declared
     #wrapper {
         padding-left: 0;
     }
-
-
-
     .content{
         margin: 1em 0 0 0;
         padding: 1.5em;
@@ -224,5 +231,52 @@ a {
         width: 70%; 
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    //Declared Households
+    .divNav .slider {
+        width: 40%;
+    } 
+    
+    //Index
+    .indexContent {
+        padding: 0.3em;
+
+        .card {
+            width: auto;
+            margin: 1em;
+            
+            .card-body {
+                margin: 0;
+                padding: 0.5em 0;
+
+                .cardHead {
+                    font-size: 1.5em;
+                    margin: 0.1em;
+                }
+
+                .fieldRow{
+                    margin: 0.3em 0.5em;
+                }
+
+                .controlBtn {
+                    width: 8em;
+                    font-size: 1em;
+                    font-weight: 700;
+                }
+
+                #forgotPassText{
+                    font-size: 0.6em;
+                }
+
+                #signup-phrase, #login-phrase{
+                    font-size: 0.6em;
+                }
+
+                .resetPassHead{
+                    font-size: 1em;
+                }
+            }
+        }
     }
 }

@@ -96,6 +96,15 @@ a {
     justify-content: center;
     align-items: center;
   }
+  .indexContent {
+    padding: 1em;
+  }
+  .indexContent .card-body {
+    margin: 0;
+  }
+  .indexContent #loginCard, .indexContent #signupCard {
+    width: auto;
+  }
 }
 @media screen and (max-width: 500px) {
   #wrapper {
@@ -136,9 +145,6 @@ a {
   }
 }
 @media screen and (max-width: 300px) {
-  .divNav .slider {
-    width: 40%;
-  }
   #wrapper {
     padding-left: 0;
   }
@@ -151,5 +157,40 @@ a {
     width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .divNav .slider {
+    width: 40%;
+  }
+  .indexContent {
+    padding: 0.3em;
+  }
+  .indexContent .card {
+    width: auto;
+    margin: 1em;
+  }
+  .indexContent .card .card-body {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+  .indexContent .card .card-body .cardHead {
+    font-size: 1.5em;
+    margin: 0.1em;
+  }
+  .indexContent .card .card-body .fieldRow {
+    margin: 0.3em 0.5em;
+  }
+  .indexContent .card .card-body .controlBtn {
+    width: 8em;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .indexContent .card .card-body #forgotPassText {
+    font-size: 0.6em;
+  }
+  .indexContent .card .card-body #signup-phrase, .indexContent .card .card-body #login-phrase {
+    font-size: 0.6em;
+  }
+  .indexContent .card .card-body .resetPassHead {
+    font-size: 1em;
   }
 }/*# sourceMappingURL=mediaquery.css.map */
