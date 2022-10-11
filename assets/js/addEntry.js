@@ -96,7 +96,7 @@ var educRadioClick = function(){
         $(this).removeAttr("required");
         $(this).val("");
     });
-
+    
     $('.educSelectBox').each(function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
