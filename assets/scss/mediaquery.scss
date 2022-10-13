@@ -154,7 +154,7 @@ a {
             margin: 0;
         }
 
-        #loginCard, #signupCard{
+        #loginCard, #signupCard, #forgotPassCard{
             width: auto;
         }
     }
@@ -214,9 +214,23 @@ a {
         color: #858796;
         font-size: 1em;
     }
+
+    //Index
+    .indexContent {
+        padding: 0.5em;
+        margin: 0.5em;
+
+        .card {
+            .card-body{
+                .fieldRow{
+                    margin: 0.3em;
+                }
+            }
+        }
+    }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (min-width: 10px) and (max-width: 300px) {
     //Add, Update, Declared
     #wrapper {
         padding-left: 0;
@@ -240,8 +254,6 @@ a {
     
     //Index
     .indexContent {
-        padding: 0.3em;
-
         .card {
             width: auto;
             margin: 1em;
@@ -274,7 +286,8 @@ a {
                 }
 
                 .resetPassHead{
-                    font-size: 1em;
+                    font-size: 7em;
+                    padding-left: 0.5em;
                 }
             }
         }

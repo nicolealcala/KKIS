@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="assets/scss/index2.css">
+    <link rel="stylesheet" href="assets/scss/index.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     
     <!-- Favicon -->
@@ -23,7 +23,7 @@
     <div id="index-wrapper">
         <div class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
             <!-- Log in -->
-            <div class="card d-flex justify-content-center mt-3 d-none" id="loginCard">
+            <div class="card d-flex justify-content-center mt-3" id="loginCard">
                 <div class="card-body">
                     <div class="row m-0 w-100">
                         <div class="col-12 d-flex justify-content-center">
@@ -122,7 +122,7 @@
 
 
             <!-- Forgot Password -->
-            <div class="card d-flex justify-content-center" id="forgotPassCard">
+            <div class="card d-flex justify-content-center d-none" id="forgotPassCard">
                 <div class="card-head p-2 mt-2">
                     <div class="d-flex align-items-center justify-content-start headContainer">
                         <div class="d-flex justify-content-center align-items-center w-100 p-0">
@@ -132,7 +132,7 @@
                                     <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
                                 </svg>
                             </button>    
-                        <span class="resetPassHead">Reset Password</span>
+                        <span class="resetPassHead d-flex justify-content-center">Reset Password</span>
                         </div>
                     </div>
                 </div>
@@ -167,6 +167,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom Script -->
-    <script type="text/javascript" src="assets/js/index2.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
     
 </body>

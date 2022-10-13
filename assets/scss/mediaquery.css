@@ -102,7 +102,7 @@ a {
   .indexContent .card-body {
     margin: 0;
   }
-  .indexContent #loginCard, .indexContent #signupCard {
+  .indexContent #loginCard, .indexContent #signupCard, .indexContent #forgotPassCard {
     width: auto;
   }
 }
@@ -143,8 +143,15 @@ a {
     color: #858796;
     font-size: 1em;
   }
+  .indexContent {
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+  .indexContent .card .card-body .fieldRow {
+    margin: 0.3em;
+  }
 }
-@media screen and (max-width: 300px) {
+@media screen and (min-width: 10px) and (max-width: 300px) {
   #wrapper {
     padding-left: 0;
   }
@@ -160,9 +167,6 @@ a {
   }
   .divNav .slider {
     width: 40%;
-  }
-  .indexContent {
-    padding: 0.3em;
   }
   .indexContent .card {
     width: auto;
@@ -191,6 +195,7 @@ a {
     font-size: 0.6em;
   }
   .indexContent .card .card-body .resetPassHead {
-    font-size: 1em;
+    font-size: 7em;
+    padding-left: 0.5em;
   }
 }/*# sourceMappingURL=mediaquery.css.map */

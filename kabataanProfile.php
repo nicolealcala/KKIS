@@ -1,12 +1,14 @@
 <?php
-    $dbServername = "localhost"; //server name
-    $dbUsername = "root";
-    $dbPassword = "";
-    $dbName = "KKIS"; //database name
+    // $dbServername = "localhost"; //server name
+    // $dbUsername = "root";
+    // $dbPassword = "";
+    // $dbName = "KKIS"; //database name
 
-    $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); //connect to database
-    $query = "SELECT * FROM residentsProfile ORDER BY residentID ASC"; //query to select all data from table
-    $result = mysqli_query($conn, $query);
+    // $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); //connect to database
+    // $query = "SELECT * FROM residentsProfile ORDER BY residentID ASC"; //query to select all data from table
+    // $result = mysqli_query($conn, $query);
+
+    include 'connection.php';
 ?>
 
 
@@ -107,13 +109,23 @@
                                 <option value="Vission disability">Vission disability</option>
                             </optgroup>
                             <optgroup label="Purok">
-                                <option value="I">I</option>
-                                <option value="II">II</option>
-                                <option value="III">III</option>
-                                <option value="IV">IV</option>
-                                <option value="V">V</option>
-                                <option value="VI">VI</option>
-                                <option value="VII">VII</option>
+                                <option value="Cardinal">Cardinal</option>
+                                <option value="Cordillera">Cordillera</option>
+                                <option value="Doña Petra">Doña Petra</option>
+                                <option value="Doña Regina 1">Doña Regina 1</option>
+                                <option value="Doña Regina 2">Doña Regina 2</option>
+                                <option value="Doña Regina 3">Doña Regina 3</option>
+                                <option value="Family Village">Family Village</option>
+                                <option value="Iraq">Iraq</option>
+                                <option value="Looban">Looban</option>
+                                <option value="Manggahan">Manggahan</option>
+                                <option value="Nayon">Nayon</option>
+                                <option value="Ormoc">Ormoc</option>
+                                <option value="Pulong Kendi">Pulong Kendi</option>
+                                <option value="Puting Krus">Puting Krus</option>
+                                <option value="Saint Anthony ">Saint Anthony </option>
+                                <option value="Sampaguita St.">IraSampaguita St.</option>
+                                <option value="Smokey Mountain">Smokey Mountain </option>
                             </optgroup>
                             <optgroup label="Educational Status">
                                 <option value="Enrolled">Enrolled</option>
