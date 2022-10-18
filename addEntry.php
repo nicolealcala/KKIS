@@ -18,7 +18,8 @@
     $queryHousehold = "INSERT INTO `Households`(`head_first_name`, `head_middle_name`, `head_last_name`, `head_suffix`, `head_remarks`, `members_count`) 
              VALUES ('".$_POST['hFname']."','".$_POST['hMname']."','".$_POST['hLname']."', '".$_POST['hSuffix']."', '".$_POST['remarks']."', '".$_POST['membersCount']."')";
     
-    
+    $entryStudent = executeQuery($queryPersonal, $queryEducation, $queryHousehold);
+    $entryEmployee = executeQuery($queryPersonal, $queryEmployment, $queryHousehold);
     
     // if(executeQuery($queryPersonal, $queryEducation)){
     //   echo ("Successful");
