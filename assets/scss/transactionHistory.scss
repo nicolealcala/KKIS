@@ -19,13 +19,13 @@ $text: #393737;
 //     width: auto;
 // }
 
-.topBtnLbl{
+.topBtnLbl {
     color: $text;
     font-size: 1.3em; 
     font-weight: normal;
 }
 
-.checkAllDiv, .deleteDiv{
+.checkAllDiv, .deleteDiv {
     width: 5.5em;
     margin: 0;
     padding: 1em;
@@ -33,15 +33,15 @@ $text: #393737;
     border-radius: 10px;
     cursor: pointer;
 
-    #selectAll {
-        position: relative;
-        outline: 2px solid #707070;
-        width: 1.2em;
-        height: 1.2em;
-    }
+    // #selectAll {
+    //     position: relative;
+    //     outline: 2px solid #707070;
+    //     width: 1.2em;
+    //     height: 1.2em;
+    // }
 }
 
-.fa-trash-can{
+.fa-trash-can, .fa-square-check {
     color: #707070;
 }
 
@@ -49,7 +49,7 @@ $text: #393737;
     background: #EAECF4;
 }
 
-.tHead{
+.tHead {
     width: 30%;
     color: $text;
     font-size: 1.3em;
@@ -78,7 +78,7 @@ $text: #393737;
  
 .accordion-item {
     
-    .accordion-header{
+    .accordion-header {
         overflow:hidden;
 
         .checkDiv{
@@ -86,13 +86,13 @@ $text: #393737;
             background-color: #EAECF4;
             // border-radius: 6px 0 0 6px
         }
-        .accordHead{
+        .accordHead {
             color: #858796;
             font-size: 1.3em;
         }
     }
 }
 
-.transactInfo{
+.transactInfo {
     margin-left: 2em;
 }

@@ -31,8 +31,7 @@
 
     <div id="wrapper">
         <div class="content container-fluid">
-             <!-- Copy this -->
-             <div class="row documentHeadingRow p-0 m-0">
+            <div class="row documentHeadingRow p-0 m-0">
                 <div class="col d-xxl-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
                     <h1 class="d-xxl-flex title">Transaction History</h1>
                 </div>
@@ -40,14 +39,15 @@
             <div class="row m-0">
                 <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
             </div>
-            <!-- Copy End -->
 
             <div class="pageBody mt-4 m-0">
                 <div class="divBtns d-flex justify-content-end align-items-center m-0">
                     <!-- Select All Btn                    -->
                     <div class="d-flex justify-content-center align-items-center m-0">
-                        <button type="button" class="btn checkAllDiv d-flex justify-content-center align-items-center" onclick="selects()" ondblclick="deSelect()">
-                            <input class="form-check-input m-2 p-0" type="checkbox" name="ck" id="selectAll">
+                        <button type="button" class="btn checkAllDiv d-flex justify-content-center align-items-center">
+                            <!-- <input class="form-check-input m-2 p-0" type="checkbox" name="ck" id="selectAll" disabled> -->
+                            <i class="fa-regular fa-square-check fa-xl m-3 p-0" id="selectAll"></i>
+                            <i class="fa-solid fa-square-check fa-xl m-3 p-0 d-none" id="deselectAll"></i>
                         </button>
                     </div>
                     <!-- Delete btn -->
