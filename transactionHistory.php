@@ -45,7 +45,6 @@
                     <!-- Select All Btn                    -->
                     <div class="d-flex justify-content-center align-items-center m-0">
                         <button type="button" class="btn checkAllDiv d-flex justify-content-center align-items-center">
-                            <!-- <input class="form-check-input m-2 p-0" type="checkbox" name="ck" id="selectAll" disabled> -->
                             <i class="fa-regular fa-square-check fa-xl m-3 p-0" id="selectAll"></i>
                             <i class="fa-solid fa-square-check fa-xl m-3 p-0 d-none" id="deselectAll"></i>
                         </button>
@@ -74,56 +73,56 @@
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID001</td>
                                     <td class="entryRow" scope="col" data-label="Name">Nicole Alcala</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID002</td>
                                     <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID003</td>
                                     <td class="entryRow" scope="col" data-label="Name">Michael John Palalimpa</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID004</td>
                                     <td class="entryRow" scope="col" data-label="Name">John Marc Morano</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox""></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID005</td>
                                     <td class="entryRow" scope="col" data-label="Name">Princess Carl Austria</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID006</td>
                                     <td class="entryRow" scope="col" data-label="Name">Stephanie Baylon</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID007</td>
                                     <td class="entryRow" scope="col" data-label="Name">Stephanie Baylon</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
 
                                 <tr>
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID008</td>
                                     <td class="entryRow" scope="col" data-label="Name">Justin Charles Gonzales</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center"><input type="checkbox" name="ck"></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -131,11 +130,11 @@
                 </div>
 
                 <div class="accordionDiv row m-0 mt-3 d-block d-xxl-none d-xl-none d-lg-none">
-                    <div class="col-12">
+                    <div class="col-12 p-0">
                         <div class="accordion" role="tablist" id="accordionRow">
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-1" aria-expanded="false" aria-controls="accordionRow .item-1">
@@ -166,7 +165,7 @@
 
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-2" aria-expanded="false" aria-controls="accordionRow .item-2">
@@ -197,7 +196,7 @@
 
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-3" aria-expanded="false" aria-controls="accordionRow .item-3">
@@ -228,7 +227,7 @@
 
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-4" aria-expanded="false" aria-controls="accordionRow .item-4">
@@ -259,7 +258,7 @@
 
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-5" aria-expanded="false" aria-controls="accordionRow .item-5">
@@ -290,7 +289,7 @@
 
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-6" aria-expanded="false" aria-controls="accordionRow .item-6">
@@ -321,7 +320,7 @@
 
                             <div class="accordion-item">
                                 <span class="accordion-header d-flex p-1" role="tab">
-                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1">
+                                    <div class="checkDiv d-flex justify-content-center align-items-center rounded-1 p-4 ">
                                         <input type="checkbox" class="checkItem" name="ck">
                                     </div>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRow .item-7" aria-expanded="false" aria-controls="accordionRow .item-7">

@@ -45,6 +45,10 @@ $text: #393737;
     color: #707070;
 }
 
+#deselectAll {
+    color: blue;
+}
+
 .checkAllDiv:hover, .deleteDiv:hover, .checkAllDiv:focus, .deleteDiv:focus {
     background: #EAECF4;
 }
@@ -67,30 +71,30 @@ $text: #393737;
     color: #858796;
 }
 
-.checkItem {
-    z-index: 99;
-    padding: 0;
-    margin: 0;
-    width: 1em;
-    height: 1em;
-}
-
- 
 .accordion-item {
     
     .accordion-header {
         overflow:hidden;
 
         .checkDiv{
-            width: 4em;
+            width: auto;
             background-color: #EAECF4;
             // border-radius: 6px 0 0 6px
         }
         .accordHead {
             color: #858796;
             font-size: 1.3em;
+            width: 100%;
         }
     }
+}
+
+.checkItem {
+    z-index: 4;
+    padding: 0;
+    margin: 0;
+    width: 1em;
+    height: 1em;
 }
 
 .transactInfo {

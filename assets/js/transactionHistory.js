@@ -1,29 +1,27 @@
-// $(document).ready(function(){
-//   $('#selectAll').on('change', function(){
-//     if ($(this).is(':checked')){
-//       $('input[type=checkbox]').each(function(){
-//         $(this).prop('checked', true);
-//       })
-//     } else {
-//       $('input[type=checkbox]').each(function(){
-//         $(this).prop('checked', false);
-//       })
-//     }
-//   })
-// });
+$(document).ready(function(){
+  $('.checkItem').each(function(){
+		$(this).change(function(){
+			if ($(this).is(':checked')){
+				$(this).parent('tr').css("background-color", "#707070");
+			} else {
+				$(this).parent('tr').css("background-color", "white");
+			}
+		})
+	})
+  });
 
 $(document).ready(function(){
   	$('.checkAllDiv').click(function(){
 		if ($('#deselectAll').hasClass('d-none')) {
 			$('#deselectAll').removeClass('d-none');
 			$('#selectAll').addClass('d-none');
-			$('input[type=checkbox]').each(function(){
+			$('.checkItem').each(function(){
 				$(this).prop('checked', true);
 			})
 		} else {
 			$('#deselectAll').addClass('d-none');
 			$('#selectAll').removeClass('d-none');
-			$('input[type=checkbox]').each(function(){
+			$('.checkItem').each(function(){
 				$(this).prop('checked', false);
 			})
 		}
