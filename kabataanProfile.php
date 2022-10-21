@@ -79,7 +79,7 @@
                     </div>
                     <!-- Filter -->
                     <div class="col-lg-2 col-md-6 col-sm-5 col-12">
-                        <select class="selectpicker text-uppercase" multiple="multiple" name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
+                        <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
                             <optgroup label="Age">
                                 <option value="bet1419">14-19 Years old</option>
                                 <option value="bet2029">20-29 Years old</option>

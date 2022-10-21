@@ -1,16 +1,4 @@
 $(document).ready(function(){
-  $('.checkItem').each(function(){
-		$(this).change(function(){
-			if ($(this).is(':checked')){
-				$(this).parent('tr').css("background-color", "#707070");
-			} else {
-				$(this).parent('tr').css("background-color", "white");
-			}
-		})
-	})
-  });
-
-$(document).ready(function(){
   	$('.checkAllDiv').click(function(){
 		if ($('#deselectAll').hasClass('d-none')) {
 			$('#deselectAll').removeClass('d-none');
@@ -46,11 +34,13 @@ $(document).ready(function(){
 // }
 
 //For shading selected row
-// $(document).ready(function(){
-//   $('.checkItem').each(function(){
-//     if($(this).prop('checked', true)){
-//       var tRow = $(this).closest('tr');
-//       tRow.css("backgrounc-color", "#858796");
-//     }
-//   })
-// })
+$(document).ready(function(){
+  $('.checkItem').each(function(){
+    if ($(this).prop('checked', true)){
+      var tRow = $(this).closest('tr');
+      tRow.css("backgrounc-color", "#858796");
+    } else {
+		
+	}
+  })
+})
