@@ -139,7 +139,7 @@
                             <div class="col col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="disabilityDiv">
                                     <label class="col-form-label fieldLabel required w-100" for="disabilitySelect">Disability</label>
-                                    <!-- Class form-select  removed from select element in Remarks -->
+                                    <!-- Class form-select  removed from select element in Disability -->
                                     <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect">
                                         <option value="None" selected="">None</option>
                                         <option value="Communication disability">Communication disability</option>
