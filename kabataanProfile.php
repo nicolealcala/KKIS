@@ -8,7 +8,7 @@
     // $query = "SELECT * FROM residentsProfile ORDER BY residentID ASC"; //query to select all data from table
     // $result = mysqli_query($conn, $query);
 
-    include 'connection.php';
+    // include 'connection.php';
 ?>
 
 
@@ -79,7 +79,7 @@
                     </div>
                     <!-- Filter -->
                     <div class="col-lg-2 col-md-6 col-sm-5 col-12">
-                        <select class="selectpicker text-uppercase " data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true" multiple>
+                        <select class="selectpicker text-uppercase" multiple="multiple" name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
                             <optgroup label="Age">
                                 <option value="bet1419">14-19 Years old</option>
                                 <option value="bet2029">20-29 Years old</option>
@@ -193,27 +193,27 @@
                             </thead>
 
                            <?php
-                            while ($row = mysqli_fetch_array($result)) {
-                            echo '
-                            <tr>
-                                <td align="center"><input type="checkbox" class="checkitem"></td>
-                                <td>' . $row["lastName"] . '</td>
-                                <td>' . $row["firstName"] . '</td>
-                                <td>' . $row["middleName"] . '</td>
-                                <td>' . $row["suffix"] . '</td>
-                                <td>' . $row["birthDate"] . '</td>
-                                <td>' . $row["age"] . '</td>
-                                <td>' . $row["gender"] . '</td>
-                                <td>' . $row["civilStatus"] . '</td>
-                                <td>' . $row["purok"] . '</td>
-                                <td align="center">
-                                    <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
+                        //     while ($row = mysqli_fetch_array($result)) {
+                        //     echo '
+                        //     <tr>
+                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                        //         <td>' . $row["lastName"] . '</td>
+                        //         <td>' . $row["firstName"] . '</td>
+                        //         <td>' . $row["middleName"] . '</td>
+                        //         <td>' . $row["suffix"] . '</td>
+                        //         <td>' . $row["birthDate"] . '</td>
+                        //         <td>' . $row["age"] . '</td>
+                        //         <td>' . $row["gender"] . '</td>
+                        //         <td>' . $row["civilStatus"] . '</td>
+                        //         <td>' . $row["purok"] . '</td>
+                        //         <td align="center">
+                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
                     
-                                </td>
+                        //         </td>
 
-                            </tr>
-                            ';
-                        }
+                        //     </tr>
+                        //     ';
+                        // }
                         ?>
                         </table>
                     </div>
@@ -278,26 +278,26 @@
                                             </thead>
 
                                             <?php
-                                                while ($row = mysqli_fetch_array($result)) {
-                                                echo '
-                                                    <tr>
-                                                        <td align="center"><input type="checkbox" class="checkitem"></td>
-                                                        <td>' . $row["birthplace"] . '</td>
-                                                        <td>' . $row["religion"] . '</td>
-                                                        <td>' . $row["sex"] . '</td>
-                                                        <td>' . $row["educStatus"] . '</td>
-                                                        <td>' . $row["monthlySalary"] . '</td>
-                                                        <td>' . $row["peopleInHousehold"] . '</td>
-                                                        <td>' . $row["contactNum"] . '</td>
-                                                        <td>' . $row["organization"] . '</td>
-                                                        <td>' . $row["guardian"] . '</td>
-                                                        <td>' . $row["remarks"] . '</td>
-                                                        <td align="center">
-                                                        <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>                               
-                                                        </td>
-                                                    </tr>
-                                                    ';
-                                                }
+                                                // while ($row = mysqli_fetch_array($result)) {
+                                                // echo '
+                                                //     <tr>
+                                                //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                                                //         <td>' . $row["birthplace"] . '</td>
+                                                //         <td>' . $row["religion"] . '</td>
+                                                //         <td>' . $row["sex"] . '</td>
+                                                //         <td>' . $row["educStatus"] . '</td>
+                                                //         <td>' . $row["monthlySalary"] . '</td>
+                                                //         <td>' . $row["peopleInHousehold"] . '</td>
+                                                //         <td>' . $row["contactNum"] . '</td>
+                                                //         <td>' . $row["organization"] . '</td>
+                                                //         <td>' . $row["guardian"] . '</td>
+                                                //         <td>' . $row["remarks"] . '</td>
+                                                //         <td align="center">
+                                                //         <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>                               
+                                                //         </td>
+                                                //     </tr>
+                                                //     ';
+                                                // }
                                             ?>
 
                                         </table>
