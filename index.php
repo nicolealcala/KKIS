@@ -1,3 +1,47 @@
+<?php
+  include 'connection.php';
+
+  session_start();
+  session_destroy();
+  session_start();
+
+
+  // not final pa ito pero connected na sa db yung signup
+  if(isset($_POST['signupBtn'])) {
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $birthday = $_POST['birthday'];
+    $contactNumber = $_POST['contactNumber'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$password."')";
+    if(executeQuery($query)){
+      header('Location: index.php');
+    }
+  }
+
+  // LOGIN BTN - di pa ito gumagawa/try pa lang
+  if(isset($_POST['loginBtn'])) {
+    $username = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."' AND password = '".$password."'";
+    $users = executeQuery($query);
+
+    if(mysqli_num_rows($users) > 0) {
+      while($user = mysqli_fetch_assoc($users)) {
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['password'] = $user['password'];
+      }
+
+      header('Location: index.php');
+    } else {
+      header('Location: login.php?error=no_account_found');
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -43,10 +87,10 @@
                         <!-- Fields -->
                         <div class="row gx-3 gy-3 fieldRow">
                             <div class="col-12">
-                                <input class="form-control" type="text" placeholder="Username" required>
+                                <input class="form-control" type="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" placeholder="Password" required>
+                                <input class="form-control" type="password" name="password" placeholder="Password" required>
                             </div>
                             <div class="col-12 mt-2 d-flex justify-content-center">
                                 <a href="#" id="forgotPassText">Forgot Password?</a>
@@ -82,29 +126,29 @@
                         <div class="col-12 text-center p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
                     </div>
                     <!-- Form -->
-                    <form id="signupForm" action="" method="post">
+                    <form id="signupForm" action="" onSubmit="return validate();" method="post">
                         <!-- Fields -->
                         <div class="row gx-3 gy-3 fieldRow">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <input class="form-control" type="text" placeholder="First Name" required>
+                                <input class="form-control" type="text" name="firstName" placeholder="First Name" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <input class="form-control" type="text" placeholder="Last Name" required>
+                                <input class="form-control" type="text" name="lastName" placeholder="Last Name" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <input class="form-control" type="date" placeholder="Birthday" required>
+                                <input class="form-control" type="date" name="birthday" placeholder="Birthday" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <input class="form-control" type="text" inputmode="numeric" placeholder="Contact No." maxlength="11" required>
+                                <input class="form-control" type="text" name="contactNumber" inputmode="numeric" placeholder="Contact No." maxlength="11" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="text" placeholder="Username" maxlength="30" required>
+                                <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" placeholder="Password" maxlength="30" required>
+                                <input class="form-control" type="password" id="password" name="password" placeholder="Password" maxlength="30" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" placeholder="Confirm Password" maxlength="30" required>
+                                <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" maxlength="30" required>
                             </div>
                         </div>
                         <!-- Sign up btn -->
@@ -168,5 +212,5 @@
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/index.js"></script>
-    
+    <script type="text/javascript" src="assets/js/formValidation.js"></script>
 </body>
