@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
 
     <!-- Custom Page Stylesheets -->
-    <link rel="stylesheet" href="assets/scss/kabataanProfile.css">
+    <link rel="stylesheet" href="assets/scss/profiles.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- nav.css -->
@@ -57,12 +57,18 @@
         <div class="container-fluid content">
             <!-- Copy this to all pages-->
             <div class="row documentHeadingRow p-0 m-0">
-                <div class="col d-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <h1 class="d-xxl-flex title" id="titleAddEntry">Kabataan Profile</h1>
+                <div class="col col-lg-7 col-md-7 col-sm-12 col-12 p-0 mb-4">
+                    <h1 class="title h-auto">Profiles</h1><img src="assets/img/misc/hr.svg">
                 </div>
-            </div>
-            <div class="row m-0">
-                <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
+                <div class="col d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center col-lg-5 col-md-5 col-sm-12 col-12 p-0 m-0">
+                    <input type="radio" id="kabataan" class="d-none" name="slider" checked>
+                    <input type="radio" id="resident" class="d-none" name="slider">
+                    <div class="d-lg-flex divNav">
+                        <label class="form-label d-flex d-lg-flex d-xl-flex justify-content-center align-items-center menuTitle kabataan" for="kabataan">Kabataan</label>
+                        <label class="form-label d-flex d-lg-flex d-xl-flex justify-content-center align-items-center menuTitle resident" for="resident">Residents</label>
+                        <div class="slider"></div>
+                    </div>
+                </div>
             </div>
             <!-- Copy End -->
             <div class="pageBody">
@@ -173,51 +179,102 @@
                     </div>
                 </div>
                 <!-- Table -->
-                <div class="row dataTable gx-4">
-                    <div class="col-12">
-                        <table id="example" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th></th>
-                                    <th>Last name</th>
-                                    <th>First name</th>
-                                    <th>Middle name</th>
-                                    <th>Suffix</th>
-                                    <th>Birthdate</th>
-                                    <th>Age</th>
-                                    <th>Gender</th>
-                                    <th>Civil status</th>
-                                    <th>Purok</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
+                <div class="kabataanTable">
+                    <div class="row dataTable gx-4">
+                        <div class="col-12">
+                            <table id="example" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
+                                <thead class="tableKabataan">
+                                    <tr>
+                                        <th></th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Middle name</th>
+                                        <th>Suffix</th>
+                                        <th>Birthdate</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Civil status</th>
+                                        <th>Purok</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
 
-                           <?php
-                        //     while ($row = mysqli_fetch_array($result)) {
-                        //     echo '
-                        //     <tr>
-                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
-                        //         <td>' . $row["lastName"] . '</td>
-                        //         <td>' . $row["firstName"] . '</td>
-                        //         <td>' . $row["middleName"] . '</td>
-                        //         <td>' . $row["suffix"] . '</td>
-                        //         <td>' . $row["birthDate"] . '</td>
-                        //         <td>' . $row["age"] . '</td>
-                        //         <td>' . $row["gender"] . '</td>
-                        //         <td>' . $row["civilStatus"] . '</td>
-                        //         <td>' . $row["purok"] . '</td>
-                        //         <td align="center">
-                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
-                    
-                        //         </td>
+                            <?php
+                            //     while ($row = mysqli_fetch_array($result)) {
+                            //     echo '
+                            //     <tr>
+                            //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                            //         <td>' . $row["lastName"] . '</td>
+                            //         <td>' . $row["firstName"] . '</td>
+                            //         <td>' . $row["middleName"] . '</td>
+                            //         <td>' . $row["suffix"] . '</td>
+                            //         <td>' . $row["birthDate"] . '</td>
+                            //         <td>' . $row["age"] . '</td>
+                            //         <td>' . $row["gender"] . '</td>
+                            //         <td>' . $row["civilStatus"] . '</td>
+                            //         <td>' . $row["purok"] . '</td>
+                            //         <td align="center">
+                            //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
+                        
+                            //         </td>
 
-                        //     </tr>
-                        //     ';
-                        // }
-                        ?>
-                        </table>
+                            //     </tr>
+                            //     ';
+                            // }
+                            ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
+
+                <div class="residentTable d-none">
+                    <div class="row dataTable gx-4">
+                        <div class="col-12">
+                            <table id="example1" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
+                                <thead class="tableResident">
+                                    <tr>
+                                        <th></th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Middle name</th>
+                                        <th>Suffix</th>
+                                        <th>Birthdate</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Civil status</th>
+                                        <th>Purok</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                            <?php
+                            //     while ($row = mysqli_fetch_array($result)) {
+                            //     echo '
+                            //     <tr>
+                            //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                            //         <td>' . $row["lastName"] . '</td>
+                            //         <td>' . $row["firstName"] . '</td>
+                            //         <td>' . $row["middleName"] . '</td>
+                            //         <td>' . $row["suffix"] . '</td>
+                            //         <td>' . $row["birthDate"] . '</td>
+                            //         <td>' . $row["age"] . '</td>
+                            //         <td>' . $row["gender"] . '</td>
+                            //         <td>' . $row["civilStatus"] . '</td>
+                            //         <td>' . $row["purok"] . '</td>
+                            //         <td align="center">
+                            //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
+                        
+                            //         </td>
+
+                            //     </tr>
+                            //     ';
+                            // }
+                            ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- Modal -->
                 <div class="modal fade" role="dialog" tabindex="-1" id="viewMore" >
@@ -325,11 +382,10 @@
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
     <script src="assets/js/vfs_fonts.js"></script>
-    <script src="assets/js/custom1.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 
     <!-- Custom Script -->
-    <script type="text/javascript" src="assets/js/kabataanProfile.js"></script>
+    <script type="text/javascript" src="assets/js/profiles.js"></script>
     
 </body>
 

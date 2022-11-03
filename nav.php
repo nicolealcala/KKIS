@@ -23,8 +23,8 @@
         <a id="linkSideDecHouse" href="declaredHousehold.php">
             <div class="divSideTab"><img src="./assets/img/DecHouse.svg" width="51" height="47"><span class="sideTabName">Declared Households</span></div>
         </a>
-        <a id="linkSideResiProf" href="kabataanProfile.php">
-            <div class="divSideTab"><img src="./assets/img/navIcons/ResiProf.svg" width="51" height="47"><span class="sideTabName">Kabataan Profile</span></div>
+        <a id="linkSideResiProf" href="profiles.php">
+            <div class="divSideTab"><img src="./assets/img/navIcons/ResiProf.svg" width="51" height="47"><span class="sideTabName">Profiles</span></div>
         </a>
         <a id="linkSideAddEntry" href="addEntry.php">
             <div class="divSideTab"><img src="./assets/img/navIcons/AddEntry.svg" width="51" height="47"><span class="sideTabName">Add Entry</span></div>
@@ -56,8 +56,8 @@
         <a href="declaredHousehold.php">
             <div class="divTopTab" id="linkTopDecHouse"><img src="./assets/img/mobDecHouse.svg"><span>Declared Households</span></div>
         </a>
-        <a href="kabataanProfile.php">
-            <div class="divTopTab" id="linkTopResiProf"><img src="./assets/img/navIcons/mobResiProf.svg"><span>Kabataan Profile</span></div>
+        <a href="profiles.php">
+            <div class="divTopTab" id="linkTopResiProf"><img src="./assets/img/navIcons/mobResiProf.svg"><span>Profiles</span></div>
         </a>
         <a href="addEntry.php">
             <div class="divTopTab"  id="linkTopAddEnt"><img src="./assets/img/navIcons/mobAddEnt.svg"><span>Add Entry</span></div>
