@@ -6,7 +6,7 @@
   session_start();
 
 
-  // not final pa ito pero connected na sa db yung signup
+  //SIGN UP not final pa ito pero connected na sa db yung signup
   if(isset($_POST['signupBtn'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -19,27 +19,43 @@
     if(executeQuery($query)){
       header('Location: index.php');
     }
-  }
+  } 
 
-  // LOGIN BTN - di pa ito gumagawa/try pa lang
+  // LOGIN BTN 
+  $Query_email = "email";
+  $Query_password;
+
   if(isset($_POST['loginBtn'])) {
-    $username = $_POST['email'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."' AND password = '".$password."'";
-    $users = executeQuery($query);
+    $accounts = executeQuery($query);
 
-    if(mysqli_num_rows($users) > 0) {
-      while($user = mysqli_fetch_assoc($users)) {
-        $_SESSION['email'] = $user['email'];
-        $_SESSION['password'] = $user['password'];
-      }
+    if(mysqli_num_rows($accounts) > 0) {
+        while($account = mysqli_fetch_assoc($accounts)) {
+            $_SESSION['firstName'] = $account['firstName'];
+            $_SESSION['lastName'] = $account['lastName'];
+            $_SESSION['birthday'] = $account['birthday'];
+            $_SESSION['contactNumber'] = $account['contactNumber'];
+            $_SESSION['email'] = $account['email'];
+            $_SESSION['password'] = $account['password'];
+        }
 
-      header('Location: index.php');
-    } else {
-      header('Location: login.php?error=no_account_found');
-    }
-  }
+          header('Location: dashboard.php');
+    } 
+
+    // this is used for alert (kapag mali yung credentials)
+    if(($email == $Query_email) && ($password == $Query_password)) {
+
+        header('Location: dashboard.php');
+
+      } else {
+        $message = "Username and/or Password incorrect.\\nTry again.";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+} 
+
 ?>
 
 <!DOCTYPE html>
