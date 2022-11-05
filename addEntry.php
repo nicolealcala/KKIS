@@ -38,7 +38,8 @@
     <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/addUpdate.css">
@@ -49,7 +50,7 @@
     <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
 
     <!-- navAdd CSS -->
-    <link rel="stylesheet" href="assets/css/navAddEntry.css">
+    <!-- <link rel="stylesheet" href="assets/css/navAddEntry.css"> -->
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -58,29 +59,40 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <div class="navDiv">
-        <?php include 'nav.php' ?>
-    </div>
+    <!-- <div class="navDiv">
+        <?php 
+        // include 'nav.php' 
+        ?>
+    </div> -->
 
-    <div id="wrapper">
-        <div class="container-fluid content">
-            <div class="row documentHeadingRow p-0 m-0">
-                <div class="col d-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <h1 class="title" id="titleAddEntry">Add Entry</h1>
+    <div class="mainContainer d-block">
+        <header class="d-flex justify-content-center">
+            <div class="container-fluid justify-content-center align-items-center mt-2">
+                <div class="row headerRow">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
+                        <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
+                        <span class="title">Add New Entry</span>
+                    </div>
+                    <div class="col-lg-6 col-md-6 d-none d-md-flex justify-content-md-end align-items-md-center">
+                        <span class="accountType">Super Admin Account</span>
+                    </div>
                 </div>
             </div>
-            <div class="row m-0">
-                <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
-            </div>
-            <div class="pageBody">
-                <div class="sectionDiv">
-                    <form method="post" id="addForm">
-                        <div class="row m-0 w-100">
+        </header>
+        <div class="hrImg">
+            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100">
+        </div>
+        
+        <div class="container-fluid content">
+            <div class="sectionDiv">
+                <form method="post" id="addForm">
+                    <!-- Personal Info -->
+                    <div class="card p-3 mt-4">
+                        <div class="row m-0">
                             <div class="col col-12 p-0">
-                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
+                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-2" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
                             </div>
                         </div>
-                        <!-- Personal Info -->
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanFname">First Name</label>
@@ -141,7 +153,7 @@
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
                                     <!-- Class form-select  removed from select element in Disability -->
                                     <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect">
-                                        <option value="None" selected="">None</option>
+                                        <option value="None">None</option>
                                         <option value="Communication disability">Communication disability</option>
                                         <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
                                         <option value="Learning disability">Learning disability</option>
@@ -194,11 +206,13 @@
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="organization" id="org">
                             </div>
                         </div>
+                    </div>
 
-                        <div class="row m-0 gx-3 p-0" id="eRow">
-                            <!-- Educational Info -->
-                            <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
-                                <div class="d-flex align-items-center markerDiv rounded-4 m-0" id="markerEduc">
+                    <div class="row gx-2 gy-2 mt-2">
+                        <!-- Educational Info -->
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card p-3" id="educCard">
+                                <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
                                     <input type="radio" id="educCheck" class="statusCheck ms-3" name="educInfo" checked="">
                                     <span class="markerText ms-2">Educational Status</span>
                                 </div>
@@ -224,11 +238,11 @@
                                             <option value="Graduate Studies">Graduate Studies</option> 
                                         </select>
                                     </div>
-                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
+                                        <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required="">
                                             <option value="Private" selected="">Private</option>
-                                            <option value="Public">Public</option>
+                                            <option value="Public">Public</option>s
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
@@ -317,9 +331,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Employment Info -->
-                            <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="employCol">
-                                <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDiv rounded-4" id="markerEmploy">
+                        </div>
+                        <!-- Employment Info -->
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card p-3" id="employCard">
+                                <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEmploy">
                                     <input type="radio" id="employCheck" class="statusCheck ms-3" name="employInfo">
                                     <span class="markerText ms-2">Employment Status</span>
                                 </div>
@@ -433,10 +449,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- House Declaration -->
+                    </div>
+                    <!-- House Declaration -->
+                    <div class="card p-3 mt-4">
                         <div class="row m-0">
                             <div class="col col-12 p-0">
-                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-4">
+                                <div class="d-flex align-items-center markerDiv rounded-2">
                                     <span class="markerText ms-3">House Declaration</span>
                                 </div>
                             </div>
@@ -463,6 +481,8 @@
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
                                     <select class="text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
+                                        <option value="Purok Leader">Purok Leader</option>
+                                        <option value="SK Scholar">SK Scholar</option>
                                         <option value="Solo Living">Solo Living</option>
                                         <option value="Solo Parent">Solo Parent</option>
                                         <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
@@ -480,31 +500,33 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row m-0 d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
-                            <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
-                                    <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
 
-                    <!-- Modal -->
-                    <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
-                        <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <div class="m-0 d-flex justify-content-end align-items-center">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- Button -->
+                    <div class="row m-0 d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
+                        <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
+                                <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Modal -->
+                <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
+                    <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="m-0 d-flex justify-content-end align-items-center">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="row m-0">
+                                    <div class="col col-12 p-0">
+                                        <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
+                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                        </svg>
                                     </div>
-                                    <div class="row m-0">
-                                        <div class="col col-12 p-0">
-                                            <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
-                                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                                            </svg>
-                                        </div>
-                                        <div class="col col-12">
-                                            <h3 class="modalAlert text-center">Added New Entry</h3>
-                                        </div>
+                                    <div class="col col-12">
+                                        <h3 class="modalAlert text-center">Added New Entry!</h3>
                                     </div>
                                 </div>
                             </div>
@@ -512,7 +534,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
     </div>
 
     <!-- Fundamental Links -->

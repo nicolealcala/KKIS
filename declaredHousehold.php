@@ -9,14 +9,15 @@
     <!-- Fundamental links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/css/declaredHousehold.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- navAddUpdate CSS -->
-    <link rel="stylesheet" href="assets/css/navDecHouse.css">
+    <!-- <link rel="stylesheet" href="assets/css/navDecHouse.css"> -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -25,27 +26,35 @@
 <body id="page-top">
 
     <!-- Nav -->
-    <div class="navDiv">
-        <?php include 'nav.php' ?>
-    </div>
+    <!-- <div class="navDiv">
+        <?php
+            // include 'nav.php' 
+            ?>
+    </div> -->
     
-    <div id="wrapper">
-        <div class="container-fluid content">
-            <div class="row documentHeadingRow p-0 m-0">
-                <div class="col col-lg-6 col-md-6 col-sm-12 col-12 p-0 mb-4">
-                    <h1 class="title h-auto">Declared Households</h1><img src="assets/img/misc/hr.svg">
-                </div>
-                <div class="col d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center col-lg-6 col-md-6 col-sm-12 col-12 p-0 m-0">
-                    <input type="radio" id="families" class="d-none" name="slider" checked="">
-                    <input type="radio" id="overview" class="d-none" name="slider">
-                    <div class="d-lg-flex divNav">
-                        <label class="form-label d-flex d-lg-flex d-xl-flex justify-content-center align-items-center menuTitle record" for="families">Families</label>
-                        <label class="form-label d-flex d-lg-flex d-xl-flex justify-content-center align-items-center menuTitle report" for="overview">Overview</label>
-                        <div class="slider"></div>
+    <div class="mainContainer d-block">
+         <header class="d-flex justify-content-center">
+            <div class="container-fluid justify-content-center align-items-center mt-2">
+                <div class="row headerRow">
+                    <div class="col-lg-6 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                        <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
+                        <span class="title">Households</span>
+                    </div>
+                    <div class="col-lg-6 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
+                        <span class="accountType">Super Admin Account</span>
                     </div>
                 </div>
             </div>
-            <div class="familiesBody" id="">
+        </header>
+        <div class="hrImg">
+            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100">
+        </div>
+        <div class="container-fluid content">
+            <div class="row d-flex justify-content-end align-ittems-center m-0">
+                <button class="menuBtn rounded-pill active" id="families">Families</button>
+                <button class="menuBtn rounded-pill" id="overview">Overview</button>
+            </div>
+            <div class="sectionDiv" id="familiesBody">
                 <div class="accordion" role="tablist" id="accordion-dh">
                     <div class="accordion-item">
                         <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-1" aria-expanded="false" aria-controls="accordion-dh .item-1">Family Head</button></h2>
@@ -241,7 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="overviewBody d-none m-3" id="">
+            <div class="sectionDiv d-none m-3" id="overviewBody">
                 <div class="overviewDiv" style="position:relative; height:75vh; width:80vw">
                     <canvas id="overviewChart"></canvas>
                 </div>

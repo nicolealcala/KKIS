@@ -8,9 +8,9 @@ $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
 
+
 .content {
-    
-    .headContainer{
+    .headContainer {
         width: 100%;
         
         .backBtn {
@@ -26,8 +26,16 @@ $text: #393737;
             }
         }
     }
-    
-    .fieldLabel, .educFieldLabel, .employFieldLabel  {
+
+    #educCard {
+        margin-right: 0.5em;
+    }
+
+    #employCard {
+        margin-left: 0.5em;
+    }
+
+    .fieldLabel, .educFieldLabel, .employFieldLabel {
         color: #909090;
         font-weight: normal;
     }

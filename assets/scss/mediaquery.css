@@ -1,5 +1,19 @@
-.title {
+.headerRow {
+  margin: 0 1em;
+}
+.headerRow #hamburger {
+  color: #155675;
+  cursor: pointer;
+  margin-right: 1.3em;
+}
+.headerRow .title, .headerRow .accountType {
   font: 100% Poppins, sans-serif;
+  color: #155675;
+}
+.headerRow .accountType {
+  color: #F4895F;
+  font-size: 1.2em;
+  font-weight: 300;
 }
 
 * {
@@ -10,39 +24,53 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 7680px) {
-  .title {
-    width: 100%;
-    height: 100%;
-    color: #393737;
-    font-weight: 800;
-  }
-  .title-back {
-    margin-left: 0.3em;
-  }
-  .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText {
-    white-space: nowrap;
-    width: 85%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .sectionDiv {
-    margin-top: 1em;
-  }
-  .divNav {
-    width: 100%;
-  }
+.menuBtn {
+  width: 9em;
+  padding: 0.5em;
+  background-color: white;
+  border: 2px solid #155675;
+  color: #155675;
+  font-size: 1.1em;
+  font-weight: 500;
 }
-@media screen and (min-width: 769px) and (max-width: 7680px) {
-  #wrapper {
+
+.active {
+  background-color: #155675;
+  color: white;
+}
+
+#families {
+  margin-right: 1em;
+}
+
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText {
+  white-space: nowrap;
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sectionDiv {
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 992px) and (max-width: 7680px) {
+  .mainContainer {
     padding-top: 1em;
   }
-  .content {
-    margin: 1.5em 4em 2em 10em;
-    padding-left: 1em;
+  .mainContainer .headerRow {
+    margin: 0 2.5em;
   }
-  .title {
-    font-size: 2.5em;
+  .mainContainer .headerRow .title {
+    font-size: 3em;
+    font-weight: 600;
+  }
+  .mainContainer .headerRow .accountType {
+    font-size: 1.2em;
+  }
+  .content {
+    width: 90%;
+    padding: 2em;
   }
   .eStatus {
     margin-top: 1em;
@@ -65,25 +93,33 @@ a {
     margin-top: 5em;
   }
 }
-@media screen and (max-width: 768px) {
-  #wrapper {
+@media screen and (max-width: 991px) {
+  .mainContainer {
     padding-top: 1em;
-    padding-left: 3em;
+  }
+  .mainContainer .headerRow {
+    margin: 0 1.5em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  .mainContainer .headerRow .accountType {
+    font-size: 1em;
   }
   .content {
-    margin: 0 0 0 0;
-    padding: 2.5em;
-  }
-  .content .title {
-    font-size: 2em;
+    width: 95%;
+    padding: 1em;
   }
   .content .backBtn {
     width: 1.5em;
     height: 1.5em;
   }
   .content .eStatus {
-    padding: 0;
     margin-top: 1em;
+  }
+  .content #educCard, .content #employCard {
+    margin: 0;
   }
   .content .markerText, .content .subTitle {
     font-size: 1.3em;
@@ -106,19 +142,19 @@ a {
     width: auto;
   }
 }
-@media screen and (max-width: 500px) {
-  #wrapper {
-    padding-left: 0;
+@media screen and (max-width: 767px) {
+  .mainContainer .headerRow {
+    margin: 0 0.3em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 2em;
+    font-weight: 600;
   }
   .content {
-    margin: 3em 0 0 0;
     padding: 1.5em;
   }
-  .content .title {
-    font-size: 1.5em;
-  }
   .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
-    font-size: 1em;
+    font-size: 1.2em;
   }
   .content .familiesBody, .content .overviewBody {
     margin: 1em;
@@ -151,13 +187,19 @@ a {
     margin: 0.3em;
   }
 }
-@media screen and (min-width: 10px) and (max-width: 300px) {
-  #wrapper {
-    padding-left: 0;
+@media screen and (min-width: 431px) and (max-width: 575px) {
+  .mainContainer .headerRow {
+    margin: 0;
+  }
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.8em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 2em;
+    font-weight: 600;
   }
   .content {
-    margin: 0.5em 0 0 0;
-    padding: 1.5em;
+    padding: 1em;
   }
   .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle {
     white-space: nowrap;
@@ -197,5 +239,32 @@ a {
   .indexContent .card .card-body .resetPassHead {
     font-size: 7em;
     padding-left: 0.5em;
+  }
+}
+@media screen and (max-width: 430px) {
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.5em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 1.95em;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 332px) {
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.5em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  .content {
+    padding: 0.5em;
+  }
+  .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
+    font-size: 1.2em;
+  }
+  .content .familiesBody, .content .overviewBody {
+    margin: 1em;
   }
 }/*# sourceMappingURL=mediaquery.css.map */

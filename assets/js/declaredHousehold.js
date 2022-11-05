@@ -1,16 +1,29 @@
 //for clicking Overview
 $(document).ready(function(){
     $('#families').on('click', function(){
-        $('.familiesBody').removeClass('d-none');
-        $('.overviewBody').addClass('d-none');
+        $('#familiesBody').removeClass('d-none');
+        $('#overviewBody').addClass('d-none');
+        $('#families').addClass('active');
+        $('#overview').removeClass('active');
     })
     
     
     $('#overview').on('click', function(){
-        $('.overviewBody').removeClass('d-none');
-        $('.familiesBody').addClass('d-none');
+        $('#overviewBody').removeClass('d-none');
+        $('#familiesBody').addClass('d-none');
+        $('#overview').addClass('active');
+        $('#families').removeClass('active');
+
     })
 })
+
+// $(document).ready(function(){
+//     if (!$('.menuBtn').hasClass("active")){
+//         $('.menuBtn').hover(function(){
+//             $(this).css("background-color", "#DAF3FF")
+//         })
+//     }
+// })
 
 
 $(document).ready(function(){

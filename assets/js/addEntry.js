@@ -15,7 +15,7 @@ $(document).ready(function(){
     
 });
 
-//JS Library for remarks
+//JS Library for DISABILITY
 VirtualSelect.init({
     ele: '#disabilitySelect',
     disableSelectAll: true
@@ -72,6 +72,8 @@ $(document).ready(function(){
 VirtualSelect.init({
     ele: '#remarkDrop',
     hideClearButton: true,
+    disableSelectAll: true,
+    selectedValue: 1
 });
 
 // ------------------- FUNCTIONS ------------------- //
@@ -106,6 +108,8 @@ var educRadioClick = function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
     });
+
+    $('#employCheck').prop('checked', false);
 
     $('#markerEduc').css("background-color", "#219EBC");
     $('.educFieldLabel').css("color", "#909090");
@@ -145,6 +149,8 @@ var employRadioClick = function(){
         $(this).prop('disabled', false);
         $(this).attr("required", "required");
     });
+
+    $('#educCheck').prop('checked', false);
 
     $('#markerEmploy').css("background-color", "#219EBC");
     $('.employFieldLabel').css("color", "#909090");
