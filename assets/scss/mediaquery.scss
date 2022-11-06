@@ -9,15 +9,27 @@ $dark-blue: #155675;
 $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
+$tomato-orange: #F57441;
 $fade-orange: #F4895F;
 
 //All pages
+html {
+    padding: 0;
+    background-color: rgba(178, 200, 214, 0.25);
+}
+
+header {
+    background-color: rgba(178, 200, 214, 0.25);
+    margin: 0;
+}
+
 .headerRow {
-    margin: 0 1em;
+    margin: 2em 4em 1em 4em;
     #hamburger {
         color: $dark-blue;
         cursor: pointer;
         margin-right: 1.3em;
+        font-size: 2.5em;
     }
 
     .title, .accountType {
@@ -57,6 +69,7 @@ a {
     color: white;
 }
 
+//Decclared Households
 #families {
     margin-right: 1em;
 }
@@ -74,14 +87,79 @@ a {
     margin-top: 1em;
 }
 
+//Pages with Output Tables
+#showRow {
+    width: 5em;
+}
+
+.outputBtn {
+    max-width: 100%;
+    border: none;
+    background-color: $tomato-orange;
+    color: white;
+}
+
+.outputBtn:hover, .outputBtn:focus {
+    background-color: #f0571f;
+    color: white;
+}
+
+.btn-secondary:focus {
+    font-weight: 500;
+}
+//Data Table controller
+.paginate_button {
+    margin: 0.5em;
+}
+
+//Pages with search
+.searchElement {
+    width: 100%;
+    .searchInput {
+        max-width: 100%;
+        border-radius: 6px 0 0 6px;
+    }
+    .searchBtn {
+        border-radius: 0 6px 6px 0 ;
+        // width: 100%;
+        // height: 100%;
+        padding:auto;
+        background: $dark-blue;
+        
+        
+        .fa-magnifying-glass{
+            margin: 0.25em auto;
+            color: white;
+        }
+    }
+}
+
+#remarkDrop, #disabilitySelect, #filtering{   
+    max-width: 100%;
+}
+
+.vscomp-ele-wrapper{
+    margin-top: 0;
+
+    .vscomp-toggle-button{
+        color: $text;
+        width: 100%;
+        border: 1.5px solid #D1D3E2;
+        border-radius: 6px;
+        box-shadow: none;
+    }
+}
+
+.headTitle {
+    background-color: $mid-blue;
+    color: white;   
+}
 
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
      //All pages
     .mainContainer {
-        padding-top: 1em;
-
         .headerRow {
-            margin: 0 2.5em;
+            // margin: 0 2.5em;
         
             .title {
                 font-size: 3em;
@@ -133,13 +211,11 @@ a {
 @media screen and (max-width: 991px) { // MD
     //All pages
     .mainContainer {
-        padding-top: 1em;
-
         .headerRow {
-            margin: 0 1.5em;
+            margin: 2em 3em 1em 3em;
         
             .title {
-                font-size: 2em;
+                font-size: 2.5em;
                 font-weight: 600;
             }
         
@@ -150,7 +226,7 @@ a {
     }
 
     .content{
-        width: 95%;
+        width: 90%;
         padding: 1em;
         //Update
         .backBtn {
@@ -202,18 +278,18 @@ a {
 
 @media screen and (max-width: 767px) {          //SM
     .mainContainer {
-        
         .headerRow {
-            margin: 0 0.3em;
+            margin: 2em 2em 1em 2em;
         
             .title {
-                font-size: 2em;
+                font-size: 2.3em;
                 font-weight: 600;
             }
         }
     }
 
     .content{
+        width: 95%;
         padding: 1.5em;
 
         //Add, Update, KKID
@@ -275,14 +351,14 @@ a {
     //All pages
     .mainContainer {
         .headerRow {
-            margin: 0;
-
+            margin: 2em 1.5em 1em 1.5em;
+            
             #hamburger {
                 margin-right: 0.8em;
             }
 
             .title {
-                font-size: 2em;
+                font-size: 2.2em;
                 font-weight: 600;
             }
         }
@@ -348,9 +424,12 @@ a {
 @media screen and (max-width: 430px) {
     //All pages
     .mainContainer {
-        .headerRow {      
+        .headerRow {    
+            margin: 1em 0.5em;
+
             #hamburger {
                 margin-right: 0.5em;
+                font-size: 2em;
             }
 
             .title {
@@ -364,9 +443,11 @@ a {
 @media screen and (max-width: 332px) {
     //All pages
     .mainContainer {
-        .headerRow {      
+        .headerRow {
+            margin: 1em 0.5em;
+
             #hamburger {
-                margin-right: 0.5em;
+                font-size: 1.5em;
             }
 
             .title {
@@ -382,6 +463,31 @@ a {
         //Add, Update, KKID
         .markerText, .subTitle, .categoryCheck, .menuTitle{
             font-size: 1.2em;
+        }
+
+        //Declared households
+        .familiesBody, .overviewBody {
+            margin: 1em;
+        }
+        
+    }  
+}
+
+@media screen and (max-width:280px){
+    .content{
+       .card {
+        padding: 0.5em 0.4em;
+       }
+
+       //Add
+       .statusCheck{
+        margin-left: 0.5em;
+       }
+
+        //Add, Update, KKID
+        .markerText, .subTitle, .categoryCheck, .menuTitle{
+            margin-left: 0.6em;
+            font-size: 1.1em;
         }
 
         //Declared households

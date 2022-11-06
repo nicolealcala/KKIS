@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
     
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
      
 
@@ -179,10 +180,10 @@
                     </div>
                 </div>
                 <!-- Table -->
-                <div class="kabataanTable">
+                <div class="printTable">
                     <div class="row dataTable gx-4">
                         <div class="col-12">
-                            <table id="example" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
+                            <table id="kabataanTbl" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
                                 <thead class="tableKabataan">
                                     <tr>
                                         <th></th>
@@ -230,7 +231,7 @@
                 <div class="residentTable d-none">
                     <div class="row dataTable gx-4">
                         <div class="col-12">
-                            <table id="example1" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
+                            <table id="residentTbl" class="table table-striped table-bordered display responsive nowrap" cellspacing="0" width="100%">
                                 <thead class="tableResident">
                                     <tr>
                                         <th></th>

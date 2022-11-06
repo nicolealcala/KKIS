@@ -12,6 +12,9 @@
   width: 100%;
   height: 100%;
 }
+.content .card {
+  padding: 1em;
+}
 .content #educCard {
   margin-right: 0.5em;
 }
@@ -48,19 +51,14 @@
 .markerText {
   color: white;
   font-size: 1.3em;
+  margin-left: 0.7em;
 }
 
 .statusCheck {
   width: 20px;
   height: 20px;
   border: none;
-}
-
-.remarkDiv, .disabilityDiv {
-  width: 100%;
-}
-.remarkDiv #remarkDrop, .remarkDiv #disabilitySelect, .disabilityDiv #remarkDrop, .disabilityDiv #disabilitySelect {
-  max-width: 100%;
+  margin-left: 0.7em;
 }
 
 .vscomp-ele-wrapper {

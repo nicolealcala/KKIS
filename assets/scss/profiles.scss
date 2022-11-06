@@ -73,28 +73,6 @@ $text: #393737;
     display: flex;
     justify-content: end;
     align-items: center;
-
-    
-    .searchElement {
-        width: 100%;
-        .searchInput {
-            max-width: 100%;
-            border-radius: 6px 0 0 6px;
-        }
-        .searchBtn {
-            border-radius: 0 6px 6px 0 ;
-            // width: 100%;
-            // height: 100%;
-            padding:auto;
-            background: $dark-blue;
-            
-            
-            .fa-magnifying-glass{
-                margin: 0.25em auto;
-                color: white;
-            }
-        }
-    }
 }
 
 .dataTable {

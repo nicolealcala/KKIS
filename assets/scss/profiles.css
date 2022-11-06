@@ -59,22 +59,6 @@
   justify-content: end;
   align-items: center;
 }
-.sortSearch .searchElement {
-  width: 100%;
-}
-.sortSearch .searchElement .searchInput {
-  max-width: 100%;
-  border-radius: 6px 0 0 6px;
-}
-.sortSearch .searchElement .searchBtn {
-  border-radius: 0 6px 6px 0;
-  padding: auto;
-  background: #04496A;
-}
-.sortSearch .searchElement .searchBtn .fa-magnifying-glass {
-  margin: 0.25em auto;
-  color: white;
-}
 
 .dataTable {
   margin: 0;

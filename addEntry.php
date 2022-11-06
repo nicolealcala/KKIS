@@ -66,31 +66,30 @@
     </div> -->
 
     <div class="mainContainer d-block">
-        <header class="d-flex justify-content-center">
-            <div class="container-fluid justify-content-center align-items-center mt-2">
+        <header>
+            <!-- <div class="container-fluid mt-4 mb-3 w-100"> -->
                 <div class="row headerRow">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
                         <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
                         <span class="title">Add New Entry</span>
                     </div>
-                    <div class="col-lg-6 col-md-6 d-none d-md-flex justify-content-md-end align-items-md-center">
+                    <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
                         <span class="accountType">Super Admin Account</span>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
+            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
         </header>
-        <div class="hrImg">
-            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100">
-        </div>
+        
         
         <div class="container-fluid content">
             <div class="sectionDiv">
-                <form method="post" id="addForm">
+                <form method="post" id="addForm" class="mb-5">
                     <!-- Personal Info -->
-                    <div class="card p-3 mt-4">
+                    <div class="card mt-4">
                         <div class="row m-0">
                             <div class="col col-12 p-0">
-                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-2" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
+                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-2" id="markerPersonal"><span class="markerText">Personal Information</span></div>
                             </div>
                         </div>
                         <div class="row m-0 my-3 gy-3 gx-3">
@@ -213,7 +212,7 @@
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="card p-3" id="educCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
-                                    <input type="radio" id="educCheck" class="statusCheck ms-3" name="educInfo" checked="">
+                                    <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked="">
                                     <span class="markerText ms-2">Educational Status</span>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
@@ -336,7 +335,7 @@
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="card p-3" id="employCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEmploy">
-                                    <input type="radio" id="employCheck" class="statusCheck ms-3" name="employInfo">
+                                    <input type="radio" id="employCheck" class="statusCheck" name="employInfo">
                                     <span class="markerText ms-2">Employment Status</span>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
@@ -455,7 +454,7 @@
                         <div class="row m-0">
                             <div class="col col-12 p-0">
                                 <div class="d-flex align-items-center markerDiv rounded-2">
-                                    <span class="markerText ms-3">House Declaration</span>
+                                    <span class="markerText">House Declaration</span>
                                 </div>
                             </div>
                         </div>

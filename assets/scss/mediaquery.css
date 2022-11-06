@@ -1,10 +1,21 @@
+html {
+  padding: 0;
+  background-color: rgba(178, 200, 214, 0.25);
+}
+
+header {
+  background-color: rgba(178, 200, 214, 0.25);
+  margin: 0;
+}
+
 .headerRow {
-  margin: 0 1em;
+  margin: 2em 4em 1em 4em;
 }
 .headerRow #hamburger {
   color: #155675;
   cursor: pointer;
   margin-right: 1.3em;
+  font-size: 2.5em;
 }
 .headerRow .title, .headerRow .accountType {
   font: 100% Poppins, sans-serif;
@@ -54,13 +65,68 @@ a {
   margin-top: 1em;
 }
 
+#showRow {
+  width: 5em;
+}
+
+.outputBtn {
+  max-width: 100%;
+  border: none;
+  background-color: #F57441;
+  color: white;
+}
+
+.outputBtn:hover, .outputBtn:focus {
+  background-color: #f0571f;
+  color: white;
+}
+
+.btn-secondary:focus {
+  font-weight: 500;
+}
+
+.paginate_button {
+  margin: 0.5em;
+}
+
+.searchElement {
+  width: 100%;
+}
+.searchElement .searchInput {
+  max-width: 100%;
+  border-radius: 6px 0 0 6px;
+}
+.searchElement .searchBtn {
+  border-radius: 0 6px 6px 0;
+  padding: auto;
+  background: #155675;
+}
+.searchElement .searchBtn .fa-magnifying-glass {
+  margin: 0.25em auto;
+  color: white;
+}
+
+#remarkDrop, #disabilitySelect, #filtering {
+  max-width: 100%;
+}
+
+.vscomp-ele-wrapper {
+  margin-top: 0;
+}
+.vscomp-ele-wrapper .vscomp-toggle-button {
+  color: #393737;
+  width: 100%;
+  border: 1.5px solid #D1D3E2;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.headTitle {
+  background-color: #219EBC;
+  color: white;
+}
+
 @media screen and (min-width: 992px) and (max-width: 7680px) {
-  .mainContainer {
-    padding-top: 1em;
-  }
-  .mainContainer .headerRow {
-    margin: 0 2.5em;
-  }
   .mainContainer .headerRow .title {
     font-size: 3em;
     font-weight: 600;
@@ -94,21 +160,18 @@ a {
   }
 }
 @media screen and (max-width: 991px) {
-  .mainContainer {
-    padding-top: 1em;
-  }
   .mainContainer .headerRow {
-    margin: 0 1.5em;
+    margin: 2em 3em 1em 3em;
   }
   .mainContainer .headerRow .title {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 600;
   }
   .mainContainer .headerRow .accountType {
     font-size: 1em;
   }
   .content {
-    width: 95%;
+    width: 90%;
     padding: 1em;
   }
   .content .backBtn {
@@ -144,13 +207,14 @@ a {
 }
 @media screen and (max-width: 767px) {
   .mainContainer .headerRow {
-    margin: 0 0.3em;
+    margin: 2em 2em 1em 2em;
   }
   .mainContainer .headerRow .title {
-    font-size: 2em;
+    font-size: 2.3em;
     font-weight: 600;
   }
   .content {
+    width: 95%;
     padding: 1.5em;
   }
   .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
@@ -189,13 +253,13 @@ a {
 }
 @media screen and (min-width: 431px) and (max-width: 575px) {
   .mainContainer .headerRow {
-    margin: 0;
+    margin: 2em 1.5em 1em 1.5em;
   }
   .mainContainer .headerRow #hamburger {
     margin-right: 0.8em;
   }
   .mainContainer .headerRow .title {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 600;
   }
   .content {
@@ -242,8 +306,12 @@ a {
   }
 }
 @media screen and (max-width: 430px) {
+  .mainContainer .headerRow {
+    margin: 1em 0.5em;
+  }
   .mainContainer .headerRow #hamburger {
     margin-right: 0.5em;
+    font-size: 2em;
   }
   .mainContainer .headerRow .title {
     font-size: 1.95em;
@@ -251,8 +319,11 @@ a {
   }
 }
 @media screen and (max-width: 332px) {
+  .mainContainer .headerRow {
+    margin: 1em 0.5em;
+  }
   .mainContainer .headerRow #hamburger {
-    margin-right: 0.5em;
+    font-size: 1.5em;
   }
   .mainContainer .headerRow .title {
     font-size: 1.3em;
@@ -263,6 +334,21 @@ a {
   }
   .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
     font-size: 1.2em;
+  }
+  .content .familiesBody, .content .overviewBody {
+    margin: 1em;
+  }
+}
+@media screen and (max-width: 280px) {
+  .content .card {
+    padding: 0.5em 0.4em;
+  }
+  .content .statusCheck {
+    margin-left: 0.5em;
+  }
+  .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
+    margin-left: 0.6em;
+    font-size: 1.1em;
   }
   .content .familiesBody, .content .overviewBody {
     margin: 1em;

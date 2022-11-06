@@ -17,14 +17,42 @@ $(document).ready(function(){
     })
 })
 
-// $(document).ready(function(){
-//     if (!$('.menuBtn').hasClass("active")){
-//         $('.menuBtn').hover(function(){
-//             $(this).css("background-color", "#DAF3FF")
-//         })
-//     }
-// })
+//For printing table
+$(document).ready(function(){
+    $('#print').click(function(){   
+       var tablePrint = document.getElementById('familiesBody');
+       var dialog = window.open();
+       dialog.document.write(tablePrint.outerHTML);
+    //    dialog.focus();
+       dialog.print();
+       dialog.close()
+    })
+})
 
+//For HTML to PDF
+$(document).ready(function(){
+    // $('#pdf').click(function(){
+    //     var exportPDF = document.getElementById('familiesBody');
+    //     // html2pdf().from(exportPDF).save('Households.pdf');
+
+    //     var opt = {
+    //         margin:       0.5,
+    //         filename:     'Households.pdf',
+    //         image:        { type: 'svg', quality: 0.1 },
+    //         jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+    //       };
+          
+    //       // New Promise-based usage:
+    //       html2pdf().set(opt).from(exportPDF).save();
+    // })
+})
+
+//JS Library for Filter remarks
+VirtualSelect.init({
+    ele: '#filtering',
+    hideClearButton: true,
+    disableSelectAll: true,
+});
 
 $(document).ready(function(){
     const ctx = $('#overviewChart');

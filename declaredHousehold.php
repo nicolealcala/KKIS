@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="assets/css/declaredHousehold.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
+    <!-- Virtual Select JS library -->
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
+
     <!-- navAddUpdate CSS -->
     <!-- <link rel="stylesheet" href="assets/css/navDecHouse.css"> -->
 
@@ -33,222 +36,131 @@
     </div> -->
     
     <div class="mainContainer d-block">
-         <header class="d-flex justify-content-center">
-            <div class="container-fluid justify-content-center align-items-center mt-2">
-                <div class="row headerRow">
-                    <div class="col-lg-6 col-md-8 col-sm-12 col-12 d-flex align-items-center">
-                        <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                        <span class="title">Households</span>
-                    </div>
-                    <div class="col-lg-6 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
-                        <span class="accountType">Super Admin Account</span>
-                    </div>
+        <header>
+            <div class="row headerRow">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
+                    <span class="title">Declared Households</span>
+                </div>
+                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
+                    <span class="accountType">Super Admin Account</span>
                 </div>
             </div>
+            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
         </header>
-        <div class="hrImg">
-            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100">
-        </div>
+
+        <!-- BODY START -->
         <div class="container-fluid content">
+            <!-- Menu Buttons -->
             <div class="row d-flex justify-content-end align-ittems-center m-0">
                 <button class="menuBtn rounded-pill active" id="families">Families</button>
                 <button class="menuBtn rounded-pill" id="overview">Overview</button>
             </div>
-            <div class="sectionDiv" id="familiesBody">
-                <div class="accordion" role="tablist" id="accordion-dh">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-1" aria-expanded="false" aria-controls="accordion-dh .item-1">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start accSubText" colspan="2">Members</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-2" aria-expanded="false" aria-controls="accordion-dh .item-2">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-3" aria-expanded="false" aria-controls="accordion-dh .item-3">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-4" aria-expanded="false" aria-controls="accordion-dh .item-4">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-4" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-5" aria-expanded="false" aria-controls="accordion-dh .item-5">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-5" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-6" aria-expanded="false" aria-controls="accordion-dh .item-6">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-6" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-7" aria-expanded="false" aria-controls="accordion-dh .item-7">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-7" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-dh .item-8" aria-expanded="false" aria-controls="accordion-dh .item-8">Family Head</button></h2>
-                        <div class="accordion-collapse collapse item-8" role="tabpanel" data-bs-parent="#accordion-dh">
-                            <div class="accordion-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-start" colspan="2">Column 1</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-start" colspan="2">Cell 1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Cell 3</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Options Row -->
+            <div class="row gx-5 mx-0 mt-4">
+                <!-- Show No. of Rows -->
+                <div class="col-12 d-flex align-items-center my-1 p-0">
+                    <span>Show</span>
+                    <select class="form-select mx-2" name="rows" id="showRow">
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="All">All</option>
+                    </select>
+                    <span>entries</span>
+                </div>
+                <!-- Output Buttons -->
+                <div class="col-lg-5 col-md-4 col-sm-6 col-12 p-0">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn outputBtn">Copy</button>
+                        <button type="button" class="btn outputBtn">CSV</button>
+                        <button type="button" class="btn outputBtn">Excel</button>
+                        <button type="button" class="btn outputBtn" id="pdf">PDF</button>
+                        <button type="button" class="btn outputBtn" id="print">Print</button>
                     </div>
                 </div>
+                <div class="col-1"></div>
+                <!-- Filter -->
+                <div class="d-flex align-items-center col-lg-3 col-md-4 col-sm-6 col-12">
+                    <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering">
+                        <optgroup label="Members">
+                            <option value="Less than 5">Less than 5</option>
+                            <option value="5 to 10">5 to 10</option>
+                            <option value="11 to 15">11 to 15</option>
+                            <option value="16 to 20">16 to 20</option>
+                            <option value="More than 20">More than 20</option>
+                        </optgroup>
+                        <optgroup label="Remarks">
+                            <option value="Purok Leader">Purok Leader</option>
+                            <option value="SK Scholar">SK Scholar</option>
+                            <option value="Solo Living">Solo Living</option>
+                            <option value="Solo Parent">Solo Parent</option>
+                            <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
+                        </optgroup>
+                    </select>
+                </div>
+                <!-- Search -->
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0">
+                    <div class="searchElement d-flex justify-content-center align-items-center">
+                        <input class="form-control searchInput" type="text" placeholder="Search">
+                        <button class="btn searchBtn" type="button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Table -->
+            <div class="sectionDiv mt-3" id="familiesBody">
+                <table class="table table-striped table-bordered display responsive nowrap printTable" cellspacing="0" width="100%" id="familiesTbl">
+                    <thead class="headTitle">
+                        <tr>
+                            <th>Household ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Birthday</th>
+                            <th>Purok</th>
+                            <th>Members</th>
+                            <th>Remarks</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>1234</td>
+                            <td>Nicole Alcala</td>
+                            <td>21</td>
+                            <td>02/19/2001</td>
+                            <td>Pulong Kendi</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    
+
+                    <?php
+                        // while ($row = mysqli_fetch_array($result)) {
+                        //     echo '
+                        //     <tr>
+                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                        //         <td>' . $row["lastName"] . '</td>
+                        //         <td>' . $row["firstName"] . '</td>
+                        //         <td>' . $row["middleName"] . '</td>
+                        //         <td>' . $row["suffix"] . '</td>
+                        //         <td>' . $row["birthDate"] . '</td>
+                        //         <td>' . $row["age"] . '</td>
+                        //         <td>' . $row["gender"] . '</td>
+                        //         <td>' . $row["civilStatus"] . '</td>
+                        //         <td>' . $row["purok"] . '</td>
+                        //         <td align="center">
+                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
+                        //         </td>
+                        //     </tr>
+                        //     ';
+                        // }
+                    ?>
+                </table>
             </div>
             <div class="sectionDiv d-none m-3" id="overviewBody">
                 <div class="overviewDiv" style="position:relative; height:75vh; width:80vw">
@@ -267,6 +179,9 @@
 
     <!-- Chart JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- Virtual Select JS -->
+    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Custom Script -->
     <script src="assets/js/declaredHousehold.js"></script>
