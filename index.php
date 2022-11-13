@@ -14,8 +14,9 @@
     $contactNumber = $_POST['contactNumber'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$password."')";
+    $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$hash."')";
     if(executeQuery($query)){
       header('Location: index.php');
     }
@@ -28,6 +29,7 @@
   if(isset($_POST['loginBtn'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    //$hash = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."' AND password = '".$password."'";
     $accounts = executeQuery($query);
