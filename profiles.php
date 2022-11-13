@@ -200,6 +200,61 @@
                                     </tr>
                                 </thead>
 
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Middle name</th>
+                                        <th>Suffix</th>
+                                        <th>Birthdate</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Civil status</th>
+                                        <th>Purok</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Middle name</th>
+                                        <th>Suffix</th>
+                                        <th>Birthdate</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Civil status</th>
+                                        <th>Purok</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Middle name</th>
+                                        <th>Suffix</th>
+                                        <th>Birthdate</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Civil status</th>
+                                        <th>Purok</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Middle name</th>
+                                        <th>Suffix</th>
+                                        <th>Birthdate</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>Civil status</th>
+                                        <th>Purok</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tbody>
+
                             <?php
                             //     while ($row = mysqli_fetch_array($result)) {
                             //     echo '

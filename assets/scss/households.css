@@ -7,8 +7,8 @@
 }
 
 #overviewBody .overviewDiv #overviewChart {
-  max-height: 1em;
-  max-width: 1em;
+  max-height: 90vh;
+  max-width: 1000vw;
 }
 
 .content::-webkit-scrollbar {
@@ -24,4 +24,4 @@
   border-radius: 20px; /* roundness of the scroll thumb */
   border: 3px solid #c9c9c9; /* creates padding around scroll thumb */
   z-index: -60;
-}/*# sourceMappingURL=declaredHousehold.css.map */
+}/*# sourceMappingURL=households.css.map */

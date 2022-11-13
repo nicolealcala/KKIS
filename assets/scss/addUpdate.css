@@ -14,6 +14,7 @@
 }
 .content .card {
   padding: 1em;
+  box-shadow: 0 3px 5px #e3e3e3;
 }
 .content #educCard {
   margin-right: 0.5em;

@@ -65,10 +65,6 @@ a {
   margin-top: 1em;
 }
 
-#showRow {
-  width: 5em;
-}
-
 .outputBtn {
   max-width: 100%;
   border: none;
@@ -81,12 +77,8 @@ a {
   color: white;
 }
 
-.btn-secondary:focus {
+.outputBtn:focus {
   font-weight: 500;
-}
-
-.paginate_button {
-  margin: 0.5em;
 }
 
 .searchElement {
@@ -95,15 +87,6 @@ a {
 .searchElement .searchInput {
   max-width: 100%;
   border-radius: 6px 0 0 6px;
-}
-.searchElement .searchBtn {
-  border-radius: 0 6px 6px 0;
-  padding: auto;
-  background: #155675;
-}
-.searchElement .searchBtn .fa-magnifying-glass {
-  margin: 0.25em auto;
-  color: white;
 }
 
 #remarkDrop, #disabilitySelect, #filtering {
@@ -124,6 +107,7 @@ a {
 .headTitle {
   background-color: #219EBC;
   color: white;
+  justify-content: start;
 }
 
 @media screen and (min-width: 992px) and (max-width: 7680px) {
@@ -220,7 +204,7 @@ a {
   .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
     font-size: 1.2em;
   }
-  .content .familiesBody, .content .overviewBody {
+  .content #familiesBody, .content #overviewBody {
     margin: 1em;
   }
   .kkidBody .categoryCol .categoryDiv {
