@@ -38,19 +38,22 @@ $(document).ready(function(){
     })
     
 })
-var filled = 0;
+
 //For disabling CUSTOM in KKID
 $(document).ready(function(){
     $('#checkCustom').on('change', function(){
         if ($(this).is(':checked')){
-            $('.customDiv').removeClass('d-none');
             $('.checkboxCategory').not(this).prop('checked', false); 
             $('.checkboxCategory').not(this).prop('disabled', true);
-            control();
+            $('.userInput').each(function(){
+                $(this).prop('disabled', false)
+            })
+            controlEnabled();
         } else {
-            $('.customDiv').addClass('d-none');
             $('.checkboxCategory').not(this).prop('disabled', false); 
-            // controlBtnState();
+            $('.userInput').each(function(){
+                $(this).prop('disabled', true)
+            })
             $('#submitBtn').prop('disabled', true);
             $('#clearBtn').prop('disabled', true);
         }
@@ -70,7 +73,7 @@ $(document).ready(function(){
 })
 
 //fxn for control btns
-var control = function() {
+var controlEnabled = function() {
     $(':text').on('input', function() {
         if( $(':text').filter(function() { return !!this.value; }).length > 0 ) {
             $('#submitBtn').prop('disabled', false);

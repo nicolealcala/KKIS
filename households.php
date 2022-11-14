@@ -23,9 +23,9 @@
     <!-- <link rel="stylesheet" href="assets/css/navDecHouse.css"> -->
 
     <!-- DATA TABLES CDN -->
-    <link rel="stylesheet" href="assets/css/datatables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css"> -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -45,10 +45,10 @@
             <div class="row headerRow">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
                     <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                    <span class="title">Declared Households</span>
+                    <span class="title longTitle">Declared Households</span>
                 </div>
                 <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
-                    <span class="accountType">Super Admin Account</span>
+                    <span class="accountType d-flex justify-content-end">Super Admin Account</span>
                 </div>
             </div>
             <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
@@ -67,7 +67,7 @@
                 <!-- Options Row -->
                 <div class="row gx-5 m-0 mb-1">
                     <!-- Show No. of Rows -->
-                    <div class="col-12 d-flex align-items-center my-1 p-0">
+                    <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0">
                         <span>Show</span>
                         <select class="form-select mx-2 w-auto" name="rows" id="showRow">
                             <option value="10" selected>10</option>
@@ -79,7 +79,7 @@
                         <span>entries</span>
                     </div>
                     <!-- Output Buttons -->
-                    <div class="col-lg-5 col-md-4 col-sm-6 col-12 p-0">
+                    <div class="d-none col-lg-5 d-lg-flex justify-content-lg-start p-0">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn outputBtn" id="copy">Copy</button>
                             <button type="button" class="btn outputBtn" id="csv">CSV</button>
@@ -88,9 +88,9 @@
                             <button type="button" class="btn outputBtn" id="print">Print</button>
                         </div>
                     </div>
-                    <div class="col-3"></div>
+                    <div class="col-lg-3 d-none d-lg-flex"></div>
                     <!-- Filter -->
-                    <div class="d-flex align-items-center col-lg-2 col-md-4 col-sm-6 col-12">
+                    <div class="d-md-flex align-items-center col-lg-2 col-md-4 d-none">
                         <select class="selectpicker" multiple name="filter" data-live-search="true" title="Filter" placeholder="Filter" id="filtering">
                             <optgroup label="Members">
                                 <option value="Less than 5">Less than 5</option>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <!-- Table start   -->
-                <table class="table table-striped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="familiesTbl" style="width:100%">
+                <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="familiesTbl" style="width:100%">
                     <thead class="headTitle">
                         <tr>
                             <th>ID</th>
@@ -130,13 +130,67 @@
                     </thead>
                     <tbody> 
                         <tr>
-                            <td>1234</td>
-                            <td>Nicole Alcala</td>
+                            <td class="entryRow" scope="col" data-label="ID">1234</td>
+                            <td class="entryRow" scope="col" data-label="Name">Nicole Alcala</td>
+                            <td class="entryRow" scope="col" data-label="Age">21</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">02/19/2001</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Pulong Kendi</td>
+                            <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">SK Scholar</td>
+                        </tr>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="ID">1235</td>
+                            <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
+                            <td class="entryRow" scope="col" data-label="Age">21</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
+                            <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="ID">1236</td>
+                            <td class="entryRow" scope="col" data-label="Name">Michael John Palalimpa</td>
+                            <td class="entryRow" scope="col" data-label="Age">22</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">08/11/2000</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Family Village</td>
+                            <td class="entryRow" scope="col" data-label="Members">5 to 10</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="ID">1237</td>
+                            <td class="entryRow" scope="col" data-label="Name">John Marc Morano</td>
+                            <td class="entryRow" scope="col" data-label="Age">21</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">10/07/2001</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Looban</td>
+                            <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">Solo Parent</td>
+                        </tr>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="ID">1235</td>
+                            <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
+                            <td class="entryRow" scope="col" data-label="Age">21</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
+                            <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="ID">1235</td>
+                            <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
+                            <td class="entryRow" scope="col" data-label="Age">21</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
+                            <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
+                        </tr>
+                        <!-- <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
                             <td>21</td>
-                            <td>02/19/2001</td>
-                            <td>Pulong Kendi</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
                             <td>Less than 5</td>
-                            <td>SK Scholar</td>
+                            <td>Purok Leader</td>
                         </tr>
                         <tr>
                             <td>1235</td>
@@ -148,23 +202,230 @@
                             <td>Purok Leader</td>
                         </tr>
                         <tr>
-                            <td>1236</td>
-                            <td>Michael John Palalimpa</td>
-                            <td>22</td>
-                            <td>08/11/2000</td>
-                            <td>Family Village</td>
-                            <td>5 to 10</td>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
                             <td>Purok Leader</td>
                         </tr>
                         <tr>
-                            <td>1237</td>
-                            <td>John Marc Morano</td>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
                             <td>21</td>
-                            <td>10/07/2001</td>
-                            <td>Looban</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
                             <td>Less than 5</td>
-                            <td>Solo Parent</td>
-                        </tr>   
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr>
+                        <tr>
+                            <td>1235</td>
+                            <td>Patricia Mae Abrigo</td>
+                            <td>21</td>
+                            <td>04/07/2001</td>
+                            <td>Cardinal</td>
+                            <td>Less than 5</td>
+                            <td>Purok Leader</td>
+                        </tr> -->
                     </tbody>
                     
 
@@ -200,12 +461,10 @@
     </div>
    
 
-    <!-- JQruery -->
+    <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    
-    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- Chart JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
@@ -213,11 +472,15 @@
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Data tables -->
-    <script src="assets/js/datatables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
     <!-- PrintJS -->
     <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
 
     <!-- Custom Script -->
     <script src="assets/js/households.js"></script>

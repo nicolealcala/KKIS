@@ -3,6 +3,10 @@ html {
   background-color: rgba(178, 200, 214, 0.25);
 }
 
+body {
+  height: 100%;
+}
+
 header {
   background-color: rgba(178, 200, 214, 0.25);
   margin: 0;
@@ -18,6 +22,7 @@ header {
   font-size: 2.5em;
 }
 .headerRow .title, .headerRow .accountType {
+  width: auto;
   font: 100% Poppins, sans-serif;
   color: #155675;
 }
@@ -25,6 +30,17 @@ header {
   color: #F4895F;
   font-size: 1.2em;
   font-weight: 300;
+}
+
+th {
+  font-size: 1.3em;
+}
+
+.entryRow {
+  font-size: 1.2em;
+  font-weight: normal;
+  padding: 0.2em;
+  color: #858796;
 }
 
 * {
@@ -36,8 +52,8 @@ a {
 }
 
 .menuBtn {
-  width: 9em;
-  padding: 0.5em;
+  width: auto;
+  padding: 0.3em 1em;
   background-color: white;
   border: 2px solid #155675;
   color: #155675;
@@ -54,7 +70,7 @@ a {
   margin-right: 1em;
 }
 
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText {
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle {
   white-space: nowrap;
   width: 85%;
   overflow: hidden;
@@ -110,6 +126,11 @@ a {
   justify-content: start;
 }
 
+.dataTables_paginate {
+  display: flex;
+  justify-content: end;
+}
+
 @media screen and (min-width: 992px) and (max-width: 7680px) {
   .mainContainer .headerRow .title {
     font-size: 3em;
@@ -126,30 +147,21 @@ a {
     margin-top: 1em;
     padding: 0;
   }
-  .eStatus #markerEduc, .eStatus #markerEmploy, .eStatus #markerEducUpdate, .eStatus #markerEmployUpdate {
-    width: 99%;
-  }
-  .eStatus #markerEmploy, .eStatus #markerEmployUpdate {
-    margin-left: 1%;
-  }
-  .eStatus .eForm {
-    width: 99%;
-  }
-  .backBtn {
-    width: 2.5em;
-    height: 2.5em;
-  }
-  .familiesBody, .overviewBody {
-    margin-top: 5em;
-  }
 }
 @media screen and (max-width: 991px) {
   .mainContainer .headerRow {
     margin: 2em 3em 1em 3em;
   }
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.8em;
+    font-size: 2.2em;
+  }
   .mainContainer .headerRow .title {
     font-size: 2.5em;
     font-weight: 600;
+  }
+  .mainContainer .headerRow .longTitle {
+    font-size: 1.9em;
   }
   .mainContainer .headerRow .accountType {
     font-size: 1em;
@@ -158,23 +170,23 @@ a {
     width: 90%;
     padding: 1em;
   }
-  .content .backBtn {
+  .backBtn {
     width: 1.5em;
     height: 1.5em;
   }
-  .content .eStatus {
+  .eStatus {
     margin-top: 1em;
   }
-  .content #educCard, .content #employCard {
+  #educCard, #employCard {
     margin: 0;
   }
-  .content .markerText, .content .subTitle {
+  .markerText, .subTitle {
     font-size: 1.3em;
   }
-  .content .category .texts .count {
+  .category .texts .count {
     font-size: 3em;
   }
-  .content .sortSearch {
+  .sortSearch {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,10 +213,13 @@ a {
     width: 95%;
     padding: 1.5em;
   }
-  .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
+  #scanBtn {
+    font-size: 1em;
+  }
+  .markerText, .subTitle, .menuTitle {
     font-size: 1.2em;
   }
-  .content #familiesBody, .content #overviewBody {
+  #familiesBody, #overviewBody {
     margin: 1em;
   }
   .kkidBody .categoryCol .categoryDiv {
@@ -218,6 +233,9 @@ a {
     margin-left: 1px;
   }
   .kkidBody .categoryCol .categoryOption {
+    width: 100%;
+  }
+  .kkidBody .categoryCol .customCategory {
     width: 100%;
   }
   .topBtnLbl {
@@ -295,11 +313,20 @@ a {
   }
   .mainContainer .headerRow #hamburger {
     margin-right: 0.5em;
-    font-size: 2em;
+    font-size: 1.8em;
   }
   .mainContainer .headerRow .title {
     font-size: 1.95em;
     font-weight: 600;
+  }
+  .mainContainer .headerRow .longTitle {
+    font-size: 1.5em;
+  }
+  .mainContainer #scanBtnTxt {
+    display: none;
+  }
+  .mainContainer #scanIcon {
+    display: flex;
   }
 }
 @media screen and (max-width: 332px) {
@@ -316,25 +343,25 @@ a {
   .content {
     padding: 0.5em;
   }
-  .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
+  .markerText, .subTitle, .menuTitle {
     font-size: 1.2em;
   }
-  .content .familiesBody, .content .overviewBody {
-    margin: 1em;
+  .checkAllDiv, .deleteDiv {
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 280px) {
-  .content .card {
-    padding: 0.5em 0.4em;
-  }
-  .content .statusCheck {
-    margin-left: 0.5em;
-  }
-  .content .markerText, .content .subTitle, .content .categoryCheck, .content .menuTitle {
-    margin-left: 0.6em;
+  .mainContainer .headerRow .longTitle {
     font-size: 1.1em;
   }
-  .content .familiesBody, .content .overviewBody {
-    margin: 1em;
+  .card {
+    padding: 0.5em 0.4em;
+  }
+  .statusCheck {
+    margin-left: 0.5em;
+  }
+  .markerText, .menuTitle {
+    margin-left: 0.6em;
+    font-size: 1.1em;
   }
 }/*# sourceMappingURL=mediaquery.css.map */

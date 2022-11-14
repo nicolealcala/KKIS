@@ -10,12 +10,16 @@ $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
 $tomato-orange: #F57441;
-$fade-orange: #F4895F;
+$fade-orange: #F4895F;  
 
 //All pages
 html {
     padding: 0;
     background-color: rgba(178, 200, 214, 0.25);
+}
+
+body {
+    height: 100%;
 }
 
 header {
@@ -33,6 +37,7 @@ header {
     }
 
     .title, .accountType {
+        width: auto;
         font: 100% $font-stack;
         color: $dark-blue;
     }
@@ -42,6 +47,17 @@ header {
         font-size: 1.2em;
         font-weight: 300;
     }
+}
+
+th {
+    font-size: 1.3em;
+}
+
+.entryRow {
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 0.2em;
+    color: #858796;
 }
 
 * {
@@ -54,8 +70,8 @@ a {
 
 //Pages with menu buttons
 .menuBtn {
-    width: 9em;
-    padding: 0.5em;
+    width: auto;
+    padding: 0.3em 1em;
     // height: 3em;
     background-color: white;
     border: 2px solid $dark-blue;
@@ -69,13 +85,13 @@ a {
     color: white;
 }
 
-//Decclared Households
+//Declared Households
 #families {
     margin-right: 1em;
 }
 
 //Add, Update, Declared Households, Transaction History, Dashboard, KKID
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .accordHead, .transactInfo, .subTitle, .btnText{
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle{
     white-space: nowrap; 
     width: 85%; 
     overflow: hidden;
@@ -160,6 +176,10 @@ a {
 // .paginate_button {
 //     margin: 0.5em;
 // }
+.dataTables_paginate {
+    display: flex;
+    justify-content: end;
+} 
 
 
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
@@ -188,42 +208,28 @@ a {
     .eStatus{
         margin-top: 1em;
         padding: 0;
-        //Add, Update
-        #markerEduc, #markerEmploy, #markerEducUpdate, #markerEmployUpdate {
-            width: 99%;
-        }
-        //Add, Update
-        #markerEmploy, #markerEmployUpdate {
-            margin-left: 1%;
-        }
-        //Add, Update
-        .eForm{
-            width: 99%;
-        }
-    }
-    
-    //Update Entry
-    .backBtn {
-        width: 2.5em;
-        height: 2.5em;
-    }
-    
-    //Declared Household
-    .familiesBody, .overviewBody {
-        margin-top: 5em;
     }
 }
 
 
-@media screen and (max-width: 991px) { // MD
+@media screen and (max-width: 991px) {          // MD
     //All pages
     .mainContainer {
         .headerRow {
             margin: 2em 3em 1em 3em;
+
+            #hamburger {
+                margin-right: 0.8em;
+                font-size: 2.2em;
+            }
         
             .title {
                 font-size: 2.5em;
                 font-weight: 600;
+            }
+
+            .longTitle {
+                font-size: 1.9em;
             }
         
             .accountType {
@@ -235,37 +241,38 @@ a {
     .content{
         width: 90%;
         padding: 1em;
-        //Update
-        .backBtn {
-            width: 1.5em;
-            height: 1.5em;
-        }
-        //Add, Update
-        .eStatus {
-            margin-top: 1em;
-        }
+    }
 
-        #educCard, #employCard {
-            margin: 0;
-        }
-        //Add, Update
-        .markerText, .subTitle{
-            font-size: 1.3em;
-        }
-        //Dashboard
-        .category {
-            .texts{
-                .count {
-                    font-size: 3em;
-                }
+    //Update
+    .backBtn {
+        width: 1.5em;
+        height: 1.5em;
+    }
+    //Add, Update
+    .eStatus {
+        margin-top: 1em;
+    }
+
+    #educCard, #employCard {
+        margin: 0;
+    }
+    //Add, Update
+    .markerText, .subTitle{
+        font-size: 1.3em;
+    }
+    //Dashboard
+    .category {
+        .texts{
+            .count {
+                font-size: 3em;
             }
         }
-        //KabataanProfile
-        .sortSearch {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    }
+    //KabataanProfile
+    .sortSearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     //Index
@@ -298,17 +305,22 @@ a {
     .content{
         width: 95%;
         padding: 1.5em;
-
-        //Add, Update, KKID
-        .markerText, .subTitle, .categoryCheck, .menuTitle{
-            font-size: 1.2em;
-        }
-
-        //Declared households
-        #familiesBody, #overviewBody {
-            margin: 1em;
-        }
     }  
+
+    #scanBtn {
+        font-size: 1em;
+    }
+
+    //Add, Update, KKID
+    .markerText, .subTitle, .menuTitle{
+        font-size: 1.2em;
+    }
+
+    //Declared households
+    #familiesBody, #overviewBody {
+        margin: 1em;
+    }
+
     //KKID 
     .kkidBody  {
         .categoryCol {
@@ -325,6 +337,9 @@ a {
                 }
             }
             .categoryOption {
+                width: 100%;
+            }
+            .customCategory {
                 width: 100%;
             }
         }
@@ -436,13 +451,25 @@ a {
 
             #hamburger {
                 margin-right: 0.5em;
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             .title {
                 font-size: 1.95em;
                 font-weight: 600;
             }
+
+            .longTitle {
+                font-size: 1.5em;
+            }
+        }
+
+        #scanBtnTxt {
+            display: none;
+        }
+
+        #scanIcon {
+            display: flex;
         }
     }
 }
@@ -465,42 +492,41 @@ a {
     }
 
     .content{
-        padding: 0.5em;
+        padding: 0.5em;      
+    }
 
-        //Add, Update, KKID
-        .markerText, .subTitle, .categoryCheck, .menuTitle{
-            font-size: 1.2em;
-        }
+    //Add, Update, KKID
+    .markerText, .subTitle, .menuTitle{
+        font-size: 1.2em;
+    }
 
-        //Declared households
-        .familiesBody, .overviewBody {
-            margin: 1em;
-        }
-        
-    }  
+    //Transaction History
+    .checkAllDiv, .deleteDiv {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width:280px){
-    .content{
-       .card {
+    .mainContainer {
+        .headerRow {
+            .longTitle {
+                font-size: 1.1em;
+            }
+        }
+    }
+    
+    .card {
         padding: 0.5em 0.4em;
-       }
+    }
 
-       //Add
-       .statusCheck{
-        margin-left: 0.5em;
-       }
+    //Add
+    .statusCheck{
+    margin-left: 0.5em;
+    }
 
-        //Add, Update, KKID
-        .markerText, .subTitle, .categoryCheck, .menuTitle{
-            margin-left: 0.6em;
-            font-size: 1.1em;
-        }
-
-        //Declared households
-        .familiesBody, .overviewBody {
-            margin: 1em;
-        }
-        
-    }  
+    //Add, Update, KKID
+    .markerText, .menuTitle{
+        margin-left: 0.6em;
+        font-size: 1.1em;
+    }
 }

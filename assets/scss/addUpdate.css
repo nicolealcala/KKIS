@@ -1,36 +1,42 @@
-.content .headContainer {
+.headContainer {
   width: 100%;
 }
-.content .headContainer .backBtn {
+.headContainer .backBtn {
   border: none;
   border-radius: 50%;
   background-color: #8ECAE6;
   padding: 0.2em;
 }
-.content .headContainer .backBtn .backIcon {
+.headContainer .backBtn .backIcon {
   color: white;
   width: 100%;
   height: 100%;
 }
-.content .card {
+
+.card {
   padding: 1em;
   box-shadow: 0 3px 5px #e3e3e3;
 }
-.content #educCard {
+
+#educCard {
   margin-right: 0.5em;
 }
-.content #employCard {
+
+#employCard {
   margin-left: 0.5em;
 }
-.content .fieldLabel, .content .educFieldLabel, .content .employFieldLabel {
+
+.fieldLabel, .educFieldLabel, .employFieldLabel {
   color: #909090;
   font-weight: normal;
 }
-.content .userInput, .content .educUserInput, .content .employUserInput, .content .personalSelectBox, .content .educSelectBox, .content .employSelectBox, .content .houseSelectBox {
+
+.userInput, .educUserInput, .employUserInput, .personalSelectBox, .educSelectBox, .employSelectBox, .houseSelectBox {
   color: #393737;
   font-size: auto;
 }
-.content .educSelectBox:disabled, .content .employSelectBox:disabled, .content .educUserInput:disabled, .content .employUserInput:disabled {
+
+.educSelectBox:disabled, .employSelectBox:disabled, .educUserInput:disabled, .employUserInput:disabled {
   color: #cccccc;
 }
 

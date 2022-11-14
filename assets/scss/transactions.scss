@@ -1,0 +1,81 @@
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$disabled-blue: #b0def3;
+// $dark-blue: #04496A;
+$dark-blue: #155675;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+$tomato-orange: #F57441;
+$fade-orange: #F4895F;
+
+* { 
+    font: 100% $font-stack-sub;
+}
+
+// input[type=checkbox]{
+//     margin: 0;
+//     height: 100%;
+//     width: auto;
+// }
+
+.topBtnLbl {
+    color: $text;
+    font-size: 1.3em; 
+    font-weight: normal;
+}
+
+.checkAllDiv, .deleteDiv {
+    width: auto;
+    margin: 0;
+    padding: 0.5em;
+    border: 2px solid $tomato-orange;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+#selectAll {
+    color: $tomato-orange;
+}
+
+#deselectAll {
+    color: $tomato-orange;
+}
+
+.checkAllDiv:hover, .checkAllDiv:focus {
+    border: 2px solid $tomato-orange;
+    background-color: #ffded0;
+}
+
+.deleteDiv {
+    border-color: $mid-blue;
+
+    #delete {
+        color: $mid-blue;
+    }
+}
+
+.deleteDiv:hover, .deleteDiv:focus {
+    border-color: $dark-blue;
+    background-color: #a3d9f3;
+
+    #delete {
+        color: $dark-blue;
+    }
+}
+
+#checkEntry {
+    width: 10%;
+}
+
+.checkItem {
+    z-index: 4;
+    padding: 0;
+    margin: 0;
+    width: 1em;
+    height: 1em;
+}

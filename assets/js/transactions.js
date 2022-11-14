@@ -33,14 +33,12 @@ $(document).ready(function(){
 //   }
 // }
 
-//For shading selected row
+//DataTable
 $(document).ready(function(){
-  $('.checkItem').each(function(){
-    if ($(this).prop('checked', true)){
-      var tRow = $(this).closest('tr');
-      tRow.css("backgrounc-color", "#858796");
-    } else {
-		
-	}
-  })
+    $('#transactionsTbl').DataTable({
+        responsive: true,
+        "bLengthChange": false,
+        "bFilter": false,
+        "bInfo": false
+    });
 })

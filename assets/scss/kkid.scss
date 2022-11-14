@@ -3,48 +3,43 @@ $font-stack-sub: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
-$dark-blue: #04496A;
+$disabled-blue: #b0def3;
+// $dark-blue: #04496A;
+$dark-blue: #155675;
 $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
+$tomato-orange: #F57441;
+$fade-orange: #F4895F;
 
-.kkidHeadingRow {
-    width: 100%;
-    margin: 0;
-}
 
-//Small Nav
-.qrBtnContainer {
-    display: flex;
-    margin: auto 0;
-    
-    .qrBtn {
-        width: 9em;
-        height: 3em;
-        background-color: white;
-        border-radius: 5em 0 0 5em;
-        border: 2px solid $mid-blue;
-        font-size: 1em;
-        color: $text;
-    }
 
-    .iconContainer {
-        background-color: $mid-blue;
-        border-radius: 0 5em 5em 0;
-        height: 3em;
-        width: 3.5em;
+#scanBtn {
+    background-color: $tomato-orange;
+
+    #scanBtnTxt, #scanIcon {
+        font-size: 1.2em;
         color: white;
-        border: none;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        position: relative;
+        fill: white;
     }
 }
 
-.qrBtn:hover {
-    background-color: $mid-blue;
-    color: white;
+#scanBtn:hover, #scanBtn:focus {
+    background-color: white;
+    border-color: $tomato-orange;
+
+    #scanBtnTxt, #scanIcon {
+        color: $tomato-orange;
+        fill: $tomato-orange;
+    }
+}
+
+#scanBtn:focus {
+    background-color: #ffded0;
+}
+
+#scanIcon {
+    display: none;
 }
 
 .kkidBody  {
@@ -77,12 +72,7 @@ $text: #393737;
         }
 
         .customCategory {
-            padding: 0 1.5em 0 4em;
-            width: 90%;
-        }
-
-        .customForm{
-            margin: 1em;
+            width: 72%;
         }
     }
 }
@@ -94,9 +84,9 @@ input[type="checkbox"]{
 .previewContainer{
     width: 90%;
     height: auto;
-    border-radius: 1.3em;
+    border-radius: 20px;
     border: none;
-    box-shadow: -3px 3px 10px;
+    box-shadow: 0 3px 10px;
 }
 
 .controlBtn {
@@ -113,7 +103,7 @@ input[type="checkbox"]{
     background-color: $light-blue;
 }
 #clearBtn {
-    background-color: $light-yellow;
+    background-color: $fade-orange;
 }
 
 #clearBtn:disabled, #submitBtn:disabled {
@@ -132,7 +122,7 @@ input[type="checkbox"]{
 }
 
 #clearBtn:hover {
-    background-color: $mid-yellow;
+    background-color: $tomato-orange;
     border: none;
     color: white;
     font-weight: 500;

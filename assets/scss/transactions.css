@@ -1,0 +1,58 @@
+* {
+  font: 100% DM Sans, sans-serif;
+}
+
+.topBtnLbl {
+  color: #393737;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+.checkAllDiv, .deleteDiv {
+  width: auto;
+  margin: 0;
+  padding: 0.5em;
+  border: 2px solid #F57441;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#selectAll {
+  color: #F57441;
+}
+
+#deselectAll {
+  color: #F57441;
+}
+
+.checkAllDiv:hover, .checkAllDiv:focus {
+  border: 2px solid #F57441;
+  background-color: #ffded0;
+}
+
+.deleteDiv {
+  border-color: #219EBC;
+}
+.deleteDiv #delete {
+  color: #219EBC;
+}
+
+.deleteDiv:hover, .deleteDiv:focus {
+  border-color: #155675;
+  background-color: #a3d9f3;
+}
+.deleteDiv:hover #delete, .deleteDiv:focus #delete {
+  color: #155675;
+}
+
+#checkEntry {
+  width: 10%;
+}
+
+.checkItem {
+  z-index: 4;
+  padding: 0;
+  margin: 0;
+  width: 1em;
+  height: 1em;
+}/*# sourceMappingURL=transactions.css.map */

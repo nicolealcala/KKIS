@@ -17,6 +17,14 @@ $(document).ready(function(){
     })
 })
 
+//PDF export functionality
+$(document).ready(function(){
+    $('#pdf').click(function(){
+        const tbl = new jsPDF()
+
+        autoTable(tbl, {html: '#familiesTbl'});
+    })
+})
 
 //Print Functionality
 $(document).ready(function(){

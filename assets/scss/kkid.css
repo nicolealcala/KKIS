@@ -1,37 +1,27 @@
-.kkidHeadingRow {
-  width: 100%;
-  margin: 0;
+#scanBtn {
+  background-color: #F57441;
+}
+#scanBtn #scanBtnTxt, #scanBtn #scanIcon {
+  font-size: 1.2em;
+  color: white;
+  fill: white;
 }
 
-.qrBtnContainer {
-  display: flex;
-  margin: auto 0;
-}
-.qrBtnContainer .qrBtn {
-  width: 9em;
-  height: 3em;
+#scanBtn:hover, #scanBtn:focus {
   background-color: white;
-  border-radius: 5em 0 0 5em;
-  border: 2px solid #219EBC;
-  font-size: 1em;
-  color: #393737;
+  border-color: #F57441;
 }
-.qrBtnContainer .iconContainer {
-  background-color: #219EBC;
-  border-radius: 0 5em 5em 0;
-  height: 3em;
-  width: 3.5em;
-  color: white;
-  border: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: relative;
+#scanBtn:hover #scanBtnTxt, #scanBtn:hover #scanIcon, #scanBtn:focus #scanBtnTxt, #scanBtn:focus #scanIcon {
+  color: #F57441;
+  fill: #F57441;
 }
 
-.qrBtn:hover {
-  background-color: #219EBC;
-  color: white;
+#scanBtn:focus {
+  background-color: #ffded0;
+}
+
+#scanIcon {
+  display: none;
 }
 
 .kkidBody {
@@ -60,11 +50,7 @@
   width: 80%;
 }
 .kkidBody .categoryCol .customCategory {
-  padding: 0 1.5em 0 4em;
-  width: 90%;
-}
-.kkidBody .categoryCol .customForm {
-  margin: 1em;
+  width: 72%;
 }
 
 input[type=checkbox] {
@@ -74,9 +60,9 @@ input[type=checkbox] {
 .previewContainer {
   width: 90%;
   height: auto;
-  border-radius: 1.3em;
+  border-radius: 20px;
   border: none;
-  box-shadow: -3px 3px 10px;
+  box-shadow: 0 3px 10px;
 }
 
 .controlBtn {
@@ -93,7 +79,7 @@ input[type=checkbox] {
 }
 
 #clearBtn {
-  background-color: #F3CB69;
+  background-color: #F4895F;
 }
 
 #clearBtn:disabled, #submitBtn:disabled {
@@ -111,7 +97,7 @@ input[type=checkbox] {
 }
 
 #clearBtn:hover {
-  background-color: #FFB703;
+  background-color: #F57441;
   border: none;
   color: white;
   font-weight: 500;
