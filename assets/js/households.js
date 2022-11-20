@@ -1,74 +1,32 @@
-//for clicking Overview
 $(document).ready(function(){
+    //for clicking Overview
     $('#families').on('click', function(){
         $('#familiesBody').removeClass('d-none');
         $('#overviewBody').addClass('d-none');
-        $('#families').addClass('active');
-        $('#overview').removeClass('active');
+        $('#families').addClass('clicked');
+        $('#overview').removeClass('clicked');
     })
     
     
     $('#overview').click(function(){
         $('#overviewBody').removeClass('d-none');
         $('#familiesBody').addClass('d-none');
-        $('#overview').addClass('active');
-        $('#families').removeClass('active');
+        $('#overview').addClass('clicked');
+        $('#families').removeClass('clicked');
 
     })
-})
 
-//PDF export functionality
-$(document).ready(function(){
-    $('#pdf').click(function(){
-        const tbl = new jsPDF()
-
-        autoTable(tbl, {html: '#familiesTbl'});
-    })
-})
-
-//Print Functionality
-$(document).ready(function(){
-    $('#print').click(function(){
-        printJS({
-            printable: 'familiesTbl',
-            type: 'html',
-            css: ['assets/scss/households.css', 'assets/scss/mediaquery.css'],
-            documentTitle: 'Declared Households'
-        })
-    })
-})
-
-//Search Functionality (tbr by AJAX)
-$(document).ready(function(){
-    $('#search').keyup(function(){
-        search_table($(this).val());
-    })
-
-    function search_table(value){
-        $('#familiesTbl tr').each(function(){
-            var found = false;
-            $(this).each(function(){
-                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >=0){
-                    found = true;
-                }
-            })
-            if (found == true) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
-        })
-    }
-})
-
-//DataTable
-$(document).ready(function(){
-    $('#familiesTbl').DataTable({
+    //Data Table
+    var table = $('#familiesTbl').DataTable({
+        buttons:['copy', 'csv', 'excel', 'pdf', 'print'],
         responsive: true,
-        "bLengthChange": false,
-        "bFilter": false,
+        "bFilter": true,
         "bInfo": false
     });
+    
+    $('#familiesTbl_length').appendTo('#familiesLength');
+    table.buttons().container().appendTo('#familiesOutput'); 
+    $('#familiesTbl_filter').appendTo('#familiesSearch')
 })
 
 //JS Library for Filter remarks
@@ -78,6 +36,8 @@ VirtualSelect.init({
     disableSelectAll: true,
 });
 
+
+//for Chart
 $(document).ready(function(){
     const ctx = $('#overviewChart');
     

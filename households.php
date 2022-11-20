@@ -25,20 +25,13 @@
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
 
 <body id="page-top">
-
-    <!-- Nav -->
-    <!-- <div class="navDiv">
-        <?php
-            // include 'nav.php' 
-            ?>
-    </div> -->
     
     <div class="mainContainer d-block">
         <header>
@@ -58,8 +51,8 @@
         <div class="container-fluid content">
             <!-- Menu Buttons -->
             <div class="row d-flex justify-content-end align-ittems-center m-0">
-                <button class="menuBtn rounded-pill active" id="families">Families</button>
-                <button class="menuBtn rounded-pill" id="overview">Overview</button>
+                <button class="menuBtn menu1 rounded-pill clicked" id="families">Families</button>
+                <button class="menuBtn menu2 rounded-pill" id="overview">Overview</button>
             </div>
             
             <!-- Table -->
@@ -67,30 +60,13 @@
                 <!-- Options Row -->
                 <div class="row gx-5 m-0 mb-1">
                     <!-- Show No. of Rows -->
-                    <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0">
-                        <span>Show</span>
-                        <select class="form-select mx-2 w-auto" name="rows" id="showRow">
-                            <option value="10" selected>10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="All">All</option>
-                        </select>
-                        <span>entries</span>
-                    </div>
+                    <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="familiesLength"></div>
                     <!-- Output Buttons -->
-                    <div class="d-none col-lg-5 d-lg-flex justify-content-lg-start p-0">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn outputBtn" id="copy">Copy</button>
-                            <button type="button" class="btn outputBtn" id="csv">CSV</button>
-                            <button type="button" class="btn outputBtn" id="excel">Excel</button>
-                            <button type="button" class="btn outputBtn" id="pdf">PDF</button>
-                            <button type="button" class="btn outputBtn" id="print">Print</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 d-none d-lg-flex"></div>
+                    <div class="d-none col-lg-4 d-lg-flex justify-content-lg-start p-0" id="familiesOutput"></div>
+                    <!-- Filler Column -->
+                    <div class="col-lg-2 d-none d-lg-flex"></div>
                     <!-- Filter -->
-                    <div class="d-md-flex align-items-center col-lg-2 col-md-4 d-none">
+                    <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none">
                         <select class="selectpicker" multiple name="filter" data-live-search="true" title="Filter" placeholder="Filter" id="filtering">
                             <optgroup label="Members">
                                 <option value="Less than 5">Less than 5</option>
@@ -109,12 +85,9 @@
                         </select>
                     </div>
                     <!-- Search -->
-                    <div class="col-lg-2 col-md-4 col-sm-6 col-12 p-0">
-                        <div class="searchElement d-flex justify-content-center align-items-center">
-                            <input class="form-control" type="text" placeholder="Search" name="search" id="search">
-                        </div>
-                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0" id="familiesSearch"></div>
                 </div>
+                
                 <!-- Table start   -->
                 <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="familiesTbl" style="width:100%">
                     <thead class="headTitle">
@@ -472,15 +445,12 @@
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Data tables -->
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/pdfmake.min.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>  
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
-    <!-- PrintJS -->
-    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
-
-    <!-- jsPDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
 
     <!-- Custom Script -->
     <script src="assets/js/households.js"></script>

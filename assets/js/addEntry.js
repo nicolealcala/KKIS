@@ -1,5 +1,5 @@
-//For required fieldLabels
 $(document).ready(function(){
+    //For required fieldLabels
     $('.fieldLabel').each(function(){
         $(this).addClass('required');
         if (($(this).attr("id")=="remarksLbl") || ($(this).attr("id")=="organizationLbl")){
@@ -8,44 +8,25 @@ $(document).ready(function(){
             $(this).removeClass('required');
         }
     });
-});
 
-//For required Input Fields
-$(document).ready(function(){
-    
-});
-
-//JS Library for DISABILITY
-VirtualSelect.init({
-    ele: '#disabilitySelect',
-    disableSelectAll: true
-});
-
-//For Educ Radio Btn PRE-CHECKED or is checked on change
-$(document).ready(function(){
+    //For Educ Radio Btn PRE-CHECKED or is checked on change
     if ($('#educCheck').is(':checked')){
         educRadioClick();
         enrolledSelected();
     };
-});
 
-//For Educ Radio Btn when selected
-$(document).ready(function(){
+    //For Educ Radio Btn when selected
     if($('#educCheck').on('change', function(){
         educRadioClick();
         enrolledSelected();
     }));
-});
 
-//For Employ Radio Btn
-$(document).ready(function(){
+    //For Employ Radio Btn
     $('#employCheck').change(function(){
-      employRadioClick();
-    });
-});
+        employRadioClick();
+      });
 
-//For Educ Status ON CHANGE
-$(document).ready(function(){
+    //For Educ Status ON CHANGE
     $('#selectEducStatus').on('change', function(){
         if($('#selectEducStatus option[value=Enrolled]').is(':selected')){
             enrolled();
@@ -55,10 +36,8 @@ $(document).ready(function(){
             workingStudent();
         }
     })
-});
 
-//For Employment Status ON CHANGE
-$(document).ready(function(){
+    //For Employment Status ON CHANGE
     $('#selectEmployStatus').on('change', function(){
         if($('#selectEmployStatus option[value=Employed]').is(':selected')){
             employed();
@@ -66,7 +45,14 @@ $(document).ready(function(){
             unemployed();
         }
     })
-})
+});
+
+//JS Library for DISABILITY
+VirtualSelect.init({
+    ele: '#disabilitySelect',
+    disableSelectAll: true
+});
+
 
 //JS Library for remarks
 VirtualSelect.init({

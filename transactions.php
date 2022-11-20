@@ -149,6 +149,18 @@
                         <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
                         <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                     </tr>
+                    <tr>
+                        <td class="entryRow" scope="col" data-label="Transaction ID">TID008</td>
+                        <td class="entryRow" scope="col" data-label="Name">Justin Charles Gonzales</td>
+                        <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
+                        <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td class="entryRow" scope="col" data-label="Transaction ID">TID008</td>
+                        <td class="entryRow" scope="col" data-label="Name">Justin Charles Gonzales</td>
+                        <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
+                        <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
+                    </tr>
                 </tbody>
                 <?php
                     // while ($row = mysqli_fetch_array($result)) {

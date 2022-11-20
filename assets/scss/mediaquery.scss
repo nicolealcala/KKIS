@@ -80,13 +80,30 @@ a {
     font-weight: 500;
 }
 
-.active {
+.clicked {
     background-color: $dark-blue;
     color: white;
 }
 
-//Declared Households
-#families {
+//Pages with ActionButtons
+.actionBtn {
+    color: white;
+    width: 1.7em;
+    height: 1.7em;
+    padding: 1px;
+}
+
+.view {
+    background-color: $mid-yellow;
+    color: white;
+}
+
+.update {
+    background-color: #1d4e89;
+}
+
+//Declared Households, Profiles
+.menu1 {
     margin-right: 1em;
 }
 
@@ -101,31 +118,6 @@ a {
 //Add, Update
 .sectionDiv {
     margin-top: 1em;
-}
-
-//Output Buttons
-.outputBtn {
-    max-width: 100%;
-    border: none;
-    background-color: $tomato-orange;
-    color: white;
-}
-
-.outputBtn:hover, .outputBtn:focus {
-    background-color: #f0571f;
-    color: white;
-}
-
-.outputBtn:focus {
-    font-weight: 500;
-}
-//Pages with search
-.searchElement {
-    width: 100%;
-    .searchInput {
-        max-width: 100%;
-        border-radius: 6px 0 0 6px;
-    }
 }
 
 #remarkDrop, #disabilitySelect, #filtering{   
@@ -152,35 +144,48 @@ a {
 
 //Data Tables Config
 
-// .dt-buttons {
-//     margin-right: 2em;
-// }
+.dt-buttons {
+    margin-right: 2em;
+}
 
-// .btn-secondary {
-//     max-width: 100%;
-//     border: none;
-//     background-color: $tomato-orange;
-//     color: white;
-// }
+.btn-secondary {
+    max-width: 100%;
+    border: none;
+    background-color: $tomato-orange;
+    color: white;
+}
 
-// .btn-secondary:hover, .btn-secondary:focus {
-//     background-color: #f0571f;
-//     color: white;
-// }
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #f0571f;
+    color: white;
+}
 
-// .btn-secondary:focus {
-//     font-weight: 500;
-// }
+.btn-secondary:focus {
+    font-weight: 500;
+}
 
-// //Data Table controller
-// .paginate_button {
-//     margin: 0.5em;
-// }
+//Data Table controller
+.paginate_button {
+    margin: 0.5em;
+}
 .dataTables_paginate {
     display: flex;
     justify-content: end;
-} 
+}
 
+.dataTables_length, .dataTables_filter {
+    max-height: 100%;
+
+    label {
+        display: flex;
+        align-items: end;
+            
+        select, input {
+            margin: 0 0.5em;
+            height: auto;
+        }
+    }
+}
 
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
      //All pages

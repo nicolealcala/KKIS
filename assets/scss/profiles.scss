@@ -9,102 +9,31 @@ $light-yellow: #F3CB69;
 $text: #393737;
 
 
+// .vscomp-ele-wrapper{
+//     width: 100%;
+//     margin-top: 0;
 
-//Small Nav
-.divNav {
-    background-color: $mid-blue;
-    border-radius: 15em;
-    height: 3em;
-    width: 90%;
-    border: none;
-    padding: 1px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-    // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-    z-index: 1;
+//     .vscomp-toggle-button{
+//         width: 100%;
+//         color: $text;
+//         width: 100%;
+//         border: 1.5px solid #D1D3E2;
+//         border-radius: 6px;
+//         box-shadow: none;
+//     }
 
-    .menuTitle{
-        width: 100%;
-        height: 100%;
-        font-size: 1.2em;
-        color: white;
-        padding: auto;
-        border-radius: 15em;
-        margin: 0 5px;
-        position: relative;
-        cursor: pointer;
-        z-index: 1;
-        transition: all 0.3s ease;
-    }
+// }
+
+i {
+    width: auto;
+    height: auto;
 }
+// .tableKabataan{
+//     background-color: $dark-blue;
+//     color: white; 
+// }
 
-.slider {
-    position: absolute;
-    margin: 2px;
-    height: 90%;
-    width: 50%;
-    top: 0;
-    left: 0.5%;
-    background-color: white;
-    border-radius: 15em;
-    transition: all 0.4s cubic-bezier(0, 0.36, 0.03, 1);
-}
-
-#kabataan:checked ~ div label.kabataan {
-    color: $mid-blue;
-    font-weight: 900;
-}
-
-#resident:checked ~ div label.resident {
-    color: $mid-blue;
-    font-weight: 900;
-}
-
-#resident:checked ~ div .slider {
-    left:49%;
-}
-
-.sortSearch {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.dataTable {
-    margin: 0;
-    margin-top: 2.3em;
-}
-
-#filtering{
-    max-width: 100%;
-}
-
-.vscomp-ele-wrapper{
-    width: 100%;
-    margin-top: 0;
-
-    .vscomp-toggle-button{
-        width: 100%;
-        color: $text;
-        width: 100%;
-        border: 1.5px solid #D1D3E2;
-        border-radius: 6px;
-        box-shadow: none;
-    }
-
-}
-
-.tableKabataan{
-    background-color: $dark-blue;
-    color: white; 
-}
-
-.tableResident{
-    background-color: #1d4e89;
-    color: white; 
-}
+// .tableResident{
+//     background-color: #1d4e89;
+//     color: white; 
+// }
