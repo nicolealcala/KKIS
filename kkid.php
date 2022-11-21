@@ -61,7 +61,7 @@
                 <div class="row kkidBody p-0 m-0 gy-5" id="kkidPage">
                     <!-- Batch Print -->
                     <div class="col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
-                        <h1 class="subTitle mb-3">Batch Printing</h1>
+                        <p class="subTitle mb-3">Batch Printing</p>
                         <form class="m-0 mt-4 d-flex justify-content-center align-items-center" id="kkidForm">
                             <div class="categoryCol row d-flex justify-content-center align-items-center my-auto gy-3 w-100">
                                 <!-- Category: Age -->
@@ -138,7 +138,7 @@
                     <div class="col idPreview col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                         <div class="row m-0 w-100">
                             <div class="col col-12 p-0">
-                                <h1 class="text-start subTitle mb-3">ID Preview</h1>
+                                <p class="text-start subTitle mb-3">ID Preview</p>
                             </div>
                             <div class="col text-center col-12 p-3 pt-1 w-100">
                                 <img class="img-fluid previewContainer" src="assets/img/misc/ID.png">

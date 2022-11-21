@@ -1,5 +1,5 @@
-$font-stack: Poppins, sans-serif;
-$font-stack-sub: DM Sans, sans-serif;
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
@@ -9,12 +9,53 @@ $light-yellow: #F3CB69;
 $text: #393737;
 
 * {
-    font: 100% $font-stack-sub;
+    font: 100% $content-font;
 }
 
 
 a {
     text-decoration: none;
+}
+
+.sectionTitle {
+    color: $text;
+    font-size: 1.5em;
+    color: $text;
+    font-weight: 500;
+}
+
+.carousel{
+    width:90%;
+    margin:0px auto;
+  }
+  .slick-slide{
+    margin:10px;
+  }
+  .slick-slide img{
+    width:100%;
+    border: 2px solid #fff;
+  }
+  .wrapper .slick-dots li button:before {
+    font-size:20px;
+    color:white;
+  }
+  
+.minorCategory {
+    width: 15em;
+    position: relative;
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+
+    .minorLbl {
+        width: 100%;
+        font-size: 1.5em;
+        color: $text;
+    }
+
+    #whiteLbl {
+        color: white;
+    }
 }
 
 .category {

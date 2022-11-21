@@ -16,7 +16,7 @@ $(document).ready(function(){
     })
 
     //DataTables Kabataan
-    var tableK = $('#kabataanTbl').DataTable({
+    var kabataanTbl = $('#kabataanTbl').DataTable({
         buttons:['copy', 'csv', 'excel', 'pdf', 'print'],
         responsive: true,
         "bFilter": true,
@@ -24,19 +24,19 @@ $(document).ready(function(){
     });
     
     $('#kabataanTbl_length').appendTo('#kabataanLength');
-    tableK.buttons().container().appendTo('#kabataanOutput'); 
+    kabataanTbl.buttons().container().appendTo('#kabataanOutput'); 
     $('#kabataanTbl_filter').appendTo('#kabataanSearch')
 
 
     //DataTables Residents
-    var tableR = $('#residentsTbl').DataTable({
+    var residentsTbl = $('#residentsTbl').DataTable({
         buttons:['copy', 'csv', 'excel', 'pdf', 'print'],
         responsive: true,
         "bFilter": true,
         "bInfo": false
     });
     $('#residentsTbl_length').appendTo('#residentsLength');
-    tableR.buttons().container().appendTo('#residentsOutput'); 
+    residentsTbl.buttons().container().appendTo('#residentsOutput'); 
     $('#residentsTbl_filter').appendTo('#residentsSearch')
 })
 

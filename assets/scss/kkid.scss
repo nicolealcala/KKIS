@@ -1,5 +1,5 @@
-$font-stack: Poppins, sans-serif;
-$font-stack-sub: DM Sans, sans-serif;
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
@@ -48,7 +48,7 @@ $fade-orange: #F4895F;
     margin-bottom: 1.5em;
     
     .subTitle {
-        font: 100% $font-stack-sub;
+        font: 100% $content-font;
         font-size: 1.5em;
         color: $text;
         font-weight: 500;

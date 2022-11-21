@@ -14,11 +14,15 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/dashboardNew.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navDash.css">
     
@@ -28,22 +32,93 @@
 
 <body id="page-top">
 
-    <!-- Nav -->
-    <div class="navDiv">
-        <?php include 'nav.php' ?>
-    </div>
-
-    <div id="wrapper">
-        <div class="container-fluid content">
-            <div class="row documentHeadingRow p-0 m-0">
-                <div class="col d-flex align-self-center justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <h1 class="d-xxl-flex title" id="titleAddEntry">Dashboard</h1>
+    <div class="mainContainer d-block">
+        <header>
+            <div class="row headerRow">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
+                    <span class="title">Dashboard</span>
+                </div>
+                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
+                    <span class="accountType d-flex justify-content-end">Super Admin Account</span>
                 </div>
             </div>
-            <div class="row m-0">
-                <div class="col p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
+            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
+        </header>
+
+         <!-- CONTENT START -->
+        <div class="container-fluid content">
+            <div class="sectionDiv mx-0 mt-4">
+                <p class="sectionTitle">General Residents</p>
+                <div class="slider m-0">
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="totalCitizens" style="background-color: black">
+                                <p class="minorLbl" id="whiteLbl">Total Citizens</p>
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="genCitizens" style="background-color: #D7ECFA">
+                                <p class="minorLbl">General Citizens</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="children" style="background-color: #FFE5DB">
+                                <p class="minorLbl">Children</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="senior" style="background-color: #FFF4D1">
+                                <p class="minorLbl">Senior Citizens</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="pwd" style="background-color: #DDFFF8">
+                                <p class="minorLbl">PWDs</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="registered" style="background-color: #FFFCBB">
+                                <p class="minorLbl">Registered Voters</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <div class="minorCategory" id="unregistered" style="background-color: #F8E7F8">
+                                <p class="minorLbl">Unregistered Voters</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="pageBody">
+
+            
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class="sectionDiv mx-0 mt-4">
                 <div class="row m-0 mt-5 gx-4 gy-4 p-0 w-100">
                     <!-- Category1 -->
                     <div class="col-lg-4 col-md-4 col-sm-12 col-12">
@@ -188,6 +263,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Slick -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
 </body>
 </html>

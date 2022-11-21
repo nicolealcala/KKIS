@@ -1,5 +1,5 @@
-$font-stack: Poppins, sans-serif;
-$font-stack-sub: DM Sans, sans-serif;
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
@@ -38,7 +38,7 @@ header {
 
     .title, .accountType {
         width: auto;
-        font: 100% $font-stack;
+        font: 100% $headings-font;
         color: $dark-blue;
     }
 
@@ -61,7 +61,7 @@ th {
 }
 
 * {
-    font: 100% $font-stack-sub;
+    font: 100% $content-font;
 }
 
 a {
@@ -108,7 +108,7 @@ a {
 }
 
 //Add, Update, Declared Households, Transaction History, Dashboard, KKID
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle{
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle, .minorLbl{
     white-space: nowrap; 
     width: 85%; 
     overflow: hidden;
@@ -166,7 +166,7 @@ a {
 
 //Data Table controller
 .paginate_button {
-    margin: 0.5em;
+    margin: 0.1em;
 }
 .dataTables_paginate {
     display: flex;

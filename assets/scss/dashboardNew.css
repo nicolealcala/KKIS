@@ -6,6 +6,48 @@ a {
   text-decoration: none;
 }
 
+.sectionTitle {
+  color: #393737;
+  font-size: 1.5em;
+  color: #393737;
+  font-weight: 500;
+}
+
+.carousel {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.slick-slide {
+  margin: 10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+.wrapper .slick-dots li button:before {
+  font-size: 20px;
+  color: white;
+}
+
+.minorCategory {
+  width: 15em;
+  position: relative;
+  border: none;
+  border-radius: 1em;
+  padding: 1em;
+}
+.minorCategory .minorLbl {
+  width: 100%;
+  font-size: 1.5em;
+  color: #393737;
+}
+.minorCategory #whiteLbl {
+  color: white;
+}
+
 .category {
   position: relative;
   border: none;

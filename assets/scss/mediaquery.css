@@ -86,7 +86,7 @@ a {
   margin-right: 1em;
 }
 
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle {
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle, .minorLbl {
   white-space: nowrap;
   width: 85%;
   overflow: hidden;
@@ -139,7 +139,7 @@ a {
 }
 
 .paginate_button {
-  margin: 0.5em;
+  margin: 0.1em;
 }
 
 .dataTables_paginate {
