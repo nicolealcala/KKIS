@@ -5,7 +5,6 @@
   session_destroy();
   session_start();
 
-
   //SIGN UP not final pa ito pero connected na sa db yung signup
   if(isset($_POST['signupBtn'])) {
     $firstName = $_POST['firstName'];
@@ -14,50 +13,56 @@
     $contactNumber = $_POST['contactNumber'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$hash."')";
+    $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$password_hash."')";
     if(executeQuery($query)){
       header('Location: index.php');
     }
   } 
 
-  // LOGIN BTN 
-  $Query_email = "email";
-  $Query_password;
+    // LOGIN BTN 
+    // $Query_email = "email";
+    // $Query_password;
 
-  if(isset($_POST['loginBtn'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    //$hash = password_hash($password, PASSWORD_DEFAULT);
+    if(isset($_POST['loginBtn'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        //$hash = password_hash($password, PASSWORD_DEFAULT);
+    
+        $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."' AND password = '".$password."'";
+        $accounts = executeQuery($query);
+    
+        if(mysqli_num_rows($accounts) > 0) {
+            while($account = mysqli_fetch_assoc($accounts)) {
+                if(password_verify($password,$account['password'])){
+                    $_SESSION['firstName'] = $account['firstName'];
+                    $_SESSION['lastName'] = $account['lastName'];
+                    $_SESSION['birthday'] = $account['birthday'];
+                    $_SESSION['contactNumber'] = $account['contactNumber'];
+                    $_SESSION['email'] = $account['email'];
+    
+                    header('Location: dashboard.php');
+                    //echo "<script>window.location.href='dashboard.php';</script>";
+                   } else {
+                        echo '<script>alert("Invalid email/password!")</script>';
+                   }
+            }     
+        } 
+    }
 
-    $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."' AND password = '".$password."'";
-    $accounts = executeQuery($query);
+    // // this is used for alert (kapag mali yung credentials)
+    // if(($email == $Query_email) && ($password == $Query_password)) {
 
-    if(mysqli_num_rows($accounts) > 0) {
-        while($account = mysqli_fetch_assoc($accounts)) {
-            $_SESSION['firstName'] = $account['firstName'];
-            $_SESSION['lastName'] = $account['lastName'];
-            $_SESSION['birthday'] = $account['birthday'];
-            $_SESSION['contactNumber'] = $account['contactNumber'];
-            $_SESSION['email'] = $account['email'];
-            $_SESSION['password'] = $account['password'];
-        }
+    //     header('Location: dashboard.php');
 
-          header('Location: dashboard.php');
-    } 
+    //   } else {
+    //     $message = "Username and/or Password incorrect.\\nTry again.";
+    //     echo "<script type='text/javascript'>alert('$message');</script>";
+    //     }
+    // }
 
-    // this is used for alert (kapag mali yung credentials)
-    if(($email == $Query_email) && ($password == $Query_password)) {
-
-        header('Location: dashboard.php');
-
-      } else {
-        $message = "Username and/or Password incorrect.\\nTry again.";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        }
-} 
-
+        
 ?>
 
 <!DOCTYPE html>
@@ -82,6 +87,7 @@
 </head>
 
 <body style="background: url(&quot;assets/img/misc/background.webp&quot;)">
+    
     <div id="index-wrapper">
         <div class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
             <!-- Log in -->
