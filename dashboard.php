@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="assets/scss/dashboardNew.css">
+    <link rel="stylesheet" href="assets/scss/dashboard.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
     <!-- Slick -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     
     <!-- navAddUpdate CSS -->
     <link rel="stylesheet" href="assets/css/navDash.css">
@@ -32,7 +33,7 @@
 
 <body id="page-top">
 
-    <div class="mainContainer d-block">
+    <div class="mainContainer d-block" style="background-color: #909090">
         <header>
             <div class="row headerRow">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
@@ -48,211 +49,212 @@
 
          <!-- CONTENT START -->
         <div class="container-fluid content">
-            <div class="sectionDiv mx-0 mt-4">
+            <div class="sectionDiv mx-0 mt-4 p-0">
+                <!-- Minor Catagories -->
                 <p class="sectionTitle">General Residents</p>
-                <div class="slider m-0">
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="totalCitizens" style="background-color: black">
-                                <p class="minorLbl" id="whiteLbl">Total Citizens</p>
-                                <img src="" alt="">
+                <div class="carousel d-flex justify-content-center">
+                    <div class="d-flex justify-content-center align-items-center" style="width: 500px;">
+                        <a href="#" style="background-color: #03254c; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="totalCitizens">
+                                <div class="texts">
+                                    <p id="whiteLbl">Total Citizens</p>
+                                    <p class="count d-flex align-self-end">10, 205</p>
+                                </div>  
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img" src="assets/img/dashboard/mc-genCitizens.png" alt="General-Citizens">
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="genCitizens" style="background-color: #D7ECFA">
-                                <p class="minorLbl">General Citizens</p>
+                    <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
+                        <a href="#" style="background-color: #D7ECFA; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="genCitizens">
+                                <div class="texts">
+                                    <p class="minorLbl">General Citizens</p>
+                                    <span class="mcCount">2900</span>
+                                    <span class="percentage"></span>
+                                </div>
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-genCitizens.png" alt="General-Citizens">
+                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-genCitizens.png" alt="General-Citizens"> -->
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="children" style="background-color: #FFE5DB">
-                                <p class="minorLbl">Children</p>
+                    <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
+                        <a href="#" style="background-color: #FFE5DB; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="children">
+                                <div class="texts">
+                                    <p class="minorLbl">Children</p>
+                                    <span class="mcCount">2900</span>
+                                    <span class="percentage"></span>
+                                </div>
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-children.png" alt="Children">
+                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-children.png" alt="Children"> -->
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="senior" style="background-color: #FFF4D1">
-                                <p class="minorLbl">Senior Citizens</p>
+                    <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
+                        <a href="#" style="background-color: #FFF4D1; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="senior">
+                                <div class="texts">
+                                    <p class="minorLbl">Senior Citizens</p>
+                                    <span class="mcCount">2900</span>
+                                    <span class="percentage"></span>
+                                </div>
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-seniorCitizens.png" alt="Senior-Citizens">
+                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-seniorCitizens.png" alt="Senior-Citizens"> -->
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="pwd" style="background-color: #DDFFF8">
-                                <p class="minorLbl">PWDs</p>
+                    <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
+                        <a href="#" style="background-color: #DDFFF8; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="pwd">
+                                <div class="texts">
+                                    <p class="minorLbl">PWDs</p>
+                                    <span class="mcCount">2900</span>
+                                    <span class="percentage"></span>
+                                </div>
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-pwd.png" alt="PWDs">
+                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-pwd.png" alt="PWDs"> -->
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="registered" style="background-color: #FFFCBB">
-                                <p class="minorLbl">Registered Voters</p>
+                    <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
+                        <a href="#" style="background-color: #FFFCBB; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="registered">
+                                <div class="texts">
+                                    <p class="minorLbl">Registereed Voters</p>
+                                    <span class="mcCount">2900</span>
+                                    <span class="percentage"></span>
+                                </div>
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-registered.png" alt="Registered-Voters">
+                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-registered.png" alt="Registered-Voters"> -->
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="minorCategory" id="unregistered" style="background-color: #F8E7F8">
-                                <p class="minorLbl">Unregistered Voters</p>
+                    <div class="d-flex justify-content-center align-items-center" style="width: 300px;" >
+                        <a href="#" style="background-color: #F8E7F8; width: 100%; border-radius: 1em;">
+                            <div class="minorCategory" id="unregistered">
+                                <div class="texts">
+                                    <p class="minorLbl">Unregistered Voters</p>
+                                    <span class="mcCount">2900</span>
+                                    <span class="percentage"></span>
+                                </div>
+                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-unregistered.png" alt="Unregistered-Voters">
+                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-unregistered.png" alt="Unregistered-Voters"> -->
+                                </div>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
 
-            
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            <div class="sectionDiv mx-0 mt-4">
-                <div class="row m-0 mt-5 gx-4 gy-4 p-0 w-100">
-                    <!-- Category1 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblTotalYouth.php">
-                            <div class="category" id="totalYouth">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Total Youth</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/total-youth-img.png" alt="Total-Youth">
-                                </div>
+            <!-- Main Categories -->
+            <div class="dashCategories mx-0">
+                <div class="card rounded-4 p-2">
+                    <div class="card-body m-0">
+                        <p class="sectionTitle">Katipunan ng Kabataan</p>
+                        <div class="row m-0 mt-0 gx-5 gy-5 p-3 w-100">
+                            <!-- Category1 -->
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                <a href="tblTotalYouth.php">
+                                    <div class="category" id="totalYouth" style="background-color: #8ECAE6">
+                                        <div class="texts">
+                                            <h1 class="count">2019</h1>
+                                            <p class="subTitle">Total Youth</p>
+                                        </div>
+                                        <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                            <img class="img-fluid" src="assets/img/dashboard/c-totalYouth.png" alt="Total-Youth">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
-                    <!-- Category2 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblEnrolled.php">
-                            <div class="category" id="enrolledYouth">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Enrolled Youth</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/enrolled-img.png" alt="Enrolled-Youth">
-                                </div>
+                            <!-- Category2 -->
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                <a href="tblEnrolled.php">
+                                    <div class="category" id="enrolledYouth" style="background-color: #219EBC">
+                                        <div class="texts">
+                                            <h1 class="count">2019</h1>
+                                            <p class="subTitle">Enrolled Youth</p>
+                                        </div>
+                                        <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                            <img class="img-fluid" src="assets/img/dashboard/c-enrolled.png" alt="Enrolled-Youth">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
-                    <!-- Category3 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblOutOfSchool.php">
-                            <div class="category" id="ousYouth">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Out-of-school Youth</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/out-of-scl-img.png" alt="Out-of-school Youth">
-                                </div>
+                            <!-- Category3 -->
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                <a href="tblOutOfSchool.php">
+                                    <div class="category" id="ousYouth" style="background-color: #04496A">
+                                        <div class="texts">
+                                            <h1 class="count">2019</h1>
+                                            <p class="subTitle">Out-of-school Youth</p>
+                                        </div>
+                                        <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                            <img class="img-fluid" src="assets/img/dashboard/c-out-of-school.png" alt="Out-of-school Youth">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
-                    <!-- Category4 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblWorkingStudent.php">
-                            <div class="category" id="workingStudent">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Working Student</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/working-student-img.png" alt="Out-of-school Youth">
-                                </div>
+                            <!-- Category4 -->
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                <a href="tblWorkingStudent.php">
+                                    <div class="category" id="workingStudent" style="background-color: #F3CB69">
+                                        <div class="texts">
+                                            <h1 class="count">2019</h1>
+                                            <p class="subTitle">Working Student</p>
+                                        </div>
+                                        <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                            <img class="img-fluid" src="assets/img/dashboard/c-workingStudents.png" alt="Out-of-school Youth">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
-                    <!-- Category5 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblEmployed.php">
-                            <div class="category" id="employed">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Employed</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/employed-img.png" alt="Employed">
-                                </div>
+                            <!-- Category5 -->
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                <a href="tblEmployed.php">
+                                    <div class="category" id="employed" style="background-color: #FFB703">
+                                        <div class="texts">
+                                            <h1 class="count">2019</h1>
+                                            <p class="subTitle">Employed</p>
+                                        </div>
+                                        <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                            <img class="img-fluid" src="assets/img/dashboard/c-employed.png" alt="Employed">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
-                    <!-- Category6 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblUnemployed.php">
-                            <div class="category" id="unemployed">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Unemployed</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/unemployed-img.png" alt="Employed">
-                                </div>
+                            <!-- Category6 -->
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                <a href="tblUnemployed.php">
+                                    <div class="category" id="unemployed" style="background-color: #FB8500">
+                                        <div class="texts">
+                                            <h1 class="count">2019</h1>
+                                            <p class="subTitle">Unemployed</p>
+                                        </div>
+                                        <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                            <img class="img-fluid" src="assets/img/dashboard/c-unemployed.png" alt="Employed">
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-
-                    <!-- Category7 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblRegistedVoters.php">
-                            <div class="category" id="registeredVoter">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Registered Voters</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/registered-voters-img.png" alt="Registered-Voters">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Category8 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblUnregistedVoters.php">
-                            <div class="category" id="unregisteredVoter">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">Unregistered Voters</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/unregistered-img.png" alt="Unregistered-Voters">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Category9 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                        <a href="tblPWD.php">
-                            <div class="category" id="pwd">
-                                <div class="texts">
-                                    <h1 class="count">2019</h1>
-                                    <p class="subTitle">PWDs</p>
-                                </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid" src="assets/img/pwd-img.png" alt="Unregistered-Voters">
-                                </div>
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -266,5 +268,7 @@
     <!-- Slick -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
+    <!-- Custome Script -->
+    <script src="assets/js/dashboard.js"></script>
 </body>
 </html>
