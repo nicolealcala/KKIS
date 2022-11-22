@@ -15,30 +15,34 @@ a {
 
 .carousel {
   width: 95%;
-  margin: 0 50px;
+  margin: 0 auto;
   z-index: 5;
 }
 .carousel .slick-next:before, .carousel .slick-prev:before {
   font-family: slick;
   position: absolute;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 1;
   opacity: 0.75;
-  color: #fff;
+  color: #219EBC;
   width: 100%;
 }
-.carousel .slick-arrow {
-  padding: 20px;
-  margin: auto -40px;
+.carousel .slick-next.slick-arrow {
+  padding: 0;
+  margin: auto auto;
 }
-
-.slick-track {
-  margin: 0;
+.carousel .slick-prev.slick-arrow {
+  padding: 0;
+  margin: auto -20px;
 }
 
 .slick-slide {
   margin: 15px;
   z-index: 1;
+}
+
+.slick-track {
+  margin: auto 1em;
 }
 
 .wrapper .slick-dots li button:before {

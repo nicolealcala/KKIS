@@ -26,32 +26,37 @@ a {
 
 .carousel   {
     width: 95%;
-    margin:0 50px;
+    margin: 0 auto;
     z-index: 5;
 
     .slick-next:before, .slick-prev:before{
         font-family: slick;
         position: absolute;
-        font-size: 25px;
+        font-size: 30px;
         line-height: 1;
         opacity: .75;
-        color: #fff;
+        color: $mid-blue;
         width: 100%;
     }
 
-    .slick-arrow {
-        padding: 20px;
-        margin: auto -40px;
+    .slick-next.slick-arrow {
+        padding: 0;
+        margin: auto auto;
     }
-}
 
-.slick-track {
-    margin: 0;
+    .slick-prev.slick-arrow {
+        padding: 0;
+        margin: auto -20px;
+    }
 }
 
 .slick-slide {
     margin: 15px;
     z-index: 1;
+}
+
+.slick-track {
+    margin: auto 1em;
 }
 
 .wrapper .slick-dots li button:before {
@@ -127,39 +132,6 @@ a {
     height: 75px;
     z-index: 1;
 }
-
-
-// #enrolledYouth {
-//     background-color: $mid-blue;
-// }  
-
-// #ousYouth {
-//     background-color: $dark-blue;
-// }
-
-// #workingStudent {
-//     background-color: $light-yellow;
-// }
-
-// #employed {
-//     background-color: $mid-yellow;
-// }
-
-// #unemployed {
-//     background-color: $dark-yellow;
-// }
-
-// #registeredVoter {
-//     background-color: $light-blue;
-// }
-
-// #unregisteredVoter {
-//     background-color: $mid-blue;
-// }  
-
-// #pwd {
-//     background-color: $dark-blue;
-// }
 
 .content::-webkit-scrollbar {
     width: 10px;               /* width of the entire scrollbar */

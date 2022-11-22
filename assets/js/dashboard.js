@@ -27,16 +27,14 @@ $(document).ready(function(){
             }
           },
           {
-            breakpoint: 431,
+            breakpoint: 450,
             settings: {  
               slidesToShow: 1,
               slidesToScroll: 1,
+              arrows: false,
               variableWidth: false
             }
           }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
         ]
       });
 })

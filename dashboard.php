@@ -33,7 +33,7 @@
 
 <body id="page-top">
 
-    <div class="mainContainer d-block" style="background-color: #909090">
+    <div class="mainContainer d-block">
         <header>
             <div class="row headerRow">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
