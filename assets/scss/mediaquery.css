@@ -86,9 +86,9 @@ a {
   margin-right: 1em;
 }
 
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle, .minorLbl {
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle, .minorLbl, .mcCount, .percentage {
   white-space: nowrap;
-  width: 85%;
+  width: 88%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -202,6 +202,9 @@ a {
     width: 90%;
     padding: 1em;
   }
+  .category .texts .count {
+    font-size: 3em;
+  }
   .backBtn {
     width: 1.5em;
     height: 1.5em;
@@ -214,9 +217,6 @@ a {
   }
   .markerText, .subTitle {
     font-size: 1.3em;
-  }
-  .category .texts .count {
-    font-size: 3em;
   }
   .sortSearch {
     display: flex;
@@ -247,6 +247,12 @@ a {
   }
   #scanBtn {
     font-size: 1em;
+  }
+  #citizensCount {
+    font-size: 3em;
+  }
+  .mc-img {
+    opacity: 30%;
   }
   .markerText, .subTitle, .menuTitle {
     font-size: 1.2em;

@@ -5,8 +5,8 @@ $(document).ready(function(){
         infinite: false,
         speed: 300,
         cssEase: 'ease-out',
-        slidesToShow: 6,
-        slidesToScroll: 2,
+        slidesToShow: 5,
+        slidesToScroll: 1,
         variableWidth: true,
         responsive: [
           {
