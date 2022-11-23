@@ -54,14 +54,14 @@
                 <p class="sectionTitle">General Residents</p>
                 <div class="carousel d-flex justify-content-center">
                     <div class="d-flex justify-content-center align-items-center" style="width: 500px;">
-                        <a href="#" style="background-color: #03254c; width: 100%; border-radius: 1em;">
+                        <a href="#" style="background-color: #001E40; width: 100%; border-radius: 1em">
                             <div class="minorCategory" id="totalCitizens">
                                 <div class="texts">
                                     <p id="whiteLbl">Total Citizens</p>
                                     <p class="count d-flex align-self-end">10, 205</p>
                                 </div>  
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid mc-img" src="assets/img/dashboard/mc-genCitizens.png" alt="General-Citizens">
+                                    <img class="img-fluid" src="assets/img/dashboard/mc-totalCitizens.svg" alt="Total-Citizens" id="totalCitizens-img">
                                 </div>
                             </div>
                         </a>
@@ -71,12 +71,11 @@
                             <div class="minorCategory" id="genCitizens">
                                 <div class="texts">
                                     <p class="minorLbl">General Citizens</p>
-                                    <span class="mcCount">2900</span>
-                                    <span class="percentage"></span>
+                                    <span class="mcCount">8,644</span>
+                                    <span class="percentage">85%</span>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
                                     <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-genCitizens.png" alt="General-Citizens">
-                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-genCitizens.png" alt="General-Citizens"> -->
                                 </div>
                             </div>
                         </a>
@@ -86,12 +85,11 @@
                             <div class="minorCategory" id="children">
                                 <div class="texts">
                                     <p class="minorLbl">Children</p>
-                                    <span class="mcCount">2900</span>
-                                    <span class="percentage"></span>
+                                    <span class="mcCount">510</span>
+                                    <span class="percentage">5%</span>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
                                     <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-children.png" alt="Children">
-                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-children.png" alt="Children"> -->
                                 </div>
                             </div>
                         </a>
@@ -101,12 +99,11 @@
                             <div class="minorCategory" id="senior">
                                 <div class="texts">
                                     <p class="minorLbl">Senior Citizens</p>
-                                    <span class="mcCount">2900</span>
-                                    <span class="percentage"></span>
+                                    <span class="mcCount">1,020</span>
+                                    <span class="percentage">10%</span>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
                                     <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-seniorCitizens.png" alt="Senior-Citizens">
-                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-seniorCitizens.png" alt="Senior-Citizens"> -->
                                 </div>
                             </div>
                         </a>
@@ -116,12 +113,11 @@
                             <div class="minorCategory" id="pwd">
                                 <div class="texts">
                                     <p class="minorLbl">PWDs</p>
-                                    <span class="mcCount">2900</span>
-                                    <span class="percentage"></span>
+                                    <span class="mcCount">31</span>
+                                    <span class="percentage">0.3%</span>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
                                     <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-pwd.png" alt="PWDs">
-                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-pwd.png" alt="PWDs"> -->
                                 </div>
                             </div>
                         </a>
@@ -131,12 +127,11 @@
                             <div class="minorCategory" id="registered">
                                 <div class="texts">
                                     <p class="minorLbl">Registereed Voters</p>
-                                    <span class="mcCount">2900</span>
-                                    <span class="percentage"></span>
+                                    <span class="mcCount">8,391</span>
+                                    <span class="percentage">82%</span>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
                                     <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-registered.png" alt="Registered-Voters">
-                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-registered.png" alt="Registered-Voters"> -->
                                 </div>
                             </div>
                         </a>
@@ -146,12 +141,11 @@
                             <div class="minorCategory" id="unregistered">
                                 <div class="texts">
                                     <p class="minorLbl">Unregistered Voters</p>
-                                    <span class="mcCount">2900</span>
-                                    <span class="percentage"></span>
+                                    <span class="mcCount">1,814</span>
+                                    <span class="percentage">18%</span>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
                                     <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-unregistered.png" alt="Unregistered-Voters">
-                                    <!-- <img class="img-fluid d-flex align-items-end" src="assets/img/dashboard/icon-unregistered.png" alt="Unregistered-Voters"> -->
                                 </div>
                             </div>
                         </a>
@@ -174,7 +168,7 @@
                                             <p class="subTitle">Total Youth</p>
                                         </div>
                                         <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                            <img class="img-fluid" src="assets/img/dashboard/c-totalYouth.png" alt="Total-Youth">
+                                            <img class="img-fluid c-img" src="assets/img/dashboard/c-totalYouth.png" alt="Total-Youth">
                                         </div>
                                     </div>
                                 </a>
@@ -189,7 +183,7 @@
                                             <p class="subTitle">Enrolled Youth</p>
                                         </div>
                                         <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                            <img class="img-fluid" src="assets/img/dashboard/c-enrolled.png" alt="Enrolled-Youth">
+                                            <img class="img-fluid c-img" src="assets/img/dashboard/c-enrolled.png" alt="Enrolled-Youth">
                                         </div>
                                     </div>
                                 </a>
@@ -204,7 +198,7 @@
                                             <p class="subTitle">Out-of-school Youth</p>
                                         </div>
                                         <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                            <img class="img-fluid" src="assets/img/dashboard/c-out-of-school.png" alt="Out-of-school Youth">
+                                            <img class="img-fluid c-img" src="assets/img/dashboard/c-out-of-school.png" alt="Out-of-school Youth">
                                         </div>
                                     </div>
                                 </a>
@@ -219,7 +213,7 @@
                                             <p class="subTitle">Working Student</p>
                                         </div>
                                         <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                            <img class="img-fluid" src="assets/img/dashboard/c-workingStudents.png" alt="Out-of-school Youth">
+                                            <img class="img-fluid c-img" src="assets/img/dashboard/c-workingStudents.png" alt="Out-of-school Youth">
                                         </div>
                                     </div>
                                 </a>
@@ -234,7 +228,7 @@
                                             <p class="subTitle">Employed</p>
                                         </div>
                                         <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                            <img class="img-fluid" src="assets/img/dashboard/c-employed.png" alt="Employed">
+                                            <img class="img-fluid c-img" src="assets/img/dashboard/c-employed.png" alt="Employed">
                                         </div>
                                     </div>
                                 </a>
@@ -249,7 +243,7 @@
                                             <p class="subTitle">Unemployed</p>
                                         </div>
                                         <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                            <img class="img-fluid" src="assets/img/dashboard/c-unemployed.png" alt="Employed">
+                                            <img class="img-fluid c-img" src="assets/img/dashboard/c-unemployed.png" alt="Employed">
                                         </div>
                                     </div>
                                 </a>
