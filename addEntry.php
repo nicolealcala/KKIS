@@ -1,30 +1,84 @@
 <?php
-  include 'connection.php';
+require 'connection.php';
 
-  session_start();
-  session_destroy();
-  session_start();
+// session_start();
+// session_destroy();
+// session_start();
 
-  if(isset($_POST['submitBtn'])) {
-    $queryPersonal = "INSERT INTO `Kabataan`(`first_name`, `middle_name`, `last_name`, `kabataan_suffix`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`) 
-             VALUES ('".$_POST['kFname']."','".$_POST['kMname']."','".$_POST['kLname']."', '".$_POST['kSuffix']."', '".$_POST['gender']."', '".$_POST['birthday']."', '".$_POST['birthplace']."', '".$_POST['maritalStatus']."', '".$_POST['religion']."', '".$_POST['disability']."', '".$_POST['contact']."', '".$_POST['voterType']."', '".$_POST['address']."' '".$_POST['purok']."')";
+if (isset($_POST['submitBtn'])) {
 
-    $queryEducation = "INSERT INTO `Educational_info`(`educational_status`, `level`, `school_type`, `school_name`, `kabataan_id`, `industry_id`, `salary_id`) 
-             VALUES ('".$_POST['educStatus']."','".$_POST['educLevel']."','".$_POST['schoolType']."', '".$_POST['schoolName']."', '".$_POST['SECRET']."', '".$_POST['educIndustry']."', '".$_POST['educSalary']."')";
-    
-    $queryEmployment = "INSERT INTO `Employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `kabataan_id`, `industry_id`, `salary_id`) 
-             VALUES ('".$_POST['employStatus']."','".$_POST['employeeType']."','".$_POST['employerlType']."', '".$_POST['employerName']."', '".$_POST['SECRET']."', '".$_POST['employIndustry']."', '".$_POST['employSalary']."')";
-    
-    $queryHousehold = "INSERT INTO `Households`(`head_first_name`, `head_middle_name`, `head_last_name`, `head_suffix`, `head_remarks`, `members_count`) 
-             VALUES ('".$_POST['hFname']."','".$_POST['hMname']."','".$_POST['hLname']."', '".$_POST['hSuffix']."', '".$_POST['remarks']."', '".$_POST['membersCount']."')";
-    
-    $entryStudent = executeQuery($queryPersonal, $queryEducation, $queryHousehold);
-    $entryEmployee = executeQuery($queryPersonal, $queryEmployment, $queryHousehold);
-    
-    // if(executeQuery($queryPersonal, $queryEducation)){
-    //   echo ("Successful");
+    //Personal Info
+    $fName = $_POST['fName'];
+    $mName = $_POST['mName'];
+    $lName = $_POST['lName'] . " " . $_POST['suffix'];
+    $gender = $_POST['gender'];
+    $birthday = $_POST['birthday'];
+    $birthplace = $_POST['birthplace'];
+    $mStatus = $_POST['mStatus'];
+    $religion = $_POST['religion'];
+    $disability = $_POST['disability'];
+    $contact = $_POST['contact'];
+    $voterType = $_POST['voterType'];
+    $address = $_POST['address'];
+    $purok = $_POST['purok'];
+    $organization = $_POST['organization'];
+
+    //Educational Info
+    // if (isset($_POST['educCheck'])) {
+    $educStatus = isset($_POST['educStatus']) ? $_POST['educStatus'] : null;
+    $level = isset($_POST['educLevel']) ? $_POST['educLevel'] : null;
+    $schoolType = isset($_POST['schoolType']) ? $_POST['schoolType'] : null;
+    $school = isset($_POST['schoolName']) ? $_POST['schoolName'] : null;
+    $educIndustry = isset($_POST['educIndustry']) ? $_POST['educIndustry'] : null;
+    $educSalary = isset($_POST['educSalary']) ? $_POST['educSalary'] : null;
     // }
-  }
+
+    //Employment Info
+    // if (isset($_POST['employCheck'])) {
+    $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
+    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
+    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
+    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
+    $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : null;
+    $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : null;
+    // }
+
+    // Household Info
+    $hFname = $_POST['hFname'];
+    $hMname = $_POST['hMname'];
+    $hLname = $_POST['hLname'] . ' ' . $_POST['hSuffix'];
+    $remarks = $_POST['remarks'];
+    $membersCount = $_POST['membersCount'];
+
+    $queryPersonal = "INSERT INTO `residents`(`first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`) VALUES ('" . $fName . "' , '" . $mName . "' , '" . $lName . "' , '" . $gender . "' , '" . $birthday . "' , '" . $birthplace . "' , '" . $mStatus . "' , '" . $religion . "' , '" . $disability . "' , '" . $contact . "' , '" . $voterType . "' , '" . $address . "' , '" . $purok . "' , '" . $organization . "')";
+
+    $queryEducation = "INSERT INTO `educational_info`(`educational_status`, `level`, `school_type`, `school_name`, `industry_id`, `salary_id`) VALUES ($educStatus,  $level, $schoolType, $school, $educIndustry, $educSalary)";
+
+    $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`) VALUES ('" . $employStatus . "' , '" . $employeeType . "' , '" . $employerType . "' , '" . $employer . "' , '" . $employIndustry . "' , '" . $employSalary . "')";
+
+    $queryHousehold = "INSERT INTO `households` (`head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
+
+    if (isset($_POST['educInfo'])) {
+        executeQuery($queryPersonal);
+        executeQuery($queryEducation);
+        executeQuery($queryHousehold);
+        // mysqli_query($conn, $queryPersonal);
+        // mysqli_query($conn, $queryEducation);
+        // mysqli_query($conn, $queryHousehold);
+
+        echo "<script>alert('Education');</script>";
+    } else if (isset($_POST['employInfo'])) {
+        executeQuery($queryPersonal);
+        executeQuery($queryEmployment);
+        executeQuery($queryHousehold);
+        // mysqli_query($conn, $queryPersonal);
+        // mysqli_query($conn, $queryEmployment);
+        // mysqli_query($conn, $queryHousehold);
+        echo "<script>alert('Employment');</script>";
+    } else {
+        echo "<script>alert('Mali');</script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +88,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Add New Entry</title>
-    
+
     <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
@@ -47,11 +101,11 @@
     <link rel="stylesheet" href="assets/scss/modal.css">
 
     <!-- Virtual Select JS library -->
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
     <!-- navAdd CSS -->
     <!-- <link rel="stylesheet" href="assets/css/navAddEntry.css"> -->
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
@@ -60,7 +114,7 @@
 
     <!-- Nav -->
     <!-- <div class="navDiv">
-        <?php 
+        <?php
         // include 'nav.php' 
         ?>
     </div> -->
@@ -68,23 +122,23 @@
     <div class="mainContainer d-block">
         <header>
             <!-- <div class="container-fluid mt-4 mb-3 w-100"> -->
-                <div class="row headerRow">
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
-                        <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                        <span class="title">Add New Entry</span>
-                    </div>
-                    <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
-                        <span class="accountType">Super Admin Account</span>
-                    </div>
+            <div class="row headerRow">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
+                    <span class="title">Add New Entry</span>
                 </div>
+                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
+                    <span class="accountType">Super Admin Account</span>
+                </div>
+            </div>
             <!-- </div> -->
             <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
         </header>
-        
-        
+
+
         <div class="container-fluid content">
             <div class="sectionDiv">
-                <form method="post" id="addForm" class="mb-5">
+                <form method="POST" id="addForm" class="mb-5">
                     <!-- Personal Info -->
                     <div class="card mt-4">
                         <div class="row m-0">
@@ -95,19 +149,19 @@
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kFname" type="text" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="fName" type="text" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kMname" type="text" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="mName" type="text" required="">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kLname" type="text" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="lName" type="text" required="">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
                                 <label class="col-form-label required fieldLabel w-100 p-1" for="kabataanSuffix" id="kabataanSuffixLbl">Suffix</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kSuffix" type="text" id="kabataanSuffix">
+                                <input class="form-control userInput text-uppercase w-100" name="suffix" type="text" id="kabataanSuffix">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentGender">Gender Preference</label>
@@ -129,7 +183,7 @@
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentMstatus">Marital Status</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="maritalStatus" required="">
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" required="">
                                     <option value="Single" selected="">Single</option>
                                     <option value="Married">Married</option>
                                     <option value="Live-in">Live-in</option>
@@ -234,10 +288,10 @@
                                             <option value="Alternative Learning System">Alternative Learning System (ALS)</option>
                                             <option value="Diploma Course">Diploma Course</option>
                                             <option value="College">College</option>
-                                            <option value="Graduate Studies">Graduate Studies</option> 
+                                            <option value="Graduate Studies">Graduate Studies</option>
                                         </select>
                                     </div>
-                                        <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
+                                    <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required="">
                                             <option value="Private" selected="">Private</option>
@@ -484,10 +538,10 @@
                                         <option value="SK Scholar">SK Scholar</option>
                                         <option value="Solo Living">Solo Living</option>
                                         <option value="Solo Parent">Solo Parent</option>
-                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
+                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>
                                     </select>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col col-lg-2 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="famCount">No.&nbsp; of Family Members</label>
                                 <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required="">
@@ -504,7 +558,7 @@
                     <!-- Button -->
                     <div class="row m-0 d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
                         <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
-                                <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
+                            <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -520,8 +574,8 @@
                                 <div class="row m-0">
                                     <div class="col col-12 p-0">
                                         <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
-                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                                         </svg>
                                     </div>
                                     <div class="col col-12">
@@ -533,7 +587,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
 
     <!-- Fundamental Links -->
@@ -545,7 +599,7 @@
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/addEntry.js"></script>
-    
+
 </body>
 
 </html>

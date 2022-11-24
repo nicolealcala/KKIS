@@ -24,7 +24,7 @@ $(document).ready(function(){
     //For Employ Radio Btn
     $('#employCheck').change(function(){
         employRadioClick();
-      });
+    });
 
     //For Educ Status ON CHANGE
     $('#selectEducStatus').on('change', function(){
