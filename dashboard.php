@@ -1,5 +1,5 @@
 <?php
-  session_start();
+//   session_start();
 ?>
 
 <!DOCTYPE html>
@@ -53,17 +53,18 @@
                 <!-- Minor Catagories -->
                 <p class="sectionTitle">General Residents</p>
                 <div class="carousel d-flex justify-content-center">
+                    <!-- Mini Category1: Total Citizens -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 500px;">
                         <a href="#" style="background-color: #001E40; width: 100%; border-radius: 1em">
                             <div class="minorCategory" id="totalCitizens">
                                 <div class="texts w-100">
                                     <p id="whiteLbl">Total Citizens</p>
                                 </div>
-                                <div class="row" style="margin: 2.5em 0 0 0">
-                                    <div class="col-12 col-sm-9 p-0">
+                                <div class="row m-0 align-self-end" style="z-index: 99">
+                                    <div class="col-12 col-md-9 p-0">
                                         <p class="mcCount" id="citizensCount">10, 205</p>
                                     </div>
-                                    <div class="col-12 col-sm-3 mb-2 d-flex align-items-end justify-content-end p-0">
+                                    <div class="col-12 col-md-3 mb-2 align-self-end p-0">
                                         <button class="btn rounded-pill" type="button" id="viewBtn">View all</button>
                                     </div>
                                 </div>
@@ -73,6 +74,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Mini Category2: General Citizens -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
                         <a href="#" style="background-color: #D7ECFA; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="genCitizens">
@@ -87,6 +89,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Mini Category3: Children -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
                         <a href="#" style="background-color: #FFE5DB; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="children">
@@ -101,6 +104,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Mini Category4: Senior Citizens -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
                         <a href="#" style="background-color: #FFF4D1; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="senior">
@@ -115,6 +119,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Mini Category5: PWDs -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
                         <a href="#" style="background-color: #DDFFF8; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="pwd">
@@ -129,6 +134,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Mini Category6: Registered Voters -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
                         <a href="#" style="background-color: #FFFCBB; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="registered">
@@ -143,6 +149,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Mini Category7: Unregistered Voters -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;" >
                         <a href="#" style="background-color: #F8E7F8; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="unregistered">
@@ -162,15 +169,10 @@
 
             <!-- Main Categories -->
             <div class="dashCategories mx-0">
-                <!-- <div class="card rounded-4 p-0">
-                    <div class="card-body m-0 p-0">
-                        
-                    </div>
-                </div> -->
                 <p class="sectionTitle">Katipunan ng Kabataan</p>
-                <div class="row m-0 mt-0 gx-5 gy-5 p-0 w-100">
+                <div class="row gx-5 p-0" style="margin: 40px 0 10px 0">
                     <!-- Category1 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
                         <a href="tblTotalYouth.php">
                             <div class="category" id="totalYouth" style="background-color: #8ECAE6">
                                         <div class="texts">
@@ -185,7 +187,7 @@
                     </div>
 
                     <!-- Category2 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
                         <a href="tblEnrolled.php">
                             <div class="category" id="enrolledYouth" style="background-color: #219EBC">
                                 <div class="texts">
@@ -200,7 +202,7 @@
                     </div>
 
                     <!-- Category3 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
                         <a href="tblOutOfSchool.php">
                             <div class="category" id="ousYouth" style="background-color: #04496A">
                                 <div class="texts">
@@ -215,7 +217,7 @@
                     </div>
 
                     <!-- Category4 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
                         <a href="tblWorkingStudent.php">
                             <div class="category" id="workingStudent" style="background-color: #F3CB69">
                                 <div class="texts">
@@ -230,7 +232,7 @@
                     </div>
 
                     <!-- Category5 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
                         <a href="tblEmployed.php">
                             <div class="category" id="employed" style="background-color: #FFB703">
                                 <div class="texts">
@@ -245,7 +247,7 @@
                     </div>
 
                     <!-- Category6 -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
                         <a href="tblUnemployed.php">
                             <div class="category" id="unemployed" style="background-color: #FB8500">
                                 <div class="texts">

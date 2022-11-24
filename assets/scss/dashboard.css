@@ -30,19 +30,21 @@ a {
 }
 .carousel .slick-next.slick-arrow {
   padding: 0;
-  margin: auto auto;
+  margin: auto;
 }
 .carousel .slick-prev.slick-arrow {
   padding: 0;
-  margin: auto -20px;
+  margin: auto -15px;
 }
 
 .slick-slide {
   margin: 15px;
   z-index: 1;
+  border-radius: 1em;
 }
 
 .slick-track {
+  padding: 3px;
   margin: auto 1em;
 }
 
@@ -58,26 +60,42 @@ a {
   border: none;
   color: white;
   padding: 24px;
-}
-
-#totalCitizens {
-  overflow: hidden;
-}
-#totalCitizens #totalCitizens-img {
-  position: absolute;
-  top: -120px;
-  left: -25px;
-  margin: 0;
-  padding: 0;
-  max-width: 600px;
-  max-height: 210px;
-  opacity: 30%;
+  border-radius: 1em;
 }
 
 .texts {
   width: 100%;
   text-decoration: none;
-  z-index: 50;
+  z-index: 99;
+}
+
+.miniImg, .dashboardImg {
+  position: absolute;
+  top: 80%;
+  margin-right: 1.5em;
+  max-width: 100%;
+  max-height: 15px;
+}
+
+.dashboardImg {
+  position: relative;
+  max-height: 150px;
+  z-index: 1;
+}
+
+#totalCitizens {
+  overflow: hidden;
+  z-index: 1;
+}
+
+#totalCitizens-img {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  max-width: 600px;
+  max-height: 210px;
+  opacity: 30%;
+  z-index: -1;
 }
 
 .minorLbl {
@@ -102,6 +120,7 @@ a {
   font-size: 1.5em;
   font-weight: 500;
   color: white;
+  z-index: 99;
 }
 
 #citizensCount {
@@ -116,6 +135,7 @@ a {
   color: #393737;
   font-size: 1.2em;
   font-weight: 500;
+  z-index: 99;
 }
 
 .category {
@@ -130,7 +150,7 @@ a {
   overflow: hidden;
 }
 
-.category:hover {
+.category:hover, .slick-slide:hover {
   box-shadow: 0 5px 10px #bbbbbb;
 }
 
@@ -138,7 +158,6 @@ a {
   font-size: 3.5em;
   font-weight: 500;
   margin-bottom: 0;
-  z-index: 99;
 }
 
 .subTitle {
@@ -146,23 +165,9 @@ a {
   z-index: 55;
 }
 
-.miniImg, .dashboardImg {
-  position: absolute;
-  top: 55%;
-  margin-right: 1.5em;
-  max-width: 100%;
-  max-height: 75px;
-  z-index: 1;
-}
-
-.dashboardImg {
-  position: relative;
-  max-height: 150px;
-}
-
 .mc-img {
   max-height: 90px;
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 
 .c-img {
