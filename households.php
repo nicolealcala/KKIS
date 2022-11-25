@@ -14,7 +14,8 @@
     
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/households.css">
-    <link rel="stylesheet" href="assets/scss/mediaquery-sidenav.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery.css">
+    <link rel="stylesheet" href="assets/scss/mediaquery-mods.css">
 
     <!-- Virtual Select JS library -->
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
@@ -40,13 +41,14 @@
 
     <div id="right">
         <div id="rc">
-            <!-- <div id="grey">
-
-            </div> -->
+            <div id="grey">
+                <!-- <hr id="greyHR"> -->
+                <!-- <hr id="headerHR"> -->
+            </div>
         </div>
 
         <div id="pageContent">
-            <div class="mainContainer d-block">
+            <div class="mainContainer">
                 <header id="header">
                     <div class="row headerRow">
                         <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
@@ -58,7 +60,7 @@
                             </span>
                             <span id="pageTitle" class="title longTitle">Declared Households</span>
                         </div>
-                        <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
+                        <div id="divAccountType" class="col-lg-4 col-md-4 d-none d-md-flex align-items-md-center">
                             <span class="accountType d-flex justify-content-end">Super Admin Account</span>
                         </div>
                     </div>
@@ -67,7 +69,7 @@
                 </header>
 
                 <!-- CONTENTX START -->
-                <div class="container-fluid content">
+                <div class="content">
                     <!-- Menu Buttons -->
                     <div class="row d-flex justify-content-end align-ittems-center m-0">
                         <button class="menuBtn menu1 rounded-pill clicked" id="families">Families</button>
