@@ -121,7 +121,6 @@ if (isset($_POST['submitBtn'])) {
 
     <div class="mainContainer d-block">
         <header>
-            <!-- <div class="container-fluid mt-4 mb-3 w-100"> -->
             <div class="row headerRow">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
                     <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
@@ -131,7 +130,6 @@ if (isset($_POST['submitBtn'])) {
                     <span class="accountType">Super Admin Account</span>
                 </div>
             </div>
-            <!-- </div> -->
             <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
         </header>
 
@@ -175,16 +173,16 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentBday">Birthday</label>
-                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" type="date" required="">
+                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" type="date" required>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentBplace">Birthplace</label>
-                                <input class="form-control userInput text-uppercase w-100" name="birthplace" type="text" required="">
+                                <input class="form-control userInput text-uppercase w-100" name="birthplace" type="text" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentMstatus">Marital Status</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" required="">
-                                    <option value="Single" selected="">Single</option>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" placeholder="Select Religion"required>
+                                    <option value="Single">Single</option>
                                     <option value="Married">Married</option>
                                     <option value="Live-in">Live-in</option>
                                     <option value="Separated">Separated</option>
@@ -194,18 +192,19 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1 p-1" for="residentReligion">Religion</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" required="">
-                                    <option value="Atheist" selected="">Atheist</option>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" required>
+                                    <option value="Atheist">Atheist</option>
                                     <option value="Buddhist">Buddhist</option>
                                     <option value="Christian">Christian</option>
                                     <option value="Muslim">Muslim</option>
+                                    <option value="Others">Others</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="disabilityDiv">
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
                                     <!-- Class form-select  removed from select element in Disability -->
-                                    <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect">
+                                    <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect" required>
                                         <option value="None">None</option>
                                         <option value="Communication disability">Communication disability</option>
                                         <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
@@ -219,22 +218,22 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentContact">Contact No.</label>
-                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="residentContact" placeholder="09XXXXXXXXX" inputmode="numeric" required="">
+                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="residentContact" placeholder="09XXXXXXXXX" inputmode="numeric" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12" for="residentVote">
                                 <label class="col-form-label fieldLabel required w-100 p-1">Voter Type</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required="">
-                                    <option value="Registered" selected="">Registered</option>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required>
+                                    <option value="Registered">Registered</option>
                                     <option value="Unregistered">Unregistered</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-8 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentAddress">House No./Street/Subdivision</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="address" id="residentAddress" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="address" id="residentAddress" required>
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentPurok">Purok</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required="">
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required>
                                     <option value="Cardinal" selected="">Cardinal</option>
                                     <option value="Cordillera">Cordillera</option>
                                     <option value="Doña Petra">Doña Petra</option>
@@ -272,16 +271,16 @@ if (isset($_POST['submitBtn'])) {
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="educStatusLbl" for="selectEducStatus">Educational Status</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="educStatus" id="selectEducStatus" required="">
-                                            <option value="Enrolled" selected="">Enrolled</option>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="educStatus" id="selectEducStatus" required>
+                                            <option value="Enrolled">Enrolled</option>
                                             <option value="Out-of-school Youth">Out-of-school Youth</option>
                                             <option value="Working Student">Working Student</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="levelLbl" for="selectLevel">Level</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="educLevel" id="selectLevel" required="">
-                                            <option value="Pre-Elementary" selected="">Pre-elementary</option>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="educLevel" id="selectLevel" required>
+                                            <option value="Pre-Elementary">Pre-elementary</option>
                                             <option value="Elementary">Elementary</option>
                                             <option value="Junior High School">Junior High School</option>
                                             <option value="Senior High School">Senior High School</option>
@@ -293,19 +292,19 @@ if (isset($_POST['submitBtn'])) {
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required="">
-                                            <option value="Private" selected="">Private</option>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required>
+                                            <option value="Private">Private</option>
                                             <option value="Public">Public</option>s
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolLbl" for="inputSchool">Name of School</label>
-                                        <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" required="">
+                                        <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducOccupation">Work Industry</label>
-                                        <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required="">
-                                            <option value="1" selected="">Accounting</option>
+                                        <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required>
+                                            <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
                                             <option value="3">Aerospace</option>
                                             <option value="4">Agriculture</option>
@@ -373,8 +372,8 @@ if (isset($_POST['submitBtn'])) {
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="educSalary" id="selectEducSalary" required="">
-                                            <option value="1" selected="">Less than 10,000</option>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="educSalary" id="selectEducSalary" required>
+                                            <option value="1">Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
                                             <option value="3">21,000-30,999</option>
                                             <option value="4">31,000-40,999</option>
@@ -395,34 +394,34 @@ if (isset($_POST['submitBtn'])) {
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required="">
-                                            <option value="Employed" selected="">Employed</option>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required>
+                                            <option value="Employed" selected>Employed</option>
                                             <option value="Unemployed">Unemployed</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required="">
-                                            <option value="Regular" selected="">Regular</option>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required>
+                                            <option value="Regular" selected>Regular</option>
                                             <option value="Contractual">Contractual</option>
                                             <option value="Job Order">Job Order</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required="">
-                                            <option value="Private" selected="">Private</option>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required>
+                                            <option value="Private" selected>Private</option>
                                             <option value="Public">Public</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employerLbl" for="inputEmployer">Name of Employer/Company/Business</label>
-                                        <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required="">
+                                        <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployOccupation">Work Industry</label>
-                                        <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required="">
-                                            <option value="1" selected>Accounting</option>
+                                        <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required>
+                                            <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
                                             <option value="3">Aerospace</option>
                                             <option value="4">Agriculture</option>
@@ -490,8 +489,8 @@ if (isset($_POST['submitBtn'])) {
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employSalary" id="selectEmploySalary" required="">
-                                            <option value="1" selected>Less than 10,000</option>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employSalary" id="selectEmploySalary" required>
+                                            <option value="1">Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
                                             <option value="3">21,000-30,999</option>
                                             <option value="4">31,000-40,999</option>
