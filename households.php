@@ -15,7 +15,7 @@
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/households.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
-    <link rel="stylesheet" href="assets/scss/mediaquery-mods.css">
+    <link rel="stylesheet" href="assets/scss/mq-sidenavmods.css">
 
     <!-- Virtual Select JS library -->
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <!-- <div id="pageContent"> -->
+        <div id="pageContent">
             <div class="mainContainer">
                 <header id="header">
                     <div class="row headerRow">
@@ -69,7 +69,7 @@
                 </header>
 
                 <!-- CONTENTX START -->
-                <div class="content">
+                <div class="container-fluid content">
                     <!-- Menu Buttons -->
                     <div class="row d-flex justify-content-end align-ittems-center m-0">
                         <button class="menuBtn menu1 rounded-pill clicked" id="families">Families</button>
@@ -256,7 +256,6 @@
                                 // while ($row = mysqli_fetch_array($result)) {
                                 //     echo '
                                 //     <tr>
-                                //         <td align="center"><input type="checkbox" class="checkitem"></td>
                                 //         <td>' . $row["lastName"] . '</td>
                                 //         <td>' . $row["firstName"] . '</td>
                                 //         <td>' . $row["middleName"] . '</td>
@@ -282,7 +281,7 @@
                     </div>
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
     
    
