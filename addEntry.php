@@ -1,9 +1,30 @@
 <?php
 require 'connection.php';
 
-// session_start();
-// session_destroy();
-// session_start();
+session_start();
+session_destroy();
+session_start();
+
+    // $encryptedName = $fName.''.$lName;
+
+    //  class secure {
+    //     private static $cipher = "aes-256-cbc-hmac-sha1";
+    //     private static $option = 0;
+    //     private static $key = "KKIS 2022";
+    //     private static $iv = "671119202226KKIS";
+
+    //     public static function encrypt($data){
+    //         static $encrypt;
+
+    //         $encrypt = openssl_encrypt($data, self::$cipher, self::$option, self::$key, self::$iv);
+
+    //         return $encrypt;
+    //     }
+    //     $encryptName = secure::ecrypt($encryptedName);
+    //     echo $encryptName;
+    // }
+
+    
 
 if (isset($_POST['submitBtn'])) {
 
@@ -24,24 +45,20 @@ if (isset($_POST['submitBtn'])) {
     $organization = $_POST['organization'];
 
     //Educational Info
-    // if (isset($_POST['educCheck'])) {
-    $educStatus = isset($_POST['educStatus']) ? $_POST['educStatus'] : null;
-    $level = isset($_POST['educLevel']) ? $_POST['educLevel'] : null;
-    $schoolType = isset($_POST['schoolType']) ? $_POST['schoolType'] : null;
-    $school = isset($_POST['schoolName']) ? $_POST['schoolName'] : null;
-    $educIndustry = isset($_POST['educIndustry']) ? $_POST['educIndustry'] : null;
-    $educSalary = isset($_POST['educSalary']) ? $_POST['educSalary'] : null;
-    // }
+    // $educStatus = isset($_POST['educStatus']) ? $_POST['educStatus'] : null;
+    // $educlevel = isset($_POST['educLevel']) ? $_POST['educLevel'] : null;
+    // $schoolType = isset($_POST['schoolType']) ? $_POST['schoolType'] : null;
+    // $school = isset($_POST['schoolName']) ? $_POST['schoolName'] : null;
+    // $educIndustry = isset($_POST['educIndustry']) ? $_POST['educIndustry'] : null;
+    // $educSalary = isset($_POST['educSalary']) ? $_POST['educSalary'] : null;
 
     //Employment Info
-    // if (isset($_POST['employCheck'])) {
-    $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
-    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
-    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
-    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
-    $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : null;
-    $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : null;
-    // }
+    // $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
+    // $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
+    // $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
+    // $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
+    // $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : null;
+    // $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : null;
 
     // Household Info
     $hFname = $_POST['hFname'];
@@ -50,33 +67,37 @@ if (isset($_POST['submitBtn'])) {
     $remarks = $_POST['remarks'];
     $membersCount = $_POST['membersCount'];
 
-    $queryPersonal = "INSERT INTO `residents`(`first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`) VALUES ('" . $fName . "' , '" . $mName . "' , '" . $lName . "' , '" . $gender . "' , '" . $birthday . "' , '" . $birthplace . "' , '" . $mStatus . "' , '" . $religion . "' , '" . $disability . "' , '" . $contact . "' , '" . $voterType . "' , '" . $address . "' , '" . $purok . "' , '" . $organization . "')";
+    $queryPersonal = "INSERT INTO `residents`(`first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`) VALUES ('".$fName."', '".$mName."', '".$lName."', '".$gender."', '".$birthday."', '".$birthplace."', '".$mStatus."', '".$religion."', '".$disability."', '".$contact."', '".$voterType."', '".$address."', '".$purok."', '".$organization."')";
 
-    $queryEducation = "INSERT INTO `educational_info`(`educational_status`, `level`, `school_type`, `school_name`, `industry_id`, `salary_id`) VALUES ($educStatus,  $level, $schoolType, $school, $educIndustry, $educSalary)";
+    // $queryEducation = "INSERT INTO `educational_info`(`educ_status`, `educ_level`, `school_type`, `school_name`) VALUES ('".$educStatus."', '".$educlevel."', '".$schoolType."', '".$school."')";
 
-    $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`) VALUES ('" . $employStatus . "' , '" . $employeeType . "' , '" . $employerType . "' , '" . $employer . "' , '" . $employIndustry . "' , '" . $employSalary . "')";
+    // $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`) VALUES ('".$employStatus."', '".$employeeType."', '".$employerType."', '".$employer."', '".$employIndustry."', '".$employSalary."')";
 
-    $queryHousehold = "INSERT INTO `households` (`head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
+    $queryHousehold = "INSERT INTO `households` (`head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('".$hFname."' , '".$hMname."', '".$hLname."', '".$remarks."', '".$membersCount."')";
 
-    if (isset($_POST['educInfo'])) {
-        executeQuery($queryPersonal);
-        executeQuery($queryEducation);
-        executeQuery($queryHousehold);
-        // mysqli_query($conn, $queryPersonal);
-        // mysqli_query($conn, $queryEducation);
-        // mysqli_query($conn, $queryHousehold);
+    // if (isset($_POST['educInfo'])) {
+    //     executeQuery($queryPersonal);
+    //     executeQuery($queryEducation);
+    //     executeQuery($queryHousehold);
+    //     // mysqli_query($conn, $queryPersonal);
+    //     // mysqli_query($conn, $queryEducation);
+    //     // mysqli_query($conn, $queryHousehold);
 
-        echo "<script>alert('Education');</script>";
-    } else if (isset($_POST['employInfo'])) {
-        executeQuery($queryPersonal);
-        executeQuery($queryEmployment);
-        executeQuery($queryHousehold);
-        // mysqli_query($conn, $queryPersonal);
-        // mysqli_query($conn, $queryEmployment);
-        // mysqli_query($conn, $queryHousehold);
-        echo "<script>alert('Employment');</script>";
-    } else {
-        echo "<script>alert('Mali');</script>";
+    //     echo "<script>alert('Education');</script>";
+    // } else if (isset($_POST['employInfo'])) {
+    //     executeQuery($queryPersonal);
+    //     executeQuery($queryEmployment);
+    //     executeQuery($queryHousehold);
+    //     // mysqli_query($conn, $queryPersonal);
+    //     // mysqli_query($conn, $queryEmployment);
+    //     // mysqli_query($conn, $queryHousehold);
+    //     echo "<script>alert('Employment');</script>";
+    // } else {
+    //     echo "<script>alert('Mali');</script>";
+    // }
+
+    if (executeQuery($queryPersonal) && executeQuery($queryHousehold)){
+        echo"<script>alert('Pumasok')</script>";
     }
 }
 ?>
@@ -112,13 +133,6 @@ if (isset($_POST['submitBtn'])) {
 
 <body id="page-top">
 
-    <!-- Nav -->
-    <!-- <div class="navDiv">
-        <?php
-        // include 'nav.php' 
-        ?>
-    </div> -->
-
     <div class="mainContainer d-block">
         <header>
             <div class="row headerRow">
@@ -146,25 +160,25 @@ if (isset($_POST['submitBtn'])) {
                         </div>
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="fName" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="firstName">First Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="fName" id="firstName" type="text" required>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="mName" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="middleName">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="mName" id="middleName" type="text" required>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="kabataanLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="lName" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="lastName">Last Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="lName" id="lastName" type="text" required>
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label required fieldLabel w-100 p-1" for="kabataanSuffix" id="kabataanSuffixLbl">Suffix</label>
-                                <input class="form-control userInput text-uppercase w-100" name="suffix" type="text" id="kabataanSuffix">
+                                <label class="col-form-label required fieldLabel w-100 p-1" for="suf" id="suffixLbl">Suffix</label>
+                                <input class="form-control userInput text-uppercase w-100" name="suffix" type="text" id="suf">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentGender">Gender Preference</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" required="">
-                                    <option value="Man" selected="">Man</option>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="genderPreference">Gender Preference</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" id="genderPreference" required>
+                                    <option value="Man">Man</option>
                                     <option value="Woman">Woman</option>
                                     <option value="Transgender">Transgender</option>
                                     <option value="Non-binary/Non-conforming">Non-binary/Non-conforming</option>
@@ -172,16 +186,16 @@ if (isset($_POST['submitBtn'])) {
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentBday">Birthday</label>
-                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" type="date" required>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="bday">Birthday</label>
+                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" id="bday" type="date" required>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentBplace">Birthplace</label>
-                                <input class="form-control userInput text-uppercase w-100" name="birthplace" type="text" required>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="bplace">Birthplace</label>
+                                <input class="form-control userInput text-uppercase w-100" name="birthplace" id="bplace" type="text" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentMstatus">Marital Status</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" placeholder="Select Religion"required>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="maritalStatus">Marital Status</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" id="maritalStatus" placeholder="Select Religion" required>
                                     <option value="Single">Single</option>
                                     <option value="Married">Married</option>
                                     <option value="Live-in">Live-in</option>
@@ -191,8 +205,8 @@ if (isset($_POST['submitBtn'])) {
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1 p-1" for="residentReligion">Religion</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" required>
+                                <label class="col-form-label fieldLabel required w-100 p-1 p-1" for="religionSelect">Religion</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" id="religionSelect" required>
                                     <option value="Atheist">Atheist</option>
                                     <option value="Buddhist">Buddhist</option>
                                     <option value="Christian">Christian</option>
@@ -205,7 +219,7 @@ if (isset($_POST['submitBtn'])) {
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
                                     <!-- Class form-select  removed from select element in Disability -->
                                     <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect" required>
-                                        <option value="None">None</option>
+                                        <option value="None" selected>None</option>
                                         <option value="Communication disability">Communication disability</option>
                                         <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
                                         <option value="Learning disability">Learning disability</option>
@@ -217,8 +231,8 @@ if (isset($_POST['submitBtn'])) {
                                 </div>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentContact">Contact No.</label>
-                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="residentContact" placeholder="09XXXXXXXXX" inputmode="numeric" required>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="contactNo">Contact No.</label>
+                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="contactNo" placeholder="09XXXXXXXXX" inputmode="numeric" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12" for="residentVote">
                                 <label class="col-form-label fieldLabel required w-100 p-1">Voter Type</label>
@@ -234,7 +248,7 @@ if (isset($_POST['submitBtn'])) {
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentPurok">Purok</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required>
-                                    <option value="Cardinal" selected="">Cardinal</option>
+                                    <option value="Cardinal">Cardinal</option>
                                     <option value="Cordillera">Cordillera</option>
                                     <option value="Doña Petra">Doña Petra</option>
                                     <option value="Doña Regina 1">Doña Regina 1</option>
@@ -265,7 +279,7 @@ if (isset($_POST['submitBtn'])) {
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="card p-3" id="educCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
-                                    <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked="">
+                                    <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked>
                                     <span class="markerText ms-2">Educational Status</span>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
@@ -302,7 +316,7 @@ if (isset($_POST['submitBtn'])) {
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducOccupation">Work Industry</label>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducIndustry">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required>
                                             <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
@@ -395,14 +409,14 @@ if (isset($_POST['submitBtn'])) {
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required>
-                                            <option value="Employed" selected>Employed</option>
+                                            <option value="Employed">Employed</option>
                                             <option value="Unemployed">Unemployed</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required>
-                                            <option value="Regular" selected>Regular</option>
+                                            <option value="Regular">Regular</option>
                                             <option value="Contractual">Contractual</option>
                                             <option value="Job Order">Job Order</option>
                                         </select>
@@ -410,7 +424,7 @@ if (isset($_POST['submitBtn'])) {
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required>
-                                            <option value="Private" selected>Private</option>
+                                            <option value="Private">Private</option>
                                             <option value="Public">Public</option>
                                         </select>
                                     </div>
@@ -419,7 +433,7 @@ if (isset($_POST['submitBtn'])) {
                                         <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployOccupation">Work Industry</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployIndustry">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required>
                                             <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
@@ -514,15 +528,15 @@ if (isset($_POST['submitBtn'])) {
                         <div class="row m-0 my-3 gy-3 gx-3" id="householdRow">
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" id="headFname" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" required="">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname" required>
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headSuffix" id="headSuffixLbl">Suffix</label>
@@ -543,7 +557,7 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                             <div class="col col-lg-2 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="famCount">No.&nbsp; of Family Members</label>
-                                <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required="">
+                                <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required>
                                     <option value="Less than 5">Less than 5</option>
                                     <option value="5 to 10">5 to 10</option>
                                     <option value="11 to 15">11 to 15</option>
@@ -561,6 +575,7 @@ if (isset($_POST['submitBtn'])) {
                         </div>
                     </div>
                 </form>
+
 
                 <!-- Modal -->
                 <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
