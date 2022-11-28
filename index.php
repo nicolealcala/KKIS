@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="row mx-3 my-0">
-                        <div class="col-12 text-center p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
+                        <div class="col-12 text-center p-0"><img class="img-fluid hrSvg" src="assets/img/misc/hr.svg"></div>
                     </div>  
                     <!-- Form -->
                     <form id="loginForm" action="" method="post">
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div class="row mx-3 my-0">
-                        <div class="col-12 text-center p-0"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
+                        <div class="col-12 text-center p-0"><img class="img-fluid hrSvg" src="assets/img/misc/hr.svg"></div>
                     </div>
                     <!-- Form -->
                     <form id="signupForm" action="" onSubmit="return validate();" method="post">

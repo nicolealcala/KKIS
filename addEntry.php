@@ -1,34 +1,19 @@
 <?php
 require 'connection.php';
-
-session_start();
-session_destroy();
-session_start();
-
-    // $encryptedName = $fName.''.$lName;
-
-    //  class secure {
-    //     private static $cipher = "aes-256-cbc-hmac-sha1";
-    //     private static $option = 0;
-    //     private static $key = "KKIS 2022";
-    //     private static $iv = "671119202226KKIS";
-
-    //     public static function encrypt($data){
-    //         static $encrypt;
-
-    //         $encrypt = openssl_encrypt($data, self::$cipher, self::$option, self::$key, self::$iv);
-
-    //         return $encrypt;
-    //     }
-    //     $encryptName = secure::ecrypt($encryptedName);
-    //     echo $encryptName;
-    // }
-
-    
+// session_start();
+// session_destroy();
+// session_start();
 
 if (isset($_POST['submitBtn'])) {
+    // Household Info
+    $hFname = $_POST['hFname'];
+    $hMname = $_POST['hMname'];
+    $hLname = $_POST['hLname'] . ' ' . $_POST['hSuffix'];
+    $remarks = $_POST['remarks'];
+    $membersCount = $_POST['membersCount'];
 
     //Personal Info
+    $residentID;
     $fName = $_POST['fName'];
     $mName = $_POST['mName'];
     $lName = $_POST['lName'] . " " . $_POST['suffix'];
@@ -43,63 +28,53 @@ if (isset($_POST['submitBtn'])) {
     $address = $_POST['address'];
     $purok = $_POST['purok'];
     $organization = $_POST['organization'];
+    $qrCode; //generated qrcode path
+    $householdID; //foreign key
+    $date_added = date("Y-m-d");
+    $encryptedName = $fName . " " . $lName;
 
-    //Educational Info
-    // $educStatus = isset($_POST['educStatus']) ? $_POST['educStatus'] : null;
-    // $educlevel = isset($_POST['educLevel']) ? $_POST['educLevel'] : null;
-    // $schoolType = isset($_POST['schoolType']) ? $_POST['schoolType'] : null;
-    // $school = isset($_POST['schoolName']) ? $_POST['schoolName'] : null;
-    // $educIndustry = isset($_POST['educIndustry']) ? $_POST['educIndustry'] : null;
-    // $educSalary = isset($_POST['educSalary']) ? $_POST['educSalary'] : null;
+    // Educational Info
+    $educStatus = isset($_POST['educStatus']) ? ($_POST['educStatus']) : null;
+    $educlevel = isset($_POST['educLevel']) ? ($_POST['educLevel']) : null;
+    $schoolType = isset($_POST['schoolType']) ? ($_POST['schoolType']) : null;
+    $school = isset($_POST['schoolName']) ? ($_POST['schoolName']) : null;
+    $educIndustry =  isset($_POST['educIndustry']) ? ($_POST['educIndustry']) : "64"; //foreign key
+    $educSalary = isset($_POST['educSalary']) ? ($_POST['educSalary']) : "1"; // foreign key
 
-    //Employment Info
-    // $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
-    // $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
-    // $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
-    // $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
-    // $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : null;
-    // $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : null;
+    // Employment Info
+    $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
+    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
+    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
+    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
+    $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : "64"; //foreign key
+    $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : "1"; //foreign key
 
-    // Household Info
-    $hFname = $_POST['hFname'];
-    $hMname = $_POST['hMname'];
-    $hLname = $_POST['hLname'] . ' ' . $_POST['hSuffix'];
-    $remarks = $_POST['remarks'];
-    $membersCount = $_POST['membersCount'];
+    $queryHousehold = "INSERT INTO `households` (`head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
 
-    $queryPersonal = "INSERT INTO `residents`(`first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`) VALUES ('".$fName."', '".$mName."', '".$lName."', '".$gender."', '".$birthday."', '".$birthplace."', '".$mStatus."', '".$religion."', '".$disability."', '".$contact."', '".$voterType."', '".$address."', '".$purok."', '".$organization."')";
+    executeQuery($queryHousehold);
+    $householdID = mysqli_insert_id($conn);
 
-    // $queryEducation = "INSERT INTO `educational_info`(`educ_status`, `educ_level`, `school_type`, `school_name`) VALUES ('".$educStatus."', '".$educlevel."', '".$schoolType."', '".$school."')";
+    $queryPersonal = "INSERT INTO `residents`(`first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
 
-    // $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`) VALUES ('".$employStatus."', '".$employeeType."', '".$employerType."', '".$employer."', '".$employIndustry."', '".$employSalary."')";
+    executeQuery($queryPersonal);
+    $residentID = mysqli_insert_id($conn);
 
-    $queryHousehold = "INSERT INTO `households` (`head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('".$hFname."' , '".$hMname."', '".$hLname."', '".$remarks."', '".$membersCount."')";
+    //Query Educ
+    $queryEducation = "INSERT INTO `educational_info`(`educ_status`, `educ_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
 
-    // if (isset($_POST['educInfo'])) {
-    //     executeQuery($queryPersonal);
-    //     executeQuery($queryEducation);
-    //     executeQuery($queryHousehold);
-    //     // mysqli_query($conn, $queryPersonal);
-    //     // mysqli_query($conn, $queryEducation);
-    //     // mysqli_query($conn, $queryHousehold);
+    //Query employ
+    $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
 
-    //     echo "<script>alert('Education');</script>";
-    // } else if (isset($_POST['employInfo'])) {
-    //     executeQuery($queryPersonal);
-    //     executeQuery($queryEmployment);
-    //     executeQuery($queryHousehold);
-    //     // mysqli_query($conn, $queryPersonal);
-    //     // mysqli_query($conn, $queryEmployment);
-    //     // mysqli_query($conn, $queryHousehold);
-    //     echo "<script>alert('Employment');</script>";
-    // } else {
-    //     echo "<script>alert('Mali');</script>";
-    // }
 
-    if (executeQuery($queryPersonal) && executeQuery($queryHousehold)){
-        echo"<script>alert('Pumasok')</script>";
+    if (isset($_POST['educInfo'])) {
+        executeQuery($queryEducation);
+    } else if (isset($_POST['employInfo'])) {
+        executeQuery($queryEmployment);
+    } else {
+        echo "<script>alert('Mali');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

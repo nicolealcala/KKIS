@@ -29,6 +29,9 @@
   font-weight: 900;
   color: #FFB703;
 }
+.indexContent .card .card-body .hrSvg {
+  width: 60%;
+}
 .indexContent .card .card-body .fieldRow {
   margin: 1.5em;
 }

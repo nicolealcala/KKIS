@@ -1,1 +1,27 @@
-*{font:100% DM Sans,sans-serif}#familiesBody,.overviewBody{margin:3em}#overviewBody .overviewDiv #overviewChart{max-height:90vh;max-width:1000vw}.content::-webkit-scrollbar{width:10px}.content::-webkit-scrollbar-track{background:none}.content::-webkit-scrollbar-thumb{background-color:#c9c9c9;border-radius:20px;border:3px solid #c9c9c9;z-index:-60}/*# sourceMappingURL=households.css.map */
+* {
+  font: 100% DM Sans, sans-serif;
+}
+
+#familiesBody, .overviewBody {
+  margin: 3em;
+}
+
+#overviewBody .overviewDiv #overviewChart {
+  max-height: 90vh;
+  max-width: 1000vw;
+}
+
+.content::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+.content::-webkit-scrollbar-track {
+  background: none; /* color of the tracking area */
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #c9c9c9; /* creates padding around scroll thumb */
+  z-index: -60;
+}/*# sourceMappingURL=households.css.map */
