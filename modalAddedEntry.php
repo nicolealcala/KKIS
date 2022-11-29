@@ -1,10 +1,40 @@
+<?php
+// Storing a string into the variable which
+    // needs to be Encrypted
+    $simple_string = "Welcome to W3docs\n";
+
+    // Displaying the original string
+    echo "Original String: " . $simple_string;
+
+    // Storingthe cipher method
+    $ciphering = "AES-128-CTR";
+
+    // Using OpenSSl Encryption method
+    $iv_length = openssl_cipher_iv_length($ciphering);
+    $options = 0;
+
+    // Non-NULL Initialization Vector for encryption
+    $encryption_iv = '1234567891011121';
+
+    // Storing the encryption key
+    $encryption_key = "W3docs";
+
+    // Using openssl_encrypt() function to encrypt the data
+    $encryption = openssl_encrypt($simple_string, $ciphering, $encryption_key, $options, $encryption_iv);
+
+    // Displaying the encrypted string
+    echo "Encrypted String: " . $encryption . "\n";
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Brand</title>
+    <title>Added Entry</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">

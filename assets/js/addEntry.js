@@ -88,8 +88,6 @@ $(document).ready(function () {
 
 
 // ------------------- FUNCTIONS ------------------- //
-// ----------------------Education-------------------------
-//fxn for clicking #educCheck (disabling employment fields, enabling education fields)
 function educRadioClick() {
   $("#employCheck").prop("checked", false);
   $("#markerEmploy").css("background-color", "#c5d4e3");
