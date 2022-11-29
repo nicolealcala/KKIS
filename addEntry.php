@@ -1,8 +1,8 @@
 <?php
 require 'connection.php';
-// session_start();
-// session_destroy();
-// session_start();
+session_start();
+session_destroy();
+session_start();
 
 if (isset($_POST['submitBtn'])) {
     // Household Info
@@ -35,17 +35,17 @@ if (isset($_POST['submitBtn'])) {
 
     // Educational Info
     $educStatus = isset($_POST['educStatus']) ? ($_POST['educStatus']) : null;
-    $educlevel = isset($_POST['educLevel']) ? ($_POST['educLevel']) : null;
-    $schoolType = isset($_POST['schoolType']) ? ($_POST['schoolType']) : null;
-    $school = isset($_POST['schoolName']) ? ($_POST['schoolName']) : null;
+    $educlevel = isset($_POST['educLevel']) ? ($_POST['educLevel']) : "N/A";
+    $schoolType = isset($_POST['schoolType']) ? ($_POST['schoolType']) : "N/A";
+    $school = isset($_POST['schoolName']) ? ($_POST['schoolName']) : "N/A";
     $educIndustry =  isset($_POST['educIndustry']) ? ($_POST['educIndustry']) : "64"; //foreign key
     $educSalary = isset($_POST['educSalary']) ? ($_POST['educSalary']) : "1"; // foreign key
 
     // Employment Info
     $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
-    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
-    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
-    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
+    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : "N/A";
+    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : "N/A";
+    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : "N/A";
     $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : "64"; //foreign key
     $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : "1"; //foreign key
 
@@ -72,6 +72,16 @@ if (isset($_POST['submitBtn'])) {
         executeQuery($queryEmployment);
     } else {
         echo "<script>alert('Mali');</script>";
+    }
+
+
+    //Modal alert
+    header("Location: addEntry.php?sucsess=true");
+
+    if ($_GET['sucsess'] == 'true') {
+        echo "<script>$(function() {
+                $( '#modalAdded' ).dialog();
+                });</script>";
     }
 }
 

@@ -14,20 +14,14 @@ $(document).ready(function () {
       $(this).removeClass("required");
     }
   });
-  
-  //For Educ Radio Btn PRE-CHECKED or is checked on change
-  if ($("#educCheck").is(":checked")) {
+
+  //For Educ Radio Btn PRE-CHECKED
+  if ($("#educCheck").is(":checked")){
     educRadioClick();
-    $("#selectEducStatus").val("").change();
-    $("#selectLevel").val("").change();
-    $("#selectSchoolType").val("").change();
-    $("#selectEducIndustry").val("").change();
-    $("#selectEducSalary").val("").change();
   }
 
   //For Educ Radio Btn when selected
-  if (
-    $("#educCheck").on("change", function () {
+  ($("#educCheck").on("change", function () {
       educRadioClick();
     })
   );
@@ -36,6 +30,17 @@ $(document).ready(function () {
   $("#employCheck").change(function () {
     employRadioClick();
   });
+
+  //For Educ Status PRE-SELECTED
+  if ($("#selectEducStatus option[value=Enrolled]").is(":selected")) {
+    enrolled();
+  } else if (
+    $('#selectEducStatus option[value="Out-of-school Youth"]').is(":selected")
+  ) {
+    ousYouth();
+  } else {
+    workingStudent();
+  }
 
   //For Educ Status ON CHANGE
   $("#selectEducStatus").on("change", function () {
@@ -50,6 +55,13 @@ $(document).ready(function () {
     }
   });
 
+  //For Employment Status PRE-SELECTED
+  if ($("#selectEmployStatus option[value=Employed]").is(":selected")) {
+    employed();
+  } else {
+    unemployed();
+  }
+
   //For Employment Status ON CHANGE
   $("#selectEmployStatus").on("change", function () {
     if ($("#selectEmployStatus option[value=Employed]").is(":selected")) {
@@ -58,58 +70,60 @@ $(document).ready(function () {
       unemployed();
     }
   });
+
+  //JS Library for DISABILITY
+  VirtualSelect.init({
+    ele: "#disabilitySelect",
+    disableSelectAll: true,
+  });
+
+  //JS Library for REMARKS
+  VirtualSelect.init({
+    ele: "#remarkDrop",
+    hideClearButton: true,
+    disableSelectAll: true,
+    selectedValue: 1,
+  });
 });
 
-//JS Library for DISABILITY
-VirtualSelect.init({
-  ele: "#disabilitySelect",
-  disableSelectAll: true,
-});
-
-//JS Library for remarks
-VirtualSelect.init({
-  ele: "#remarkDrop",
-  hideClearButton: true,
-  disableSelectAll: true,
-  selectedValue: 1,
-});
 
 // ------------------- FUNCTIONS ------------------- //
 // ----------------------Education-------------------------
 //fxn for clicking #educCheck (disabling employment fields, enabling education fields)
-var educRadioClick = function () {
-  $("#selectEmployStatus").val("").change();
-  $("#selectEmployeeType").val("").change();
-  $("#selectEmployerType").val("").change();
-  $("#selectEmployIndustry").val("").change();
-  $("#selectEmploySalary").val("").change();
-
+function educRadioClick() {
+  $("#employCheck").prop("checked", false);
   $("#markerEmploy").css("background-color", "#c5d4e3");
   $(".employFieldLabel").css("color", "#dfdfdf");
 
+  //Disable all emloyment select boxes and change value to blank
   $(".employSelectBox").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", true);
     $(this).removeAttr("required");
   });
 
+  //Disable all emloyment input fields and change value to blank
   $(".employUserInput").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", true);
     $(this).removeAttr("required");
-    $(this).val("");
   });
 
+  //Enable all education select boxes and change value to blank
   $(".educSelectBox").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
   });
 
+  //Enable all education input fields and change value to blank
   $(".educUserInput").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
   });
 
-  $("#employCheck").prop("checked", false);
-
+  //Change education card labels and background-color
   $("#markerEduc").css("background-color", "#219EBC");
   $(".educFieldLabel").css("color", "#909090");
 
@@ -120,12 +134,12 @@ var educRadioClick = function () {
 
 //fxn for Enrolled
 function enrolled() {
-  $('.educSelectBox').each(function () {
+  $(".educSelectBox").each(function () {
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
-    $('.educSelectBox').not('#selectEducStatus').val("").change();
+    $(".educSelectBox").not("#selectEducStatus").val("").change();
     if (
-      $(this).attr("id") == "selectEducSalary" || 
+      $(this).attr("id") == "selectEducSalary" ||
       $(this).attr("id") == "selectEducIndustry"
     ) {
       $(this).val("").change();
@@ -137,7 +151,7 @@ function enrolled() {
   $(".educUserInput").each(function () {
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
-    $('.educUserInput').val("").change();
+    $(".educUserInput").val("").change();
   });
 
   $(".educFieldLabel").each(function () {
@@ -151,17 +165,17 @@ function enrolled() {
       $(this).css("color", "#dfdfdf");
     }
   });
-};
+}
 
 //fxn for Out-of-school youth
-function ousYouth () {
+function ousYouth() {
   $(".educSelectBox").each(function () {
     $(this).prop("disabled", true);
     $(this).removeAttr("required");
     if ($(this).attr("id") == "selectEducStatus") {
       $(this).prop("disabled", false);
       $(this).attr("required", "required");
-      $('.educSelectBox').not(this).val("").change(); 
+      $(".educSelectBox").not(this).val("").change();
     }
   });
 
@@ -179,14 +193,14 @@ function ousYouth () {
       $(this).css("color", "#909090");
     }
   });
-};
+}
 
 //fxn for Working Students
 function workingStudent() {
-  $('.educSelectBox').each(function () {
+  $(".educSelectBox").each(function () {
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
-    $('.educSelectBox').not('#selectEducStatus').val("").change();
+    $(".educSelectBox").not("#selectEducStatus").val("").change();
   });
 
   $(".educUserInput").each(function () {
@@ -196,43 +210,40 @@ function workingStudent() {
 
   $(".educFieldLabel").addClass("required");
   $(".educFieldLabel").css("color", "#909090");
-};
+}
 
 // ----------------------Employment-------------------------
 //fxn for clicking #employCheck (disabling education fields, enabling employment fields)
-var employRadioClick = function () {
-  $("#selectEducStatus").val("").change();
-  $("#selectLevel").val("").change();
-  $("#selectSchoolType").val("").change();
-  $("#selectEducIndustry").val("").change();
-  $("#selectEducSalary").val("").change();
-
+function employRadioClick () {
+  $("#educCheck").prop("checked", false);
   $("#markerEduc").css("background-color", "#c5d4e3");
   $(".educFieldLabel").css("color", "#dfdfdf");
 
   $(".educSelectBox").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", true);
     $(this).removeAttr("required");
   });
 
   $(".educUserInput").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", true);
     $(this).removeAttr("required");
-    $(this).val("");
   });
 
   $(".employSelectBox").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
   });
 
   $(".employUserInput").each(function () {
+    $(this).val("").change();
     $(this).prop("disabled", false);
     $(this).attr("required", "required");
   });
 
-  $("#educCheck").prop("checked", false);
-
+  
   $("#markerEmploy").css("background-color", "#219EBC");
   $(".employFieldLabel").css("color", "#909090");
 
@@ -257,7 +268,7 @@ function employed() {
     $(this).css("color", "#909090");
     $(this).addClass("required");
   });
-};
+}
 
 //fxn for Unemployed
 function unemployed() {
@@ -283,4 +294,5 @@ function unemployed() {
       $(this).css("color", "#909090");
     }
   });
-};
+}
+
