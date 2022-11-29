@@ -51,18 +51,6 @@
             }     
         } 
     }
-
-    // // this is used for alert (kapag mali yung credentials)
-    // if(($email == $Query_email) && ($password == $Query_password)) {
-
-    //     header('Location: dashboard.php');
-
-    //   } else {
-    //     $message = "Username and/or Password incorrect.\\nTry again.";
-    //     echo "<script type='text/javascript'>alert('$message');</script>";
-    //     }
-    // }
-
         
 ?>
 
@@ -170,7 +158,9 @@
                                 <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" id="password" name="password" placeholder="Password" maxlength="30" required>
+                            
+                            <!-- Added pattern as a criteria for secured password -->
+                                <input class="form-control" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and should be at least 8 or more characters" placeholder="Password" maxlength="30" required>
                             </div>
                             <div class="col-12">
                                 <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" maxlength="30" required>
