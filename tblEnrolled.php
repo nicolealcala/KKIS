@@ -1,262 +1,565 @@
 <?php
-    $dbServername = "localhost"; //server name
-    $dbUsername = "root";
-    $dbPassword = "";
-    $dbName = "kkis"; //database name
+    // $dbServername = "localhost"; //server name
+    // $dbUsername = "root";
+    // $dbPassword = "";
+    // $dbName = "KKIS"; //database name
 
-    $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); //connect to database
-    $query = "SELECT * FROM residentsProfile ORDER BY residentID DESC";
-    $result = mysqli_query($conn, $query);
+    // $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); //connect to database
+    // $query = "SELECT * FROM residentsProfile ORDER BY residentID ASC"; //query to select all data from table
+    // $result = mysqli_query($conn, $query);
+
+    // include 'connection.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrolled Table</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/kkis-logo.svg">
-    <!-- Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Enrolled Youth</title>
+    
+    <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <!-- BS SideNav Stylesheet -->
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
-    <link rel="stylesheet" href="assets/css/navDash.css">
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/scss/dashboardYouthTbl.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <!-- Custom Page Stylesheets -->
+    <link rel="stylesheet" href="assets/scss/profiles.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
+    <link rel="stylesheet" href="assets/scss/modal.css">
+    
+    <!-- Virtual Select JS library -->
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css"> 
+
+    <!-- nav.css -->
+    <!-- <link rel="stylesheet" href="assets/css/navKabataanProfile.css"> -->
+
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-    <!-- Stylesheet for Titles -->
-    <link rel="stylesheet" href="assets/scss/mediaquery.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+     
+
 </head>
 
-<body>
-    <div class="navDiv">
-        <?php include 'nav.php' ?>
-    </div>
+<body id="page-top">
 
-
-    <div class="wrapper">
-        <div class="content">
-            <!-- Start of Sidenav 
-            <div id="wrapper" class="sidenav">
-                <div id="sidebar-wrapper" style="width: 74px;">
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-brand"> </li>
-                        <li> </li>
-                        <li> </li>
-                        <li> </li>
-                    </ul>
+    <div class="mainContainer d-block">
+        <header>
+            <div class="row headerRow">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
+                    <span class="title longTitle">Enrolled Youth</span>
+                </div>
+                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
+                    <span class="accountType d-flex justify-content-end">Super Admin Account</span>
                 </div>
             </div>
-            End of Sidenav -->
+            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
+        </header>
 
-            <!-- Page Header Starts Here -->
-            <div class="row documentHeadingRow p-0 m-0">
-                <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <div class="d-flex align-items-center justify-content-start headContainer">
-                        <button class="btn rounded-circle border-0 d-flex d-sm-flex d-xxl-flex justify-content-center justify-content-sm-center align-items-sm-center justify-content-md-center justify-content-lg-center backBtn" type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon" style="width: auto;height: auto;font-size: 28px;">
-                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
-                            </svg>
-                        </button>
-                        <div class="col-10 d-flex justify-content-start align-items-center p-0">
-                            <span class="title title-back w-auto">Enrolled</span>
-                        </div>
+        <div class="container-fluid content">
+            <!-- Menu Buttons 
+            <div class="row d-flex justify-content-end align-ittems-center m-0">
+                <button class="menuBtn menu1 rounded-pill clicked" id="kabataan">Kabataan</button>
+                <button class="menuBtn menu2 rounded-pill" id="residents">Residents</button>
+            </div>
+            -->
+
+            <!-- Kabataan Table Start -->
+            <div class="sectionDiv mx-0 mt-4" id="sectionKabataan">
+                <!-- Options Rows -->
+                <div class="optionRow row gx-5 m-0 mb-1">
+                    <!-- Show No. of Rows -->
+                    <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="kabataanLength"></div>
+                    <!-- Output Buttons -->
+                    <div class="d-none col-lg-3 d-lg-flex justify-content-lg-start p-0" id="kabataanOutput"></div>
+                    <!-- Filler Column -->
+                    <div class="col-lg-3 d-none d-lg-flex"></div>
+                    <!-- Filter -->
+                    <div class="col-lg-3 col-md-6 col-sm-5 col-12 d-flex align-items-">
+                        <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
+                            <optgroup label="Age">
+                                <option value="bet1419">14-19 Years old</option>
+                                <option value="bet2029">20-29 Years old</option>
+                            </optgroup>
+                            <optgroup label="Gender Preference">
+                                <option value="man">Man</option>
+                                <option value="woman">Woman</option>
+                                <option value="trans">Transgender</option>
+                                <option value="non">Non-binary/Non-conforming</option>
+                            </optgroup>
+                            <optgroup label="Marital Status">
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="livein">Live-in</option>
+                                <option value="separated">Separated</option>
+                                <option value="annuled">Annuled</option>
+                                <option value="widowed">Widowed</option>
+                            </optgroup>
+                            <optgroup label="Disability">
+                                <option value="None">None</option>
+                                <option value="Communication disability">Communication disability</option>
+                                <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
+                                <option value="Learning disability">Learning disability</option>
+                                <option value="Mental disability">Mental disability</option>
+                                <option value="Orthopedic disability">Orthopedic disability</option>
+                                <option value="Psychosocial disability">Psychosocial disability</option>
+                                <option value="Vission disability">Vission disability</option>
+                            </optgroup>
+                            <optgroup label="Purok">
+                                <option value="Cardinal">Cardinal</option>
+                                <option value="Cordillera">Cordillera</option>
+                                <option value="Doña Petra">Doña Petra</option>
+                                <option value="Doña Regina 1">Doña Regina 1</option>
+                                <option value="Doña Regina 2">Doña Regina 2</option>
+                                <option value="Doña Regina 3">Doña Regina 3</option>
+                                <option value="Family Village">Family Village</option>
+                                <option value="Iraq">Iraq</option>
+                                <option value="Looban">Looban</option>
+                                <option value="Manggahan">Manggahan</option>
+                                <option value="Nayon">Nayon</option>
+                                <option value="Ormoc">Ormoc</option>
+                                <option value="Pulong Kendi">Pulong Kendi</option>
+                                <option value="Puting Krus">Puting Krus</option>
+                                <option value="Saint Anthony ">Saint Anthony</option>
+                                <option value="Sampaguita St.">Sampaguita St.</option>
+                                <option value="Smokey Mountain">Smokey Mountain </option>
+                            </optgroup>
+                            <optgroup label="Educational Status">
+                                <option value="Enrolled">Enrolled</option>
+                                <option value="Out-of-School Youth">Out-of-School Youth</option>
+                                <option value="Working Student">Working Student</option>
+                            </optgroup>
+                            <optgroup label="Educational Level">
+                                <option value="Pre-elementary">Pre-elementary</option>
+                                <option value="Elementary">Elementary</option>
+                                <option value="Junior High School">Junior High School</option>
+                                <option value="Senior High School">Senior High School</option>
+                                <option value="Alternative Learning System">Alternative Learning System</option>
+                                <option value="Diploma Course">Diploma Course</option>
+                                <option value="College">College</option>
+                                <option value="Graduate Studies">Graduate Studies</option>    
+                            </optgroup>
+                            <optgroup label="Employment Status">
+                                <option value="Employed">Employed</option>
+                                <option value="Unemployed">Unemployed</option>
+                            </optgroup>
+                            <optgroup label="Employee Type">
+                                <option value="Regular">Regular</option>
+                                <option value="Contractual">Contranctual</option>
+                                <option value="Job Order">Job Order</option>
+                            </optgroup>
+                            <optgroup label="School/Employer Type">
+                                <option value="Private">Private</option>
+                                <option value="Public">Public</option>
+                            </optgroup>
+                            <optgroup label="Salary Range">
+                                <option value="1">Less than 10,000</option>
+                                <option value="2">10,000-20,999</option>
+                                <option value="3">21,000-30,999</option>
+                                <option value="4">31,000-40,999</option>
+                                <option value="5">41,000-50,000</option>
+                                <option value="6">More than 50,000</option>
+                            </optgroup>
+                            <optgroup label="Remarks">
+                                <option value="soloLiving">Solo Living</option>
+                                <option value="Solo Parent">Solo Parent</option>
+                                <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
+                            </optgroup>
+                        </select>
+                    </div>
+                    <!-- Search -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0" id="kabataanSearch">
+                        
                     </div>
                 </div>
 
-                <div class="row m-0">
-                    <div class="col p-0 mt-2"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
+                <!-- Actual table -->
+                <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="kabataanTbl" style="width:100%">
+                    <thead class="headTitle">
+                        <tr>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Birthdate</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Civil status</th>
+                            <th>Purok</th>
+                            <th>Remarks</th>
+                            <!-- <th class="actions">Actions</th> -->
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="Last Name">ALCALA</td>
+                            <td class="entryRow" scope="col" data-label="First Name">NICOLE</td>
+                            <td class="entryRow" scope="col" data-label="Middle Name">MATALOBOS</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">02/19/2001</td>
+                            <td class="entryRow" scope="col" data-label="Age">21</td>
+                            <td class="entryRow" scope="col" data-label="Gender">FEMALE</td>
+                            <td class="entryRow" scope="col" data-label="Civil status">SINGLE</td>
+                            <td class="entryRow" scope="col" data-label="Purok">PULONG KENDI</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">SK Scholar</td>
+                            <!-- <td>
+                                <div class="row m-0 d-flex justify-content-around align-items-center">
+                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                        <button class="btn view actionBtn" type="button" data-bs-toggle="modal" data-bs-target="#viewMore"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                        <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></i></button>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                        <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                </div>
+                            </td> -->
+                        </tr>
+                    
+                        <?php
+                        //     while ($row = mysqli_fetch_array($result)) {
+                        //     echo '
+                        //     <tr>
+                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                        //         <td>' . $row["lastName"] . '</td>
+                        //         <td>' . $row["firstName"] . '</td>
+                        //         <td>' . $row["middleName"] . '</td>
+                        //         <td>' . $row["birthDate"] . '</td>
+                        //         <td>' . $row["age"] . '</td>
+                        //         <td>' . $row["gender"] . '</td>
+                        //         <td>' . $row["civilStatus"] . '</td>
+                        //         <td>' . $row["purok"] . '</td>
+                        //         <td align="center">
+                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
+                        
+                        //         </td>
+
+                        //     </tr>
+                        //     ';
+                        // }
+                        ?>
+                    </tbody>
+                </table>
+            </div>                
+
+            <!-- Residents Table Start -->
+            <div class="sectionDiv mx-0 mt-4 d-none" id="sectionResidents">
+                <!-- Options Rows -->
+                <div class="optionRow row gx-5 m-0 mb-1">
+                    <!-- Show No. of Rows -->
+                    <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="residentsLength"></div>
+                    <!-- Output Buttons -->
+                    <div class="d-none col-lg-4 d-lg-flex justify-content-lg-start p-0" id="residentsOutput"></div>
+                    <!-- Filler Column -->
+                    <div class="col-lg-2 d-none d-lg-flex"></div>
+                    <!-- Filter -->
+                    <div class="col-lg-3 col-md-6 col-sm-5 col-12 d-flex align-items-">
+                        <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
+                            <optgroup label="Age">
+                                <option value="bet1419">14-19 Years old</option>
+                                <option value="bet2029">20-29 Years old</option>
+                            </optgroup>
+                            <optgroup label="Gender Preference">
+                                <option value="man">Man</option>
+                                <option value="woman">Woman</option>
+                                <option value="trans">Transgender</option>
+                                <option value="non">Non-binary/Non-conforming</option>
+                            </optgroup>
+                            <optgroup label="Marital Status">
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="livein">Live-in</option>
+                                <option value="separated">Separated</option>
+                                <option value="annuled">Annuled</option>
+                                <option value="widowed">Widowed</option>
+                            </optgroup>
+                            <optgroup label="Disability">
+                                <option value="None">None</option>
+                                <option value="Communication disability">Communication disability</option>
+                                <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
+                                <option value="Learning disability">Learning disability</option>
+                                <option value="Mental disability">Mental disability</option>
+                                <option value="Orthopedic disability">Orthopedic disability</option>
+                                <option value="Psychosocial disability">Psychosocial disability</option>
+                                <option value="Vission disability">Vission disability</option>
+                            </optgroup>
+                            <optgroup label="Purok">
+                                <option value="Cardinal">Cardinal</option>
+                                <option value="Cordillera">Cordillera</option>
+                                <option value="Doña Petra">Doña Petra</option>
+                                <option value="Doña Regina 1">Doña Regina 1</option>
+                                <option value="Doña Regina 2">Doña Regina 2</option>
+                                <option value="Doña Regina 3">Doña Regina 3</option>
+                                <option value="Family Village">Family Village</option>
+                                <option value="Iraq">Iraq</option>
+                                <option value="Looban">Looban</option>
+                                <option value="Manggahan">Manggahan</option>
+                                <option value="Nayon">Nayon</option>
+                                <option value="Ormoc">Ormoc</option>
+                                <option value="Pulong Kendi">Pulong Kendi</option>
+                                <option value="Puting Krus">Puting Krus</option>
+                                <option value="Saint Anthony ">Saint Anthony</option>
+                                <option value="Sampaguita St.">Sampaguita St.</option>
+                                <option value="Smokey Mountain">Smokey Mountain </option>
+                            </optgroup>
+                            <optgroup label="Educational Status">
+                                <option value="Enrolled">Enrolled</option>
+                                <option value="Out-of-School Youth">Out-of-School Youth</option>
+                                <option value="Working Student">Working Student</option>
+                            </optgroup>
+                            <optgroup label="Educational Level">
+                                <option value="Pre-elementary">Pre-elementary</option>
+                                <option value="Elementary">Elementary</option>
+                                <option value="Junior High School">Junior High School</option>
+                                <option value="Senior High School">Senior High School</option>
+                                <option value="Alternative Learning System">Alternative Learning System</option>
+                                <option value="Diploma Course">Diploma Course</option>
+                                <option value="College">College</option>
+                                <option value="Graduate Studies">Graduate Studies</option>    
+                            </optgroup>
+                            <optgroup label="Employment Status">
+                                <option value="Employed">Employed</option>
+                                <option value="Unemployed">Unemployed</option>
+                            </optgroup>
+                            <optgroup label="Employee Type">
+                                <option value="Regular">Regular</option>
+                                <option value="Contractual">Contranctual</option>
+                                <option value="Job Order">Job Order</option>
+                            </optgroup>
+                            <optgroup label="School/Employer Type">
+                                <option value="Private">Private</option>
+                                <option value="Public">Public</option>
+                            </optgroup>
+                            <optgroup label="Salary Range">
+                                <option value="1">Less than 10,000</option>
+                                <option value="2">10,000-20,999</option>
+                                <option value="3">21,000-30,999</option>
+                                <option value="4">31,000-40,999</option>
+                                <option value="5">41,000-50,000</option>
+                                <option value="6">More than 50,000</option>
+                            </optgroup>
+                            <optgroup label="Remarks">
+                                <option value="soloLiving">Solo Living</option>
+                                <option value="Solo Parent">Solo Parent</option>
+                                <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
+                            </optgroup>
+                        </select>
+                    </div>
+                    <!-- Search -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0" id="residentsSearch">
+                        
+                    </div>
                 </div>
-            </div>
-            <!-- Page Header Ends Here -->
 
+                <!-- Actual table -->
+                <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="residentsTbl" style="width:100%">
+                    <thead class="headTitle">
+                        <tr>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Birthdate</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Civil status</th>
+                            <th>Purok</th>
+                            <th>Remarks</th>
+                            <th class="actions">Actions</th>
+                        </tr>
+                    </thead>
 
-            <!--SORT BUTTON
-            <div class="sort-panel row">
-                <div class="sort-title col">
-                    <p>Sort by</p>
-                </div>
-                <select id="sort-btn" class="select col-4" style="margin-left: 5em;">
-                    <option disabled selected></option>
-                    <option value="A-Z">A-Z</option>
-                    <option value="Age">Age</option>
-                    <option value="Purok">Purok</option>
-                </select>
-            </div>-->
+                    <tbody>
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="Last Name">PALALIMPA</td>
+                            <td class="entryRow" scope="col" data-label="First Name">MICHAEL JOHN</td>
+                            <td class="entryRow" scope="col" data-label="Middle Name">SEGURA</td>
+                            <td class="entryRow" scope="col" data-label="Birthday">08/11/2000</td>
+                            <td class="entryRow" scope="col" data-label="Age">22</td>
+                            <td class="entryRow" scope="col" data-label="Gender">MALE</td>
+                            <td class="entryRow" scope="col" data-label="Civil status">SINGLE</td>
+                            <td class="entryRow" scope="col" data-label="Purok">Doña Regina 1</td>
+                            <td class="entryRow" scope="col" data-label="Remarks">PUROK LEADER</td>
+                            <td>
+                                <div class="row m-0 d-flex justify-content-around align-items-center">
+                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                        <button class="btn view actionBtn" type="button" data-bs-toggle="modal" data-bs-target="#viewMore"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                        <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></i></button>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                        <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    
+                        <?php
+                        //     while ($row = mysqli_fetch_array($result)) {
+                        //     echo '
+                        //     <tr>
+                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
+                        //         <td>' . $row["lastName"] . '</td>
+                        //         <td>' . $row["firstName"] . '</td>
+                        //         <td>' . $row["middleName"] . '</td>
+                        //         <td>' . $row["birthDate"] . '</td>
+                        //         <td>' . $row["age"] . '</td>
+                        //         <td>' . $row["gender"] . '</td>
+                        //         <td>' . $row["civilStatus"] . '</td>
+                        //         <td>' . $row["purok"] . '</td>
+                        //         <td align="center">
+                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
+                        
+                        //         </td>
 
-            <br><br><br><br><br><br>
+                        //     </tr>
+                        //     ';
+                        // }
+                        ?>
+                    </tbody>
+                </table>
+            </div> 
 
-            <div class="pageBody">
-                <div class="row">
-                    <!-- TABLE -->
-                    <div class="dataTable container">
-                        <div class="dataPanel row">
-                            <div class="col-lg-12">
-                                <div class="data_table">
-                                    <table id="example" class="table table-striped table-bordered display responsive nowrap"
-                                        cellspacing="0" width="100%">
-                                        <thead class="table-dark">
-                                            <tr>
-                                                <th></th>
-                                                <th>Last name</th>
-                                                <th>First name</th>
-                                                <th>Middle name</th>
-                                                <th>Suffix</th>
-                                                <th>Birthdate</th>
-                                                <th>Age</th>
-                                                <th>Gender</th>
-                                                <th>Civil status</th>
-                                                <th>Purok</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            
-                                        </thead>
-                                        <?php
-                                            while ($row = mysqli_fetch_array($result)) {
-                                            echo '
-                                            <tr>
-                                                <td align="center"><input type="checkbox" class="checkitem"></td>
-                                                <td>' . $row["lastName"] . '</td>
-                                                <td>' . $row["firstName"] . '</td>
-                                                <td>' . $row["middleName"] . '</td>
-                                                <td>' . $row["suffix"] . '</td>
-                                                <td>' . $row["birthDate"] . '</td>
-                                                <td>' . $row["age"] . '</td>
-                                                <td>' . $row["gender"] . '</td>
-                                                <td>' . $row["civilStatus"] . '</td>
-                                                <td>' . $row["purok"] . '</td>
-                                                <td align="center">
-                                                    <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
-                                    
-                                                </td>
-
-                                            </tr>
-                                            ';
-                                        }
-                                        ?>
-
-                                    </table>
-
-                                    <!-- MODAL -->
-                                    <div class="modal fade" role="dialog" tabindex="-1" id="viewMore" >
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content" style="transform: translate(0%, 50%);">
-                                                <div class="modal-body m-0 px-4>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    <div class="row m-0 ">
-                                                        <div class="col col-12">
-                                                            <h4 class="modalAlert" style="color: #FFB703;">Other Information</h4>
-                                                            <br>
-                                                            <table class="modalAlert">
-                                                                <thead class="table-light row" style="background-color: transparent;">
-                                                                <!-- fake lang to, para lang maipakita yung itsura ng table if ever 
-                                                                    connected na sa database -->   
-                                                                <tr class="row">
-                                                                        <th class="col-6" style="max-width:100%;">
-                                                                            Birthplace
-                                                                            <td class="col-6">Cabuyao, Laguna</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Religion
-                                                                            <td class="col-6">Catholic</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Sex
-                                                                            <td class="col-6">Female</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Educational Status
-                                                                            <td class="col-6">Enrolled</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Household Monthly Salary
-                                                                            <td class="col-6">90,000-100,000</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Number of People in Household
-                                                                            <td class="col-6">4</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Contact Number
-                                                                            <td class="col-6">09364587426</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Organization
-                                                                            <td class="col-6">None</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Guardian
-                                                                            <td class="col-6">Malou Pantoja</td>
-                                                                        </th>
-                                                                        <th class="col-6">
-                                                                            Remarks
-                                                                            <td class="col-6">None</td>
-                                                                        </th>
-                                                                    </tr>
-                                                                </thead>
-
-                                                                <?php
-                                                                    while ($row = mysqli_fetch_array($result)) {
-                                                                    echo '
-                                                                        <tr>
-                                                                            <td align="center"><input type="checkbox" class="checkitem"></td>
-                                                                            <td>' . $row["birthplace"] . '</td>
-                                                                            <td>' . $row["religion"] . '</td>
-                                                                            <td>' . $row["sex"] . '</td>
-                                                                            <td>' . $row["educStatus"] . '</td>
-                                                                            <td>' . $row["monthlySalary"] . '</td>
-                                                                            <td>' . $row["peopleInHousehold"] . '</td>
-                                                                            <td>' . $row["contactNum"] . '</td>
-                                                                            <td>' . $row["organization"] . '</td>
-                                                                            <td>' . $row["guardian"] . '</td>
-                                                                            <td>' . $row["remarks"] . '</td>
-                                                                            <td align="center">
-                                                                            <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>                               
-                                                                            </td>
-                                                                        </tr>
-                                                                        ';
-                                                                    }
-                                                                ?>
-
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div> -->
+            <div class="sectionDiv mx-0 mt-4">
+                <div class="modal fade" role="dialog" tabindex="-1" id="viewMore">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Kabataan Information</h4>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body m-0 px-4">
+                                <div class="row rowContainer m-0 p-0">
+                                    <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
+                                        <p class="textName w-100 my-1">JUAN SANTOS DELA CRUZ</p>
+                                        <p class="textGender w-100 my-1 mt-2">48 YEARS OLD</p>
+                                        <p class="textAge w-100 my-1">Man</p>
+                                    </div>
+                                    <div class="col align-self-center"><img class="img-fluid imgContainer" src="assets/img/misc/qrcode.png"></div>
+                                </div>
+                                <div class="row rowContainer my-4 mx-0 p-0">
+                                    <div class="col col-12 p-0">
+                                        <div class="markerContainer px-2">
+                                            <p class="modalMarker">Personal Information</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row gy-1">
+                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Birthday:</label>
+                                                <p class="textRetrieved">02/19/2000</p>
+                                            </div>
+                                            <div class="col col-lg-8 col-md-8 col-sm-6 col-12"><label class="form-label modalLabel">Birthplace:</label>
+                                                <p class="textRetrieved">CALAMBA CITY, LAGUNA</p>
+                                            </div>
+                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Marital Status:</label>
+                                                <p class="textRetrieved">SEPARATED</p>
+                                            </div>
+                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Religion:</label>
+                                                <p class="textRetrieved">CHRISTIAN</p>
+                                            </div>
+                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Voter Type:</label>
+                                                <p class="textRetrieved">REGISTERED</p>
+                                            </div>
+                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Disability:</label>
+                                                <p class="textRetrieved">VISSION DISABILITY</p>
+                                            </div>
+                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Contact No:</label>
+                                                <p class="textRetrieved">09123456789</p>
+                                            </div>
+                                            <div class="col col-lg-7 col-md-7 col-sm-6 col-12"><label class="form-label modalLabel">House No/Street/Subdivision:</label>
+                                                <p class="textRetrieved">123 MABUHAY ST.&nbsp;</p>
+                                            </div>
+                                            <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Purok:</label>
+                                                <p class="textRetrieved">PULONG KENDI</p>
+                                            </div>
+                                            <div class="col col-12"><label class="form-label modalLabel">Organization/s (if any):</label>
+                                                <p class="textRetrieved">SAMAHAN NG MGA WALANG ASAWA</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row rowContainer my-4 mx-0 p-0">
+                                    <div class="col col-12 p-0">
+                                        <div class="markerContainer px-2">
+                                            <p class="modalMarker">Employment Status</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row gy-1">
+                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Employment Status:</label>
+                                                <p class="textRetrieved">EMPLOYED</p>
+                                            </div>
+                                            <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Employee Type:</label>
+                                                <p class="textRetrieved">CONTRACTUAL</p>
+                                            </div>
+                                            <div class="col col-lg-3 col-md-3 col-sm-3 col-12"><label class="form-label modalLabel">Public/Private:</label>
+                                                <p class="textRetrieved">PUBLIC</p>
+                                            </div>
+                                            <div class="col col-lg-12 col-md-12 col-sm-9 col-12"><label class="form-label modalLabel">Name of Employer/Company:</label>
+                                                <p class="textRetrieved">DAVID M. CONSUNJI, INC.</p>
+                                            </div>
+                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Occupation:</label>
+                                                <p class="textRetrieved">CONSTRUCTION WORKER</p>
+                                            </div>
+                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Salary Range:</label>
+                                                <p class="textRetrieved">10,000 - 20,000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row rowContainer my-4 mx-0 p-0">
+                                    <div class="col col-12 p-0">
+                                        <div class="markerContainer px-2">
+                                            <p class="modalMarker">House Declaration</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row gy-1">
+                                            <div class="col col-12"><label class="form-label modalLabel">Head of the family:</label>
+                                                <p class="textRetrieved">JUAN SANTOS DELA CRUZ</p>
+                                            </div>
+                                            <div class="col col-6"><label class="form-label modalLabel">Remarks:</label>
+                                                <p class="textRetrieved">SOLO PARENT</p>
+                                            </div>
+                                            <div class="col col-6"><label class="form-label modalLabel">No. of members:</label>
+                                                <p class="textRetrieved">5 to 10</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Fundamental Links -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
-   
+    <!-- Virtual Select JS Library -->
+    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Sidebar-Menu.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Data tables -->
+    <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
-    <script src="assets/js/vfs_fonts.js"></script>
-    <script src="assets/js/custom1.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>  
     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    
+    <!-- Custom Script -->
+    <script type="text/javascript" src="assets/js/profiles.js"></script>
+    
 </body>
 
 </html>

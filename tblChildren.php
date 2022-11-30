@@ -17,7 +17,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Out-of-School Youth</title>
+    <title>Children</title>
     
     <!-- Fundamental Links -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -54,7 +54,7 @@
             <div class="row headerRow">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
                     <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                    <span class="title longTitle">Out-of-School Youth</span>
+                    <span class="title longTitle">Children</span>
                 </div>
                 <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
                     <span class="accountType d-flex justify-content-end">Super Admin Account</span>
