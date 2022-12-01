@@ -55,7 +55,7 @@
                 <div class="carousel d-flex justify-content-center">
                     <!-- Mini Category1: Total Citizens -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 500px;">
-                        <a href="#" style="background-color: #001E40; width: 100%; border-radius: 1em">
+                        <a href="tblTotalCitizens.php" style="background-color: #001E40; width: 100%; border-radius: 1em">
                             <div class="minorCategory" id="totalCitizens">
                                 <div class="texts w-100">
                                     <p id="whiteLbl">Total Citizens</p>
@@ -76,7 +76,7 @@
                     </div>
                     <!-- Mini Category2: General Citizens -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                        <a href="#" style="background-color: #D7ECFA; width: 100%; border-radius: 1em;">
+                        <a href="tblGeneralCitizens.php" style="background-color: #D7ECFA; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="genCitizens">
                                 <div class="texts">
                                     <p class="minorLbl">General Citizens</p>
@@ -91,7 +91,7 @@
                     </div>
                     <!-- Mini Category3: Children -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                        <a href="#" style="background-color: #FFE5DB; width: 100%; border-radius: 1em;">
+                        <a href="tblChildren.php" style="background-color: #FFE5DB; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="children">
                                 <div class="texts">
                                     <p class="minorLbl">Children</p>
@@ -106,7 +106,7 @@
                     </div>
                     <!-- Mini Category4: Senior Citizens -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                        <a href="#" style="background-color: #FFF4D1; width: 100%; border-radius: 1em;">
+                        <a href="tblSeniors.php" style="background-color: #FFF4D1; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="senior">
                                 <div class="texts">
                                     <p class="minorLbl">Senior Citizens</p>
@@ -121,7 +121,7 @@
                     </div>
                     <!-- Mini Category5: PWDs -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                        <a href="#" style="background-color: #DDFFF8; width: 100%; border-radius: 1em;">
+                        <a href="tblPWD.php" style="background-color: #DDFFF8; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="pwd">
                                 <div class="texts">
                                     <p class="minorLbl">PWDs</p>
@@ -136,10 +136,10 @@
                     </div>
                     <!-- Mini Category6: Registered Voters -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                        <a href="#" style="background-color: #FFFCBB; width: 100%; border-radius: 1em;">
+                        <a href="tblRegistedVoters.php" style="background-color: #FFFCBB; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="registered">
                                 <div class="texts">
-                                    <p class="minorLbl">Registereed Voters</p>
+                                    <p class="minorLbl">Registered Voters</p>
                                     <span class="mcCount d-flex">8,391</span>
                                     <span class="percentage d-flex">82%</span>
                                 </div>
@@ -151,7 +151,7 @@
                     </div>
                     <!-- Mini Category7: Unregistered Voters -->
                     <div class="d-flex justify-content-center align-items-center" style="width: 300px;" >
-                        <a href="#" style="background-color: #F8E7F8; width: 100%; border-radius: 1em;">
+                        <a href="tblUnregistedVoters.php" style="background-color: #F8E7F8; width: 100%; border-radius: 1em;">
                             <div class="minorCategory row" id="unregistered">
                                 <div class="texts">
                                     <p class="minorLbl">Unregistered Voters</p>
@@ -176,7 +176,7 @@
                         <a href="tblTotalYouth.php">
                             <div class="category" id="totalYouth" style="background-color: #8ECAE6">
                                         <div class="texts">
-                                    <h1 class="count">2019</h1>
+                                    <h1 class="count">5402</h1>
                                     <p class="subTitle">Total Youth</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -191,7 +191,7 @@
                         <a href="tblEnrolled.php">
                             <div class="category" id="enrolledYouth" style="background-color: #219EBC">
                                 <div class="texts">
-                                    <h1 class="count">2019</h1>
+                                    <h1 class="count">3155</h1>
                                     <p class="subTitle">Enrolled Youth</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -206,7 +206,7 @@
                         <a href="tblOutOfSchool.php">
                             <div class="category" id="ousYouth" style="background-color: #04496A">
                                 <div class="texts">
-                                    <h1 class="count">2019</h1>
+                                    <h1 class="count">362</h1>
                                     <p class="subTitle">Out-of-school Youth</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -221,7 +221,7 @@
                         <a href="tblWorkingStudent.php">
                             <div class="category" id="workingStudent" style="background-color: #F3CB69">
                                 <div class="texts">
-                                    <h1 class="count">2019</h1>
+                                    <h1 class="count">586</h1>
                                     <p class="subTitle">Working Student</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -236,7 +236,7 @@
                         <a href="tblEmployed.php">
                             <div class="category" id="employed" style="background-color: #FFB703">
                                 <div class="texts">
-                                    <h1 class="count">2019</h1>
+                                    <h1 class="count">966</h1>
                                     <p class="subTitle">Employed</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -251,7 +251,7 @@
                         <a href="tblUnemployed.php">
                             <div class="category" id="unemployed" style="background-color: #FB8500">
                                 <div class="texts">
-                                    <h1 class="count">2019</h1>
+                                    <h1 class="count">333</h1>
                                     <p class="subTitle">Unemployed</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">

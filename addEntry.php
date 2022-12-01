@@ -1,8 +1,8 @@
 <?php
 require 'connection.php';
-// session_start();
-// session_destroy();
-// session_start();
+session_start();
+session_destroy();
+session_start();
 
 if (isset($_POST['submitBtn'])) {
     // Household Info
@@ -35,43 +35,84 @@ if (isset($_POST['submitBtn'])) {
 
     // Educational Info
     $educStatus = isset($_POST['educStatus']) ? ($_POST['educStatus']) : null;
-    $educlevel = isset($_POST['educLevel']) ? ($_POST['educLevel']) : null;
-    $schoolType = isset($_POST['schoolType']) ? ($_POST['schoolType']) : null;
-    $school = isset($_POST['schoolName']) ? ($_POST['schoolName']) : null;
+    $educlevel = isset($_POST['educLevel']) ? ($_POST['educLevel']) : "N/A";
+    $schoolType = isset($_POST['schoolType']) ? ($_POST['schoolType']) : "N/A";
+    $school = isset($_POST['schoolName']) ? ($_POST['schoolName']) : "N/A";
     $educIndustry =  isset($_POST['educIndustry']) ? ($_POST['educIndustry']) : "64"; //foreign key
     $educSalary = isset($_POST['educSalary']) ? ($_POST['educSalary']) : "1"; // foreign key
 
     // Employment Info
     $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
-    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : null;
-    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : null;
-    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : null;
+    $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : "N/A";
+    $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : "N/A";
+    $employer = isset($_POST['employerName']) ? $_POST['employerName'] : "N/A";
     $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : "64"; //foreign key
     $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : "1"; //foreign key
 
-    $queryHousehold = "INSERT INTO `households` (`head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
 
+    //-----------------------FOR ENCRYPTED IDs-------------------------
+
+    // Storing a string into the variable which needs to be Encrypted
+    $rEncrypt = $fName . " " . $lName . " " . $birthday;
+    $hEncrypt = $hFname . " " . $hLname . " " . $membersCount;
+
+    // Storingthe cipher method
+    $ciphering = "AES-128-CTR";
+
+    // Using OpenSSl Encryption method
+    $iv_length = openssl_cipher_iv_length($ciphering);
+    $options = 0;
+
+    // Non-NULL Initialization Vector for encryption
+    $encryption_iv = '1234567891011121';
+
+    // Storing the encryption key
+    $encryption_key = "KKIS2022-2023";
+
+    // Using openssl_encrypt() function to encrypt the data
+    $encryptedResident = openssl_encrypt($rEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
+    $encryptedHouseholds = openssl_encrypt($hEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
+
+    //----------------------------------------------------------------
+
+
+    //Query for Households
+    $queryHousehold = "INSERT INTO `households` (`household_encrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $encryptedHouseholds . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
+
+    //Execute households insertion and get the id of the inserted entry
     executeQuery($queryHousehold);
     $householdID = mysqli_insert_id($conn);
 
-    $queryPersonal = "INSERT INTO `residents`(`first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
 
+    //Query for Personal info
+    $queryPersonal = "INSERT INTO `residents`(`resident_encrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
+
+    //Execute personal info insertion and get the id of the inserted entry
     executeQuery($queryPersonal);
     $residentID = mysqli_insert_id($conn);
 
-    //Query Educ
+    //Query for Educational Info
     $queryEducation = "INSERT INTO `educational_info`(`educ_status`, `educ_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
 
-    //Query employ
+    //Query for Employment Info
     $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
 
-
+    //Determine which query to exeecute based on selected radio button
     if (isset($_POST['educInfo'])) {
         executeQuery($queryEducation);
     } else if (isset($_POST['employInfo'])) {
         executeQuery($queryEmployment);
     } else {
         echo "<script>alert('Mali');</script>";
+    }
+
+    //Modal alert
+    header("Location: addEntry.php?sucsess=true");
+
+    if ($_GET['sucsess'] == 'true') {
+        echo "<script>$(function() {
+                $( '#modalAdded' ).dialog();
+                });</script>";
     }
 }
 

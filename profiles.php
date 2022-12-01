@@ -8,7 +8,6 @@
     $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
 ?>
 
-
 <!DOCTYPE html>
 <html>
 

@@ -1,69 +1,14 @@
 <?php
+// XAMPP
+
   include 'connection.php';
 
   session_start();
   session_destroy();
   session_start();
 
-  //SIGN UP not final pa ito pero connected na sa db yung signup
-  if(isset($_POST['signupBtn'])) {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $birthday = $_POST['birthday'];
-    $contactNumber = $_POST['contactNumber'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+  include 'controller.php';
 
-    $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$password_hash."')";
-    if(executeQuery($query)){
-      header('Location: index.php');
-    }
-  } 
-
-    // LOGIN BTN 
-    // $Query_email = "email";
-    // $Query_password;
-
-    if(isset($_POST['loginBtn'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        //$hash = password_hash($password, PASSWORD_DEFAULT);
-    
-        $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."'";
-        $accounts = executeQuery($query);
-
-        if(mysqli_num_rows($accounts) > 0) {
-            while($account = mysqli_fetch_assoc($accounts)) {
-                if(password_verify($password,$account['password'])){
-                    $_SESSION['firstName'] = $account['firstName'];
-                    $_SESSION['lastName'] = $account['lastName'];
-                    $_SESSION['birthday'] = $account['birthday'];
-                    $_SESSION['contactNumber'] = $account['contactNumber'];
-                    $_SESSION['email'] = $account['email'];
-    
-                    header('Location: dashboard.php');  
-                    //echo "<script>window.location.href='dashboard.php';</script>";
-                   } else {
-                        echo '<script>alert("Invalid email/password!")</script>';
-                   }
-            }     
-        } 
-    }
-
-    // // this is used for alert (kapag mali yung credentials)
-    // if(($email == $Query_email) && ($password == $Query_password)) {
-
-    //     header('Location: dashboard.php');
-
-    //   } else {
-    //     $message = "Username and/or Password incorrect.\\nTry again.";
-    //     echo "<script type='text/javascript'>alert('$message');</script>";
-    //     }
-    // }
-
-        
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +115,9 @@
                                 <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" id="password" name="password" placeholder="Password" maxlength="30" required>
+                            
+                            <!-- Added pattern as a criteria for secured password -->
+                                <input class="form-control" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and should be at least 8 or more characters" placeholder="Password" maxlength="30" required>
                             </div>
                             <div class="col-12">
                                 <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" maxlength="30" required>
@@ -210,13 +157,13 @@
                         <!-- Fields -->
                         <div class="row gx-3 gy-3 mx-2">
                             <div class="col-12">
-                                <input class="form-control" type="text" placeholder="Username" required>
+                                <input class="form-control" type="email" placeholder="Email" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" placeholder="New Password" required>
+                                <input class="form-control" type="password" name="newPassword placeholder="New Password" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" placeholder="Confirm New Password" required>
+                                <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm New Password" required>
                             </div>
                         </div>
                         <!-- Reset Pass btn -->
