@@ -1,39 +1,22 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-
-    <link rel="stylesheet" href="assets/scss/modal.css">
-</head>
-
-<body id="page-top">
-    <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalView">
-            Launch demo modal
-        </button>
-    </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="modalView">
+    <div class="modal fade" role="dialog" tabindex="1" id="viewMore">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Kabataan Information</h4>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <?php executeQuery($queryResidentsTbl); ?>
                 <div class="modal-body m-0 px-4">
                     <div class="row rowContainer m-0 p-0">
                         <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
-                            <p class="textName w-100 my-1">JUAN SANTOS DELA CRUZ</p>
-                            <p class="text Gender w-100 my-1 mt-2">48 YEARS OLD</p>
+                            <p class="textName w-100 my-1"><?php echo $row['firstName']?></p>
+                            <p class="text Gender w-100 my-1 mt-2"><?php echo $row['age']?> YEARS OLD</p>
                             <p class="textAge w-100 my-1">Man</p>
                         </div>
                         <div class="col align-self-center"><img class="img-fluid imgContainer" src="assets/img/misc/qrcode.png"></div>
                     </div>
+
                     <div class="row rowContainer my-4 mx-0 p-0">
                         <div class="col col-12 p-0">
                             <div class="markerContainer px-2">
@@ -132,6 +115,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="assets/js/theme.js"></script>
-</body>
-
-</html>

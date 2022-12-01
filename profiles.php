@@ -1,14 +1,11 @@
 <?php
-    // $dbServername = "localhost"; //server name
-    // $dbUsername = "root";
-    // $dbPassword = "";
-    // $dbName = "KKIS"; //database name
+    include "connection.php";
 
-    // $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); //connect to database
-    // $query = "SELECT * FROM residentsProfile ORDER BY residentID ASC"; //query to select all data from table
-    // $result = mysqli_query($conn, $query);
+    $queryKabataanTbl = "SELECT * FROM kabataanProfile"; //query to select all data from table
+    $resultKabataanTbl = mysqli_query($conn, $queryKabataanTbl); //execute query
 
-    // include 'connection.php';
+    $queryResidentsTbl = "SELECT * FROM residentsProfile"; //query to select all data from table
+    $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
 ?>
 
 
@@ -184,6 +181,7 @@
                 <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="kabataanTbl" style="width:100%">
                     <thead class="headTitle">
                         <tr>
+                            <th>Resident ID</th>
                             <th>Last Name</th>
                             <th>First Name</th>
                             <th>Middle Name</th>
@@ -198,52 +196,40 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td class="entryRow" scope="col" data-label="Last Name">ALCALA</td>
-                            <td class="entryRow" scope="col" data-label="First Name">NICOLE</td>
-                            <td class="entryRow" scope="col" data-label="Middle Name">MATALOBOS</td>
-                            <td class="entryRow" scope="col" data-label="Birthday">02/19/2001</td>
-                            <td class="entryRow" scope="col" data-label="Age">21</td>
-                            <td class="entryRow" scope="col" data-label="Gender">FEMALE</td>
-                            <td class="entryRow" scope="col" data-label="Civil status">SINGLE</td>
-                            <td class="entryRow" scope="col" data-label="Purok">PULONG KENDI</td>
-                            <td class="entryRow" scope="col" data-label="Remarks">SK Scholar</td>
-                            <td>
-                                <div class="row m-0 d-flex justify-content-around align-items-center">
-                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                        <button class="btn view actionBtn" type="button" data-bs-toggle="modal" data-bs-target="#viewMore"><i class="fa-solid fa-eye"></i></button>
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                        <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></i></button>
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                        <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
                         <?php
-                        //     while ($row = mysqli_fetch_array($result)) {
-                        //     echo '
-                        //     <tr>
-                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
-                        //         <td>' . $row["lastName"] . '</td>
-                        //         <td>' . $row["firstName"] . '</td>
-                        //         <td>' . $row["middleName"] . '</td>
-                        //         <td>' . $row["birthDate"] . '</td>
-                        //         <td>' . $row["age"] . '</td>
-                        //         <td>' . $row["gender"] . '</td>
-                        //         <td>' . $row["civilStatus"] . '</td>
-                        //         <td>' . $row["purok"] . '</td>
-                        //         <td align="center">
-                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
-                        
-                        //         </td>
+                            while ($row = mysqli_fetch_array($resultKabataanTbl)) {
+                            echo '
+                            <tr>
+                                <td class="entryRow" scope="col" data-label="Last Name">' . $row["lastName"] . '</td>
+                                <td class="entryRow" scope="col" data-label="First Name">' . $row["firstName"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Middle Name">' . $row["middleName"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Birthday">' . $row["birthDate"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Age">' . $row["age"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Gender">' . $row["gender"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Civil status">' . $row["civilStatus"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Purok">' . $row["purok"] . '</td>
+                                <td class="entryRow" scope="col" data-label="Remarks">'.$row["remarks"] . '</td>
 
-                        //     </tr>
-                        //     ';
-                        // }
+                                <td> 
+                                    <div class="row m-0 d-flex justify-content-around align-items-center">
+                                        <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                            <button class="btn view actionBtn" type="button" data-bs-toggle="modal" data-bs-target="#viewMore"><i class="fa-solid fa-eye"></i></button>
+                                        </div>
+
+                                        <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                            <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></i></button>
+                                        </div>
+
+                                        <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                            <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                    </div>
+                        
+                                </td>
+
+                            </tr>
+                            ';
+                        }
                         ?>
                     </tbody>
                 </table>
@@ -362,6 +348,7 @@
                 <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="residentsTbl" style="width:100%">
                     <thead class="headTitle">
                         <tr>
+                            <th>Resident ID</th>
                             <th>Last Name</th>
                             <th>First Name</th>
                             <th>Middle Name</th>
@@ -376,59 +363,53 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td class="entryRow" scope="col" data-label="Last Name">PALALIMPA</td>
-                            <td class="entryRow" scope="col" data-label="First Name">MICHAEL JOHN</td>
-                            <td class="entryRow" scope="col" data-label="Middle Name">SEGURA</td>
-                            <td class="entryRow" scope="col" data-label="Birthday">08/11/2000</td>
-                            <td class="entryRow" scope="col" data-label="Age">22</td>
-                            <td class="entryRow" scope="col" data-label="Gender">MALE</td>
-                            <td class="entryRow" scope="col" data-label="Civil status">SINGLE</td>
-                            <td class="entryRow" scope="col" data-label="Purok">Doña Regina 1</td>
-                            <td class="entryRow" scope="col" data-label="Remarks">PUROK LEADER</td>
-                            <td>
-                                <div class="row m-0 d-flex justify-content-around align-items-center">
-                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                        <button class="btn view actionBtn" type="button" data-bs-toggle="modal" data-bs-target="#viewMore"><i class="fa-solid fa-eye"></i></button>
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                        <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></i></button>
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                        <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <?php
-                        //     while ($row = mysqli_fetch_array($result)) {
-                        //     echo '
-                        //     <tr>
-                        //         <td align="center"><input type="checkbox" class="checkitem"></td>
-                        //         <td>' . $row["lastName"] . '</td>
-                        //         <td>' . $row["firstName"] . '</td>
-                        //         <td>' . $row["middleName"] . '</td>
-                        //         <td>' . $row["birthDate"] . '</td>
-                        //         <td>' . $row["age"] . '</td>
-                        //         <td>' . $row["gender"] . '</td>
-                        //         <td>' . $row["civilStatus"] . '</td>
-                        //         <td>' . $row["purok"] . '</td>
-                        //         <td align="center">
-                        //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
-                        
-                        //         </td>
+                            <?php while ($row = mysqli_fetch_array($resultResidentsTbl)) { ?>
+                            <tr>
+                                <td id="residentID" class="entryRow" scope="col" data-label="Resident ID"><?php echo $row["residentID"]; ?></td>
+                                <td id="lastName" class="entryRow" scope="col" data-label="Last Name"><?php echo$row["lastName"]; ?></td>
+                                <td id="firstName" class="entryRow" scope="col" data-label="First Name"><?php echo$row["firstName"]; ?></td>
+                                <td id="middleName" class="entryRow" scope="col" data-label="Middle Name"><?php echo$row["middleName"]; ?></td>
+                                <td id="birthday" class="entryRow" scope="col" data-label="Birthday"><?php echo$row["birthDate"]; ?></td>
+                                <td id="age"class="entryRow" scope="col" data-label="Age"><?php echo$row["age"]; ?></td>
+                                <td id="gender"class="entryRow" scope="col" data-label="Gender"><?php echo$row["gender"]; ?></td>
+                                <td id="civilStatus"class="entryRow" scope="col" data-label="Civil status"><?php echo $row["civilStatus"]; ?></td>
+                                <td id="purok"class="entryRow" scope="col" data-label="Purok"><?php echo $row["purok"]; ?></td>
+                                <td id="remarks"class="entryRow" scope="col" data-label="Remarks"><?php echo $row["remarks"]; ?></td>
+                                <td id="actions"class="entryRow" scope="col" data-label="Actions">
 
-                        //     </tr>
-                        //     ';
-                        // }
-                        ?>
+                                    <a class="btn view viewMore actionBtn" role="button" type="button" data-bs-toggle="modal" data-bs-target="#viewMore" href="modalViewAll.php" data-id="<?php echo $row["residentID"]?>"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="updateEntry.php?residentID=<?php echo $row["residentID"]?>" value="AKEN" class="btn  update actionBtn" role="button" aria-pressed="true"><i class="fa-solid fa-pen"></i></a>
+                                    <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a>
+
+                                    <!-- <btn <a href=".php? residentID=<?php echo $row["residentID"]?>" class="btn btn-danger btn-sm" role="button" aria-pressed="true">><i class="fa-solid fa-trash-can"></i></a></btn> -->
+
+                                    <!-- <td> 
+                                    <div class="row m-0 d-flex justify-content-around align-items-center">
+                                        <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                            <button class="viewMore btn view actionBtn" type="button" data-bs-toggle="modal" id="'.$row['residentID'].'"><i class="fa-solid fa-eye"></i></button>
+                                        </div>
+
+                                        <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                            <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></button>
+                                        </div>
+
+                                        <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                            <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                    </div>
+                        
+                                </td> -->
+
+                            </tr>
+                            <?php } ?>
                     </tbody>
                 </table>
-            </div> 
+            </div>
+
+            <?php include "modalViewAll.php"; ?>
 
             <div class="sectionDiv mx-0 mt-4">
-                <div class="modal fade" role="dialog" tabindex="-1" id="viewMore">
+                <div class="modal fade" role="dialog" tabindex="-1" id="">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -437,8 +418,14 @@
                             </div>
                             <div class="modal-body m-0 px-4">
                                 <div class="row rowContainer m-0 p-0">
+                                    <?php 
+                                    $residentID = 'residentID';
+                                    $sql = "SELECT * FROM residentsProfile WHERE residentID = '$residentID'";
+                                    $query_run = mysqli_query($conn,$sql);	
+                                    $row = mysqli_fetch_array($query_run);
+                                    ?>
                                     <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
-                                        <p class="textName w-100 my-1">JUAN SANTOS DELA CRUZ</p>
+                                        <p class="textName w-100 my-1">'<?php echo$row["lastName"]; ?></p>
                                         <p class="textGender w-100 my-1 mt-2">48 YEARS OLD</p>
                                         <p class="textAge w-100 my-1">Man</p>
                                     </div>
@@ -540,6 +527,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
     
