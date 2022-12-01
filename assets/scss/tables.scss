@@ -1,0 +1,25 @@
+$font-stack: Poppins, sans-serif;
+$font-stack-sub: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$dark-blue: #04496A;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+
+.container-fluid{
+    .btn-primary{
+        margin-top: 1.5em;
+        background-color: $light-blue;
+        border: none;
+        height: 3em;
+        width: 3em;
+        border-radius: 6em;
+
+        &:hover{
+            background-color: $mid-blue;
+        }
+
+    }
+}

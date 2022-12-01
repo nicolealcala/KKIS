@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- Custom Page Stylesheets -->
+    <link rel="stylesheet" href="assets/css/tables.css">
     <link rel="stylesheet" href="assets/scss/profiles.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <link rel="stylesheet" href="assets/scss/modal.css">
@@ -64,6 +65,16 @@
         </header>
 
         <div class="container-fluid content">
+
+            <!-- Back button pabalik sa dashboard -->
+            <div class="d-grid gap-2 d-md-block" id="backBtn">
+                <a href="dashboard.php">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </a>
+            </div>
+
             <!-- Menu Buttons 
             <div class="row d-flex justify-content-end align-ittems-center m-0">
                 <button class="menuBtn menu1 rounded-pill clicked" id="kabataan">Kabataan</button>
