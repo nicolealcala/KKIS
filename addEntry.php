@@ -8,7 +8,7 @@ if (isset($_POST['submitBtn'])) {
     // Household Info
     $hFname = $_POST['hFname'];
     $hMname = $_POST['hMname'];
-    $hLname = $_POST['hLname'] . ' ' . $_POST['hSuffix'];
+    $hLname = $_POST['hLname'] . " " . $_POST['hSuffix'];
     $remarks = $_POST['remarks'];
     $membersCount = $_POST['membersCount'];
 
@@ -53,8 +53,8 @@ if (isset($_POST['submitBtn'])) {
     //-----------------------FOR ENCRYPTED IDs-------------------------
 
     // Storing a string into the variable which needs to be Encrypted
-    $rEncrypt = $fName . " " . $lName . " " . $birthday;
-    $hEncrypt = $hFname . " " . $hLname . " " . $membersCount;
+    $rEncrypt = $fName . " " . $mName . " " . $lName;
+    $hEncrypt = $hFname . " " . $hMname . " " .$hLname;
 
     // Storingthe cipher method
     $ciphering = "AES-128-CTR";
@@ -71,28 +71,43 @@ if (isset($_POST['submitBtn'])) {
 
     // Using openssl_encrypt() function to encrypt the data
     $encryptedResident = openssl_encrypt($rEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
-    $encryptedHouseholds = openssl_encrypt($hEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
+    $encryptedHousehold = openssl_encrypt($hEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
 
     //----------------------------------------------------------------
 
 
     //Query for Households
-    $queryHousehold = "INSERT INTO `households` (`household_encrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $encryptedHouseholds . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
+    $queryHousehold = "INSERT INTO `households` (`hencrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $encryptedHousehold . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
+
+    //Query for checking if houseold entry already exists
+    $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
+    $existingHousehold = executeQuery($checkHouseholds);
+
+    if ($rowcount = mysqli_num_rows($existingHousehold) > 0) {
+        //If entry already exists, update the Remarks column and get the updated row ID
+        $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
+        executeQuery($updateHousehold);
+        $household_id = mysqli_insert_id($conn);
+    } else {
+        //If entry is new, insert to db and get the inserted row id
+        executeQuery($queryHousehold);
+        $householdID = mysqli_insert_id($conn);
+    }
 
     //Execute households insertion and get the id of the inserted entry
-    executeQuery($queryHousehold);
-    $householdID = mysqli_insert_id($conn);
+    // executeQuery($queryHousehold);
+    // $householdID = mysqli_insert_id($conn);
 
 
     //Query for Personal info
-    $queryPersonal = "INSERT INTO `residents`(`resident_encrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
+    $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
 
     //Execute personal info insertion and get the id of the inserted entry
     executeQuery($queryPersonal);
     $residentID = mysqli_insert_id($conn);
 
     //Query for Educational Info
-    $queryEducation = "INSERT INTO `educational_info`(`educ_status`, `educ_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
+    $queryEducation = "INSERT INTO `educational_info`(`student_status`, `student_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
 
     //Query for Employment Info
     $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
@@ -194,11 +209,11 @@ if (isset($_POST['submitBtn'])) {
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="genderPreference">Gender Preference</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" id="genderPreference" required>
-                                    <option value="Man">Man</option>
-                                    <option value="Woman">Woman</option>
-                                    <option value="Transgender">Transgender</option>
-                                    <option value="Non-binary/Non-conforming">Non-binary/Non-conforming</option>
-                                    <option value="Prefer not to say">Prefer not to say</option>
+                                    <option value="MAN">Man</option>
+                                    <option value="WOMAN">Woman</option>
+                                    <option value="TRANSGENDER">Transgender</option>
+                                    <option value="NON-BINARY/NON-CONFORMING">Non-binary/Non-conforming</option>
+                                    <option value="PREFER NOT TO SAY">Prefer not to say</option>
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
@@ -212,22 +227,22 @@ if (isset($_POST['submitBtn'])) {
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="maritalStatus">Marital Status</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" id="maritalStatus" placeholder="Select Religion" required>
-                                    <option value="Single">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Live-in">Live-in</option>
-                                    <option value="Separated">Separated</option>
-                                    <option value="Annuled">Annuled</option>
-                                    <option value="Widowed">Widowed</option>
+                                    <option value="SINGLE">Single</option>
+                                    <option value="MARRIED">Married</option>
+                                    <option value="LIVE IN">Live-in</option>
+                                    <option value="SEPARATED">Separated</option>
+                                    <option value="ANNULED">Annuled</option>
+                                    <option value="WIDOWED">Widowed</option>
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1 p-1" for="religionSelect">Religion</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" id="religionSelect" required>
-                                    <option value="Atheist">Atheist</option>
-                                    <option value="Buddhist">Buddhist</option>
-                                    <option value="Christian">Christian</option>
-                                    <option value="Muslim">Muslim</option>
-                                    <option value="Others">Others</option>
+                                    <option value="ATHEIST">Atheist</option>
+                                    <option value="BUDDHIST">Buddhist</option>
+                                    <option value="CHRISTIAN">Christian</option>
+                                    <option value="MUSLIM">Muslim</option>
+                                    <option value="OTHERS">Others</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-6 col-12">
@@ -235,14 +250,13 @@ if (isset($_POST['submitBtn'])) {
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
                                     <!-- Class form-select  removed from select element in Disability -->
                                     <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect" required>
-                                        <option value="None" selected>None</option>
-                                        <option value="Communication disability">Communication disability</option>
-                                        <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
-                                        <option value="Learning disability">Learning disability</option>
-                                        <option value="Mental disability">Mental disability</option>
-                                        <option value="Orthopedic disability">Orthopedic disability</option>
-                                        <option value="Psychosocial disability">Psychosocial disability</option>
-                                        <option value="Vission disability">Vission disability</option>
+                                        <option value="NONE" selected>None</option>
+                                        <option value="COMMUNICATION DISABILITY">Communication disability</option>
+                                        <option value="LEARNING DISABILITY">Learning disability</option>
+                                        <option value="MENTAL DISABILITY">Mental disability</option>
+                                        <option value="ORTHOPEDIC DISABILITY">Orthopedic disability</option>
+                                        <option value="PSYCHOSOCIAL DISABILITY">Psychosocial disability</option>
+                                        <option value="VISION DISABILITY">Vision disability</option>
                                     </select>
                                 </div>
                             </div>
@@ -253,8 +267,8 @@ if (isset($_POST['submitBtn'])) {
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12" for="residentVote">
                                 <label class="col-form-label fieldLabel required w-100 p-1">Voter Type</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required>
-                                    <option value="Registered">Registered</option>
-                                    <option value="Unregistered">Unregistered</option>
+                                    <option value="REGISTERED">Registered</option>
+                                    <option value="UNREGISTERED">Unregistered</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-8 col-12">
@@ -264,23 +278,23 @@ if (isset($_POST['submitBtn'])) {
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentPurok">Purok</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required>
-                                    <option value="Cardinal">Cardinal</option>
-                                    <option value="Cordillera">Cordillera</option>
-                                    <option value="Doña Petra">Doña Petra</option>
-                                    <option value="Doña Regina 1">Doña Regina 1</option>
-                                    <option value="Doña Regina 2">Doña Regina 2</option>
-                                    <option value="Doña Regina 3">Doña Regina 3</option>
-                                    <option value="Family Village">Family Village</option>
-                                    <option value="Iraq">Iraq</option>
-                                    <option value="Looban">Looban</option>
-                                    <option value="Manggahan">Manggahan</option>
-                                    <option value="Nayon">Nayon</option>
-                                    <option value="Ormoc">Ormoc</option>
-                                    <option value="Pulong Kendi">Pulong Kendi</option>
-                                    <option value="Puting Krus">Puting Krus</option>
-                                    <option value="Saint Anthony ">Saint Anthony </option>
-                                    <option value="Sampaguita St.">IraSampaguita St.</option>
-                                    <option value="Smokey Mountain ">Smokey Mountain </option>
+                                    <option value="CARDINAL">Cardinal</option>
+                                    <option value="CORDILLERA">Cordillera</option>
+                                    <option value="DOÑA PETRA">Doña Petra</option>
+                                    <option value="DOÑA REGINA 1">Doña Regina 1</option>
+                                    <option value="DOÑA REGINA 2">Doña Regina 2</option>
+                                    <option value="DOÑA REGINA 3">Doña Regina 3</option>
+                                    <option value="FAMILY VILLAGE">Family Village</option>
+                                    <option value="IRAQ">Iraq</option>
+                                    <option value="LOOBAN">Looban</option>
+                                    <option value="MANGGAHAN">Manggahan</option>
+                                    <option value="NAYON">Nayon</option>
+                                    <option value="ORMOC">Ormoc</option>
+                                    <option value="PULONG KENDI">Pulong Kendi</option>
+                                    <option value="PUTING KRUS">Puting Krus</option>
+                                    <option value="SAINT ANTHONY">Saint Anthony </option>
+                                    <option value="SAMPAGUITA ST.">IraSampaguita St.</option>
+                                    <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
@@ -302,29 +316,29 @@ if (isset($_POST['submitBtn'])) {
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="educStatusLbl" for="selectEducStatus">Educational Status</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="educStatus" id="selectEducStatus" required>
-                                            <option value="Enrolled">Enrolled</option>
-                                            <option value="Out-of-school Youth">Out-of-school Youth</option>
-                                            <option value="Working Student">Working Student</option>
+                                            <option value="ENROLLED">Enrolled</option>
+                                            <option value="OUT-OF-SCHOOL YOUTH">Out-of-school Youth</option>
+                                            <option value="WORKING STUDENT">Working Student</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="levelLbl" for="selectLevel">Level</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="educLevel" id="selectLevel" required>
-                                            <option value="Pre-Elementary">Pre-elementary</option>
-                                            <option value="Elementary">Elementary</option>
-                                            <option value="Junior High School">Junior High School</option>
-                                            <option value="Senior High School">Senior High School</option>
-                                            <option value="Alternative Learning System">Alternative Learning System (ALS)</option>
-                                            <option value="Diploma Course">Diploma Course</option>
-                                            <option value="College">College</option>
-                                            <option value="Graduate Studies">Graduate Studies</option>
+                                            <option value="PRE-ELEMENTARY">Pre-elementary</option>
+                                            <option value="ELEMENTARY">Elementary</option>
+                                            <option value="JUNIOR HIGH SCHOOL">Junior High School</option>
+                                            <option value="SENIOR HIGH SCHOOL">Senior High School</option>
+                                            <option value="ALTERNATIVE LEARNING SYSTEM">Alternative Learning System (ALS)</option>
+                                            <option value="DIPLOMA COURSE">Diploma Course</option>
+                                            <option value="COLLEGE">College</option>
+                                            <option value="GRADUATE STUDIES">Graduate Studies</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required>
-                                            <option value="Private">Private</option>
-                                            <option value="Public">Public</option>s
+                                            <option value="PRIVATE">Private</option>
+                                            <option value="PUBLIC">Public</option>s
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
@@ -425,23 +439,23 @@ if (isset($_POST['submitBtn'])) {
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required>
-                                            <option value="Employed">Employed</option>
-                                            <option value="Unemployed">Unemployed</option>
+                                            <option value="EMPLOYED">Employed</option>
+                                            <option value="UNEMPLOYED">Unemployed</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required>
-                                            <option value="Regular">Regular</option>
-                                            <option value="Contractual">Contractual</option>
-                                            <option value="Job Order">Job Order</option>
+                                            <option value="REGULAR">Regular</option>
+                                            <option value="CONTRACTUAL">Contractual</option>
+                                            <option value="JOB ORDER">Job Order</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required>
-                                            <option value="Private">Private</option>
-                                            <option value="Public">Public</option>
+                                            <option value="PRIVATE">Private</option>
+                                            <option value="PUBLIC">Public</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
@@ -563,22 +577,22 @@ if (isset($_POST['submitBtn'])) {
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
                                     <select class="text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
-                                        <option value="Purok Leader">Purok Leader</option>
-                                        <option value="SK Scholar">SK Scholar</option>
-                                        <option value="Solo Living">Solo Living</option>
-                                        <option value="Solo Parent">Solo Parent</option>
-                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>
+                                        <option value="PUROK LEADER">Purok Leader</option>
+                                        <option value="SK SCHOLAR">SK Scholar</option>
+                                        <option value="SOLO LIVING">Solo Living</option>
+                                        <option value="SOLO PARENT">Solo Parent</option>
+                                        <option value="TEENAGE PREGNANCY">Teenage Pregnancy</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col col-lg-2 col-md-6 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="famCount">No.&nbsp; of Family Members</label>
                                 <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required>
-                                    <option value="Less than 5">Less than 5</option>
+                                    <option value="LESS THAN 5">Less than 5</option>
                                     <option value="5 to 10">5 to 10</option>
                                     <option value="11 to 15">11 to 15</option>
                                     <option value="16 to 20">16 to 20</option>
-                                    <option value="More than 20">More than 20</option>
+                                    <option value="MORE THAN 20">More than 20</option>
                                 </select>
                             </div>
                         </div>

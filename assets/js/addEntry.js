@@ -1,4 +1,20 @@
 $(document).ready(function () {
+  //Default select boxes
+  $('select').not('#disabilitySelect').val("").change();
+  
+  //UPPERCASE input
+  $('.userInput').keyup(function(){
+    $(this).val($(this).val().toUpperCase());
+  })
+
+  $('.educUserInput').keyup(function(){
+    $(this).val($(this).val().toUpperCase());
+  })
+
+  $('.employUserInput').keyup(function(){
+    $(this).val($(this).val().toUpperCase());
+  })
+
   //For required fieldLabels
   $(".fieldLabel").each(function () {
     $(this).addClass("required");
@@ -16,15 +32,14 @@ $(document).ready(function () {
   });
 
   //For Educ Radio Btn PRE-CHECKED
-  if ($("#educCheck").is(":checked")){
+  if ($("#educCheck").is(":checked")) {
     educRadioClick();
   }
 
   //For Educ Radio Btn when selected
-  ($("#educCheck").on("change", function () {
-      educRadioClick();
-    })
-  );
+  $("#educCheck").on("change", function () {
+    educRadioClick();
+  });
 
   //For Employ Radio Btn
   $("#employCheck").change(function () {
@@ -32,10 +47,10 @@ $(document).ready(function () {
   });
 
   //For Educ Status PRE-SELECTED
-  if ($("#selectEducStatus option[value=Enrolled]").is(":selected")) {
+  if ($("#selectEducStatus option[value=ENROLLED]").is(":selected")) {
     enrolled();
   } else if (
-    $('#selectEducStatus option[value="Out-of-school Youth"]').is(":selected")
+    $('#selectEducStatus option[value="OUT-OF-SCHOOL YOUTH"]').is(":selected")
   ) {
     ousYouth();
   } else {
@@ -44,10 +59,10 @@ $(document).ready(function () {
 
   //For Educ Status ON CHANGE
   $("#selectEducStatus").on("change", function () {
-    if ($("#selectEducStatus option[value=Enrolled]").is(":selected")) {
+    if ($("#selectEducStatus option[value=ENROLLED]").is(":selected")) {
       enrolled();
     } else if (
-      $('#selectEducStatus option[value="Out-of-school Youth"]').is(":selected")
+      $('#selectEducStatus option[value="OUT-OF-SCHOOL YOUTH"]').is(":selected")
     ) {
       ousYouth();
     } else {
@@ -56,7 +71,7 @@ $(document).ready(function () {
   });
 
   //For Employment Status PRE-SELECTED
-  if ($("#selectEmployStatus option[value=Employed]").is(":selected")) {
+  if ($("#selectEmployStatus option[value=EMPLOYED]").is(":selected")) {
     employed();
   } else {
     unemployed();
@@ -64,7 +79,7 @@ $(document).ready(function () {
 
   //For Employment Status ON CHANGE
   $("#selectEmployStatus").on("change", function () {
-    if ($("#selectEmployStatus option[value=Employed]").is(":selected")) {
+    if ($("#selectEmployStatus option[value=EMPLOYED]").is(":selected")) {
       employed();
     } else {
       unemployed();
@@ -85,7 +100,6 @@ $(document).ready(function () {
     selectedValue: 1,
   });
 });
-
 
 // ------------------- FUNCTIONS ------------------- //
 function educRadioClick() {
@@ -128,7 +142,7 @@ function educRadioClick() {
   //For red * marker
   $(".employFieldLabel").removeClass("required");
   $(".educFieldLabel").addClass("required");
-};
+}
 
 //fxn for Enrolled
 function enrolled() {
@@ -212,7 +226,7 @@ function workingStudent() {
 
 // ----------------------Employment-------------------------
 //fxn for clicking #employCheck (disabling education fields, enabling employment fields)
-function employRadioClick () {
+function employRadioClick() {
   $("#educCheck").prop("checked", false);
   $("#markerEduc").css("background-color", "#c5d4e3");
   $(".educFieldLabel").css("color", "#dfdfdf");
@@ -241,14 +255,13 @@ function employRadioClick () {
     $(this).attr("required", "required");
   });
 
-  
   $("#markerEmploy").css("background-color", "#219EBC");
   $(".employFieldLabel").css("color", "#909090");
 
   //For red * marker
   $(".educFieldLabel").removeClass("required");
   $(".employFieldLabel").addClass("required");
-};
+}
 
 //fxn for Employed
 function employed() {
@@ -271,12 +284,8 @@ function employed() {
 //fxn for Unemployed
 function unemployed() {
   $(".employSelectBox").each(function () {
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-    if ($(this).attr("id") == "selectEmployStatus") {
-      $(this).prop("disabled", false);
-      $(this).attr("required", "required");
-    }
+    $(this).not("#selectEmployStatus").prop("disabled", true);
+    $(this).not("#selectEmployStatus").removeAttr("required");
   });
 
   $(".employUserInput").each(function () {
@@ -293,4 +302,3 @@ function unemployed() {
     }
   });
 }
-

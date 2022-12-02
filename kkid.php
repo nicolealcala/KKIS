@@ -22,7 +22,7 @@
 </head>
 
 <body>
-   
+
     <div class="mainContainer">
         <header>
             <div class="row headerRow">
@@ -86,14 +86,23 @@
                                     </div>
                                     <div class="col-sm-9 col-12 p-0">
                                         <select class="form-select categoryOption" id="selectPurok" disabled>
-                                            <option value="I" selected>I</option>
-                                            <option value="II">II</option>
-                                            <option value="II">II</option>
-                                            <option value="III">III</option>
-                                            <option value="IV">IV</option>
-                                            <option value="V">V</option>
-                                            <option value="VI">VI</option>
-                                            <option value="VII">VII</option>
+                                            <option value="CARDINAL">Cardinal</option>
+                                            <option value="CORDILLERA">Cordillera</option>
+                                            <option value="DOÑA PETRA">Doña Petra</option>
+                                            <option value="DOÑA REGINA 1">Doña Regina 1</option>
+                                            <option value="DOÑA REGINA 2">Doña Regina 2</option>
+                                            <option value="DOÑA REGINA 3">Doña Regina 3</option>
+                                            <option value="FAMILY VILLAGE">Family Village</option>
+                                            <option value="IRAQ">Iraq</option>
+                                            <option value="LOOBAN">Looban</option>
+                                            <option value="MANGGAHAN">Manggahan</option>
+                                            <option value="NAYON">Nayon</option>
+                                            <option value="ORMOC">Ormoc</option>
+                                            <option value="PULONG KENDI">Pulong Kendi</option>
+                                            <option value="PUTING KRUS">Puting Krus</option>
+                                            <option value="SAINT ANTHONY">Saint Anthony </option>
+                                            <option value="SAMPAGUITA ST.">IraSampaguita St.</option>
+                                            <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
                                         </select>
                                     </div>
                                     <!-- Custom Category -->
