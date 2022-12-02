@@ -1,8 +1,8 @@
 <?php
 require 'connection.php';
-session_start();
-session_destroy();
-session_start();
+include "assets/phpqrcode/qrlib.php" ;
+$content = "http://www.etutorialspoint.com/" ;
+QRcode::png($content) ;
 
 if (isset($_POST['submitBtn'])) {
     // Household Info
@@ -50,30 +50,26 @@ if (isset($_POST['submitBtn'])) {
     $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : "1"; //foreign key
 
 
-    //-----------------------FOR ENCRYPTED IDs-------------------------
-
-    // Storing a string into the variable which needs to be Encrypted
+    //FOR ENCRYPTED IDs
     $rEncrypt = $fName . " " . $mName . " " . $lName;
     $hEncrypt = $hFname . " " . $hMname . " " .$hLname;
 
-    // Storingthe cipher method
-    $ciphering = "AES-128-CTR";
+    $ciphering = "AES-128-CTR"; //cipher method
 
-    // Using OpenSSl Encryption method
-    $iv_length = openssl_cipher_iv_length($ciphering);
+    $iv_length = openssl_cipher_iv_length($ciphering);//Using OpenSSl Encryption method
     $options = 0;
+    
+    $encryption_iv = '1234567891011121'; // Non-NULL Initialization Vector for encryption
 
-    // Non-NULL Initialization Vector for encryption
-    $encryption_iv = '1234567891011121';
-
-    // Storing the encryption key
-    $encryption_key = "KKIS2022-2023";
+    $encryption_key = "KKIS2022-2023"; // Storing the encryption key
 
     // Using openssl_encrypt() function to encrypt the data
     $encryptedResident = openssl_encrypt($rEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
     $encryptedHousehold = openssl_encrypt($hEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
 
-    //----------------------------------------------------------------
+    //FOR QR CODE GENERATION
+    
+
 
 
     //Query for Households
