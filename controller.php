@@ -2,7 +2,7 @@
 
     //include 'connection.php';
 
-    //SIGN UP not final pa ito pero connected na sa db yung signup
+    //SIGN UP 
     if(isset($_POST['signupBtn'])) {
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
@@ -47,7 +47,46 @@
         } 
     }
 
+
     // CHANGE PASSWORD
 
-    
+    if(isset($_POST['resetBtn'])){
+        $oldPassword = $_POST["oldPassword"];
+        $newPassword = $_POST["newPassword"];
+        $confirmPassword = $_POST["confirmPassword"];
+
+
+        $passwordQuery = "SELECT * FROM `login_credentials` WHERE `email` ='".$_SESSION['email']."'";
+
+        $passwordResult = executeQuery($passwordQuery);
+        $count=mysqli_num_rows($passwordResult);
+
+        if($count==1){
+            while($row = mysqli_fetch_assoc($passwordResult)){
+                $fetchPassword = $row['password'];
+
+                if(!password_verify($oldPassword,$fetchPassword)){
+                    header("Location:index.php?error=invalidoldpassword");
+                } elseif($newPassword==$oldPassword){
+                    header("Location:index.php?error=samepassword");
+                } else if(!password_verify($oldPassword,$fetchPassword)){
+
+                    if($newPassword == $confirmPassword){
+                        $passwordRaw == $confirmPassword;
+                        $password_hash = password_hash($passwordRaw,PASSWORD_DEFAULT);
+
+                        $updateQuery = "UPDATE `login_credentials` SET `password` = '".$password_hash."' WHERE `email`= '".$_SESSION['email']."'";
+                        executeQuery($updateQuery);
+                        header("Location:index.php?error=passwordchanged");
+                    } else {
+                        header("Location:index.php?error=invalidconfirmpassword");
+                    }
+                    
+                }
+            }
+        }
+
+    }
+
+
 ?>

@@ -9,6 +9,7 @@
 
   include 'controller.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -157,10 +158,13 @@
                         <!-- Fields -->
                         <div class="row gx-3 gy-3 mx-2">
                             <div class="col-12">
-                                <input class="form-control" type="email" placeholder="Email" required>
+                                <input class="form-control" type="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="col-12">
-                                <input class="form-control" type="password" name="newPassword placeholder="New Password" required>
+                                <input class="form-control" type="password" name="oldPassword" placeholder="Old Password" required>
+                            </div>
+                            <div class="col-12">
+                                <input class="form-control" type="password" name="newPassword" placeholder="New Password" required>
                             </div>
                             <div class="col-12">
                                 <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm New Password" required>
