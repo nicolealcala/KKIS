@@ -48,7 +48,7 @@ body {
             #grey {
                 width: inherit;
                 background-color: $headerBG;
-                transition: 0.5s;
+                // transition: 0.5s;
             }
         }
         #pageContent {
@@ -100,6 +100,10 @@ header {
     }
 }
 
+#collapseMobile {
+    display: none;
+}
+
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
      //All pages
 
@@ -130,10 +134,115 @@ header {
     }
 }
 
+//Mobile Nav
+
+
+@media screen and (max-width: 1213px) {
+    #grey {
+        height: 150px;
+    }
+
+
+}
 
 @media screen and (max-width: 991px) {          // MD
     //All pages
     #grey {
-        height: 98px;
+        height: 120px;
+    }
+
+}
+
+@media screen and (min-width: 768px) { 
+    #expandMobile {
+        display: none;
+    }
+
+    #collapseMobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {          //SM
+    #grey {
+        height: 108px;
+    }
+
+    #expand {
+        display: none;
+    }
+
+    #collapse {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 431px) and (max-width: 575px) { //XS
+    #grey {
+        height: 105px;
+    }
+
+    #expand {
+        display: none;
+    }
+
+    #collapse {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #grey {
+        height: 70px;
+    }
+
+    #expand {
+        display: none;
+    }
+
+    #collapse {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 332px) {
+    #grey {
+        height: 68px;
+    }
+
+    #expand {
+        display: none;
+    }
+
+    #collapse {
+        display: none;
+    }
+}
+
+@media screen and (max-width:280px){
+    #grey {
+        height: 63px;
+    }
+
+    #expand {
+        display: none;
+    }
+
+    #collapse {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 275px) {
+    #grey {
+        height: 60px;
+    }
+
+    #expand {
+        display: none;
+    }
+
+    #collapse {
+        display: none;
     }
 }

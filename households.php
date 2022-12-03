@@ -55,8 +55,15 @@
                             <span id="expand" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="openNav()">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
-                            <span  id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav() ">
+                            <span id="expandMobile" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="">
+                                <i class="fa-solid fa-bars fa-2xl w-auto"></i>
+                            </span>
+                            <span  id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
+                            </span>
+                            <span  id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
+                                <i class="fa-solid fa-xmark fa-2xl w-auto">
+                                </i>
                             </span>
                             <span id="pageTitle" class="title longTitle">Declared Households</span>
                         </div>
@@ -68,7 +75,7 @@
                     <hr id="headerHR">
                 </header>
 
-                <!-- CONTENTX START -->
+                <!-- CONTENT START -->
                 <div class="container-fluid content">
                     <!-- Menu Buttons -->
                     <div class="row d-flex justify-content-end align-ittems-center m-0">
