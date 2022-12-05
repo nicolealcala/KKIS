@@ -91,36 +91,36 @@ if (isset($_POST['submitBtn'])) {
             //If entry is new, insert to db and get the inserted row id
             executeQuery($queryHousehold);
             $householdID = mysqli_insert_id($conn);
+        }
 
-            //FOR QR CODE GENERATION
-            $path = 'assets/img/qrCodes/';
-            $file = $path . uniqid('KKIS-') . ".png";
-            $ecc = 'Q';
-            $pixelSize = 65;
-            $frameSize = 9;
-            QRcode::png($encryptedResident, $file, $ecc, $pixelSize, $frameSize);
+        //FOR QR CODE GENERATION
+        $path = 'assets/img/qrCodes/';
+        $file = $path . uniqid('KKIS-') . ".png";
+        $ecc = 'Q';
+        $pixelSize = 65;
+        $frameSize = 10;
+        QRcode::png($encryptedResident, $file, $ecc, $pixelSize, $frameSize);
+        
+        //Query for Personal info
+        $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "', '" . $file . "', '" . $householdID . "', '" . $date_added . "')";
 
-            //Query for Personal info
-            $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "', '" . $file . "', '" . $householdID . "', '" . $date_added . "')";
+        //Execute personal info insertion and get the id of the inserted entry
+        executeQuery($queryPersonal);
+        $residentID = mysqli_insert_id($conn);
 
-            //Execute personal info insertion and get the id of the inserted entry
-            executeQuery($queryPersonal);
-            $residentID = mysqli_insert_id($conn);
+        //Query for Educational Info
+        $queryEducation = "INSERT INTO `educational_info`(`student_status`, `student_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
 
-            //Query for Educational Info
-            $queryEducation = "INSERT INTO `educational_info`(`student_status`, `student_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
+        //Query for Employment Info
+        $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
 
-            //Query for Employment Info
-            $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
-
-            //Determine which query to execute based on selected radio button
-            if (isset($_POST['educInfo'])) {
-                executeQuery($queryEducation);
-            } else if (isset($_POST['employInfo'])) {
-                executeQuery($queryEmployment);
-            } else {
-                echo "<script>alert('Something went wrong');</script>";
-            }
+        //Determine which query to execute based on selected radio button
+        if (isset($_POST['educInfo'])) {
+            executeQuery($queryEducation);
+        } else if (isset($_POST['employInfo'])) {
+            executeQuery($queryEmployment);
+        } else {
+            echo "<script>alert('Something went wrong');</script>";
         }
     }
 }
