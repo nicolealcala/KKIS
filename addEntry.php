@@ -2,10 +2,6 @@
 require 'connection.php';
 include "assets/phpqrcode/qrlib.php";
 
-//FOR QR CODE GENERATION
-// QRcode::png("Nicole Ganda");
-
-
 if (isset($_POST['submitBtn'])) {
     // Household Info
     $hFname = $_POST['hFname'];
@@ -97,8 +93,16 @@ if (isset($_POST['submitBtn'])) {
             executeQuery($queryHousehold);
             $householdID = mysqli_insert_id($conn);
 
+            //FOR QR CODE GENERATION
+            $path = 'assets/img/qrCodes/';
+            $file = $path.uniqid('KKIS-') . '.png';
+            $ecc = 'Q';
+            $pixelSize = 65;
+            $frameSize = 10;
+            QRcode::png($encryptedResident, $file, $ecc, $pixelSize, $frameSize);
+
             //Query for Personal info
-            $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
+            $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "', '" . $file . "', '" . $householdID . "', '" . $date_added . "')";
 
             //Execute personal info insertion and get the id of the inserted entry
             executeQuery($queryPersonal);
@@ -110,11 +114,13 @@ if (isset($_POST['submitBtn'])) {
             //Query for Employment Info
             $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
 
-            //Determine which query to exeecute based on selected radio button
+            //Determine which query to execute based on selected radio button
             if (isset($_POST['educInfo'])) {
                 executeQuery($queryEducation);
-            } else {
+            } else if (isset($_POST['employInfo'])){
                 executeQuery($queryEmployment);
+            } else {
+                echo"<script>alert('Something went wrong');</script>";
             }
         }
     }
