@@ -63,14 +63,14 @@
                     </div>
                 </a>
                 <!-- Records -->
-                <a href="#">
+                <!-- <a href="#">
                     <div class="tab">
                         <span class="tabIcon">
                             <img src="./assets/img/navbar2/Records_gray.svg" alt="">
                         </span>
                         <span class="tabName">Records</span>
                     </div>
-                </a>
+                </a> -->
                 <!-- KK ID Card -->
                 <a href="./kkid.php">
                     <div class="tab">
