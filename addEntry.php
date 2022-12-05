@@ -26,7 +26,6 @@ if (isset($_POST['submitBtn'])) {
     $address = $_POST['address'];
     $purok = $_POST['purok'];
     $organization = $_POST['organization'];
-    $qrCode; //generated qrcode path
     $householdID; //foreign key
     $date_added = date("Y-m-d");
     $encryptedName = $fName . " " . $lName;
@@ -95,10 +94,10 @@ if (isset($_POST['submitBtn'])) {
 
             //FOR QR CODE GENERATION
             $path = 'assets/img/qrCodes/';
-            $file = $path.uniqid('KKIS-') . '.png';
+            $file = $path . uniqid('KKIS-') . ".png";
             $ecc = 'Q';
             $pixelSize = 65;
-            $frameSize = 10;
+            $frameSize = 9;
             QRcode::png($encryptedResident, $file, $ecc, $pixelSize, $frameSize);
 
             //Query for Personal info
@@ -117,10 +116,10 @@ if (isset($_POST['submitBtn'])) {
             //Determine which query to execute based on selected radio button
             if (isset($_POST['educInfo'])) {
                 executeQuery($queryEducation);
-            } else if (isset($_POST['employInfo'])){
+            } else if (isset($_POST['employInfo'])) {
                 executeQuery($queryEmployment);
             } else {
-                echo"<script>alert('Something went wrong');</script>";
+                echo "<script>alert('Something went wrong');</script>";
             }
         }
     }
@@ -427,7 +426,7 @@ if (isset($_POST['submitBtn'])) {
                             <div class="card p-3" id="employCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEmploy">
                                     <label class="markerText ms-1 d-flex align-items-center">
-                                        <input type="radio" id="employCheck" class="statusCheck mx-2" name="educInfo">
+                                        <input type="radio" id="employCheck" class="statusCheck mx-2" name="employInfo">
                                         Employment Status
                                     </label>
                                 </div>
