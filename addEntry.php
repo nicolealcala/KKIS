@@ -98,7 +98,7 @@ if (isset($_POST['submitBtn'])) {
         $file = $path . uniqid('KKIS-') . ".png";
         $ecc = 'Q';
         $pixelSize = 65;
-        $frameSize = 10;
+        $frameSize = 4;
         QRcode::png($encryptedResident, $file, $ecc, $pixelSize, $frameSize);
         
         //Query for Personal info
