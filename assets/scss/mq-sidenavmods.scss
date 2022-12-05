@@ -23,7 +23,7 @@ body {
 
     background-color: $bodyBG;
     #left {
-        height: 100vw;
+        height: 100%;
         width: 0;
         position: fixed;
         z-index: 1;
@@ -104,6 +104,17 @@ header {
     display: none;
 }
 
+//Mobile Nav
+.popup{
+    padding: 5px;
+    width: 500px;
+    height: 270px;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    border-radius: 15px;
+}
+
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
      //All pages
 
@@ -134,13 +145,14 @@ header {
     }
 }
 
-//Mobile Nav
+
 
 
 @media screen and (max-width: 1213px) {
     #grey {
         height: 150px;
     }
+
 
 
 }
@@ -151,6 +163,13 @@ header {
         height: 120px;
     }
 
+    .content {
+        background-color: $white;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 2em;
+        padding-top: 160px;
+    }
 }
 
 @media screen and (min-width: 768px) { 
@@ -175,6 +194,23 @@ header {
     #collapse {
         display: none;
     }
+
+    .content {
+        background-color: $white;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 2em;
+        padding-top: 120px;
+    }
+
+    // #left {
+    //     display: none;
+    //     width: 0px;
+    // }
+
+    // #rc {
+    //     margin-left: 0px;
+    // }
 }
 
 @media screen and (min-width: 431px) and (max-width: 575px) { //XS
