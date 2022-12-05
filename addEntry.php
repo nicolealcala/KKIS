@@ -1,8 +1,10 @@
 <?php
 require 'connection.php';
-include "assets/phpqrcode/qrlib.php" ;
-$content = "http://www.etutorialspoint.com/" ;
-QRcode::png($content) ;
+include "assets/phpqrcode/qrlib.php";
+
+//FOR QR CODE GENERATION
+// QRcode::png("Nicole Ganda");
+
 
 if (isset($_POST['submitBtn'])) {
     // Household Info
@@ -49,51 +51,46 @@ if (isset($_POST['submitBtn'])) {
     $employIndustry = isset($_POST['employIndustry']) ? $_POST['employIndustry'] : "64"; //foreign key
     $employSalary = isset($_POST['employSalary']) ? $_POST['employSalary'] : "1"; //foreign key
 
-
     //FOR ENCRYPTED IDs
     $rEncrypt = $fName . " " . $mName . " " . $lName;
-    $hEncrypt = $hFname . " " . $hMname . " " .$hLname;
+    $hEncrypt = $hFname . " " . $hMname . " " . $hLname;
 
     $ciphering = "AES-128-CTR"; //cipher method
 
-    $iv_length = openssl_cipher_iv_length($ciphering);//Using OpenSSl Encryption method
+    $iv_length = openssl_cipher_iv_length($ciphering); //Using OpenSSl Encryption method
     $options = 0;
-    
-    $encryption_iv = '1234567891011121'; // Non-NULL Initialization Vector for encryption
 
+    $encryption_iv = '1234567891011121'; // Non-NULL Initialization Vector for encryption   
     $encryption_key = "KKIS2022-2023"; // Storing the encryption key
 
     // Using openssl_encrypt() function to encrypt the data
     $encryptedResident = openssl_encrypt($rEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
     $encryptedHousehold = openssl_encrypt($hEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
 
-    //FOR QR CODE GENERATION
-    
-
-
-
     //Query for Households
     $queryHousehold = "INSERT INTO `households` (`hencrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $encryptedHousehold . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
 
-    //Query for checking if houseold entry already exists
+    //Query for checking if household entry already exists
     $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
     $existingHousehold = executeQuery($checkHouseholds);
 
-    if ($rowcount = mysqli_num_rows($existingHousehold) > 0) {
+    if ($householdCount = mysqli_num_rows($existingHousehold) > 0) {
         //If entry already exists, update the Remarks column and get the updated row ID
         $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
         executeQuery($updateHousehold);
-        $household_id = mysqli_insert_id($conn);
+
+        //Then get the household_id of the updated row and pass the value to $householdID
+        $retrieveHouseholdID = "SELECT `household_id` FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
+        $getHouseholdID = executeQuery($retrieveHouseholdID);
+        while ($householdRow = $getHouseholdID->fetch_assoc()) {
+            $householdID = $householdRow["household_id"];
+        }
+
     } else {
         //If entry is new, insert to db and get the inserted row id
         executeQuery($queryHousehold);
         $householdID = mysqli_insert_id($conn);
     }
-
-    //Execute households insertion and get the id of the inserted entry
-    // executeQuery($queryHousehold);
-    // $householdID = mysqli_insert_id($conn);
-
 
     //Query for Personal info
     $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
@@ -102,6 +99,7 @@ if (isset($_POST['submitBtn'])) {
     executeQuery($queryPersonal);
     $residentID = mysqli_insert_id($conn);
 
+    
     //Query for Educational Info
     $queryEducation = "INSERT INTO `educational_info`(`student_status`, `student_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
 
@@ -150,9 +148,6 @@ if (isset($_POST['submitBtn'])) {
 
     <!-- Virtual Select JS library -->
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
-
-    <!-- navAdd CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/navAddEntry.css"> -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -300,13 +295,15 @@ if (isset($_POST['submitBtn'])) {
                         </div>
                     </div>
 
-                    <div class="row gx-2 gy-2 mt-2">
+                    <div class="row gy-2 mt-2 mx-0">
                         <!-- Educational Info -->
-                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
                             <div class="card p-3" id="educCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
-                                    <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked>
-                                    <span class="markerText ms-2">Educational Status</span>
+                                    <label class="markerText ms-1 d-flex align-items-center">
+                                        <input type="radio" id="educCheck" class="statusCheck mx-2" name="educInfo" checked>
+                                        Educational Status
+                                    </label>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
@@ -425,11 +422,13 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                         </div>
                         <!-- Employment Info -->
-                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
                             <div class="card p-3" id="employCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEmploy">
-                                    <input type="radio" id="employCheck" class="statusCheck" name="employInfo">
-                                    <span class="markerText ms-2">Employment Status</span>
+                                    <label class="markerText ms-1 d-flex align-items-center">
+                                        <input type="radio" id="employCheck" class="statusCheck mx-2" name="educInfo">
+                                        Employment Status
+                                    </label>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
@@ -573,11 +572,11 @@ if (isset($_POST['submitBtn'])) {
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
                                     <select class="text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
-                                        <option value="PUROK LEADER">Purok Leader</option>
-                                        <option value="SK SCHOLAR">SK Scholar</option>
-                                        <option value="SOLO LIVING">Solo Living</option>
-                                        <option value="SOLO PARENT">Solo Parent</option>
-                                        <option value="TEENAGE PREGNANCY">Teenage Pregnancy</option>
+                                        <option value="PUROK LEADER ">Purok Leader</option>
+                                        <option value="SK SCHOLAR ">SK Scholar</option>
+                                        <option value="SOLO LIVING ">Solo Living</option>
+                                        <option value="SOLO PARENT ">Solo Parent</option>
+                                        <option value="TEENAGE PREGNANCY ">Teenage Pregnancy</option>
                                     </select>
                                 </div>
                             </div>
