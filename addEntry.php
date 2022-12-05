@@ -70,58 +70,53 @@ if (isset($_POST['submitBtn'])) {
     //Query for Households
     $queryHousehold = "INSERT INTO `households` (`hencrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $encryptedHousehold . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
 
-    //Query for checking if household entry already exists
-    $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
-    $existingHousehold = executeQuery($checkHouseholds);
+    //Query for checking if RESIDENT entry already exists
+    $checkResidents = "SELECT * FROM `residents` WHERE `rencrypted_id` = '$encryptedResident'";
+    $existingResident = executeQuery($checkResidents);
 
-    if ($householdCount = mysqli_num_rows($existingHousehold) > 0) {
-        //If entry already exists, update the Remarks column and get the updated row ID
-        $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
-        executeQuery($updateHousehold);
+    if ($residentCount = mysqli_num_rows($existingResident) > 0) {
+        echo "<script>alert('Record already exists');</script>";
+    } else {
+        //Query for checking if HOUSEHOLD entry already exists
+        $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
+        $existingHousehold = executeQuery($checkHouseholds);
 
-        //Then get the household_id of the updated row and pass the value to $householdID
-        $retrieveHouseholdID = "SELECT `household_id` FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
-        $getHouseholdID = executeQuery($retrieveHouseholdID);
-        while ($householdRow = $getHouseholdID->fetch_assoc()) {
-            $householdID = $householdRow["household_id"];
+        if ($householdCount = mysqli_num_rows($existingHousehold) > 0) {
+            //If entry already exists, update the Remarks column and get the updated row ID
+            $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
+            executeQuery($updateHousehold);
+
+            //Then get the household_id of the updated row and pass the value to $householdID
+            $retrieveHouseholdID = "SELECT `household_id` FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
+            $getHouseholdID = executeQuery($retrieveHouseholdID);
+            while ($householdRow = $getHouseholdID->fetch_assoc()) {
+                $householdID = $householdRow["household_id"];
+            }
+        } else {
+            //If entry is new, insert to db and get the inserted row id
+            executeQuery($queryHousehold);
+            $householdID = mysqli_insert_id($conn);
+
+            //Query for Personal info
+            $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
+
+            //Execute personal info insertion and get the id of the inserted entry
+            executeQuery($queryPersonal);
+            $residentID = mysqli_insert_id($conn);
+
+            //Query for Educational Info
+            $queryEducation = "INSERT INTO `educational_info`(`student_status`, `student_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
+
+            //Query for Employment Info
+            $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
+
+            //Determine which query to exeecute based on selected radio button
+            if (isset($_POST['educInfo'])) {
+                executeQuery($queryEducation);
+            } else {
+                executeQuery($queryEmployment);
+            }
         }
-
-    } else {
-        //If entry is new, insert to db and get the inserted row id
-        executeQuery($queryHousehold);
-        $householdID = mysqli_insert_id($conn);
-    }
-
-    //Query for Personal info
-    $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "','" . $householdID . "', '" . $date_added . "')";
-
-    //Execute personal info insertion and get the id of the inserted entry
-    executeQuery($queryPersonal);
-    $residentID = mysqli_insert_id($conn);
-
-    
-    //Query for Educational Info
-    $queryEducation = "INSERT INTO `educational_info`(`student_status`, `student_level`, `school_type`, `school_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $educStatus . "', '" . $educlevel . "', '" . $schoolType . "', '" . $school . "', '" . $educIndustry . "', '" . $educSalary . "', '" . $residentID . "')";
-
-    //Query for Employment Info
-    $queryEmployment = "INSERT INTO `employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `industry_id`, `salary_id`, `resident_id`) VALUES ('" . $employStatus . "', '" . $employeeType . "', '" . $employerType . "', '" . $employer . "', '" . $employIndustry . "', '" . $employSalary . "', '" . $residentID . "')";
-
-    //Determine which query to exeecute based on selected radio button
-    if (isset($_POST['educInfo'])) {
-        executeQuery($queryEducation);
-    } else if (isset($_POST['employInfo'])) {
-        executeQuery($queryEmployment);
-    } else {
-        echo "<script>alert('Mali');</script>";
-    }
-
-    //Modal alert
-    header("Location: addEntry.php?sucsess=true");
-
-    if ($_GET['sucsess'] == 'true') {
-        echo "<script>$(function() {
-                $( '#modalAdded' ).dialog();
-                });</script>";
     }
 }
 
