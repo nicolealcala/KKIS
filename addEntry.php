@@ -187,7 +187,7 @@ if (isset($_POST['submitBtn'])) {
                                 <i class="fa-solid fa-xmark fa-2xl w-auto">
                                 </i>
                             </span>
-                            <span id="pageTitle" class="title longTitle">Declared Households</span>
+                            <span id="pageTitle" class="title longTitle">Add New Entry</span>
                         </div>
                         <div id="divAccountType" class="col-lg-4 col-md-4 d-none d-md-flex align-items-md-center">
                             <span class="accountType d-flex justify-content-end">Super Admin Account</span>
