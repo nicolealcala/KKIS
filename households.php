@@ -1,3 +1,9 @@
+<?php 
+require 'connection.php';
+$householdID = "SELECT households.household_id, CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.household_id = residents.household_id ORDER BY households.household_id ASC";
+$getHouseholdID = executeQuery($householdID);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -20,9 +26,6 @@
     <!-- Virtual Select JS library -->
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
-    <!-- navAddUpdate CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/navDecHouse.css"> -->
-
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
@@ -35,8 +38,7 @@
 <body id="page-top">
     
     <div id="left">
-        <?php include 'sidenav.php' ?>
-    </div>
+        <?php include 'sidenav.php'; ?>
     </div>
 
     <div id="right">
@@ -90,9 +92,7 @@
                             <!-- Show No. of Rows -->
                             <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="familiesLength"></div>
                             <!-- Output Buttons -->
-                            <div class="d-none col-lg-4 d-lg-flex justify-content-lg-start p-0" id="familiesOutput"></div>
-                            <!-- Filler Column -->
-                            <div class="col-lg-2 d-none d-lg-flex"></div>
+                            <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="familiesOutput"></div>
                             <!-- Filter -->
                             <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none">
                                 <select class="selectpicker" multiple name="filter" data-live-search="true" title="Filter" placeholder="Filter" id="filtering">
@@ -120,7 +120,7 @@
                         <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="familiesTbl" style="width:100%">
                             <thead class="headTitle">
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Household ID</th>
                                     <th>Name</th>
                                     <th>Age</th>
                                     <th>Birthday</th>
@@ -130,319 +130,25 @@
                                 </tr>
                             </thead>
                             <tbody> 
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1234</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Nicole Alcala</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">02/19/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Pulong Kendi</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">SK Scholar</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1236</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Michael John Palalimpa</td>
-                                    <td class="entryRow" scope="col" data-label="Age">22</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">08/11/2000</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Family Village</td>
-                                    <td class="entryRow" scope="col" data-label="Members">5 to 10</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1237</td>
-                                    <td class="entryRow" scope="col" data-label="Name">John Marc Morano</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">10/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Looban</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Solo Parent</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
-                                <tr>
-                                    <td class="entryRow" scope="col" data-label="ID">1235</td>
-                                    <td class="entryRow" scope="col" data-label="Name">Patricia Mae Abrigo</td>
-                                    <td class="entryRow" scope="col" data-label="Age">21</td>
-                                    <td class="entryRow" scope="col" data-label="Birthday">04/07/2001</td>
-                                    <td class="entryRow" scope="col" data-label="Purok">Cardinal</td>
-                                    <td class="entryRow" scope="col" data-label="Members">Less than 5</td>
-                                    <td class="entryRow" scope="col" data-label="Remarks">Purok Leader</td>
-                                </tr>
+                                <?php
+                                    while ($row = mysqli_fetch_array($getHouseholdID)) {
+                                        echo '
+                                        <tr>
+                                        <td class="entryRow" scope="col" data-label="ID">' . $row["household_id"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Name">' . $row["full_name"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Age">' . $row["age"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Birthday">' . $row["birthday"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Purok">' . $row["purok"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Members">' . $row["members_count"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Remarks">' . $row["head_remarks"] . '</td>
+                                        </tr>
+                                        ';
+                                    }
+                                ?>
                             </tbody>
-
-
-                            <?php
-                                // while ($row = mysqli_fetch_array($result)) {
-                                //     echo '
-                                //     <tr>
-                                //         <td>' . $row["lastName"] . '</td>
-                                //         <td>' . $row["firstName"] . '</td>
-                                //         <td>' . $row["middleName"] . '</td>
-                                //         <td>' . $row["suffix"] . '</td>
-                                //         <td>' . $row["birthDate"] . '</td>
-                                //         <td>' . $row["age"] . '</td>
-                                //         <td>' . $row["gender"] . '</td>
-                                //         <td>' . $row["civilStatus"] . '</td>
-                                //         <td>' . $row["purok"] . '</td>
-                                //         <td align="center">
-                                //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
-                                //         </td>
-                                //     </tr>
-                                //     ';
-                                // }
-                            ?>
                         </table>
                     </div>
+                    
                     <div class="sectionDiv d-none m-3" id="overviewBody">
                         <div class="overviewDiv">
                             <canvas id="overviewChart"></canvas>
@@ -466,7 +172,6 @@
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Data tables -->
-    
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
     <script src="assets/js/vfs_fonts.js"></script>  
