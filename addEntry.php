@@ -39,7 +39,7 @@ if (isset($_POST['submitBtn'])) {
     $educSalary = isset($_POST['educSalary']) ? ($_POST['educSalary']) : "1"; // foreign key
 
     // Employment Info
-    $employStatus = isset($_POST['employStatus']) ? $_POST['employStatus'] : null;
+    $employStatus = isset($_POST['employeeStatus']) ? $_POST['employeeStatus'] : null;
     $employeeType = isset($_POST['employeeType']) ? $_POST['employeeType'] : "N/A";
     $employerType = isset($_POST['employerType']) ? $_POST['employerType'] : "N/A";
     $employer = isset($_POST['employerName']) ? $_POST['employerName'] : "N/A";
@@ -158,7 +158,6 @@ if (isset($_POST['submitBtn'])) {
 
     <div id="left">
         <?php include 'sidenav.php' ?>
-    </div>
     </div>
 
     <div id="right">
