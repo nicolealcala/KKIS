@@ -50,7 +50,6 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <div id="left">
             <?php include 'sidenav.php' ?>
     </div>
-    </div>
 
     <div id="right">
         <div id="rc">
@@ -104,11 +103,9 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                 <!-- Show No. of Rows -->
                                 <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="kabataanLength"></div>
                                 <!-- Output Buttons -->
-                                <div class="d-none col-lg-3 d-lg-flex justify-content-lg-start p-0" id="kabataanOutput"></div>
-                                <!-- Filler Column -->
-                                <div class="col-lg-3 d-none d-lg-flex"></div>
+                                <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="kabataanOutput"></div>
                                 <!-- Filter -->
-                                <div class="col-lg-3 col-md-6 col-sm-5 col-12 d-flex align-items-">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-">
                                     <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
                                         <optgroup label="Age">
                                             <option value="bet1419">14-19 Years old</option>
