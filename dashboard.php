@@ -1,5 +1,10 @@
 <?php
-//   session_start();
+  session_start();
+if ($_SESSION['email'] != "") {
+    $email = $_SESSION['email'];
+} else {
+    header('Location:index.php');
+}
 ?>
 
 <!DOCTYPE html>
