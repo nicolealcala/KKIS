@@ -10,6 +10,26 @@ header {
   margin: 0;
 }
 
+.headerRow {
+  margin: 2em 4em 1em 4em;
+}
+.headerRow #hamburger {
+  color: #155675;
+  cursor: pointer;
+  margin-right: 1.3em;
+  font-size: 2.5em;
+}
+.headerRow .title, .headerRow .accountType {
+  width: auto;
+  font: 100% Poppins, sans-serif;
+  color: #155675;
+}
+.headerRow .accountType {
+  color: #F4895F;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
 th {
   font-size: 1.3em;
 }
@@ -95,7 +115,6 @@ a {
 }
 
 .headTitle {
-  background-color: #f0571f;
   background-color: #219EBC;
   color: white;
   justify-content: start;
@@ -143,6 +162,13 @@ a {
 }
 
 @media screen and (min-width: 992px) and (max-width: 7680px) {
+  .mainContainer .headerRow .title {
+    font-size: 3em;
+    font-weight: 600;
+  }
+  .mainContainer .headerRow .accountType {
+    font-size: 1.2em;
+  }
   .content {
     width: 90%;
   }
@@ -152,6 +178,23 @@ a {
   }
 }
 @media screen and (max-width: 991px) {
+  .mainContainer .headerRow {
+    margin: 2em 3em 1em 3em;
+  }
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.8em;
+    font-size: 2.2em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 2.5em;
+    font-weight: 600;
+  }
+  .mainContainer .headerRow .longTitle {
+    font-size: 1.9em;
+  }
+  .mainContainer .headerRow .accountType {
+    font-size: 1em;
+  }
   .content {
     padding: 1em;
   }
@@ -187,6 +230,13 @@ a {
   }
 }
 @media screen and (max-width: 767px) {
+  .mainContainer .headerRow {
+    margin: 2em 2em 1em 2em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 2.3em;
+    font-weight: 600;
+  }
   .content {
     padding: 1.5em;
   }
@@ -237,6 +287,16 @@ a {
   }
 }
 @media screen and (min-width: 431px) and (max-width: 575px) {
+  .mainContainer .headerRow {
+    margin: 2em 1.5em 1em 1.5em;
+  }
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.8em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 2.2em;
+    font-weight: 600;
+  }
   .content {
     padding: 1em;
   }
@@ -280,7 +340,39 @@ a {
     padding-left: 0.5em;
   }
 }
+@media screen and (max-width: 430px) {
+  .mainContainer .headerRow {
+    margin: 1em 0.5em;
+  }
+  .mainContainer .headerRow #hamburger {
+    margin-right: 0.5em;
+    font-size: 1.8em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 1.95em;
+    font-weight: 600;
+  }
+  .mainContainer .headerRow .longTitle {
+    font-size: 1.5em;
+  }
+  .mainContainer #scanBtnTxt {
+    display: none;
+  }
+  .mainContainer #scanIcon {
+    display: flex;
+  }
+}
 @media screen and (max-width: 332px) {
+  .mainContainer .headerRow {
+    margin: 1em 0.5em;
+  }
+  .mainContainer .headerRow #hamburger {
+    font-size: 1.5em;
+  }
+  .mainContainer .headerRow .title {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
   .content {
     padding: 0.5em;
   }
@@ -292,6 +384,9 @@ a {
   }
 }
 @media screen and (max-width: 280px) {
+  .mainContainer .headerRow .longTitle {
+    font-size: 1.1em;
+  }
   .card {
     padding: 0.5em 0.4em;
   }

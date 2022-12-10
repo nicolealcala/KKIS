@@ -31,7 +31,7 @@ body #right #rc {
   position: fixed;
 }
 body #right #rc #grey {
-  height: 100px;
+  width: inherit;
   background-color: #ECF1F5;
 }
 body #right #pageContent {
@@ -41,43 +41,20 @@ body #right #pageContent {
   height: 100%;
   margin-left: 20px;
 }
-body #right #pageContent .mainContainer header {
+body #right #pageContent .mainContainer .content {
+  height: auto;
+  width: auto;
+}
+
+header {
   background-color: #ECF1F5;
   position: fixed;
   z-index: 15;
-  width: 100%;
+  width: 100vw;
   margin-left: 0;
   transition: 0.5s;
 }
-body #right #pageContent .mainContainer header .headerRow {
-  display: flex;
-  margin: 2em 4em 1em 4em;
-}
-body #right #pageContent .mainContainer header .headerRow .toggleTitle {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-body #right #pageContent .mainContainer header .headerRow .toggleTitle #pageTitle {
-  margin-left: 20px;
-  color: #04496A;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 2.5em;
-  font-weight: bold;
-}
-body #right #pageContent .mainContainer header .headerRow #divAccountType {
-  transition: 0.5s;
-  color: #F4895F;
-  font-size: 1.2em;
-  font-weight: 300;
-  width: auto;
-}
-body #right #pageContent .mainContainer header .headerRow #divAccountType .accountType {
-  width: auto;
-}
-body #right #pageContent .mainContainer header #headerHR {
+header #headerHR {
   background-image: linear-gradient(90deg, #8ECAE6, #FFB703);
   border: 0;
   height: 5px;
@@ -86,33 +63,42 @@ body #right #pageContent .mainContainer header #headerHR {
   margin-left: -20px;
   transition: 0.5s;
 }
-body #right #pageContent .mainContainer .modal {
-  display: none;
-  position: fixed;
-  z-index: 80;
-  left: 50%;
-  top: 50%;
-  margin-left: -200px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+
+.headerRow {
+  display: flex;
 }
-body #right #pageContent .mainContainer .content {
-  height: auto;
-  width: auto;
+.headerRow #pageTitle {
+  margin-left: 20px;
+}
+.headerRow #divAccountType {
+  padding-left: 350px;
+  transition: 0.5s;
+}
+
+#collapseMobile {
+  display: none;
+}
+
+.popup {
+  padding: 5px;
+  width: 500px;
+  height: 270px;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  border-radius: 15px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 7680px) {
-  header {
-    height: 100px;
+  #grey {
+    height: 123px;
   }
-  #divAccountType {
-    position: fixed;
-    top: 50px;
-    right: 100px;
+  .mainContainer .headerRow .title {
+    font-size: 3em;
+    font-weight: 600;
+  }
+  .mainContainer .headerRow .accountType {
+    font-size: 1.2em;
   }
   .content {
     background-color: #fff;
@@ -123,17 +109,13 @@ body #right #pageContent .mainContainer .content {
   }
 }
 @media screen and (max-width: 1213px) {
-  #divAccountType {
-    position: fixed;
-    top: 50px;
-    right: 30px;
+  #grey {
+    height: 150px;
   }
 }
 @media screen and (max-width: 991px) {
-  #divAccountType {
-    position: fixed;
-    top: 50px;
-    right: 30px;
+  #grey {
+    height: 120px;
   }
   .content {
     background-color: #fff;
@@ -143,44 +125,8 @@ body #right #pageContent .mainContainer .content {
     padding-top: 160px;
   }
 }
-@media screen and (max-width: 1270px) {
-  #divAccountType {
-    position: fixed;
-    top: 50px;
-    right: 30px;
-  }
-  #divAccountType .accountType {
-    opacity: 0;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .toggleTitle {
-    margin-left: -60px;
-  }
-  .mainContainer .popup .overlay {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    background: #393737;
-    opacity: 35%;
-    z-index: 60;
-  }
-  .mainContainer .popup .mobNavContent {
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ECF1F5;
-    z-index: 70;
-    border-radius: 15px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  #expandMobile2 {
+@media screen and (min-width: 768px) {
+  #expandMobile {
     display: none;
   }
   #collapseMobile {
@@ -188,11 +134,75 @@ body #right #pageContent .mainContainer .content {
   }
 }
 @media screen and (max-width: 767px) {
+  #grey {
+    height: 108px;
+  }
+  #expand {
+    display: none;
+  }
+  #collapse {
+    display: none;
+  }
   .content {
     background-color: #fff;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 2em;
     padding-top: 120px;
+  }
+}
+@media screen and (min-width: 431px) and (max-width: 575px) {
+  #grey {
+    height: 105px;
+  }
+  #expand {
+    display: none;
+  }
+  #collapse {
+    display: none;
+  }
+}
+@media screen and (max-width: 430px) {
+  #grey {
+    height: 70px;
+  }
+  #expand {
+    display: none;
+  }
+  #collapse {
+    display: none;
+  }
+}
+@media screen and (max-width: 332px) {
+  #grey {
+    height: 68px;
+  }
+  #expand {
+    display: none;
+  }
+  #collapse {
+    display: none;
+  }
+}
+@media screen and (max-width: 280px) {
+  #grey {
+    height: 63px;
+  }
+  #expand {
+    display: none;
+  }
+  #collapse {
+    display: none;
+  }
+}
+@media screen and (max-width: 275px) {
+  #grey {
+    height: 60px;
+  }
+  #expand {
+    display: none;
+  }
+  #collapse {
+    display: none;
   }
 }/*# sourceMappingURL=mq-sidenavmods.css.map */

@@ -46,9 +46,7 @@ body {
             transition: 0.5s;
             position: fixed;
             #grey {
-                height: 100px;
-                // width: inherit;
-                // background-color: #FFB703;
+                width: inherit;
                 background-color: $headerBG;
                 // transition: 0.5s;
             }
@@ -62,80 +60,6 @@ body {
             .mainContainer {
                 // height: auto;
                 // background-color: $white;
-                header {
-                    background-color: $headerBG;
-                    position: fixed;
-                    z-index: 15;
-                    width: 100%;
-                    margin-left: 0;
-                    transition: 0.5s;
-                
-                    .headerRow {
-                        display: flex;
-                        // width: 90%;
-                        // justify-content: space-between;
-                        margin: 2em 4em 1em 4em;
-                        .toggleTitle {
-                            width: fit-content;
-                            // #collapseMobile {
-                            //     display: none;
-                            // }
-                            #pageTitle {
-                                margin-left: 20px;
-                                color: $bodyBG;
-                                width: fit-content;
-                                font-size: 2.5em;
-                                font-weight: bold;
-                            }
-
-                            #expandMobile {
-                                
-                            }
-                        }
-
-                        #divAccountType {
-                            // padding-left: 50px;
-                            transition: 0.5s;
-                            color: $fade-orange;
-                            font-size: 1.2em;
-                            font-weight: 300;
-                            width: auto;
-                            // position: fixed;
-                            // top: 50px;
-                            // right: 100px;
-
-                            .accountType {
-                                // padding;
-                                // transition: 0.4 ease;
-                                width: auto;
-                            }
-                    
-                        }
-                    }
-                    
-                    #headerHR {
-                        background-image: linear-gradient(90deg, $light-blue, $mid-yellow);
-                        border: 0;
-                        height: 5px;
-                        opacity: 100;
-                        margin-bottom: 0;
-                        margin-left: -20px;
-                        transition: 0.5s;
-                    }
-                }
-
-                .modal {
-                    display: none;
-                    position: fixed;
-                    z-index: 80;
-                    left: 50%;
-                    top: 50%;
-                    // margin-top: -150px;
-                    margin-left: -200px;
-                    width: fit-content;
-                    height: fit-content;
-                }
-                
                 .content {
                     height: auto;
                     width: auto;
@@ -145,54 +69,70 @@ body {
     }
 }
 
+header {
+    background-color: $headerBG;
+    position: fixed;
+    z-index: 15;
+    width: 100vw;
+    margin-left: 0;
+    transition: 0.5s;
+    #headerHR {
+        background-image: linear-gradient(90deg, $light-blue, $mid-yellow);
+        border: 0;
+        height: 5px;
+        opacity: 100;
+        margin-bottom: 0;
+        margin-left: -20px;
+        transition: 0.5s;
+    }
+}
 
+.headerRow {
+    display: flex;
+    #pageTitle {
+        margin-left: 20px;
+    }
 
+    #divAccountType {
+        padding-left: 350px;
+        transition: 0.5s;
 
+    }
+}
 
-
+#collapseMobile {
+    display: none;
+}
 
 //Mobile Nav
-
-// .popup{
-//     padding: 5px;
-//     width: 500px;
-//     height: 270px;
-//     position: absolute;
-//     top: 50%;
-//     display: flex;
-//     border-radius: 15px;
-// }
+.popup{
+    padding: 5px;
+    width: 500px;
+    height: 270px;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    border-radius: 15px;
+}
 
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
      //All pages
 
-    // #grey {
-    //     height: 123px;
-    // }
-    // .mainContainer {
-    //     .headerRow {
-    //         // margin: 0 2.5em;
-        
-    //         .title {
-    //             font-size: 3em;
-    //             font-weight: 600;
-    //         }
-        
-    //         .accountType {
-    //             font-size: 1.2em;
-    //         }
-    //     }
-    // }
-
-    header {
-        height: 100px;
+    #grey {
+        height: 123px;
     }
-    #divAccountType {
-        position: fixed;
-        top: 50px;
-        right: 100px;
-        .accountType {
-            // opacity: 0;
+    .mainContainer {
+        .headerRow {
+            // margin: 0 2.5em;
+        
+            .title {
+                font-size: 3em;
+                font-weight: 600;
+            }
+        
+            .accountType {
+                font-size: 1.2em;
+            }
         }
     }
 
@@ -209,34 +149,18 @@ body {
 
 
 @media screen and (max-width: 1213px) {
-    // #grey {
-    //     height: 150px;
-    // }
-
-    #divAccountType {
-        position: fixed;
-        top: 50px;
-        right: 30px;
-        .accountType {
-            // opacity: 0;
-        }
+    #grey {
+        height: 150px;
     }
+
+
 
 }
 
 @media screen and (max-width: 991px) {          // MD
     //All pages
-    // #grey {
-    //     height: 120px;
-    // }
-
-    #divAccountType {
-        position: fixed;
-        top: 50px;
-        right: 30px;
-        .accountType {
-            // opacity: 0;
-        }
+    #grey {
+        height: 120px;
     }
 
     .content {
@@ -248,106 +172,8 @@ body {
     }
 }
 
-@media screen and (max-width: 1270px) {
-    #divAccountType {
-        position: fixed;
-        top: 50px;
-        right: 30px;
-        .accountType {
-            opacity: 0;
-        }
-    }
-}
-
-@media screen and (max-width: 1100px) { //Mobile Nav start
-    .toggleTitle {
-        margin-left: -60px;
-        // #divAccountType {
-        //     position: fixed;
-        //     // top: 50px;
-        //     right: 50px;
-        //     .accountType {
-        //         // opacity: 0;
-        //     }
-        // }
-    }
-
-    // #left {
-    //     width: 0;
-    // }
-    // #rc {
-    //     margin-left: 0;
-    //     border-radius: 0;
-    // }
-    // #grey {
-    //     border-radius: 0;
-    // }
-    // #pageContent {
-    //     margin-left: 20px;
-    // }
-    // #header {
-    //     margin-left: 0;
-    // }
-    // #headerHR {
-    //     margin-left: -20px;
-    // }
-    // #collapse {
-    //     display: none;
-    // }
-    
-    .mainContainer {
-        .popup {
-            // opacity: 0;
-            .overlay {
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                width: 100vw;
-                height: 100vh;
-                background: #393737;
-                opacity: 35%;
-                z-index: 60;
-                // display: none;
-            }
-            .mobNavContent {
-                width: auto;
-                height: auto;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                background-color: $headerBG;
-                z-index: 70;
-                border-radius: 15px;
-                // opacity: 0;
-                    // display: none;
-                
-                // z-index:
-            }
-        }
-
-        // .popup.active .overlay {
-        //     display: block;
-        // }
-
-        // .popup.active .mobNavContent {
-        //     transition: all 300ms ease-in-out;
-        //     transform: translate(-50%,-50%) scale(1);
-        // }
-    }
-
-
-    // #expand {
-    //     display: none;
-    // }
-
-    // #collapse {
-    //     display: none;
-    // }
-}
-
-@media screen and (min-width: 1100px) { 
-    #expandMobile2 {
+@media screen and (min-width: 768px) { 
+    #expandMobile {
         display: none;
     }
 
@@ -357,17 +183,17 @@ body {
 }
 
 @media screen and (max-width: 767px) {          //SM
-    // #grey {
-    //     height: 108px;
-    // }
+    #grey {
+        height: 108px;
+    }
 
-    // #expand {
-    //     display: none;
-    // }
+    #expand {
+        display: none;
+    }
 
-    // #collapse {
-    //     display: none;
-    // }
+    #collapse {
+        display: none;
+    }
 
     .content {
         background-color: $white;
@@ -388,71 +214,71 @@ body {
 }
 
 @media screen and (min-width: 431px) and (max-width: 575px) { //XS
-    // #grey {
-    //     height: 105px;
-    // }
+    #grey {
+        height: 105px;
+    }
 
-    // #expand {
-    //     display: none;
-    // }
+    #expand {
+        display: none;
+    }
 
-    // #collapse {
-    //     display: none;
-    // }
+    #collapse {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 430px) {
-    // #grey {
-    //     height: 70px;
-    // }
+    #grey {
+        height: 70px;
+    }
 
-    // #expand {
-    //     display: none;
-    // }
+    #expand {
+        display: none;
+    }
 
-    // #collapse {
-    //     display: none;
-    // }
+    #collapse {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 332px) {
-    // #grey {
-    //     height: 68px;
-    // }
+    #grey {
+        height: 68px;
+    }
 
-    // #expand {
-    //     display: none;
-    // }
+    #expand {
+        display: none;
+    }
 
-    // #collapse {
-    //     display: none;
-    // }
+    #collapse {
+        display: none;
+    }
 }
 
 @media screen and (max-width:280px){
-    // #grey {
-    //     height: 63px;
-    // }
+    #grey {
+        height: 63px;
+    }
 
-    // #expand {
-    //     display: none;
-    // }
+    #expand {
+        display: none;
+    }
 
-    // #collapse {
-    //     display: none;
-    // }
+    #collapse {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 275px) {
-    // #grey {
-    //     height: 60px;
-    // }
+    #grey {
+        height: 60px;
+    }
 
-    // #expand {
-    //     display: none;
-    // }
+    #expand {
+        display: none;
+    }
 
-    // #collapse {
-    //     display: none;
-    // }
+    #collapse {
+        display: none;
+    }
 }
