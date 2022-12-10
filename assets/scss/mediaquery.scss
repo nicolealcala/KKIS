@@ -27,27 +27,28 @@ header {
     margin: 0;
 }
 
-.headerRow {
-    margin: 2em 4em 1em 4em;
-    #hamburger {
-        color: $dark-blue;
-        cursor: pointer;
-        margin-right: 1.3em;
-        font-size: 2.5em;
-    }
+// .headerRow {
+//     margin: 2em 4em 1em 4em;
+//     #hamburger {
+//         // color: #F4895F;
+//         color: $dark-blue;
+//         cursor: pointer;
+//         margin-right: 1.3em;
+//         font-size: 2.5em;
+//     }
 
-    .title, .accountType {
-        width: auto;
-        font: 100% $headings-font;
-        color: $dark-blue;
-    }
+//     .title, .accountType {
+//         width: auto;
+//         font: 100% $headings-font;
+//         color: $dark-blue;
+//     }
 
-    .accountType {
-        color: $fade-orange;
-        font-size: 1.2em;
-        font-weight: 300;
-    }
-}
+//     .accountType {
+//         color: $fade-orange;
+//         font-size: 1.2em;
+//         font-weight: 300;
+//     }
+// }
 
 th {
     font-size: 1.3em;
@@ -142,6 +143,7 @@ a {
 }
 
 .headTitle {
+    background-color: #f0571f;
     background-color: $mid-blue;
     color: white;
     justify-content: start;
@@ -192,20 +194,20 @@ a {
 
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
      //All pages
-    .mainContainer {
-        .headerRow {
-            // margin: 0 2.5em;
+    // .mainContainer {
+    //     .headerRow {
+    //         // margin: 0 2.5em;
         
-            .title {
-                font-size: 3em;
-                font-weight: 600;
-            }
+    //         .title {
+    //             font-size: 3em;
+    //             font-weight: 600;
+    //         }
         
-            .accountType {
-                font-size: 1.2em;
-            }
-        }
-    }
+    //         .accountType {
+    //             font-size: 1.2em;
+    //         }
+    //     }
+    // }
 
     .content{
         width: 90%;
@@ -222,29 +224,29 @@ a {
 
 @media screen and (max-width: 991px) {          // MD
     //All pages
-    .mainContainer {
-        .headerRow {
-            margin: 2em 3em 1em 3em;
+    // .mainContainer {
+    //     .headerRow {
+    //         margin: 2em 3em 1em 3em;
 
-            #hamburger {
-                margin-right: 0.8em;
-                font-size: 2.2em;
-            }
+    //         #hamburger {
+    //             margin-right: 0.8em;
+    //             font-size: 2.2em;
+    //         }
         
-            .title {
-                font-size: 2.5em;
-                font-weight: 600;
-            }
+    //         .title {
+    //             font-size: 2.5em;
+    //             font-weight: 600;
+    //         }
 
-            .longTitle {
-                font-size: 1.9em;
-            }
+    //         .longTitle {
+    //             font-size: 1.9em;
+    //         }
         
-            .accountType {
-                font-size: 1em;
-            }
-        }
-    }
+    //         .accountType {
+    //             font-size: 1em;
+    //         }
+    //     }
+    // }
 
     .content{
         // width: 90%;
@@ -298,16 +300,16 @@ a {
 
 
 @media screen and (max-width: 767px) {          //SM
-    .mainContainer {
-        .headerRow {
-            margin: 2em 2em 1em 2em;
+    // .mainContainer {
+    //     .headerRow {
+    //         margin: 2em 2em 1em 2em;
         
-            .title {
-                font-size: 2.3em;
-                font-weight: 600;
-            }
-        }
-    }
+    //         .title {
+    //             font-size: 2.3em;
+    //             font-weight: 600;
+    //         }
+    //     }
+    // }
 
     .content{
         // width: 95%;
@@ -385,20 +387,21 @@ a {
 
 @media screen and (min-width: 431px) and (max-width: 575px) { //XS
     //All pages
-    .mainContainer {
-        .headerRow {
-            margin: 2em 1.5em 1em 1.5em;
+    // .mainContainer {
+    //     .headerRow {
+    //         margin: 2em 1.5em 1em 1.5em;
             
-            #hamburger {
-                margin-right: 0.8em;
-            }
+    //         #hamburger {
+    //             margin-right: 0.8em;
+    //         }
 
-            .title {
-                font-size: 2.2em;
-                font-weight: 600;
-            }
-        }
-    }
+    //         .title {
+    //             font-size: 2.2em;
+    //             font-weight: 600;
+    //         }
+    //     }
+    // }
+
     .content{
         padding: 1em
     }
@@ -459,51 +462,51 @@ a {
 
 @media screen and (max-width: 430px) {
     //All pages
-    .mainContainer {
-        .headerRow {    
-            margin: 1em 0.5em;
+    // .mainContainer {
+    //     .headerRow {    
+    //         margin: 1em 0.5em;
 
-            #hamburger {
-                margin-right: 0.5em;
-                font-size: 1.8em;
-            }
+    //         #hamburger {
+    //             margin-right: 0.5em;
+    //             font-size: 1.8em;
+    //         }
 
-            .title {
-                font-size: 1.95em;
-                font-weight: 600;
-            }
+    //         .title {
+    //             font-size: 1.95em;
+    //             font-weight: 600;
+    //         }
 
-            .longTitle {
-                font-size: 1.5em;
-            }
-        }
+    //         .longTitle {
+    //             font-size: 1.5em;
+    //         }
+    //     }
 
-        #scanBtnTxt {
-            display: none;
-        }
+    //     #scanBtnTxt {
+    //         display: none;
+    //     }
 
-        #scanIcon {
-            display: flex;
-        }
-    }
+    //     #scanIcon {
+    //         display: flex;
+    //     }
+    // }
 }
 
 @media screen and (max-width: 332px) {
     //All pages
-    .mainContainer {
-        .headerRow {
-            margin: 1em 0.5em;
+    // .mainContainer {
+    //     .headerRow {
+    //         margin: 1em 0.5em;
 
-            #hamburger {
-                font-size: 1.5em;
-            }
+    //         #hamburger {
+    //             font-size: 1.5em;
+    //         }
 
-            .title {
-                font-size: 1.3em;
-                font-weight: 600;
-            }
-        }
-    }
+    //         .title {
+    //             font-size: 1.3em;
+    //             font-weight: 600;
+    //         }
+    //     }
+    // }
 
     .content{
         padding: 0.5em;      
@@ -521,13 +524,13 @@ a {
 }
 
 @media screen and (max-width:280px){
-    .mainContainer {
-        .headerRow {
-            .longTitle {
-                font-size: 1.1em;
-            }
-        }
-    }
+    // .mainContainer {
+    //     .headerRow {
+    //         .longTitle {
+    //             font-size: 1.1em;
+    //         }
+    //     }
+    // }
     
     .card {
         padding: 0.5em 0.4em;
