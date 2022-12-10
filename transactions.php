@@ -17,12 +17,13 @@
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <link rel="stylesheet" href="assets/scss/mq-sidenavmods.css">
 
-    <!-- DATA TABLES CDN -->
-    <script src="assets/js/datatables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+    <!-- Virtual Select JS library -->
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
-    <!-- navAddUpdate CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/navTransacHis.css">  -->
+    <!-- DATA TABLES CDN -->
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -54,10 +55,10 @@
                             <span id="expandMobile" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
-                            <span  id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
+                            <span id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
                             </span>
-                            <span  id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
+                            <span id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto">
                                 </i>
                             </span>
@@ -71,45 +72,36 @@
                     <hr id="headerHR">
                 </header>
 
-                <!-- BODY START -->
+                <!-- CONTENT START -->
                 <div class="content container-fluid">
-                    <div class="sectionDiv">
+                    <div class="sectionDiv mx-0 mt-4 p-0">
                         <!-- Options Row -->
-                        <div class="row gx-5 gy-2 m-0 mb-1 d-flex justify-content-between">
+                        <div class="row gx-5 mx-0 mb-1">
                             <!-- Show No. of Rows -->
-                            <div class="col-md-3 col-sm-6 col-12 d-flex align-items-center my-1 p-0 order-md-1 order-2">
-                                <span>Show</span>
-                                <select class="form-select mx-2 w-auto" name="rows" id="showRow">
-                                    <option value="10" selected>10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="All">All</option>
+                            <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="transactionsLength"></div>
+                            <!-- Output Buttons -->
+                            <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="transactionsOutput"></div>
+                            <!-- Filter -->
+                            <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none">
+                                <select class="selectpicker" multiple name="filter" data-live-search="true" title="Filter" placeholder="Filter" id="filtering">
+                                    <optgroup label="Members">
+                                        <option value="Less than 5">Less than 5</option>
+                                        <option value="5 to 10">5 to 10</option>
+                                        <option value="11 to 15">11 to 15</option>
+                                        <option value="16 to 20">16 to 20</option>
+                                        <option value="More than 20">More than 20</option>
+                                    </optgroup>
+                                    <optgroup label="Remarks">
+                                        <option value="Purok Leader">Purok Leader</option>
+                                        <option value="SK Scholar">SK Scholar</option>
+                                        <option value="Solo Living">Solo Living</option>
+                                        <option value="Solo Parent">Solo Parent</option>
+                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>
+                                    </optgroup>
                                 </select>
-                                <span>entries</span>
                             </div>
                             <!-- Search -->
-                            <div class="col-md-3 col-sm-6 col-12 p-0  d-flex justify-content-center align-items-center order-md-2 order-3">
-                                <div class="searchElement">
-                                    <input class="form-control" type="text" placeholder="Search" name="search" id="search">
-                                </div>
-                            </div>
-                            <!-- Option Buttons -->
-                            <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-end align-items-center m-0 p-0 order-md-3 order-1">
-                                <!-- Select All Btn -->
-                                <div class="d-flex justify-content-center align-items-center m-0 me-3">
-                                    <button type="button" class="btn checkAllDiv d-flex justify-content-center align-items-center">
-                                        <i class="fa-regular fa-square-check fa-xl m-3 p-0" id="selectAll"></i>
-                                        <i class="fa-solid fa-square-check fa-xl m-3 p-0 d-none" id="deselectAll"></i>
-                                    </button>
-                                </div>
-                                <!-- Delete btn -->
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <button type="button" class="btn deleteDiv d-flex justify-content-center align-items-center">
-                                        <i class="fa-regular fa-trash-can fa-xl m-3 p-0" id="delete"></i>
-                                    </button>
-                                </div>
-                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0 d-flex align-items-center" id="transactionsSearch"></div>
                         </div>
 
                         <!-- Table start   -->
@@ -148,7 +140,7 @@
                                     <td class="entryRow" scope="col" data-label="Transaction ID">TID004</td>
                                     <td class="entryRow" scope="col" data-label="Name">John Marc Morano</td>
                                     <td class="entryRow" scope="col" data-label="Issued On">September 28, 2022</td>
-                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox""></td>
+                                    <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                             </tr>
 
                             <tr>
@@ -191,48 +183,12 @@
                                     <td class="entryRow checkItem text-center" name="checkRow"><input class="checkItem" type="checkbox"></td>
                                 </tr>
                             </tbody>
-                            <?php
-                            // while ($row = mysqli_fetch_array($result)) {
-                            //     echo '
-                            //     <tr>
-                            //         <td align="center"><input type="checkbox" class="checkitem"></td>
-                            //         <td>' . $row["lastName"] . '</td>
-                            //         <td>' . $row["firstName"] . '</td>
-                            //         <td>' . $row["middleName"] . '</td>
-                            //         <td>' . $row["suffix"] . '</td>
-                            //         <td>' . $row["birthDate"] . '</td>
-                            //         <td>' . $row["age"] . '</td>
-                            //         <td>' . $row["gender"] . '</td>
-                            //         <td>' . $row["civilStatus"] . '</td>
-                            //         <td>' . $row["purok"] . '</td>
-                            //         <td align="center">
-                            //             <a id=' . $row["residentID"] . '" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMore">view more</a>
-                            //         </td>
-                            //     </tr>
-                            //     ';
-                            // }
-                            ?>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div class="mainContainer d-block">
-        <header>
-            <div class="row headerRow">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
-                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                    <span class="title">Transaction History</span>
-                </div>
-                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
-                    <span class="accountType d-flex justify-content-end">Super Admin Account</span>
-                </div>
-            </div>
-            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
-        </header> -->
-
-        
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -240,7 +196,12 @@
 
     <!-- Data tables -->
     <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/pdfmake.min.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+
+    <!-- Virtual Select JS -->
+    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/transactions.js"></script>

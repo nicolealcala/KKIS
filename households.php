@@ -177,9 +177,9 @@ $getHouseholdID = executeQuery($householdID);
     <script src="assets/js/vfs_fonts.js"></script>  
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
-
     <!-- Custom Script -->
     <script src="assets/js/households.js"></script>
+    
     <!-- Nav -->
     <script src="assets/js/sidenav.js"></script>
 </body>

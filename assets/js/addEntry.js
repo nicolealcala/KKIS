@@ -1,19 +1,19 @@
 $(document).ready(function () {
   //Default select boxes
-  $('select').not('#disabilitySelect').val("").change();
-  
+  $("select").not("#disabilitySelect").val("").change();
+
   //UPPERCASE input
-  $('.userInput').keyup(function(){
+  $(".userInput").keyup(function () {
     $(this).val($(this).val().toUpperCase());
-  })
+  });
 
-  $('.educUserInput').keyup(function(){
+  $(".educUserInput").keyup(function () {
     $(this).val($(this).val().toUpperCase());
-  })
+  });
 
-  $('.employUserInput').keyup(function(){
+  $(".employUserInput").keyup(function () {
     $(this).val($(this).val().toUpperCase());
-  })
+  });
 
   //For required fieldLabels
   $(".fieldLabel").each(function () {
@@ -99,206 +99,206 @@ $(document).ready(function () {
     disableSelectAll: true,
     selectedValue: 1,
   });
-});
 
-// ------------------- FUNCTIONS ------------------- //
-function educRadioClick() {
-  $("#employCheck").prop("checked", false);
-  $("#markerEmploy").css("background-color", "#c5d4e3");
-  $(".employFieldLabel").css("color", "#dfdfdf");
+  // ------------------- FUNCTIONS ------------------- //
+  function educRadioClick() {
+    $("#employCheck").prop("checked", false);
+    $("#markerEmploy").css("background-color", "#c5d4e3");
+    $(".employFieldLabel").css("color", "#dfdfdf");
 
-  //Disable all emloyment select boxes and change value to blank
-  $(".employSelectBox").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-  });
-
-  //Disable all emloyment input fields and change value to blank
-  $(".employUserInput").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-  });
-
-  //Enable all education select boxes and change value to blank
-  $(".educSelectBox").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
-
-  //Enable all education input fields and change value to blank
-  $(".educUserInput").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
-
-  //Change education card labels and background-color
-  $("#markerEduc").css("background-color", "#219EBC");
-  $(".educFieldLabel").css("color", "#909090");
-
-  //For red * marker
-  $(".employFieldLabel").removeClass("required");
-  $(".educFieldLabel").addClass("required");
-}
-
-//fxn for Enrolled
-function enrolled() {
-  $(".educSelectBox").each(function () {
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-    $(".educSelectBox").not("#selectEducStatus").val("").change();
-    if (
-      $(this).attr("id") == "selectEducSalary" ||
-      $(this).attr("id") == "selectEducIndustry"
-    ) {
+    //Disable all emloyment select boxes and change value to blank
+    $(".employSelectBox").each(function () {
       $(this).val("").change();
       $(this).prop("disabled", true);
       $(this).removeAttr("required");
-    }
-  });
+    });
 
-  $(".educUserInput").each(function () {
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-    $(".educUserInput").val("").change();
-  });
+    //Disable all emloyment input fields and change value to blank
+    $(".employUserInput").each(function () {
+      $(this).val("").change();
+      $(this).prop("disabled", true);
+      $(this).removeAttr("required");
+    });
 
-  $(".educFieldLabel").each(function () {
-    $(this).addClass("required");
-    $(this).css("color", "#909090");
-    if (
-      $(this).attr("id") == "educIndustryLbl" ||
-      $(this).attr("id") == "educSalaryLbl"
-    ) {
-      $(this).removeClass("required");
-      $(this).css("color", "#dfdfdf");
-    }
-  });
-}
-
-//fxn for Out-of-school youth
-function ousYouth() {
-  $(".educSelectBox").each(function () {
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-    if ($(this).attr("id") == "selectEducStatus") {
+    //Enable all education select boxes and change value to blank
+    $(".educSelectBox").each(function () {
+      $(this).val("").change();
       $(this).prop("disabled", false);
       $(this).attr("required", "required");
-      $(".educSelectBox").not(this).val("").change();
-    }
-  });
+    });
 
-  $(".educUserInput").each(function () {
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-    $(this).val("").change();
-  });
+    //Enable all education input fields and change value to blank
+    $(".educUserInput").each(function () {
+      $(this).val("").change();
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+    });
 
-  $(".educFieldLabel").each(function () {
-    $(this).removeClass("required");
-    $(this).css("color", "#dfdfdf");
-    if ($(this).attr("id") == "educStatusLbl") {
+    //Change education card labels and background-color
+    $("#markerEduc").css("background-color", "#219EBC");
+    $(".educFieldLabel").css("color", "#909090");
+
+    //For red * marker
+    $(".employFieldLabel").removeClass("required");
+    $(".educFieldLabel").addClass("required");
+  }
+
+  //fxn for Enrolled
+  function enrolled() {
+    $(".educSelectBox").each(function () {
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+      $(".educSelectBox").not("#selectEducStatus").val("").change();
+      if (
+        $(this).attr("id") == "selectEducSalary" ||
+        $(this).attr("id") == "selectEducIndustry"
+      ) {
+        $(this).val("").change();
+        $(this).prop("disabled", true);
+        $(this).removeAttr("required");
+      }
+    });
+
+    $(".educUserInput").each(function () {
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+      $(".educUserInput").val("").change();
+    });
+
+    $(".educFieldLabel").each(function () {
       $(this).addClass("required");
       $(this).css("color", "#909090");
-    }
-  });
-}
+      if (
+        $(this).attr("id") == "educIndustryLbl" ||
+        $(this).attr("id") == "educSalaryLbl"
+      ) {
+        $(this).removeClass("required");
+        $(this).css("color", "#dfdfdf");
+      }
+    });
+  }
 
-//fxn for Working Students
-function workingStudent() {
-  $(".educSelectBox").each(function () {
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-    $(".educSelectBox").not("#selectEducStatus").val("").change();
-  });
+  //fxn for Out-of-school youth
+  function ousYouth() {
+    $(".educSelectBox").each(function () {
+      $(this).prop("disabled", true);
+      $(this).removeAttr("required");
+      if ($(this).attr("id") == "selectEducStatus") {
+        $(this).prop("disabled", false);
+        $(this).attr("required", "required");
+        $(".educSelectBox").not(this).val("").change();
+      }
+    });
 
-  $(".educUserInput").each(function () {
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
+    $(".educUserInput").each(function () {
+      $(this).prop("disabled", true);
+      $(this).removeAttr("required");
+      $(this).val("").change();
+    });
 
-  $(".educFieldLabel").addClass("required");
-  $(".educFieldLabel").css("color", "#909090");
-}
+    $(".educFieldLabel").each(function () {
+      $(this).removeClass("required");
+      $(this).css("color", "#dfdfdf");
+      if ($(this).attr("id") == "educStatusLbl") {
+        $(this).addClass("required");
+        $(this).css("color", "#909090");
+      }
+    });
+  }
 
-// ----------------------Employment-------------------------
-//fxn for clicking #employCheck (disabling education fields, enabling employment fields)
-function employRadioClick() {
-  $("#educCheck").prop("checked", false);
-  $("#markerEduc").css("background-color", "#c5d4e3");
-  $(".educFieldLabel").css("color", "#dfdfdf");
+  //fxn for Working Students
+  function workingStudent() {
+    $(".educSelectBox").each(function () {
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+      $(".educSelectBox").not("#selectEducStatus").val("").change();
+    });
 
-  $(".educSelectBox").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-  });
+    $(".educUserInput").each(function () {
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+    });
 
-  $(".educUserInput").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-  });
+    $(".educFieldLabel").addClass("required");
+    $(".educFieldLabel").css("color", "#909090");
+  }
 
-  $(".employSelectBox").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
+  // ----------------------Employment-------------------------
+  //fxn for clicking #employCheck (disabling education fields, enabling employment fields)
+  function employRadioClick() {
+    $("#educCheck").prop("checked", false);
+    $("#markerEduc").css("background-color", "#c5d4e3");
+    $(".educFieldLabel").css("color", "#dfdfdf");
 
-  $(".employUserInput").each(function () {
-    $(this).val("").change();
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
+    $(".educSelectBox").each(function () {
+      $(this).val("").change();
+      $(this).prop("disabled", true);
+      $(this).removeAttr("required");
+    });
 
-  $("#markerEmploy").css("background-color", "#219EBC");
-  $(".employFieldLabel").css("color", "#909090");
+    $(".educUserInput").each(function () {
+      $(this).val("").change();
+      $(this).prop("disabled", true);
+      $(this).removeAttr("required");
+    });
 
-  //For red * marker
-  $(".educFieldLabel").removeClass("required");
-  $(".employFieldLabel").addClass("required");
-}
+    $(".employSelectBox").each(function () {
+      $(this).val("").change();
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+    });
 
-//fxn for Employed
-function employed() {
-  $(".employSelectBox").each(function () {
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
+    $(".employUserInput").each(function () {
+      $(this).val("").change();
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+    });
 
-  $(".employUserInput").each(function () {
-    $(this).prop("disabled", false);
-    $(this).attr("required", "required");
-  });
+    $("#markerEmploy").css("background-color", "#219EBC");
+    $(".employFieldLabel").css("color", "#909090");
 
-  $(".employFieldLabel").each(function () {
-    $(this).css("color", "#909090");
-    $(this).addClass("required");
-  });
-}
+    //For red * marker
+    $(".educFieldLabel").removeClass("required");
+    $(".employFieldLabel").addClass("required");
+  }
 
-//fxn for Unemployed
-function unemployed() {
-  $(".employSelectBox").each(function () {
-    $(this).not("#selectEmployStatus").prop("disabled", true);
-    $(this).not("#selectEmployStatus").removeAttr("required");
-  });
+  //fxn for Employed
+  function employed() {
+    $(".employSelectBox").each(function () {
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+    });
 
-  $(".employUserInput").each(function () {
-    $(this).prop("disabled", true);
-    $(this).removeAttr("required");
-  });
+    $(".employUserInput").each(function () {
+      $(this).prop("disabled", false);
+      $(this).attr("required", "required");
+    });
 
-  $(".employFieldLabel").each(function () {
-    $(this).css("color", "#dfdfdf");
-    $(this).removeClass("required");
-    if ($(this).attr("id") == "employStatusLbl") {
-      $(this).addClass("required");
+    $(".employFieldLabel").each(function () {
       $(this).css("color", "#909090");
-    }
-  });
-}
+      $(this).addClass("required");
+    });
+  }
+
+  //fxn for Unemployed
+  function unemployed() {
+    $(".employSelectBox").each(function () {
+      $(this).not("#selectEmployStatus").prop("disabled", true);
+      $(this).not("#selectEmployStatus").removeAttr("required");
+    });
+
+    $(".employUserInput").each(function () {
+      $(this).prop("disabled", true);
+      $(this).removeAttr("required");
+    });
+
+    $(".employFieldLabel").each(function () {
+      $(this).css("color", "#dfdfdf");
+      $(this).removeClass("required");
+      if ($(this).attr("id") == "employStatusLbl") {
+        $(this).addClass("required");
+        $(this).css("color", "#909090");
+      }
+    });
+  }
+});

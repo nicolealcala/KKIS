@@ -1,5 +1,5 @@
-$font-stack: Poppins, sans-serif;
-$font-stack-sub: DM Sans, sans-serif;
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
 $mid-blue: #219EBC;
 $mid-yellow: #FFB703;
 $light-blue: #8ECAE6;
@@ -10,17 +10,11 @@ $dark-yellow: #FB8500;
 $light-yellow: #F3CB69;
 $text: #393737;
 $tomato-orange: #F57441;
-$fade-orange: #F4895F;
+$fade-orange: #F4895F;  
 
 * { 
-    font: 100% $font-stack-sub;
+    font: 100% $content-font;
 }
-
-// input[type=checkbox]{
-//     margin: 0;
-//     height: 100%;
-//     width: auto;
-// }
 
 .topBtnLbl {
     color: $text;
