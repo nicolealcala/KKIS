@@ -1,5 +1,4 @@
-<?php
-include "connection.php";
+<?php include "connection.php";
 
 $queryKabataanTbl = "SELECT * FROM kabataanProfile"; //query to select all data from table
 $resultKabataanTbl = mysqli_query($conn, $queryKabataanTbl); //execute query
@@ -48,7 +47,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
 <body id="page-top">
 
     <div id="left">
-            <?php include 'sidenav.php' ?>
+        <?php include "sidenav.php" ?>
     </div>
 
     <div id="right">
@@ -207,7 +206,6 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                             <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="kabataanTbl" style="width:100%">
                                 <thead class="headTitle">
                                     <tr>
-                                        <th>Resident ID</th>
                                         <th>Last Name</th>
                                         <th>First Name</th>
                                         <th>Middle Name</th>
@@ -374,7 +372,6 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                             <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="residentsTbl" style="width:100%">
                                 <thead class="headTitle">
                                     <tr>
-                                        <th>Resident ID</th>
                                         <th>Last Name</th>
                                         <th>First Name</th>
                                         <th>Middle Name</th>
@@ -391,11 +388,10 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                 <tbody>
                                     <?php while ($row = mysqli_fetch_array($resultResidentsTbl)) { ?>
                                         <tr>
-                                            <td id="residentID" class="entryRow" scope="col" data-label="Resident ID"><?php echo $row["residentID"]; ?></td>
                                             <td id="lastName" class="entryRow" scope="col" data-label="Last Name"><?php echo $row["lastName"]; ?></td>
                                             <td id="firstName" class="entryRow" scope="col" data-label="First Name"><?php echo $row["firstName"]; ?></td>
                                             <td id="middleName" class="entryRow" scope="col" data-label="Middle Name"><?php echo $row["middleName"]; ?></td>
-                                            <td id="birthday" class="entryRow" scope="col" data-label="Birthday"><?php echo $row["birthDate"]; ?></td>
+                                             <td id="birthday" class="entryRow" scope="col" data-label="Birthday"><?php echo $row["birthDate"]; ?></td>
                                             <td id="age" class="entryRow" scope="col" data-label="Age"><?php echo $row["age"]; ?></td>
                                             <td id="gender" class="entryRow" scope="col" data-label="Gender"><?php echo $row["gender"]; ?></td>
                                             <td id="civilStatus" class="entryRow" scope="col" data-label="Civil status"><?php echo $row["civilStatus"]; ?></td>
@@ -403,7 +399,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                             <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $row["remarks"]; ?></td>
                                             <td id="actions" class="entryRow" scope="col" data-label="Actions">
                                     
-                                                <a class="btn view viewMore actionBtn" role="button" type="button" data-bs-toggle="modal" data-bs-target="#viewMore" href="modalViewAll.php" data-id="<?php echo $row["residentID"] ?>"><i class="fa-solid fa-eye"></i></a>
+                                                <a class="btn view viewMore actionBtn profile" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $row['residentID']?>" data-id="<?php echo $row['residentID']; ?>" href="#viewMore"><i class="fa-solid fa-eye"></i></a>
                                                 <a href="updateEntry.php?residentID=<?php echo $row["residentID"] ?>" value="AKEN" class="btn  update actionBtn" role="button" aria-pressed="true"><i class="fa-solid fa-pen"></i></a>
                                                 <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a>
                                     
@@ -426,139 +422,137 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     
                                         </td> -->
                                     
-                                        </tr>
+                                        </tr>    
+                                            <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $row['residentID']?>">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Kabataan Information</h4>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body m-0 px-4">
+                                                        <div class="row rowContainer m-0 p-0">
+                                                            <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
+                                                                <p class="textName lastName w-100 my-1"><?php echo $row['lastName'].' '.$row['firstName'].' '.$row['middleName'] ?></p>
+                                                                <p class="text Gender w-100 my-1 mt-2"><?php echo $row['age']?> YEARS OLD</p>
+                                                                <p class="textAge w-100 my-1"><?php echo $row['gender']?></p>
+                                                            </div>
+                                                            <div class="col align-self-center"><img class="img-fluid imgContainer" src="assets/img/misc/qrcode.png"></div>
+                                                        </div>
+
+                                                        <div class="row rowContainer my-4 mx-0 p-0">
+                                                            <div class="col col-12 p-0">
+                                                                <div class="markerContainer px-2">
+                                                                    <p class="modalMarker">Personal Information</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="row gy-1">
+                                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Birthday:</label>
+                                                                        <p class="textRetrieved"><?php echo $row['birthDate']?></p>
+                                                                    </div>
+                                                                    <div class="col col-lg-8 col-md-8 col-sm-6 col-12"><label class="form-label modalLabel">Birthplace:</label>
+                                                                        <p class="textRetrieved"><?php echo $row['purok']?> , Calamba City, Laguna</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Marital Status:</label>
+                                                                        <p class="textRetrieved"><?php echo $row['civilStatus']?></p>
+                                                                    </div>
+                                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Religion:</label>
+                                                                        <p class="textRetrieved"><?php echo $row['religion']?></p>
+                                                                    </div>
+                                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Voter Type:</label>
+                                                                        <p class="textRetrieved">Registered</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Disability:</label>
+                                                                        <p class="textRetrieved">None</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Contact No:</label>
+                                                                        <p class="textRetrieved"><?php echo $row['contactNum']?></p>
+                                                                    </div>
+                                                                    <div class="col col-lg-7 col-md-7 col-sm-6 col-12"><label class="form-label modalLabel">House No/Street/Subdivision:</label>
+                                                                        <p class="textRetrieved">123 MABUHAY ST.&nbsp;</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Purok:</label>
+                                                                        <p class="textRetrieved"><?php echo $row['purok']?></p>
+                                                                    </div>
+                                                                    <div class="col col-12"><label class="form-label modalLabel">Organization/s (if any):</label>
+                                                                        <p class="textRetrieved">Computer Society </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row rowContainer my-4 mx-0 p-0">
+                                                            <div class="col col-12 p-0">
+                                                                <div class="markerContainer px-2">
+                                                                    <p class="modalMarker">Employment Status</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="row gy-1">
+                                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Employment Status:</label>
+                                                                        <p class="textRetrieved">EMPLOYED</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Employee Type:</label>
+                                                                        <p class="textRetrieved">CONTRACTUAL</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-3 col-md-3 col-sm-3 col-12"><label class="form-label modalLabel">Public/Private:</label>
+                                                                        <p class="textRetrieved">PUBLIC</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-12 col-md-12 col-sm-9 col-12"><label class="form-label modalLabel">Name of Employer/Company:</label>
+                                                                        <p class="textRetrieved">DAVID M. CONSUNJI, INC.</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Occupation:</label>
+                                                                        <p class="textRetrieved">CONSTRUCTION WORKER</p>
+                                                                    </div>
+                                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Salary Range:</label>
+                                                                        <p class="textRetrieved">10,000 - 20,000</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row rowContainer my-4 mx-0 p-0">
+                                                            <div class="col col-12 p-0">
+                                                                <div class="markerContainer px-2">
+                                                                    <p class="modalMarker">House Declaration</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="row gy-1">
+                                                                    <div class="col col-12"><label class="form-label modalLabel">Head of the family:</label>
+                                                                        <p class="textRetrieved">JUAN SANTOS DELA CRUZ</p>
+                                                                    </div>
+                                                                    <div class="col col-6"><label class="form-label modalLabel">Remarks:</label>
+                                                                        <p class="textRetrieved">SOLO PARENT</p>
+                                                                    </div>
+                                                                    <div class="col col-6"><label class="form-label modalLabel">No. of members:</label>
+                                                                        <p class="textRetrieved">5 to 10</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+                                                </div>
+                                            </div>
+                                        </div>  
+
+
+                                        <script>
+                                            $('.viewMore<?php echo $row["residentID"]?>').click(function(){
+                                                
+                                                var firstName = <?php echo $row['lastName'] ?>
+                                                alert (firstName);
+                                            });
+                                        </script>
+
+                                        
                                     <?php } ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                                     
-                    <?php include "modalViewAll.php"; ?>
-                                    
-                    <div class="sectionDiv mx-0 mt-4">
-                        <div class="modal fade" role="dialog" tabindex="-1" id="">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Kabataan Information</h4>
-                                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-                                    </div>
-                                    <div class="modal-body m-0 px-4">
-                                        <div class="row rowContainer m-0 p-0">
-                                            <?php
-                                            $residentID = 'residentID';
-                                            $sql = "SELECT * FROM residentsProfile WHERE residentID = '$residentID'";
-                                            $query_run = mysqli_query($conn, $sql);
-                                            $row = mysqli_fetch_array($query_run);
-                                            ?>
-                                            <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
-                                                <p class="textName w-100 my-1">'<?php echo $row["lastName"]; ?></p>
-                                                <p class="textGender w-100 my-1 mt-2">48 YEARS OLD</p>
-                                                <p class="textAge w-100 my-1">Man</p>
-                                            </div>
-                                            <div class="col align-self-center"><img class="img-fluid imgContainer" src="assets/img/misc/qrcode.png"></div>
-                                        </div>
-                                        <div class="row rowContainer my-4 mx-0 p-0">
-                                            <div class="col col-12 p-0">
-                                                <div class="markerContainer px-2">
-                                                    <p class="modalMarker">Personal Information</p>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="row gy-1">
-                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Birthday:</label>
-                                                        <p class="textRetrieved">02/19/2000</p>
-                                                    </div>
-                                                    <div class="col col-lg-8 col-md-8 col-sm-6 col-12"><label class="form-label modalLabel">Birthplace:</label>
-                                                        <p class="textRetrieved">CALAMBA CITY, LAGUNA</p>
-                                                    </div>
-                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Marital Status:</label>
-                                                        <p class="textRetrieved">SEPARATED</p>
-                                                    </div>
-                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Religion:</label>
-                                                        <p class="textRetrieved">CHRISTIAN</p>
-                                                    </div>
-                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Voter Type:</label>
-                                                        <p class="textRetrieved">REGISTERED</p>
-                                                    </div>
-                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Disability:</label>
-                                                        <p class="textRetrieved">VISSION DISABILITY</p>
-                                                    </div>
-                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Contact No:</label>
-                                                        <p class="textRetrieved">09123456789</p>
-                                                    </div>
-                                                    <div class="col col-lg-7 col-md-7 col-sm-6 col-12"><label class="form-label modalLabel">House No/Street/Subdivision:</label>
-                                                        <p class="textRetrieved">123 MABUHAY ST.&nbsp;</p>
-                                                    </div>
-                                                    <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Purok:</label>
-                                                        <p class="textRetrieved">PULONG KENDI</p>
-                                                    </div>
-                                                    <div class="col col-12"><label class="form-label modalLabel">Organization/s (if any):</label>
-                                                        <p class="textRetrieved">SAMAHAN NG MGA WALANG ASAWA</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row rowContainer my-4 mx-0 p-0">
-                                            <div class="col col-12 p-0">
-                                                <div class="markerContainer px-2">
-                                                    <p class="modalMarker">Employment Status</p>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="row gy-1">
-                                                    <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Employment Status:</label>
-                                                        <p class="textRetrieved">EMPLOYED</p>
-                                                    </div>
-                                                    <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Employee Type:</label>
-                                                        <p class="textRetrieved">CONTRACTUAL</p>
-                                                    </div>
-                                                    <div class="col col-lg-3 col-md-3 col-sm-3 col-12"><label class="form-label modalLabel">Public/Private:</label>
-                                                        <p class="textRetrieved">PUBLIC</p>
-                                                    </div>
-                                                    <div class="col col-lg-12 col-md-12 col-sm-9 col-12"><label class="form-label modalLabel">Name of Employer/Company:</label>
-                                                        <p class="textRetrieved">DAVID M. CONSUNJI, INC.</p>
-                                                    </div>
-                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Occupation:</label>
-                                                        <p class="textRetrieved">CONSTRUCTION WORKER</p>
-                                                    </div>
-                                                    <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Salary Range:</label>
-                                                        <p class="textRetrieved">10,000 - 20,000</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row rowContainer my-4 mx-0 p-0">
-                                            <div class="col col-12 p-0">
-                                                <div class="markerContainer px-2">
-                                                    <p class="modalMarker">House Declaration</p>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="row gy-1">
-                                                    <div class="col col-12"><label class="form-label modalLabel">Head of the family:</label>
-                                                        <p class="textRetrieved">JUAN SANTOS DELA CRUZ</p>
-                                                    </div>
-                                                    <div class="col col-6"><label class="form-label modalLabel">Remarks:</label>
-                                                        <p class="textRetrieved">SOLO PARENT</p>
-                                                    </div>
-                                                    <div class="col col-6"><label class="form-label modalLabel">No. of members:</label>
-                                                        <p class="textRetrieved">5 to 10</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+                    
     <!-- <div class="mainContainer d-block">
         <header>
             <div class="row headerRow">
