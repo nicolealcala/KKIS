@@ -50,26 +50,25 @@ if ($_SESSION['email'] != "") {
         </div>
 
         <div id="pageContent">
-            <div class="mainContainer">
+            <div class="mainContainer" id="mainContainerID">
                 <header id="header">
                     <div class="row headerRow">
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center toggleTitle">
                             <span id="expand" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="openNav()">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
                             <span id="expandMobile" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
-                            <span id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
+                            <span  id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
                             </span>
-                            <span id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
-                                <i class="fa-solid fa-xmark fa-2xl w-auto">
-                                </i>
+                            <span  id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
+                                <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
                             </span>
                             <span id="pageTitle" class="title longTitle">Dashboard</span>
                         </div>
-                        <div id="divAccountType" class="col-lg-4 col-md-4 d-none d-md-flex align-items-md-center">
+                        <div id="divAccountType" class="">
                             <span class="accountType d-flex justify-content-end">Super Admin Account</span>
                         </div>
                     </div>
@@ -78,7 +77,7 @@ if ($_SESSION['email'] != "") {
                 </header>
 
                 <!-- CONTENT START -->
-                <div class="container-fluid content">
+                <div class="container-fluid content" id="contentID">
                     <div class="sectionDiv">
                         <div class="row gx-5 mb-1">
                             <!-- Minor Catagories -->

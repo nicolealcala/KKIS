@@ -1,4 +1,4 @@
-// Nav collapse & expand
+// Sidenav collapse & expand
 var openBtn = document.getElementById("expand");
 var closeBtn = document.getElementById("collapse");
 
@@ -11,7 +11,6 @@ function openNav() {
     document.getElementById("grey").style.borderRadius= "40px 0 0 0";
     document.getElementById("pageContent").style.marginLeft = "360px";
     document.getElementById("header").style.marginLeft = "0";
-    document.getElementById("divAccountType").style.paddingLeft = "10px";
     document.getElementById("headerHR").style.marginLeft = "-40px";
     openBtn.style.display = 'none';
     closeBtn.style.display = '';
@@ -24,10 +23,18 @@ function closeNav() {
     document.getElementById("grey").style.borderRadius= "0";
     document.getElementById("pageContent").style.marginLeft = "20px";
     document.getElementById("header").style.marginLeft = "0";
-    document.getElementById("divAccountType").style.paddingLeft = "350px";
     document.getElementById("headerHR").style.marginLeft = "-20px";
     openBtn.style.display = '';
     closeBtn.style.display = 'none';
 }
+
+// closenav when screen resized
+$(document).ready(function()
+{
+    $(window).resize(function()
+    {
+        window.closeNav();
+    });
+});
 
 //Nav buttons

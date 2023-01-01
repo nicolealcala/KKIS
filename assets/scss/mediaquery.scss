@@ -36,16 +36,21 @@ header {
         font-size: 2.5em;
     }
 
-    .title, .accountType {
+    .title {
         width: auto;
-        font: 100% $headings-font;
+        font: 100% $content-font;
         color: $dark-blue;
+
     }
 
     .accountType {
         color: $fade-orange;
-        font-size: 1.2em;
+        font-size: 20px;
         font-weight: 300;
+        width: auto;
+        // position: fixed;
+        // top: 40px;
+        // right: 100px;
     }
 }
 
@@ -57,7 +62,7 @@ th {
     font-size: 1.2em;
     font-weight: normal;
     padding: 0.2em;
-    color: #656565;
+    color: #858796;
 }
 
 * {
@@ -117,7 +122,7 @@ a {
 
 //Add, Update
 .sectionDiv {
-    margin-top: 30px;
+    // margin-top: 30px;
 }
 
 .dashCategories {
@@ -190,26 +195,33 @@ a {
     }
 }
 
-@media screen and (min-width:992px) and (max-width:7680px){ //LG
-     //All pages
-    .mainContainer {
-        .headerRow {
-            // margin: 0 2.5em;
-        
-            .title {
-                font-size: 3em;
-                font-weight: 600;
-            }
-        
-            .accountType {
-                font-size: 1.2em;
-            }
-        }
-    }
 
-    .content{
-        width: 90%;
-        // padding: 2em;    //sidenav
+
+@media screen and (min-width:992px) and (max-width:7680px){ //LG
+    //Sa 1260px nagsisimulang mag-ajust ung contents papunta sa right pag nakaexpand sideNav
+//      //All pages
+//     .mainContainer {
+//         .headerRow {
+//             // margin: 0 2.5em;
+        
+//             .title {
+//                 font-size: 3em;
+//                 font-weight: 600;
+//             }
+        
+//             .accountType {
+//                 font-size: 1.2em;
+//             }
+//         }
+//     }
+
+//     .content{
+//         width: 90%;
+//         // padding: 2em;    //sidenav
+//     }
+
+    #expandMobile, #collapseMobile {
+        display: none;
     }
     
     //Add and Update Entry
@@ -221,35 +233,46 @@ a {
 
 
 @media screen and (max-width: 991px) {          // MD
-    //All pages
-    .mainContainer {
-        .headerRow {
-            margin: 2em 3em 1em 3em;
 
-            #hamburger {
-                margin-right: 0.8em;
-                font-size: 2.2em;
-            }
-        
-            .title {
-                font-size: 2.5em;
-                font-weight: 600;
-            }
-
-            .longTitle {
-                font-size: 1.9em;
-            }
-        
-            .accountType {
-                font-size: 1em;
-            }
+    @media screen and (max-width: 850px) {
+        #divAccountType {
+            display: none;
         }
     }
 
-    .content{
-        // width: 90%;
-        padding: 1em;
+    #expand, #collapse {
+        display: none;
     }
+
+//     //All pages
+//     .mainContainer {
+//         .headerRow {
+//             margin: 2em 3em 1em 3em;
+
+//             #hamburger {
+//                 margin-right: 0.8em;
+//                 font-size: 2.2em;
+//             }
+        
+//             .title {
+//                 font-size: 2.5em;
+//                 font-weight: 600;
+//             }
+
+//             .longTitle {
+//                 font-size: 1.9em;
+//             }
+        
+//             .accountType {
+//                 font-size: 1em;
+//             }
+//         }
+//     }
+
+//     .content{
+//         // width: 90%;
+//         padding: 1em;
+//     }
     //Dashboard
     .category {
         .texts{
@@ -298,21 +321,21 @@ a {
 
 
 @media screen and (max-width: 767px) {          //SM
-    .mainContainer {
-        .headerRow {
-            margin: 2em 2em 1em 2em;
+//     .mainContainer {
+//         .headerRow {
+//             margin: 2em 2em 1em 2em;
         
-            .title {
-                font-size: 2.3em;
-                font-weight: 600;
-            }
-        }
-    }
+//             .title {
+//                 font-size: 2.3em;
+//                 font-weight: 600;
+//             }
+//         }
+//     }
 
-    .content{
-        // width: 95%;
-        padding: 1.5em;
-    }  
+//     .content{
+//         // width: 95%;
+//         padding: 1.5em;
+//     }  
 
     #scanBtn {
         font-size: 1em;
@@ -384,24 +407,24 @@ a {
 }
 
 @media screen and (min-width: 431px) and (max-width: 575px) { //XS
-    //All pages
-    .mainContainer {
-        .headerRow {
-            margin: 2em 1.5em 1em 1.5em;
+//     //All pages
+//     .mainContainer {
+//         .headerRow {
+//             margin: 2em 1.5em 1em 1.5em;
             
-            #hamburger {
-                margin-right: 0.8em;
-            }
+//             #hamburger {
+//                 margin-right: 0.8em;
+//             }
 
-            .title {
-                font-size: 2.2em;
-                font-weight: 600;
-            }
-        }
-    }
-    .content{
-        padding: 1em
-    }
+//             .title {
+//                 font-size: 2.2em;
+//                 font-weight: 600;
+//             }
+//         }
+//     }
+//     .content{
+//         padding: 1em
+//     }
 
     .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle{
         white-space: nowrap; 
@@ -458,56 +481,56 @@ a {
 }
 
 @media screen and (max-width: 430px) {
-    //All pages
-    .mainContainer {
-        .headerRow {    
-            margin: 1em 0.5em;
+//     //All pages
+//     .mainContainer {
+//         .headerRow {    
+//             margin: 1em 0.5em;
 
-            #hamburger {
-                margin-right: 0.5em;
-                font-size: 1.8em;
-            }
+//             #hamburger {
+//                 margin-right: 0.5em;
+//                 font-size: 1.8em;
+//             }
 
-            .title {
-                font-size: 1.95em;
-                font-weight: 600;
-            }
+//             .title {
+//                 font-size: 1.95em;
+//                 font-weight: 600;
+//             }
 
-            .longTitle {
-                font-size: 1.5em;
-            }
-        }
+//             .longTitle {
+//                 font-size: 1.5em;
+//             }
+//         }
 
-        #scanBtnTxt {
-            display: none;
-        }
+//         #scanBtnTxt {
+//             display: none;
+//         }
 
-        #scanIcon {
-            display: flex;
-        }
-    }
+//         #scanIcon {
+//             display: flex;
+//         }
+//     }
 }
 
 @media screen and (max-width: 332px) {
-    //All pages
-    .mainContainer {
-        .headerRow {
-            margin: 1em 0.5em;
+//     //All pages
+//     .mainContainer {
+//         .headerRow {
+//             margin: 1em 0.5em;
 
-            #hamburger {
-                font-size: 1.5em;
-            }
+//             #hamburger {
+//                 font-size: 1.5em;
+//             }
 
-            .title {
-                font-size: 1.3em;
-                font-weight: 600;
-            }
-        }
-    }
+//             .title {
+//                 font-size: 1.3em;
+//                 font-weight: 600;
+//             }
+//         }
+//     }
 
-    .content{
-        padding: 0.5em;      
-    }
+//     .content{
+//         padding: 0.5em;      
+//     }
 
     //Add, Update, KKID
     .markerText, .subTitle, .menuTitle{
@@ -520,18 +543,18 @@ a {
     }
 }
 
-@media screen and (max-width:280px){
-    .mainContainer {
-        .headerRow {
-            .longTitle {
-                font-size: 1.1em;
-            }
-        }
-    }
+@media screen and (max-width:280px) {
+//     .mainContainer {
+//         .headerRow {
+//             .longTitle {
+//                 font-size: 1.1em;
+//             }
+//         }
+//     }
     
-    .card {
-        padding: 0.5em 0.4em;
-    }
+//     .card {
+//         padding: 0.5em 0.4em;
+//     }
 
     //Add
     .statusCheck{

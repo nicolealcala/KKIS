@@ -1,5 +1,7 @@
-<?php
+<?php 
 require 'connection.php';
+$householdID = "SELECT households.household_id, CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.household_id = residents.household_id ORDER BY households.household_id ASC";
+$getHouseholdID = executeQuery($householdID);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@ require 'connection.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
+    
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/households.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
@@ -34,7 +36,7 @@ require 'connection.php';
 </head>
 
 <body id="page-top">
-
+    
     <div id="left">
         <?php include 'sidenav.php'; ?>
     </div>
@@ -42,30 +44,31 @@ require 'connection.php';
     <div id="right">
         <div id="rc">
             <div id="grey">
+                <!-- <hr id="greyHR"> -->
+                <!-- <hr id="headerHR"> -->
             </div>
         </div>
 
         <div id="pageContent">
-            <div class="mainContainer">
+            <div class="mainContainer" id="mainContainerID">
                 <header id="header">
                     <div class="row headerRow">
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center toggleTitle">
                             <span id="expand" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="openNav()">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
                             <span id="expandMobile" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
-                            <span id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
+                            <span  id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
                             </span>
-                            <span id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
-                                <i class="fa-solid fa-xmark fa-2xl w-auto">
-                                </i>
+                            <span  id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
+                                <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
                             </span>
                             <span id="pageTitle" class="title longTitle">Declared Households</span>
                         </div>
-                        <div id="divAccountType" class="col-lg-4 col-md-4 d-none d-md-flex align-items-md-center">
+                        <div id="divAccountType" class="">
                             <span class="accountType d-flex justify-content-end">Super Admin Account</span>
                         </div>
                     </div>
@@ -74,7 +77,7 @@ require 'connection.php';
                 </header>
 
                 <!-- CONTENT START -->
-                <div class="container-fluid content">
+                <div class="container-fluid content" id="contentID">
                     <!-- Menu Buttons -->
                     <div class="row d-flex justify-content-end align-ittems-center m-0">
                         <button class="menuBtn menu1 rounded-pill clicked" id="families">Families</button>
@@ -104,7 +107,7 @@ require 'connection.php';
                                         <option value="SK Scholar">SK Scholar</option>
                                         <option value="Solo Living">Solo Living</option>
                                         <option value="Solo Parent">Solo Parent</option>
-                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>
+                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
                                     </optgroup>
                                 </select>
                             </div>
@@ -125,51 +128,26 @@ require 'connection.php';
                                     <th>Remarks</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
                                 <?php
-                                $householdMember = "SELECT households.household_id, CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count` FROM `households` INNER JOIN `residents` ON households.household_id = residents.household_id WHERE NOT households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
-                                $isMember = executeQuery($householdMember);
-                                
-                                $householdHead = "SELECT households.household_id, CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
-                                $isHead = executeQuery($householdHead);
-
-                                if ($isHead) {
-                                    while ($rowHead = mysqli_fetch_array($isHead)) {
+                                    while ($row = mysqli_fetch_array($getHouseholdID)) {
                                         echo '
-                                            <tr style="background-color: #EFF0FA">
-                                            <td class="entryRow" scope="col" data-label="ID">' . $rowHead["household_id"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Name">' . $rowHead["full_name"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Age">' . $rowHead["age"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Birthday">' . $rowHead["birthday"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Purok">' . $rowHead["purok"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Members">' . $rowHead["members_count"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Remarks">' . $rowHead["head_remarks"] . '</td>
-                                            </tr>
-                                            ';
+                                        <tr>
+                                        <td class="entryRow" scope="col" data-label="ID">' . $row["household_id"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Name">' . $row["full_name"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Age">' . $row["age"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Birthday">' . $row["birthday"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Purok">' . $row["purok"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Members">' . $row["members_count"] . '</td>
+                                            <td class="entryRow" scope="col" data-label="Remarks">' . $row["head_remarks"] . '</td>
+                                        </tr>
+                                        ';
                                     }
-                                }
-
-                                if ($isMember) {
-                                    while ($rowMember = mysqli_fetch_array($isMember)) {
-                                        echo '
-                                            <tr>
-                                            <td class="entryRow" scope="col" data-label="ID">' . $rowMember["household_id"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Name">' . $rowMember["full_name"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Age">' . $rowMember["age"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Birthday">' . $rowMember["birthday"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Purok">' . $rowMember["purok"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Members">' . $rowMember["members_count"] . '</td>
-                                                <td class="entryRow" scope="col" data-label="Remarks">' . ' '. '</td>
-                                            </tr>
-                                            ';
-                                    }
-                                }
-                                
                                 ?>
                             </tbody>
                         </table>
                     </div>
-
+                    
                     <div class="sectionDiv d-none m-3" id="overviewBody">
                         <div class="overviewDiv">
                             <canvas id="overviewChart"></canvas>
@@ -179,11 +157,11 @@ require 'connection.php';
             </div>
         </div>
     </div>
-
+    
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- Chart JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
@@ -193,12 +171,12 @@ require 'connection.php';
     <!-- Data tables -->
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
-    <script src="assets/js/vfs_fonts.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>  
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
     <!-- Custom Script -->
     <script src="assets/js/households.js"></script>
-
+    
     <!-- Nav -->
     <script src="assets/js/sidenav.js"></script>
 </body>
