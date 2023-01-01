@@ -101,7 +101,7 @@
                                 </select>
                             </div>
                             <!-- Search -->
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0 d-flex align-items-center" id="transactionsSearch"></div>
+                            <div class="align-items-center col-lg-3 col-md-4 col-sm-6 col-12 p-0 align-middle" id="transactionsSearch"></div>
                         </div>
 
                         <!-- Table start   -->

@@ -83,14 +83,6 @@ $text: #393737;
     margin-left: 0.7em;
 }
 
-// .remarkDiv, .disabilityDiv {
-//     width: 100%;
-
-//     #remarkDrop, #disabilitySelect{   
-//         max-width: 100%;
-//     }
-// }
-
 .vscomp-ele-wrapper{
     margin-top: 0;
 
@@ -123,6 +115,12 @@ $text: #393737;
     background-color: $dark-blue;
     color: white;
     font-weight: 500;
+}
+
+.modalAlert {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: $text;
 }
 
 .content::-webkit-scrollbar {

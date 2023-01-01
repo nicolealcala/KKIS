@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+label input {
+  height: 500px;
+}
+
 #selectAll {
   color: #F57441;
 }

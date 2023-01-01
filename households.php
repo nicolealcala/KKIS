@@ -113,7 +113,7 @@ $getHouseholdID = executeQuery($householdID);
                                 </select>
                             </div>
                             <!-- Search -->
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0" id="familiesSearch"></div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0 align-middle" id="familiesSearch"></div>
                         </div>
 
                         <!-- Table start   -->
@@ -159,8 +159,6 @@ $getHouseholdID = executeQuery($householdID);
         </div>
     </div>
     
-   
-
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -46,8 +46,6 @@ if ($_SESSION['email'] != "") {
     <div id="right">
         <div id="rc">
             <div id="grey">
-                <!-- <hr id="greyHR"> -->
-                <!-- <hr id="headerHR"> -->
             </div>
         </div>
 
@@ -81,7 +79,7 @@ if ($_SESSION['email'] != "") {
 
                 <!-- CONTENT START -->
                 <div class="container-fluid content">
-                    <div class="sectionDiv mx-0 mt-4">
+                    <div class="sectionDiv">
                         <div class="row gx-5 mb-1">
                             <!-- Minor Catagories -->
                             <p class="sectionTitle">General Residents</p>
@@ -300,21 +298,6 @@ if ($_SESSION['email'] != "") {
             </div>
         </div>
     </div>
-
-    <!-- <div class="mainContainer d-block">
-        <header>
-            <div class="row headerRow">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
-                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                    <span class="title">Dashboard</span>
-                </div>
-                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
-                    <span class="accountType d-flex justify-content-end">Super Admin Account</span>
-                </div>
-            </div>
-            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
-        </header> -->
-
 
 
     <!-- Fundamental Links -->

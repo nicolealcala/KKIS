@@ -70,7 +70,11 @@ if (isset($_POST['submitBtn'])) {
     $existingResident = executeQuery($checkResidents);
 
     if ($residentCount = mysqli_num_rows($existingResident) > 0) {
-        echo "<script>alert('Record already exists');</script>";
+        echo "<script type='text/javascript'>
+            $(document).ready(function(){
+            $('#recordExist').modal('show');});
+            </script>";
+        
     } else {
         //Query for checking if HOUSEHOLD entry already exists
         $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
@@ -87,6 +91,7 @@ if (isset($_POST['submitBtn'])) {
             while ($householdRow = $getHouseholdID->fetch_assoc()) {
                 $householdID = $householdRow["household_id"];
             }
+        
         } else {
             //If entry is new, insert to db and get the inserted row id
             executeQuery($queryHousehold);
@@ -100,7 +105,7 @@ if (isset($_POST['submitBtn'])) {
         $pixelSize = 65;
         $frameSize = 2;
         QRcode::png($encryptedResident, $file, $ecc, $pixelSize, $frameSize);
-        
+
         //Query for Personal info
         $queryPersonal = "INSERT INTO `residents`(`rencrypted_id`, `first_name`, `middle_name`, `last_name`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`, `date_added`) VALUES ('" . $encryptedResident . "','" . $fName . "', '" . $mName . "', '" . $lName . "', '" . $gender . "', '" . $birthday . "', '" . $birthplace . "', '" . $mStatus . "', '" . $religion . "', '" . $disability . "', '" . $contact . "', '" . $voterType . "', '" . $address . "', '" . $purok . "', '" . $organization . "', '" . $file . "', '" . $householdID . "', '" . $date_added . "')";
 
@@ -124,6 +129,8 @@ if (isset($_POST['submitBtn'])) {
         }
     }
 }
+
+if (isset($_POST['submitBtn']))
 
 ?>
 
@@ -163,8 +170,6 @@ if (isset($_POST['submitBtn'])) {
     <div id="right">
         <div id="rc">
             <div id="grey">
-                <!-- <hr id="greyHR"> -->
-                <!-- <hr id="headerHR"> -->
             </div>
         </div>
 
@@ -179,10 +184,10 @@ if (isset($_POST['submitBtn'])) {
                             <span id="expandMobile" style="font-size:15px;cursor:pointer;color: #04496A;" onclick="">
                                 <i class="fa-solid fa-bars fa-2xl w-auto"></i>
                             </span>
-                            <span  id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
+                            <span id="collapse" style="font-size:18px;cursor:pointer;color: #04496A;" onclick="closeNav()">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto"></i>
                             </span>
-                            <span  id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
+                            <span id="collapseMobile" style="font-size:18px;cursor:pointer;color: #04496A;" onclick=" ">
                                 <i class="fa-solid fa-xmark fa-2xl w-auto">
                                 </i>
                             </span>
@@ -196,7 +201,7 @@ if (isset($_POST['submitBtn'])) {
                     <hr id="headerHR">
                 </header>
 
-                
+
                 <!-- Content Start -->
                 <div class="container-fluid content">
                     <div class="sectionDiv">
@@ -312,7 +317,7 @@ if (isset($_POST['submitBtn'])) {
                                             <option value="PULONG KENDI">Pulong Kendi</option>
                                             <option value="PUTING KRUS">Puting Krus</option>
                                             <option value="SAINT ANTHONY">Saint Anthony </option>
-                                            <option value="SAMPAGUITA ST.">IraSampaguita St.</option>
+                                            <option value="SAMPAGUITA ST.">Sampaguita St.</option>
                                             <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
                                         </select>
                                     </div>
@@ -629,8 +634,7 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                         </form>
 
-
-                        <!-- Modal -->
+                        <!-- Added Modal -->
                         <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
                             <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
                                 <div class="modal-content">
@@ -653,26 +657,35 @@ if (isset($_POST['submitBtn'])) {
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Record Exist Modal -->
+                        <div class="modal fade center" role="dialog" tabindex="-1" id="recordExist">
+                            <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="m-0 d-flex justify-content-end align-items-center">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="row m-0">
+                                            <div class="col col-12 p-0">
+                                                <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
+                                                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                </svg>
+                                            </div>
+                                            <div class="col col-12">
+                                                <h3 class="modalAlert text-center">Record Already Exists</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- <div class="mainContainer d-block">
-        <header>
-            <div class="row headerRow">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-12 d-flex align-items-center">
-                    <i class="fa-solid fa-bars fa-2xl w-auto" id="hamburger"></i>
-                    <span class="title">Add New Entry</span>
-                </div>
-                <div class="col-lg-4 col-md-4 d-none d-md-flex justify-content-md-end align-items-md-center">
-                    <span class="accountType">Super Admin Account</span>
-                </div>
-            </div>
-            <img src="assets/img/decorative.svg" alt="hr" class="img-fluid w-100 d-flex">
-        </header> -->
-
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -683,7 +696,6 @@ if (isset($_POST['submitBtn'])) {
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/addEntry.js"></script>
-    <!-- Nav -->
     <script src="assets/js/sidenav.js"></script>
 </body>
 

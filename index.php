@@ -8,8 +8,6 @@
   session_start();
 
   include 'controller.php';
-
-
 ?>
 
 <!DOCTYPE html>

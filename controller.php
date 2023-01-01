@@ -11,8 +11,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
-
-        $query = "INSERT INTO `login_credentials`(`firstName`, `lastName`, `birthday`, `contactNumber`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$password_hash."')";
+        $query = "INSERT INTO `admins`(`first_name`, `last_name`, `birthday`, `contact_no`, `email`, `password`) VALUES ('".$firstName."','".$lastName."','".$birthday."','".$contactNumber."','".$email."','".$password_hash."')";
         if(executeQuery($query)){
         header('Location: index.php');
         }
@@ -26,7 +25,7 @@
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         //$hash = password_hash($password, PASSWORD_DEFAULT);
     
-        $query = "SELECT * FROM `login_credentials` WHERE email = '".$email."'";
+        $query = "SELECT * FROM `admins` WHERE email = '".$email."'";
         $accounts = executeQuery($query);
 
         if(mysqli_num_rows($accounts) > 0) {
@@ -56,7 +55,7 @@
         $confirmPassword = $_POST["confirmPassword"];
 
 
-        $passwordQuery = "SELECT * FROM `login_credentials` WHERE `email` ='".$_SESSION['email']."'";
+        $passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$_SESSION['email']."'";
 
         $passwordResult = executeQuery($passwordQuery);
         $count=mysqli_num_rows($passwordResult);
@@ -75,7 +74,7 @@
                         $passwordRaw == $confirmPassword;
                         $password_hash = password_hash($passwordRaw,PASSWORD_DEFAULT);
 
-                        $updateQuery = "UPDATE `login_credentials` SET `password` = '".$password_hash."' WHERE `email`= '".$_SESSION['email']."'";
+                        $updateQuery = "UPDATE `admins` SET `password` = '".$password_hash."' WHERE `email`= '".$_SESSION['email']."'";
                         executeQuery($updateQuery);
                         header("Location:index.php?error=passwordchanged");
                     } else {
