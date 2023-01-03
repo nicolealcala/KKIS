@@ -37,7 +37,8 @@ header {
     }
 
     .title {
-        width: auto;
+        // width: auto;
+        font-size: 24px;
         font: 100% $content-font;
         color: $dark-blue;
 
@@ -62,7 +63,7 @@ th {
     font-size: 1.2em;
     font-weight: normal;
     padding: 0.2em;
-    color: #858796;
+    color: #656565;
 }
 
 * {
@@ -113,7 +114,7 @@ a {
 }
 
 //Add, Update, Declared Households, Transaction History, Dashboard, KKID
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .longTitle, .minorLbl, #whiteLbl, .mcCount, .percentage{
+.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .minorLbl, #whiteLbl, .mcCount, .percentage{
     white-space: nowrap; 
     width: 88%; 
     overflow: hidden;
@@ -121,9 +122,9 @@ a {
 }
 
 //Add, Update
-.sectionDiv {
+// .sectionDiv {
     // margin-top: 30px;
-}
+// }
 
 .dashCategories {
     margin-top: 4em;

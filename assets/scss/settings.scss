@@ -1,0 +1,101 @@
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
+$mid-blue: #219EBC;
+$mid-yellow: #FFB703;
+$light-blue: #8ECAE6;
+$disabled-blue: #b0def3;
+// $dark-blue: #04496A;
+$dark-blue: #155675;
+$dark-yellow: #FB8500;
+$light-yellow: #F3CB69;
+$text: #393737;
+$tomato-orange: #F57441;
+$fade-orange: #F4895F;  
+
+.sidePanel {
+    position: fixed;
+    padding: 2em 3.5em 2em 2em;
+    background-color: #F6F4F5;
+    width: 17%;
+    height: 100vh;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.backIcon {
+    color: $text;
+}
+
+.sideTitle {
+    color: $text;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.adminImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.adminName {
+    color: $text;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.adminType {
+    color: #707070;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+hr {
+    width: 90%;
+    float: center;
+}
+
+.settingsCategory {
+    color: $text;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+}
+
+a:hover {
+    color: $mid-blue;
+    font-weight: 700;
+}
+
+.active {
+    color: $mid-blue;
+    font-weight: 700;
+}
+
+li {
+    margin-left: -15px;
+    list-style-type: none;
+}
+.mainPanel {
+    position: absolute;
+    background-color: white;
+    border-radius: 30px 0 0 30px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+    width: 85%;
+    height: 100vh;
+    float: right;
+    padding: 2em;
+    z-index: 5;
+    left: 15%;
+    overflow-x: hidden;
+
+    // header {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
+}

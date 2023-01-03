@@ -127,10 +127,14 @@ if (isset($_POST['submitBtn'])) {
         } else {
             echo "<script>alert('Something went wrong');</script>";
         }
+
+        // $isSuccessful = "SELECT * FROM `residents` WHERE `resident_id` = $residentID";
+        // if (executeQuery($isSuccessful)) {
+        //     echo '<script>document.getElementByID("modalAdded").modal("show");</script>';
+        // }
     }
 }
 
-if (isset($_POST['submitBtn']))
 
 ?>
 

@@ -1,0 +1,82 @@
+.sidePanel {
+  position: fixed;
+  padding: 2em 3.5em 2em 2em;
+  background-color: #F6F4F5;
+  width: 17%;
+  height: 100vh;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.backIcon {
+  color: #393737;
+}
+
+.sideTitle {
+  color: #393737;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.adminImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.adminName {
+  color: #393737;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.adminType {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+hr {
+  width: 90%;
+  float: center;
+}
+
+.settingsCategory {
+  color: #393737;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #707070;
+}
+
+a:hover {
+  color: #219EBC;
+  font-weight: 700;
+}
+
+.active {
+  color: #219EBC;
+  font-weight: 700;
+}
+
+li {
+  margin-left: -15px;
+  list-style-type: none;
+}
+
+.mainPanel {
+  position: absolute;
+  background-color: white;
+  border-radius: 30px 0 0 30px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  width: 85%;
+  height: 100vh;
+  float: right;
+  padding: 2em;
+  z-index: 5;
+  left: 15%;
+  overflow-x: hidden;
+}/*# sourceMappingURL=settings.css.map */
