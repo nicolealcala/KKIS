@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap");
 html {
   padding: 0;
 }
@@ -36,7 +38,7 @@ th {
 }
 
 .entryRow {
-  font-size: 1.2em;
+  font-size: 18px;
   font-weight: normal;
   padding: 0.2em;
   color: #656565;
