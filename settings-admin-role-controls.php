@@ -37,43 +37,77 @@ require "connection.php";
 
     <div class="mainPanel">
         <div class="container-fluid content">
-            <h3>Admin Role Controls</h3>
-            <table id="admins" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th class="adminHead"><input type="checkbox" class="me-2"> Name</th>
-                        <th class="adminHead">Contact No.</th>
-                        <th class="adminHead">Status</th>
-                        <th class="adminHead">Role</th>
-                        <th></th>
-                    </tr>
-                </thead>
+            <span class="mainTitle">Admin Role Controls</span>
 
-                <tbody>
-                    <?php
-                    $queryAdmin = "SELECT CONCAT(`first_name`, ' ', `last_name`) AS `full_name`, `contact_no`, `email` FROM `admins`";
-                    $getAdmin = executeQuery($queryAdmin);
-                    ?>
+            <div class="sectionDiv">
+                <table id="adminTbl" class="table table-striped  dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="adminHead"><input type="checkbox" class="me-2"> Name</th>
+                            <th class="adminHead">Email address</th>
+                            <th class="adminHead">Contact No.</th>
+                            <th class="adminHead">Status</th>
+                            <th class="adminHead">Role</th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-                    <td class="entryRow" scope="col" data-label="Name">
-                        <div class="d-flex">
-                            <input type="checkbox" class="me-3">
-                            <div class="nameCell d-flex justify-content-start align-items-center">
-                                <img class="profilePic img-fluid me-2" src="https://i.pinimg.com/originals/af/2b/9b/af2b9bfab22b964a5d5a037c538e996b.jpg" alt="">
-                                <div class="nameTxt">
-                                    <span class="adminName">Nicole</span><br>
-                                    <span class="adminEmail">nmalcala@gmail.com</span>
+                    <tbody>
+                        <?php
+                        $queryAdmin = "SELECT CONCAT(`first_name`, ' ', `last_name`) AS `full_name`, `contact_no`, `email` FROM `admins`";
+                        $getAdmin = executeQuery($queryAdmin);
+                        ?>
+
+                        <tr>
+                            <td class="entryRow" scope="col" data-label="Name">
+                                <div class="d-flex">
+                                    <input type="checkbox" class="me-3">
+                                    <div class="nameCell d-flex justify-content-start align-items-center">
+                                        <img class="profilePic img-fluid me-2" src="https://i.pinimg.com/originals/af/2b/9b/af2b9bfab22b964a5d5a037c538e996b.jpg" alt="">
+                                        <span class="rowName">Nicole Alcala</span><br>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </td>
+                            </td>
 
-                    <td class="entryRow d-flex justify-content-center align-items-center" scope="col" data-label="Contact No.">09760453721</td>
-                    <td class="entryRow" scope="col" data-label="Status">
-                        <div class="statusDiv d-flex justify-content-start align-items-center rounded-pill"><span style="font-size: 10px" class="me-1">&#9899 </span>Online</div>
-                    </td>
-                </tbody>
-            </table>
+                            <td class="entryRow" scope="col" data-label="Email">
+                                <span>nicolealcalq@gmail.com</span>
+                            </td>
+
+                            <td class="entryRow" scope="col" data-label="Contact No."><span>09760453721</span></td>
+
+                            <td class="entryRow" scope="col" data-label="Status">
+                                <div class="online d-flex justify-content-start align-items-center rounded-3">
+                                    <div class="online-dot me-1"></div> Online
+                                </div>
+
+                                <div class="offline d-flex justify-content-start align-items-center rounded-3 d-none">
+                                    <div class="offline-dot me-1"></div> Offline
+                                </div>
+                            </td>
+
+                            <td class="entryRow">
+                                <select class="form-select m-auto" name="adminRole" id="selectRole" disabled>
+                                    <option value="1">Super Administrator</option>
+                                    <option value="2">Administrator</option>
+                                    <option value="3">Staff Member</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <div class="row mx-0 gx-1">
+                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-danger"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
+                                    </div>
+
+                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-primary"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

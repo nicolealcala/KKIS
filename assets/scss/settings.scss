@@ -1,138 +1,191 @@
 $headings-font: Poppins, sans-serif;
 $content-font: DM Sans, sans-serif;
-$mid-blue: #219EBC;
-$mid-yellow: #FFB703;
-$light-blue: #8ECAE6;
+$mid-blue: #219ebc;
+$mid-yellow: #ffb703;
+$light-blue: #8ecae6;
 $disabled-blue: #b0def3;
 // $dark-blue: #04496A;
 $dark-blue: #155675;
-$dark-yellow: #FB8500;
-$light-yellow: #F3CB69;
+$dark-yellow: #fb8500;
+$light-yellow: #f3cb69;
 $text: #393737;
-$tomato-orange: #F57441;
-$fade-orange: #F4895F;  
+$tomato-orange: #f57441;
+$fade-orange: #f4895f;
 
-.settingsPanel, .sidePanel {
-    position: fixed;
-    padding: 2em 3.5em 2em 2em;
-    background-color: #F6F4F5;
-    width: 17%;
-    height: 100vh;
-    z-index: 1;
-    overflow-y: auto;
+* {
+    color: $text;
+}
+
+.settingsPanel,
+.sidePanel {
+  position: fixed;
+  padding: 2em 3.5em 2em 2em;
+  background-color: #f6f4f5;
+  width: 17%;
+  height: 100vh;
+  z-index: 1;
+  overflow-y: auto;
 }
 
 .sidePanel {
-    padding: 0;
+  padding: 0;
 }
 
 .backIcon {
-    color: $text;
+  color: $text;
 }
 
 .sideTitle {
-    color: $text;
-    font-size: 20px;
-    font-weight: 500;
+  color: $text;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .adminImg {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
 }
 
 .adminName {
-    color: $text;
-    font-size: 24px;
-    font-weight: 700;
+  color: $text;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .adminType {
-    color: #707070;
-    font-size: 16px;
-    font-weight: 400;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 hr {
-    width: 90%;
-    float: center;
+  width: 90%;
+  float: center;
 }
 
 .settingsCategory {
-    color: $text;
-    font-size: 18px;
-    font-weight: 700;
+  color: $text;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 a {
-    text-decoration: none;
-    color: #707070;
+  text-decoration: none;
+  color: #707070;
 }
 
 a:hover {
-    color: $mid-blue;
-    font-weight: 700;
+  color: $mid-blue;
+  font-weight: 700;
 }
 
 .active {
-    color: $mid-blue;
-    font-weight: 700;
+  color: $mid-blue;
+  font-weight: 700;
 }
 
 li {
-    margin-left: -15px;
-    list-style-type: none;
+  margin-left: -15px;
+  list-style-type: none;
 }
 .mainPanel {
-    position: absolute;
-    background-color: white;
-    border-radius: 30px 0 0 30px;
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.10);
-    width: 85%;
-    height: 100vh;
-    float: right;
-    padding: 2em;
-    z-index: 5;
-    left: 15%;
-    overflow-x: hidden;
+  position: absolute;
+  background-color: white;
+  border-radius: 30px 0 0 30px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  width: 85%;
+  height: 100vh;
+  float: right;
+  padding: 2em;
+  z-index: 5;
+  left: 15%;
+  overflow-x: hidden;
 
-    // header {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    // }
+  // header {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  // }
+
+  .mainTitle {
+    font-size: 20px;
+    color: $text;
+    width: 100%;
+  }
+}
+
+.sectionDiv {
+    margin-top: 50px;
 }
 
 // Admin Control
+
+table {
+  th {
+    color: $text;
+    font-weight: 500;
+  }
+
+  tr {
+    padding: 0;
+  }
+  td {
+    max-height: 100%;
+  }
+}
+
 .profilePic {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
 }
 
 .nameCell {
-    width: 100%;
+  width: 100%;
 }
 
-.adminName, .adminEmail {
-    font-size: 20px;
-    color: $text;
-    max-width: 100%;
+.rowName {
+  font-weight: 400;
+  color: $text;
+  max-width: 100%;
 }
 
 .adminEmail {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .adminHead {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.statusDiv {
-   background-color: rgba(141, 255, 171, 0.5);
-   padding: 10px;
-   width: auto;
+.online-dot,
+.offline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: rgba(0, 187, 0, 1);
 }
 
+.offline-dot {
+  background-color: #505050;
+}
+
+.online,
+.offline {
+  font-size: 16px;
+  background-color: rgba(0, 242, 0, 0.2);
+  color: rgba(0, 187, 0, 1);
+  padding: 10px;
+  width: auto;
+}
+
+.offline {
+  background-color: rgba(147, 147, 147, 0.5);
+  color: #505050;
+}
+
+.deleteIcon, .editIcon {
+    color: white;
+}
