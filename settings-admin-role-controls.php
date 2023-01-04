@@ -56,24 +56,25 @@ require "connection.php";
                         <?php
                         $queryAdmin = "SELECT CONCAT(`first_name`, ' ', `last_name`) AS `full_name`, `contact_no`, `email` FROM `admins`";
                         $getAdmin = executeQuery($queryAdmin);
-                        ?>
 
-                        <tr>
+                        while ($rowAdmin = mysqli_fetch_array($getAdmin)) {
+                            echo '
+                            <tr>
                             <td class="entryRow" scope="col" data-label="Name">
                                 <div class="d-flex">
                                     <input type="checkbox" class="me-3">
                                     <div class="nameCell d-flex justify-content-start align-items-center">
                                         <img class="profilePic img-fluid me-2" src="https://i.pinimg.com/originals/af/2b/9b/af2b9bfab22b964a5d5a037c538e996b.jpg" alt="">
-                                        <span class="rowName">Nicole Alcala</span><br>
+                                        <span class="rowName">'. $rowAdmin["full_name"] .'</span><br>
                                     </div>
                                 </div>
                             </td>
 
                             <td class="entryRow" scope="col" data-label="Email">
-                                <span>nicolealcalq@gmail.com</span>
+                                <span>'. $rowAdmin["email"] .'</span>
                             </td>
 
-                            <td class="entryRow" scope="col" data-label="Contact No."><span>09760453721</span></td>
+                            <td class="entryRow" scope="col" data-label="Contact No."><span>'. $rowAdmin["contact_no"] .'</span></td>
 
                             <td class="entryRow" scope="col" data-label="Status">
                                 <div class="online d-flex justify-content-start align-items-center rounded-3">
@@ -104,7 +105,10 @@ require "connection.php";
                                     </div>
                                 </div>
                             </td>
-                        </tr>
+                        </tr>';
+                        }
+                        ?>
+                        
                     </tbody>
                 </table>
             </div>

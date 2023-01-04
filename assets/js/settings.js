@@ -34,8 +34,8 @@ $(document).ready(function () {
   //Admin-role-controls
   var adminTbl = $('#adminTbl').DataTable({
     buttons: ["copy", "csv", "excel", "pdf", "print"],
-    // responsive: true,
-    // bFilter: true,
-    // bInfo: false
+    responsive: true,
+    bFilter: true,
+    bInfo: false
   });
 });
