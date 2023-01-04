@@ -13,13 +13,13 @@ $tomato-orange: #f57441;
 $fade-orange: #f4895f;
 
 * {
-    color: $text;
+  color: $text;
 }
 
 .settingsPanel,
 .sidePanel {
   position: fixed;
-  padding: 2em 3.5em 2em 2em;
+  padding: 0;
   background-color: #f6f4f5;
   width: 17%;
   height: 100vh;
@@ -27,8 +27,9 @@ $fade-orange: #f4895f;
   overflow-y: auto;
 }
 
-.sidePanel {
-  padding: 0;
+.settingsPanel {
+  padding: 2em 3.5em 2em 2em;
+  background: none;
 }
 
 .backIcon {
@@ -70,14 +71,23 @@ hr {
   font-weight: 700;
 }
 
+a, .fa-caret-down, #darkMode {
+  color: #707070;
+}
+
 a {
   text-decoration: none;
-  color: #707070;
+  width: 100%;
 }
 
 a:hover {
   color: $mid-blue;
   font-weight: 700;
+}
+
+#darkMode:hover {
+  font-weight: 500;
+  color: $text;
 }
 
 .active {
@@ -102,12 +112,6 @@ li {
   left: 15%;
   overflow-x: hidden;
 
-  // header {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  // }
-
   .mainTitle {
     font-size: 20px;
     color: $text;
@@ -116,11 +120,11 @@ li {
 }
 
 .sectionDiv {
-    margin-top: 50px;
+  padding: auto;
+  margin-top: 50px;
 }
 
 // Admin Control
-
 table {
   th {
     color: $text;
@@ -128,10 +132,12 @@ table {
   }
 
   tr {
-    padding: 0;
+    vertical-align: center;
   }
+
   td {
-    max-height: 100%;
+    // height: 100%;
+    vertical-align: center;
   }
 }
 
@@ -149,7 +155,7 @@ table {
 .rowName {
   font-weight: 400;
   color: $text;
-  max-width: 100%;
+  width: 100%;
 }
 
 .adminEmail {
@@ -158,6 +164,15 @@ table {
 
 .adminHead {
   font-size: 18px;
+}
+
+.online,
+.offline {
+  font-size: 16px;
+  background-color: rgba(0, 242, 0, 0.2);
+  color: rgba(0, 187, 0, 1);
+  padding: 8px;
+  width: 80px;
 }
 
 .online-dot,
@@ -172,20 +187,102 @@ table {
   background-color: #505050;
 }
 
-.online,
-.offline {
-  font-size: 16px;
-  background-color: rgba(0, 242, 0, 0.2);
-  color: rgba(0, 187, 0, 1);
-  padding: 10px 5px;
-  width: 16px;
-}
-
 .offline {
   background-color: rgba(147, 147, 147, 0.5);
   color: #505050;
 }
 
-.deleteIcon, .editIcon {
-    color: white;
+#onlineTxt {
+  color: rgba(0, 187, 0, 1);
+  width: auto;
+}
+
+#offlineTxt {
+  color: #505050;
+  width: auto;
+}
+
+.deleteIcon,
+.editIcon {
+  color: white;
+}
+
+.modal-backdrop {
+  z-index: -1;
+}
+//Themes
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 17px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// Responsiveness
+@media only screen and (max-width: 992px) {
+  .sidePanel {
+    width: 0;
+  }
+  .mainPanel {
+    position: absolute;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100vw;
+    height: 100vh;
+    padding: 2em;
+    z-index: 5;
+  }
 }

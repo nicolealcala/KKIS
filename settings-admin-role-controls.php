@@ -29,7 +29,7 @@ require "connection.php";
 </head>
 
 <body>
-    <div class="sidePanel">
+    <div class="sidePanel d-none d-lg-flex">
         <?php
         include "settings.php";
         ?>
@@ -37,10 +37,11 @@ require "connection.php";
 
     <div class="mainPanel">
         <div class="container-fluid content">
+            <i role="button" class="backIcon fa-solid fa-arrow-left me-3 d-lg-none"></i>
             <span class="mainTitle">Admin Role Controls</span>
 
             <div class="sectionDiv">
-                <table id="adminTbl" class="table table-striped  dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0">
+                <table id="adminTbl" class="table table-striped  dataTable display nowrap no-footer dtr-inline collapsed" role="grid" cellspacing="0">
                     <thead>
                         <tr>
                             <th class="adminHead"><input type="checkbox" class="me-2"> Name</th>
@@ -64,25 +65,25 @@ require "connection.php";
                                 <div class="d-flex">
                                     <input type="checkbox" class="me-3">
                                     <div class="nameCell d-flex justify-content-start align-items-center">
-                                        <img class="profilePic img-fluid me-2" src="https://i.pinimg.com/originals/af/2b/9b/af2b9bfab22b964a5d5a037c538e996b.jpg" alt="">
-                                        <span class="rowName">'. $rowAdmin["full_name"] .'</span><br>
+                                        <img class="profilePic img-fluid me-2" src="assets/img/misc/defaultProfilePic.png" alt="">
+                                        <span class="rowName">' . $rowAdmin["full_name"] . '</span><br>
                                     </div>
                                 </div>
                             </td>
 
                             <td class="entryRow" scope="col" data-label="Email">
-                                <span>'. $rowAdmin["email"] .'</span>
+                            <div style="width: 100%; height: 100%;"><span class="my-auto">' . $rowAdmin["email"] . '</span></div>
                             </td>
 
-                            <td class="entryRow" scope="col" data-label="Contact No."><span>'. $rowAdmin["contact_no"] .'</span></td>
+                            <td class="entryRow" scope="col" data-label="Contact No."><div class="h-100 d-flex align-items-center">' . $rowAdmin["contact_no"] . '</div></td>
 
                             <td class="entryRow" scope="col" data-label="Status">
                                 <div class="online d-flex justify-content-start align-items-center rounded-3">
-                                    <div class="online-dot me-1"></div> Online
+                                   <div class="online-dot me-1"></div><span id="onlineTxt">Online</span>
                                 </div>
 
                                 <div class="offline d-flex justify-content-start align-items-center rounded-3 d-none">
-                                    <div class="offline-dot me-1"></div> Offline
+                                    <div class="offline-dot me-1"></div><span id="offlineTxt">Offline</span>
                                 </div>
                             </td>
 
@@ -97,21 +98,42 @@ require "connection.php";
                             <td>
                                 <div class="row mx-0 gx-1">
                                     <div class="col-6 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
+                                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#warning-modal" id="deleteBtn"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
                                     </div>
 
                                     <div class="col-6 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-primary"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn btn-primary" id="editBtn"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
                                     </div>
                                 </div>
                             </td>
                         </tr>';
                         }
                         ?>
-                        
+
                     </tbody>
                 </table>
+
+                <!-- Modal Warning -->
+                <div class="modal fade" tabindex="-1" id="warning-modal">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Warning!</h5>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body">
+                                <p>Deleting an existing record will completely remove the data from the database. Are you sure you want to proceed?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary">Proceed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
     </div>
 
@@ -128,6 +150,13 @@ require "connection.php";
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>
+
+    <!-- Active page -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#admins-link").addClass('active');
+        });
+    </script>
 </body>
 
 </html>
