@@ -38,10 +38,9 @@ th {
 }
 
 .entryRow {
-  vertical-align: center;
   font-size: 16px;
   font-weight: normal;
-  padding: 0.2em;
+  padding: auto;
   color: #656565;
 }
 
