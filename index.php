@@ -109,10 +109,10 @@
                         <!-- Fields -->
                         <div class="row gx-3 gy-3 fieldRow">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <input class="form-control" type="text" name="firstName" placeholder="First Name" required>
+                                <input class="form-control text-capitalize" type="text" name="firstName" placeholder="First Name" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <input class="form-control" type="text" name="lastName" placeholder="Last Name" required>
+                                <input class="form-control text-capitalize" type="text" name="lastName" placeholder="Last Name" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                 <input class="form-control" type="date" name="birthday" placeholder="Birthday" required>
