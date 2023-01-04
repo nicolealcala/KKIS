@@ -1,4 +1,5 @@
 $(document).ready(function () {
+ //Settings Panel
   $("#userManual-link").click(function () {
     $("#userManual-link").addClass("active");
     $("a").not(this).removeClass("active");
@@ -36,6 +37,7 @@ $(document).ready(function () {
     $(".mainPanel").css("background-color: #14121E");
   })
 
+  //Access control 
   // Admin-role-controls
   $("#adminTbl").DataTable({
     buttons: ["copy", "csv", "excel", "pdf", "print"],
@@ -43,6 +45,14 @@ $(document).ready(function () {
     bInfo: false,
     paging: false,
   });
+
+  $("#editBtn").click(function(){
+    $('#selectRole').removeAttr("disabled");
+  })
+
+  if($('select option').is(":selected")) {
+    $(this).closest('tr').find('td select').attr("disabled", "disabled");
+  }
 
 });
 

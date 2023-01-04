@@ -102,7 +102,7 @@ require "connection.php";
                                     </div>
 
                                     <div class="col-6 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-primary"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn btn-primary" id="editBtn"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
                                     </div>
                                 </div>
                             </td>
