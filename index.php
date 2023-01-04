@@ -3,11 +3,15 @@
 
   include 'connection.php';
 
+
   session_start();
   session_destroy();
   session_start();
+  
 
   include 'controller.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
     <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="assets/scss/animatedBG.css">
     <link rel="stylesheet" href="assets/scss/index.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     
@@ -31,8 +36,13 @@
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
 
-<body style="background: url(&quot;assets/img/misc/background.webp&quot;)">
+<body>
     
+<div class="header">
+
+<!--Content before waves-->
+<div class="inner-header flex">
+
     <div id="index-wrapper">
         <div class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
             <!-- Log in -->
@@ -179,6 +189,30 @@
             </div>
         </div>
     </div>
+
+
+    </div>
+
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave"
+                    d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+
+    </div>
+  
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
