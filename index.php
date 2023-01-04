@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="assets/scss/animatedBG.css">
+    <link rel="stylesheet" href="assets/css/animatedBG.css">
     <link rel="stylesheet" href="assets/scss/index.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     
