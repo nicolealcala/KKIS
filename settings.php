@@ -24,8 +24,10 @@
 <body>
   <div class="settingsPanel">
     <div class="settings d-flex justify-content-start align-items-center">
-      <i role="button" class="backIcon fa-solid fa-arrow-left me-3"></i>
-      <span class="sideTitle">Settings</span>
+      <a href="./addEntry.php" id="settings-back">
+        <i role="button" class="backIcon fa-solid fa-arrow-left me-3"></i>
+        <span class="sideTitle">Settings</span>
+      </a>
     </div>
 
     <div class="userType row mx-0 mt-4 mb-5 gy-3">

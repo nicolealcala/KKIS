@@ -4,12 +4,6 @@ $(document).ready(function () {
     $("a").not(this).removeClass("active");
   });
 
-  if ($("#dark-toggle").is(":checked") || $("#dark-toggle").is(":focus")) {
-    $(".slider").css("background-color: #2196F3");
-    $(".sidePanel").css("background-color: #1A1E23");
-    $(".mainPanel").css("background-color: #14121E");
-  }
-
   $("#FAQs-link").click(function () {
     $("#FAQs-link").addClass("active");
     $("a").not(this).removeClass("active");
@@ -30,13 +24,25 @@ $(document).ready(function () {
     $("a").not(this).removeClass("active");
   });
 
+  if ($("#dark-toggle").is(":checked") || $("#dark-toggle").is(":focus")) {
+    $(".slider").css("background-color: #2196F3");
+    $(".sidePanel").css("background-color: #1A1E23");
+    $(".mainPanel").css("background-color: #14121E");
+  }
+
+  $("#dark-toggle").change(function(){
+    $(".slider").css("background-color: #2196F3");
+    $(".sidePanel").css("background-color: #1A1E23");
+    $(".mainPanel").css("background-color: #14121E");
+  })
+
   // Admin-role-controls
-  // $("#adminTbl").DataTable({
-  //   buttons: ["copy", "csv", "excel", "pdf", "print"],
-  //   bFilter: false,
-  //   bInfo: false,
-  //   paging: false,
-  // });
+  $("#adminTbl").DataTable({
+    buttons: ["copy", "csv", "excel", "pdf", "print"],
+    bFilter: false,
+    bInfo: false,
+    paging: false,
+  });
 
 });
 
