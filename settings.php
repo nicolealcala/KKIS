@@ -73,6 +73,11 @@
           </div>
         </div>
 
+        <!-- Change Password -->
+        <div class="col-12 pe-0">
+          <a href="./settings-change-password.php" id="FAQs-link">Change Password</a>
+        </div>
+
         <!-- FAQs Page -->
         <div class="col-12 pe-0">
           <a href="./settings-FAQs.php" id="FAQs-link">FAQs</a>

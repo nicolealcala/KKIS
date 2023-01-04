@@ -61,7 +61,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="#" class="d-flex justify-content-start align-items-center" id="add-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-3">
-                        <i class="icon fa-solid fa-user-plus"></i>
+                        <i class="icon fa-solid fa-user-plus"></i>  
                     </div>
                     <span class="linkTitle" id="add-txt">Add New Entry</span>
                 </a>
