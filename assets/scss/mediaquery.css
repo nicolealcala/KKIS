@@ -8,10 +8,6 @@ body {
   height: 100%;
 }
 
-header {
-  margin: 0;
-}
-
 .headerRow {
   margin: 2em 4em 1em 4em;
 }
@@ -96,10 +92,6 @@ a {
 
 .dashCategories {
   margin-top: 4em;
-}
-
-#remarkDrop, #disabilitySelect, #filtering {
-  max-width: 100%;
 }
 
 .vscomp-ele-wrapper {

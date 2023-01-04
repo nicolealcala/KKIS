@@ -21,7 +21,7 @@ $(document).ready(function () {
   });
 
   $("#dev-link").click(function () {
-    $("#Dev-link").addClass("active");
+    $("#dev-link").addClass("active");
     $("a").not(this).removeClass("active");
   });
 

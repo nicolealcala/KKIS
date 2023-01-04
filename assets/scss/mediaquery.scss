@@ -25,11 +25,6 @@ body {
     height: 100%;
 }
 
-header {
-    // background-color: rgba(178, 200, 214, 0.25);     //sidenav
-    margin: 0;
-}
-
 .headerRow {
     margin: 2em 4em 1em 4em;
     #hamburger {
@@ -131,9 +126,7 @@ a {
 }
 
 
-#remarkDrop, #disabilitySelect, #filtering{   
-    max-width: 100%;
-}
+
 
 .vscomp-ele-wrapper{
     margin-top: 0;

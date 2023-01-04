@@ -1,0 +1,152 @@
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
+$mid-blue: #219ebc;
+$mid-yellow: #ffb703;
+$light-blue: #8ecae6;
+$disabled-blue: #b0def3;
+// $dark-blue: #04496A;
+$dark-blue: #155675;
+$dark-yellow: #fb8500;
+$light-yellow: #f3cb69;
+$text: #393737;
+$tomato-orange: #f57441;
+$fade-orange: #f4895f;
+
+* {
+  font-family: $content-font;
+  color: $text;
+}
+
+.sideNav,
+.leftPanel {
+  position: fixed;
+  padding: 0;
+  background-color: $dark-blue;
+  width: 17%;
+  height: 100vh;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.sideNav {
+  padding: 0.5em 3.5em 2em 2em;
+  background: $dark-blue;
+}
+
+#logoContainer {
+  width: 55px;
+  height: 55px;
+}
+
+#logoTxt {
+  margin-left: 10px;
+  width: auto;
+  font-family: "Gotham Black";
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+hr {
+  color: #b8bac9;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-active {
+  color: $light-yellow;
+  font-weight: 700;
+}
+
+.iconContainer {
+  width: 30px;
+  height: 30px;
+}
+.icon,
+.linkTitle {
+  font-size: 25px;
+  color: #b8bac9;
+}
+.linkTitle {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+}
+
+#botOptions {
+  margin-top: 180px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+//Main Container
+.mainContainer {
+  position: absolute;
+  background-color: white;
+  border-radius: 30px 0 0 30px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  width: 85%;
+  height: 100vh;
+  float: right;
+  padding: 2em;
+  z-index: 5;
+  left: 15%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  header {
+    background-color: rgba(178, 200, 214, 0.25);
+    width: 100%;
+    height: 115px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+
+  #headerRow {
+    vertical-align: middle;
+    padding: 38px 42px;
+
+    #hamburger,
+    #close,
+    .pageTitle {
+      color: $dark-blue;
+      font-size: 24px;
+    }
+
+    .pageTitle {
+      font-family: $content-font;
+      font-weight: 500;
+      font-size: 26px;
+    }
+
+    .accountType {
+      color: $tomato-orange;
+    }
+  }
+
+  #headerHR {
+    background-image: linear-gradient(90deg, $light-blue, $mid-yellow);
+    border: 0;
+    height: 5px;
+    opacity: 100%;
+    margin-top: 0;
+    transition: 0.5s;
+  }
+
+  .content {
+    margin-top: 120px;
+
+    #remarkDrop,
+    #disabilitySelect,
+    #filtering {
+      max-width: 100%;
+    }
+  }
+}
