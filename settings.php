@@ -47,7 +47,7 @@
         </div>
         <!-- User Manual Page -->
         <div class="col-12 d-block align-items-center pe-0">
-          <a href="#tableOfContents" class="mx-0" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="tableOfContents" id="userManual-link">User Manual
+          <!-- <a href="./settings-user-manual.php" class="mx-0" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="tableOfContents" id="userManual-link">User Manual
             <i class="fa-solid fa-caret-down ms-2"></i>
             <i class="fa-solid fa-caret-up ms-2 d-none"></i>
           </a>
@@ -57,21 +57,23 @@
               <li>Manual 2</li>
               <li>Manual 3</li>
             </ul>
+          </div> -->
+          <a href="./settings-user-manual.php" id="userManual-link">User Manual</a>
+          <span class="drop-arrow" role="button" data-bs-toggle="collapse" data-bs-target="#tableOfContents" aria-expanded="false" aria-controls="tableOfContents">
+            <i class="fa-solid fa-caret-down ms-2"></i>
+          </span>
+          <div class="collapse" id="tableOfContents">
+            <ul class="my-1">
+              <li>Manual 1</li>
+              <li>Manual 2</li>
+              <li>Manual 3</li>
+            </ul>
           </div>
-        </div>
-
-        <div class="col-12 d-flex align-items-center justify-content-start pe-0">
-          <label class="d-flex align-items-center" role="" id="themes-link" for="themes-toggle">Themes
-            <label class="switch ms-2">
-              <input type="checkbox" id="themes-toggle">
-              <span class="slider round"></span>
-            </label>
-          </label>
         </div>
 
         <!-- FAQs Page -->
         <div class="col-12 pe-0">
-          <a href="#" id="FAQs-link">FAQs</a>
+          <a href="./settings-FAQs.php" id="FAQs-link">FAQs</a>
         </div>
       </div>
     </div>
@@ -97,12 +99,23 @@
           <span class="settingsCategory">About</span>
         </div>
         <div class="col-12 pe-0">
-          <a href="#" id="systemInfo-link">System Information</a>
+          <a href="./settings-system-info.php" id="systemInfo-link">System Information</a>
         </div>
         <div class="col-12 pe-0">
-          <a href="#" id="Dev-link">Developers</a>
+          <a href="./settings-developers.php" id="dev-link">Developers</a>
         </div>
       </div>
+    </div>
+
+    <hr>
+
+    <div class="col-12 d-flex align-items-center justify-content-start pe-0">
+      <label class="d-flex align-items-center" role="" id="darkMode" for="dark-toggle">Dark Mode
+        <label class="switch ms-2">
+          <input type="checkbox" id="dark-toggle">
+          <span class="slider round"></span>
+        </label>
+      </label>
     </div>
   </div>
 

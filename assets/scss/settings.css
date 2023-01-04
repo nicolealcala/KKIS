@@ -57,17 +57,23 @@ hr {
   font-weight: 700;
 }
 
-a,
-#themes-link {
-  text-decoration: none;
+a, .fa-caret-down, #darkMode {
   color: #707070;
+}
+
+a {
+  text-decoration: none;
   width: 100%;
 }
 
-a:hover,
-#themes-link:hover {
+a:hover {
   color: #219ebc;
   font-weight: 700;
+}
+
+#darkMode:hover {
+  font-weight: 500;
+  color: #393737;
 }
 
 .active {

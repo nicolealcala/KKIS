@@ -150,6 +150,13 @@ require "connection.php";
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>
+
+    <!-- Active page -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#admins-link").addClass('active');
+        });
+    </script>
 </body>
 
 </html>

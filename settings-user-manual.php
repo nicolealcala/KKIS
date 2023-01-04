@@ -22,6 +22,8 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+
+    
 </head>
 
 <body>
@@ -38,18 +40,18 @@
 
             <!-- Content 1 -->
             <div class="sectionDiv">
-               <!-- CONTENT STARTS HERE -->
+                <!-- CONTENT STARTS HERE -->
             </div>
 
             <!-- Content 2 -->
             <div class="sectionDiv">
-               <!-- CONTENT STARTS HERE -->
+                <!-- CONTENT STARTS HERE -->
             </div>
 
 
             <!-- so on... -->
             <div class="sectionDiv">
-               <!-- CONTENT STARTS HERE -->
+                <!-- CONTENT STARTS HERE -->
             </div>
         </div>
     </div>
@@ -67,6 +69,13 @@
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>
+    
+    <!-- Active page -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#userManual-link").addClass('active');
+        });
+    </script>
 </body>
 
 </html>

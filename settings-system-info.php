@@ -57,6 +57,13 @@
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>
+
+    <!-- Active page -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#systemInfo-link").addClass('active');
+        });
+    </script>
 </body>
 
 </html>
