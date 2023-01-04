@@ -68,17 +68,6 @@
   margin-left: 0.7em;
 }
 
-.vscomp-ele-wrapper {
-  margin-top: 0;
-}
-.vscomp-ele-wrapper .vscomp-toggle-button {
-  color: #393737;
-  width: 100%;
-  border: 1.5px solid #D1D3E2;
-  border-radius: 6px;
-  box-shadow: none;
-}
-
 .controlBtn {
   margin-top: 2em;
   font-size: large;

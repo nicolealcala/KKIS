@@ -1,17 +1,17 @@
 $(document).ready(function () {
   //for clicking Overview
-  $("#families").on("click", function () {
+  $("#menu1").on("click", function () {
     $("#familiesBody").removeClass("d-none");
     $("#overviewBody").addClass("d-none");
-    $("#families").addClass("clicked");
-    $("#overview").removeClass("clicked");
+    $("#menu1").addClass("menu-active");
+    $("#menu2").removeClass("menu-active");
   });
 
-  $("#overview").click(function () {
+  $("#menu2").click(function () {
     $("#overviewBody").removeClass("d-none");
     $("#familiesBody").addClass("d-none");
-    $("#overview").addClass("clicked");
-    $("#families").removeClass("clicked");
+    $("#menu2").addClass("menu-active");
+    $("#menu1").removeClass("menu-active");
   });
 
   //Data Table
@@ -22,7 +22,12 @@ $(document).ready(function () {
     bInfo: false,
     columnDefs: [
         { "width": "10%", "targets": 0 },
-        { "width": "30%", "targets": 1 }
+        { "width": "25%", "targets": 1 },
+        { "width": "10%", "targets": 2 },
+        { "width": "10%", "targets": 3 },
+        { "width": "15%", "targets": 4 },
+        { "width": "15%", "targets": 5 },
+        { "width": "15%", "targets": 6 }
       ]
   });
 

@@ -82,7 +82,6 @@ a {
 
 a:hover {
   color: $mid-blue;
-  font-weight: 700;
 }
 
 #darkMode:hover {
@@ -99,6 +98,7 @@ li {
   margin-left: -15px;
   list-style-type: none;
 }
+
 .mainPanel {
   position: absolute;
   background-color: white;

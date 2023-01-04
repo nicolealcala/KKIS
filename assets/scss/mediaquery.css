@@ -1,66 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap");
-html {
-  padding: 0;
-}
-
-body {
-  height: 100%;
-}
-
-.headerRow {
-  margin: 2em 4em 1em 4em;
-}
-.headerRow #hamburger {
-  color: #155675;
-  cursor: pointer;
-  margin-right: 1.3em;
-  font-size: 2.5em;
-}
-.headerRow .title {
-  font-size: 24px;
-  font: 100% DM Sans, sans-serif;
-  color: #155675;
-}
-.headerRow .accountType {
-  color: #F4895F;
-  font-size: 20px;
-  font-weight: 300;
-  width: auto;
-}
-
-th {
-  font-size: 1.3em;
-}
-
-.entryRow {
-  font-size: 16px;
-  font-weight: normal;
-  padding: auto;
-  color: #656565;
-}
-
 * {
   font: 100% DM Sans, sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-.menuBtn {
-  width: auto;
-  padding: 0.3em 1em;
-  background-color: white;
-  border: 2px solid #155675;
-  color: #155675;
-  font-size: 1.1em;
-  font-weight: 500;
-}
-
-.clicked {
-  background-color: #155675;
-  color: white;
 }
 
 .actionBtn {
@@ -79,11 +20,7 @@ a {
   background-color: #1d4e89;
 }
 
-.menu1 {
-  margin-right: 1em;
-}
-
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .minorLbl, #whiteLbl, .mcCount, .percentage {
+.fieldLabel, .subTitle, .btnText, .minorLbl, #whiteLbl, .mcCount, .percentage {
   white-space: nowrap;
   width: 88%;
   overflow: hidden;
@@ -92,64 +29,6 @@ a {
 
 .dashCategories {
   margin-top: 4em;
-}
-
-.vscomp-ele-wrapper {
-  margin-top: 0;
-}
-.vscomp-ele-wrapper .vscomp-toggle-button {
-  color: #393737;
-  width: 100%;
-  border: 1.5px solid #D1D3E2;
-  border-radius: 6px;
-  box-shadow: none;
-}
-
-.headTitle {
-  background-color: #219EBC;
-  color: white;
-  justify-content: start;
-}
-
-.dt-buttons {
-  margin-right: 2em;
-}
-
-.btn-secondary {
-  max-width: 100%;
-  border: none;
-  background-color: #F57441;
-  color: white;
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-  background-color: #f0571f;
-  color: white;
-}
-
-.btn-secondary:focus {
-  font-weight: 500;
-}
-
-.paginate_button {
-  margin: 0.1em;
-}
-
-.dataTables_paginate {
-  display: flex;
-  justify-content: end;
-}
-
-.dataTables_length, .dataTables_filter {
-  max-height: 100%;
-}
-.dataTables_length label, .dataTables_filter label {
-  display: flex;
-  align-items: center;
-}
-.dataTables_length label select, .dataTables_length label input, .dataTables_filter label select, .dataTables_filter label input {
-  margin: 0 0.5em;
-  height: auto;
 }
 
 @media screen and (min-width: 992px) and (max-width: 7680px) {

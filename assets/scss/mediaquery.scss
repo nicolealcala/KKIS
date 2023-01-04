@@ -16,78 +16,10 @@ $tomato-orange: #F57441;
 $fade-orange: #F4895F;  
 
 //All pages
-html {
-    padding: 0;
-    // background-color: rgba(178, 200, 214, 0.25);     //sidenav
-}
-
-body {
-    height: 100%;
-}
-
-.headerRow {
-    margin: 2em 4em 1em 4em;
-    #hamburger {
-        color: $dark-blue;
-        cursor: pointer;
-        margin-right: 1.3em;
-        font-size: 2.5em;
-    }
-
-    .title {
-        // width: auto;
-        font-size: 24px;
-        font: 100% $content-font;
-        color: $dark-blue;
-
-    }
-
-    .accountType {
-        color: $fade-orange;
-        font-size: 20px;
-        font-weight: 300;
-        width: auto;
-        // position: fixed;
-        // top: 40px;
-        // right: 100px;
-    }
-}
-
-th {
-    font-size: 1.3em;
-}
-
-.entryRow {
-    font-size: 16px;
-    font-weight: normal;
-    padding: auto;
-    color: #656565;
-}
-
 * {
     font: 100% $content-font;
 }
 
-a {
-    text-decoration: none;
-}
-
-//Pages with menu buttons
-.menuBtn {
-    width: auto;
-    padding: 0.3em 1em;
-    // height: 3em;
-    background-color: white;
-    border: 2px solid $dark-blue;
-    color: $dark-blue;
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-.clicked {
-    background-color: $dark-blue;
-    color: white;
-}
 
 //Pages with ActionButtons
 .actionBtn {
@@ -106,90 +38,17 @@ a {
     background-color: #1d4e89;
 }
 
-//Declared Households, Profiles
-.menu1 {
-    margin-right: 1em;
-}
-
 //Add, Update, Declared Households, Transaction History, Dashboard, KKID
-.fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle, .subTitle, .accountType, .btnText, .minorLbl, #whiteLbl, .mcCount, .percentage{
+.fieldLabel, .subTitle, .btnText, .minorLbl, #whiteLbl, .mcCount, .percentage{
     white-space: nowrap; 
     width: 88%; 
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-
-
 .dashCategories {
     margin-top: 4em;
 }
-
-
-
-
-.vscomp-ele-wrapper{
-    margin-top: 0;
-
-    .vscomp-toggle-button{
-        color: $text;
-        width: 100%;
-        border: 1.5px solid #D1D3E2;
-        border-radius: 6px;
-        box-shadow: none;
-    }
-}
-
-.headTitle {
-    background-color: $mid-blue;
-    color: white;
-    justify-content: start;
-}
-
-//Data Tables Config
-.dt-buttons {
-    margin-right: 2em;
-}
-
-.btn-secondary {
-    max-width: 100%;
-    border: none;
-    background-color: $tomato-orange;
-    color: white;
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-    background-color: #f0571f;
-    color: white;
-}
-
-.btn-secondary:focus {
-    font-weight: 500;
-}
-
-//Data Table controller
-.paginate_button {
-    margin: 0.1em;
-}
-.dataTables_paginate {
-    display: flex;
-    justify-content: end;
-}
-
-.dataTables_length, .dataTables_filter {
-    max-height: 100%;
-    label {
-        display: flex;
-        align-items: center;
-            
-        select, input {
-            margin: 0 0.5em;
-            height: auto;
-        }
-    }
-}
-
-
 
 @media screen and (min-width:992px) and (max-width:7680px){ //LG
     //Sa 1260px nagsisimulang mag-ajust ung contents papunta sa right pag nakaexpand sideNav
