@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAUA,AACI,gBADY,CACZ,YAAY,AAAA,CACR,UAAU,CAAE,KAAK,CACjB,gBAAgB,CATX,OAAO,CAUZ,MAAM,CAAE,IAAI,CACZ,MAAM,CAAE,GAAG,CACX,KAAK,CAAE,GAAG,CACV,aAAa,CAAE,GAAG,CAMrB,AAbL,AASQ,gBATQ,CACZ,YAAY,AAQP,MAAM,AAAA,CACH,gBAAgB,CAlBjB,OAAO,CAmBT",
+    "sources": [
+        "../assets/scss/tables.scss"
+    ],
+    "names": [],
+    "file": "tables.min.css"
+}

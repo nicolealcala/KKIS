@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AA0BA,AAAA,CAAC,AAAC,CACE,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACf",
+    "sources": [
+        "../assets/scss/profiles.scss"
+    ],
+    "names": [],
+    "file": "profiles.min.css"
+}

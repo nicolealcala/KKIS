@@ -64,10 +64,21 @@ a, .fa-caret-down, #darkMode {
 a {
   text-decoration: none;
   width: 100%;
+  font-size: small;
+  color: #155675;
 }
 
 a:hover {
   color: #219ebc;
+}
+
+span {
+  color: #219ebc;
+  font-weight: bold;
+}
+
+i {
+  color: #ffb703;
 }
 
 #darkMode:hover {
@@ -107,6 +118,7 @@ li {
 .sectionDiv {
   padding: auto;
   margin-top: 50px;
+  font-family: DM Sans;
 }
 
 table th {
