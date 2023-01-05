@@ -88,7 +88,7 @@ footer {
   background-color: white;
   border-radius: 30px 0 0 30px;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
-  width: auto;
+  width: 85%;
   height: 100vh;
   float: right;
   padding: 2em;
@@ -115,7 +115,7 @@ footer {
 
 #mdHeader {
   width: 100vw;
-  height: 100px;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -124,12 +124,13 @@ footer {
 
 nav {
   width: 100%;
-  height: auto;
+  height: 80px;
   box-shadow: 0 2px 5px rgba(178, 200, 214, 0.25);
   z-index: 99;
 }
 nav .container-fluid {
   width: 95%;
+  height: 100%;
 }
 nav .container-fluid .navbar-brand {
   font-family: "Gotham Black";
@@ -373,8 +374,12 @@ ul.pagination {
   }
 }
 @media screen and (max-width: 330px) {
+  nav .container-fluid {
+    width: 100%;
+    padding: 0 15px;
+  }
   nav .container-fluid .navbar-brand {
-    font-size: 35px;
+    font-size: 30px;
   }
   .full-width {
     padding: 20px 0;
@@ -386,6 +391,17 @@ ul.pagination {
   }
   .markerDiv {
     height: 30px;
-    font-size: 15px;
+    font-size: 18px;
+  }
+  .markerDiv label {
+    font-size: 16px;
+    padding: 0;
+  }
+  .card {
+    padding: 10px;
+    box-shadow: 0 3px 5px #e3e3e3;
+  }
+  #menuRow {
+    display: none;
   }
 }/*# sourceMappingURL=sideMenu.css.map */

@@ -24,7 +24,7 @@
 <body>
   <div class="settingsPanel">
     <div class="settings d-flex justify-content-start align-items-center">
-      <a href="./addEntry.php" id="settings-back">
+      <a href="./dashboard.php" id="settings-back">
         <i role="button" class="backIcon fa-solid fa-arrow-left me-3"></i>
         <span class="sideTitle">Settings</span>
       </a>

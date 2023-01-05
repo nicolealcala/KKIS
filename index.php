@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                 <div class="card-body">
                     <div class="row m-0 w-100">
                         <div class="col-12 d-flex justify-content-center">
-                            <img src="assets/img/logos/LOGO.png" alt="KKIS-Logo" class="img-fluid logo">
+                            <img src="assets/img/logos/kkis-logo.png" alt="KKIS-Logo">
                         </div>
                     </div>
                     <div class="row m-0 d-flex justify-content-center">

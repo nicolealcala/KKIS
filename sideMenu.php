@@ -114,7 +114,7 @@
     <!-- SMALL SCREEN NAV -->
     <nav class="d-flex d-lg-none navbar navbar-expand-lg navbar-light" id="smallNav">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#"><img class="me-3" src="assets/img/logos/kkis-brand.png" alt="">KKIS</a>
+            <a class="navbar-brand d-flex align-items-center" href="#"><img class="me-1" src="assets/img/logos/kkis-brand.svg" alt="" width="50px" height="50px">KKIS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -318,7 +318,7 @@ if (isset($_POST['submitBtn'])) {
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
                             <div class="card p-3" id="educCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
-                                    <label class="d-flex align-items-center">
+                                    <label class="d-flex align-items-center justify-content-start">
                                         <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked>
                                         Educational Status
                                     </label>

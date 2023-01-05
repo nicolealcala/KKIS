@@ -69,37 +69,29 @@ $fade-orange: #F4895F;
         width: 1.5em;
         height: 1.5em;
     }
-    //Add, Update
-    .eStatus {
-        margin-top: 1em;
-    }
 
     #educCard, #employCard {
         margin: 0;
     }
     //Add, Update
-    .markerText, .subTitle{
-        font-size: 1.3em;
-    }
+    // .markerText, .subTitle{
+    //     font-size: 1.3em;
+    // }
     //KabataanProfile
-    .sortSearch {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 
     //Index
-    .indexContent{
-        padding: 1em;
+    // .indexContent{
+    //     padding: 1em;
 
-        .card-body{
-            margin: 0;
-        }
+    //     .card-body{
+    //         margin: 0;
+    //     }
 
-        #loginCard, #signupCard, #forgotPassCard{
-            width: auto;
-        }
-    }
+    //     #loginCard, #signupCard, #forgotPassCard{
+    //         width: auto;
+    //     }
+    // }
 }
 
 
@@ -121,142 +113,95 @@ $fade-orange: #F4895F;
         font-size: 1.2em;
     }
 
-    //Declared households
-    #familiesBody, #overviewBody {
-        margin: 1em;
-    }
-
     //KKID 
-    .kkidBody  {
-        .categoryCol {
-            .categoryDiv{
-                margin-left: 0;
+    // .kkidBody  {
+    //     .categoryCol {
+    //         .categoryDiv{
+    //             margin-left: 0;
             
-                .categoryOption{
-                    width: 100%;
-                }
+    //             .categoryOption{
+    //                 width: 100%;
+    //             }
                 
-                .categoryLbl {
-                    font-size: 1em;
-                    margin-left: 1px;
-                }
-            }
-            .categoryOption {
-                width: 100%;
-            }
-            .customCategory {
-                width: 100%;
-            }
-        }
-    }
-    //Transaction History
-    .topBtnLbl{
-        display: none;
-    }
-
-    .accordHead{
-        color: #858796;
-        font-size: 1em;
-    }
+    //             .categoryLbl {
+    //                 font-size: 1em;
+    //                 margin-left: 1px;
+    //             }
+    //         }
+    //         .categoryOption {
+    //             width: 100%;
+    //         }
+    //         .customCategory {
+    //             width: 100%;
+    //         }
+    //     }
+    // }
 
     //Index
-    .indexContent {
-        padding: 0.5em;
-        margin: 0.5em;
+    // .indexContent {
+    //     padding: 0.5em;
+    //     margin: 0.5em;
 
-        .card {
-            .card-body{
-                .fieldRow{
-                    margin: 0.3em;
-                }
-            }
-        }
-    }
+    //     .card {
+    //         .card-body{
+    //             .fieldRow{
+    //                 margin: 0.3em;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 @media screen and (min-width: 431px) and (max-width: 575px) { //XS
 
-    .fieldLabel, .educFieldLabel, .employFieldLabel, .menuTitle{
-        white-space: nowrap; 
-        width: 70%; 
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
-
-    //Declared Households
-    .divNav .slider {
-        width: 40%;
-    } 
     
     //Index
-    .indexContent {
-        .card {
-            width: auto;
-            margin: 1em;
+    // .indexContent {
+    //     .card {
+    //         width: auto;
+    //         margin: 1em;
             
-            .card-body {
-                margin: 0;
-                padding: 0.5em 0;
+    //         .card-body {
+    //             margin: 0;
+    //             padding: 0.5em 0;
 
-                .cardHead {
-                    font-size: 1.5em;
-                    margin: 0.1em;
-                }
+    //             .cardHead {
+    //                 font-size: 1.5em;
+    //                 margin: 0.1em;
+    //             }
 
-                .fieldRow{
-                    margin: 0.3em 0.5em;
-                }
+    //             .fieldRow{
+    //                 margin: 0.3em 0.5em;
+    //             }
 
-                .controlBtn {
-                    width: 8em;
-                    font-size: 1em;
-                    font-weight: 700;
-                }
+    //             .controlBtn {
+    //                 width: 8em;
+    //                 font-size: 1em;
+    //                 font-weight: 700;
+    //             }
 
-                #forgotPassText{
-                    font-size: 0.6em;
-                }
+    //             #forgotPassText{
+    //                 font-size: 0.6em;
+    //             }
 
-                #signup-phrase, #login-phrase{
-                    font-size: 0.6em;
-                }
+    //             #signup-phrase, #login-phrase{
+    //                 font-size: 0.6em;
+    //             }
 
-                .resetPassHead{
-                    font-size: 7em;
-                    padding-left: 0.5em;
-                }
-            }
-        }
-    }
-}
+    //             .resetPassHead{
+    //                 font-size: 7em;
+    //                 padding-left: 0.5em;
+    //             }
+    //         }
+    //     }
+    // }
 
 @media screen and (max-width: 430px) {
 }
 
 @media screen and (max-width: 332px) {
-
-
-    //Add, Update, KKID
-    .markerText, .subTitle, .menuTitle{
-        font-size: 1.2em;
-    }
-
-    //Transaction History
-    .checkAllDiv, .deleteDiv {
-        max-width: 100%;
-    }
 }
-
 @media screen and (max-width:280px) {
 
-    //Add
-    .statusCheck{
-    margin-left: 0.5em;
-    }
-
-    //Add, Update, KKID
-    .markerText, .menuTitle{
-        margin-left: 0.6em;
-        font-size: 1.1em;
-    }
 }

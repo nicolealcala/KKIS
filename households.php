@@ -58,7 +58,7 @@ require 'connection.php';
         <!-- CONTENT START -->
         <div class="container-fluid content">
             <!-- Menu Buttons -->
-            <div class="row d-flex justify-content-end align-ittems-center m-0">
+            <div class="row d-none d-sm-flex justify-content-end align-items-center m-0" id="menuRow">
                 <button class="menuBtn menu1 rounded-pill menu-active me-3" id="menu1">Families</button>
                 <button class="menuBtn menu2 rounded-pill" id="menu2">Overview</button>
             </div>
