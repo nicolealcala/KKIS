@@ -49,26 +49,32 @@
 
     // CHANGE PASSWORD
 
-    if(isset($_POST['resetBtn'])){
-        $oldPassword = $_POST["oldPassword"];
+    if(isset($_POST['updatePassBtn'])){
+        //$email = $_POST['email'];
+        $currentPassword = $_POST["currentPassword"];
         $newPassword = $_POST["newPassword"];
         $confirmPassword = $_POST["confirmPassword"];
 
 
         $passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$_SESSION['email']."'";
+        //$passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$email."'";
 
         $passwordResult = executeQuery($passwordQuery);
         $count=mysqli_num_rows($passwordResult);
 
-        if($count==1){
+        if ($count==1){
             while($row = mysqli_fetch_assoc($passwordResult)){
+
                 $fetchPassword = $row['password'];
 
-                if(!password_verify($oldPassword,$fetchPassword)){
-                    header("Location:index.php?error=invalidoldpassword");
-                } elseif($newPassword==$oldPassword){
-                    header("Location:index.php?error=samepassword");
-                } else if(!password_verify($oldPassword,$fetchPassword)){
+                if(!password_verify($currentPassword,$fetchPassword)){
+                    echo '<script>alert("Invalid current password!")</script>';
+
+                } elseif($newPassword==$currentPassword){
+                    echo '<script>alert("Same password as the current!")</script>';
+                    //header("Location:changePW.php?error=samepassword");
+
+                } else if(!password_verify($currentPassword,$fetchPassword)){
 
                     if($newPassword == $confirmPassword){
                         $passwordRaw == $confirmPassword;
@@ -76,9 +82,11 @@
 
                         $updateQuery = "UPDATE `admins` SET `password` = '".$password_hash."' WHERE `email`= '".$_SESSION['email']."'";
                         executeQuery($updateQuery);
-                        header("Location:index.php?error=passwordchanged");
+                        header("Location:changePW.php?error=passwordchanged");
+                        // echo '<script>alert("Password successfully changed!")</script>';
                     } else {
-                        header("Location:index.php?error=invalidconfirmpassword");
+                        header("Location:changePW.php?error=invalidconfirmpassword");
+                        // echo '<script>alert("Invalid confirm password!")</script>';
                     }
                     
                 }

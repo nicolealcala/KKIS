@@ -1,3 +1,19 @@
+<?php
+// XAMPP
+
+  include 'connection.php';
+
+
+  session_start();
+  session_destroy();
+  session_start();
+  
+
+  include 'controller.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,7 +52,7 @@
                                 src="assets/img/misc/hr.svg"></div>
                     </div>
                     <!-- Form -->
-                    <form id="loginForm" action="" method="post">
+                    <form id="updatePassForm" action="" onSubmit="return passValidate();" method="post">
                         <!-- Fields -->
                         <div class="row gx-3 gy-3 fieldRow">
                             <div class="col-12">
@@ -48,19 +64,20 @@
                             </div>
                             <div class="col-12">
                                 <input class="form-control" type="password" name="newPassword"
-                                    placeholder="New Password" required>
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="New Password" id="newPassword" required>
                             </div>
                             <div class="col-12">
                                 <input class="form-control" type="password" name="confirmPassword"
-                                    placeholder="Confirm Password" required>
+                                    placeholder="Confirm Password" name="confirmPassword" required>
                             </div>
                         </div>
 
                         <!-- Change/Update Password -->
                         <div class="row m-0 mt-3 mb-3" id="rowBtn">
                             <div class="col-12 d-flex justify-content-center align-items-center">
-                                <button class="btn updatePWBtn rounded-pill mt-4" name="updatePWBtn" type="submit"
-                                    form="updatePWForm" id="updatePWBtn">Save</button>
+                                <button class="btn updatePWBtn rounded-pill mt-4" name="updatePassBtn" type="submit" form="updatePassForm" id="updatePassBtn">
+                                    Save
+                                </button>
                             </div>
                             <div class="col-12 d-flex justify-content-center align-items-center mt-4">
                                 <p class="mt-2 text-center" id="pwReminder">
@@ -82,5 +99,5 @@
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/index.js"></script>
-    <script type="text/javascript" src="assets/js/formValidation.js"></script>
+    <script type="text/javascript" src="assets/js/passValidation.js"></script>
 </body>
