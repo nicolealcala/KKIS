@@ -192,10 +192,10 @@ if (isset($_POST['submitBtn'])) {
             <div class="sectionDiv">
                 <form method="POST" id="addForm" class="mb-5">
                     <!-- Personal Info -->
-                    <div class="card mt-4">
+                    <div class="card my-4">
                         <div class="row m-0">
                             <div class="col col-12 p-0">
-                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-2" id="markerPersonal"><span class="markerText">Personal Information</span></div>
+                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-2" id="markerPersonal">Personal Information</div>
                             </div>
                         </div>
                         <div class="row m-0 my-3 gy-3 gx-3">
@@ -313,19 +313,19 @@ if (isset($_POST['submitBtn'])) {
                         </div>
                     </div>
 
-                    <div class="row gy-2 mt-2 mx-0">
+                    <div class="row gy-2 my-2 mx-0">
                         <!-- Educational Info -->
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
                             <div class="card p-3" id="educCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
-                                    <label class="markerText ms-1 d-flex align-items-center">
-                                        <input type="radio" id="educCheck" class="statusCheck mx-2" name="educInfo" checked>
+                                    <label class="d-flex align-items-center">
+                                        <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked>
                                         Educational Status
                                     </label>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel educFieldLabel required w-100 p-1" id="educStatusLbl" for="selectEducStatus">Educational Status</label>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educStatusLbl" for="selectEducStatus">Educational Status</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="educStatus" id="selectEducStatus" required>
                                             <option value="ENROLLED">Enrolled</option>
                                             <option value="OUT-OF-SCHOOL YOUTH">Out-of-school Youth</option>
@@ -346,18 +346,18 @@ if (isset($_POST['submitBtn'])) {
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required>
                                             <option value="PRIVATE">Private</option>
                                             <option value="PUBLIC">Public</option>s
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel educFieldLabel required w-100 p-1" id="schoolLbl" for="inputSchool">Name of School</label>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolLbl" for="inputSchool">Name of School</label>
                                         <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducIndustry">Work Industry</label>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducIndustry">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required>
                                             <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
@@ -426,7 +426,7 @@ if (isset($_POST['submitBtn'])) {
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel educFieldLabel required w-100 p-1" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="educSalary" id="selectEducSalary" required>
                                             <option value="1">Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
@@ -443,21 +443,21 @@ if (isset($_POST['submitBtn'])) {
                         <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
                             <div class="card p-3" id="employCard">
                                 <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEmploy">
-                                    <label class="markerText ms-1 d-flex align-items-center">
-                                        <input type="radio" id="employCheck" class="statusCheck mx-2" name="employInfo">
+                                    <label class="d-flex align-items-center">
+                                        <input type="radio" id="employCheck" class="statusCheck" name="employInfo">
                                         Employment Status
                                     </label>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required>
                                             <option value="EMPLOYED">Employed</option>
                                             <option value="UNEMPLOYED">Unemployed</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required>
                                             <option value="REGULAR">Regular</option>
                                             <option value="CONTRACTUAL">Contractual</option>
@@ -465,18 +465,18 @@ if (isset($_POST['submitBtn'])) {
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required>
                                             <option value="PRIVATE">Private</option>
                                             <option value="PUBLIC">Public</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel employFieldLabel required w-100 p-1" id="employerLbl" for="inputEmployer">Name of Employer/Company/Business</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employerLbl" for="inputEmployer">Name of Employer/Company/Business</label>
                                         <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployIndustry">Work Industry</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployIndustry">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required>
                                             <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
@@ -545,7 +545,7 @@ if (isset($_POST['submitBtn'])) {
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label fieldLabel employFieldLabel required w-100 p-1" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employSalary" id="selectEmploySalary" required>
                                             <option value="1">Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
@@ -560,11 +560,11 @@ if (isset($_POST['submitBtn'])) {
                         </div>
                     </div>
                     <!-- House Declaration -->
-                    <div class="card p-3 mt-4">
+                    <div class="card p-3 my-4">
                         <div class="row m-0">
                             <div class="col col-12 p-0">
                                 <div class="d-flex align-items-center markerDiv rounded-2">
-                                    <span class="markerText">House Declaration</span>
+                                    House Declaration
                                 </div>
                             </div>
                         </div>

@@ -111,32 +111,32 @@
         </footer>
     </div>
 
-    <!-- Small screen nav -->
+    <!-- SMALL SCREEN NAV -->
     <nav class="d-flex d-lg-none navbar navbar-expand-lg navbar-light" id="smallNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="assets/img/logos/kkis-brand.png" alt=""></a>
+            <a class="navbar-brand d-flex align-items-center" href="#"><img class="me-3" src="assets/img/logos/kkis-brand.png" alt="">KKIS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="smallNavMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./dashboard.php">Dashboard</a>
+                        <a class="nav-link active" aria-current="page" href="./dashboard.php" id="dashboard-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./households.php">Declared Households</a>
+                        <a class="nav-link" href="./households.php" id="households-link">Declared Households</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./profiles.php">Profiles</a>
+                        <a class="nav-link" href="./profiles.php" id="profiles-link">Profiles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./addEntry.php">Add New Entry</a>
+                        <a class="nav-link" href="./addEntry.php" id="add-link">Add New Entry</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./kkid.php">KK ID Card</a>
+                        <a class="nav-link" href="./kkid.php" id="kkid-link">KK ID Card</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./transactions.php">Transaction History</a>
+                        <a class="nav-link" href="./transactions.php" id="transactions-link">Transaction History</a>
                     </li>
                 </ul>
             </div>

@@ -13,22 +13,9 @@
   height: 100%;
 }
 
-.card {
-  padding: 1em;
-  box-shadow: 0 3px 5px #e3e3e3;
-}
-
-#educCard {
-  margin-right: 0.5em;
-}
-
-#employCard {
-  margin-left: 0.5em;
-}
-
 .fieldLabel, .educFieldLabel, .employFieldLabel {
   color: #909090;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .userInput, .educUserInput, .employUserInput, .personalSelectBox, .educSelectBox, .employSelectBox, .houseSelectBox {
@@ -45,11 +32,6 @@
   color: red;
 }
 
-.markerDiv {
-  height: 2em;
-  background-color: #219EBC;
-}
-
 .markerDivUpdate {
   height: 2em;
   background-color: #F1A400;
@@ -57,40 +39,19 @@
 
 .markerText {
   color: white;
-  font-size: 1.3em;
-  margin-left: 0.7em;
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 .statusCheck {
   width: 20px;
   height: 20px;
   border: none;
-  margin-left: 0.7em;
-}
-
-.controlBtn {
-  margin-top: 2em;
-  font-size: large;
-  width: 6.5em;
-  border: none;
-  color: white;
-  background-color: #8ECAE6;
-}
-
-.controlBtn:hover {
-  background-color: #219EBC;
-  color: white;
-  font-weight: 500;
-}
-
-.controlBtn:active {
-  background-color: #04496A;
-  color: white;
-  font-weight: 500;
+  margin-right: 5px;
 }
 
 .modalAlert {
-  font-size: 1.5em;
+  font-size: 18px;
   font-weight: 500;
   color: #393737;
 }

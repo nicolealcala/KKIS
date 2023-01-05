@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  //Nav Small Screen
+  $("#smallNav").appendTo("#mdHeader");
+
+  //Controls
   $(".checkAllDiv").click(function () {
     if ($("#deselectAll").hasClass("d-none")) {
       $("#deselectAll").removeClass("d-none");

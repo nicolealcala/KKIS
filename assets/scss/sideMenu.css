@@ -3,20 +3,6 @@
   color: #393737;
 }
 
-nav {
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(178, 200, 214, 0.25);
-}
-
-.navbar-toggler {
-  background-color: white;
-}
-
-.smallNavMenu {
-  background-color: white;
-  position: relative;
-}
-
 .sideNav,
 .expanded {
   position: fixed;
@@ -102,7 +88,7 @@ footer {
   background-color: white;
   border-radius: 30px 0 0 30px;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
-  width: 85%;
+  width: auto;
   height: 100vh;
   float: right;
   padding: 2em;
@@ -110,7 +96,6 @@ footer {
   left: 15%;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: 0.5s;
 }
 
 .full-width {
@@ -121,12 +106,11 @@ footer {
   width: 100%;
   height: 100vh;
   float: right;
-  padding: 2em;
+  padding: 20px;
   z-index: 5;
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: 0.5s;
 }
 
 #mdHeader {
@@ -136,6 +120,27 @@ footer {
   top: 0;
   left: 0;
   padding: 0;
+}
+
+nav {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 5px rgba(178, 200, 214, 0.25);
+  z-index: 99;
+}
+nav .container-fluid {
+  width: 95%;
+}
+nav .container-fluid .navbar-brand {
+  font-family: "Gotham Black";
+  font-size: 40px;
+  color: #155675;
+}
+nav .container-fluid .navbar-toggler {
+  background-color: white;
+}
+nav .container-fluid .collapse {
+  margin-top: 10px;
 }
 
 #lgHeader {
@@ -174,14 +179,13 @@ footer {
   height: 5px;
   width: 100%;
   opacity: 100%;
-  position: fixed;
   margin-top: 0;
-  transition: 0.5s;
 }
 
 .content {
   width: 95%;
   margin-top: 120px;
+  z-index: 3;
 }
 .content .vscomp-ele-wrapper {
   margin-top: 0;
@@ -192,11 +196,6 @@ footer {
   border: 1.5px solid #d1d3e2;
   border-radius: 6px;
   box-shadow: none;
-}
-.content #remarkDrop,
-.content #disabilitySelect,
-.content #filtering {
-  max-width: 100%;
 }
 
 .menuBtn {
@@ -213,6 +212,52 @@ footer {
 .menu-active {
   background-color: #155675;
   color: white;
+}
+
+.controlBtn {
+  margin-top: 30px;
+  font-size: 20px;
+  width: 120px;
+  border: none;
+  color: white;
+  background-color: #8ecae6;
+}
+
+.controlBtn:hover {
+  background-color: #219ebc;
+  color: white;
+  font-weight: 500;
+}
+
+#clearBtn {
+  background-color: #f4895f;
+}
+
+#clearBtn:disabled,
+#submitBtn:disabled {
+  border: 1px solid #aeaeae;
+  background-color: white;
+  color: #393737;
+}
+
+#submitBtn:hover {
+  background-color: #219ebc;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+#clearBtn:hover {
+  background-color: #f57441;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+#remarkDrop,
+#disabilitySelect,
+#filtering {
+  max-width: 100%;
 }
 
 .btn-secondary,
@@ -282,4 +327,65 @@ ul.pagination {
 
 .entryRow {
   font-size: 18px;
+}
+
+.markerDiv {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  height: 35px;
+  background-color: #219ebc;
+}
+.markerDiv label {
+  color: white;
+  font-size: 20px;
+}
+
+.fieldLabel,
+.educFieldLabel,
+.employFieldLabel {
+  white-space: nowrap;
+  width: 88%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card {
+  padding: 15px;
+  box-shadow: 0 3px 5px #e3e3e3;
+}
+
+#educCard {
+  margin-right: 10px;
+}
+
+#employCard {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .full-width {
+    padding: 20px 0;
+  }
+  #educCard,
+#employCard {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 330px) {
+  nav .container-fluid .navbar-brand {
+    font-size: 35px;
+  }
+  .full-width {
+    padding: 20px 0;
+  }
+  .full-width .content {
+    width: 100%;
+    padding: 15px;
+    margin-top: 70px;
+  }
+  .markerDiv {
+    height: 30px;
+    font-size: 15px;
+  }
 }/*# sourceMappingURL=sideMenu.css.map */

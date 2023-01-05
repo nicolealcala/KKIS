@@ -166,10 +166,10 @@
                         <!-- Control buttons -->
                         <div class="row d-flex justify-content-lg-start justify-content-sm-center m-0">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
-                                <button class="btn controlBtn" id="clearBtn" type="button" form="kkidForm" disabled><span class="btnText">Clear All</span></button>
+                                <button class="btn controlBtn" id="clearBtn" type="button" form="kkidForm" disabled>Clear All</button>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center">
-                                <button class="btn controlBtn" id="submitBtn" type="button" form="kkidForm" disabled><span class="btnText">Submit</span></button>
+                                <button class="btn controlBtn" id="submitBtn" type="button" form="kkidForm" disabled>Submit</button>
                             </div>
                         </div>
                     </div>

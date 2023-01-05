@@ -30,9 +30,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
-    <!-- navAddUpdate CSS -->
-    <link rel="stylesheet" href="assets/css/navDash.css">
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 </head>
@@ -43,7 +40,10 @@
     </div>
 
     <div class="mainContainer" id="mainPanel">
-        <header>
+        <header class="d-lg-none d-flex" id="mdHeader">
+            <!-- Append Small Nav here -->
+        </header>
+        <header class="d-none d-lg-block" id="lgHeader">
             <div class="row mx-0" id="headerRow">
                 <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
@@ -59,7 +59,7 @@
         </header>
 
 
-        <!-- CONTENT START -->  
+        <!-- CONTENT START -->
         <div class="container-fluid content">
             <div class="sectionDiv">
                 <div class="row gx-5 mb-1">

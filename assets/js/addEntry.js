@@ -109,14 +109,14 @@ $(document).ready(function () {
     $("#markerEmploy").css("background-color", "#c5d4e3");
     $(".employFieldLabel").css("color", "#dfdfdf");
 
-    //Disable all emloyment select boxes and change value to blank
+    //Disable all employment select boxes and change value to blank
     $(".employSelectBox").each(function () {
       $(this).val("").change();
       $(this).prop("disabled", true);
       $(this).removeAttr("required");
     });
 
-    //Disable all emloyment input fields and change value to blank
+    //Disable all employment input fields and change value to blank
     $(".employUserInput").each(function () {
       $(this).val("").change();
       $(this).prop("disabled", true);

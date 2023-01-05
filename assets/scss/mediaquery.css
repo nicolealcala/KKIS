@@ -31,59 +31,28 @@
   margin-top: 4em;
 }
 
-@media screen and (min-width: 992px) and (max-width: 7680px) {
-  #expandMobile, #collapseMobile {
-    display: none;
-  }
-  .eStatus {
-    margin-top: 1em;
-    padding: 0;
-  }
-}
-@media screen and (max-width: 991px) and (max-width: 850px) {
-  #divAccountType {
-    display: none;
-  }
-}
-@media screen and (max-width: 991px) {
-  #expand, #collapse {
-    display: none;
-  }
-}
 @media screen and (max-width: 991px) {
   .category .texts .count {
     font-size: 3em;
   }
-}
-@media screen and (max-width: 991px) {
   .backBtn {
     width: 1.5em;
     height: 1.5em;
   }
-}
-@media screen and (max-width: 991px) {
   .eStatus {
     margin-top: 1em;
   }
-}
-@media screen and (max-width: 991px) {
   #educCard, #employCard {
     margin: 0;
   }
-}
-@media screen and (max-width: 991px) {
   .markerText, .subTitle {
     font-size: 1.3em;
   }
-}
-@media screen and (max-width: 991px) {
   .sortSearch {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-}
-@media screen and (max-width: 991px) {
   .indexContent {
     padding: 1em;
   }

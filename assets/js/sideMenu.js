@@ -36,6 +36,7 @@ $(document).ready(function () {
     $("#leftPanel").addClass("shrunk");
     $("#mainPanel").removeClass("mainContainer");
     $("#mainPanel").addClass("full-width");
+    $("#mainPanel").css("transition", "0.5s");
     $("#hamburger").removeClass("d-none");
     $(this).addClass("d-none");
   });
@@ -46,6 +47,7 @@ $(document).ready(function () {
     $("#mainPanel").addClass("mainContainer");
     $("#mainPanel").removeClass("full-width");
     $("#close").removeClass("d-none");
+    $("#mainPanel").css("transition", "0.5s");
     $(this).addClass("d-none");
   });
 

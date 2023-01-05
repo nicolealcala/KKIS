@@ -65,44 +65,6 @@ input[type=checkbox] {
   box-shadow: 0 3px 10px #a0a0a0;
 }
 
-.controlBtn {
-  margin-top: 1em;
-  font-size: large;
-  width: 6em;
-}
-.controlBtn .btnText {
-  color: white;
-}
-
-#submitBtn {
-  background-color: #8ECAE6;
-}
-
-#clearBtn {
-  background-color: #F4895F;
-}
-
-#clearBtn:disabled, #submitBtn:disabled {
-  background-color: white;
-}
-#clearBtn:disabled .btnText, #submitBtn:disabled .btnText {
-  color: #393737;
-}
-
-#submitBtn:hover {
-  background-color: #219EBC;
-  border: none;
-  color: white;
-  font-weight: 500;
-}
-
-#clearBtn:hover {
-  background-color: #F57441;
-  border: none;
-  color: white;
-  font-weight: 500;
-}
-
 .content::-webkit-scrollbar {
   width: 10px; /* width of the entire scrollbar */
 }

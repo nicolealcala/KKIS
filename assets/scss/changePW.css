@@ -7,7 +7,6 @@
   height: 100vh;
   margin: auto;
 }
-
 .indexContent .card {
   width: 28em;
   height: auto;
@@ -15,11 +14,9 @@
   border: 3px solid #E3E6F0;
   box-shadow: 0px 0px 20px 0px #aeaeae;
 }
-
 .indexContent .card .card-body {
   margin: 0.5em;
 }
-
 .indexContent .card .card-body .cardHead {
   margin-top: 0.3em;
   padding: 0;
@@ -28,36 +25,30 @@
   font-weight: 600;
   color: #FFB703;
 }
-
 .indexContent .card .card-body .hrSvg {
   width: 60%;
 }
-
 .indexContent .card .card-body .fieldRow {
   margin: 1.5em;
 }
-
 .indexContent .card .card-body .updatePWBtn {
   width: 10em;
   border-color: #219EBC;
-  border-width: .15em;
+  border-width: 0.15em;
   color: #219EBC;
   font-size: 1.3em;
   font-weight: 700;
   transition: all 0.25s ease-in;
 }
-
 .indexContent .card .card-body .updatePWBtn:hover {
   border-color: #219EBC;
   background-color: #219EBC;
-  border-width: .15em;
+  border-width: 0.15em;
   color: #FFF;
 }
-
 .indexContent .card .card-body #resetBtn {
   width: 6em;
 }
-
 .indexContent .card .card-body #pwReminder {
   text-decoration: none;
   font-size: 0.8em;
@@ -67,22 +58,16 @@
 }
 
 .indexContent::-webkit-scrollbar {
-  width: 10px;
-  /* width of the entire scrollbar */
+  width: 10px; /* width of the entire scrollbar */
 }
 
 .indexContent::-webkit-scrollbar-track {
-  background: none;
-  /* color of the tracking area */
+  background: none; /* color of the tracking area */
 }
 
 .indexContent::-webkit-scrollbar-thumb {
-  background-color: #c9c9c9;
-  /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  border: 3px solid #c9c9c9;
-  /* creates padding around scroll thumb */
+  background-color: #c9c9c9; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #c9c9c9; /* creates padding around scroll thumb */
   z-index: -60;
-}
-/*# sourceMappingURL=changePW.css.map */
+}/*# sourceMappingURL=changePW.css.map */

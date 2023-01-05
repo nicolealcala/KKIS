@@ -16,20 +16,6 @@ $fade-orange: #f4895f;
   font-family: $content-font;
   color: $text;
 }
-//Small Nav page 
-nav {
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(178, 200, 214, 0.25)
-}
-
-.navbar-toggler {
-  background-color: white;
-}
-
-.smallNavMenu {
-  background-color: white;
-  position: relative;
-}
 
 //Large Nav page
 .sideNav,
@@ -119,7 +105,7 @@ footer {
   background-color: white;
   border-radius: 30px 0 0 30px;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
-  width: 85%;
+  width: auto;
   height: 100vh;
   float: right;
   padding: 2em;
@@ -127,7 +113,6 @@ footer {
   left: 15%;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: 0.5s;
 }
 
 .full-width {
@@ -138,12 +123,11 @@ footer {
   width: 100%;
   height: 100vh;
   float: right;
-  padding: 2em;
+  padding: 20px;
   z-index: 5;
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: 0.5s;
 }
 
 #mdHeader {
@@ -153,6 +137,32 @@ footer {
   top: 0;
   left: 0;
   padding: 0;
+}
+
+ //Small Nav page
+ nav {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 5px rgba(178, 200, 214, 0.25);
+  z-index: 99;
+
+  .container-fluid {
+    width: 95%;
+
+    .navbar-brand {
+      font-family: "Gotham Black"; 
+      font-size: 40px; 
+      color: $dark-blue;
+    }
+
+    .navbar-toggler {
+      background-color: white;
+    }
+
+    .collapse {
+      margin-top: 10px;
+    }
+  }
 }
 
 #lgHeader {
@@ -194,14 +204,13 @@ footer {
   height: 5px;
   width: 100%;
   opacity: 100%;
-  position: fixed;
   margin-top: 0;
-  transition: 0.5s;
 }
 
 .content {
   width: 95%;
   margin-top: 120px;
+  z-index: 3;
 
   // MultiSelect
   .vscomp-ele-wrapper {
@@ -214,12 +223,6 @@ footer {
       border-radius: 6px;
       box-shadow: none;
     }
-  }
-
-  #remarkDrop,
-  #disabilitySelect,
-  #filtering {
-    max-width: 100%;
   }
 }
 
@@ -238,6 +241,53 @@ footer {
 .menu-active {
   background-color: $dark-blue;
   color: white;
+}
+
+//Pages with submit/clear
+.controlBtn {
+  margin-top: 30px;
+  font-size: 20px;
+  width: 120px;
+  border: none;
+  color: white;
+  background-color: $light-blue;
+}
+
+.controlBtn:hover {
+  background-color: $mid-blue;
+  color: white;
+  font-weight: 500;
+}
+
+#clearBtn {
+  background-color: $fade-orange;
+}
+
+#clearBtn:disabled,
+#submitBtn:disabled {
+  border: 1px solid #aeaeae;
+  background-color: white;
+  color: $text;
+}
+
+#submitBtn:hover {
+  background-color: $mid-blue;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+#clearBtn:hover {
+  background-color: $tomato-orange;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+#remarkDrop,
+#disabilitySelect,
+#filtering {
+  max-width: 100%;
 }
 
 //DataTables Config
@@ -299,16 +349,101 @@ ul.pagination {
 
 // HTML TABLE
 .tblHeadRow {
-    background-color: $mid-blue;
-    color: white;
-    justify-content: start;
+  background-color: $mid-blue;
+  color: white;
+  justify-content: start;
 
-    .tblHead {
-        font-size: 18px;
-        color: white;
-      }
-  }
-
-  .entryRow {
+  .tblHead {
     font-size: 18px;
+    color: white;
   }
+}
+
+.entryRow {
+  font-size: 18px;
+}
+
+//Add Entry
+
+.markerDiv {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  height: 35px;
+  background-color: $mid-blue;
+
+  label {
+    color: white;
+    font-size: 20px;
+  }
+}
+.fieldLabel,
+.educFieldLabel,
+.employFieldLabel {
+  white-space: nowrap;
+  width: 88%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card {
+  padding: 15px;
+  box-shadow: 0 3px 5px #e3e3e3;
+}
+
+#educCard {
+  margin-right: 10px;
+}
+
+#employCard {
+  margin-left: 10px;
+}
+
+// Media Queries
+@media screen and (max-width: 991px) {
+  // MD
+  .full-width {
+    padding: 20px 0;
+  }
+
+  #educCard,
+  #employCard {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 576px) {
+  //SM
+}
+
+@media screen and (min-width: 431px) {
+  //XS
+}
+
+@media screen and (max-width: 430px) {
+}
+
+@media screen and (max-width: 330px) {
+  //Galaxy Fold
+
+  nav {
+    .container-fluid {
+      .navbar-brand {
+        font-size: 35px;
+      }
+    }
+  }
+  .full-width {
+    padding: 20px 0;
+
+    .content {
+      width: 100%;
+      padding: 15px;
+      margin-top: 70px;
+    }
+  }
+
+  .markerDiv {
+    height: 30px;
+    font-size: 15px;
+  }
+}

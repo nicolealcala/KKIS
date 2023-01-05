@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  //Nav Small Screen
+  $("#smallNav").appendTo("#mdHeader");
+
   //For QR Scanner Button
   $(".qrBtn").on("click", function () {
     $(this).css("background-color", "#219EBC");
