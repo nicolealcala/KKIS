@@ -5,6 +5,11 @@ $(document).ready(function () {
     $("a").not(this).removeClass("active");
   });
 
+  $("#changePass-link").click(function () {
+    $("#changePass-link").addClass("active");
+    $("a").not(this).removeClass("active");
+  });
+
   $("#FAQs-link").click(function () {
     $("#FAQs-link").addClass("active");
     $("a").not(this).removeClass("active");

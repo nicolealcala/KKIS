@@ -75,7 +75,7 @@
 
         <!-- Change Password -->
         <div class="col-12 pe-0">
-          <a href="./settings-change-password.php" id="FAQs-link">Change Password</a>
+          <a href="./settings-change-password.php" id="changePass-link">Change Password</a>
         </div>
 
         <!-- FAQs Page -->
