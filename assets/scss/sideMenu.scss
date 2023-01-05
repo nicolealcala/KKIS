@@ -17,6 +17,10 @@ $fade-orange: #f4895f;
   color: $text;
 }
 
+.backIcon {
+  color: $text;
+}
+
 //Large Nav page
 .sideNav,
 .expanded {
@@ -416,16 +420,28 @@ ul.pagination {
   //SM
 }
 
-@media screen and (min-width: 431px) {
+@media screen and (max-width: 576px) {
   //XS
+  #loginCard {
+    width: 350px;
+    padding: 0;
+
+    .card-body {
+      margin: 5px;
+
+      .fieldRow {
+        margin: 5px;
+      }
+    }
+  }
+
 }
 
 @media screen and (max-width: 430px) {
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 350px) {
   //Galaxy Fold
-
   nav {
     .container-fluid {
       width: 100%;
@@ -443,6 +459,23 @@ ul.pagination {
       width: 100%;
       padding: 15px;
       margin-top: 70px;
+    }
+  }
+
+  //Index
+  #loginCard {
+    width: 250px;
+    padding: 0;
+
+    .card-body {
+      margin: 5px;
+
+      .cardHead {
+        font-size: 30px;
+      }
+      .fieldRow {
+        margin: 5px;
+      }
     }
   }
   //Add entry

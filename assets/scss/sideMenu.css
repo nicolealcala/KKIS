@@ -3,6 +3,10 @@
   color: #393737;
 }
 
+.backIcon {
+  color: #393737;
+}
+
 .sideNav,
 .expanded {
   position: fixed;
@@ -373,7 +377,19 @@ ul.pagination {
     margin: 0;
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 576px) {
+  #loginCard {
+    width: 350px;
+    padding: 0;
+  }
+  #loginCard .card-body {
+    margin: 5px;
+  }
+  #loginCard .card-body .fieldRow {
+    margin: 5px;
+  }
+}
+@media screen and (max-width: 350px) {
   nav .container-fluid {
     width: 100%;
     padding: 0 15px;
@@ -388,6 +404,19 @@ ul.pagination {
     width: 100%;
     padding: 15px;
     margin-top: 70px;
+  }
+  #loginCard {
+    width: 250px;
+    padding: 0;
+  }
+  #loginCard .card-body {
+    margin: 5px;
+  }
+  #loginCard .card-body .cardHead {
+    font-size: 30px;
+  }
+  #loginCard .card-body .fieldRow {
+    margin: 5px;
   }
   .markerDiv {
     height: 30px;

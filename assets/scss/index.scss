@@ -19,20 +19,20 @@ $text: #393737;
     margin: auto;
 
     .card {
-        width: 28em;
+        width: 430px;
         height: auto;
         border-radius: 1.5em;
         border: 3px solid #E3E6F0;
         box-shadow: 0px 0px 20px 0px #aeaeae;
 
         .card-body{
-            margin: 0.5em;
+            margin: 10px;
 
             .cardHead {
-                margin-top: 0.3em;
+                margin-top: 5px;
                 padding: 0;
                 font: 100% $font-stack;
-                font-size: 2.5em;
+                font-size: 40px;
                 font-weight: 900;
                 color: $mid-yellow;
             }
@@ -42,7 +42,7 @@ $text: #393737;
             }
             
             .fieldRow{
-                margin: 1.5em;
+                margin: 25px;
             }
 
             .controlBtn {
@@ -109,12 +109,15 @@ $text: #393737;
         }
     }
     
-    .rbackBtn{
-        width: 2.5em;
-        height: 2.5em;
+    #rbackBtn {
+        color: #aeaeae;
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 40px;
+        left: 40px;
+    }
+
+    #rbackBtn:hover {
+        color: $text;
     }
     
     .resetPassHead{
