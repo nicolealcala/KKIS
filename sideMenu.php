@@ -32,7 +32,7 @@
         <!-- Page Links -->
         <div class="row mx-0 my-4 p-0">
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0" id="dashboard-link">
-                <a href="#" class="d-flex justify-content-start align-items-center">
+                <a href="./dashboard.php" class="d-flex justify-content-start align-items-center">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-3">
                         <i class="icon fa-solid fa-chart-column" id="dashIcon"></i>
                     </div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
-                <a href="#" class="d-flex justify-content-start align-items-center" id="profiles-link">
+                <a href="./profiles.php" class="d-flex justify-content-start align-items-center" id="profiles-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-3">
                         <i class="icon fa-solid fa-user-group"></i>
                     </div>
@@ -68,7 +68,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
-                <a href="#" class="d-flex justify-content-start align-items-center" id="kkid-link">
+                <a href="./kkid.php" class="d-flex justify-content-start align-items-center" id="kkid-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-3">
                         <i class="icon fa-regular fa-id-card"></i>
                     </div>
@@ -77,7 +77,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
-                <a href="#" class="d-flex justify-content-start align-items-center" id="transactions-link">
+                <a href="./transactions.php" class="d-flex justify-content-start align-items-center" id="transactions-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-3">
                         <i class="icon fa-solid fa-clock-rotate-left"></i>
                     </div>

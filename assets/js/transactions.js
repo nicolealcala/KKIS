@@ -23,8 +23,10 @@ $(document).ready(function () {
     bFilter: true,
     bInfo: false,
     columnDefs: [
-      { width: "10%", targets: 0 },
-      { width: "30%", targets: 1 },
+      { width: "15%", targets: 0 },
+      { width: "45%", targets: 1 },
+      { width: "30%", targets: 2 },
+      { width: "10%", targets: 3 },
     ],
   });
 
