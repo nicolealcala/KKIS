@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  //Nav Small Screen
+  $('#smallNav').appendTo('#mdHeader');
+  
   //for clicking Overview
   $("#menu1").on("click", function () {
     $("#familiesBody").removeClass("d-none");

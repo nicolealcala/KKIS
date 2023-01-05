@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    //Nav Small Screen
+    $("#smallNav").appendTo("#mdHeader");
+    
   //Default select boxes
   $("select").not("#disabilitySelect").val("").change();
 

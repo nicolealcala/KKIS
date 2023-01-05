@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    //Settings Panel
+$(document).ready(function () {
+  //Nav Links
   $("#dashboard-link").click(function () {
     $("#dashIcon").addClass("nav-active");
     $("#dashTxt").addClass("nav-active");
@@ -30,21 +30,44 @@ $(document).ready(function(){
     $("a").not(this).removeClass("nav-active");
   });
 
-  $('#close').click(function() {
-    $('#leftPanel').removeClass("expanded");
-    $('#leftPanel').addClass("shrunk");
-    $('#mainPanel').removeClass("mainContainer");
-    $('#mainPanel').addClass("full-width");
-    $('#hamburger').removeClass("d-none");
+  //Navigation Control
+  $("#close").click(function () {
+    $("#leftPanel").removeClass("expanded");
+    $("#leftPanel").addClass("shrunk");
+    $("#mainPanel").removeClass("mainContainer");
+    $("#mainPanel").addClass("full-width");
+    $("#hamburger").removeClass("d-none");
     $(this).addClass("d-none");
-  })
+  });
 
-  $('#hamburger').click(function() {
-    $('#leftPanel').addClass("expanded");
-    $('#leftPanel').removeClass("shrunk");
-    $('#mainPanel').addClass("mainContainer");
-    $('#mainPanel').removeClass("full-width");
-    $('#close').removeClass("d-none");
+  $("#hamburger").click(function () {
+    $("#leftPanel").addClass("expanded");
+    $("#leftPanel").removeClass("shrunk");
+    $("#mainPanel").addClass("mainContainer");
+    $("#mainPanel").removeClass("full-width");
+    $("#close").removeClass("d-none");
     $(this).addClass("d-none");
-  })
-})
+  });
+
+  //Screen Resize
+  $(window).resize(function () {
+    if ($(window).width() < 992) {
+      $('#close').addClass("d-none");
+      $('#hamburger').removeClass('d-none');
+      $("#leftPanel").removeClass("expanded");
+      $("#leftPanel").addClass("shrunk");
+      $("#mainPanel").removeClass("mainContainer");
+      $("#mainPanel").addClass("full-width");
+    }
+  });
+
+  //Per Device Screen Sizes
+  if ($(window).width() < 992) {
+    $('#close').addClass("d-none");
+    $('#hamburger').removeClass('d-none');
+    $("#leftPanel").removeClass("expanded");
+    $("#leftPanel").addClass("shrunk");
+    $("#mainPanel").removeClass("mainContainer");
+    $("#mainPanel").addClass("full-width");
+  }
+});

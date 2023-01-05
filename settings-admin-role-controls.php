@@ -98,12 +98,11 @@ require "connection.php";
                             <td>
                                 <div class="row mx-0 gx-1">
                                     <div class="col-6 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#warning-modal" id="deleteBtn"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
-                                    </div>
-
-                                    <div class="col-6 d-flex justify-content-center align-items-center">
                                         <button class="btn btn-primary" id="editBtn"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
                                     </div>
+                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#warning-modal" id="deleteBtn"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
+                                    </div>  
                                 </div>
                             </td>
                         </tr>';
