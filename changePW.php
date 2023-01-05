@@ -5,11 +5,6 @@
 
 
   session_start();
-  session_destroy();
-  session_start();
-  
-
-  include 'controller.php';
 
 
 ?>
@@ -39,7 +34,6 @@
 
     <div id="index-wrapper">
         <div class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
-            <!-- Log in -->
             <div class="card d-flex justify-content-center mt-3 pt-3" id="loginCard">
                 <div class="card-body">
                     <div class="row m-0 d-flex justify-content-center">
