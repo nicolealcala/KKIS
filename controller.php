@@ -38,7 +38,7 @@
                     $_SESSION['email'] = $account['email'];
     
                     header('Location: dashboard.php');  
-                    //echo "<script>window.location.href='dashboard.php';</script>";
+                    //echo "<script>window.location.href = 'dashboard.php';</script>";
                    } else {
                         echo '<script>alert("Invalid email/password!")</script>';
                    }
@@ -47,53 +47,54 @@
     }
 
 
-    // CHANGE PASSWORD
-
-    if(isset($_POST['updatePassBtn'])){
-        //$email = $_POST['email'];
+      // CHANGE PASSWORD
+      if(isset($_POST['updatePassBtn'])){
         $currentPassword = $_POST["currentPassword"];
         $newPassword = $_POST["newPassword"];
         $confirmPassword = $_POST["confirmPassword"];
-
-
-        $passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$_SESSION['email']."'";
+    
+    
+        $passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$_POST['email']."'";
         //$passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$email."'";
-
+    
         $passwordResult = executeQuery($passwordQuery);
         $count=mysqli_num_rows($passwordResult);
-
+    
         if ($count==1){
             while($row = mysqli_fetch_assoc($passwordResult)){
-
+    
                 $fetchPassword = $row['password'];
-
+    
                 if(!password_verify($currentPassword,$fetchPassword)){
                     echo '<script>alert("Invalid current password!")</script>';
-
+    
                 } elseif($newPassword==$currentPassword){
                     echo '<script>alert("Same password as the current!")</script>';
                     //header("Location:changePW.php?error=samepassword");
-
-                } else if(!password_verify($currentPassword,$fetchPassword)){
-
+    
+                } elseif($newPassword!=$confirmPassword){
+                    echo '<script>alert("New password does not match with Confirm Password!")</script>';
+    
+                }else if(password_verify($currentPassword,$fetchPassword)){
+    
                     if($newPassword == $confirmPassword){
                         $passwordRaw == $confirmPassword;
                         $password_hash = password_hash($passwordRaw,PASSWORD_DEFAULT);
-
-                        $updateQuery = "UPDATE `admins` SET `password` = '".$password_hash."' WHERE `email`= '".$_SESSION['email']."'";
+    
+                        $updateQuery = "UPDATE `admins` SET `password` = '".$password_hash."' WHERE `email`= '".$_POST['email']."'";
                         executeQuery($updateQuery);
-                        header("Location:changePW.php?error=passwordchanged");
-                        // echo '<script>alert("Password successfully changed!")</script>';
+
+                        echo '<script>alert("Password successfully changed!")</script>';
+                        header('Location: index.php');
                     } else {
-                        header("Location:changePW.php?error=invalidconfirmpassword");
-                        // echo '<script>alert("Invalid confirm password!")</script>';
-                    }
+                        echo '<script>alert("Invalid confirm password!")</script>';
+                        }
                     
+                    }
                 }
             }
+    
         }
-
-    }
 
 
 ?>
