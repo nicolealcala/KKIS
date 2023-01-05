@@ -1,6 +1,7 @@
 $(document).ready(function () {
   //Nav Small Screen
   $("#smallNav").appendTo("#mdHeader");
+  
   //for clicking residents
   $("#residents").click(function () {
     $("#sectionResidents").removeClass("d-none");

@@ -169,10 +169,10 @@ if (isset($_POST['submitBtn'])) {
     </div>
 
     <div class="mainContainer" id="mainPanel">
-    <header class="d-lg-none d-flex" id="mdHeader">
+        <header class="d-lg-none d-flex" id="mdHeader">
             <!-- Append Small Nav here -->
         </header>
-        <header class="d-none d-lg-block"  id="lgHeader">
+        <header class="d-none d-lg-block" id="lgHeader">
             <div class="row mx-0" id="headerRow">
                 <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
