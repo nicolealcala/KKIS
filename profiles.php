@@ -24,8 +24,9 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <!-- Custom Page Stylesheets -->
     <link rel="stylesheet" href="assets/scss/profiles.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
-    <link rel="stylesheet" href="assets/scss/mq-sidenavmods.css">
+    <!-- <link rel="stylesheet" href="assets/scss/mq-sidenavmods.css"> -->
     <link rel="stylesheet" href="assets/scss/modal.css">
+    <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
     <!-- Virtual Select JS library -->
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
@@ -550,8 +551,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/profiles.js"></script>
-    <!-- Nav -->
-    <script src="assets/js/sidenav.js"></script>
+    <script type="text/javascript" src="assets/js/sideMenu.js"></script>
 
 </body>
 
