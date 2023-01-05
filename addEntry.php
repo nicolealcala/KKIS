@@ -169,7 +169,10 @@ if (isset($_POST['submitBtn'])) {
     </div>
 
     <div class="mainContainer" id="mainPanel">
-        <header>
+    <header class="d-lg-none d-flex" id="mdHeader">
+            <!-- Append Small Nav here -->
+        </header>
+        <header class="d-none d-lg-block"  id="lgHeader">
             <div class="row mx-0" id="headerRow">
                 <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
@@ -177,7 +180,7 @@ if (isset($_POST['submitBtn'])) {
                     <span class="pageTitle">Add New Entry</span>
                 </div>
 
-                <div class="col-md-4 col-12 d-flex justify-content-end align-items-center">
+                <div class="col-md-4 d-none d-md-flex justify-content-end align-items-center">
                     <span class="accountType">Super Admin Account</span>
                 </div>
             </div>
