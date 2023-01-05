@@ -160,7 +160,7 @@ if (isset($_POST['submitBtn'])) {
     <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 </head>
 
 <body>
@@ -684,7 +684,7 @@ if (isset($_POST['submitBtn'])) {
     <!-- Active Link -->
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#add-txt").addClass('nav-active');
+            $("#add-link").addClass('nav-active');
         })
     </script>
 </body>

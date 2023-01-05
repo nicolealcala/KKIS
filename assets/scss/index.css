@@ -10,8 +10,9 @@
 .indexContent .card {
   width: 430px;
   height: auto;
+  z-index: 8;
   border-radius: 1.5em;
-  border: 3px solid #E3E6F0;
+  border: 3px solid #e3e6f0;
   box-shadow: 0px 0px 20px 0px #aeaeae;
 }
 .indexContent .card .card-body {
@@ -23,7 +24,7 @@
   font: 100% Poppins, sans-serif;
   font-size: 40px;
   font-weight: 900;
-  color: #FFB703;
+  color: #ffb703;
 }
 .indexContent .card .card-body .hrSvg {
   width: 60%;
@@ -33,7 +34,7 @@
 }
 .indexContent .card .card-body .controlBtn {
   width: 10em;
-  background-color: #219EBC;
+  background-color: #219ebc;
   color: white;
   font-size: 1.3em;
   font-weight: 700;
@@ -41,22 +42,25 @@
 .indexContent .card .card-body #resetBtn {
   width: 6em;
 }
-.indexContent .card .card-body #loginBtn:hover, .indexContent .card .card-body #resetBtn:hover {
-  background-color: #04496A;
+.indexContent .card .card-body #loginBtn:hover,
+.indexContent .card .card-body #resetBtn:hover {
+  background-color: #04496a;
 }
-.indexContent .card .card-body #signupBtn, .indexContent .card .card-body #resetBtn {
-  background-color: #FFB703;
+.indexContent .card .card-body #signupBtn,
+.indexContent .card .card-body #resetBtn {
+  background-color: #ffb703;
 }
-.indexContent .card .card-body #signupBtn:hover, .indexContent .card .card-body #resetBtn:hover {
-  background-color: #FB8500;
+.indexContent .card .card-body #signupBtn:hover,
+.indexContent .card .card-body #resetBtn:hover {
+  background-color: #fb8500;
 }
 .indexContent .card .card-body #signup-phrase {
-  color: #219EBC;
+  color: #219ebc;
   font-weight: 500;
 }
 .indexContent .card .card-body .signup-txt {
   text-decoration: none;
-  color: #FFB703;
+  color: #ffb703;
   font-weight: 800;
 }
 .indexContent .card .card-body #forgotPassText {
@@ -67,19 +71,7 @@
 }
 .indexContent .card .card-body #forgotPassText:hover {
   text-decoration: underline;
-  color: #04496A;
-}
-.indexContent #signupCard {
-  width: 34em;
-}
-.indexContent #signupCard #login-phrase {
-  color: #FFB703;
-  font-weight: 500;
-}
-.indexContent #signupCard .login-txt {
-  text-decoration: none;
-  color: #219EBC;
-  font-weight: 800;
+  color: #04496a;
 }
 .indexContent #rbackBtn {
   color: #aeaeae;
@@ -95,7 +87,20 @@
   padding-right: 1em;
   font-size: 1.3em;
   font-weight: 500;
-  color: #219EBC;
+  color: #219ebc;
+}
+
+#signupCard {
+  width: 550px;
+}
+#signupCard #login-phrase {
+  color: #ffb703;
+  font-weight: 500;
+}
+#signupCard .login-txt {
+  text-decoration: none;
+  color: #219ebc;
+  font-weight: 800;
 }
 
 .indexContent::-webkit-scrollbar {

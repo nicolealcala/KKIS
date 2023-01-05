@@ -378,14 +378,14 @@ ul.pagination {
   }
 }
 @media screen and (max-width: 576px) {
-  #loginCard {
+  #loginCard, #signupCard {
     width: 350px;
     padding: 0;
   }
-  #loginCard .card-body {
+  #loginCard .card-body, #signupCard .card-body {
     margin: 5px;
   }
-  #loginCard .card-body .fieldRow {
+  #loginCard .card-body .fieldRow, #signupCard .card-body .fieldRow {
     margin: 5px;
   }
 }
@@ -405,17 +405,17 @@ ul.pagination {
     padding: 15px;
     margin-top: 70px;
   }
-  #loginCard {
+  #loginCard, #signupCard {
     width: 250px;
     padding: 0;
   }
-  #loginCard .card-body {
+  #loginCard .card-body, #signupCard .card-body {
     margin: 5px;
   }
-  #loginCard .card-body .cardHead {
+  #loginCard .card-body .cardHead, #signupCard .card-body .cardHead {
     font-size: 30px;
   }
-  #loginCard .card-body .fieldRow {
+  #loginCard .card-body .fieldRow, #signupCard .card-body .fieldRow {
     margin: 5px;
   }
   .markerDiv {

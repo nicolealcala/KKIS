@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 </head>
 
 <body>
@@ -121,7 +121,7 @@
             <div class="collapse navbar-collapse" id="smallNavMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./dashboard.php" id="dashboard-link">Dashboard</a>
+                        <a class="nav-link" aria-current="page" href="./dashboard.php" id="dashboard-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./households.php" id="households-link">Declared Households</a>
@@ -143,7 +143,9 @@
         </div>
     </nav>
 
-
+    <!-- Fundamental Links -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
 </body>

@@ -28,7 +28,7 @@ require 'connection.php';
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 </head>
 
 <body>
@@ -91,7 +91,7 @@ require 'connection.php';
                         </select>
                     </div>
                     <!-- Search -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0 d-flex align-items-center" id="familiesSearch"></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0" id="familiesSearch"></div>
                 </div>
 
                 <!-- Table start   -->

@@ -422,7 +422,7 @@ ul.pagination {
 
 @media screen and (max-width: 576px) {
   //XS
-  #loginCard {
+  #loginCard, #signupCard {
     width: 350px;
     padding: 0;
 
@@ -461,9 +461,9 @@ ul.pagination {
       margin-top: 70px;
     }
   }
-
+  
   //Index
-  #loginCard {
+  #loginCard, #signupCard {
     width: 250px;
     padding: 0;
 

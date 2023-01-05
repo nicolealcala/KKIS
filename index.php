@@ -46,7 +46,7 @@ include 'controller.php';
         <div class="inner-header flex">
 
             <div id="index-wrapper">
-                <div class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
+                <div class="container-fluid d-flex justify-content-center align-items-center indexContent">
                     <!-- Log in -->
                     <div class="card d-flex justify-content-center mt-3" id="loginCard">
                         <div class="card-body">
