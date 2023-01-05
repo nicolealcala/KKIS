@@ -21,9 +21,9 @@
 </head>
 
 <body>
-    <div class="sideNav">
+    <div class="sideNav d-none d-lg-block">
         <div class="logoDiv my-4 d-flex justify-content-center align-items-center p-0">
-            <img class="img-fluid" src="assets/img/navbar2/KKIS-logo.svg" alt="" id="logoContainer">
+            <img class="img-fluid" src="assets/img/logos/kkis-logo.png" alt="" id="logoContainer">
             <span id="logoTxt">KKIS</span>
         </div>
 
@@ -61,7 +61,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./addEntry.php" class="d-flex justify-content-start align-items-center" id="add-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-3">
-                        <i class="icon fa-solid fa-user-plus"></i>  
+                        <i class="icon fa-solid fa-user-plus"></i>
                     </div>
                     <span class="linkTitle" id="add-txt">Add New Entry</span>
                 </a>
@@ -110,6 +110,39 @@
             <p style="font-size: 14px; color: #808080">Copyright Here</p>
         </footer>
     </div>
+
+    <!-- Small screen nav -->
+    <nav class="d-flex d-lg-none navbar navbar-expand-lg navbar-light" id="smallNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="assets/img/logos/kkis-brand.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="smallNavMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./dashboard.php">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./households.php">Declared Households</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./profiles.php">Profiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./addEntry.php">Add New Entry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./kkid.php">KK ID Card</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./transactions.php">Transaction History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
