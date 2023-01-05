@@ -1,10 +1,14 @@
 <?php include "connection.php";
 
-$queryKabataanTbl = "SELECT * FROM kabataanProfile"; //query to select all data from table
+$queryAge="UPDATE residents SET age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0;";
+$resultAge = mysqli_query($conn, $queryAge);
+
+$queryKabataanTbl = "SELECT * FROM residents WHERE age BETWEEN 15 AND 30"; //query to select kabataan from table
 $resultKabataanTbl = mysqli_query($conn, $queryKabataanTbl); //execute query
 
-$queryResidentsTbl = "SELECT * FROM residentsProfile"; //query to select all data from table
+$queryResidentsTbl = "SELECT * FROM residents WHERE age NOT BETWEEN 15 AND 30"; //query to select all non-kabataan from table
 $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
+
 ?>
 
 <!DOCTYPE html>
@@ -203,41 +207,147 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                         </thead>
 
                         <tbody>
-                            <?php
-                            while ($row = mysqli_fetch_array($resultKabataanTbl)) {
-                                echo '
-                                    <tr>
-                                        <td class="entryRow" scope="col" data-label="Last Name">' . $row["lastName"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="First Name">' . $row["firstName"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Middle Name">' . $row["middleName"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Birthday">' . $row["birthDate"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Age">' . $row["age"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Gender">' . $row["gender"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Civil status">' . $row["civilStatus"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Purok">' . $row["purok"] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Remarks">' . $row["remarks"] . '</td>
-                                    
-                                        <td> 
-                                            <div class="row m-0 d-flex justify-content-around align-items-center">
-                                                <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                                    <button class="btn view actionBtn" type="button" data-bs-toggle="modal" data-bs-target="#viewMore"><i class="fa-solid fa-eye"></i></button>
+                        <?php while ($row = mysqli_fetch_array($resultKabataanTbl)) { ?>
+                                <tr>
+                                    <td id="lastName" class="entryRow" scope="col" data-label="Last Name"><?php echo $row["last_name"]; ?></td>
+                                    <td id="firstName" class="entryRow" scope="col" data-label="First Name"><?php echo $row["first_name"]; ?></td>
+                                    <td id="middleName" class="entryRow" scope="col" data-label="Middle Name"><?php echo $row["middle_name"]; ?></td>
+                                    <td id="birthday" class="entryRow" scope="col" data-label="Birthday"><?php echo $row["birthday"]; ?></td>
+                                    <td id="age" class="entryRow" scope="col" data-label="Age"><?php echo $row["age"]; ?></td>
+                                    <td id="gender" class="entryRow" scope="col" data-label="Gender"><?php echo $row["gender_preference"]; ?></td>
+                                    <td id="civilStatus" class="entryRow" scope="col" data-label="Civil status"><?php echo $row["marital_status"]; ?></td>
+                                    <td id="purok" class="entryRow" scope="col" data-label="Purok"><?php echo $row["purok"]; ?></td>
+                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $row["remarks"]; ?></td>
+                                    <td id="actions" class="entryRow" scope="col" data-label="Actions">
+
+                                        <a class="btn view viewMore actionBtn profile" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $row['resident_id'] ?>" data-id="<?php echo $row['resident_id']; ?>" href="#viewMore"><i class="fa-solid fa-eye"></i></a>
+                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a></td>
+
+                                </tr>
+                                <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $row['residentID'] ?>">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Kabataan Information</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body m-0 px-4">
+                                                <div class="row rowContainer m-0 p-0">
+                                                    <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
+                                                        <p class="textName lastName w-100 my-1"><?php echo $row['last_name'] . ' ' . $row['first_name'] . ' ' . $row['middle_name'] ?></p>
+                                                        <p class="text Gender w-100 my-1 mt-2"><?php echo $row['age'] ?> YEARS OLD</p>
+                                                        <p class="textAge w-100 my-1"><?php echo $row['gender'] ?></p>
+                                                    </div>
+                                                    <div class="col align-self-center"><img class="img-fluid imgContainer" src="assets/img/misc/qrcode.png"></div>
                                                 </div>
-                                    
-                                                <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                                    <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></i></button>
+
+                                                <div class="row rowContainer my-4 mx-0 p-0">
+                                                    <div class="col col-12 p-0">
+                                                        <div class="markerContainer px-2">
+                                                            <p class="modalMarker">Personal Information</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row gy-1">
+                                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Birthday:</label>
+                                                                <p class="textRetrieved"><?php echo $row['birthday'] ?></p>
+                                                            </div>
+                                                            <div class="col col-lg-8 col-md-8 col-sm-6 col-12"><label class="form-label modalLabel">Birthplace:</label>
+                                                                <p class="textRetrieved"><?php echo $row['purok'] ?> , Calamba City, Laguna</p>
+                                                            </div>
+                                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Marital Status:</label>
+                                                                <p class="textRetrieved"><?php echo $row['marital_status'] ?></p>
+                                                            </div>
+                                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Religion:</label>
+                                                                <p class="textRetrieved"><?php echo $row['religion'] ?></p>
+                                                            </div>
+                                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Voter Type:</label>
+                                                                <p class="textRetrieved">Registered</p>
+                                                            </div>
+                                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Disability:</label>
+                                                                <p class="textRetrieved">None</p>
+                                                            </div>
+                                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Contact No:</label>
+                                                                <p class="textRetrieved"><?php echo $row['contactNum'] ?></p>
+                                                            </div>
+                                                            <div class="col col-lg-7 col-md-7 col-sm-6 col-12"><label class="form-label modalLabel">House No/Street/Subdivision:</label>
+                                                                <p class="textRetrieved">123 MABUHAY ST.&nbsp;</p>
+                                                            </div>
+                                                            <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Purok:</label>
+                                                                <p class="textRetrieved"><?php echo $row['purok'] ?></p>
+                                                            </div>
+                                                            <div class="col col-12"><label class="form-label modalLabel">Organization/s (if any):</label>
+                                                                <p class="textRetrieved">Computer Society </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                    
-                                                <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                                    <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
+                                                <div class="row rowContainer my-4 mx-0 p-0">
+                                                    <div class="col col-12 p-0">
+                                                        <div class="markerContainer px-2">
+                                                            <p class="modalMarker">Employment Status</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row gy-1">
+                                                            <div class="col col-lg-4 col-md-4 col-sm-6 col-12"><label class="form-label modalLabel">Employment Status:</label>
+                                                                <p class="textRetrieved">EMPLOYED</p>
+                                                            </div>
+                                                            <div class="col col-lg-5 col-md-5 col-sm-6 col-12"><label class="form-label modalLabel">Employee Type:</label>
+                                                                <p class="textRetrieved">CONTRACTUAL</p>
+                                                            </div>
+                                                            <div class="col col-lg-3 col-md-3 col-sm-3 col-12"><label class="form-label modalLabel">Public/Private:</label>
+                                                                <p class="textRetrieved">PUBLIC</p>
+                                                            </div>
+                                                            <div class="col col-lg-12 col-md-12 col-sm-9 col-12"><label class="form-label modalLabel">Name of Employer/Company:</label>
+                                                                <p class="textRetrieved">DAVID M. CONSUNJI, INC.</p>
+                                                            </div>
+                                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Occupation:</label>
+                                                                <p class="textRetrieved">CONSTRUCTION WORKER</p>
+                                                            </div>
+                                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-12"><label class="form-label modalLabel">Salary Range:</label>
+                                                                <p class="textRetrieved">10,000 - 20,000</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row rowContainer my-4 mx-0 p-0">
+                                                    <div class="col col-12 p-0">
+                                                        <div class="markerContainer px-2">
+                                                            <p class="modalMarker">House Declaration</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="row gy-1">
+                                                            <div class="col col-12"><label class="form-label modalLabel">Head of the family:</label>
+                                                                <p class="textRetrieved">JUAN SANTOS DELA CRUZ</p>
+                                                            </div>
+                                                            <div class="col col-6"><label class="form-label modalLabel">Remarks:</label>
+                                                                <p class="textRetrieved">SOLO PARENT</p>
+                                                            </div>
+                                                            <div class="col col-6"><label class="form-label modalLabel">No. of members:</label>
+                                                                <p class="textRetrieved">5 to 10</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                    
-                                        </td>
-                                    
-                                    </tr>
-                                    ';
-                            }
-                            ?>
+                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <script>
+                                    $('.viewMore<?php echo $row["residentID"] ?>').click(function() {
+
+                                        var firstName = <?php echo $row['lastName'] ?>
+                                        alert(firstName);
+                                    });
+                                </script>
+
+
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -369,43 +479,28 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                         </thead>
 
                         <tbody>
-                            <?php while ($row = mysqli_fetch_array($resultResidentsTbl)) { ?>
+
+                            <?php
+                            while ($row = mysqli_fetch_array($resultResidentsTbl)) { ?>
+
                                 <tr>
-                                    <td id="lastName" class="entryRow" scope="col" data-label="Last Name"><?php echo $row["lastName"]; ?></td>
-                                    <td id="firstName" class="entryRow" scope="col" data-label="First Name"><?php echo $row["firstName"]; ?></td>
-                                    <td id="middleName" class="entryRow" scope="col" data-label="Middle Name"><?php echo $row["middleName"]; ?></td>
-                                    <td id="birthday" class="entryRow" scope="col" data-label="Birthday"><?php echo $row["birthDate"]; ?></td>
+                                    <td id="lastName" class="entryRow" scope="col" data-label="Last Name"><?php echo $row["last_name"]; ?></td>
+                                    <td id="firstName" class="entryRow" scope="col" data-label="First Name"><?php echo $row["first_name"]; ?></td>
+                                    <td id="middleName" class="entryRow" scope="col" data-label="Middle Name"><?php echo $row["middle_name"]; ?></td>
+                                    <td id="birthday" class="entryRow" scope="col" data-label="Birthday"><?php echo $row["birthday"]; ?></td>
                                     <td id="age" class="entryRow" scope="col" data-label="Age"><?php echo $row["age"]; ?></td>
-                                    <td id="gender" class="entryRow" scope="col" data-label="Gender"><?php echo $row["gender"]; ?></td>
-                                    <td id="civilStatus" class="entryRow" scope="col" data-label="Civil status"><?php echo $row["civilStatus"]; ?></td>
+                                    <td id="gender" class="entryRow" scope="col" data-label="Gender"><?php echo $row["gender_preference"]; ?></td>
+                                    <td id="civilStatus" class="entryRow" scope="col" data-label="Civil status"><?php echo $row["marital_status"]; ?></td>
                                     <td id="purok" class="entryRow" scope="col" data-label="Purok"><?php echo $row["purok"]; ?></td>
                                     <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $row["remarks"]; ?></td>
                                     <td id="actions" class="entryRow" scope="col" data-label="Actions">
 
-                                        <a class="btn view viewMore actionBtn profile" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $row['residentID'] ?>" data-id="<?php echo $row['residentID']; ?>" href="#viewMore"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="updateEntry.php?residentID=<?php echo $row["residentID"] ?>" value="AKEN" class="btn  update actionBtn" role="button" aria-pressed="true"><i class="fa-solid fa-pen"></i></a>
-                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a>
-
-                                        <!-- <btn <a href=".php? residentID=<?php echo $row["residentID"] ?>" class="btn btn-danger btn-sm" role="button" aria-pressed="true">><i class="fa-solid fa-trash-can"></i></a></btn> -->
-
-                                        <!-- <td> 
-                                            <div class="row m-0 d-flex justify-content-around align-items-center">
-                                                <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                                    <button class="viewMore btn view actionBtn" type="button" data-bs-toggle="modal" id="'.$row['residentID'].'"><i class="fa-solid fa-eye"></i></button>
-                                                </div>
-                                    
-                                                <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                                    <button class="btn update actionBtn"><i class="fa-solid fa-pen"></i></button>
-                                                </div>
-                                    
-                                                <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                                                    <button class="btn btn-danger delete actionBtn"><i class="fa-solid fa-trash-can"></i></button>
-                                                </div>
-                                            </div>
-                                    
-                                        </td> -->
+                                        <a class="btn view viewMore actionBtn profile" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $row['resident_id'] ?>" data-id="<?php echo $row['resident_id']; ?>" href="#viewMore"><i class="fa-solid fa-eye"></i></a>
+                                        <!-- <a href="updateEntry.php?residentID=<?php echo $row["residentID"] ?>" value="AKEN" class="btn  update actionBtn" role="button" aria-pressed="true"><i class="fa-solid fa-pen"></i></a> -->
+                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a></td>
 
                                 </tr>
+
                                 <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $row['residentID'] ?>">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -417,7 +512,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                                 <div class="row rowContainer m-0 p-0">
                                                     <div class="col align-self-center col-lg-8 col-md-8 col-sm-12 col-12 py-2">
                                                         <p class="textName lastName w-100 my-1"><?php echo $row['lastName'] . ' ' . $row['firstName'] . ' ' . $row['middleName'] ?></p>
-                                                        <p class="text Gender w-100 my-1 mt-2"><?php echo $row['age'] ?> YEARS OLD</p>
+                                                        <p class="text Gender w-100 my-1 mt-2"><?php  ?> YEARS OLD</p>
                                                         <p class="textAge w-100 my-1"><?php echo $row['gender'] ?></p>
                                                     </div>
                                                     <div class="col align-self-center"><img class="img-fluid imgContainer" src="assets/img/misc/qrcode.png"></div>
