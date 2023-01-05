@@ -39,7 +39,7 @@
             <div class="sectionDiv">
                <!-- CONTENT STARTS HERE -->
                <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <span>Abrigo, Patricia Mae</span>
                     <p>Polytechnic University of the Philippines</p>
                     <p>Contacts:<br>
@@ -49,7 +49,7 @@
                     </p>
                 </div>
 
-                <div class="col-lg-8" style="display:flex; align-items:center">
+                <div class="col-lg-7" style="display:flex; align-items:center">
                     <p align="justify">She was responsible for both designing and doing the prototype of the website. 
                         She made sure that every page and every step the users will experience in their 
                         interaction with the finished system will conform to the overall vision the team 
@@ -63,7 +63,7 @@
             <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
-                 <div class="col-lg-4">
+                 <div class="col-lg-5">
                      <span>Alcala, Nicole</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
@@ -73,7 +73,7 @@
                      </p>
                  </div>
  
-                 <div class="col-lg-8" style="display:flex; align-items:center">
+                 <div class="col-lg-7" style="display:flex; align-items:center">
                      <p align="justify">She was also in charge of the design and developers team. 
                         Alcala guided them through every step in developing the system. She was in 
                         charge of ensuring that the website looks good and functions properly. Alcala 
@@ -89,7 +89,7 @@
              <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
-                 <div class="col-lg-4">
+                 <div class="col-lg-5">
                      <span>Austria, Princess Carl B.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
@@ -98,7 +98,7 @@
                      </p>
                  </div>
  
-                 <div class="col-lg-8" style="display:flex; align-items:center">
+                 <div class="col-lg-7" style="display:flex; align-items:center">
                      <p align="justify">She was one of the people in charge of creating documentation to help 
                         others understand how the system worked. This provided a solid foundation for website 
                         development while also making things clearer to visitors. The documentation team supported 
@@ -114,7 +114,7 @@
              <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
-                 <div class="col-lg-4">
+                 <div class="col-lg-5">
                      <span>Baylon, Stephanie M.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
@@ -123,7 +123,7 @@
                      </p>
                  </div>
  
-                 <div class="col-lg-8" style="display:flex; align-items:center">
+                 <div class="col-lg-7" style="display:flex; align-items:center">
                      <p align="justify">She is also responsible for documenting the whole progress and functionality 
                         of the system. She guaranteed that every aspect regarding the website was well defined and easily 
                         understood. This will allow users to scan the entire website without difficulties. By properly 
@@ -138,7 +138,7 @@
              <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
-                 <div class="col-lg-4">
+                 <div class="col-lg-5">
                      <span>Gonzales, Justin Charles R.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
@@ -147,7 +147,7 @@
                      </p>
                  </div>
  
-                 <div class="col-lg-8" style="display:flex; align-items:center">
+                 <div class="col-lg-7" style="display:flex; align-items:center">
                      <p align="justify">He was a part of the documentation team. This team guaranteed that the system is simple 
                         to comprehend and use, while also serving as a reference for future adjustments or improvements. Users 
                         will also be able to learn how to browse your program efficiently and without difficulty. Anyone who 
@@ -162,7 +162,7 @@
              <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
-                 <div class="col-lg-4">
+                 <div class="col-lg-5">
                      <span>Morano, John Marc</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
@@ -171,7 +171,7 @@
                      </p>
                  </div>
  
-                 <div class="col-lg-8" style="display:flex; align-items:center">
+                 <div class="col-lg-7" style="display:flex; align-items:center">
                      <p align="justify">He was one of the people responsible for designing the overall layout and aesthetic 
                         for websites. It involved a mixture of visual and technical skills. Morano created the look, layout, 
                         and features of a website. He is also one of the main developers. He lives in Calamba, Laguna and is 
@@ -184,7 +184,7 @@
              <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
-                 <div class="col-lg-4">
+                 <div class="col-lg-5">
                      <span>Palalimpa, Michael John S.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
@@ -193,7 +193,7 @@
                      </p>
                  </div>
  
-                 <div class="col-lg-8" style="display:flex; align-items:center">
+                 <div class="col-lg-7" style="display:flex; align-items:center">
                      <p align="justify">He was the head of the team. He led them in doing this project, from web designing to 
                         coding the entire websites and in checking if everything is under control. Palalimpa also produced plans 
                         that effectively supported the project's goal and led the team to work efficiently. He worked hard to keep 
