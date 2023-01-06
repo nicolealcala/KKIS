@@ -178,6 +178,12 @@ require 'connection.php';
     <script type="text/javascript" src="assets/js/households.js"></script>
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
 
+    <!-- Active Link -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#households-link").addClass('nav-active');
+        })
+    </script>
 
 
 </body>

@@ -55,6 +55,12 @@ $(document).ready(function () {
     }
   });
 
+  if ($("#checkCustom").is(":disabled")) {
+    $(".customLbl").css("opacity", "1");
+  } else {
+    $(".customLbl").css("opacity", ".5");
+  }
+
   //For clicking Clear Btn
   $("#clearBtn").on("click", function () {
     $(".userInput").each(function () {

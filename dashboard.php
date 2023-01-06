@@ -290,6 +290,13 @@
     <!-- Custome Script -->
     <script src="assets/js/dashboard.js"></script>
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
+
+    <!-- Active Link -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#dashboard-link").addClass("nav-active");
+        })
+    </script>
 </body>
 
 </html>

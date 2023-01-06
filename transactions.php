@@ -186,6 +186,13 @@
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/transactions.js"></script>
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
+
+    <!-- Active Link -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#transactions-link").addClass('nav-active');
+        })
+    </script>
 </body>
 
 </html>

@@ -651,6 +651,12 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <script type="text/javascript" src="assets/js/profiles.js"></script>
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
 
+    <!-- Active Link -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#profiles-link").addClass('nav-active');
+        })
+    </script>
 </body>
 
 </html>

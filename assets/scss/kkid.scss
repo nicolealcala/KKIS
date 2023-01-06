@@ -12,7 +12,9 @@ $text: #393737;
 $tomato-orange: #F57441;
 $fade-orange: #F4895F;
 
-
+* {
+    font: $content-font;
+}
 
 #scanBtn {
     background-color: $tomato-orange;
@@ -48,7 +50,6 @@ $fade-orange: #F4895F;
     margin-bottom: 1.5em;
     
     .subTitle {
-        font: 100% $content-font;
         font-size: 1.5em;
         color: $text;
         font-weight: 500;
@@ -98,7 +99,6 @@ input[type="checkbox"]{
 .content::-webkit-scrollbar-track {
     background: white;        /* color of the tracking area */
 }
-  
 .content::-webkit-scrollbar-thumb {
     background-color: #c9c9c9;    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */

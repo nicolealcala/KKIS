@@ -50,15 +50,13 @@ hr {
 a {
   text-decoration: none;
   color: #b8bac9;
+  font-size: 18px;
+  font-family: "Inter";
+  font-weight: 500;
 }
 
 a:hover {
   color: #f3cb69;
-}
-
-.nav-active {
-  color: #8ecae6;
-  font-weight: 700;
 }
 
 .iconContainer {
@@ -66,16 +64,14 @@ a:hover {
   height: 30px;
 }
 
-.icon,
-.linkTitle {
-  font-size: 25px;
+.icon, .icon-active {
+  font-size: 20px;
   color: #b8bac9;
 }
 
-.linkTitle {
-  font-size: 18px;
-  font-family: "Inter";
-  font-weight: 500;
+.nav-active,
+.icon-active {
+  color: #ffdb80;
 }
 
 #botOptions {
@@ -378,14 +374,17 @@ ul.pagination {
   }
 }
 @media screen and (max-width: 576px) {
-  #loginCard, #signupCard {
+  #loginCard,
+#signupCard {
     width: 350px;
     padding: 0;
   }
-  #loginCard .card-body, #signupCard .card-body {
+  #loginCard .card-body,
+#signupCard .card-body {
     margin: 5px;
   }
-  #loginCard .card-body .fieldRow, #signupCard .card-body .fieldRow {
+  #loginCard .card-body .fieldRow,
+#signupCard .card-body .fieldRow {
     margin: 5px;
   }
 }
@@ -405,17 +404,21 @@ ul.pagination {
     padding: 15px;
     margin-top: 70px;
   }
-  #loginCard, #signupCard {
+  #loginCard,
+#signupCard {
     width: 250px;
     padding: 0;
   }
-  #loginCard .card-body, #signupCard .card-body {
+  #loginCard .card-body,
+#signupCard .card-body {
     margin: 5px;
   }
-  #loginCard .card-body .cardHead, #signupCard .card-body .cardHead {
+  #loginCard .card-body .cardHead,
+#signupCard .card-body .cardHead {
     font-size: 30px;
   }
-  #loginCard .card-body .fieldRow, #signupCard .card-body .fieldRow {
+  #loginCard .card-body .fieldRow,
+#signupCard .card-body .fieldRow {
     margin: 5px;
   }
   .markerDiv {

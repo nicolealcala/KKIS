@@ -1,3 +1,7 @@
+* {
+  font: DM Sans, sans-serif;
+}
+
 #scanBtn {
   background-color: #F57441;
 }
@@ -30,7 +34,6 @@
   margin-bottom: 1.5em;
 }
 .kkidBody .subTitle {
-  font: 100% DM Sans, sans-serif;
   font-size: 1.5em;
   color: #393737;
   font-weight: 500;

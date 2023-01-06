@@ -66,15 +66,13 @@ hr {
 a {
   text-decoration: none;
   color: #b8bac9;
+  font-size: 18px;
+  font-family: "Inter";
+  font-weight: 500;
 }
 
 a:hover {
   color: $light-yellow;
-}
-
-.nav-active {
-  color: $light-blue;
-  font-weight: 700;
 }
 
 .iconContainer {
@@ -82,16 +80,14 @@ a:hover {
   height: 30px;
 }
 
-.icon,
-.linkTitle {
-  font-size: 25px;
+.icon, .icon-active {
+  font-size: 20px;
   color: #b8bac9;
 }
 
-.linkTitle {
-  font-size: 18px;
-  font-family: "Inter";
-  font-weight: 500;
+.nav-active,
+.icon-active {
+  color: #ffdb80;
 }
 
 #botOptions {
@@ -422,7 +418,8 @@ ul.pagination {
 
 @media screen and (max-width: 576px) {
   //XS
-  #loginCard, #signupCard {
+  #loginCard,
+  #signupCard {
     width: 350px;
     padding: 0;
 
@@ -434,7 +431,6 @@ ul.pagination {
       }
     }
   }
-
 }
 
 @media screen and (max-width: 430px) {
@@ -461,9 +457,10 @@ ul.pagination {
       margin-top: 70px;
     }
   }
-  
+
   //Index
-  #loginCard, #signupCard {
+  #loginCard,
+  #signupCard {
     width: 250px;
     padding: 0;
 

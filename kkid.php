@@ -69,12 +69,12 @@
                     <div class="row kkidBody p-0 m-0 gy-5" id="kkidPage">
                         <!-- Batch Print -->
                         <div class="col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
-                            <p class="subTitle mb-3">Batch Printing</p>
+                            <h5>Batch Printing</h5>
                             <form class="m-0 mt-4 d-flex justify-content-center align-items-center" id="kkidForm">
                                 <div class="categoryCol row d-flex justify-content-center align-items-center my-auto gy-3 w-100">
                                     <!-- Category: Age -->
                                     <div class="col-sm-3 col-12 p-0">
-                                        <div class="form-check categoryDiv w-75">
+                                        <div class="form-check categoryDiv ">
                                             <input class="form-check-input checkboxCategory" type="checkbox" id="checkAge">
                                             <label class="form-check-label categoryLbl" for="checkAge">Age</label>
                                         </div>
@@ -89,7 +89,7 @@
                                     </div>
                                     <!-- Category: Purok -->
                                     <div class="col-sm-3 col-12 p-0">
-                                        <div class="form-check categoryDiv w-75">
+                                        <div class="form-check categoryDiv">
                                             <input class="form-check-input checkboxCategory" type="checkbox" id="checkPurok">
                                             <label class="form-check-label categoryLbl" for="checkPurok">Purok</label>
                                         </div>
@@ -126,24 +126,24 @@
                                     <div class="customDiv mt-2 mb-3 d-flex justify-content-center">
                                         <div class="row customCategory gy-4">
                                             <div class="col-md-3 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">First Name</label>
+                                                <label class="customLbl col-form-label" for="fName">First Name</label>
                                             </div>
                                             <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required disabled>
+                                                <input class="form-control userInput text-uppercase w-100" type="text" id="fName" required disabled>
                                             </div>
 
                                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">Middle Name</label>
+                                                <label class="customLbl col-form-label" for="mName">Middle Name</label>
                                             </div>
                                             <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required disabled>
+                                                <input class="form-control userInput text-uppercase w-100" type="text" id="mName" required disabled>
                                             </div>
 
                                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
-                                                <label class="col-form-label" for="headLname">Last Name</label>
+                                                <label class="customLbl col-form-label" for="lName">Last Name</label>
                                             </div>
                                             <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="headLname" required disabled>
+                                                <input class="form-control userInput text-uppercase w-100" type="text" id="lName" required disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -155,7 +155,7 @@
                         <div class="col idPreview col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
                             <div class="row m-0 w-100">
                                 <div class="col col-12 p-0">
-                                    <p class="text-start subTitle mb-3">ID Preview</p>
+                                    <h5 class="text-start mb-3">ID Preview</h5>
                                 </div>
                                 <div class="col text-center col-12 p-3 pt-1 w-100">
                                     <img class="img-fluid previewContainer" src="assets/img/misc/ID.png">
@@ -186,6 +186,13 @@
     <!-- Custom Script -->
     <script src="assets/js/kkid.js"></script>
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
+    
+    <!-- Active Link -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#kkid-link").addClass('nav-active');
+        })
+    </script>
 </body>
 
 </html>

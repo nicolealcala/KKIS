@@ -31,57 +31,57 @@
 
         <!-- Page Links -->
         <div class="row mx-0 my-4 p-0">
-            <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0" id="dashboard-link">
-                <a href="./dashboard.php" class="d-flex justify-content-start align-items-center">
-                    <div class="iconContainer d-flex justify-content-start align-items-center me-3">
+            <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
+                <a href="./dashboard.php" class="d-flex justify-content-start align-items-center" id="dashboard-link">
+                    <div class="iconContainer d-flex justify-content-start align-items-center me-2">
                         <i class="icon fa-solid fa-chart-column" id="dashIcon"></i>
                     </div>
-                    <span class="linkTitle" id="dashTxt">Dashboard</span>
+                    Dashboard
                 </a>
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./households.php" class="d-flex justify-content-start align-items-center" id="households-link">
-                    <div class="iconContainer d-flex justify-content-start align-items-center me-3">
+                    <div class="iconContainer d-flex justify-content-start align-items-center me-2">
                         <i class="icon fa-solid fa-house-chimney-user"></i>
                     </div>
-                    <span class="linkTitle">Declared Households</span>
+                    Declared Households
                 </a>
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./profiles.php" class="d-flex justify-content-start align-items-center" id="profiles-link">
-                    <div class="iconContainer d-flex justify-content-start align-items-center me-3">
+                    <div class="iconContainer d-flex justify-content-start align-items-center me-2">
                         <i class="icon fa-solid fa-user-group"></i>
                     </div>
-                    <span class="linkTitle">Profiles</span>
+                    Profiles
                 </a>
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./addEntry.php" class="d-flex justify-content-start align-items-center" id="add-link">
-                    <div class="iconContainer d-flex justify-content-start align-items-center me-3">
+                    <div class="iconContainer d-flex justify-content-start align-items-center me-2">
                         <i class="icon fa-solid fa-user-plus"></i>
                     </div>
-                    <span class="linkTitle" id="add-txt">Add New Entry</span>
+                    Add New Entry
                 </a>
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./kkid.php" class="d-flex justify-content-start align-items-center" id="kkid-link">
-                    <div class="iconContainer d-flex justify-content-start align-items-center me-3">
+                    <div class="iconContainer d-flex justify-content-start align-items-center me-2">
                         <i class="icon fa-regular fa-id-card"></i>
                     </div>
-                    <span class="linkTitle">KK ID Card</span>
+                    KK ID Card
                 </a>
             </div>
 
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./transactions.php" class="d-flex justify-content-start align-items-center" id="transactions-link">
-                    <div class="iconContainer d-flex justify-content-start align-items-center me-3">
+                    <div class="iconContainer d-flex justify-content-start align-items-center me-2">
                         <i class="icon fa-solid fa-clock-rotate-left"></i>
                     </div>
-                    <span class="linkTitle">Transaction History</span>
+                    Transaction History
                 </a>
             </div>
         </div>
@@ -92,14 +92,14 @@
         <div class="row mx-0 p-0" id="botOptions">
             <div class="col-12 my-1 p-0">
                 <a href="./settings-user-manual.php">
-                    <span class="linkTitle">Settings</span>
+                    Settings
                 </a>
             </div>
 
             <hr>
             <div class="col-12 my-1 p-0">
                 <a href="./index.php">
-                    <span class="linkTitle">Log out</span>
+                    Log out
                 </a>
             </div>
             <hr>

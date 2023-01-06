@@ -1,32 +1,35 @@
 $(document).ready(function () {
   //Nav Links
   $("#dashboard-link").click(function () {
-    $("#dashIcon").addClass("nav-active");
-    $("#dashTxt").addClass("nav-active");
+    $(this).addClass("nav-active");
+    $("#dashIcon").removeClass("icon");
+    $(".fa-chart-column").addClass("icon-active");
+    $("a").not(this).removeClass("nav-active");
   });
 
   $("#households-link").click(function () {
-    $("#households-link").addClass("nav-active");
+    $(this).addClass("nav-active");
+    $(this).find(".icon").addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
   });
 
   $("#profiles-link").click(function () {
-    $("#profiles-link").addClass("nav-active");
+    $(this).addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
   });
 
   $("#add-link").click(function () {
-    $("#add-txt").addClass("nav-active");
-    $(".linkTitle").not(this).removeClass("nav-active");
+    $(this).addClass("nav-active");
+    $("a").not(this).removeClass("nav-active");
   });
 
   $("#kkid-link").click(function () {
-    $("#kkid-link").addClass("nav-active");
+    $(this).addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
   });
 
   $("#transactions-link").click(function () {
-    $("#transactions-link").addClass("nav-active");
+    $(this).addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
   });
 
@@ -51,11 +54,11 @@ $(document).ready(function () {
     $(this).addClass("d-none");
   });
 
-  //Screen Resize
+  //Screen Resize - remove sidePanel
   $(window).resize(function () {
     if ($(window).width() < 992) {
-      $('#close').addClass("d-none");
-      $('#hamburger').removeClass('d-none');
+      $("#close").addClass("d-none");
+      $("#hamburger").removeClass("d-none");
       $("#leftPanel").removeClass("expanded");
       $("#leftPanel").addClass("shrunk");
       $("#mainPanel").removeClass("mainContainer");
@@ -63,10 +66,10 @@ $(document).ready(function () {
     }
   });
 
-  //Per Device Screen Sizes
+  //Per Device Screen Sizes - remove sidePanel
   if ($(window).width() < 992) {
-    $('#close').addClass("d-none");
-    $('#hamburger').removeClass('d-none');
+    $("#close").addClass("d-none");
+    $("#hamburger").removeClass("d-none");
     $("#leftPanel").removeClass("expanded");
     $("#leftPanel").addClass("shrunk");
     $("#mainPanel").removeClass("mainContainer");
