@@ -3,7 +3,7 @@ $(document).ready(function () {
   $("#dashboard-link").click(function () {
     $(this).addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
-    if ($(this).hasClass("nav-active")){
+    if ($(this).hasClass("nav-active")) {
       $(this).attr("aria-current", "page");
       $("#dashIcon").removeClass("icon");
       $(".fa-chart-column").addClass("icon-active");
@@ -61,6 +61,15 @@ $(document).ready(function () {
   $("#dashboard-md-link").click(function () {
     $(this).addClass("nav-mdactive");
     $("a").not(this).removeClass("nav-md-active");
+  });
+
+  //for hiding navbar-collapse when clicking outside
+  $(document).click(function (event) {
+    var clickover = $(event.target);
+    var _opened = $(".navbar-collapse").hasClass("show");
+    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+      $("button.navbar-toggler").click();
+    }
   });
 
   //Screen Resize - remove sidePanel
