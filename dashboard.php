@@ -1,10 +1,10 @@
 <?php
-//   session_start();
-// if ($_SESSION['email'] != "") {
-//     $email = $_SESSION['email'];
-// } else {
-//     header('Location:index.php');
-// }
+// XAMPP
+
+  include 'connection.php';
+
+  session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +75,20 @@
                                     </div>
                                     <div class="row m-0 align-self-end" style="z-index: 99">
                                         <div class="col-12 col-md-9 p-0">
-                                            <p class="mcCount" id="citizensCount">10, 205</p>
+                                            <!-- <p class="mcCount" id="citizensCount">
+                                                10,102
+                                            </p> -->
+                                            <?php
+                                                    $totalCitizens_query = "SELECT * FROM `residents`";
+                                                    $totalCitizens_query_run = mysqli_query($conn,$totalCitizens_query);
+                                                    if($dash_totalCitizens = mysqli_num_rows($totalCitizens_query_run)){
+
+                                                        echo '<p class="mcCount" id="citizensCount"> '.$dash_totalCitizens.' </p>';
+
+                                                    } else {
+                                                        echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                                    }
+                                            ?>
                                         </div>
                                         <div class="col-12 col-md-3 mb-2 align-self-end p-0">
                                             <button class="btn rounded-pill" type="button" id="viewBtn">View all</button>
@@ -138,7 +151,18 @@
                                 <div class="minorCategory row" id="pwd">
                                     <div class="texts">
                                         <p class="minorLbl">PWDs</p>
-                                        <span class="mcCount d-flex">31</span>
+                                        <?php
+                                            $disability_query = "SELECT `disability` FROM `residents` WHERE `disability` != 'None'";
+                                            $disability_query_run = mysqli_query($conn,$disability_query);
+                                            if($dash_disability = mysqli_num_rows($disability_query_run)){
+
+                                                echo '<p class="mcCount d-flex"> '.$dash_disability.' </p>';
+
+                                            } else {
+                                                echo '<p class="mcCount d-flex"> 0 </p>';
+                                            }
+                                        ?>
+                                        <!-- DI PA OKS YUNG PERCENTAGE -->
                                         <span class="percentage d-flex">0.3%</span>
                                     </div>
                                     <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -153,7 +177,18 @@
                                 <div class="minorCategory row" id="registered">
                                     <div class="texts">
                                         <p class="minorLbl">Registered Voters</p>
-                                        <span class="mcCount d-flex">8,391</span>
+                                        <?php
+                                            $voterType_query = "SELECT `voter_type` FROM `residents` WHERE `voter_type` = 'Registered'";
+                                            $voterType_query_run = mysqli_query($conn,$voterType_query);
+                                            if($dash_voterType = mysqli_num_rows($voterType_query_run)){
+
+                                                echo '<p class="mcCount d-flex"> '.$dash_voterType.' </p>';
+
+                                            } else {
+                                                echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                            }
+                                        ?>
+                                        <!-- DI PA FROM DB YUNG PERCENTAGE -->
                                         <span class="percentage d-flex">82%</span>
                                     </div>
                                     <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -168,7 +203,19 @@
                                 <div class="minorCategory row" id="unregistered">
                                     <div class="texts">
                                         <p class="minorLbl">Unregistered Voters</p>
-                                        <span class="mcCount d-flex">1,814</span>
+                                        <?php
+                                            $voterType_query = "SELECT `voter_type` FROM `residents` WHERE `voter_type` = 'Unregistered'";
+                                            $voterType_query_run = mysqli_query($conn,$voterType_query);
+                                            if($dash_voterType = mysqli_num_rows($voterType_query_run)){
+
+                                                echo '<p class="mcCount d-flex"> '.$dash_voterType.' </p>';
+
+                                            } else {
+                                                echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                            }
+                                        ?>
+
+                                        <!-- DI PA FROM DB YUNG PERCENTAGE -->
                                         <span class="percentage d-flex">18%</span>
                                     </div>
                                     <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -205,7 +252,18 @@
                         <a href="tblEnrolled.php">
                             <div class="category" id="enrolledYouth" style="background-color: #219EBC">
                                 <div class="texts">
-                                    <h1 class="count">3155</h1>
+                                    <!-- <h1 class="count">3155</h1> -->
+                                    <?php
+                                        $enrolled_query = "SELECT `student_status` FROM `educational_info` WHERE `student_status` = 'ENROLLED'";
+                                        $enrolled_query_run = mysqli_query($conn,$enrolled_query);
+                                        if($dash_enrolled = mysqli_num_rows($enrolled_query_run)){
+
+                                            echo '<h1 class="count"> '.$dash_enrolled.' </h1>';
+
+                                        } else {
+                                            echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                        }
+                                    ?>
                                     <p class="subTitle">Enrolled Youth</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -220,7 +278,17 @@
                         <a href="tblOutOfSchool.php">
                             <div class="category" id="ousYouth" style="background-color: #04496A">
                                 <div class="texts">
-                                    <h1 class="count">362</h1>
+                                    <?php
+                                        $enrolled_query = "SELECT `student_status` FROM `educational_info` WHERE `student_status` = 'Out-of-school youth'";
+                                        $enrolled_query_run = mysqli_query($conn,$enrolled_query);
+                                        if($dash_enrolled = mysqli_num_rows($enrolled_query_run)){
+
+                                            echo '<h1 class="count"> '.$dash_enrolled.' </h1>';
+
+                                        } else {
+                                            echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                        }
+                                    ?>
                                     <p class="subTitle">Out-of-school Youth</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -235,7 +303,17 @@
                         <a href="tblWorkingStudent.php">
                             <div class="category" id="workingStudent" style="background-color: #F3CB69">
                                 <div class="texts">
-                                    <h1 class="count">586</h1>
+                                <?php
+                                        $enrolled_query = "SELECT `student_status` FROM `educational_info` WHERE `student_status` = 'Working Student'";
+                                        $enrolled_query_run = mysqli_query($conn,$enrolled_query);
+                                        if($dash_enrolled = mysqli_num_rows($enrolled_query_run)){
+
+                                            echo '<h1 class="count"> '.$dash_enrolled.' </h1>';
+
+                                        } else {
+                                            echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                        }
+                                    ?>
                                     <p class="subTitle">Working Student</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -250,7 +328,17 @@
                         <a href="tblEmployed.php">
                             <div class="category" id="employed" style="background-color: #FFB703">
                                 <div class="texts">
-                                    <h1 class="count">966</h1>
+                                <?php
+                                        $employment_query = "SELECT `employment_status` FROM `employment_info` WHERE `employment_status` = 'Employed'";
+                                        $employment_query_run = mysqli_query($conn,$employment_query);
+                                        if($dash_employment = mysqli_num_rows($employment_query_run)){
+
+                                            echo '<h1 class="count"> '.$dash_employment.' </h1>';
+
+                                        } else {
+                                            echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                        }
+                                    ?>
                                     <p class="subTitle">Employed</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -265,7 +353,17 @@
                         <a href="tblUnemployed.php">
                             <div class="category" id="unemployed" style="background-color: #FB8500">
                                 <div class="texts">
-                                    <h1 class="count">333</h1>
+                                    <?php
+                                        $employment_query = "SELECT `employment_status` FROM `employment_info` WHERE `employment_status` = 'Unemployed'";
+                                        $employment_query_run = mysqli_query($conn,$employment_query);
+                                        if($dash_employment = mysqli_num_rows($employment_query_run)){
+
+                                            echo '<h1 class="count"> '.$dash_employment.' </h1>';
+
+                                        } else {
+                                            echo '<p class="mcCount" id="citizensCount"> No Data </p>';
+                                        }
+                                    ?>
                                     <p class="subTitle">Unemployed</p>
                                 </div>
                                 <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -282,7 +380,7 @@
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Slick -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
