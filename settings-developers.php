@@ -40,12 +40,12 @@
                <!-- CONTENT STARTS HERE -->
                <div class="row">
                 <div class="col-lg-5">
-                    <span>Abrigo, Patricia Mae</span>
+                    <span class="member">Abrigo, Patricia Mae</span>
                     <p>Polytechnic University of the Philippines</p>
                     <p>Contacts:<br>
-                        <i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/in/abrigopat" target="_blank"> https://www.linkedin.com/in/abrigopat</a></i><br>
-                        <i class="fa-brands fa-square-github"><a href="https://github.com/abrigopat" target="_blank"> https://github.com/abrigopat</a></i><br>
-                        <i class="fa-brands fa-square-facebook"><a href="https://www.facebook.com/abrigopatricia?mibextid=ZbWKwL" target="_blank"> https://www.facebook.com/abrigopatricia</a><br></i>
+                        <i class="fa-brands fa-linkedin"><a class="contact-link" href="https://www.linkedin.com/in/abrigopat" target="_blank"> https://www.linkedin.com/in/abrigopat</a></i><br>
+                        <i class="fa-brands fa-square-github"><a class="contact-link" href="https://github.com/abrigopat" target="_blank"> https://github.com/abrigopat</a></i><br>
+                        <i class="fa-brands fa-square-facebook"><a class="contact-link" href="https://www.facebook.com/abrigopatricia?mibextid=ZbWKwL" target="_blank"> https://www.facebook.com/abrigopatricia</a></i>
                     </p>
                 </div>
 
@@ -64,12 +64,12 @@
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
                  <div class="col-lg-5">
-                     <span>Alcala, Nicole</span>
+                     <span class="member">Alcala, Nicole</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
-                         <i class="fa-brands fa-linkedin"><a href="www.linkedin.com/in/nicolealcala" target="_blank"> www.linkedin.com/in/nicolealcala</a></i><br>
-                         <i class="fa-brands fa-square-github"><a href="https://github.com/nicolealcala" target="_blank"> https://github.com/nicolealcala</a></i><br>
-                         <i class="fa-brands fa-square-facebook"><a href="https://web.facebook.com/nicole.alcala.m" target="_blank"> https://web.facebook.com/nicole.alcala.m</a></i>
+                         <i class="fa-brands fa-linkedin"><a class="contact-link" href="www.linkedin.com/in/nicolealcala" target="_blank"> www.linkedin.com/in/nicolealcala</a></i><br>
+                         <i class="fa-brands fa-square-github"><a class="contact-link" href="https://github.com/nicolealcala" target="_blank"> https://github.com/nicolealcala</a></i><br>
+                         <i class="fa-brands fa-square-facebook"><a class="contact-link" href="https://web.facebook.com/nicole.alcala.m" target="_blank"> https://web.facebook.com/nicole.alcala.m</a></i>
                      </p>
                  </div>
  
@@ -90,11 +90,12 @@
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
                  <div class="col-lg-5">
-                     <span>Austria, Princess Carl B.</span>
+                     <span class="member">Austria, Princess Carl B.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
-                        <i class="fa-brands fa-linkedin"><a href="www.linkedin.com/in/princess-austria" target="_blank"> www.linkedin.com/in/princess-austria</a></i><br>
-                        <i class="fa-brands fa-square-facebook"><a href="https://www.facebook.com/princesscarll/" target="_blank"> https://www.facebook.com/princesscarll/</a></i>
+                        <i class="fa-brands fa-linkedin"><a class="contact-link" href="www.linkedin.com/in/princess-austria" target="_blank"> www.linkedin.com/in/princess-austria</a></i><br>
+                        <i class="fa-brands fa-square-github"><a class="contact-link" href="https://github.com/princesscarl" target="_blank"> https://github.com/princesscarl</a></i><br>
+                        <i class="fa-brands fa-square-facebook"><a class="contact-link" href="https://www.facebook.com/princesscarll/" target="_blank"> https://www.facebook.com/princesscarll/</a></i>
                      </p>
                  </div>
  
@@ -115,11 +116,12 @@
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
                  <div class="col-lg-5">
-                     <span>Baylon, Stephanie M.</span>
+                     <span class="member">Baylon, Stephanie M.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
-                        <i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/in/stephanie-baylon" target="_blank"> https://www.linkedin.com/in/stephanie-baylon</a></i><br>
-                        <i class="fa-brands fa-square-facebook"><a href="https://www.facebook.com/panie.baylon" target="_blank"> https://www.facebook.com/panie.baylon</a></i>
+                        <i class="fa-brands fa-linkedin"><a class="contact-link" href="https://www.linkedin.com/in/stephanie-baylon" target="_blank"> https://www.linkedin.com/in/stephanie-baylon</a></i><br>
+                        <i class="fa-brands fa-square-github"><a class="contact-link" href="https://github.com/smbaylon" target="_blank"> https://github.com/smbaylon</a></i><br>
+                        <i class="fa-brands fa-square-facebook"><a class="contact-link" href="https://www.facebook.com/panie.baylon" target="_blank"> https://www.facebook.com/panie.baylon</a></i>
                      </p>
                  </div>
  
@@ -139,11 +141,12 @@
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
                  <div class="col-lg-5">
-                     <span>Gonzales, Justin Charles R.</span>
+                     <span class="member">Gonzales, Justin Charles R.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
-                        <i class="fa-brands fa-linkedin"><a href="https://www.facebook.com/justincharles.gonzales" target="_blank"> https://www.facebook.com/justincharles.gonzales</a></i><br>
-                        <i class="fa-brands fa-square-facebook"><a href="https://www.linkedin.com/in/justin-gonzales" target="_blank"> https://www.linkedin.com/in/justin-gonzales</a></i>
+                        <i class="fa-brands fa-linkedin"><a class="contact-link" href="https://www.facebook.com/justincharles.gonzales" target="_blank"> https://www.facebook.com/justincharles.gonzales</a></i><br>
+                        <i class="fa-brands fa-square-github"><a class="contact-link" href="https://github.com/HUSTATEN" target="_blank"> https://github.com/HUSTATEN</a></i><br>
+                        <i class="fa-brands fa-square-facebook"><a class="contact-link" href="https://www.linkedin.com/in/justin-gonzales" target="_blank"> https://www.linkedin.com/in/justin-gonzales</a></i>
                      </p>
                  </div>
  
@@ -163,11 +166,12 @@
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
                  <div class="col-lg-5">
-                     <span>Morano, John Marc</span>
+                     <span class="member">Morano, John Marc</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
-                         <a href="" target="_blank"></a><br>
-                         <a href="" target="_blank"></a>
+                        <i class="fa-brands fa-linkedin"><a class="contact-link" href="https://www.linkedin.com/in/john-marc-morano" target="_blank"> https://www.linkedin.com/in/john-marc-morano</a></i><br>
+                        <i class="fa-brands fa-square-github"><a class="contact-link" href="https://github.com/JM-Morano" target="_blank"> https://github.com/JM-Morano</a></i><br>
+                        <i class="fa-brands fa-square-facebook"><a class="contact-link" href="https://www.facebook.com/thr4llvyzefr/" target="_blank"> https://www.facebook.com/thr4llvyzefr/</a></i>
                      </p>
                  </div>
  
@@ -185,11 +189,11 @@
                 <!-- CONTENT STARTS HERE -->
                 <div class="row">
                  <div class="col-lg-5">
-                     <span>Palalimpa, Michael John S.</span>
+                     <span class="member">Palalimpa, Michael John S.</span>
                      <p>Polytechnic University of the Philippines</p>
                      <p>Contacts:<br>
-                        <i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/in/michael-palalimpa" target="_blank"> https://www.linkedin.com/in/michael-palalimpa</a></i><br>
-                        <i class="fa-brands fa-square-facebook"><a href="facebook.com/palalimpamichaeljohn" target="_blank"> facebook.com/palalimpamichaeljohn</a></i>
+                        <i class="fa-brands fa-linkedin"><a class="contact-link" href="https://www.linkedin.com/in/michael-palalimpa" target="_blank"> https://www.linkedin.com/in/michael-palalimpa</a></i><br>
+                        <i class="fa-brands fa-square-facebook"><a class="contact-link" href="facebook.com/palalimpamichaeljohn" target="_blank"> facebook.com/palalimpamichaeljohn</a></i>
                      </p>
                  </div>
  
