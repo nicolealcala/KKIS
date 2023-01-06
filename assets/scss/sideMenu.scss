@@ -23,7 +23,7 @@ $fade-orange: #f4895f;
 
 //Large Nav page
 .sideNav,
-.expanded {
+.expanded{
   position: fixed;
   padding: 0;
   background-color: $dark-blue;
@@ -80,7 +80,7 @@ a:hover {
   height: 30px;
 }
 
-.icon, .icon-active {
+.icon {
   font-size: 20px;
   color: #b8bac9;
 }
@@ -317,6 +317,10 @@ nav {
   span {
     color: white;
   }
+}
+
+.icon:focus {
+  color: $light-yellow;
 }
 
 .btn-secondary:hover,

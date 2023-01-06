@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs</title>
 
-    <!-- Fundamental links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/settings.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
@@ -25,29 +21,26 @@
 </head>
 
 <body>
-    <div class="sidePanel d-none d-lg-flex">
+    <div class="expanded d-none d-lg-flex">
         <?php
         include "settings.php";
         ?>
     </div>
 
-    <div class="mainPanel">
+    <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
-            <i role="button" class="backIcon fa-solid fa-arrow-left me-3 d-lg-none"></i>
-            <span class="mainTitle">FAQs</span>
+            <a href="./settings.php">
+                <i role="button" class="backIcon fa-solid fa-arrow-left d-lg-none me-3" style="color: #9fa7bf"></i>
+                <span class="sideTitle">FAQs</span>
+            </a>
 
             <div class="sectionDiv">
-               <!-- CONTENT STARTS HERE -->
+                <!-- CONTENT STARTS HERE -->
             </div>
 
 
         </div>
     </div>
-
-
-    <!-- Fundamental Links -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Data tables -->
     <script src="assets/js/datatables.min.js"></script>

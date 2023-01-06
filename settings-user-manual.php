@@ -23,20 +23,22 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 
-    
+
 </head>
 
 <body>
-    <div class="sidePanel d-none d-lg-flex">
+    <div class="expanded d-none d-lg-flex">
         <?php
         include "settings.php";
         ?>
     </div>
 
-    <div class="mainPanel">
+    <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
-            <i role="button" class="backIcon fa-solid fa-arrow-left me-3 d-lg-none"></i>
-            <span class="mainTitle">User Manual</span>
+            <a href="./settings">
+                <i role="button" class="backIcon fa-solid fa-arrow-left d-lg-none me-3" style="color: #9fa7bf"></i>
+                <span class="sideTitle">User Manual</span>
+            </a>
 
             <!-- Content 1 -->
             <div class="sectionDiv">
@@ -69,7 +71,7 @@
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>
-    
+
     <!-- Active page -->
     <script type="text/javascript">
         $(document).ready(function() {

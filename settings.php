@@ -9,11 +9,11 @@
 
   <!-- Fundamental Links -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-  <!-- Styles -->
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/scss/settings.css" />
   <link rel="stylesheet" href="assets/scss/mediaquery.css" />
 
@@ -32,7 +32,7 @@
 
     <div class="userType row mx-0 mt-4 mb-5 gy-3">
       <div class="col-12">
-        <img class="adminImg img-fluid mx-auto d-block" src="assets/img/misc/defaultProfilePic.png" alt="" />
+        <img class="adminImg mx-auto d-block" src="assets/img/misc/defaultProfilePic.png" alt="" />
       </div>
       <div class="col-12">
         <span class="adminName mx-auto d-block text-center my-1">Daniel Gecale</span>
@@ -49,17 +49,6 @@
         </div>
         <!-- User Manual Page -->
         <div class="col-12 d-block align-items-center pe-0">
-          <!-- <a href="./settings-user-manual.php" class="mx-0" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="tableOfContents" id="userManual-link">User Manual
-            <i class="fa-solid fa-caret-down ms-2"></i>
-            <i class="fa-solid fa-caret-up ms-2 d-none"></i>
-          </a>
-          <div class="collapse" id="tableOfContents">
-            <ul class="my-1">
-              <li>Manual 1</li>
-              <li>Manual 2</li>
-              <li>Manual 3</li>
-            </ul>
-          </div> -->
           <a href="./settings-user-manual.php" id="userManual-link">User Manual</a>
           <span class="drop-arrow" role="button" data-bs-toggle="collapse" data-bs-target="#tableOfContents" aria-expanded="false" aria-controls="tableOfContents">
             <i class="fa-solid fa-caret-down ms-2"></i>
@@ -125,6 +114,41 @@
       </label>
     </div>
   </div>
+
+  <!-- SMALL SCREEN NAV -->
+  <nav class="d-none navbar navbar-expand-lg navbar-light" id="smallNav">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#"><img class="me-1" src="assets/img/logos/kkis-brand.svg" alt="" width="50px" height="50px">KKIS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="smallNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="smallNavMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="./settings-user-manual.php" id="dashboard-md-link">User Manual</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./settings-change-password.php" id="households-md-link">Change Password</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./settings-FAQs.php" id="profiles-md-link">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./settings-admin-role-controls.php" id="add-md-link">Admin Role Controls</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a class="nav-link nav-md-link" href="./settings-system-info.php" id="transactions-md-link">System Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-md-link" href="./settings-developers.php" id="transactions-md-link">Developers</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Fundamental Links -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

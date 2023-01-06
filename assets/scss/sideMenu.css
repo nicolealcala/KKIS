@@ -64,7 +64,7 @@ a:hover {
   height: 30px;
 }
 
-.icon, .icon-active {
+.icon {
   font-size: 20px;
   color: #b8bac9;
 }
@@ -284,6 +284,10 @@ nav .container-fluid #smallNavMenu .nav-md-link {
 .btn-secondary span,
 .btn-group span {
   color: white;
+}
+
+.icon:focus {
+  color: #f3cb69;
 }
 
 .btn-secondary:hover,

@@ -183,15 +183,14 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                     <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="kabataanTbl" style="width:100%">
                         <thead class="headTitle">
                             <tr>
-                                <th>Last Name</th>
-                                <th>First Name</th>
-                                <th>Middle Name</th>
-                                <th>Birthdate</th>
-                                <th>Age</th>
-                                <th>Gender</th>
-                                <th>Civil status</th>
-                                <th>Purok</th>
-                                <th>Remarks</th>
+                                <th class="tblHead">Last Name</th>
+                                <th class="tblHead">First Name</th>
+                                <th class="tblHead">Middle Name</th>
+                                <th class="tblHead">Age</th>
+                                <th class="tblHead">Gender</th>
+                                <th class="tblHead">Civil status</th>
+                                <th class="tblHead">Purok</th>
+                                <th class="tblHead">Remarks</th>
                                 <th class="actions">Actions</th>
                             </tr>
                         </thead>

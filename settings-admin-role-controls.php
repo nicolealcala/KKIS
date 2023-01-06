@@ -29,16 +29,18 @@ require "connection.php";
 </head>
 
 <body>
-    <div class="sidePanel d-none d-lg-flex">
+    <div class="expanded d-none d-lg-flex">
         <?php
         include "settings.php";
         ?>
     </div>
 
-    <div class="mainPanel">
+    <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
-            <i role="button" class="backIcon fa-solid fa-arrow-left me-3 d-lg-none"></i>
-            <span class="mainTitle">Admin Role Controls</span>
+            <a href="./settings.php">
+                <i role="button" class="backIcon fa-solid fa-arrow-left d-lg-none me-3" style="color: #9fa7bf"></i>
+                <span class="sideTitle">Admin Role Controls</span>
+            </a>
 
             <div class="sectionDiv">
                 <table id="adminTbl" class="table table-striped  dataTable display nowrap no-footer dtr-inline collapsed" role="grid" cellspacing="0">

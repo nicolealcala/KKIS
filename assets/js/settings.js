@@ -1,5 +1,5 @@
 $(document).ready(function () {
- //Settings Panel
+  //Settings Panel
   $("#userManual-link").click(function () {
     $("#userManual-link").addClass("active");
     $("a").not(this).removeClass("active");
@@ -36,13 +36,13 @@ $(document).ready(function () {
     $(".mainPanel").css("background-color: #14121E");
   }
 
-  $("#dark-toggle").change(function(){
+  $("#dark-toggle").change(function () {
     $(".slider").css("background-color: #2196F3");
     $(".sidePanel").css("background-color: #1A1E23");
     $(".mainPanel").css("background-color: #14121E");
-  })
+  });
 
-  //Access control 
+  //Access control
   // Admin-role-controls
   $("#adminTbl").DataTable({
     buttons: ["copy", "csv", "excel", "pdf", "print"],
@@ -51,13 +51,33 @@ $(document).ready(function () {
     paging: false,
   });
 
-  $("#editBtn").click(function(){
-    $('#selectRole').removeAttr("disabled");
-  })
+  $("#editBtn").click(function () {
+    $("#selectRole").removeAttr("disabled");
+  });
 
-  if($('select option').is(":selected")) {
-    $(this).closest('tr').find('td select').attr("disabled", "disabled");
+  if ($("select option").is(":selected")) {
+    $(this).closest("tr").find("td select").attr("disabled", "disabled");
   }
 
-});
+  //Screen Resize - remove sidePanel
+  $(window).resize(function () {
+    if ($(window).width() < 992) {
+      $("#close").addClass("d-none");
+      $("#hamburger").removeClass("d-none");
+      $("#sidePanel").removeClass("expanded");
+      $("#sidePanel").addClass("shrunk");
+      $("#mainPanel").removeClass("mainContainer");
+      $("#mainPanel").addClass("full-width");
+    }
+  });
 
+  //Per Device Screen Sizes - remove sidePanel
+  if ($(window).width() < 992) {
+    $("#close").addClass("d-none");
+    $("#hamburger").removeClass("d-none");
+    $("#leftPanel").removeClass("expanded");
+    $("#leftPanel").addClass("shrunk");
+    $("#mainPanel").removeClass("mainContainer");
+    $("#mainPanel").addClass("full-width");
+  }
+});

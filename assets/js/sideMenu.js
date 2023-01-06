@@ -3,16 +3,10 @@ $(document).ready(function () {
   $("#dashboard-link").click(function () {
     $(this).addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
-    if ($(this).hasClass("nav-active")) {
-      $(this).attr("aria-current", "page");
-      $("#dashIcon").removeClass("icon");
-      $(".fa-chart-column").addClass("icon-active");
-    }
   });
 
   $("#households-link").click(function () {
     $(this).addClass("nav-active");
-    $(this).find(".icon").addClass("nav-active");
     $("a").not(this).removeClass("nav-active");
   });
 
