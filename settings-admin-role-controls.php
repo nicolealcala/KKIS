@@ -11,10 +11,6 @@ require "connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Role Controls</title>
 
-    <!-- Fundamental links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/settings.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
@@ -29,7 +25,7 @@ require "connection.php";
 </head>
 
 <body>
-    <div class="expanded d-none d-lg-flex">
+    <div class="expanded d-none d-lg-flex" id="leftPanel">
         <?php
         include "settings.php";
         ?>
@@ -38,81 +34,84 @@ require "connection.php";
     <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
             <a href="./settings.php">
-                <i role="button" class="backIcon fa-solid fa-arrow-left d-lg-none me-3" style="color: #9fa7bf"></i>
+                <i role="button" class="backIcon fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
                 <span class="sideTitle">Admin Role Controls</span>
             </a>
 
             <div class="sectionDiv">
-                <table id="adminTbl" class="table table-striped  dataTable display nowrap no-footer dtr-inline collapsed" role="grid" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th class="adminHead"><input type="checkbox" class="me-2"> Name</th>
-                            <th class="adminHead">Email address</th>
-                            <th class="adminHead">Contact No.</th>
-                            <th class="adminHead">Status</th>
-                            <th class="adminHead">Role</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                <div class="row mx-0">
+                    <div class="col-12">
+                        <table id="adminTbl" class="table table-striped  dataTable display nowrap no-footer dtr-inline collapsed" role="grid" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="adminHead"><input type="checkbox" class="me-2"> Name</th>
+                                    <th class="adminHead">Email address</th>
+                                    <th class="adminHead">Contact No.</th>
+                                    <th class="adminHead">Status</th>
+                                    <th class="adminHead">Role</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
 
-                    <tbody>
-                        <?php
-                        $queryAdmin = "SELECT CONCAT(`first_name`, ' ', `last_name`) AS `full_name`, `contact_no`, `email` FROM `admins`";
-                        $getAdmin = executeQuery($queryAdmin);
+                            <tbody>
+                                <?php
+                                $queryAdmin = "SELECT CONCAT(`first_name`, ' ', `last_name`) AS `full_name`, `contact_no`, `email` FROM `admins`";
+                                $getAdmin = executeQuery($queryAdmin);
 
-                        while ($rowAdmin = mysqli_fetch_array($getAdmin)) {
-                            echo '
-                            <tr>
-                            <td class="entryRow" scope="col" data-label="Name">
-                                <div class="d-flex">
-                                    <input type="checkbox" class="me-3">
-                                    <div class="nameCell d-flex justify-content-start align-items-center">
-                                        <img class="profilePic img-fluid me-2" src="assets/img/misc/defaultProfilePic.png" alt="">
-                                        <span class="rowName">' . $rowAdmin["full_name"] . '</span><br>
-                                    </div>
-                                </div>
-                            </td>
+                                while ($rowAdmin = mysqli_fetch_array($getAdmin)) {
+                                    echo '
+                                    <tr>
+                                    <td class="entryRow" scope="col" data-label="Name">
+                                        <div class="d-flex">
+                                            <input type="checkbox" class="me-3">
+                                            <div class="nameCell d-flex justify-content-start align-items-center">
+                                                <img class="profilePic img-fluid me-2" src="assets/img/misc/defaultProfilePic.png" alt="">
+                                                <span class="rowName">' . $rowAdmin["full_name"] . '</span><br>
+                                            </div>
+                                        </div>
+                                    </td>
 
-                            <td class="entryRow" scope="col" data-label="Email">
-                            <div style="width: 100%; height: 100%;"><span class="my-auto">' . $rowAdmin["email"] . '</span></div>
-                            </td>
+                                    <td class="entryRow" scope="col" data-label="Email">
+                                    <div style="width: 100%; height: 100%;"><span class="my-auto">' . $rowAdmin["email"] . '</span></div>
+                                    </td>
 
-                            <td class="entryRow" scope="col" data-label="Contact No."><div class="h-100 d-flex align-items-center">' . $rowAdmin["contact_no"] . '</div></td>
+                                    <td class="entryRow" scope="col" data-label="Contact No."><div class="h-100 d-flex align-items-center">' . $rowAdmin["contact_no"] . '</div></td>
 
-                            <td class="entryRow" scope="col" data-label="Status">
-                                <div class="online d-flex justify-content-start align-items-center rounded-3">
-                                   <div class="online-dot me-1"></div><span id="onlineTxt">Online</span>
-                                </div>
+                                    <td class="entryRow" scope="col" data-label="Status">
+                                        <div class="online d-flex justify-content-start align-items-center rounded-3">
+                                        <div class="online-dot me-1"></div><span id="onlineTxt">Online</span>
+                                        </div>
 
-                                <div class="offline d-flex justify-content-start align-items-center rounded-3 d-none">
-                                    <div class="offline-dot me-1"></div><span id="offlineTxt">Offline</span>
-                                </div>
-                            </td>
+                                        <div class="offline d-flex justify-content-start align-items-center rounded-3 d-none">
+                                            <div class="offline-dot me-1"></div><span id="offlineTxt">Offline</span>
+                                        </div>
+                                    </td>
 
-                            <td class="entryRow">
-                                <select class="form-select m-auto" name="adminRole" id="selectRole" disabled>
-                                    <option value="1">Super Administrator</option>
-                                    <option value="2">Administrator</option>
-                                    <option value="3">Staff Member</option>
-                                </select>
-                            </td>
+                                    <td class="entryRow">
+                                        <select class="form-select m-auto" name="adminRole" id="selectRole" disabled>
+                                            <option value="1">Super Administrator</option>
+                                            <option value="2">Administrator</option>
+                                            <option value="3">Staff Member</option>
+                                        </select>
+                                    </td>
 
-                            <td>
-                                <div class="row mx-0 gx-1">
-                                    <div class="col-6 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-primary" id="editBtn"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
-                                    </div>
-                                    <div class="col-6 d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#warning-modal" id="deleteBtn"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
-                                    </div>  
-                                </div>
-                            </td>
-                        </tr>';
-                        }
-                        ?>
-
-                    </tbody>
-                </table>
+                                    <td>
+                                        <div class="row mx-0 gx-1">
+                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                <button class="btn btn-primary" id="editBtn"><i class="editIcon fa-solid fa-pen-to-square"></i></button>
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#warning-modal" id="deleteBtn"><i class="deleteIcon fa-regular fa-trash-can"></i></button>
+                                            </div>  
+                                        </div>
+                                    </td>
+                                </tr>';
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
                 <!-- Modal Warning -->
                 <div class="modal fade" tabindex="-1" id="warning-modal">
@@ -137,11 +136,6 @@ require "connection.php";
 
         </div>
     </div>
-
-
-    <!-- Fundamental Links -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Data tables -->
     <script src="assets/js/datatables.min.js"></script>

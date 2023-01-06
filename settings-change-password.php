@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="expanded d-none d-lg-flex">
+    <div class="expanded d-none d-lg-flex" id="leftPanel">
         <?php
         include "settings.php";
         ?>
@@ -26,7 +26,7 @@
     <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
             <a href="./settings.php">
-                <i role="button" class="backIcon fa-solid fa-arrow-left d-lg-none me-3" style="color: #9fa7bf"></i>
+                <i role="button" class="backIcon fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
                 <span class="sideTitle">Change Password</span>
             </a>
             <div class="sectionDiv">

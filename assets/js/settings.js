@@ -62,22 +62,20 @@ $(document).ready(function () {
   //Screen Resize - remove sidePanel
   $(window).resize(function () {
     if ($(window).width() < 992) {
-      $("#close").addClass("d-none");
-      $("#hamburger").removeClass("d-none");
-      $("#sidePanel").removeClass("expanded");
-      $("#sidePanel").addClass("shrunk");
+      $("#leftPanel").removeClass("expanded");
+      $("#leftPanel").addClass("shrunk");
       $("#mainPanel").removeClass("mainContainer");
       $("#mainPanel").addClass("full-width");
+      $(".backIcon").removeClass("d-none");
     }
   });
 
   //Per Device Screen Sizes - remove sidePanel
   if ($(window).width() < 992) {
-    $("#close").addClass("d-none");
-    $("#hamburger").removeClass("d-none");
     $("#leftPanel").removeClass("expanded");
     $("#leftPanel").addClass("shrunk");
     $("#mainPanel").removeClass("mainContainer");
     $("#mainPanel").addClass("full-width");
+    $(".backIcon").removeClass("d-none");
   }
 });

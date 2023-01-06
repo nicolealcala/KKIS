@@ -26,10 +26,16 @@ $fade-orange: #f4895f;
   overflow-y: auto;
 }
 
+//Side Panel
 .settingsPanel {
-  width: 100%;
   padding: 2em 3.5em 2em 2em;
   background: none;
+}
+
+.shrunk {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .backIcon {
@@ -138,6 +144,11 @@ li {
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.content {
+  width: 95%;
+  z-index: 3;
 }
 
 .sectionDiv {
@@ -307,20 +318,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-// Responsiveness
-@media only screen and (max-width: 992px) {
-  .sidePanel {
-    width: 0;
-  }
-  .mainPanel {
-    position: absolute;
-    border-radius: 0;
-    box-shadow: none;
-    max-width: 100vw;
-    height: 100vh;
-    padding: 2em;
-    z-index: 5;
-  }
 }
