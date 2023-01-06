@@ -140,6 +140,19 @@ li {
   margin-top: 50px;
 }
 
+.question {
+  color: #219ebc;
+  font-weight: bold;
+}
+.compatability, td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+.device {
+  font-weight: bold;
+}
+
 .member {
   color: #219ebc;
   font-weight: bold;
