@@ -68,7 +68,8 @@
                     <div class="carousel d-flex justify-content-center">
                         <!-- Mini Category1: Total Citizens -->
                         <div class="d-flex justify-content-center align-items-center" style="width: 500px;">
-                            <a href="tblTotalCitizens.php" style="background-color: #001E40; width: 100%; border-radius: 1em">
+                            <a href="tblTotalCitizens.php"
+                                style="background-color: #001E40; width: 100%; border-radius: 1em">
                                 <div class="minorCategory" id="totalCitizens">
                                     <div class="texts w-100">
                                         <p id="whiteLbl">Total Citizens</p>
@@ -91,56 +92,72 @@
                                             ?>
                                         </div>
                                         <div class="col-12 col-md-3 mb-2 align-self-end p-0">
-                                            <button class="btn rounded-pill" type="button" id="viewBtn">View all</button>
+                                            <button class="btn rounded-pill" type="button" id="viewBtn">View
+                                                all</button>
                                         </div>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid" src="assets/img/dashboard/mc-totalCitizens.svg" alt="Total-Citizens" id="totalCitizens-img">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid" src="assets/img/dashboard/mc-totalCitizens.svg"
+                                            alt="Total-Citizens" id="totalCitizens-img">
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!-- Mini Category2: General Citizens -->
                         <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                            <a href="tblGeneralCitizens.php" style="background-color: #D7ECFA; width: 100%; border-radius: 1em;">
+                            <a href="tblGeneralCitizens.php"
+                                style="background-color: #D7ECFA; width: 100%; border-radius: 1em;">
                                 <div class="minorCategory row" id="genCitizens">
                                     <div class="texts">
                                         <p class="minorLbl">General Citizens</p>
                                         <span class="mcCount d-flex">8,644</span>
                                         <span class="percentage d-flex">85%</span>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid mc-img text-end" src="assets/img/dashboard/mc-genCitizens.png" alt="General-Citizens">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid mc-img text-end"
+                                            src="assets/img/dashboard/mc-genCitizens.png" alt="General-Citizens">
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!-- Mini Category3: Children -->
                         <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                            <a href="tblChildren.php" style="background-color: #FFE5DB; width: 100%; border-radius: 1em;">
+                            <a href="tblChildren.php"
+                                style="background-color: #FFE5DB; width: 100%; border-radius: 1em;">
                                 <div class="minorCategory row" id="children">
                                     <div class="texts">
                                         <p class="minorLbl">Children</p>
                                         <span class="mcCount d-flex">510</span>
+
+                                        <?php
+
+                                        ?>
                                         <span class="percentage d-flex">5%</span>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-children.png" alt="Children">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid mc-img d-flex align-items-end"
+                                            src="assets/img/dashboard/mc-children.png" alt="Children">
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!-- Mini Category4: Senior Citizens -->
                         <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                            <a href="tblSeniors.php" style="background-color: #FFF4D1; width: 100%; border-radius: 1em;">
+                            <a href="tblSeniors.php"
+                                style="background-color: #FFF4D1; width: 100%; border-radius: 1em;">
                                 <div class="minorCategory row" id="senior">
                                     <div class="texts">
                                         <p class="minorLbl">Senior Citizens</p>
                                         <span class="mcCount d-flex">1,020</span>
                                         <span class="percentage d-flex">10%</span>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-seniorCitizens.png" alt="Senior-Citizens">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid mc-img d-flex align-items-end"
+                                            src="assets/img/dashboard/mc-seniorCitizens.png" alt="Senior-Citizens">
                                     </div>
                                 </div>
                             </a>
@@ -162,18 +179,43 @@
                                                 echo '<p class="mcCount d-flex"> 0 </p>';
                                             }
                                         ?>
-                                        <!-- DI PA OKS YUNG PERCENTAGE -->
-                                        <span class="percentage d-flex">0.3%</span>
+
+                                        <!-- PERCENTAGE IS TAKEN FROM TOTAL NUMBER OF CITIZENS (a/b)*100 -->
+                                        <?php
+
+                                            $totalCitizens = "SELECT * FROM `residents`";
+                                            $totalCitizens_comp = mysqli_query($conn,$totalCitizens);
+                                            $dash_totalCitizens_comp = mysqli_num_rows($totalCitizens_comp);
+
+                                            $disability_query = "SELECT `disability` FROM `residents` WHERE `disability` != 'None'";
+                                            $disability_query_run = mysqli_query($conn,$disability_query);
+                                            if($dash_disability = mysqli_num_rows($disability_query_run)){
+
+                                            $percentage = ($dash_disability / $dash_totalCitizens_comp) * 100;
+                                            $percentage_converted = intval($percentage);
+                                            settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+
+                                            } else {
+                                                $percentage = ($dash_disability / $dash_totalCitizens_comp) * 100;
+                                                $percentage_converted = intval($percentage);
+                                                settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+                                            }
+                                        ?>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-pwd.png" alt="PWDs">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid mc-img d-flex align-items-end"
+                                            src="assets/img/dashboard/mc-pwd.png" alt="PWDs">
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!-- Mini Category6: Registered Voters -->
                         <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                            <a href="tblRegistedVoters.php" style="background-color: #FFFCBB; width: 100%; border-radius: 1em;">
+                            <a href="tblRegistedVoters.php"
+                                style="background-color: #FFFCBB; width: 100%; border-radius: 1em;">
                                 <div class="minorCategory row" id="registered">
                                     <div class="texts">
                                         <p class="minorLbl">Registered Voters</p>
@@ -188,18 +230,41 @@
                                                 echo '<p class="mcCount" id="citizensCount"> No Data </p>';
                                             }
                                         ?>
-                                        <!-- DI PA FROM DB YUNG PERCENTAGE -->
-                                        <span class="percentage d-flex">82%</span>
+                                        <?php
+
+                                            $totalCitizens = "SELECT * FROM `residents`";
+                                            $totalCitizens_comp = mysqli_query($conn,$totalCitizens);
+                                            $dash_totalCitizens_comp = mysqli_num_rows($totalCitizens_comp);
+
+                                            $voterType_query = "SELECT `voter_type` FROM `residents` WHERE `voter_type` = 'Registered'";
+                                            $voterType_query_run = mysqli_query($conn,$voterType_query);
+                                            if($dash_voterType = mysqli_num_rows($voterType_query_run)){
+
+                                            $percentage = ($dash_voterType / $dash_totalCitizens_comp) * 100;
+                                            $percentage_converted = intval($percentage);
+                                            settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+
+                                            } else {
+                                                $percentage = ($dash_voterType / $dash_totalCitizens_comp) * 100;
+                                                $percentage_converted = intval($percentage);
+                                                settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+                                            }
+                                        ?>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-registered.png" alt="Registered-Voters">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid mc-img d-flex align-items-end"
+                                            src="assets/img/dashboard/mc-registered.png" alt="Registered-Voters">
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!-- Mini Category7: Unregistered Voters -->
                         <div class="d-flex justify-content-center align-items-center" style="width: 300px;">
-                            <a href="tblUnregistedVoters.php" style="background-color: #F8E7F8; width: 100%; border-radius: 1em;">
+                            <a href="tblUnregistedVoters.php"
+                                style="background-color: #F8E7F8; width: 100%; border-radius: 1em;">
                                 <div class="minorCategory row" id="unregistered">
                                     <div class="texts">
                                         <p class="minorLbl">Unregistered Voters</p>
@@ -215,11 +280,34 @@
                                             }
                                         ?>
 
-                                        <!-- DI PA FROM DB YUNG PERCENTAGE -->
-                                        <span class="percentage d-flex">18%</span>
+                                        <!-- PERCENTAGE IS FROM NUMBER OF RESIDENTS -->
+                                        <?php
+
+                                            $totalCitizens = "SELECT * FROM `residents`";
+                                            $totalCitizens_comp = mysqli_query($conn,$totalCitizens);
+                                            $dash_totalCitizens_comp = mysqli_num_rows($totalCitizens_comp);
+
+                                            $voterType_query = "SELECT `voter_type` FROM `residents` WHERE `voter_type` = 'Unregistered'";
+                                            $voterType_query_run = mysqli_query($conn,$voterType_query);
+                                            if($dash_voterType = mysqli_num_rows($voterType_query_run)){
+
+                                            $percentage = ($dash_voterType / $dash_totalCitizens_comp) * 100;
+                                            $percentage_converted = intval($percentage);
+                                            settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+
+                                            } else {
+                                                $percentage = ($dash_voterType / $dash_totalCitizens_comp) * 100;
+                                                $percentage_converted = intval($percentage);
+                                                settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+                                            }
+                                        ?>
                                     </div>
-                                    <div class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                        <img class="img-fluid mc-img d-flex align-items-end" src="assets/img/dashboard/mc-unregistered.png" alt="Unregistered-Voters">
+                                    <div
+                                        class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                        <img class="img-fluid mc-img d-flex align-items-end"
+                                            src="assets/img/dashboard/mc-unregistered.png" alt="Unregistered-Voters">
                                     </div>
                                 </div>
                             </a>
@@ -240,8 +328,10 @@
                                     <h1 class="count">5402</h1>
                                     <p class="subTitle">Total Youth</p>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-totalYouth.png" alt="Total-Youth">
+                                <div
+                                    class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-totalYouth.png"
+                                        alt="Total-Youth">
                                 </div>
                             </div>
                         </a>
@@ -266,8 +356,10 @@
                                     ?>
                                     <p class="subTitle">Enrolled Youth</p>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-enrolled.png" alt="Enrolled-Youth">
+                                <div
+                                    class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-enrolled.png"
+                                        alt="Enrolled-Youth">
                                 </div>
                             </div>
                         </a>
@@ -291,8 +383,10 @@
                                     ?>
                                     <p class="subTitle">Out-of-school Youth</p>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-out-of-school.png" alt="Out-of-school Youth">
+                                <div
+                                    class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-out-of-school.png"
+                                        alt="Out-of-school Youth">
                                 </div>
                             </div>
                         </a>
@@ -303,7 +397,7 @@
                         <a href="tblWorkingStudent.php">
                             <div class="category" id="workingStudent" style="background-color: #F3CB69">
                                 <div class="texts">
-                                <?php
+                                    <?php
                                         $enrolled_query = "SELECT `student_status` FROM `educational_info` WHERE `student_status` = 'Working Student'";
                                         $enrolled_query_run = mysqli_query($conn,$enrolled_query);
                                         if($dash_enrolled = mysqli_num_rows($enrolled_query_run)){
@@ -316,8 +410,10 @@
                                     ?>
                                     <p class="subTitle">Working Student</p>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-workingStudents.png" alt="Out-of-school Youth">
+                                <div
+                                    class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-workingStudents.png"
+                                        alt="Out-of-school Youth">
                                 </div>
                             </div>
                         </a>
@@ -328,7 +424,7 @@
                         <a href="tblEmployed.php">
                             <div class="category" id="employed" style="background-color: #FFB703">
                                 <div class="texts">
-                                <?php
+                                    <?php
                                         $employment_query = "SELECT `employment_status` FROM `employment_info` WHERE `employment_status` = 'Employed'";
                                         $employment_query_run = mysqli_query($conn,$employment_query);
                                         if($dash_employment = mysqli_num_rows($employment_query_run)){
@@ -341,8 +437,10 @@
                                     ?>
                                     <p class="subTitle">Employed</p>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-employed.png" alt="Employed">
+                                <div
+                                    class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-employed.png"
+                                        alt="Employed">
                                 </div>
                             </div>
                         </a>
@@ -366,8 +464,10 @@
                                     ?>
                                     <p class="subTitle">Unemployed</p>
                                 </div>
-                                <div class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
-                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-unemployed.png" alt="Employed">
+                                <div
+                                    class="dashboardImg d-flex justify-content-end align-items-end justfy-content-sm-center">
+                                    <img class="img-fluid c-img" src="assets/img/dashboard/c-unemployed.png"
+                                        alt="Employed">
                                 </div>
                             </div>
                         </a>
@@ -391,7 +491,7 @@
 
     <!-- Active Link -->
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#dashboard-link").addClass("nav-active");
             $("#dashboard-md-link").addClass("nav-md-active");
         })
