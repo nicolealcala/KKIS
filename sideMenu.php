@@ -122,7 +122,7 @@
             <div class="collapse navbar-collapse" id="smallNavMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./dashboard.php" id="dashboard-md-link">Dashboard</a>
+                        <a class="nav-link" href="./dashboard.php" id="dashboard-md-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./households.php" id="households-md-link">Declared Households</a>
@@ -152,11 +152,6 @@
         </div>
     </nav>
 
-    <!-- <div class="mainContainer" id="mainPanel">
-        <div class="container-fluid content">
-            <span>Hello</spa>
-        </div>
-    </div> -->
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

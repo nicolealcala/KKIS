@@ -2,9 +2,12 @@ $(document).ready(function () {
   //Expanded Nav Links
   $("#dashboard-link").click(function () {
     $(this).addClass("nav-active");
-    $("#dashIcon").removeClass("icon");
-    $(".fa-chart-column").addClass("icon-active");
     $("a").not(this).removeClass("nav-active");
+    if ($(this).hasClass("nav-active")){
+      $(this).attr("aria-current", "page");
+      $("#dashIcon").removeClass("icon");
+      $(".fa-chart-column").addClass("icon-active");
+    }
   });
 
   $("#households-link").click(function () {
