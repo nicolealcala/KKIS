@@ -24,7 +24,7 @@
 
     <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
-            <a href="./settings">
+            <a href="./settings.php">
                 <i role="button" class="backIcon fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
                 <span class="sideTitle">User Manual</span>
             </a>
