@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/kkis-logo.svg">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="assets/css/index.compiled.css">
     <link rel="stylesheet" href="assets/scss/Login-Form-Basic-icons.css">
@@ -65,7 +65,9 @@
             </div>
         </div>
     </section>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Fundamental Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

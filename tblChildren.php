@@ -35,7 +35,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <!-- <link rel="stylesheet" href="assets/css/navKabataanProfile.css"> -->
 
     <!-- DATA TABLES CDN -->
-    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
     
@@ -533,7 +533,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Virtual Select JS Library -->
     <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>

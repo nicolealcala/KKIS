@@ -8,7 +8,7 @@
     <title>Side Navigation</title>
 
     <!-- Fundamental Links -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
@@ -115,10 +115,11 @@
     <nav class="d-flex d-lg-none navbar navbar-expand-lg navbar-light" id="smallNav">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#"><img class="me-1" src="assets/img/logos/kkis-brand.svg" alt="" width="50px" height="50px">KKIS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="smallNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse position-relative" id="smallNavMenu">
+
+            <div class="collapse navbar-collapse" id="smallNavMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./dashboard.php" id="dashboard-md-link">Dashboard</a>
@@ -159,7 +160,8 @@
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
 </body>
