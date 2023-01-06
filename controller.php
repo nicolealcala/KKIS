@@ -47,8 +47,8 @@
     }
 
 
-      // CHANGE PASSWORD
-      if(isset($_POST['updatePassBtn'])){
+    // CHANGE PASSWORD
+    if(isset($_POST['updatePassBtn'])){
         $currentPassword = $_POST["currentPassword"];
         $newPassword = $_POST["newPassword"];
         $confirmPassword = $_POST["confirmPassword"];
@@ -78,7 +78,7 @@
                 }else if(password_verify($currentPassword,$fetchPassword)){
     
                     if($newPassword == $confirmPassword){
-                        $passwordRaw == $confirmPassword;
+                        $passwordRaw == $newPassword;
                         $password_hash = password_hash($passwordRaw,PASSWORD_DEFAULT);
     
                         $updateQuery = "UPDATE `admins` SET `password` = '".$password_hash."' WHERE `email`= '".$_POST['email']."'";
@@ -93,6 +93,6 @@
                     }
                 }
             }
+    }
     
-        }
 ?>
