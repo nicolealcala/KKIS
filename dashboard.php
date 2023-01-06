@@ -111,8 +111,39 @@
                                 <div class="minorCategory row" id="genCitizens">
                                     <div class="texts">
                                         <p class="minorLbl">General Citizens</p>
-                                        <span class="mcCount d-flex">8,644</span>
-                                        <span class="percentage d-flex">85%</span>
+                                        <?php
+                                            $genCitizens_query = "SELECT * FROM `residents` WHERE `age` NOT BETWEEN 15 AND 30";
+                                            $genCitizens_query_run = mysqli_query($conn,$genCitizens_query);
+                                            if($dash_genCitizens = mysqli_num_rows($genCitizens_query_run)){
+
+                                                echo '<p class="mcCount d-flex"> '.$dash_genCitizens.' </p>';
+
+                                            } else {
+                                                echo '<p class="mcCount d-flex"> 0 </p>';
+                                            }
+                                        ?>
+                                        <!-- PERCENTAGE IS TAKEN FROM TOTAL NUMBER OF CITIZENS (a/b)*100 -->
+                                        <?php
+                                            // Data for total citizens
+                                            $totalCitizens = "SELECT * FROM `residents`";
+                                            $totalCitizens_comp = mysqli_query($conn,$totalCitizens);
+                                            $dash_totalCitizens_comp = mysqli_num_rows($totalCitizens_comp);
+
+                                            // Query to get data for general citizens 
+                                            $genCitizens_query = "SELECT * FROM `residents` WHERE `age` NOT BETWEEN 15 AND 30";
+                                            $genCitizens_query_run = mysqli_query($conn,$genCitizens_query);
+                                            if($dash_genCitizens = mysqli_num_rows($genCitizens_query_run)){
+
+                                                // Formula to get percentage
+                                                $percentage = ($dash_genCitizens / $dash_totalCitizens_comp) * 100;
+                                                $percentage_converted = intval($percentage);
+                                                settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+
+                                            } else {
+                                                echo '<p class="percentage d-flex"> No Data </p>';
+                                            }
+                                        ?>
                                     </div>
                                     <div
                                         class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -129,12 +160,39 @@
                                 <div class="minorCategory row" id="children">
                                     <div class="texts">
                                         <p class="minorLbl">Children</p>
-                                        <span class="mcCount d-flex">510</span>
-
                                         <?php
+                                            $children_query = "SELECT * FROM `residents` WHERE `age` <= 14";
+                                            $children_query_run = mysqli_query($conn,$children_query);
+                                            if($dash_children = mysqli_num_rows($children_query_run)){
 
+                                                echo '<p class="mcCount d-flex"> '.$dash_children.' </p>';
+
+                                            } else {
+                                                echo '<p class="mcCount d-flex"> 0 </p>';
+                                            }
                                         ?>
-                                        <span class="percentage d-flex">5%</span>
+                                        <!-- PERCENTAGE IS TAKEN FROM TOTAL NUMBER OF CITIZENS (a/b)*100 -->
+                                        <?php
+                                            // Data for total citizens
+                                            $totalCitizens = "SELECT * FROM `residents`";
+                                            $totalCitizens_comp = mysqli_query($conn,$totalCitizens);
+                                            $dash_totalCitizens_comp = mysqli_num_rows($totalCitizens_comp);
+
+                                            // Query to get data for seniors
+                                            $children_query = "SELECT * FROM `residents` WHERE `age` >= 60";
+                                            $children_query_run = mysqli_query($conn,$children_query);
+                                            if($dash_children = mysqli_num_rows($children_query_run)){
+
+                                                // Formula to get percentage
+                                                $percentage = ($dash_children / $dash_totalCitizens_comp) * 100;
+                                                $percentage_converted = intval($percentage);
+                                                settype($percentage,'int');
+                                                    echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+
+                                            } else {
+                                                echo '<p class="percentage d-flex"> No Data </p>';
+                                            }
+                                        ?>
                                     </div>
                                     <div
                                         class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -151,8 +209,40 @@
                                 <div class="minorCategory row" id="senior">
                                     <div class="texts">
                                         <p class="minorLbl">Senior Citizens</p>
-                                        <span class="mcCount d-flex">1,020</span>
-                                        <span class="percentage d-flex">10%</span>
+                                        
+                                        <?php
+                                            $seniors_query = "SELECT * FROM `residents` WHERE `age` >= 60";
+                                            $seniors_query_run = mysqli_query($conn,$seniors_query);
+                                            if($dash_seniors = mysqli_num_rows($seniors_query_run)){
+
+                                                echo '<p class="mcCount d-flex"> '.$dash_seniors.' </p>';
+
+                                            } else {
+                                                echo '<p class="mcCount d-flex"> 0 </p>';
+                                            }
+                                        ?>
+                                        <!-- PERCENTAGE IS TAKEN FROM TOTAL NUMBER OF CITIZENS (a/b)*100 -->
+                                        <?php
+                                            // Data for total citizens
+                                            $totalCitizens = "SELECT * FROM `residents`";
+                                            $totalCitizens_comp = mysqli_query($conn,$totalCitizens);
+                                            $dash_totalCitizens_comp = mysqli_num_rows($totalCitizens_comp);
+
+                                            // Query to get data for seniors
+                                            $seniors_query = "SELECT * FROM `residents` WHERE `age` >= 60";
+                                            $seniorsquery_run = mysqli_query($conn,$seniors_query);
+                                            if($dash_seniors = mysqli_num_rows($seniors_query_run)){
+
+                                            // Formula to get percentage
+                                            $percentage = ($dash_seniors / $dash_totalCitizens_comp) * 100;
+                                            $percentage_converted = intval($percentage);
+                                            settype($percentage,'int');
+                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+
+                                            } else {
+                                                echo '<p class="percentage d-flex"> No Data </p>';
+                                            }
+                                        ?>
                                     </div>
                                     <div
                                         class="miniImg d-flex justify-content-end align-items-end justfy-content-sm-center">
@@ -200,7 +290,7 @@
                                                 $percentage = ($dash_disability / $dash_totalCitizens_comp) * 100;
                                                 $percentage_converted = intval($percentage);
                                                 settype($percentage,'int');
-                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+                                                echo '<p class="percentage d-flex"> No Data </p>';
                                             }
                                         ?>
                                     </div>
@@ -246,10 +336,7 @@
                                                 echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
 
                                             } else {
-                                                $percentage = ($dash_voterType / $dash_totalCitizens_comp) * 100;
-                                                $percentage_converted = intval($percentage);
-                                                settype($percentage,'int');
-                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+                                                echo '<p class="percentage d-flex"> No Data </p>';
                                             }
                                         ?>
                                     </div>
@@ -297,10 +384,7 @@
                                                 echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
 
                                             } else {
-                                                $percentage = ($dash_voterType / $dash_totalCitizens_comp) * 100;
-                                                $percentage_converted = intval($percentage);
-                                                settype($percentage,'int');
-                                                echo '<p class="percentage d-flex"> '.$percentage.'% </p>';
+                                                echo '<p class="percentage d-flex"> No Data </p>';
                                             }
                                         ?>
                                     </div>
@@ -325,7 +409,17 @@
                         <a href="tblTotalYouth.php">
                             <div class="category" id="totalYouth" style="background-color: #8ECAE6">
                                 <div class="texts">
-                                    <h1 class="count">5402</h1>
+                                    <?php
+                                            $youth_query = "SELECT * FROM `residents` WHERE `age` BETWEEN 15 AND 30";
+                                            $youth_query_run = mysqli_query($conn,$youth_query);
+                                            if($dash_youth = mysqli_num_rows($youth_query_run)){
+
+                                                echo '<h1 class="count"> '.$dash_youth.' </h1>';
+
+                                            } else {
+                                                echo '<p class="mcCount d-flex"> 0 </p>';
+                                            }
+                                        ?>
                                     <p class="subTitle">Total Youth</p>
                                 </div>
                                 <div
