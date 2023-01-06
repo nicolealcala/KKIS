@@ -38,13 +38,6 @@ $(document).ready(function () {
   table.buttons().container().appendTo("#familiesOutput");
   $("#familiesTbl_filter").appendTo("#familiesSearch");
 
-  //JS Library for Filter remarks
-  VirtualSelect.init({
-    ele: "#filtering",
-    hideClearButton: true,
-    disableSelectAll: true,
-  });
-
   //for Chart
   $(document).ready(function () {
     const ctx = $("#overviewChart");

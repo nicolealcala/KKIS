@@ -1,6 +1,6 @@
 <?php include "connection.php";
 
-$queryAge="UPDATE residents SET age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0;";
+$queryAge = "UPDATE residents SET age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0;";
 $resultAge = mysqli_query($conn, $queryAge);
 
 $queryKabataanTbl = "SELECT * FROM residents WHERE age BETWEEN 15 AND 30"; //query to select kabataan from table
@@ -19,24 +19,14 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Profiles</title>
 
-    <!-- Fundamental Links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
     <!-- Custom Page Stylesheets -->
     <link rel="stylesheet" href="assets/scss/profiles.css">
-    <link rel="stylesheet" href="assets/scss/mediaquery.css">
-    <!-- <link rel="stylesheet" href="assets/scss/mq-sidenavmods.css"> -->
+    <!-- <link rel="stylesheet" href="assets/scss/mediaquery.css"> -->
     <link rel="stylesheet" href="assets/scss/modal.css">
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
-    <!-- Virtual Select JS library -->
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
-
-    <!-- nav.css -->
-    <!-- <link rel="stylesheet" href="assets/css/navKabataanProfile.css"> -->
+    <!-- Bootstrap-Select -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
@@ -44,7 +34,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 
 
 </head>
@@ -92,18 +82,18 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                         <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="kabataanOutput"></div>
                         <!-- Filter -->
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-">
-                            <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
-                                <optgroup label="Age">
+                            <select class="selectpicker form-control" multiple name="filter" data-selected-text-format="count > 3" data-width="auto" title="Filter" placeholder="Filter">
+                                <optgroup data-max-options="1" label="Age">
                                     <option value="bet1419">14-19 Years old</option>
                                     <option value="bet2029">20-29 Years old</option>
                                 </optgroup>
-                                <optgroup label="Gender Preference">
+                                <optgroup data-max-options="1" label="Gender Preference">
                                     <option value="man">Man</option>
                                     <option value="woman">Woman</option>
                                     <option value="trans">Transgender</option>
                                     <option value="non">Non-binary/Non-conforming</option>
                                 </optgroup>
-                                <optgroup label="Marital Status">
+                                <optgroup data-max-options="1" label="Marital Status">
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="livein">Live-in</option>
@@ -140,12 +130,12 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <option value="Sampaguita St.">Sampaguita St.</option>
                                     <option value="Smokey Mountain">Smokey Mountain </option>
                                 </optgroup>
-                                <optgroup label="Educational Status">
+                                <optgroup data-max-options="1" label="Educational Status">
                                     <option value="Enrolled">Enrolled</option>
                                     <option value="Out-of-School Youth">Out-of-School Youth</option>
                                     <option value="Working Student">Working Student</option>
                                 </optgroup>
-                                <optgroup label="Educational Level">
+                                <optgroup data-max-options="1" label="Educational Level">
                                     <option value="Pre-elementary">Pre-elementary</option>
                                     <option value="Elementary">Elementary</option>
                                     <option value="Junior High School">Junior High School</option>
@@ -155,20 +145,20 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <option value="College">College</option>
                                     <option value="Graduate Studies">Graduate Studies</option>
                                 </optgroup>
-                                <optgroup label="Employment Status">
+                                <optgroup data-max-options="1" label="Employment Status">
                                     <option value="Employed">Employed</option>
                                     <option value="Unemployed">Unemployed</option>
                                 </optgroup>
-                                <optgroup label="Employee Type">
+                                <optgroup data-max-options="1" label="Employee Type">
                                     <option value="Regular">Regular</option>
                                     <option value="Contractual">Contranctual</option>
                                     <option value="Job Order">Job Order</option>
                                 </optgroup>
-                                <optgroup label="School/Employer Type">
+                                <optgroup data-max-options="1" label="School/Employer Type">
                                     <option value="Private">Private</option>
                                     <option value="Public">Public</option>
                                 </optgroup>
-                                <optgroup label="Salary Range">
+                                <optgroup data-max-options="1" label="Salary Range">
                                     <option value="1">Less than 10,000</option>
                                     <option value="2">10,000-20,999</option>
                                     <option value="3">21,000-30,999</option>
@@ -176,7 +166,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <option value="5">41,000-50,000</option>
                                     <option value="6">More than 50,000</option>
                                 </optgroup>
-                                <optgroup label="Remarks">
+                                <optgroup data-max-options="1" label="Remarks">
                                     <option value="soloLiving">Solo Living</option>
                                     <option value="Solo Parent">Solo Parent</option>
                                     <option value="Teenage Pregnancy">Teenage Pregnancy</option>
@@ -207,7 +197,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                         </thead>
 
                         <tbody>
-                        <?php while ($row = mysqli_fetch_array($resultKabataanTbl)) { ?>
+                            <?php while ($row = mysqli_fetch_array($resultKabataanTbl)) { ?>
                                 <tr>
                                     <td id="lastName" class="entryRow" scope="col" data-label="Last Name"><?php echo $row["last_name"]; ?></td>
                                     <td id="firstName" class="entryRow" scope="col" data-label="First Name"><?php echo $row["first_name"]; ?></td>
@@ -221,7 +211,8 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <td id="actions" class="entryRow" scope="col" data-label="Actions">
 
                                         <a class="btn view viewMore actionBtn profile" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $row['resident_id'] ?>" data-id="<?php echo $row['resident_id']; ?>" href="#viewMore"><i class="fa-solid fa-eye"></i></a>
-                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a></td>
+                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a>
+                                    </td>
 
                                 </tr>
                                 <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $row['residentID'] ?>">
@@ -364,18 +355,18 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                         <div class="col-lg-2 d-none d-lg-flex"></div>
                         <!-- Filter -->
                         <div class="col-lg-3 col-md-6 col-sm-5 col-12 d-flex align-items-">
-                            <select class="selectpicker text-uppercase" multiple name="filter" data-live-search="true" title="Filter" id="filtering" data-show-value-as-tags="true">
-                                <optgroup label="Age">
+                            <select class="selectpicker form-control" multiple name="filter" data-selected-text-format="count" title="Filter" placeholder="Filter">
+                                <optgroup data-max-options="1" label="Age">
                                     <option value="bet1419">14-19 Years old</option>
                                     <option value="bet2029">20-29 Years old</option>
                                 </optgroup>
-                                <optgroup label="Gender Preference">
+                                <optgroup data-max-options="1" label="Gender Preference">
                                     <option value="man">Man</option>
                                     <option value="woman">Woman</option>
                                     <option value="trans">Transgender</option>
                                     <option value="non">Non-binary/Non-conforming</option>
                                 </optgroup>
-                                <optgroup label="Marital Status">
+                                <optgroup data-max-options="1" label="Marital Status">
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="livein">Live-in</option>
@@ -412,12 +403,12 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <option value="Sampaguita St.">Sampaguita St.</option>
                                     <option value="Smokey Mountain">Smokey Mountain </option>
                                 </optgroup>
-                                <optgroup label="Educational Status">
+                                <optgroup data-max-options="1" label="Educational Status">
                                     <option value="Enrolled">Enrolled</option>
                                     <option value="Out-of-School Youth">Out-of-School Youth</option>
                                     <option value="Working Student">Working Student</option>
                                 </optgroup>
-                                <optgroup label="Educational Level">
+                                <optgroup data-max-options="1" label="Educational Level">
                                     <option value="Pre-elementary">Pre-elementary</option>
                                     <option value="Elementary">Elementary</option>
                                     <option value="Junior High School">Junior High School</option>
@@ -427,20 +418,20 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <option value="College">College</option>
                                     <option value="Graduate Studies">Graduate Studies</option>
                                 </optgroup>
-                                <optgroup label="Employment Status">
+                                <optgroup data-max-options="1" label="Employment Status">
                                     <option value="Employed">Employed</option>
                                     <option value="Unemployed">Unemployed</option>
                                 </optgroup>
-                                <optgroup label="Employee Type">
+                                <optgroup data-max-options="1" label="Employee Type">
                                     <option value="Regular">Regular</option>
                                     <option value="Contractual">Contranctual</option>
                                     <option value="Job Order">Job Order</option>
                                 </optgroup>
-                                <optgroup label="School/Employer Type">
+                                <optgroup data-max-options="1" label="School/Employer Type">
                                     <option value="Private">Private</option>
                                     <option value="Public">Public</option>
                                 </optgroup>
-                                <optgroup label="Salary Range">
+                                <optgroup data-max-options="1" label="Salary Range">
                                     <option value="1">Less than 10,000</option>
                                     <option value="2">10,000-20,999</option>
                                     <option value="3">21,000-30,999</option>
@@ -448,7 +439,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
                                     <option value="5">41,000-50,000</option>
                                     <option value="6">More than 50,000</option>
                                 </optgroup>
-                                <optgroup label="Remarks">
+                                <optgroup data-max-options="1" label="Remarks">
                                     <option value="soloLiving">Solo Living</option>
                                     <option value="Solo Parent">Solo Parent</option>
                                     <option value="Teenage Pregnancy">Teenage Pregnancy</option>
@@ -497,7 +488,8 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
 
                                         <a class="btn view viewMore actionBtn profile" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $row['resident_id'] ?>" data-id="<?php echo $row['resident_id']; ?>" href="#viewMore"><i class="fa-solid fa-eye"></i></a>
                                         <!-- <a href="updateEntry.php?residentID=<?php echo $row["residentID"] ?>" value="AKEN" class="btn  update actionBtn" role="button" aria-pressed="true"><i class="fa-solid fa-pen"></i></a> -->
-                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a></td>
+                                        <a class="btn btn-danger btn-sm" role="button" aria-pressed="true" href="#"> <i class="fa-solid fa-trash-can"></i></a>
+                                    </td>
 
                                 </tr>
 
@@ -632,13 +624,9 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
         </div>
     </div>
 
+    <!-- Bootstrap-select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
-    <!-- Fundamental Links -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Virtual Select JS Library -->
-    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Data tables -->
     <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->

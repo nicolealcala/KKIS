@@ -2,7 +2,8 @@
   font: 100% DM Sans, sans-serif;
 }
 
-#familiesBody, .overviewBody {
+#familiesBody,
+.overviewBody {
   margin: 3em;
 }
 

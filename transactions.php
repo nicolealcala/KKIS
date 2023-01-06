@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
 
-    <!-- Virtual Select JS library -->
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
+    <!-- Bootstrap-Select -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
@@ -59,15 +59,15 @@
                     <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="transactionsOutput"></div>
                     <!-- Filter -->
                     <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none">
-                        <select class="selectpicker" multiple name="filter" data-live-search="true" title="Filter" placeholder="Filter" id="filtering">
-                            <optgroup label="Members">
+                        <select class="selectpicker form-control" multiple name="filter" data-selected-text-format="count > 3" title="Filter" placeholder="Filter">
+                            <optgroup data-divider="true" data-max-options="1" label="Members">
                                 <option value="Less than 5">Less than 5</option>
                                 <option value="5 to 10">5 to 10</option>
                                 <option value="11 to 15">11 to 15</option>
                                 <option value="16 to 20">16 to 20</option>
                                 <option value="More than 20">More than 20</option>
                             </optgroup>
-                            <optgroup label="Remarks">
+                            <optgroup data-max-options="1" label="Remarks">
                                 <option value="Purok Leader">Purok Leader</option>
                                 <option value="SK Scholar">SK Scholar</option>
                                 <option value="Solo Living">Solo Living</option>
@@ -81,7 +81,7 @@
                 </div>
 
                 <!-- Table start   -->
-                <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="transactionsTbl" style="width:100%">
+                <table class="table table-stripped table-bordered dataTable table-hover responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="transactionsTbl" style="width:100%">
                     <thead class="tblHeadRow">
                         <tr>
                             <th class="tblHead">ID</th>
@@ -164,14 +164,14 @@
         </div>
     </div>
 
+    <!-- Bootstrap-select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    
     <!-- Data tables -->
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
     <script src="assets/js/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
-
-    <!-- Virtual Select JS -->
-    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/transactions.js"></script>
