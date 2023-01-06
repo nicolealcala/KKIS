@@ -182,6 +182,7 @@ require 'connection.php';
     <script type="text/javascript">
         $(document).ready(function() {
             $("#households-link").addClass('nav-active');
+            $("#households-md-link").addClass("nav-md-active");
         })
     </script>
 

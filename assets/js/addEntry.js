@@ -107,7 +107,7 @@ $(document).ready(function () {
   function educRadioClick() {
     $("#employCheck").prop("checked", false);
     $("#markerEmploy").css("background-color", "#c5d4e3");
-    $(".employFieldLabel").css("color", "#dfdfdf");
+    $(".employFieldLabel").css("opacity", ".70");
 
     //Disable all employment select boxes and change value to blank
     $(".employSelectBox").each(function () {
@@ -139,7 +139,7 @@ $(document).ready(function () {
 
     //Change education card labels and background-color
     $("#markerEduc").css("background-color", "#219EBC");
-    $(".educFieldLabel").css("color", "#909090");
+    $(".educFieldLabel").css("opacity", ".70");
 
     //For red * marker
     $(".employFieldLabel").removeClass("required");
@@ -170,13 +170,13 @@ $(document).ready(function () {
 
     $(".educFieldLabel").each(function () {
       $(this).addClass("required");
-      $(this).css("color", "#909090");
+      $(this).css("opacity", "1");
       if (
         $(this).attr("id") == "educIndustryLbl" ||
         $(this).attr("id") == "educSalaryLbl"
       ) {
         $(this).removeClass("required");
-        $(this).css("color", "#dfdfdf");
+        $(this).css("opacity", ".70");
       }
     });
   }
@@ -201,10 +201,10 @@ $(document).ready(function () {
 
     $(".educFieldLabel").each(function () {
       $(this).removeClass("required");
-      $(this).css("color", "#dfdfdf");
+      $(this).css("opacity", ".70");
       if ($(this).attr("id") == "educStatusLbl") {
         $(this).addClass("required");
-        $(this).css("color", "#909090");
+        $(this).css("opacity", "1");
       }
     });
   }
@@ -223,7 +223,7 @@ $(document).ready(function () {
     });
 
     $(".educFieldLabel").addClass("required");
-    $(".educFieldLabel").css("color", "#909090");
+    $(".educFieldLabel").css("opacity", "1");
   }
 
   // ----------------------Employment-------------------------
@@ -231,7 +231,7 @@ $(document).ready(function () {
   function employRadioClick() {
     $("#educCheck").prop("checked", false);
     $("#markerEduc").css("background-color", "#c5d4e3");
-    $(".educFieldLabel").css("color", "#dfdfdf");
+    $(".educFieldLabel").css("opacity", ".70");
 
     $(".educSelectBox").each(function () {
       $(this).val("").change();
@@ -258,7 +258,7 @@ $(document).ready(function () {
     });
 
     $("#markerEmploy").css("background-color", "#219EBC");
-    $(".employFieldLabel").css("color", "#909090");
+    $(".employFieldLabel").css("opacity", "1");
 
     //For red * marker
     $(".educFieldLabel").removeClass("required");
@@ -278,7 +278,7 @@ $(document).ready(function () {
     });
 
     $(".employFieldLabel").each(function () {
-      $(this).css("color", "#909090");
+      $(this).css("opacity", "1");
       $(this).addClass("required");
     });
   }
@@ -296,11 +296,11 @@ $(document).ready(function () {
     });
 
     $(".employFieldLabel").each(function () {
-      $(this).css("color", "#dfdfdf");
+      $(this).css("opacity", ".70");
       $(this).removeClass("required");
       if ($(this).attr("id") == "employStatusLbl") {
         $(this).addClass("required");
-        $(this).css("color", "#909090");
+        $(this).css("opacity", "1");
       }
     });
   }

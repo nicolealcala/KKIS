@@ -191,6 +191,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $("#kkid-link").addClass('nav-active');
+            $("#kkid-md-link").addClass("nav-md-active");
         })
     </script>
 </body>

@@ -191,6 +191,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $("#transactions-link").addClass('nav-active');
+            $("#transactions-md-link").addClass("nav-md-active");
         })
     </script>
 </body>

@@ -118,30 +118,44 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="smallNavMenu">
+            <div class="collapse navbar-collapse position-relative" id="smallNavMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./dashboard.php" id="dashboard-link">Dashboard</a>
+                        <a class="nav-link" aria-current="page" href="./dashboard.php" id="dashboard-md-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./households.php" id="households-link">Declared Households</a>
+                        <a class="nav-link" href="./households.php" id="households-md-link">Declared Households</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./profiles.php" id="profiles-link">Profiles</a>
+                        <a class="nav-link" href="./profiles.php" id="profiles-md-link">Profiles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./addEntry.php" id="add-link">Add New Entry</a>
+                        <a class="nav-link" href="./addEntry.php" id="add-md-link">Add New Entry</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./kkid.php" id="kkid-link">KK ID Card</a>
+                        <a class="nav-link" href="./kkid.php" id="kkid-md-link">KK ID Card</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./transactions.php" id="transactions-link">Transaction History</a>
+                        <a class="nav-link" href="./transactions.php" id="transactions-md-link">Transaction History</a>
                     </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link nav-md-link" href="./settings-user-manual.php" id="transactions-md-link">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-md-link" href="./index.php" id="transactions-md-link">Log out</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- <div class="mainContainer" id="mainPanel">
+        <div class="container-fluid content">
+            <span>Hello</spa>
+        </div>
+    </div> -->
 
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

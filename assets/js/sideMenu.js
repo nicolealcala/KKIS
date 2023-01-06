@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  //Nav Links
+  //Expanded Nav Links
   $("#dashboard-link").click(function () {
     $(this).addClass("nav-active");
     $("#dashIcon").removeClass("icon");
@@ -52,6 +52,12 @@ $(document).ready(function () {
     $("#close").removeClass("d-none");
     $("#mainPanel").css("transition", "0.5s");
     $(this).addClass("d-none");
+  });
+
+  //Small Nav Links
+  $("#dashboard-md-link").click(function () {
+    $(this).addClass("nav-mdactive");
+    $("a").not(this).removeClass("nav-md-active");
   });
 
   //Screen Resize - remove sidePanel

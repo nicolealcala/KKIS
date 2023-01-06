@@ -75,7 +75,7 @@ a:hover {
 }
 
 #botOptions {
-  margin-top: 180px;
+  margin-top: 50px;
 }
 
 footer {
@@ -126,7 +126,7 @@ nav {
   width: 100%;
   height: 80px;
   box-shadow: 0 2px 5px rgba(178, 200, 214, 0.25);
-  z-index: 99;
+  z-index: 10;
 }
 nav .container-fluid {
   width: 95%;
@@ -140,8 +140,22 @@ nav .container-fluid .navbar-brand {
 nav .container-fluid .navbar-toggler {
   background-color: white;
 }
-nav .container-fluid .collapse {
+nav .container-fluid #smallNavMenu {
   margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 5px 3px rgba(178, 200, 214, 0.25);
+  z-index: 8;
+  transition: 0.1s;
+}
+nav .container-fluid #smallNavMenu .nav-md-link {
+  font-size: 14px;
+  color: #393737;
+}
+
+.nav-md-active {
+  color: #219ebc;
+  font-weight: 500;
 }
 
 #lgHeader {
@@ -185,7 +199,7 @@ nav .container-fluid .collapse {
 
 .content {
   width: 95%;
-  margin-top: 120px;
+  margin-top: 100px;
   z-index: 3;
 }
 .content .vscomp-ele-wrapper {

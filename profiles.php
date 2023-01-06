@@ -655,6 +655,7 @@ $resultResidentsTbl = mysqli_query($conn, $queryResidentsTbl); //execute query
     <script type="text/javascript">
         $(document).ready(function() {
             $("#profiles-link").addClass('nav-active');
+            $("#profiles-md-link").addClass("nav-md-active");
         })
     </script>
 </body>

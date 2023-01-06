@@ -295,6 +295,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $("#dashboard-link").addClass("nav-active");
+            $("#dashboard-md-link").addClass("nav-md-active");
         })
     </script>
 </body>

@@ -685,6 +685,7 @@ if (isset($_POST['submitBtn'])) {
     <script type="text/javascript">
         $(document).ready(function() {
             $("#add-link").addClass('nav-active');
+            $("#add-md-link").addClass("nav-md-active");
         })
     </script>
 </body>
