@@ -4,11 +4,6 @@
 include 'connection.php';
 
 
-session_start();
-session_destroy();
-session_start();
-
-
 include 'controller.php';
 
 
@@ -154,7 +149,7 @@ include 'controller.php';
                             <div class="d-flex align-items-center justify-content-start headContainer">
                                 <div class="d-flex justify-content-center align-items-center w-100 p-0">
                                     <i role="button" class="backIcon fa-solid fa-arrow-left me-3" id="rbackBtn"></i>
-                                    <span class="resetPassHead d-flex justify-content-center">Reset Password</span>
+                                    <span class="resetPassHead d-flex justify-content-center">Forgot Password</span>
                                 </div>
                             </div>
                         </div>
@@ -164,9 +159,6 @@ include 'controller.php';
                                 <div class="row gx-3 gy-3 mx-2">
                                     <div class="col-12">
                                         <input class="form-control" type="email" name="email" placeholder="Email" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <input class="form-control" type="password" name="oldPassword" placeholder="Old Password" required>
                                     </div>
                                     <div class="col-12">
                                         <input class="form-control" type="password" name="newPassword" placeholder="New Password" required>
