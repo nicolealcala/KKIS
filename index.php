@@ -66,8 +66,15 @@ include 'controller.php';
                                         <input class="form-control" type="email" name="email" placeholder="Email" required>
                                     </div>
                                     <div class="col-12">
-                                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                                        <input class="form-control" type="password" name="password" placeholder="Password" id="user_password" required>
                                     </div>
+                                    
+                                    <div class="col-12">
+                                        <input type="checkbox" onclick="showPassword();" name="showPass" placeholder="Show Password" id="showPass" required>
+                                        Show Password
+                                    </div>
+                                    
+
                                     <div class="col-12 mt-2 d-flex justify-content-center">
                                         <a href="#" id="forgotPassText">Forgot Password?</a>
                                     </div>
@@ -200,7 +207,6 @@ include 'controller.php';
 
     </div>
 
-
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -208,4 +214,5 @@ include 'controller.php';
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/formValidation.js"></script>
+    <script type="text/javascript" src="assets/js/showPass.js"></script>
 </body>
