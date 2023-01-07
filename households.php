@@ -10,13 +10,13 @@ require 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Declared Household</title>
 
+    <!-- Bootstrap-Select -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/households.css">
     <!-- <link rel="stylesheet" href="assets/scss/mediaquery.css"> -->
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
-
-    <!-- Bootstrap-Select -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
@@ -105,6 +105,22 @@ require 'connection.php';
                     </thead>
                     <tbody>
                         <?php
+                        // Options Members Count
+                        $optionLess5 = "`members_count` = 'LESS THAN 5'";
+                        $option5to10 = "`members_count` = '5 to 10'";
+                        $option11to15 = "`members_count` = '11 to 15'";
+                        $option16to20 = "`members_count` = '16 to 20'";
+                        $optionMore20 = "`members_count` = 'More than 20'";
+
+                        //Options Remarks
+                        $optionPurokLeader = "`head_remarks` = 'PUROK LEADER'";
+                        $optionSkScholar = "`head_remarks` = 'SK SCHOLAR'";
+                        $optionSoloLiving = "`head_remarks` = 'SOLO LIVING'";
+                        $optionSoloParent = "`head_remarks` = 'SOLO PARENT'";
+                        $optionTeenagePregnancy = "`head_remarks` = 'TEENAGE PREGNANCY'";
+
+                        $filterMembers = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id WHERE `members_count` =  ORDER BY households.household_id ASC";
+
                         $householdMember = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count` FROM `households` INNER JOIN `residents` ON households.household_id = residents.household_id WHERE NOT households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
                         $isMember = executeQuery($householdMember);
 
@@ -141,6 +157,8 @@ require 'connection.php';
                                         ';
                             }
                         }
+
+                        if ($_POST[""])
                         ?>
                     </tbody>
                 </table>

@@ -238,19 +238,6 @@ nav {
   width: 95%;
   margin-top: 100px;
   z-index: 3;
-
-  // MultiSelect
-  .vscomp-ele-wrapper {
-    margin-top: 0;
-
-    .vscomp-toggle-button {
-      color: $text;
-      width: 100%;
-      border: 1.5px solid #d1d3e2;
-      border-radius: 6px;
-      box-shadow: none;
-    }
-  }
 }
 
 // Pages with menu buttons
