@@ -13,11 +13,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
+
+
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
+
+
+
 </head>
 
 <body>
@@ -156,6 +161,8 @@
     <!-- Fundamental Links -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>

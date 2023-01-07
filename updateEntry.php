@@ -1,29 +1,7 @@
 <?php
-  include 'connection.php';
-
-  session_start();
-  session_destroy();
-  session_start();
-
-  if(isset($_POST['submitBtn'])) {
-    $queryPersonal = "INSERT INTO `Kabataan`(`first_name`, `middle_name`, `last_name`, `kabataan_suffix`, `gender_preference`, `birthday`, `birthplace`, `marital_status`, `religion`, `disability`, `contact_no`, `voter_type`, `house_address`, `purok`, `organization`, `qr_code`, `household_id`) 
-             VALUES ('".$_POST['kFname']."','".$_POST['kMname']."','".$_POST['kLname']."', '".$_POST['kSuffix']."', '".$_POST['gender']."', '".$_POST['birthday']."', '".$_POST['birthplace']."', '".$_POST['maritalStatus']."', '".$_POST['religion']."', '".$_POST['disability']."', '".$_POST['contact']."', '".$_POST['voterType']."', '".$_POST['address']."' '".$_POST['purok']."')";
-
-    $queryEducation = "INSERT INTO `Educational_info`(`educational_status`, `level`, `school_type`, `school_name`, `kabataan_id`, `industry_id`, `salary_id`) 
-             VALUES ('".$_POST['educStatus']."','".$_POST['educLevel']."','".$_POST['schoolType']."', '".$_POST['schoolName']."', '".$_POST['SECRET']."', '".$_POST['educIndustry']."', '".$_POST['educSalary']."')";
-    
-    $queryEmployment = "INSERT INTO `Employment_info`(`employment_status`, `employee_type`, `employer_type`, `employer_name`, `kabataan_id`, `industry_id`, `salary_id`) 
-             VALUES ('".$_POST['employStatus']."','".$_POST['employeeType']."','".$_POST['employerlType']."', '".$_POST['employerName']."', '".$_POST['SECRET']."', '".$_POST['employIndustry']."', '".$_POST['employSalary']."')";
-    
-    $queryHousehold = "INSERT INTO `Households`(`head_first_name`, `head_middle_name`, `head_last_name`, `head_suffix`, `head_remarks`, `members_count`) 
-             VALUES ('".$_POST['hFname']."','".$_POST['hMname']."','".$_POST['hLname']."', '".$_POST['hSuffix']."', '".$_POST['remarks']."', '".$_POST['membersCount']."')";
-    
-    
-    
-    // if(executeQuery($queryPersonal, $queryEducation)){
-    //   echo ("Successful");
-    // }
-  }
+require 'connection.php';
+require 'modals.php';
+include "assets/phpqrcode/qrlib.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,223 +10,222 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Update Entry</title>
+    <title>Add New Entry</title>
 
-    <!-- Fundamental Links -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <!-- Bootstrap-Select -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
-    <!-- Virtual-Select JS -->
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
-    
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/addUpdate.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <link rel="stylesheet" href="assets/scss/modal.css">
-    
-    <!-- navUpdate CSS -->
-    <link rel="stylesheet" href="assets/css/navUpdateEntry.css">
+    <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
+
+
 </head>
 
-<body id="page-top">
-    
-    <!-- Nav -->
-    <div class="navDiv">
-        <?php include 'nav.php' ?>
+<body>
+
+    <div class="expanded d-none d-lg-flex" id="leftPanel">
+        <?php require('sideMenu.php'); ?>
     </div>
 
-    <div id="wrapper">
-        <div class="container-fluid content">
-            <div class="row documentHeadingRow p-0 m-0">
-                <div class="col d-xxl-flex justify-content-xxl-start align-items-xxl-center col-12 p-0">
-                    <div class="d-flex align-items-center justify-content-start headContainer">
-                        <button class="btn rounded-circle border-0 d-flex d-sm-flex d-xxl-flex justify-content-center justify-content-sm-center align-items-sm-center justify-content-md-center justify-content-lg-center backBtn" type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="backIcon" style="width: auto;height: auto;font-size: 28px;">
-                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
-                            </svg>
-                        </button>
-                        <div class="col-10 d-flex justify-content-start align-items-center p-0">
-                            <span class="title title-back w-auto">Update Entry</span>
-                        </div>
-                    </div>
+    <div class="mainContainer" id="mainPanel">
+        <header class="d-lg-none d-flex" id="mdHeader">
+            <!-- Append Small Nav here -->
+        </header>
+        <header class="d-none d-lg-block" id="lgHeader">
+            <div class="row mx-0" id="headerRow">
+                <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
+                    <!-- <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
+                    <i class="fa-solid fa-xmark me-4" id="close" role="button"></i> -->
+                    <i class="fa-solid fa-arrow-left me-4" role="button" id="backPage"></i>
+                    <span class="pageTitle">Update Entry</span>
+                </div>
+
+                <div class="col-md-4 d-none d-md-flex justify-content-end align-items-center">
+                    <span class="accountType">Super Admin Account</span>
                 </div>
             </div>
-            <div class="row m-0">
-                <div class="col p-0 mt-2"><img class="img-fluid" src="assets/img/misc/hr.svg"></div>
-            </div>
+            <hr id="headerHR">
+        </header>
 
-            <div class="pageBody">
-                <div class="sectionDiv">
-                    <form method="post" id="updateForm">
-                        <div class="row m-0 w-100">
+        <!-- Content Start -->
+        <div class="container-fluid content">
+            <div class="sectionDiv">
+                <form method="POST" id="addForm" class="mb-5">
+                    <!-- Personal Info -->
+                    <div class="card my-4">
+                        <div class="row m-0">
                             <div class="col col-12 p-0">
-                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDivUpdate rounded-4" id="markerPersonal"><span class="markerText ms-3">Personal Information</span></div>
+                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDiv rounded-2" id="markerPersonal">Personal Information</div>
                             </div>
                         </div>
-                        <!-- Personal Info -->
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="kabataanFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kFname" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="firstName">First Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="fName" id="firstName" type="text" required>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="kabataanMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kMname" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="middleName">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="mName" id="middleName" type="text" required>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="kabataanLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kLname" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="lastName">Last Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="lName" id="lastName" type="text" required>
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
-                                <label class="col-form-label required fieldLabel w-100" for="kabataanSuffix" id="kabataanSuffixLbl">Suffix</label>
-                                <input class="form-control userInput text-uppercase w-100" name="kSuffix" type="text" id="kabataanSuffix">
+                                <label class="col-form-label required fieldLabel w-100 p-1" for="suf" id="suffixLbl">Suffix</label>
+                                <input class="form-control userInput text-uppercase w-100" name="suffix" type="text" id="suf">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentGender">Gender Preference</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" required="">
-                                    <option value="Man" selected="">Man</option>
-                                    <option value="Woman">Woman</option>
-                                    <option value="Transgender">Transgender</option>
-                                    <option value="Non-binary/Non-conforming">Non-binary/Non-conforming</option>
-                                    <option value="Prefer not to say">Prefer not to say</option>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="genderPreference">Gender Preference</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" id="genderPreference" required>
+                                    <option value="MAN">Man</option>
+                                    <option value="WOMAN">Woman</option>
+                                    <option value="TRANSGENDER">Transgender</option>
+                                    <option value="NON-BINARY/NON-CONFORMING">Non-binary/Non-conforming</option>
+                                    <option value="PREFER NOT TO SAY">Prefer not to say</option>
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentBday">Birthday</label>
-                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" type="date" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="bday">Birthday</label>
+                                <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" id="bday" type="date" required>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentBplace">Birthplace</label>
-                                <input class="form-control userInput text-uppercase w-100" name="birthplace" type="text" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="bplace">Birthplace</label>
+                                <input class="form-control userInput text-uppercase w-100" name="birthplace" id="bplace" type="text" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentMstatus">Marital Status</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="maritalStatus" required="">
-                                    <option value="Single" selected="">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Live-in">Live-in</option>
-                                    <option value="Separated">Separated</option>
-                                    <option value="Annuled">Annuled</option>
-                                    <option value="Widowed">Widowed</option>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="maritalStatus">Marital Status</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="mStatus" id="maritalStatus" placeholder="Select Religion" required>
+                                    <option value="SINGLE">Single</option>
+                                    <option value="MARRIED">Married</option>
+                                    <option value="LIVE IN">Live-in</option>
+                                    <option value="SEPARATED">Separated</option>
+                                    <option value="ANNULED">Annuled</option>
+                                    <option value="WIDOWED">Widowed</option>
                                 </select>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentReligion">Religion</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" required="">
-                                    <option value="Atheist" selected="">Atheist</option>
-                                    <option value="Buddhist">Buddhist</option>
-                                    <option value="Christian">Christian</option>
-                                    <option value="Muslim">Muslim</option>
+                                <label class="col-form-label fieldLabel required w-100 p-1 p-1" for="religionSelect">Religion</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="religion" id="religionSelect" required>
+                                    <option value="ATHEIST">Atheist</option>
+                                    <option value="BUDDHIST">Buddhist</option>
+                                    <option value="CHRISTIAN">Christian</option>
+                                    <option value="MUSLIM">Muslim</option>
+                                    <option value="OTHERS">Others</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="disabilityDiv">
-                                    <label class="col-form-label fieldLabel required w-100" for="disabilitySelect">Disability</label>
-                                    <!-- Class form-select  removed from select element in Remarks -->
-                                    <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect">
-                                        <option value="None" selected="">None</option>
-                                        <option value="Communication disability">Communication disability</option>
-                                        <option value="Disability due to chronic illnes">Disability due to chronic illnes</option>
-                                        <option value="Learning disability">Learning disability</option>
-                                        <option value="Mental disability">Mental disability</option>
-                                        <option value="Orthopedic disability">Orthopedic disability</option>
-                                        <option value="Psychosocial disability">Psychosocial disability</option>
-                                        <option value="Vission disability">Vission disability</option>
+                                    <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
+                                    <!-- Class form-select  removed from select element in Disability -->
+                                    <select class="selectpicker form-control text-uppercase houseSelectBox" multiple name="disability" data-selected-text-format="count > 3" id="disabilitySelect" required>
+                                        <option value="NONE" selected>None</option>
+                                        <option value="COMMUNICATION DISABILITY">Communication disability</option>
+                                        <option value="LEARNING DISABILITY">Learning disability</option>
+                                        <option value="MENTAL DISABILITY">Mental disability</option>
+                                        <option value="ORTHOPEDIC DISABILITY">Orthopedic disability</option>
+                                        <option value="PSYCHOSOCIAL DISABILITY">Psychosocial disability</option>
+                                        <option value="VISION DISABILITY">Vision disability</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentContact">Contact No.</label>
-                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="residentContact" placeholder="09XXXXXXXXX" inputmode="numeric" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="contactNo">Contact No.</label>
+                                <input class="form-control text-uppercase w-100" type="text" name="contact" id="contactNo" placeholder="09XXXXXXXXX" inputmode="numeric" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-6 col-12" for="residentVote">
-                                <label class="col-form-label fieldLabel required w-100">Voter Type</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required="">
-                                    <option value="Registered" selected="">Registered</option>
-                                    <option value="Unregistered">Unregistered</option>
+                                <label class="col-form-label fieldLabel required w-100 p-1">Voter Type</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required>
+                                    <option value="REGISTERED">Registered</option>
+                                    <option value="UNREGISTERED">Unregistered</option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-8 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentAddress">House No./Street/Subdivision</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="address" id="residentAddress" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentAddress">House No./Street/Subdivision</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="address" id="residentAddress" required>
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="residentPurok">Purok</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required="">
-                                    <option value="Cardinal" selected="">Cardinal</option>
-                                    <option value="Cordillera">Cordillera</option>
-                                    <option value="Doña Petra">Doña Petra</option>
-                                    <option value="Doña Regina 1">Doña Regina 1</option>
-                                    <option value="Doña Regina 2">Doña Regina 2</option>
-                                    <option value="Doña Regina 3">Doña Regina 3</option>
-                                    <option value="Family Village">Family Village</option>
-                                    <option value="Iraq">Iraq</option>
-                                    <option value="Looban">Looban</option>
-                                    <option value="Manggahan">Manggahan</option>
-                                    <option value="Nayon">Nayon</option>
-                                    <option value="Ormoc">Ormoc</option>
-                                    <option value="Pulong Kendi">Pulong Kendi</option>
-                                    <option value="Puting Krus">Puting Krus</option>
-                                    <option value="Saint Anthony ">Saint Anthony </option>
-                                    <option value="Sampaguita St.">IraSampaguita St.</option>
-                                    <option value="Smokey Mountain ">Smokey Mountain </option>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentPurok">Purok</label>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required>
+                                    <option value="CARDINAL">Cardinal</option>
+                                    <option value="CORDILLERA">Cordillera</option>
+                                    <option value="DOÑA PETRA">Doña Petra</option>
+                                    <option value="DOÑA REGINA 1">Doña Regina 1</option>
+                                    <option value="DOÑA REGINA 2">Doña Regina 2</option>
+                                    <option value="DOÑA REGINA 3">Doña Regina 3</option>
+                                    <option value="FAMILY VILLAGE">Family Village</option>
+                                    <option value="IRAQ">Iraq</option>
+                                    <option value="LOOBAN">Looban</option>
+                                    <option value="MANGGAHAN">Manggahan</option>
+                                    <option value="NAYON">Nayon</option>
+                                    <option value="ORMOC">Ormoc</option>
+                                    <option value="PULONG KENDI">Pulong Kendi</option>
+                                    <option value="PUTING KRUS">Puting Krus</option>
+                                    <option value="SAINT ANTHONY">Saint Anthony </option>
+                                    <option value="SAMPAGUITA ST.">Sampaguita St.</option>
+                                    <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
                                 </select>
                             </div>
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel w-100" for="org" id="organizationLbl">Organization (if any)</label>
-                                <input class="form-control userInput text-uppercase w-100" name="organization" type="text" id="org">
+                                <label class="col-form-label fieldLabel w-100 p-1" for="org" id="organizationLbl">Organization (if any)</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="organization" id="org">
                             </div>
                         </div>
-                
-                        <div class="row m-0 gx-3 p-0" id="eRow">
-                            <!-- Educational Info -->
-                            <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="educCol">
-                                <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDivUpdate rounded-4 m-0" id="markerEduc">
-                                    <input type="radio" id="educCheckUpdate" class="statusCheck ms-3" name="eInfo" checked="">
-                                    <span class="markerText ms-2">Educational Status</span>
+                    </div>
+
+                    <div class="row gy-2 my-2 mx-0">
+                        <!-- Educational Info -->
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
+                            <div class="card p-3" id="educCard">
+                                <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEduc">
+                                    <label class="d-flex align-items-center justify-content-start">
+                                        <input type="radio" id="educCheck" class="statusCheck" name="educInfo" checked>
+                                        Educational Status
+                                    </label>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educStatusLbl" for="selectEducStatus">Educational Status</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="educStatus" id="selectEducStatus" required="">
-                                            <option value="Enrolled" selected="">Enrolled</option>
-                                            <option value="Out-of-school Youth">Out-of-school Youth</option>
-                                            <option value="Working Student">Working Student</option>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educStatusLbl" for="selectEducStatus">Educational Status</label>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="educStatus" id="selectEducStatus" required>
+                                            <option value="ENROLLED">Enrolled</option>
+                                            <option value="OUT-OF-SCHOOL YOUTH">Out-of-school Youth</option>
+                                            <option value="WORKING STUDENT">Working Student</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="levelLbl" for="selectLevel">Level</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="educLevel" id="selectLevel" required="">
-                                            <option value="Pre-Elementary" selected="">Pre-elementary</option>
-                                            <option value="Elementary">Elementary</option>
-                                            <option value="Junior High School">Junior High School</option>
-                                            <option value="Senior High School">Senior High School</option>
-                                            <option value="Alternative Learning System">Alternative Learning System (ALS)</option>
-                                            <option value="Diploma Course">Diploma Course</option>
-                                            <option value="College">College</option>
-                                            <option value="Graduate Studies">Graduate Studies</option> 
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="levelLbl" for="selectLevel">Level</label>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="educLevel" id="selectLevel" required>
+                                            <option value="PRE-ELEMENTARY">Pre-elementary</option>
+                                            <option value="ELEMENTARY">Elementary</option>
+                                            <option value="JUNIOR HIGH SCHOOL">Junior High School</option>
+                                            <option value="SENIOR HIGH SCHOOL">Senior High School</option>
+                                            <option value="ALTERNATIVE LEARNING SYSTEM">Alternative Learning System (ALS)</option>
+                                            <option value="DIPLOMA COURSE">Diploma Course</option>
+                                            <option value="COLLEGE">College</option>
+                                            <option value="GRADUATE STUDIES">Graduate Studies</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required="">
-                                            <option value="Private" selected="">Private</option>
-                                            <option value="Public">Public</option>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required>
+                                            <option value="PRIVATE">Private</option>
+                                            <option value="PUBLIC">Public</option>s
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="schoolLbl" for="inputSchool">Name of School</label>
-                                        <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" required="">
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolLbl" for="inputSchool">Name of School</label>
+                                        <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educIndustryLbl" for="selectEducOccupation">Work Industry</label>
-                                        <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required="">
-                                            <option value="1" selected="">Accounting</option>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducIndustry">Work Industry</label>
+                                        <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required>
+                                            <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
                                             <option value="3">Aerospace</option>
                                             <option value="4">Agriculture</option>
@@ -315,9 +292,9 @@
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label educFieldLabel required w-100" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
-                                        <select class="form-select educSelectBox text-uppercase w-100" name="educSalary" id="selectEducSalary" required="">
-                                            <option value="1" selected="">Less than 10,000</option>
+                                        <label class="col-form-label educFieldLabel required w-100 p-1" id="educSalaryLbl" for="selectEducSalary">Salary Range</label>
+                                        <select class="form-select educSelectBox text-uppercase w-100" name="educSalary" id="selectEducSalary" required>
+                                            <option value="1">Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
                                             <option value="3">21,000-30,999</option>
                                             <option value="4">31,000-40,999</option>
@@ -327,43 +304,47 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Employment Info -->
-                            <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12" id="employCol">
-                                <div class="d-flex d-sm-flex d-xxl-flex align-items-center align-items-sm-center align-items-xxl-center markerDivUpdate rounded-4" id="markerEmploy">
-                                    <input type="radio" id="employCheckUpdate" class="statusCheck ms-3" name="eInfo">
-                                    <span class="markerText ms-2">Employment Status</span>
+                        </div>
+                        <!-- Employment Info -->
+                        <div class="col eStatus col-lg-6 col-md-12 col-sm-12 col-12 p-0">
+                            <div class="card p-3" id="employCard">
+                                <div class="d-flex align-items-center markerDiv rounded-2 m-0 w-100" id="markerEmploy">
+                                    <label class="d-flex align-items-center">
+                                        <input type="radio" id="employCheck" class="statusCheck" name="employInfo">
+                                        Employment Status
+                                    </label>
                                 </div>
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required="">
-                                            <option value="Employed" selected="">Employed</option>
-                                            <option value="Unemployed">Unemployed</option>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required>
+                                            <option value="EMPLOYED">Employed</option>
+                                            <option value="UNEMPLOYED">Unemployed</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required="">
-                                            <option value="Regular" selected="">Regular</option>
-                                            <option value="Contractual">Contractual</option>
-                                            <option value="Job Order">Job Order</option>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required>
+                                            <option value="REGULAR">Regular</option>
+                                            <option value="CONTRACTUAL">Contractual</option>
+                                            <option value="JOB ORDER">Job Order</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required="">
-                                            <option value="Private" selected="">Private</option>
-                                            <option value="Public">Public</option>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required>
+                                            <option value="PRIVATE">Private</option>
+                                            <option value="PUBLIC">Public</option>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employerLbl" for="inputEmployer">Name of Employer/Company/Business</label>
-                                        <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required="">
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employerLbl" for="inputEmployer">Name of Employer/Company/Business</label>
+                                        <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employIndustryLbl" for="selectEmployOccupation">Work Industry</label>
-                                        <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required="">
-                                            <option value="1" selected>Accounting</option>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployIndustry">Work Industry</label>
+                                        <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required>
+                                            <option value="1">Accounting</option>
                                             <option value="2">Advertising and Marketing</option>
                                             <option value="3">Aerospace</option>
                                             <option value="4">Agriculture</option>
@@ -430,9 +411,9 @@
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
-                                        <label class="col-form-label employFieldLabel required w-100" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
-                                        <select class="form-select employSelectBox text-uppercase w-100" name="employSalary" id="selectEmploySalary" required="">
-                                            <option value="1" selected>Less than 10,000</option>
+                                        <label class="col-form-label employFieldLabel required w-100 p-1" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
+                                        <select class="form-select employSelectBox text-uppercase w-100" name="employSalary" id="selectEmploySalary" required>
+                                            <option value="1">Less than 10,000</option>
                                             <option value="2">10,000-20,999</option>
                                             <option value="3">21,000-30,999</option>
                                             <option value="4">31,000-40,999</option>
@@ -443,78 +424,108 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- House Declaration -->
+                    </div>
+                    <!-- House Declaration -->
+                    <div class="card p-3 my-4">
                         <div class="row m-0">
                             <div class="col col-12 p-0">
-                                <div class="d-flex d-xxl-flex align-items-center align-items-xxl-center markerDivUpdate rounded-4">
-                                    <span class="markerText ms-3">House Declaration</span>
+                                <div class="d-flex align-items-center markerDiv rounded-2">
+                                    House Declaration
                                 </div>
                             </div>
                         </div>
                         <div class="row m-0 my-3 gy-3 gx-3" id="householdRow">
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="headFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="headFname">First Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" id="headFname" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="headMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="headMname">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="headLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" required="">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="headLname">Last Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname" required>
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="headSuffix" id="headSuffixLbl">Suffix</label>
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="headSuffix" id="headSuffixLbl">Suffix</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="hSuffix" id="headSuffix">
                             </div>
-                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12">
-                                <label class="col-form-label fieldLabel required w-100" for="famCount">No.&nbsp; of Family Members</label>
-                                <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required="">
-                                    <option value="Less than 5">Less than 5</option>
+                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12" id="colRemarks">
+                                <div class="remarkDiv">
+                                    <label class="col-form-label fieldLabel required w-100 p-1" for="remarkDrop" id="remarksLbl">Remarks</label>
+                                    <!-- Class form-select  removed from select element in Remarks -->
+                                    <select class="selectpicker form-control text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-selected-text-format="count > 3" id="remarkDrop">
+                                        <option value="PUROK LEADER ">Purok Leader</option>
+                                        <option value="SK SCHOLAR ">SK Scholar</option>
+                                        <option value="SOLO LIVING ">Solo Living</option>
+                                        <option value="SOLO PARENT ">Solo Parent</option>
+                                        <option value="TEENAGE PREGNANCY ">Teenage Pregnancy</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="famCount">No.&nbsp; of Family Members</label>
+                                <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required>
+                                    <option value="LESS THAN 5">Less than 5</option>
                                     <option value="5 to 10">5 to 10</option>
                                     <option value="11 to 15">11 to 15</option>
                                     <option value="16 to 20">16 to 20</option>
-                                    <option value="More than 20">More than 20</option>
+                                    <option value="MORE THAN 20">More than 20</option>
                                 </select>
                             </div>
-                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12" id="colRemarks">
-                                <div class="remarkDiv">
-                                    <label class="col-form-label fieldLabel required w-100" for="remarkDrop" id="remarksLbl">Remarks</label>
-                                    <!-- Class form-select  removed from select element in Remarks -->
-                                    <select class="text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
-                                        <option value="Solo Living">Solo Living</option>
-                                        <option value="Solo Parent">Solo Parent</option>
-                                        <option value="Teenage Pregnancy">Teenage Pregnancy</option>  
-                                    </select>
-                                </div>
-                            </div> 
                         </div>
-                        <div class="row d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
-                            <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
-                                    <button class="btn controlBtn" name="submitBtn" type="button" form="updateForm">Submit</button>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="row m-0 d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
+                        <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
+                            <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Added Modal -->
+                <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
+                    <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="m-0 d-flex justify-content-end align-items-center">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="row m-0">
+                                    <div class="col col-12 p-0">
+                                        <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
+                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                        </svg>
+                                    </div>
+                                    <div class="col col-12">
+                                        <h3 class="modalAlert text-center">Added New Entry!</h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
 
-                    <!-- Modal -->
-                    <div class="modal fade" role="dialog" tabindex="-1" id="modalUpdated">
-                        <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <div class="m-0 d-flex justify-content-end align-items-center">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Record Exist Modal -->
+                <div class="modal fade center" role="dialog" tabindex="-1" id="recordExist">
+                    <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="m-0 d-flex justify-content-end align-items-center">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="row m-0">
+                                    <div class="col col-12 p-0">
+                                        <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
+                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                        </svg>
                                     </div>
-                                    <div class="row m-0">
-                                        <div class="col col-12 p-0">
-                                            <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
-                                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                                            </svg>
-                                        </div>
-                                        <div class="col col-12">
-                                            <h3 class="modalAlert text-center">Updated Entry</h3>
-                                        </div>
+                                    <div class="col col-12">
+                                        <h3 class="modalAlert text-center">Record Already Exists</h3>
                                     </div>
                                 </div>
                             </div>
@@ -525,15 +536,20 @@
         </div>
     </div>
 
-    <!-- Fundamental Links -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Virtual-Select JS -->
-    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
+    <!-- Bootstrap-select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
     <!-- Custom Script -->
-    <script type="text/javascript" src="assets/js/updateEntry.js"></script>
+    <script type="text/javascript" src="assets/js/addEntry.js"></script>
+    <script type="text/javascript" src="assets/js/sideMenu.js"></script>
+
+    <!-- Active Link -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#profiles-link").addClass('nav-active');
+            $("#profiles-md-link").addClass("nav-md-active");
+        })
+    </script>
 </body>
 
 </html>
