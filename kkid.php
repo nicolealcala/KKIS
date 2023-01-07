@@ -22,10 +22,10 @@
     </div>
 
     <div class="mainContainer" id="mainPanel">
-    <header class="d-lg-none d-flex" id="mdHeader">
+        <header class="d-lg-none d-flex" id="mdHeader">
             <!-- Append Small Nav here -->
         </header>
-        <header class="d-none d-lg-block"  id="lgHeader">
+        <header class="d-none d-lg-block" id="lgHeader">
             <div class="row mx-0" id="headerRow">
                 <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
@@ -88,25 +88,27 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-9 col-12 p-0">
-                                        <select class="form-select categoryOption" id="selectPurok" disabled>
-                                            <option value="CARDINAL">Cardinal</option>
-                                            <option value="CORDILLERA">Cordillera</option>
-                                            <option value="DOÑA PETRA">Doña Petra</option>
-                                            <option value="DOÑA REGINA 1">Doña Regina 1</option>
-                                            <option value="DOÑA REGINA 2">Doña Regina 2</option>
-                                            <option value="DOÑA REGINA 3">Doña Regina 3</option>
-                                            <option value="FAMILY VILLAGE">Family Village</option>
-                                            <option value="IRAQ">Iraq</option>
-                                            <option value="LOOBAN">Looban</option>
-                                            <option value="MANGGAHAN">Manggahan</option>
-                                            <option value="NAYON">Nayon</option>
-                                            <option value="ORMOC">Ormoc</option>
-                                            <option value="PULONG KENDI">Pulong Kendi</option>
-                                            <option value="PUTING KRUS">Puting Krus</option>
-                                            <option value="SAINT ANTHONY">Saint Anthony </option>
-                                            <option value="SAMPAGUITA ST.">IraSampaguita St.</option>
-                                            <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
-                                        </select>
+                                        <form action="" method="POST">
+                                            <select class="form-select categoryOption" id="selectPurok" disabled>
+                                                <option value="CARDINAL">Cardinal</option>
+                                                <option value="CORDILLERA">Cordillera</option>
+                                                <option value="DOÑA PETRA">Doña Petra</option>
+                                                <option value="DOÑA REGINA 1">Doña Regina 1</option>
+                                                <option value="DOÑA REGINA 2">Doña Regina 2</option>
+                                                <option value="DOÑA REGINA 3">Doña Regina 3</option>
+                                                <option value="FAMILY VILLAGE">Family Village</option>
+                                                <option value="IRAQ">Iraq</option>
+                                                <option value="LOOBAN">Looban</option>
+                                                <option value="MANGGAHAN">Manggahan</option>
+                                                <option value="NAYON">Nayon</option>
+                                                <option value="ORMOC">Ormoc</option>
+                                                <option value="PULONG KENDI">Pulong Kendi</option>
+                                                <option value="PUTING KRUS">Puting Krus</option>
+                                                <option value="SAINT ANTHONY">Saint Anthony </option>
+                                                <option value="SAMPAGUITA ST.">IraSampaguita St.</option>
+                                                <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
+                                            </select>
+                                        </form>
                                     </div>
                                     <!-- Custom Category -->
                                     <div class="col-12 p-0">
@@ -145,8 +147,11 @@
                         </div>
 
                         <!-- Preview -->
-                        <div class="col idPreview col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
+                        <div class="col idPreview col-lg-6 col-12 p-0 m-0">
                             <div class="row m-0 w-100">
+                                <?php
+                                $showID = "SELECT CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, `birthday`,`purok` FROM `residents`";
+                                ?>
                                 <div class="col col-12 p-0">
                                     <h5 class="text-start mb-3">ID Preview</h5>
                                 </div>
@@ -174,7 +179,7 @@
     <!-- Custom Script -->
     <script src="assets/js/kkid.js"></script>
     <script type="text/javascript" src="assets/js/sideMenu.js"></script>
-    
+
     <!-- Active Link -->
     <script type="text/javascript">
         $(document).ready(function() {

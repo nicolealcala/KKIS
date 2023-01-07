@@ -1,5 +1,6 @@
 <?php
 require 'connection.php';
+require 'modals.php';
 include "assets/phpqrcode/qrlib.php";
 
 if (isset($_POST['submitBtn'])) {
@@ -7,14 +8,18 @@ if (isset($_POST['submitBtn'])) {
     $hFname = $_POST['hFname'];
     $hMname = $_POST['hMname'];
     $hLname = $_POST['hLname'] . " " . $_POST['hSuffix'];
-    $remarks = $_POST['remarks'];
+    $remarks = isset($_POST['remarks']) ? $_POST['remarks'] : "";
     $membersCount = $_POST['membersCount'];
 
     //Personal Info
     $residentID;
     $fName = $_POST['fName'];
     $mName = $_POST['mName'];
-    $lName = $_POST['lName'] . " " . $_POST['suffix'];
+    if (isset($_POST['suffix'])) {
+        $lName = $_POST['lName'] . " " . $_POST['suffix'];
+    } else {
+        $lName = $_POST['lName'];
+    }
     $gender = $_POST['gender'];
     $birthday = $_POST['birthday'];
     $birthplace = $_POST['birthplace'];
@@ -70,9 +75,17 @@ if (isset($_POST['submitBtn'])) {
     $existingResident = executeQuery($checkResidents);
 
     if ($residentCount = mysqli_num_rows($existingResident) > 0) {
-        echo "<script type='text/javascript'>
-            $(document).ready(function(){
-            $('#recordExist').modal('show');});
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Record already exists!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = './addEntry.php';
+            }
+            
+          });
             </script>";
     } else {
         //Query for checking if HOUSEHOLD entry already exists
@@ -126,10 +139,31 @@ if (isset($_POST['submitBtn'])) {
             echo "<script>alert('Something went wrong');</script>";
         }
 
-        // $isSuccessful = "SELECT * FROM `residents` WHERE `resident_id` = $residentID";
-        // if (executeQuery($isSuccessful)) {
-        //     echo '<script>document.getElementByID("modalAdded").modal("show");</script>';
-        // }
+        if (($queryPersonal && $updateHousehold) && ($queryEducation || $queryEmployment)) {
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Entry added successfully, house updated',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = './addEntry.php';
+                }
+            
+          });
+            </script>";
+        } else if (($queryPersonal && $queryHousehold) && ($queryEducation || $queryEmployment)) {
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Entry added successfully',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = './addEntry.php';
+                }
+            
+          });
+            </script>";
+        }
     }
 }
 ?>
@@ -153,11 +187,14 @@ if (isset($_POST['submitBtn'])) {
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
+
+
 </head>
 
 <body>
+
     <div class="expanded d-none d-lg-flex" id="leftPanel">
-        <?php include 'sideMenu.php' ?>
+        <?php require('sideMenu.php'); ?>
     </div>
 
     <div class="mainContainer" id="mainPanel">

@@ -59,18 +59,21 @@ require 'connection.php';
                 <button class="menuBtn menu2 rounded-pill" id="menu2">Overview</button>
             </div>
 
-            <!-- Table -->
+            <!-- Data Table -->
             <div class="sectionDiv mx-0 mt-4" id="familiesBody">
                 <!-- Options Row -->
                 <div class="row gx-5 m-0 mb-1">
                     <!-- Show No. of Rows -->
                     <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="familiesLength"></div>
                     <!-- Output Buttons -->
-                    <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="familiesOutput"></div>
+                    <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="familiesOutput">
+                        <!-- Append Buttons Here -->
+                    </div>
                     <!-- Filter -->
                     <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none">
                         <select class="selectpicker form-control" multiple name="filter" data-selected-text-format="count > 3" title="Filter" placeholder="Filter">
                             <optgroup data-divider="true" data-max-options="1" label="Members">
+                                <option value="Default">Default</option>
                                 <option value="Less than 5">Less than 5</option>
                                 <option value="5 to 10">5 to 10</option>
                                 <option value="11 to 15">11 to 15</option>
@@ -102,7 +105,19 @@ require 'connection.php';
                             <th class="tblHead">Members</th>
                             <th class="tblHead">Remarks</th>
                         </tr>
+
+
                     </thead>
+                    <!-- <tr>
+                        <th class="for_filter_data"></th>
+                        <th class=""></th>
+                        <th class=""></th>
+                        <th class=""></th>
+                        <th class=""></th>
+                        <th class=""></th>
+                        <th class=""></th>
+                    </tr> -->
+
                     <tbody>
                         <?php
                         // Options Members Count
@@ -121,10 +136,11 @@ require 'connection.php';
 
                         $filterMembers = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id WHERE `members_count` =  ORDER BY households.household_id ASC";
 
+
                         $householdMember = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count` FROM `households` INNER JOIN `residents` ON households.household_id = residents.household_id WHERE NOT households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
                         $isMember = executeQuery($householdMember);
 
-                        $householdHead = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
+                        $householdHead = "SELECT households.household_id, CONCAT(`last_name`, 'N', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
                         $isHead = executeQuery($householdHead);
 
                         if ($isHead) {
@@ -152,15 +168,25 @@ require 'connection.php';
                                             <td class="entryRow" scope="col" data-label="Birthday">' . $rowMember["birthday"] . '</td>
                                             <td class="entryRow" scope="col" data-label="Purok">' . $rowMember["purok"] . '</td>
                                             <td class="entryRow" scope="col" data-label="Members">' . $rowMember["members_count"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Remarks">' . ' ' . '</td>
+                                            <td class="entryRow" scope="col" data-label="Remarks">' . '' . '</td>
                                         </tr>
                                         ';
                             }
                         }
 
-                        if ($_POST[""])
                         ?>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="">ID</th>
+                            <th class="">Name</th>
+                            <th class="">Age</th>
+                            <th class="">Birthday</th>
+                            <th class="">Purok</th>
+                            <th class="">Members</th>
+                            <th class="">Remarks</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 

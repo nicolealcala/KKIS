@@ -17,13 +17,14 @@ $fade-orange: #f4895f;
   color: $text;
 }
 
+
 .backIcon {
   color: $text;
 }
 
 //Large Nav page
 .sideNav,
-.expanded{
+.expanded {
   position: fixed;
   padding: 0;
   background-color: $dark-blue;
@@ -71,7 +72,9 @@ a {
   font-weight: 500;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: $light-yellow;
   .iconContainer {
     i {
@@ -175,7 +178,7 @@ nav {
       padding: 10px 20px;
       background-color: white;
       box-shadow: 0 5px 3px rgba(178, 200, 214, 0.25);
-      z-index: 8;   
+      z-index: 8;
       transition: 0.1s;
 
       .nav-md-link {
@@ -185,7 +188,6 @@ nav {
     }
   }
 }
-
 
 .nav-md-active {
   color: $mid-blue;

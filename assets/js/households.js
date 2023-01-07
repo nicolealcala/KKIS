@@ -1,7 +1,7 @@
 $(document).ready(function () {
   //Nav Small Screen
-  $('#smallNav').appendTo('#mdHeader');
-  
+  $("#smallNav").appendTo("#mdHeader");
+
   //for clicking Overview
   $("#menu1").on("click", function () {
     $("#familiesBody").removeClass("d-none");
@@ -24,19 +24,75 @@ $(document).ready(function () {
     bFilter: true,
     bInfo: false,
     columnDefs: [
-        { "width": "10%", "targets": 0 },
-        { "width": "25%", "targets": 1 },
-        { "width": "10%", "targets": 2 },
-        { "width": "10%", "targets": 3 },
-        { "width": "15%", "targets": 4 },
-        { "width": "15%", "targets": 5 },
-        { "width": "15%", "targets": 6 }
-      ]
+      { width: "10%", targets: 0 },
+      { width: "25%", targets: 1 },
+      { width: "10%", targets: 2 },
+      { width: "10%", targets: 3 },
+      { width: "15%", targets: 4 },
+      { width: "15%", targets: 5 },
+      { width: "15%", targets: 6 },
+    ],
+    initComplete: function () {
+      this.api()
+        .columns([1,2,3,4,5,6])
+        .every(function (d) {
+          var column = this;
+          var theadname = $("#familiesTbl th").eq([d]).text(); //used this specify table name and head
+          var select = $("<select class = 'form-select'><option value=''>Filter "+theadname+"</option></select>")
+            .appendTo($(column.footer()).empty())
+            .on("change", function () {
+              var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+              column.search(val ? "^" + val + "$" : "", true, false).draw();
+            });
+
+          column
+            .data()
+            .unique()
+            .sort()
+            .each(function (d, j) {
+              select.append('<option value="' + d + '">' + d + "</option>");
+            });
+        });
+    },
   });
 
   $("#familiesTbl_length").appendTo("#familiesLength");
   table.buttons().container().appendTo("#familiesOutput");
   $("#familiesTbl_filter").appendTo("#familiesSearch");
+
+  //try
+
+  // $("#familiesTbl").DataTable({
+  //   initComplete: function () {
+  //     this.api()
+  //       .columns()
+  //       .every(function () {
+  //         var column = this;
+  //         var select = $('<select><option value="">Filter</option></select>')
+  //           .appendTo($(column.footer()).empty())
+  //           .on("change", function () {
+  //             var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+  //             column.search(val ? "^" + val + "$" : "", true, false).draw();
+  //           });
+
+  //         column
+  //           .data()
+  //           .unique()
+  //           .sort()
+  //           .each(function (d, j) {
+  //             select.append('<option value="' + d + '">' + d + "</option>");
+  //           });
+  //       });
+  //   },
+  //   buttons: ["copy", "csv", "excel", "pdf", "print"],
+  //   bFilter: true,
+  // });
+  // $("#familiesTbl_length").appendTo("#familiesLength");
+  // table.buttons().container().appendTo("#familiesOutput");
+  // $("#familiesTbl_filter").appendTo("#familiesSearch");
+  //try
 
   //for Chart
   $(document).ready(function () {
