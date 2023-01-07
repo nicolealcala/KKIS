@@ -62,22 +62,36 @@ $(document).ready(function () {
   //Screen Resize - remove sidePanel
   $(window).resize(function () {
     if ($(window).width() < 992) {
-      $("#close").addClass("d-none");
-      $("#hamburger").removeClass("d-none");
-      $("#sidePanel").removeClass("expanded");
-      $("#sidePanel").addClass("shrunk");
+      $("#leftPanel").removeClass("expanded");
+      $("#leftPanel").addClass("shrunk");
       $("#mainPanel").removeClass("mainContainer");
       $("#mainPanel").addClass("full-width");
+      $(".backIcon-main").removeClass("d-none");
+    }
+  });
+
+  $(window).resize(function () {
+    if ($(window).width() > 991) {
+      $("#leftPanel").removeClass("shrunk");
+      $("#leftPanel").addClass("expanded");
+      $("#mainPanel").removeClass("full-width");
+      $("#mainPanel").addClass("mainContainer");
+      $(".backIcon-main").addClass("d-none");
     }
   });
 
   //Per Device Screen Sizes - remove sidePanel
   if ($(window).width() < 992) {
-    $("#close").addClass("d-none");
-    $("#hamburger").removeClass("d-none");
     $("#leftPanel").removeClass("expanded");
     $("#leftPanel").addClass("shrunk");
     $("#mainPanel").removeClass("mainContainer");
     $("#mainPanel").addClass("full-width");
+    $(".backIcon-main").removeClass("d-none");
+  } else if ($(window).width() > 991) {
+    $("#leftPanel").removeClass("shrunk");
+    $("#leftPanel").addClass("expanded");
+    $("#mainPanel").removeClass("full-width");
+    $("#mainPanel").addClass("mainContainer");
+    $(".backIcon-main").addClass("d-none");
   }
 });

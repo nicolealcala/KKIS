@@ -12,10 +12,15 @@
   overflow-y: auto;
 }
 
-.settingsPanel {
-  width: 100%;
+.settingsPanel, .sidePanel {
   padding: 2em 3.5em 2em 2em;
   background: none;
+}
+
+.shrunk {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .backIcon {
@@ -125,9 +130,31 @@ li {
   overflow-x: hidden;
 }
 
+.content {
+  width: 95%;
+  z-index: 3;
+}
+
 .sectionDiv {
   padding: auto;
   margin-top: 50px;
+}
+
+.question {
+  color: #219ebc;
+  font-weight: bold;
+}
+
+.compatability, tr {
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  border-left: none;
+  border-right: none;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.device {
+  font-weight: bold;
 }
 
 .member {
@@ -284,19 +311,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-@media only screen and (max-width: 992px) {
-  .sidePanel {
-    width: 0;
-  }
-  .mainPanel {
-    position: absolute;
-    border-radius: 0;
-    box-shadow: none;
-    max-width: 100vw;
-    height: 100vh;
-    padding: 2em;
-    z-index: 5;
-  }
 }/*# sourceMappingURL=settings.css.map */

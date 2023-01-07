@@ -142,14 +142,14 @@ if (isset($_POST['submitBtn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Add New Entry</title>
 
+    <!-- Bootstrap-Select -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/addUpdate.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
     <link rel="stylesheet" href="assets/scss/modal.css">
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
-
-    <!-- Virtual Select JS library -->
-    <link rel="stylesheet" href="assets/css/virtual-select.min.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
@@ -250,7 +250,7 @@ if (isset($_POST['submitBtn'])) {
                                 <div class="disabilityDiv">
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
                                     <!-- Class form-select  removed from select element in Disability -->
-                                    <select class="text-uppercase houseSelectBox" multiple name="disability" data-search="false" data-silent-initial-value-set="true" id="disabilitySelect" required>
+                                    <select class="selectpicker form-control text-uppercase houseSelectBox" multiple name="disability" data-selected-text-format="count > 3" id="disabilitySelect" required>
                                         <option value="NONE" selected>None</option>
                                         <option value="COMMUNICATION DISABILITY">Communication disability</option>
                                         <option value="LEARNING DISABILITY">Learning disability</option>
@@ -581,7 +581,7 @@ if (isset($_POST['submitBtn'])) {
                                 <div class="remarkDiv">
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="remarkDrop" id="remarksLbl">Remarks</label>
                                     <!-- Class form-select  removed from select element in Remarks -->
-                                    <select class="text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-search="false" data-silent-initial-value-set="true" id="remarkDrop">
+                                    <select class="selectpicker form-control text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-selected-text-format="count > 3" id="remarkDrop">
                                         <option value="PUROK LEADER ">Purok Leader</option>
                                         <option value="SK SCHOLAR ">SK Scholar</option>
                                         <option value="SOLO LIVING ">Solo Living</option>
@@ -662,8 +662,8 @@ if (isset($_POST['submitBtn'])) {
         </div>
     </div>
 
-    <!-- Virtual Select JS -->
-    <script type="text/javascript" src="assets/js/virtual-select.min.js"></script>
+    <!-- Bootstrap-select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/addEntry.js"></script>

@@ -7,27 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Manual</title>
 
-    <!-- Fundamental links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/settings.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
 
-    <!-- DATA TABLES CDN -->
-    <link rel="stylesheet" href="assets/css/datatables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
-
-
 </head>
 
 <body>
-    <div class="expanded d-none d-lg-flex">
+    <div class="expanded d-none d-lg-flex" id="leftPanel">
         <?php
         include "settings.php";
         ?>
@@ -35,8 +24,8 @@
 
     <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
-            <a href="./settings">
-                <i role="button" class="backIcon fa-solid fa-arrow-left d-lg-none me-3" style="color: #9fa7bf"></i>
+            <a href="./settings.php">
+                <i role="button" class="backIcon-main fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
                 <span class="sideTitle">User Manual</span>
             </a>
 
@@ -57,17 +46,6 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Fundamental Links -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Data tables -->
-    <script src="assets/js/datatables.min.js"></script>
-    <script src="assets/js/pdfmake.min.js"></script>
-    <script src="assets/js/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>

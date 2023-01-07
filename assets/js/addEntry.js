@@ -88,21 +88,7 @@ $(document).ready(function () {
       unemployed();
     }
   });
-
-  //JS Library for DISABILITY
-  VirtualSelect.init({
-    ele: "#disabilitySelect",
-    disableSelectAll: true,
-  });
-
-  //JS Library for REMARKS
-  VirtualSelect.init({
-    ele: "#remarkDrop",
-    hideClearButton: true,
-    disableSelectAll: true,
-    selectedValue: 1,
-  });
-
+  
   // ------------------- FUNCTIONS ------------------- //
   function educRadioClick() {
     $("#employCheck").prop("checked", false);

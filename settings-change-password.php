@@ -46,7 +46,6 @@
 
     <div class="mainPanel">
         <div class="container-fluid content">
-
             <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
 

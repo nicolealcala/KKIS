@@ -71,8 +71,13 @@ a {
   font-weight: 500;
 }
 
-a:hover {
+a:hover, a:active, a:focus {
   color: $light-yellow;
+  .iconContainer {
+    i {
+      color: $light-yellow;
+    }
+  }
 }
 
 .iconContainer {
@@ -88,6 +93,11 @@ a:hover {
 .nav-active,
 .icon-active {
   color: #ffdb80;
+  .iconContainer {
+    i {
+      color: $light-yellow;
+    }
+  }
 }
 
 #botOptions {
@@ -228,19 +238,6 @@ nav {
   width: 95%;
   margin-top: 100px;
   z-index: 3;
-
-  // MultiSelect
-  .vscomp-ele-wrapper {
-    margin-top: 0;
-
-    .vscomp-toggle-button {
-      color: $text;
-      width: 100%;
-      border: 1.5px solid #d1d3e2;
-      border-radius: 6px;
-      box-shadow: none;
-    }
-  }
 }
 
 // Pages with menu buttons
