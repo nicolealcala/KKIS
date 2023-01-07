@@ -156,6 +156,23 @@ li {
   margin-top: 50px;
 }
 
+.question {
+  color: #219ebc;
+  font-weight: bold;
+}
+
+.compatability, tr {
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  border-left: none;
+  border-right: none;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.device {
+  font-weight: bold;
+}
+
 .member {
   color: #219ebc;
   font-weight: bold;

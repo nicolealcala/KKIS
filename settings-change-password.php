@@ -1,3 +1,15 @@
+<?php
+
+  include 'connection.php';
+
+  session_start();
+
+  include 'controller.php';
+
+  
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,33 +19,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
 
+    <!-- Fundamental links -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/scss/settings.css">
     <link rel="stylesheet" href="assets/scss/changePW.css">
     <link rel="stylesheet" href="assets/scss/mediaquery.css">
+
+    <!-- DATA TABLES CDN -->
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
 </head>
 
 <body>
-    <div class="expanded d-none d-lg-flex" id="leftPanel">
+    <div class="sidePanel d-none d-lg-flex">
         <?php
         include "settings.php";
         ?>
     </div>
 
-    <div class="mainContainer" id="mainPanel">
+    <div class="mainPanel">
         <div class="container-fluid content">
-            <a href="./settings.php">
-                <i role="button" class="backIcon-main fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
-                <span class="sideTitle">Change Password</span>
-            </a>
             <div class="sectionDiv">
                 <!-- CONTENT STARTS HERE -->
 
                 <div id="index-wrapper">
-                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
+                    <div
+                        class="container-fluid d-flex flex-column justify-content-center align-items-center indexContent">
                         <div class="card d-flex justify-content-center  pt-3" id="loginCard">
                             <div class="card-body">
                                 <div class="row m-0 d-flex justify-content-center">
@@ -42,30 +60,37 @@
                                     </div>
                                 </div>
                                 <div class="row mx-3 my-0">
-                                    <div class="col-12 text-center mt-2 p-0"><img class="img-fluid hrSvg" src="assets/img/misc/hr.svg"></div>
+                                    <div class="col-12 text-center mt-2 p-0"><img class="img-fluid hrSvg"
+                                            src="assets/img/misc/hr.svg"></div>
                                 </div>
                                 <!-- Form -->
                                 <form id="updatePassForm" action="" onSubmit="return passValidate();" method="post">
                                     <!-- Fields -->
                                     <div class="row gx-3 gy-3 fieldRow">
+                                        <!-- <div class="col-12">
+                                            <input class="form-control" type="email" name="email" placeholder="Email"
+                                                required>
+                                        </div> -->
                                         <div class="col-12">
-                                            <input class="form-control" type="email" name="email" placeholder="Email" required>
+                                            <input class="form-control" type="password" name="currentPassword"
+                                                placeholder="Current Password" required>
                                         </div>
                                         <div class="col-12">
-                                            <input class="form-control" type="password" name="currentPassword" placeholder="Current Password" required>
+                                            <input class="form-control" type="password" name="newPassword"
+                                             placeholder="New Password"
+                                                id="newPassword" required>
                                         </div>
                                         <div class="col-12">
-                                            <input class="form-control" type="password" name="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="New Password" id="newPassword" required>
-                                        </div>
-                                        <div class="col-12">
-                                            <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required>
+                                            <input class="form-control" type="password" name="confirmPassword"
+                                                placeholder="Confirm Password" name="confirmPassword" required>
                                         </div>
                                     </div>
 
                                     <!-- Change/Update Password -->
                                     <div class="row m-0 mt-3 mb-3" id="rowBtn">
                                         <div class="col-12 d-flex justify-content-center align-items-center">
-                                            <button class="btn updatePWBtn rounded-pill mt-4" name="updatePassBtn" type="submit" form="updatePassForm" id="updatePassBtn">
+                                            <button class="btn updatePWBtn rounded-pill mt-4" name="updatePassBtn"
+                                                type="submit" form="updatePassForm" id="updatePassBtn">
                                                 Save
                                             </button>
                                         </div>
@@ -89,12 +114,23 @@
         </div>
     </div>
 
+
+    <!-- Fundamental Links -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Data tables -->
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/pdfmake.min.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/settings.js"></script>
 
     <!-- Active page -->
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#changePass-link").addClass('active');
         });
     </script>

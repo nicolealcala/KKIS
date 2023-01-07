@@ -47,52 +47,71 @@
     }
 
 
-    // CHANGE PASSWORD
-    if(isset($_POST['updatePassBtn'])){
-        $currentPassword = $_POST["currentPassword"];
-        $newPassword = $_POST["newPassword"];
-        $confirmPassword = $_POST["confirmPassword"];
-    
-    
-        $passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$_POST['email']."'";
-        //$passwordQuery = "SELECT * FROM `admins` WHERE `email` ='".$email."'";
-    
-        $passwordResult = executeQuery($passwordQuery);
-        $count=mysqli_num_rows($passwordResult);
-    
-        if ($count==1){
-            while($row = mysqli_fetch_assoc($passwordResult)){
-    
-                $fetchPassword = $row['password'];
-    
-                if(!password_verify($currentPassword,$fetchPassword)){
-                    echo '<script>alert("Invalid current password!")</script>';
-    
-                } elseif($newPassword==$currentPassword){
-                    echo '<script>alert("Same password as the current!")</script>';
-                    //header("Location:changePW.php?error=samepassword");
-    
-                } elseif($newPassword!=$confirmPassword){
-                    echo '<script>alert("New password does not match with Confirm Password!")</script>';
-    
-                }else if(password_verify($currentPassword,$fetchPassword)){
-    
-                    if($newPassword == $confirmPassword){
-                        $passwordRaw == $newPassword;
-                        $password_hash = password_hash($passwordRaw,PASSWORD_DEFAULT);
-    
-                        $updateQuery = "UPDATE `admins` SET `password` = '".$password_hash."' WHERE `email`= '".$_POST['email']."'";
-                        executeQuery($updateQuery);
 
-                        echo '<script>alert("Password successfully changed!")</script>';
-                        header('Location: index.php');
-                    } else {
-                        echo '<script>alert("Invalid confirm password!")</script>';
-                        }
+    // CHANGE PW
+
+    if(isset($_POST["updatePassBtn"])) {     
+        $currentpassword = $_POST["currentPassword"];
+        $newpassword = $_POST['newPassword'];
+        $confirmpassword = $_POST['confirmPassword'];
+    
+    
+    if (!empty( $currentpassword) || !empty( $newpassword ) ||  !empty($confirmpassword)) {
+    
+        //QUERY for DATABASE
+        $passwordquery = "SELECT * FROM `admins` WHERE `email` ='" . $_SESSION['email'] . "'";
+    
+        $passwordresult = executeQuery($passwordquery);
+        $count = mysqli_num_rows($passwordresult);
+    
+        if ($count == 1) {
+            while ($row = mysqli_fetch_assoc($passwordresult)) {
+    
+                //Data from Database
+                $fetchpassword = $row['password'];
+    
+    
+                if (!password_verify($currentpassword, $fetchpassword)) {
+                    header("Location: settings-change-password.php?error=invalidcurrentpassword");
+    
+                } elseif ($newpassword == $currentpassword) {
+                    header("Location: settings-change-password?error=samepassword");
+    
+                } else if ($newpassword != $confirmpassword){
+                header("Location: settings-change-password.php?error=invalidconfirmpassword");
+    
+                
+                }else if (password_verify($currentpassword, $fetchpassword)) {
                     
+                    if ($newpassword == $confirmpassword) {
+                        $password_raw = $_POST['newpassword'];
+                        $number = preg_match('@[0-9]@', $password_raw);
+                        $uppercase = preg_match('@[A-Z]@', $password_raw);
+                        $lowercase = preg_match('@[a-z]@', $password_raw);
+                        $specialChars = preg_match('@[^\w]@', $password_raw);
+    
+                        if (strlen($password_raw) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
+                            header("Location: settings-change-password.php?password_not_strong");
+                        
+                        } else {
+                            $hash = password_hash($password_raw, PASSWORD_DEFAULT);
+    
+                            $updatequery = "UPDATE admins SET password`='" . $hash . "' WHERE email` ='" . $_SESSION['email'] . "'";
+                            executeQuery($updatequery);
+                            header("Location: index.php");
+                        }
                     }
+    
+                    else { 
+                        header("Location: settings-change-password.php?error=invalid_confirm_password");
+                    }
+    
                 }
             }
+        }
     }
-    
+    else{
+        header("Location: settings-change-password.php?error=all_fields_are_required");
+    }
+    }
 ?>
