@@ -12,7 +12,7 @@
   overflow-y: auto;
 }
 
-.settingsPanel {
+.settingsPanel, .sidePanel {
   padding: 2em 3.5em 2em 2em;
   background: none;
 }

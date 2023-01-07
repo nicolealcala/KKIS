@@ -66,7 +66,7 @@ $(document).ready(function () {
       $("#leftPanel").addClass("shrunk");
       $("#mainPanel").removeClass("mainContainer");
       $("#mainPanel").addClass("full-width");
-      $(".backIcon").removeClass("d-none");
+      $(".backIcon-main").removeClass("d-none");
     }
   });
 
@@ -76,6 +76,6 @@ $(document).ready(function () {
     $("#leftPanel").addClass("shrunk");
     $("#mainPanel").removeClass("mainContainer");
     $("#mainPanel").addClass("full-width");
-    $(".backIcon").removeClass("d-none");
+    $(".backIcon-main").removeClass("d-none");
   }
 });

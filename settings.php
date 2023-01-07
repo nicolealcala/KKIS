@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
+  <!-- DATA TABLES CDN -->
+  <link rel="stylesheet" href="assets/css/datatables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/scss/settings.css" />
   <link rel="stylesheet" href="assets/scss/mediaquery.css" />
@@ -150,9 +155,11 @@
     </div>
   </nav>
 
-  <!-- Fundamental Links -->
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Data tables -->
+  <script src="assets/js/datatables.min.js"></script>
+  <script src="assets/js/pdfmake.min.js"></script>
+  <script src="assets/js/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
   <!-- Custom Script -->
   <script type="text/javascript" src="assets/js/settings.js"></script>
