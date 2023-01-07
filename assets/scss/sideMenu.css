@@ -186,6 +186,7 @@ nav .container-fluid #smallNavMenu .nav-md-link {
 }
 #headerRow #hamburger,
 #headerRow #close,
+#headerRow #backPage,
 #headerRow .pageTitle {
   color: #155675;
   font-size: 24px;

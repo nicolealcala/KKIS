@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    //Nav Small Screen
-    $("#smallNav").appendTo("#mdHeader");
-    
+  //Nav Small Screen
+  $("#smallNav").appendTo("#mdHeader");
+
   //Default select boxes
   $("select").not("#disabilitySelect").val("").change();
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
       unemployed();
     }
   });
-  
+
   // ------------------- FUNCTIONS ------------------- //
   function educRadioClick() {
     $("#employCheck").prop("checked", false);
@@ -290,4 +290,8 @@ $(document).ready(function () {
       }
     });
   }
+
+  $("#backPage").click(function () {
+    window.location.href = "./profiles.php";
+  });
 });
