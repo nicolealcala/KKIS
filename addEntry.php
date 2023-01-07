@@ -6,7 +6,7 @@ include "assets/phpqrcode/qrlib.php";
 if (isset($_POST['submitBtn'])) {
     // Household Info
     $hFname = $_POST['hFname'];
-    $hMname = $_POST['hMname'];
+    $hMname = isset($_POST['hMName']) ?  $_POST['hMname'] : "";
     $hLname = $_POST['hLname'] . " " . $_POST['hSuffix'];
     $remarks = isset($_POST['remarks']) ? $_POST['remarks'] : "";
     $membersCount = $_POST['membersCount'];
@@ -14,7 +14,7 @@ if (isset($_POST['submitBtn'])) {
     //Personal Info
     $residentID;
     $fName = $_POST['fName'];
-    $mName = $_POST['mName'];
+    $mName = isset($_POST['mName']) ?  $_POST['mName'] : "";
     if (isset($_POST['suffix'])) {
         $lName = $_POST['lName'] . " " . $_POST['suffix'];
     } else {
@@ -229,15 +229,15 @@ if (isset($_POST['submitBtn'])) {
                         </div>
                         <div class="row m-0 my-3 gy-3 gx-3">
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="firstName">First Name</label>
+                                <label class="col-form-label fieldLabel required w-100 p-1" id="fNameLbl" for="firstName">First Name</label>
                                 <input class="form-control userInput text-uppercase w-100" name="fName" id="firstName" type="text" required>
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="middleName">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" name="mName" id="middleName" type="text" required>
+                                <label class="col-form-label fieldLabel required w-100 p-1" id="mNameLbl" for="middleName">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" name="mName" id="middleName" type="text">
                             </div>
                             <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="lastName">Last Name</label>
+                                <label class="col-form-label fieldLabel required w-100 p-1" id="lNameLbl" for="lastName">Last Name</label>
                                 <input class="form-control userInput text-uppercase w-100" name="lName" id="lastName" type="text" required>
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
@@ -603,12 +603,12 @@ if (isset($_POST['submitBtn'])) {
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" id="headFname" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="headMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname" required>
+                                <label class="col-form-label fieldLabel required w-100 p-1" id="hMNameLbl" for="headMname">Middle Name</label>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname">
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname" required>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname">
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headSuffix" id="headSuffixLbl">Suffix</label>

@@ -23,7 +23,9 @@ $(document).ready(function () {
     $(this).addClass("required");
     if (
       $(this).attr("id") == "remarksLbl" ||
-      $(this).attr("id") == "organizationLbl"
+      $(this).attr("id") == "organizationLbl" ||
+      $(this).attr("id") == "mNameLbl" || 
+      $(this).attr("id") == "hMNameLbl"
     ) {
       $(this).removeClass("required");
     } else if (

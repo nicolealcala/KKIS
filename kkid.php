@@ -1,3 +1,5 @@
+<?php require 'connection.php' ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -73,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-9 col-12 p-0">
-                                        <select class="form-select categoryOption" id="selectAge" disabled="">
+                                        <select class="form-select categoryOption" name="age" id="selectAge" disabled>
                                             <option value="children" selected>0-14 years old (Children)</option>
                                             <option value="kabataan">15-30 years old (Kabataan)</option>
                                             <option value="genResidents">31-59 years old (General Residents)</option>
@@ -89,7 +91,7 @@
                                     </div>
                                     <div class="col-sm-9 col-12 p-0">
                                         <form action="" method="POST">
-                                            <select class="form-select categoryOption" id="selectPurok" disabled>
+                                            <select class="form-select categoryOption" name="purok" id="selectPurok" disabled>
                                                 <option value="CARDINAL">Cardinal</option>
                                                 <option value="CORDILLERA">Cordillera</option>
                                                 <option value="DOÑA PETRA">Doña Petra</option>
@@ -124,34 +126,76 @@
                                                 <label class="customLbl col-form-label" for="fName">First Name</label>
                                             </div>
                                             <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="fName" required disabled>
+                                                <input class="form-control userInput text-uppercase w-100" type="text" name="firstName" id="fName" required disabled>
                                             </div>
 
                                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
                                                 <label class="customLbl col-form-label" for="mName">Middle Name</label>
                                             </div>
                                             <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="mName" required disabled>
+                                                <input class="form-control userInput text-uppercase w-100" type="text" name="middleName" id="mName" required disabled>
                                             </div>
 
                                             <div class="col col-lg-3 col-md-3 col-sm-12 col-12 p-0">
                                                 <label class="customLbl col-form-label" for="lName">Last Name</label>
                                             </div>
                                             <div class="col col-lg-9 col-md-9 col-sm-12 col-12 p-0">
-                                                <input class="form-control userInput text-uppercase w-100" type="text" id="lName" required disabled>
+                                                <input class="form-control userInput text-uppercase w-100" type="text" name="lastName" id="lName" required disabled>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+
+                            <div class="row mx-0">
+                                <?php
+                                if (isset($_POST['submit'])) {
+                                    $fName  = $_POST['firstName'];
+                                    $mName  = isset($_POST['age']) ? $_POST['middleName'] : "";
+                                    $lName  = $_POST['lastName'];
+                                    $age = isset($_POST['age']) ? $_POST['age'] : "";
+                                    $purok = isset($_POST['purok']) ? $_POST['purok'] : "";
+
+                                    //FOR ENCRYPTED IDs
+                                    $customEncrypt = $fName . " " . $mName . " " . $lName;
+
+                                    $ciphering = "AES-128-CTR"; //cipher method
+
+                                    $iv_length = openssl_cipher_iv_length($ciphering); //Using OpenSSl Encryption method
+                                    $options = 0;
+
+                                    $encryption_iv = '1234567891011121'; // Non-NULL Initialization Vector for encryption   
+                                    $encryption_key = "KKIS2022-2023"; // Storing the encryption key
+
+                                    // Using openssl_encrypt() function to encrypt the data
+                                    $encryptedName = openssl_encrypt($customEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
+
+                                    //Children (ADD WHERE CLAUSE)
+                                    $children = "SELECT CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, `birthday`,`purok`, `qr_code` FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 < 15";
+
+                                    //Kabatan (ADD WHERE CLAUSE)
+                                    $kabataan = "SELECT CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, `birthday`,`purok`, `qr_code` FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 14 AND 31";
+
+                                    //Gen Residents (ADD WHERE CLAUSE)
+                                    $genResidents = "SELECT CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, `birthday`,`purok`, `qr_code` FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 30 AND 60";
+
+                                    //Senior Citizens (ADD WHERE CLAUSE)
+                                    $seniorCitizens = "SELECT CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, `birthday`,`purok`, `qr_code` FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 > 59";
+
+                                    //Custom
+                                    $custom = "SELECT CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) AS `full_name`, `birthday`,`purok`, `qr_code` FROM `residents` WHERE `rencrypted_id` = $encryptedName";
+
+
+                                    // if ((isset($_POST['age']) && isset($_POST['purok'])) || (isset($_POST['age']) && isset($_POST['purok']))) {
+                                    // }
+                                }
+                                ?>
+                            </div>
                         </div>
 
                         <!-- Preview -->
                         <div class="col idPreview col-lg-6 col-12 p-0 m-0">
                             <div class="row m-0 w-100">
-                                <?php
-                                $showID = "SELECT CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, `birthday`,`purok` FROM `residents`";
-                                ?>
                                 <div class="col col-12 p-0">
                                     <h5 class="text-start mb-3">ID Preview</h5>
                                 </div>

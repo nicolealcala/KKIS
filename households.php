@@ -120,20 +120,6 @@ require 'connection.php';
 
                     <tbody>
                         <?php
-                        // Options Members Count
-                        $optionLess5 = "`members_count` = 'LESS THAN 5'";
-                        $option5to10 = "`members_count` = '5 to 10'";
-                        $option11to15 = "`members_count` = '11 to 15'";
-                        $option16to20 = "`members_count` = '16 to 20'";
-                        $optionMore20 = "`members_count` = 'More than 20'";
-
-                        //Options Remarks
-                        $optionPurokLeader = "`head_remarks` = 'PUROK LEADER'";
-                        $optionSkScholar = "`head_remarks` = 'SK SCHOLAR'";
-                        $optionSoloLiving = "`head_remarks` = 'SOLO LIVING'";
-                        $optionSoloParent = "`head_remarks` = 'SOLO PARENT'";
-                        $optionTeenagePregnancy = "`head_remarks` = 'TEENAGE PREGNANCY'";
-
                         $filterMembers = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id WHERE `members_count` =  ORDER BY households.household_id ASC";
 
 
@@ -146,34 +132,32 @@ require 'connection.php';
                         if ($isHead) {
                             while ($rowHead = mysqli_fetch_array($isHead)) {
                                 echo '
-                                             <tr style="background-color: #EFF0FA">
-                                             <td class="entryRow" scope="col" data-label="ID">' . $rowHead["household_id"] . '</td>
-                                                 <td class="entryRow" scope="col" data-label="Name">' . $rowHead["full_name"] . '</td>
-                                                 <td class="entryRow" scope="col" data-label="Age">' . $rowHead["age"] . '</td>
-                                                 <td class="entryRow" scope="col" data-label="Birthday">' . $rowHead["birthday"] . '</td>
-                                                 <td class="entryRow" scope="col" data-label="Purok">' . $rowHead["purok"] . '</td>
-                                                 <td class="entryRow" scope="col" data-label="Members">' . $rowHead["members_count"] . '</td>
-                                                 <td class="entryRow" scope="col" data-label="Remarks">' . $rowHead["head_remarks"] . '</td>
-                                             </tr>
-                                             ';
+                                <tr style="background-color: #EFF0FA">
+                                    <td class="entryRow" scope="col" data-label="ID">' . $rowHead["household_id"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Name">' . $rowHead["full_name"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Age">' . $rowHead["age"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Birthday">' . $rowHead["birthday"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Purok">' . $rowHead["purok"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Members">' . $rowHead["members_count"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Remarks">' . $rowHead["head_remarks"] . '</td>
+                                </tr>';
                             }
                         }
 
                         if ($isMember) {
                             while ($rowMember = mysqli_fetch_array($isMember)) {
-                                echo ' <tr>
-                                        <td class="entryRow" scope="col" data-label="ID">' . $rowMember["household_id"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Name">' . $rowMember["full_name"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Age">' . $rowMember["age"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Birthday">' . $rowMember["birthday"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Purok">' . $rowMember["purok"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Members">' . $rowMember["members_count"] . '</td>
-                                            <td class="entryRow" scope="col" data-label="Remarks">' . '' . '</td>
-                                        </tr>
-                                        ';
+                                echo '
+                                <tr>
+                                    <td class="entryRow" scope="col" data-label="ID">' . $rowMember["household_id"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Name">' . $rowMember["full_name"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Age">' . $rowMember["age"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Birthday">' . $rowMember["birthday"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Purok">' . $rowMember["purok"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Members">' . $rowMember["members_count"] . '</td>
+                                    <td class="entryRow" scope="col" data-label="Remarks">' . '' . '</td>
+                                </tr>';
                             }
                         }
-
                         ?>
                     </tbody>
                     <tfoot>
