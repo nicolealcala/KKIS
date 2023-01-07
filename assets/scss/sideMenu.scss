@@ -71,8 +71,13 @@ a {
   font-weight: 500;
 }
 
-a:hover {
+a:hover, a:active, a:focus {
   color: $light-yellow;
+  .iconContainer {
+    i {
+      color: $light-yellow;
+    }
+  }
 }
 
 .iconContainer {
@@ -88,6 +93,11 @@ a:hover {
 .nav-active,
 .icon-active {
   color: #ffdb80;
+  .iconContainer {
+    i {
+      color: $light-yellow;
+    }
+  }
 }
 
 #botOptions {

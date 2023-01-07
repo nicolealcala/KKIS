@@ -43,7 +43,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./households.php" class="d-flex justify-content-start align-items-center" id="households-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-2">
-                        <i class="icon fa-solid fa-house-chimney-user"></i>
+                        <i class="icon fa-solid fa-house-chimney-user" id="householdsIcon"></i>
                     </div>
                     Declared Households
                 </a>
@@ -52,7 +52,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./profiles.php" class="d-flex justify-content-start align-items-center" id="profiles-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-2">
-                        <i class="icon fa-solid fa-user-group"></i>
+                        <i class="icon fa-solid fa-user-group" id="profilesIcon"></i>
                     </div>
                     Profiles
                 </a>
@@ -61,7 +61,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./addEntry.php" class="d-flex justify-content-start align-items-center" id="add-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-2">
-                        <i class="icon fa-solid fa-user-plus"></i>
+                        <i class="icon fa-solid fa-user-plus" id="addEntryIcon"></i>
                     </div>
                     Add New Entry
                 </a>
@@ -70,7 +70,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./kkid.php" class="d-flex justify-content-start align-items-center" id="kkid-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-2">
-                        <i class="icon fa-regular fa-id-card"></i>
+                        <i class="icon fa-regular fa-id-card" id="kkidIcon"></i>
                     </div>
                     KK ID Card
                 </a>
@@ -79,7 +79,7 @@
             <div class="col-12 d-flex justify-content-start align-items-center my-3 p-0">
                 <a href="./transactions.php" class="d-flex justify-content-start align-items-center" id="transactions-link">
                     <div class="iconContainer d-flex justify-content-start align-items-center me-2">
-                        <i class="icon fa-solid fa-clock-rotate-left"></i>
+                        <i class="icon fa-solid fa-clock-rotate-left" id="transacIcon"></i>
                     </div>
                     Transaction History
                 </a>
