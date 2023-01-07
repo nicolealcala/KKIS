@@ -70,6 +70,16 @@ $(document).ready(function () {
     }
   });
 
+  $(window).resize(function () {
+    if ($(window).width() > 991) {
+      $("#leftPanel").removeClass("shrunk");
+      $("#leftPanel").addClass("expanded");
+      $("#mainPanel").removeClass("full-width");
+      $("#mainPanel").addClass("mainContainer");
+      $(".backIcon-main").addClass("d-none");
+    }
+  });
+
   //Per Device Screen Sizes - remove sidePanel
   if ($(window).width() < 992) {
     $("#leftPanel").removeClass("expanded");
@@ -77,5 +87,11 @@ $(document).ready(function () {
     $("#mainPanel").removeClass("mainContainer");
     $("#mainPanel").addClass("full-width");
     $(".backIcon-main").removeClass("d-none");
+  } else if ($(window).width() > 991) {
+    $("#leftPanel").removeClass("shrunk");
+    $("#leftPanel").addClass("expanded");
+    $("#mainPanel").removeClass("full-width");
+    $("#mainPanel").addClass("mainContainer");
+    $(".backIcon-main").addClass("d-none");
   }
 });

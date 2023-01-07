@@ -25,7 +25,7 @@
     <div class="mainContainer" id="mainPanel">
         <div class="container-fluid content">
             <a href="./settings.php">
-                <i role="button" class="backIcon-name fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
+                <i role="button" class="backIcon-main fa-solid fa-arrow-left d-none me-3" style="color: #9fa7bf"></i>
                 <span class="sideTitle">Developers</span>
             </a>
 
@@ -201,8 +201,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
