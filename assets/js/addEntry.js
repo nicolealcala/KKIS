@@ -294,4 +294,8 @@ $(document).ready(function () {
   $("#backPage").click(function () {
     window.location.href = "./profiles.php";
   });
+
+  $(".edit").click(function () {
+    window.location.href = "./updateEntry.php";
+  });
 });
