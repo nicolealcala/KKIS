@@ -91,10 +91,11 @@ if (isset($_POST['submitBtn'])) {
         //Query for checking if HOUSEHOLD entry already exists
         $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
         $existingHousehold = executeQuery($checkHouseholds);
+        
+        $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
 
         if ($householdCount = mysqli_num_rows($existingHousehold) > 0) {
             //If entry already exists, update the Remarks column and get the updated row ID
-            $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
             executeQuery($updateHousehold);
 
             //Then get the household_id of the updated row and pass the value to $householdID
