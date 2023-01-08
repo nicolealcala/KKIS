@@ -26,6 +26,14 @@ $text: #393737;
         box-shadow: 0px 0px 20px 0px #aeaeae;
         margin-bottom: 8em;
 
+        .toggle-password{
+            float: right;
+            margin-top: -1.75em;
+            margin-right: .65em;
+            position: relative;
+            z-index: 2;
+          }
+
         .card-body{
             margin: 0.5em;
 
