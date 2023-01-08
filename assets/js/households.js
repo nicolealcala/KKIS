@@ -23,7 +23,7 @@ $(document).ready(function () {
     responsive: true,
     bFilter: true,
     bInfo: false,
-    fixedColumns: true,
+    autoWidth: false,
     columnDefs: [
       { width: "10%", targets: 0 },
       { width: "25%", targets: 1 },
@@ -66,7 +66,8 @@ $(document).ready(function () {
   $("#familiesTbl_length").appendTo("#familiesLength");
   table.buttons().container().appendTo("#familiesOutput");
   $("#familiesTbl_filter").appendTo("#familiesSearch");
-
+  $("#familiesFooter").prependTo("#familiesTblHead");
+  
   //for Chart
   $(document).ready(function () {
     const ctx = $("#overviewChart");
