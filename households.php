@@ -75,7 +75,7 @@ require 'connection.php';
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-0" id="familiesSearch"></div>
                 </div>
 
-                <!-- Table start   -->  
+                <!-- Table start   -->
                 <table class="table table-stripped table-bordered dataTable table-hover display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="familiesTbl" style="width:100%">
                     <thead class="tblHeadRow">
                         <tr>
@@ -90,15 +90,18 @@ require 'connection.php';
 
 
                     </thead>
-                    <!-- <tr>
-                        <th class="for_filter_data"></th>
-                        <th class=""></th>
-                        <th class=""></th>
-                        <th class=""></th>
-                        <th class=""></th>
-                        <th class=""></th>
-                        <th class=""></th>
-                    </tr> -->
+
+                    <thead id="familiesTblHead">
+                        <tr>
+                            <!-- <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th> -->
+                        </tr>
+                    </thead>
 
                     <tbody>
                         <?php
@@ -108,7 +111,7 @@ require 'connection.php';
                         $householdMember = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count` FROM `households` INNER JOIN `residents` ON households.household_id = residents.household_id WHERE NOT households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
                         $isMember = executeQuery($householdMember);
 
-                        $householdHead = "SELECT households.household_id, CONCAT(`last_name`, 'N', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
+                        $householdHead = "SELECT households.household_id, CONCAT(`last_name`, ', ', `first_name`) AS `full_name`, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age`, `birthday`, `purok`, `members_count`, `head_remarks` FROM `households` INNER JOIN `residents` ON households.hencrypted_id = residents.rencrypted_id ORDER BY households.household_id ASC";
                         $isHead = executeQuery($householdHead);
 
                         if ($isHead) {
@@ -143,14 +146,14 @@ require 'connection.php';
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <th class="">ID</th>
-                            <th class="">Name</th>
-                            <th class="">Age</th>
-                            <th class="">Birthday</th>
-                            <th class="">Purok</th>
-                            <th class="">Members</th>
-                            <th class="">Remarks</th>
+                        <tr id="familiesFooter">
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </tfoot>
                 </table>
