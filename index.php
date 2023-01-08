@@ -65,16 +65,21 @@ include 'controller.php';
                                     <div class="col-12">
                                         <input class="form-control" type="email" name="email" placeholder="Email" required>
                                     </div>
+                                    <!-- BASE PW FIELD W/ EYE ICON -->
                                     <div class="col-12">
-                                        <input class="form-control" type="password" name="password" placeholder="Password" id="user_password" required>
+                                        <input class="form-control" type="password" name="password" required="" placeholder="Password" id="id_password">
+                                        <i class="toggle-password far fa-eye-slash" id="togglePassword" toggle="#password-field"></i>
+                                        </span>
                                     </div>
-                                    
+
+                                    <!-- TO SHOW PW - CHECKBOX
                                     <div class="col-12">
                                         <input type="checkbox" onclick="showPassword();" name="showPass" placeholder="Show Password" id="showPass" required>
                                         Show Password
                                     </div>
-                                    
+                                    -->
 
+                                    <!-- FORGOT PW -->
                                     <div class="col-12 mt-2 d-flex justify-content-center">
                                         <a href="#" id="forgotPassText">Forgot Password?</a>
                                     </div>
@@ -128,12 +133,15 @@ include 'controller.php';
                                         <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" required>
                                     </div>
                                     <div class="col-12">
-
-                                        <!-- Added pattern as a criteria for secured password -->
-                                        <input class="form-control" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and should be at least 8 or more characters" placeholder="Password" maxlength="30" required>
+                                        <input class="form-control" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and should be at least 8 or more 
+                                        characters" placeholder="Password" id="signup_password" required>
+                                        <i class="toggle-password far fa-eye-slash" id="toggleSignupPassword" toggle="#password-field"></i>
+                                        </span>
                                     </div>
                                     <div class="col-12">
-                                        <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" maxlength="30" required>
+                                        <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm Password" id="signup-confirm_password" maxlength="30" required>
+                                        <i class="toggle-password far fa-eye-slash" id="toggleSignupconPassword" toggle="#password-field"></i>
+                                        </span>
                                     </div>
                                 </div>
                                 <!-- Sign up btn -->
@@ -168,10 +176,15 @@ include 'controller.php';
                                         <input class="form-control" type="email" name="email" placeholder="Email" required>
                                     </div>
                                     <div class="col-12">
-                                        <input class="form-control" type="password" name="newPassword" placeholder="New Password" required>
+                                        <input class="form-control" type="password" name="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and should be at least 8 or more 
+                                        characters" placeholder="New Password" id="new_forgot_pass" required>
+                                        <i class="toggle-password far fa-eye-slash" id="toggle_new_forgot_pass" toggle="#password-field"></i>
                                     </div>
                                     <div class="col-12">
-                                        <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm New Password" required>
+                                    
+                                        <input class="form-control" type="password" name="confirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and should be at least 8 or more 
+                                        characters" placeholder="Confirm New Password" id="confirm_forgot_pass" required>
+                                        <i class="toggle-password far fa-eye-slash" id="toggle_confirm_forgot_pass" toggle="#password-field"></i>
                                     </div>
                                 </div>
                                 <!-- Reset Pass btn -->
@@ -215,4 +228,6 @@ include 'controller.php';
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/formValidation.js"></script>
     <script type="text/javascript" src="assets/js/showPass.js"></script>
+    
 </body>
+</html>
