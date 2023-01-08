@@ -1,7 +1,7 @@
 $(document).ready(function () {
   //Nav Small Screen
   $("#smallNav").appendTo("#mdHeader");
-  
+
   //for clicking residents
   $("#residents").click(function () {
     $("#sectionResidents").removeClass("d-none");
@@ -93,12 +93,17 @@ $(document).ready(function () {
       },
     });
   }
-});
 
-//JS Library for remarks
-VirtualSelect.init({
-  ele: "#filtering",
-  hideClearButton: false,
-  showValueAsTags: true,
-  search: true,
+  //SWAL
+  function warning($entry) {
+    Swal.fire({
+      icon: "warning",
+      title: "Are you sure?",
+      text: "Deleting" + $entry + "is will completely remove this record.",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "./profiles.php";
+      }
+    });
+  }
 });
