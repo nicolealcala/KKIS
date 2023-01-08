@@ -33,9 +33,11 @@ $bodyBG: #04496A;
     height: 100vh;
     margin: 0;
     transition: 0.3s;
+    // padding-bottom: 30px;
     #modalContentID {
         // width: 1072px;
         // height: 924px;
+        max-height: auto;
         box-shadow: 0 0 1rem rgb(0 0 0 / 60%);
         position: absolute;
         // top: 30px;
@@ -108,7 +110,7 @@ $bodyBG: #04496A;
                 
                 #divQR {
                     padding: 0;
-                    position: relative;
+                    position: absolute;
                     // width: fit-content;
                     // height: 173px;
                     width: fit-content;
@@ -227,7 +229,7 @@ $bodyBG: #04496A;
         // transition: 0.3s;
         #modalContentID {
             width: 1072px;
-            height: 908px;
+            // max-height: auto;
             // box-shadow: 0 0 1rem rgb(0 0 0 / 60%);
             // position: fixed;
             top: 30px;
@@ -303,8 +305,8 @@ $bodyBG: #04496A;
                         // position: relative;
                         height: 173px;
                         // width: fit-content;
-                        left: 159px;
-                        bottom: 20px;
+                        left: 876px;
+                        top: 20px;
                         #imgQR {
                             height: 173px;
                             max-width: 173px;
@@ -402,7 +404,7 @@ $bodyBG: #04496A;
     #modalDialogID {
         #modalContentID {
             width: 800px; //
-            height: 850px; //
+            // max-height: auto;
             top: 30px;
             #modalHeaderID {
                 height: 63px;
@@ -439,8 +441,8 @@ $bodyBG: #04496A;
                     
                     #divQR {
                         height: 173px;
-                        left: 70px;
-                        bottom: 20px;
+                        left: 605px;
+                        top: 20px;
                         #imgQR {
                             height: 173px;
                             max-width: 173px;
@@ -502,7 +504,7 @@ $bodyBG: #04496A;
     #modalDialogID {
         #modalContentID {
             width: 700px; //
-            height: 1020px; //
+            // height: 1020px; //
             top: 30px;
             #modalHeaderID {
                 height: 40px; //
@@ -521,7 +523,7 @@ $bodyBG: #04496A;
                 padding-left: 15px;
                 padding-right: 15px;
                 #modalRow1 {
-                    border-radius: 10px 0 0 10px;
+                    border-radius: 10px;
                     height: 120px;
                     margin-top: 0px;
                     #textDiv {
@@ -539,8 +541,8 @@ $bodyBG: #04496A;
                     
                     #divQR {
                         height: 100px;
-                        left: 105px; //
-                        bottom: 0px;
+                        left: 565px;
+                        top: 25px;
                         #imgQR {
                             height: 100px; //
                             max-width: 100px; //
@@ -600,7 +602,7 @@ $bodyBG: #04496A;
     #modalDialogID {
         #modalContentID {
             width: 500px; //
-            height: 1020px; //
+            // height: 1020px; //
             top: 30px;
             #modalHeaderID {
                 height: 40px; //
@@ -619,8 +621,8 @@ $bodyBG: #04496A;
                 padding-left: 15px;
                 padding-right: 15px;
                 #modalRow1 {
-                    border-radius: 10px 0 0 10px;
-                    height: 120px;
+                    border-radius: 10px;
+                    height: 340px;
                     margin-top: 0px;
                     #textDiv {
                         margin-top: 20px; //
@@ -636,13 +638,13 @@ $bodyBG: #04496A;
                     }
                     
                     #divQR {
-                        height: 100px;
+                        height: 200px;
                         max-width: fit-content;
-                        left: 345px; //
-                        bottom: 90px;
+                        left: 150px; //
+                        top: 135px;
                         #imgQR {
-                            height: 100px; //
-                            max-width: 100px; //
+                            height: 200px; //
+                            max-width: 200px; //
                         }
                     }
                 }
@@ -700,7 +702,7 @@ $bodyBG: #04496A;
     #modalDialogID {
         #modalContentID {
             width: 420px; //
-            height: 1020px; //
+            // height: 1020px; //
             top: 30px;
             #modalHeaderID {
                 height: 40px; //
@@ -719,8 +721,8 @@ $bodyBG: #04496A;
                 padding-left: 15px;
                 padding-right: 15px;
                 #modalRow1 {
-                    border-radius: 10px 0 0 10px;
-                    height: 120px;
+                    border-radius: 10px;
+                    height: 335px;
                     margin-top: 0px;
                     #textDiv {
                         margin-top: 20px; //
@@ -736,13 +738,13 @@ $bodyBG: #04496A;
                     }
                     
                     #divQR {
-                        height: 100px;
+                        height: 200px;
                         max-width: fit-content;
-                        left: 265px; //
-                        bottom: 90px;
+                        left: 110px; //
+                        top: 125px;
                         #imgQR {
-                            height: 100px; //
-                            max-width: 100px; //
+                            height: 200px; //
+                            max-width: 200px; //
                         }
                     }
                 }
@@ -800,7 +802,7 @@ $bodyBG: #04496A;
     #modalDialogID {
         #modalContentID {
             width: 250px; //
-            height: 1020px; //
+            // height: 1020px; //
             top: 30px;
             #modalHeaderID {
                 height: 40px; //
@@ -819,8 +821,8 @@ $bodyBG: #04496A;
                 padding-left: 15px;
                 padding-right: 15px;
                 #modalRow1 {
-                    border-radius: 10px 10px 10px 10px;
-                    height: 200px;
+                    border-radius: 10px;
+                    height: 210px;
                     margin-top: 0px;
                     #textDiv {
                         margin-top: 20px; //
@@ -838,8 +840,8 @@ $bodyBG: #04496A;
                     #divQR {
                         height: 100px;
                         max-width: fit-content;
-                        left: 50px; //
-                        bottom: 10px;
+                        left: 75px; //
+                        top: 110px;
                         #imgQR {
                             height: 100px; //
                             max-width: 100px; //
