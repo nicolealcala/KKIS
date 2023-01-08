@@ -70,30 +70,12 @@ require 'connection.php';
                         <!-- Append Buttons Here -->
                     </div>
                     <!-- Filter -->
-                    <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none">
-                        <select class="selectpicker form-control" multiple name="filter" data-selected-text-format="count > 3" title="Filter" placeholder="Filter">
-                            <optgroup data-divider="true" data-max-options="1" label="Members">
-                                <option value="Default">Default</option>
-                                <option value="Less than 5">Less than 5</option>
-                                <option value="5 to 10">5 to 10</option>
-                                <option value="11 to 15">11 to 15</option>
-                                <option value="16 to 20">16 to 20</option>
-                                <option value="More than 20">More than 20</option>
-                            </optgroup>
-                            <optgroup data-max-options="1" label="Remarks">
-                                <option value="Purok Leader">Purok Leader</option>
-                                <option value="SK Scholar">SK Scholar</option>
-                                <option value="Solo Living">Solo Living</option>
-                                <option value="Solo Parent">Solo Parent</option>
-                                <option value="Teenage Pregnancy">Teenage Pregnancy</option>
-                            </optgroup>
-                        </select>
-                    </div>
+                    <div class="d-md-flex align-items-center col-lg-3 col-md-4 d-none"></div>
                     <!-- Search -->
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-0" id="familiesSearch"></div>
                 </div>
 
-                <!-- Table start   -->
+                <!-- Table start   -->  
                 <table class="table table-stripped table-bordered dataTable table-hover display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="familiesTbl" style="width:100%">
                     <thead class="tblHeadRow">
                         <tr>

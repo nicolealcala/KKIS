@@ -392,6 +392,18 @@ ul.pagination {
   font-size: 18px;
 }
 
+.actionBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+
+i {
+    font-size: 12px;
+    margin: auto;
+    color: white;
+  }
+}
 //Add Entry
 
 .markerDiv {
