@@ -4,18 +4,15 @@ $(document).ready(function () {
 
   //for clicking residents
   $("#residents").click(function () {
-    $("#sectionResidents").removeClass("d-none");
-    $("#sectionKabataan").addClass("d-none");
     $("#residents").addClass("menu-active");
     $("#kabataan").removeClass("menu-active");
+    $(location).attr("href", "./profiles-residents.php");
   });
 
   $("#kabataan").click(function () {
-    $("#sectionKabataan").removeClass("d-none");
-    $("#sectionResidents").addClass("d-none");
     $("#kabataan").addClass("menu-active");
     $("#residents").removeClass("menu-active");
-    $kabataanClicked = true;
+    $(location).attr("href", "./profiles-kabataan.php");
   });
 
   //DataTables Kabataan
@@ -60,6 +57,7 @@ $(document).ready(function () {
         },
       },
     ],
+    autoWidth: false,
     columnDefs: [
       { width: "25%", targets: 0 },
       { width: "15%", targets: 1 },
@@ -105,8 +103,6 @@ $(document).ready(function () {
   $("#kabataanTbl_filter").appendTo("#kabataanSearch");
   $("#kabataanFooter").prependTo("#kabataanTblHead");
 
-
-
   //DataTables Residents
   var residentsTbl = $("#residentsTbl").DataTable({
     buttons: ["copy", "csv", "excel", "pdf", "print"],
@@ -117,38 +113,39 @@ $(document).ready(function () {
       {
         extend: "copyHtml5",
         exportOptions: {
-          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          columns: [0, 1, 2, 3, 4, 5, 6, 7],
         },
       },
 
       {
         extend: "csvHtml5",
         exportOptions: {
-          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          columns: [0, 1, 2, 3, 4, 5, 6, 7],
         },
       },
 
       {
         extend: "excelHtml5",
         exportOptions: {
-          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          columns: [0, 1, 2, 3, 4, 5, 6, 7],
         },
       },
 
       {
         extend: "pdfHtml5",
         exportOptions: {
-          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          columns: [0, 1, 2, 3, 4, 5, 6, 7],
         },
       },
 
       {
         extend: "print",
         exportOptions: {
-          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          columns: [0, 1, 2, 3, 4, 5, 6, 7],
         },
       },
     ],
+    autoWidth: false,
     columnDefs: [
       { width: "25%", targets: 0 },
       { width: "15%", targets: 1 },
@@ -167,7 +164,7 @@ $(document).ready(function () {
           var column = this;
           var theadname = $("#residentsTbl th").eq([d]).text(); //used this specify table name and head
           var select = $(
-            "<select class = 'form-select'><option value=''>Filter " +
+            "<select class ='form-select' id='filter'><option value=''>Filter " +
               theadname +
               "</option></select>"
           )
@@ -177,6 +174,7 @@ $(document).ready(function () {
 
               column.search(val ? "^" + val + "$" : "", true, false).draw();
             });
+            
 
           column
             .data()
@@ -193,18 +191,15 @@ $(document).ready(function () {
   $("#residentsTbl_filter").appendTo("#residentsSearch");
   $("#residentsFooter").prependTo("#residentsTblHead");
 
-  //for clicking view more
-  function getRow(id) {
-    $.ajax({
-      type: "POST",
-      url: "profiles_row.php",
-      data: { id: id },
-      dataType: "json",
-      success: function (response) {
-        $("#viewMore").val(response.lastName);
-        $(".lastName").html(response.lastName);
-        // alert (response.lastName);
-      },
-    });
-  }
+  // $("#deleteEntry").click(function ($entry) {
+  //   Swal.fire({
+  //     icon: "warning",
+  //     title: "Are you sure?",
+  //     text: "Deleting this entry is irreversible and will permanently remove the record from the database. Do you still want to proceed?",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       window.location.href = "./profiles-residents.php";
+  //     }
+  //   });
+  // });
 });

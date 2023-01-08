@@ -1,18 +1,23 @@
-$font-stack: Poppins, sans-serif;
-$font-stack-sub: DM Sans, sans-serif;
-$mid-blue: #219EBC;
-$mid-yellow: #FFB703;
-$light-blue: #8ECAE6;
-$dark-blue: #04496A;
-$dark-yellow: #FB8500;
-$light-yellow: #F3CB69;
+$headings-font: Poppins, sans-serif;
+$content-font: DM Sans, sans-serif;
+$mid-blue: #219ebc;
+$mid-yellow: #ffb703;
+$light-blue: #8ecae6;
+$disabled-blue: #b0def3;
+// $dark-blue: #04496A;
+$dark-blue: #155675;
+$dark-yellow: #fb8500;
+$light-yellow: #f3cb69;
 $text: #393737;
+$tomato-orange: #f57441;
+$fade-orange: #f4895f;
 
 
 i {
     width: auto;
     height: auto;
 }
+
 // .tableKabataan{
 //     background-color: $dark-blue;
 //     color: white; 

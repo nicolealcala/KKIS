@@ -7,6 +7,10 @@
   color: #393737;
 }
 
+.swal2-icon.swal2-warning {
+  color: #f57441;
+}
+
 .sideNav,
 .expanded {
   position: fixed;
