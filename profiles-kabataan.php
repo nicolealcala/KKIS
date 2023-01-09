@@ -146,6 +146,7 @@ $resultKabataan = executeQuery($queryKabataan);
                                                     <button class="btn btn-danger actionBtn" id="deleteEntry" onclick="warning()"><i class="fa-regular fa-trash-can"></i></button>
                                                     <script>
                                                         function warning(){
+                                                            
                                                             Swal.fire({
                                                                 icon: "warning",
                                                                 title: "Are you sure?",

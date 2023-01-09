@@ -3,7 +3,7 @@ $(document).ready(function () {
   $("#smallNav").appendTo("#mdHeader");
 
   //Default select boxes
-  $("select").not("#disabilitySelect").val("").change();
+  // $("select").not("#disabilitySelect").val("").change();
 
   //UPPERCASE input
   $(".userInput").keyup(function () {
