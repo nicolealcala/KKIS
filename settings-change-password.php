@@ -69,18 +69,65 @@
                                             <input class="form-control" type="email" name="email" placeholder="Email"
                                                 required>
                                         </div> -->
+                                    
                                         <div class="col-12">
                                             <input class="form-control" type="password" name="currentPassword"
-                                                placeholder="Current Password" required>
+                                                placeholder="Current Password" id="currentPassword" required>
+                                            
+                                                <i class="toggle-password far fa-eye-slash" id="toggle_current_pass" style="color:#393737;" toggle="#password-field"></i>
+                                        
+                                                <script>
+                                                    const togglePassword = document.querySelector('#toggle_current_pass');
+                                                    const password = document.querySelector('#currentPassword');
+
+                                                    togglePassword.addEventListener('click', function (e) {
+                                                        // toggle the type attribute
+                                                        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                                        password.setAttribute('type', type);
+                                                        // toggle the eye slash icon
+                                                        this.classList.toggle('fa-eye');
+                                                    });
+                                                </script>
                                         </div>
+
                                         <div class="col-12">
                                             <input class="form-control" type="password" name="newPassword"
                                              placeholder="New Password"
                                                 id="newPassword" required>
+
+                                                <i class="toggle-password far fa-eye-slash" id="toggle_new_pass" style="color:#393737;" toggle="#password-field"></i>
+                                        
+                                                <script>
+                                                    const toggleNewPassword = document.querySelector('#toggle_new_pass');
+                                                    const newPassword = document.querySelector('#newPassword');
+
+                                                    toggleNewPassword.addEventListener('click', function (e) {
+                                                        // toggle the type attribute
+                                                        const type = newPassword .getAttribute('type') === 'password' ? 'text' : 'password';
+                                                        newPassword .setAttribute('type', type);
+                                                        // toggle the eye slash icon
+                                                        this.classList.toggle('fa-eye');
+                                                    });
+                                                </script>
                                         </div>
                                         <div class="col-12">
                                             <input class="form-control" type="password" name="confirmPassword"
-                                                placeholder="Confirm Password" required>
+                                                placeholder="Confirm Password" id="confirmPassword" required>
+                                            
+                                            <i class="toggle-password far fa-eye-slash" id="toggle_confirm_pass" style="color:#393737;" toggle="#password-field"></i>
+                                        
+                                            <script>
+                                                const toggleConfirmPassword = document.querySelector('#toggle_confirm_pass');
+                                                const confirmPassword = document.querySelector('#confirmPassword');
+
+                                                toggleConfirmPassword.addEventListener('click', function (e) {
+                                                    // toggle the type attribute
+                                                    const type = confirmPassword .getAttribute('type') === 'password' ? 'text' : 'password';
+                                                    confirmPassword .setAttribute('type', type);
+                                                    // toggle the eye slash icon
+                                                    this.classList.toggle('fa-eye');
+                                                });
+                                            </script>
                                         </div>
                                     </div>
 
@@ -100,7 +147,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                </form>
+                                </form> 
                             </div>
                         </div>
                     </div>
