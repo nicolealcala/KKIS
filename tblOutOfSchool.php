@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$queryOutOfSchool = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, educational_info.student_status FROM `educational_info` LEFT JOIN `residents` ON educational_info.resident_id = residents.resident_id WHERE `student_status` = 'Out-of-school Youth' "; //query to select all data from table
+$queryOutOfSchool = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age FROM `educational_info` RIGHT JOIN `residents` ON educational_info.resident_id = residents.resident_id WHERE educational_info.student_status = 'Out-of-school Youth' "; //query to select all data from table
 $queryOutOfSchoolResult = executeQuery($queryOutOfSchool); //execute query
 
 ?>
@@ -90,10 +90,9 @@ $queryOutOfSchoolResult = executeQuery($queryOutOfSchool); //execute query
                                 <th class="tblHead">Age</th>
                                 <th class="tblHead">Birthdate</th>
                                 <th class="tblHead">Civil status</th>
-                                <th class="tblHead">Contatct No.</th>
+                                <th class="tblHead">Contatt No.</th>
                                 <th class="tblHead">Purok</th>
-                                <!-- Nawawala yung data table controls kapag tinanggal 'tong remarks -->
-                                <th class="tblHead">Remarks</th>
+                                <th class="tblHead">Status</th>
                                 <th class="tblHead actions">Actions</th>
                             </tr>
                         </thead>
@@ -136,16 +135,15 @@ $queryOutOfSchoolResult = executeQuery($queryOutOfSchool); //execute query
 
                                     <td id="purok" class="entryRow" scope="col" data-label="Purok"><?php echo $outOfSchool["purok"]; ?></td>
 
-                                    <!-- Nawawala yung data table controls kapag tinanggal 'tong remarks -->
-                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $outOfSchool["head_remarks"]; ?></td>
+                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $outOfSchool["student_status"]; ?></td>
 
                                     <td id="actions" class="entryRow" scope="col" data-label="Actions">
                                         <div class="row mx-0 p-0">
                                             <!-- View More -->
-                                            <div class="col-lg-12 col-12 d-flex justify-content-center align-items-center p-3">
-                                                <a class="btn btn-warning actionBtn" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $outOfSchool["resident_id"]; ?>" data-id="<?php echo $outOfSchool["resident_id"]; ?>" href="#viewMore"><i class="fa-regular fa-eye"></i></a>
+                                            <div class="col-lg-12 col-12 d-flex justify-content-center align-items-center p-0">
+                                                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $outOfSchool["resident_id"]; ?>" data-id="<?php echo $outOfSchool["resident_id"]; ?>" href="#viewMore">View More</a>
                                             </div>
-                                        </div>
+                                        </div>  
                                     </td>
 
                                 </tr>
