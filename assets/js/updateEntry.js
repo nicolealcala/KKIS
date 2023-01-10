@@ -46,7 +46,12 @@ $(document).ready(function () {
       educRadioClick();
     });
   
-    //For Employ Radio Btn
+    //For Employ Radio Btn PRE-CHECKED
+    if ($("#employCheck").is(":checked")) {
+        employRadioClick();
+    }
+
+    //For Employ Radio Btn when selected
     $("#employCheck").change(function () {
       employRadioClick();
     });
@@ -221,20 +226,20 @@ $(document).ready(function () {
       $("#markerEduc").css("background-color", "#c5d4e3");
       $(".educFieldLabel").css("opacity", ".70");
   
-      $(".educSelectBox").each(function () {
-        $(this).val("").change();
-        $(this).prop("disabled", true);
-        $(this).removeAttr("required");
-      });
-  
-      $(".educUserInput").each(function () {
-        $(this).val("").change();
-        $(this).prop("disabled", true);
-        $(this).removeAttr("required");
-      });
+        $(".educSelectBox").each(function () {
+            $(this).val("").change();
+            $(this).prop("disabled", true);
+            $(this).removeAttr("required");
+        });
+    
+        $(".educUserInput").each(function () {
+            $(this).val("").change();
+            $(this).prop("disabled", true);
+            $(this).removeAttr("required");
+        });
   
       $(".employSelectBox").each(function () {
-        $(this).val("").change();
+        // $(this).val("").change();
         $(this).prop("disabled", false);
         $(this).attr("required", "required");
       });
@@ -269,6 +274,7 @@ $(document).ready(function () {
         $(this).css("opacity", "1");
         $(this).addClass("required");
       });
+      
     }
   
     //fxn for Unemployed

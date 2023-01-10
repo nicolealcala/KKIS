@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     initComplete: function () {
       this.api()
-        .columns([1, 2, 3, 4, 5, 6])
+        .columns([1, 2, 3, 4, 5, 6, 7])
         .every(function (d) {
           var column = this;
           var theadname = $("#kabataanTbl th").eq([d]).text(); //used this specify table name and head

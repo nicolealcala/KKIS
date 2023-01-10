@@ -243,7 +243,7 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                             <div class="col col-lg-1 col-md-3 col-sm-4 col-12">
                                 <label class="col-form-label required fieldLabel w-100 p-1" for="suf" id="suffixLbl">Suffix</label>
-                                <input class="form-control userInput text-uppercase w-100" name="suffix" type="text" id="suf">
+                                <input class="form-control userInput text-uppercase w-100" val="" name="suffix" type="text" id="suf">
                             </div>
                             <div class="col col-lg-2 col-md-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="genderPreference">Gender Preference</label>
@@ -259,7 +259,7 @@ if (isset($_POST['submitBtn'])) {
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="bday">Birthday</label>
                                 <input class="form-control text-uppercase w-100 personalSelectBox" name="birthday" id="bday" type="date" required>
                             </div>
-                            <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="col col-lg-2 col-md-4 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="bplace">Birthplace</label>
                                 <input class="form-control userInput text-uppercase w-100" name="birthplace" id="bplace" type="text" required>
                             </div>
@@ -284,7 +284,7 @@ if (isset($_POST['submitBtn'])) {
                                     <option value="OTHERS">Others</option>
                                 </select>
                             </div>
-                            <div class="col col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
                                 <div class="disabilityDiv">
                                     <label class="col-form-label fieldLabel required w-100 p-1" for="disabilitySelect">Disability</label>
                                     <!-- Class form-select  removed from select element in Disability -->
@@ -303,20 +303,20 @@ if (isset($_POST['submitBtn'])) {
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="contactNo">Contact No.</label>
                                 <input class="form-control text-uppercase w-100" type="text" name="contact" id="contactNo" placeholder="09XXXXXXXXX" inputmode="numeric" required>
                             </div>
-                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12" for="residentVote">
-                                <label class="col-form-label fieldLabel required w-100 p-1">Voter Type</label>
+                            <div class="col col-lg-2 col-md-3 col-sm-6 col-12">
+                                <label class="col-form-label fieldLabel required w-100 p-1" for="residentVote">Voter Type</label>
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="voterType" id="residentVote" required>
                                     <option value="REGISTERED">Registered</option>
                                     <option value="UNREGISTERED">Unregistered</option>
                                 </select>
                             </div>
-                            <div class="col col-lg-3 col-md-6 col-sm-8 col-12">
+                            <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentAddress">House No./Street/Subdivision</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="address" id="residentAddress" required>
                             </div>
-                            <div class="col col-lg-2 col-md-2 col-sm-4 col-12">
+                            <div class="col col-lg-2 col-md-3 col-sm-4 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="residentPurok">Purok</label>
-                                <select class="form-select text-uppercase w-100 personalSelectBox" name="purok" id="residentPurok" required>
+                                <select class="form-select text-uppercase w-100 personalSelectBox" placeholder="Purok" name="purok" id="residentPurok" required>
                                     <option value="CARDINAL">Cardinal</option>
                                     <option value="CORDILLERA">Cordillera</option>
                                     <option value="DOÑA PETRA">Doña Petra</option>
@@ -336,9 +336,18 @@ if (isset($_POST['submitBtn'])) {
                                     <option value="SMOKEY MOUNTAIN">Smokey Mountain </option>
                                 </select>
                             </div>
-                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
+                            <div class="col col-lg-3 col-md-3 col-sm-8 col-12">
                                 <label class="col-form-label fieldLabel w-100 p-1" for="org" id="organizationLbl">Organization (if any)</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="organization" id="org">
+                            </div>
+                            <div class="col col-lg-2 col-md-3 col-sm-4 col-12">
+                                <label class="col-form-label fieldLabel w-100 p-1" for="pRemarks" id="remarksLbl">Remarks (if any)</label>
+                                <select class="selectpicker form-control text-uppercase personalSelectBox" multiple name="personaRemarks" placeholder="Select Remarks" data-selected-text-format="count > 3" id="remarkDrop">
+                                    <option value="PUROK LEADER">Purok Leader</option>
+                                    <option value="SK SCHOLAR">SK Scholar</option>
+                                    <option value="SOLO PARENT">Solo Parent</option>
+                                    <option value="TEENAGE PREGNANCY">Teenage Pregnancy</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -599,36 +608,23 @@ if (isset($_POST['submitBtn'])) {
                             </div>
                         </div>
                         <div class="row m-0 my-3 gy-3 gx-3" id="householdRow">
-                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
+                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headFname">First Name</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" id="headFname" required>
                             </div>
-                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
+                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" id="hMNameLbl" for="headMname">Middle Name</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname">
                             </div>
-                            <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
+                            <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headLname">Last Name</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname">
                             </div>
-                            <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
+                            <div class="col col-lg-1 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headSuffix" id="headSuffixLbl">Suffix</label>
                                 <input class="form-control userInput text-uppercase w-100" type="text" name="hSuffix" id="headSuffix">
                             </div>
-                            <div class="col col-lg-3 col-md-6 col-sm-6 col-12" id="colRemarks">
-                                <div class="remarkDiv">
-                                    <label class="col-form-label fieldLabel required w-100 p-1" for="remarkDrop" id="remarksLbl">Remarks</label>
-                                    <!-- Class form-select  removed from select element in Remarks -->
-                                    <select class="selectpicker form-control text-uppercase houseSelectBox" multiple name="remarks" placeholder="Select Remarks" data-selected-text-format="count > 3" id="remarkDrop">
-                                        <option value="PUROK LEADER ">Purok Leader</option>
-                                        <option value="SK SCHOLAR ">SK Scholar</option>
-                                        <option value="SOLO LIVING ">Solo Living</option>
-                                        <option value="SOLO PARENT ">Solo Parent</option>
-                                        <option value="TEENAGE PREGNANCY ">Teenage Pregnancy</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="col col-lg-2 col-sm-6 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="famCount">No.&nbsp; of Family Members</label>
                                 <select class="form-select text-uppercase w-100 houseSelectBox" name="membersCount" id="famCount" required>
                                     <option value="LESS THAN 5">Less than 5</option>
@@ -639,63 +635,15 @@ if (isset($_POST['submitBtn'])) {
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div>  
 
                     <!-- Button -->
                     <div class="row m-0 d-flex d-md-flex d-lg-flex d-xxl-flex justify-content-md-end align-items-md-center justify-content-lg-end align-items-lg-center justify-content-xxl-end gx-2" id="rowBtn">
                         <div class="col d-flex d-sm-flex d-md-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-xxl-end col-lg-2 col-md-4 col-sm-12 col-12 p-0">
                             <button class="btn controlBtn" name="submitBtn" type="submit" form="addForm">Submit</button>
                         </div>
-                    </div>
+                    </div>  
                 </form>
-
-                <!-- Added Modal -->
-                <div class="modal fade center" role="dialog" tabindex="-1" id="modalAdded">
-                    <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="m-0 d-flex justify-content-end align-items-center">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="row m-0">
-                                    <div class="col col-12 p-0">
-                                        <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
-                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                                        </svg>
-                                    </div>
-                                    <div class="col col-12">
-                                        <h3 class="modalAlert text-center">Added New Entry!</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Record Exist Modal -->
-                <div class="modal fade center" role="dialog" tabindex="-1" id="recordExist">
-                    <div class="modal-dialog h-100 m-auto d-flex align-items-center" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="m-0 d-flex justify-content-end align-items-center">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="row m-0">
-                                    <div class="col col-12 p-0">
-                                        <svg class="checkmark my-4" xmlns="https://www.svgrepo.com/show/137031/check.svg" viewBox="0 0 50 50">
-                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                                        </svg>
-                                    </div>
-                                    <div class="col col-12">
-                                        <h3 class="modalAlert text-center">Record Already Exists</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

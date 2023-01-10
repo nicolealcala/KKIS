@@ -113,14 +113,14 @@ $(document).ready(function () {
 
     //Enable all education select boxes and change value to blank
     $(".educSelectBox").each(function () {
-      $(this).val("").change();
+      // $(this).val("").change();
       $(this).prop("disabled", false);
       $(this).attr("required", "required");
     });
 
     //Enable all education input fields and change value to blank
     $(".educUserInput").each(function () {
-      $(this).val("").change();
+      // $(this).val("").change();
       $(this).prop("disabled", false);
       $(this).attr("required", "required");
     });
@@ -139,7 +139,7 @@ $(document).ready(function () {
     $(".educSelectBox").each(function () {
       $(this).prop("disabled", false);
       $(this).attr("required", "required");
-      $(".educSelectBox").not("#selectEducStatus").val("").change();
+      // $(".educSelectBox").not("#selectEducStatus").val("").change();
       if (
         $(this).attr("id") == "selectEducSalary" ||
         $(this).attr("id") == "selectEducIndustry"
@@ -240,7 +240,7 @@ $(document).ready(function () {
     });
 
     $(".employUserInput").each(function () {
-      $(this).val("").change();
+      // $(this).val("").change();
       $(this).prop("disabled", false);
       $(this).attr("required", "required");
     });
