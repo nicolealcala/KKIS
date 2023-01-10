@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$queryKabataan = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, households.head_remarks FROM `residents` LEFT JOIN `households` ON residents.household_id = households.household_id WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 14 AND 31"; //query to select all data from table
+$queryKabataan = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, households.head_remarks FROM `residents` RIGHT JOIN `households` ON residents.household_id = households.household_id WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 14 AND 31"; //query to select all data from table
 $queryKabataanResult = executeQuery($queryKabataan); //execute query
 
 ?>

@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$querySeniorCitizens = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, households.head_remarks FROM `residents` LEFT JOIN `households` ON residents.household_id = households.household_id WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') >= 60 "; //query to select all data from table
+$querySeniorCitizens = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, households.head_remarks FROM `residents` RIGHT JOIN `households` ON residents.household_id = households.household_id WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') >= 60 "; //query to select all data from table
 $querySeniorCitizensResult = executeQuery($querySeniorCitizens); //execute query
 
 ?>

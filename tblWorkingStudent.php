@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$queryWorkingStudent = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, educational_info.student_status FROM `educational_info` LEFT JOIN `residents` ON educational_info.resident_id = residents.resident_id WHERE `student_status` = 'Working Student' "; //query to select all data from table
+$queryWorkingStudent = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, educational_info.student_status FROM `educational_info` RIGHT JOIN `residents` ON educational_info.resident_id = residents.resident_id WHERE `student_status` = 'Working Student' "; //query to select all data from table
 $queryWorkingStudentResult = executeQuery($queryWorkingStudent); //execute query
 
 ?>

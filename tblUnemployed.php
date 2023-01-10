@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$queryUnemployed = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, employment_info.employment_status FROM `employment_info` LEFT JOIN `residents` ON employment_info.resident_id = residents.resident_id WHERE `employment_status` = 'Unemployed' "; //query to select all data from table
+$queryUnemployed = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, employment_info.employment_status FROM `employment_info` RIGHT JOIN `residents` ON employment_info.resident_id = residents.resident_id WHERE `employment_status` = 'Unemployed' "; //query to select all data from table
 $queryUnemployedResult = executeQuery($queryUnemployed); //execute query
 
 ?>
