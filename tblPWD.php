@@ -1,15 +1,10 @@
 <?php
-// session_start();
+session_start();
 require "connection.php";
 require "modals.php";
 
-
-//KABATAAN --------------
-$queryKabataan = "SELECT  *, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age` FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 15 AND 30";
-$resultKabataan = executeQuery($queryKabataan);
-
-$queryResidents = "SELECT  *, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS `age` FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 > 29";
-$resultResidents = executeQuery($queryResidents);
+$queryPWD = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, households.head_remarks FROM `residents` LEFT JOIN `households` ON residents.household_id = households.household_id WHERE `disability` != 'None' "; //query to select all data from table
+$queryPWDResult = executeQuery($queryPWD); //execute query
 
 ?>
 
@@ -20,7 +15,7 @@ $resultResidents = executeQuery($queryResidents);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PWDs</title>
-    
+
     <!-- Custom Page Stylesheets -->
     <link rel="stylesheet" href="assets/scss/viewModal.css">
     <link rel="stylesheet" href="assets/scss/profiles.css">
@@ -29,8 +24,7 @@ $resultResidents = executeQuery($queryResidents);
     <link rel="stylesheet" href="assets/scss/sideMenu.css">
 
     <!-- Bootstrap-Select -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
     <!-- DATA TABLES CDN -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
@@ -39,7 +33,7 @@ $resultResidents = executeQuery($queryResidents);
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/kkis.ico">
-     
+
 
 </head>
 
@@ -57,7 +51,7 @@ $resultResidents = executeQuery($queryResidents);
                 <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
                     <i class="fa-solid fa-xmark me-4" id="close" role="button"></i>
-                    <span class="pageTitle">PWDs</span>
+                    <span class="pageTitle">Registered Voters</span>
                 </div>
 
                 <div class="col-md-4 d-none d-md-flex justify-content-end align-items-center">
@@ -70,23 +64,16 @@ $resultResidents = executeQuery($queryResidents);
         <!-- Content Start -->
         <div class="container-fluid content" id="contentID">
             <div class="sectionDiv">
-                <!-- Menu Buttons 
-                <div class="row d-flex justify-content-end align-ittems-center m-0">
-                    <button class="menuBtn menu1 rounded-pill menu-active me-3" id="kabataan">Kabataan</button>
-                    <button class="menuBtn menu2 rounded-pill" id="residents">Residents</button>
-                </div> -->
-
                 <!-- Kabataan Table Start -->
                 <div class="sectionDiv mx-0 mt-4" id="sectionKabataan">
                     <!-- Options Rows -->
                     <div class="optionRow row gx-5 m-0 mb-1">
                         <!-- Show No. of Rows -->
-                        <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0"
-                            id="kabataanLength"></div>
+                        <div class="col-lg-12 col-md-4 col-sm-6 col-12 d-flex align-items-center my-1 p-0" id="kabataanLength"></div>
                         <!-- Output Buttons -->
                         <div class="d-none col-lg-6 d-lg-flex justify-content-lg-start p-0" id="kabataanOutput"></div>
                         <!-- Filter -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center">
                         </div>
                         <!-- Search -->
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-0" id="kabataanSearch">
@@ -95,84 +82,364 @@ $resultResidents = executeQuery($queryResidents);
                     </div>
 
                     <!-- Actual table -->
-                    <table
-                        class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed"
-                        role="grid" cellspacing="0" id="kabataanTbl" style="width:100%">
-
+                    <table class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable" role="grid" cellspacing="0" id="kabataanTbl" style="width:100%">
                         <thead class="tblHeadRow">
                             <tr>
                                 <th class="tblHead">Name</th>
                                 <th class="tblHead">Gender</th>
                                 <th class="tblHead">Age</th>
-                                <th class="tblHead">Birthday</th>
+                                <th class="tblHead">Birthdate</th>
                                 <th class="tblHead">Civil status</th>
-                                <th class="tblHead">Contact No.</th>
+                                <th class="tblHead">Contatct No.</th>
                                 <th class="tblHead">Purok</th>
+                                <th class="tblHead">Remarks</th>
                                 <th class="tblHead actions">Actions</th>
                             </tr>
                         </thead>
-                        
+
                         <thead id="kabataanTblHead">
-                            <tr >
-                                <!-- <th class="tblHead"></th>
-                                <th class="tblHead"></th>
-                                <th class="tblHead"></th>
-                                <th class="tblHead"></th>
-                                <th class="tblHead"></th>
-                                <th class="tblHead"></th>
-                                <th class="tblHead"></th>
-                                <th class="tblHead actions"></th> -->
+                            <tr>
+                                <!-- <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th> -->
                             </tr>
                         </thead>
 
                         <tbody>
+                            <?php
+                            while ($pwd = mysqli_fetch_array($queryPWDResult)) {
+                                $pwdID = $pwd["resident_id"]; //get resident id
+                                $pwdEID = $pwd["rencrypted_id"];
+                            ?>
+
+                                <tr>
+
+                                    <td id="fullName" class="entryRow" scope="col" data-label="Name"><?php echo $pwd["full_name"]; ?></td>
+
+                                    <td id="gender" class="entryRow" scope="col" data-label="Gender"><?php echo $pwd["gender_preference"]; ?></td>
+
+                                    <td id="age" class="entryRow" scope="col" data-label="Age"><?php echo $pwd["age"]; ?></td>
+
+                                    <td id="birthday" class="entryRow" scope="col" data-label="Birthdate"><?php echo $pwd["birthday"]; ?></td>
+
+                                    <td id="civilStatus" class="entryRow" scope="col" data-label="Civil status"><?php echo $pwd["marital_status"]; ?></td>
+
+                                    <td id="contactNo" class="entryRow" scope="col" data-label="Contact No."><?php echo $pwd["contact_no"]; ?></td>
+
+
+                                    <td id="purok" class="entryRow" scope="col" data-label="Purok"><?php echo $pwd["purok"]; ?></td>
+
+                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $pwd["head_remarks"]; ?></td>
+
+                                    <td id="actions" class="entryRow" scope="col" data-label="Actions">
+                                        <div class="row mx-0 p-0">
+                                            <!-- View More -->
+                                            <div class="col-lg-12 col-12 d-flex justify-content-center align-items-center p-0">
+                                                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $outOfSchool["resident_id"]; ?>" data-id="<?php echo $outOfSchool["resident_id"]; ?>" href="#viewMore">View More</a>
+                                            </div>
+                                        </div>  
+                                    </td>
+
+                                </tr>
+
+                                <!-- Kabataan Modal -->
+                                <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $pwd["resident_id"]; ?>">
+                                    <div class="modal-dialog" id="modalDialogID" role="document">
+                                        <div class="modal-content" id="modalContentID">
+                                            <div class="modal-header" id="modalHeaderID">
+                                                <h4 class="modal-title" id="modalTitleID">Kabataan Information</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <hr id="modalHR">
+                                            <div class="modal-body m-0" id="modalBodyID">
+                                                <div class="row rowContainer mx-2" id="modalRow1">
+                                                    <div class="col col-lg-8 col-md-8 col-sm-12 col-12" id='textDiv'>
+                                                        <p class="textName lastName w-100 my-1" id="textNameID"><?php echo $pwd["full_name"]; ?></p>
+                                                        <p class="textGender w-100 my-1 mt-2" id="textAgeID"><?php echo $pwd["age"]; ?> YEARS OLD</p>
+                                                        <p class="textAge w-100 my-1" id="textGenderID"><?php echo $pwd["gender_preference"]; ?></p>
+                                                    </div>
+                                                    <div class="col align-self-center" id="divQR"><img class="imgContainer" id="imgQR" src="assets/img/misc/qrcode.png"></div>
+                                                </div>
+
+                                                <div class="row rowContainer my-4 mx-2" id="modalRow2">
+                                                    <div class="col col-12 p-0">
+                                                        <div class="markerContainer px-3" id="row2Header">
+                                                            <p class="modalMarker" id="row2Title">Personal Information</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col" id="row2Body">
+                                                        <div class="row gy-1" id="row2Content">
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Birthday:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["birthday"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Voter Type:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["voter_type"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Birthplace:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["birthplace"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Contact No:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["contact_no"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Marital Status:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["marital_status"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Religion:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["religion"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Disability:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["disability"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Organization/s (if any):</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["organization"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">House No./St./Subd.:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["house_address"]; ?>.&nbsp;</p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Purok:</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $pwd["purok"]; ?></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row rowContainer my-4 mx-2" id="modalRow2">
+                                                    <div class="col col-12 p-0">
+                                                        <div class="markerContainer px-3" id="row2Header">
+                                                            <p class="modalMarker" id="row2Title">Status</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <?php
+                                                    $employmentCheck = "SELECT * FROM employment_info WHERE resident_id = $pwdID"; //check if resident has employment info
+                                                    $employmentCheckResult = executeQuery($employmentCheck);
+
+                                                    $educationCheck = "SELECT * FROM educational_info WHERE resident_id = $pwdID"; //check if resident has educational info
+                                                    $educationCheckResult = executeQuery($educationCheck);
+
+                                                    if ($employment = mysqli_fetch_array($employmentCheckResult)) { //checking if the user is an employee
+                                                    ?>
+                                                        <div class="col" id="row2Body">
+                                                            <div class="row gy-1" id="row2Content">
+                                                                <div class="col-6" id="row2ContentDiv">
+                                                                    <label class="form-label modalLabel">Employment Status:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID"><?php echo $employment["employment_status"]; ?></p>
+                                                                </div>
+                                                                <div class="col-6" id="row2ContentDiv">
+                                                                    <label class="form-label modalLabel">Employee Type:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID"><?php echo $employment["employee_type"]; ?></p>
+                                                                </div>
+                                                                <div class="col-6" id="row2ContentDiv">
+                                                                    <label class="form-label modalLabel">Public/Private:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID"><?php echo $employment["employer_type"]; ?></p>
+                                                                </div>
+                                                                <div class="col-6" id="row2ContentDiv">
+                                                                    <label class="form-label modalLabel">Name of Employer/Company:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID"><?php echo $employment["employer_name"]; ?></p>
+                                                                </div>
+
+                                                                <?php
+                                                                $industry_id = $employment["industry_id"]; // store industry_id to variable
+                                                                $salary_id = $employment["salary_id"]; // store salary_id to variable
+
+                                                                $industryCheck = "SELECT * FROM industries WHERE industry_id='$industry_id'";
+                                                                $queryIndustryCheck = mysqli_query($conn, $industryCheck);
+
+                                                                $salaryCheck = "SELECT * FROM salaries WHERE salary_id='$salary_id'";
+                                                                $querySalaryCheck = mysqli_query($conn, $salaryCheck);
+                                                                ?>
+
+                                                                <div class="col-6" id="row2ContentDiv">
+                                                                    <label class="form-label modalLabel">Occupation:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID">
+                                                                        <?php
+                                                                        $industry = mysqli_fetch_array($queryIndustryCheck);
+                                                                        echo $industry["description"];
+                                                                        ?>
+                                                                    </p>
+                                                                </div>
+
+                                                                <div class="col-6" id="row2ContentDiv">
+                                                                    <label class="form-label modalLabel">Salary Range:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID">
+                                                                        <?php
+                                                                        $salary = mysqli_fetch_array($querySalaryCheck);
+                                                                        echo $salary["description"];
+                                                                        ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <?php
+                                                    } else if ($education = mysqli_fetch_array($educationCheckResult)) { //checking if the user is a student
+
+                                                        if ($education["student_status"] == "ENROLLED") {
+                                                        ?>
+                                                            <div class="col" id="row2Body">
+                                                                <div class="row gy-1" id="row2Content">
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Student Status:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["student_status"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Student Level:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["student_level"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Public/Private:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["school_type"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Name of School/University:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["school_name"]; ?></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                        } else if ($education["student_status"] == "OUT-OF-SCHOOL YOUTH") {
+                                                        ?>
+                                                            <div class="col" id="row2Body">
+                                                                <div class="row gy-1" id="row2Content">
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Student Status:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["student_status"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Student Level:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["student_level"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Public/Private:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["school_type"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Name of School/University:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["school_name"]; ?></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <div class="col" id="row2Body">
+                                                                <div class="row gy-1" id="row2Content">
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Student Status:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["student_status"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Student Level:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["student_level"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Public/Private:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["school_type"]; ?></p>
+                                                                    </div>
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Name of School/University:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $education["school_name"]; ?></p>
+                                                                    </div>
+
+                                                                    <?php
+
+                                                                    $industry_id = $education["industry_id"]; // store industry_id to variable
+                                                                    $salary_id = $education["salary_id"]; // store salary_id to variable
+
+                                                                    $industryCheck = "SELECT * FROM industries WHERE industry_id='$industry_id'";
+                                                                    $queryIndustryCheck = mysqli_query($conn, $industryCheck);
+
+                                                                    $salaryCheck = "SELECT * FROM salaries WHERE salary_id='$salary_id'";
+                                                                    $querySalaryCheck = mysqli_query($conn, $salaryCheck);
+                                                                    ?>
+
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Occupation:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID">
+                                                                            <?php
+                                                                            $industry = mysqli_fetch_array($queryIndustryCheck);
+                                                                            echo $industry["description"];
+                                                                            ?>
+                                                                        </p>
+                                                                    </div>
+
+                                                                    <div class="col-6" id="row2ContentDiv">
+                                                                        <label class="form-label modalLabel">Salary Range:</label>
+                                                                        <p class="textRetrieved" id="textRetrievedID">
+                                                                            <?php
+                                                                            $salary = mysqli_fetch_array($querySalaryCheck);
+                                                                            echo $salary["description"];
+                                                                            ?>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    <?php
+                                                    }
+                                                    $household_id = $pwd["household_id"]; //getting the household id of the user
+                                                    $householdCheck = "SELECT *, CONCAT(`head_first_name`, ', ', `head_first_name`, ' ', `head_middle_name`) AS `head_name` FROM households WHERE household_id = $household_id"; //getting the household details of the user
+                                                    $householdCheckResult = executeQuery($householdCheck);
+                                                    ?>
+                                                </div>
+
+                                                <div class="row rowContainer my-4 mx-2" id="modalRow2">
+                                                    <div class="col col-12 p-0">
+                                                        <div class="markerContainer px-3" id="row2Header">
+                                                            <p class="modalMarker" id="row2Title">House Declaration</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col" id="row2Body">
+                                                        <div class="row gy-1" id="row4Content">
+                                                            <?php
+                                                            while ($household = mysqli_fetch_array($householdCheckResult)) {
+                                                            ?>
+                                                                <div class="col col-12" id="row4ContentDiv">
+                                                                    <label class="form-label modalLabel">Head of the family:</label>
+                                                                    <p class="textRetrieved" id="FamHead"><?php echo $household["head_name"]; ?></p>
+                                                                </div>
+                                                                <div class="col col-12" id="row4ContentDiv">
+                                                                    <label class="form-label modalLabel">Remarks:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID1"><?php echo $household["head_remarks"]; ?></p>
+                                                                </div>
+                                                                <div class="col col-12" id="row4ContentDiv">
+                                                                    <label class="form-label modalLabel">No. of members:</label>
+                                                                    <p class="textRetrieved" id="textRetrievedID1"><?php echo $household["members_count"]; ?></p>
+                                                                </div>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div">
+                                            </div>
+                                        </div>
+                                        <div id="modalOverlay"></div>
+                                    </div>
+                                    <!-- Kabataan Modal End -->
+                                </div>
 
                             <?php
-                            $queryPWD = "SELECT `disability` FROM `residents` WHERE `disability` != 'None'";
-                            $resultPWD = executeQuery($queryPWD);
-                            
-                            while ($rowPWD = mysqli_fetch_array($resultPWD)) {
-                                echo '
-                                
-                                <tr>
-                                        <td class="entryRow" scope="col" data-label="Name">' . $rowPWD['last_name'] . ' ' . $rowPWD['first_name'] . ' ' . $rowPWD['middle_name'] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Gender">' . $rowPWD['gender_preference'] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Age">' . $rowPWD['age'] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Birthday">' . $rowPWD['birthday'] . '</td>
-                                        <td class="entryRow" scope="col" data-label=Marital Status"">' . $rowPWD['marital_status'] . '</td>
-                                        <td class="entryRow" scope="col" data-label="ContactNo.">' . $rowPWD['contact_no'] . '</td>
-                                        <td class="entryRow" scope="col" data-label="Purok">' . $rowPWD['purok'] . '</td>
-                                        <td class="entryRow text-center" scope="col" data-label="Actions">
-                                            <div class="row gy-2 mx-0" height="100%">
-                                                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-                                                    <a class="btn btn-warning actionBtn" role="button" data-bs-toggle="modal" data-bs-target="#viewMore' . $rowSeniors['resident_id'] . '" data-id="' . $rowSeniors['rencrypted_id'] . '" href="#viewMore"><i class="fa-regular fa-eye"></i></a> 
-                                                </div>
-                                            
-                                                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-                                                    <a class="btn btn-primary actionBtn" href="updateEntry.php?residentID=' . $rowPWD['rencrypted_id'] . 'role="button" aria-pressed="true"><i class="fa-solid fa-pen"></i></a>
-                                                </div>
-
-                                                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-                                                    <button class="btn btn-danger actionBtn" id="deleteEntry" onclick="warning()"><i class="fa-regular fa-trash-can"></i></button>
-                                                    <script>
-                                                    if ($("#deleteEntry").click(function(){
-                                                        Swal.fire({
-                                                            icon: "warning",
-                                                            title: "Are you sure?",
-                                                            text: "Deleting"' . $rowPWD['last_name'] . ' ' . $rowPWD['first_name'] . ' ' . $rowPWD['middle_name'] . '" will completely remove this record.",
-                                                        }).then((result) => {
-                                                            if (result.isConfirmed) {
-                                                            window.location.href = "./testprofiles.php";
-                                                            }
-                                                        });
-                                                    })
-                                                        
-                                                    </script>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>';
-                            }
+                            };
                             ?>
                         </tbody>
                         <tfoot>
@@ -185,305 +452,24 @@ $resultResidents = executeQuery($queryResidents);
                                 <th></th>
                                 <th></th>
                                 <th></th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>
-
-                <!-- Resident Modal -->
-                <?php
-                while ($rowPWD = mysqli_fetch_array($resultPWD)) {
-                    $residentID = $rowResidents['resident_id'];
-                    echo '
-                    <div class="modal fade" role="dialog" tabindex="1" id="viewMore' . $rowResidents['resident_id'] . '">
-                        <div class="modal-dialog" id="modalDialogID" role="document">
-                            <div class="modal-content" id="modalContentID">
-                                <div class="modal-header" id="modalHeaderID">
-                                    <h4 class="modal-title" id="modalTitleID">Kabataan Information</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <hr id="modalHR">
-                                <div class="modal-body m-0" id="modalBodyID">
-                                    <div class="row rowContainer mx-2" id="modalRow1">
-                                        <div class="col col-lg-8 col-md-8 col-sm-12 col-12" id="textDiv">
-                                            <p class="textName lastName w-100 my-1" id="textNameID">' . $rowResidents['last_name'] . ', ' . $rowResidents['first_name'] . ' ' . $rowResidents['middle_name'] . '</p>
-                                            <p class="textAge w-100 my-1 mt-2" id="textAgeID">' . $rowResidents['age'] . ' ' . 'YEARS OLD
-                                            </p>
-                                            <p class="textGender w-100 my-1" id="textGenderID">' . $rowResidents['gender_preference'] . '
-                                            </p>
-                                        </div>
-
-                                        <div class="col align-self-center" id="divQR">
-                                            <img class="imgContainer" id="imgQR" src="assets/img/misc/qrcode.png">
-                                        </div>
-                                    </div>
-
-                                    <div class="row rowContainer my-4 mx-2" id="modalRow2">
-                                        <div class="col col-12 p-0">
-                                            <div class="markerContainer px-3" id="row2Header">
-                                                <p class="modalMarker" id="row2Title">Personal Information</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col" id="row2Body">
-                                            <div class="row gy-1" id="row2Content">
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Birthday:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['birthday'] . ' </p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Voter Type:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['voter_type'] . '
-                                                    </p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Birthplace:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['birthplace'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Contact No:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['contact_no'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Marital Status:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['marital_status'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Religion:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['religion'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Disability:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['disability'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Organization/s (if any):</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['organization'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">House No./St./Subd.:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['house_address'] . '</p>
-                                                </div>
-
-                                                <div class="col-6" id="row2ContentDiv">
-                                                    <label class="form-label modalLabel">Purok:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowResidents['purok'] . '</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row rowContainer my-4 mx-2" id="modalRow2">
-                                        <div class="col col-12 p-0">
-                                            <div class="markerContainer px-3" id="row2Header">
-                                                <p class="modalMarker" id="row2Title">Status</p>
-                                            </div>
-                                        </div>
-                                        <div class="col" id="row2Body">';
-
-                    $employmentCheck = "SELECT * FROM `employment_info` WHERE `resident_id` = $residentID";
-                    $employmentResult = executeQuery($employmentCheck);
-                    $employmentInfo = mysqli_fetch_array($employmentResult);
-
-                    $employmentIndustryID = $employmentInfo['industry_id'];
-                    $employmentSalaryID = $employmentInfo['salary_id'];
-
-                    $employmentSalaryCheck = "SELECT * FROM salaries WHERE salary_id='$employmentSalaryID'";
-                    $employmentSalaryResult = executeQuery($employmentSalaryCheck);
-                    $employeeSalary = mysqli_fetch_array($employmentSalaryResult);
-
-                    $employmentIndustryCheck = "SELECT * FROM industries WHERE industry_id='$employmentIndustryID'";
-                    $employmentIndustryResult = executeQuery($employmentIndustryCheck);
-                    $employeeIndustry = mysqli_fetch_array($employmentIndustryResult);
-
-                    if ($employmentInfo > 0) { //checking if the user is an employee
-                        echo '
-                                                <div class="row gy-1" id="row2Content">
-                                                    <div class="col-6" id="row2ContentDiv">
-                                                        <label class="form-label modalLabel">Employment Status:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID">' . $employmentInfo['employment_status'] . '</p>
-                                                    </div>
-
-                                                    <div class="col-6" id="row2ContentDiv">
-                                                        <label class="form-label modalLabel">Employee Type:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID">' . $employmentInfo['employee_type'] . '</p>
-                                                    </div>
-
-                                                    <div class="col-6" id="row2ContentDiv">
-                                                        <label class="form-label modalLabel">Public/Private:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID">' . $employmentInfo['employer_type'] . '</p>
-                                                    </div>
-
-                                                    <div class="col-6" id="row2ContentDiv">
-                                                        <label class="form-label modalLabel">Name of Employer/Company:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID">' . $employmentInfo['employer_name'] . '</p>
-                                                    </div>
-
-
-                                                    <div class="col-6" id="row2ContentDiv">
-                                                        <label class="form-label modalLabel">Occupation:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID">' . $employeeIndustry['description'] . '</p>
-                                                    </div>
-
-                                                    <div class="col-6" id="row2ContentDiv">
-                                                        <label class="form-label modalLabel">Salary Range:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID">' . $employeeSalary['description'] . '</p>
-                                                    </div>
-                                                ';
-                    } else if ($educationInfo > 0) {
-                        $educationCheck = "SELECT * FROM educational_info WHERE `resident_id` = $residentID";
-                        $educationResult = executeQuery($educationCheck);
-                        $educationInfo = mysqli_fetch_array($educationResult);
-
-                        $educationIndustryID = $educationInfo['industry_id'];
-                        $educationSalaryID = $educationInfo['salary_id'];
-
-                        $educationIndustryCheck = "SELECT * FROM industries WHERE industry_id='$educationIndustryID'";
-                        $educationIndustryResult = executeQuery($educationIndustryCheck);
-                        $studentIndustry = mysqli_fetch_array($educationIndustryResult);
-
-                        $educationSalaryCheck = "SELECT * FROM salaries WHERE salary_id='$educationSalaryID'";
-                        $educationSalaryResult = executeQuery($educationSalaryCheck);
-                        $studentSalary = mysqli_fetch_array($educationSalaryResult);
-
-                        if ($educationInfo['student_status'] == "ENROLLED") {
-                            echo '
-                                                        <div class="col" id="row2Body">
-                                                            <div class="row gy-1" id="row2Content">
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Student Status:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['student_status'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Student Level:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['student_level'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Public/Private:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['school_type'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Name of School/University:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['school_name'] . '</p>
-                                                                </div>
-                                                            </div>
-                                                        </div> ';
-                        } else if ($educationInfo['student_status'] == "OUT-OF-SCHOOL YOUTH") {
-                            echo '
-                                                        <div class="col" id="row2Body">
-                                                            <div class="row gy-1" id="row2Content">
-                                                                <div class="col-12" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Student Status:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['student_status'] . '</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>';
-                        } else {
-                            echo '
-                                                        <div class="col" id="row2Body">
-                                                            <div class="row gy-1" id="row2Content">
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Student Status:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['student_status'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Student Level:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['student_level'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Public/Private:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['school_type'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Name of School/University:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $educationInfo['school_name'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Occupation:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $studentIndustry['description'] . '</p>
-                                                                </div>
-
-                                                                <div class="col-6" id="row2ContentDiv">
-                                                                    <label class="form-label modalLabel">Salary Range:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID">' . $studentSalary['description'] . '</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    ';
-                        }
-                    }
-                    echo '
-                                        
-
-                                        <div class="row rowContainer my-4 mx-2" id="modalRow2">
-                                            <div class="col col-12 p-0">
-                                                <div class="markerContainer px-3" id="row2Header">
-                                                    <p class="modalMarker" id="row2Title">House Declaration</p>
-                                                </div>
-                                            </div>';
-
-                    $householdID = $rowResidents['household_id']; //getting the household id of the user
-                    $queryHouseholds = "SELECT * FROM `households` WHERE household_id='$householdID'"; //getting the household details of the user
-                    $householdResult = executeQuery($queryHouseholds);
-                    $householdInfo = mysqli_fetch_array($householdResult);
-                    echo '
-                                            <div class="col" id="row2Body">
-                                                <div class="row gy-1" id="row4Content">
-                                                    <div class="col col-12" id="row4ContentDiv">
-                                                        <label class="form-label modalLabel">Head of the family:</label>
-                                                        <p class="textRetrieved" id="FamHead">' . $householdInfo['head_full_name'] . '</p>
-                                                    </div>
-
-                                                    <div class="col col-12" id="row4ContentDiv">
-                                                        <label class="form-label modalLabel">Remarks:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID1">' . $householdInfo['head_remarks'] . '</p>
-                                                    </div>
-
-                                                    <div class="col col-12" id="row4ContentDiv">
-                                                        <label class="form-label modalLabel">No. of members:</label>
-                                                        <p class="textRetrieved" id="textRetrievedID1">' . $householdInfo['members_count'] . '</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="modalOverlay"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
-                }
-                ?>
-                <!-- sectiongeneral residents end -->
+                </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- Bootstrap-select -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
     <!-- Data tables -->
+    <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->
     <script src="assets/js/datatables.min.js"></script>
     <script src="assets/js/pdfmake.min.js"></script>
     <script src="assets/js/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 
     <!-- Custom Script -->
     <script type="text/javascript" src="assets/js/profiles.js"></script>
@@ -491,9 +477,10 @@ $resultResidents = executeQuery($queryResidents);
 
     <!-- Active Link -->
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#profiles-link").addClass('nav-active');
             $("#profiles-md-link").addClass("nav-md-active");
+            $("#kabataan").addClass("menu-active");
         })
     </script>
 </body>

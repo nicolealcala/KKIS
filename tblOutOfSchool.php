@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$queryOutOfSchool = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age FROM `educational_info` RIGHT JOIN `residents` ON educational_info.resident_id = residents.resident_id WHERE educational_info.student_status = 'Out-of-school Youth' "; //query to select all data from table
+$queryOutOfSchool = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, educational_info.student_status FROM `educational_info` RIGHT JOIN `residents` ON educational_info.resident_id = residents.resident_id WHERE `student_status` = 'Out-of-school Youth' "; //query to select all data from table
 $queryOutOfSchoolResult = executeQuery($queryOutOfSchool); //execute query
 
 ?>
@@ -90,7 +90,7 @@ $queryOutOfSchoolResult = executeQuery($queryOutOfSchool); //execute query
                                 <th class="tblHead">Age</th>
                                 <th class="tblHead">Birthdate</th>
                                 <th class="tblHead">Civil status</th>
-                                <th class="tblHead">Contatt No.</th>
+                                <th class="tblHead">Contatct No.</th>
                                 <th class="tblHead">Purok</th>
                                 <th class="tblHead">Status</th>
                                 <th class="tblHead actions">Actions</th>
