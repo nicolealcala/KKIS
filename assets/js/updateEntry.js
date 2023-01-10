@@ -51,7 +51,7 @@ $(document).ready(function () {
         employRadioClick();
     }
 
-    //For Employ Radio Btn when selected
+    //For Employ Radio Btn
     $("#employCheck").change(function () {
       employRadioClick();
     });
@@ -149,7 +149,7 @@ $(document).ready(function () {
           $(this).attr("id") == "selectEducSalary" ||
           $(this).attr("id") == "selectEducIndustry"
         ) {
-        //   $(this).val("").change();
+          $(this).val("").change();
           $(this).prop("disabled", true);
           $(this).removeAttr("required");
         }
@@ -226,17 +226,17 @@ $(document).ready(function () {
       $("#markerEduc").css("background-color", "#c5d4e3");
       $(".educFieldLabel").css("opacity", ".70");
   
-        $(".educSelectBox").each(function () {
-            $(this).val("").change();
-            $(this).prop("disabled", true);
-            $(this).removeAttr("required");
-        });
-    
-        $(".educUserInput").each(function () {
-            $(this).val("").change();
-            $(this).prop("disabled", true);
-            $(this).removeAttr("required");
-        });
+      $(".educSelectBox").each(function () {
+        // $(this).val("").change();
+        $(this).prop("disabled", true);
+        $(this).removeAttr("required");
+      });
+  
+      $(".educUserInput").each(function () {
+        // $(this).val("").change();
+        $(this).prop("disabled", true);
+        $(this).removeAttr("required");
+      });
   
       $(".employSelectBox").each(function () {
         // $(this).val("").change();
@@ -274,7 +274,17 @@ $(document).ready(function () {
         $(this).css("opacity", "1");
         $(this).addClass("required");
       });
-      
+      $(".educSelectBox").each(function () {
+        $(this).val("").change();
+        $(this).prop("disabled", true);
+        $(this).removeAttr("required");
+      });
+  
+      $(".educUserInput").each(function () {
+        $(this).val("").change();
+        $(this).prop("disabled", true);
+        $(this).removeAttr("required");
+      });
     }
   
     //fxn for Unemployed

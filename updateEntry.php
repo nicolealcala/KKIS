@@ -261,7 +261,7 @@ if (isset($_POST['submitBtn'])){
                                 <select class="form-select text-uppercase w-100 personalSelectBox" name="gender" id="genderPreference" required>
 
                                 <?php
-                                $genderQuery=executeQuery($queryLoadResidents);
+                                    $genderQuery=executeQuery($queryLoadResidents);
                                     while($row=mysqli_fetch_array($genderQuery)){
                                     ?>
                                     <option value="MAN" <?php if ('MAN'==$genderPreference) {echo " selected";}?>>Man</option>
@@ -404,7 +404,7 @@ if (isset($_POST['submitBtn'])){
                             
                             <div class="col col-lg-3 col-md-4 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel w-100 p-1" for="org" id="organizationLbl">Organization (if any)</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="organization" id="org" value="<?php echo $organization ?>">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="organization" id="org" value="<?php echo $organization; ?>">
                             </div>
                         </div>
                     </div>
@@ -421,7 +421,6 @@ if (isset($_POST['submitBtn'])){
                                     ?>
                                         <input type="radio" id="educCheck" class="statusCheck" name="educInfo" <?php if ($row>0) {echo " checked";}?>>
                                         Educational Status
-                                    
                                     </label>
                                 </div>
                                 
@@ -439,6 +438,7 @@ if (isset($_POST['submitBtn'])){
                                         </select>
                                         <?php } ?>
                                     </div>
+
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="levelLbl" for="selectLevel">Level</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="educLevel" id="selectLevel" required>
@@ -446,16 +446,17 @@ if (isset($_POST['submitBtn'])){
                                         $educationQuery=executeQuery($queryLoadEducation);
                                         while($row=mysqli_fetch_array($educationQuery)) { ?>
                                             <option value="PRE-ELEMENTARY" <?php if ('PRE-ELEMENTARY'==$educLevel) {echo " selected";}?>>Pre-elementary</option>
-                                            <option value="ELEMENTARY" <?php if ('ELEMENTARY'==$educLevel) {echo " selected";}?>>Elementary</option>
+                                            <option value="ELEMENTARY" <?php if ('ELEMENTARY'==$educLevel) {echo " selected";};?>>Elementary</option>
                                             <option value="JUNIOR HIGH SCHOOL" <?php if ('JUNIOR HIGH SCHOOL'==$educLevel) {echo " selected";}?>>Junior High School</option>
                                             <option value="SENIOR HIGH SCHOOL" <?php if ('SENIOR HIGH SCHOOL'==$educLevel) {echo " selected";}?>>Senior High School</option>
                                             <option value="ALTERNATIVE LEARNING SYSTEM" <?php if ('ALTERNATIVE LEARNING SYSTEM'==$educLevel) {echo " selected";}?>>Alternative Learning System (ALS)</option>
                                             <option value="DIPLOMA COURSE" <?php if ('DIPLOMA COURSE'==$educLevel) {echo " selected";}?>>Diploma Course</option>
                                             <option value="COLLEGE" <?php if ('COLLEGE'==$educLevel) {echo " selected";}?>>College</option>
                                             <option value="GRADUATE STUDIES" <?php if ('GRADUATE STUDIES'==$educLevel) {echo " selected";}?>>Graduate Studies</option>
-                                        </select>
+                                            </select>       
                                         <?php } ?>
                                     </div>
+
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolTypeLbl" for="selectSchoolType">School Type</label>
                                         <select class="form-select educSelectBox text-uppercase w-100" name="schoolType" id="selectSchoolType" required>
@@ -465,14 +466,14 @@ if (isset($_POST['submitBtn'])){
                                             <option value="PRIVATE"  <?php if ('PRIVATE'==$schoolType) {echo " selected";}?>>Private</option>
                                             <option value="PUBLIC" <?php if ('PUBLIC'==$schoolType) {echo " selected";}?>>Public</option>
                                         <?php } ?>
-
                                         </select>
                                     </div>
+                                    
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="schoolLbl" for="inputSchool">Name of School</label>
-                                        <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" value="<?php echo $school ?>" required>
-
+                                        <input class="form-control educUserInput text-uppercase w-100" type="text" name="schoolName" id="inputSchool" value="<?php echo $school; ?>" required>
                                     </div>
+
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label educFieldLabel required w-100 p-1" id="educIndustryLbl" for="selectEducIndustry">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 educSelectBox" name="educIndustry" id="selectEducIndustry" required>
@@ -539,9 +540,9 @@ if (isset($_POST['submitBtn'])){
                                             <option value="58" <?php if ('58'==$educIndustry) {echo " selected";}?>>Telecommunications</option>
                                             <option value="59" <?php if ('59'==$educIndustry) {echo " selected";}?>>Transportation</option>
                                             <option value="60" <?php if ('60'==$educIndustry) {echo " selected";}?>>Tourism</option>
-                                            <option value="61"<?php if ('61'==$educIndustry) {echo " selected";}?>>Utilities</option>
+                                            <option value="61" <?php if ('61'==$educIndustry) {echo " selected";}?>>Utilities</option>
                                             <option value="62" <?php if ('62'==$educIndustry) {echo " selected";}?>>Veterinary</option>
-                                            <option value="63"<?php if ('63'==$educIndustry) {echo " selected";}?>>Warehousing</option>
+                                            <option value="63" <?php if ('63'==$educIndustry) {echo " selected";}?>>Warehousing</option>
                                             <option value="64" <?php if ('64'==$educIndustry) {echo " selected";}?>>Others</option>
                                             <?php } ?>
                                         </select>
@@ -577,119 +578,133 @@ if (isset($_POST['submitBtn'])){
                                         Employment Status
                                     </label>
                                 </div>
+
                                 <div class="row m-0 my-3 gy-3 gx-3">
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employStatusLbl" for="selectEmployStatus">Employee Status</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeStatus" id="selectEmployStatus" required>
                                         <?php
                                         $employmentQuery=executeQuery($queryLoadEmployment);
-                                        $row=mysqli_num_rows($employmentQuery);
                                         ?>
                                             <option value="EMPLOYED" <?php if ('EMPLOYED'==$employStatus) {echo " selected";}?>>Employed</option>
                                             <option value="UNEMPLOYED" <?php if ('UNEMPLOYED'==$employStatus) {echo " selected";}?>>Unemployed</option>
                                         </select>
                                     </div>
+
                                     <div class="col col-lg-4 col-md-4 col-sm-6 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employTypeLbl" for="selectEmployeeType">Employee Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employeeType" id="selectEmployeeType" required>
                                         <?php
                                         $employmentQuery=executeQuery($queryLoadEmployment);
-                                        $row=mysqli_num_rows($employmentQuery);
                                         ?>
                                             <option value="REGULAR" <?php if ('REGULAR'==$employeeType) {echo " selected";}?>>Regular</option>
                                             <option value="CONTRACTUAL" <?php if ('CONTRACTUAL'==$employeeType) {echo " selected";}?>>Contractual</option>
                                             <option value="JOB ORDER" <?php if ('JOB ORDER'==$employeeType) {echo " selected";}?>>Job Order</option>
                                         </select>
                                     </div>
+
                                     <div class="col col-lg-4 col-md-4 col-sm-4 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employerTypeLbl" for="selectEmployerType">Employer Type</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employerType" id="selectEmployerType" required>
-                                            <option value="PRIVATE">Private</option>
-                                            <option value="PUBLIC">Public</option>
+                                            <?php
+                                            $employmentQuery=executeQuery($queryLoadEmployment);
+                                            while($row=mysqli_fetch_array($employmentQuery)){
+                                            ?>
+                                            <option value="PRIVATE" <?php if ('PRIVATE'==$employerType) {echo " selected";}?>>Private</option>
+                                            <option value="PUBLIC" <?php if ('PUBLIC'==$employerType) {echo " selected";}?>>Public</option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                     <div class="col col-lg-12 col-md-12 col-sm-8 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employerLbl" for="inputEmployer">Name of Employer/Company/Business</label>
-                                        <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" required>
+                                        <input class="form-control employUserInput text-uppercase w-100" type="text" name="employerName" id="inputEmployer" value="<?php echo $employer ?>" required>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employIndustryLbl" for="selectEmployIndustry">Work Industry</label>
                                         <select class="form-select text-uppercase w-100 employSelectBox" name="employIndustry" id="selectEmployIndustry" required>
-                                            <option value="1">Accounting</option>
-                                            <option value="2">Advertising and Marketing</option>
-                                            <option value="3">Aerospace</option>
-                                            <option value="4">Agriculture</option>
-                                            <option value="5">Animation</option>
-                                            <option value="6">Apparel and Fashion</option>
-                                            <option value="7">Architecture and Planning</option>
-                                            <option value="8">Arts and Crafts</option>
-                                            <option value="9">Automobile Engineering</option>
-                                            <option value="10">Auto Mechanics</option>
-                                            <option value="11">Aviation</option>
-                                            <option value="12">BPO</option>
-                                            <option value="13">Buy and Sell</option>
-                                            <option value="14">Casinos and Gambling</option>
-                                            <option value="15">Chemical</option>
-                                            <option value="16">Computer Technology</option>
-                                            <option value="17">Construction</option>
-                                            <option value="18">Cosmetics</option>
-                                            <option value="19">Design</option>
-                                            <option value="20">E-commerce</option>
-                                            <option value="21">Education</option>
-                                            <option value="22">Electrical Power</option>
-                                            <option value="23">Electronics</option>
-                                            <option value="24">Event Services</option>
-                                            <option value="25">Finance and Insurance Services</option>
-                                            <option value="26">Fishery</option>
-                                            <option value="27">Fitness and Wellness</option>
-                                            <option value="28">Furniture</option>
-                                            <option value="29">Food and Beverages</option>
-                                            <option value="30">Government</option>
-                                            <option value="31">Graphic Arts</option>
-                                            <option value="32">Healthcare and Welfare</option>
-                                            <option value="33">Hospitality Management</option>
-                                            <option value="34">Law Enforcement</option>
-                                            <option value="35">Legislative Office</option>
-                                            <option value="36">Luxury Goods and Jewelry</option>
-                                            <option value="37">Manufacturing</option>
-                                            <option value="38">Maritime</option>
-                                            <option value="39">Military</option>
-                                            <option value="40">Mining</option>
-                                            <option value="41">Packaging and Containers</option>
-                                            <option value="42">Performing Arts</option>
-                                            <option value="43">Personal Service</option>
-                                            <option value="44">Pharmaceutical</option>
-                                            <option value="45">Poultry</option>
-                                            <option value="46">Printing and Publishing</option>
-                                            <option value="47">Production</option>
-                                            <option value="48">Public Safety</option>
-                                            <option value="49">Photography and Film</option>
-                                            <option value="50">Quick Service Restaurant (QSR)</option>
-                                            <option value="51">Real Estate</option>
-                                            <option value="52">Recreational Facilities and Services</option>
-                                            <option value="53">Religious Institutions</option>
-                                            <option value="54">Retail Industry</option>
-                                            <option value="55">Shipping Services</option>
-                                            <option value="56">Staffing and Recruiting</option>
-                                            <option value="57">Supply Chain Management</option>
-                                            <option value="58">Telecommunications</option>
-                                            <option value="59">Transportation</option>
-                                            <option value="60">Tourism</option>
-                                            <option value="61">Utilities</option>
-                                            <option value="62">Veterinary</option>
-                                            <option value="63">Warehousing</option>
-                                            <option value="64">Others</option>
+                                        <?php 
+                                        $employmentQuery=executeQuery($queryLoadEmployment);
+                                        while($row=mysqli_fetch_array($employmentQuery)) { ?>
+                                            <option value="1" <?php if ('1'==$employIndustry) {echo " selected";}?>>Accounting</option>
+                                            <option value="2" <?php if ('2'==$employIndustry) {echo " selected";}?>>Advertising and Marketing</option>
+                                            <option value="3" <?php if ('3'==$employIndustry) {echo " selected";}?>>Aerospace</option>
+                                            <option value="4" <?php if ('4'==$employIndustry) {echo " selected";}?>>Agriculture</option>
+                                            <option value="5" <?php if ('5'==$employIndustry) {echo " selected";}?>>Animation</option>
+                                            <option value="6" <?php if ('6'==$employIndustry) {echo " selected";}?>>Apparel and Fashion</option>
+                                            <option value="7" <?php if ('7'==$employIndustry) {echo " selected";}?>>Architecture and Planning</option>
+                                            <option value="8" <?php if ('8'==$employIndustry) {echo " selected";}?>>Arts and Crafts</option>
+                                            <option value="9" <?php if ('9'==$employIndustry) {echo " selected";}?>>Automobile Engineering</option>
+                                            <option value="10" <?php if ('10'==$employIndustry) {echo " selected";}?>>Auto Mechanics</option>
+                                            <option value="11" <?php if ('11'==$employIndustry) {echo " selected";}?>>Aviation</option>
+                                            <option value="12" <?php if ('12'==$employIndustry) {echo " selected";}?>>BPO</option>
+                                            <option value="13" <?php if ('13'==$employIndustry) {echo " selected";}?>>Buy and Sell</option>
+                                            <option value="14" <?php if ('14'==$employIndustry) {echo " selected";}?>>Casinos and Gambling</option>
+                                            <option value="15" <?php if ('15'==$employIndustry) {echo " selected";}?>>Chemical</option>
+                                            <option value="16" <?php if ('16'==$employIndustry) {echo " selected";}?>>Computer Technology</option>
+                                            <option value="17" <?php if ('17'==$employIndustry) {echo " selected";}?>>Construction</option>
+                                            <option value="18" <?php if ('18'==$employIndustry) {echo " selected";}?>>Cosmetics</option>
+                                            <option value="19" <?php if ('19'==$employIndustry) {echo " selected";}?>>Design</option>
+                                            <option value="20" <?php if ('20'==$employIndustry) {echo " selected";}?>>E-commerce</option>
+                                            <option value="21" <?php if ('21'==$employIndustry) {echo " selected";}?>>Education</option>
+                                            <option value="22" <?php if ('22'==$employIndustry) {echo " selected";}?>>Electrical Power</option>
+                                            <option value="23" <?php if ('23'==$employIndustry) {echo " selected";}?>>Electronics</option>
+                                            <option value="24" <?php if ('24'==$employIndustry) {echo " selected";}?>>Event Services</option>
+                                            <option value="25" <?php if ('25'==$employIndustry) {echo " selected";}?>>Finance and Insurance Services</option>
+                                            <option value="26" <?php if ('26'==$employIndustry) {echo " selected";}?>>Fishery</option>
+                                            <option value="27" <?php if ('27'==$employIndustry) {echo " selected";}?>>Fitness and Wellness</option>
+                                            <option value="28" <?php if ('28'==$employIndustry) {echo " selected";}?>>Furniture</option>
+                                            <option value="29" <?php if ('29'==$employIndustry) {echo " selected";}?>>Food and Beverages</option>
+                                            <option value="30" <?php if ('30'==$employIndustry) {echo " selected";}?>>Government</option>
+                                            <option value="31" <?php if ('31'==$employIndustry) {echo " selected";}?>>Graphic Arts</option>
+                                            <option value="32" <?php if ('32'==$employIndustry) {echo " selected";}?>>Healthcare and Welfare</option>
+                                            <option value="33" <?php if ('33'==$employIndustry) {echo " selected";}?>>Hospitality Management</option>
+                                            <option value="34" <?php if ('34'==$employIndustry) {echo " selected";}?>>Law Enforcement</option>
+                                            <option value="35" <?php if ('35'==$employIndustry) {echo " selected";}?>>Legislative Office</option>
+                                            <option value="36" <?php if ('36'==$employIndustry) {echo " selected";}?>>Luxury Goods and Jewelry</option>
+                                            <option value="37" <?php if ('37'==$employIndustry) {echo " selected";}?>>Manufacturing</option>
+                                            <option value="38" <?php if ('38'==$employIndustry) {echo " selected";}?>>Maritime</option>
+                                            <option value="39" <?php if ('39'==$employIndustry) {echo " selected";}?>>Military</option>
+                                            <option value="40" <?php if ('40'==$employIndustry) {echo " selected";}?>>Mining</option>
+                                            <option value="41" <?php if ('41'==$employIndustry) {echo " selected";}?>>Packaging and Containers</option>
+                                            <option value="42" <?php if ('42'==$employIndustry) {echo " selected";}?>>Performing Arts</option>
+                                            <option value="43" <?php if ('43'==$employIndustry) {echo " selected";}?>>Personal Service</option>
+                                            <option value="44" <?php if ('44'==$employIndustry) {echo " selected";}?>>Pharmaceutical</option>
+                                            <option value="45" <?php if ('45'==$employIndustry) {echo " selected";}?>>Poultry</option>
+                                            <option value="46" <?php if ('46'==$employIndustry) {echo " selected";}?>>Printing and Publishing</option>
+                                            <option value="47" <?php if ('47'==$employIndustry) {echo " selected";}?>>Production</option>
+                                            <option value="48" <?php if ('48'==$employIndustry) {echo " selected";}?>>Public Safety</option>
+                                            <option value="49" <?php if ('49'==$employIndustry) {echo " selected";}?>>Photography and Film</option>
+                                            <option value="50" <?php if ('50'==$employIndustry) {echo " selected";}?>>Quick Service Restaurant (QSR)</option>
+                                            <option value="51" <?php if ('51'==$employIndustry) {echo " selected";}?>>Real Estate</option>
+                                            <option value="52" <?php if ('52'==$employIndustry) {echo " selected";}?>>Recreational Facilities and Services</option>
+                                            <option value="53" <?php if ('53'==$employIndustry) {echo " selected";}?>>Religious Institutions</option>
+                                            <option value="54" <?php if ('54'==$employIndustry) {echo " selected";}?>>Retail Industry</option>
+                                            <option value="55" <?php if ('55'==$employIndustry) {echo " selected";}?>>Shipping Services</option>
+                                            <option value="56" <?php if ('56'==$employIndustry) {echo " selected";}?>>Staffing and Recruiting</option>
+                                            <option value="57" <?php if ('57'==$employIndustry) {echo " selected";}?>>Supply Chain Management</option>
+                                            <option value="58" <?php if ('58'==$employIndustry) {echo " selected";}?>>Telecommunications</option>
+                                            <option value="59" <?php if ('59'==$employIndustry) {echo " selected";}?>>Transportation</option>
+                                            <option value="60" <?php if ('60'==$employIndustry) {echo " selected";}?>>Tourism</option>
+                                            <option value="61" <?php if ('61'==$employIndustry) {echo " selected";}?>>Utilities</option>
+                                            <option value="62" <?php if ('62'==$employIndustry) {echo " selected";}?>>Veterinary</option>
+                                            <option value="63" <?php if ('63'==$employIndustry) {echo " selected";}?>>Warehousing</option>
+                                            <option value="64" <?php if ('64'==$employIndustry) {echo " selected";}?>>Others</option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                     <div class="col col-lg-6 col-md-6 col-sm-12 col-12 colHolder">
                                         <label class="col-form-label employFieldLabel required w-100 p-1" id="employSalaryLbl" for="selectEmploySalary">Salary Range</label>
                                         <select class="form-select employSelectBox text-uppercase w-100" name="employSalary" id="selectEmploySalary" required>
-                                            <option value="1">Less than 10,000</option>
-                                            <option value="2">10,000-20,999</option>
-                                            <option value="3">21,000-30,999</option>
-                                            <option value="4">31,000-40,999</option>
-                                            <option value="5">41,000-50,999</option>
-                                            <option value="6">More than 50,999</option>
+                                        <?php 
+                                        $employmentQuery=executeQuery($queryLoadEmployment);
+                                        while($row=mysqli_fetch_array($employmentQuery)) { ?>
+                                            <option value="1" <?php if ('1'==$employSalary) {echo " selected";}?>>Less than 10,000</option>
+                                            <option value="2" <?php if ('2'==$employSalary) {echo " selected";}?>>10,000-20,999</option>
+                                            <option value="3" <?php if ('3'==$employSalary) {echo " selected";}?>>21,000-30,999</option>
+                                            <option value="4" <?php if ('4'==$employSalary) {echo " selected";}?>>31,000-40,999</option>
+                                            <option value="5" <?php if ('5'==$employSalary) {echo " selected";}?>>41,000-50,999</option>
+                                            <option value="6" <?php if ('6'==$employSalary) {echo " selected";}?>>More than 50,999</option>
+                                        <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -708,19 +723,15 @@ if (isset($_POST['submitBtn'])){
                         <div class="row m-0 my-3 gy-3 gx-3" id="householdRow">
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headFname">First Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" id="headFname" value="<?php echo $household_firstName?>" required>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hFname" id="headFname" value="<?php echo $hFname?>" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headMname">Middle Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname" value="<?php echo $household_middleName?>" required>
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hMname" id="headMname" value="<?php echo $hMname?>" required>
                             </div>
                             <div class="col col-lg-2 col-md-3 col-sm-12 col-12">
                                 <label class="col-form-label fieldLabel required w-100 p-1" for="headLname">Last Name</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname" value="<?php echo $household_lastName?>" required>
-                            </div>
-                            <div class="col col-lg-1 col-md-3 col-sm-12 col-12">
-                                <label class="col-form-label fieldLabel required w-100 p-1" for="headSuffix" id="headSuffixLbl">Suffix</label>
-                                <input class="form-control userInput text-uppercase w-100" type="text" name="hSuffix" id="headSuffix">
+                                <input class="form-control userInput text-uppercase w-100" type="text" name="hLname" id="headLname" value="<?php echo $hLname?>" required>
                             </div>
                             <div class="col col-lg-3 col-md-6 col-sm-6 col-12" id="colRemarks">
                                 <div class="remarkDiv">
@@ -731,11 +742,11 @@ if (isset($_POST['submitBtn'])){
                                     $householdMembersQuery=executeQuery($queryLoadHousehold);
                                     while($row=mysqli_fetch_array($householdMembersQuery)){
                                     ?>
-                                    <option value="PUROK LEADER " <?php if ('PUROK LEADER '==$household_remarks) {echo " selected";}?>>Purok Leader</option>
-                                    <option value="SK SCHOLAR " <?php if ('SK SCHOLAR '==$household_remarks) {echo " selected";}?>>SK Scholar</option>
-                                    <option value="SOLO LIVING " <?php if ('SOLO LIVING '==$household_remarks) {echo " selected";}?>>Solo Living</option>
-                                    <option value="SOLO PARENT " <?php if ('SOLO PARENT '==$household_remarks) {echo " selected";}?>>Solo Parent</option>
-                                    <option value="TEENAGE PREGNANCY " <?php if ('TEENAGE PREGNANCY '==$household_remarks) {echo " selected";}?>>Teenage Pregnancy</option>
+                                    <option value="PUROK LEADER " <?php if ('PUROK LEADER '==$remarks) {echo " selected";}?>>Purok Leader</option>
+                                    <option value="SK SCHOLAR " <?php if ('SK SCHOLAR '==$remarks) {echo " selected";}?>>SK Scholar</option>
+                                    <option value="SOLO LIVING " <?php if ('SOLO LIVING '==$remarks) {echo " selected";}?>>Solo Living</option>
+                                    <option value="SOLO PARENT " <?php if ('SOLO PARENT '==$remarks) {echo " selected";}?>>Solo Parent</option>
+                                    <option value="TEENAGE PREGNANCY " <?php if ('TEENAGE PREGNANCY '==$remarks) {echo " selected";}?>>Teenage Pregnancy</option>
                                     <?php
                                     } 
                                     ?>
@@ -749,11 +760,11 @@ if (isset($_POST['submitBtn'])){
                                     $householdMembersQuery=executeQuery($queryLoadHousehold);
                                     while($row=mysqli_fetch_array($householdMembersQuery)){
                                     ?>
-                                    <option value="LESS THAN 5" <?php if ('LESS THAN 5'==$household_membersCount) {echo " selected";}?>>Less than 5</option>
-                                    <option value="5 to 10" <?php if ('5 to 10'==$household_membersCount) {echo " selected";}?>>5 to 10</option>
-                                    <option value="11 to 15" <?php if ('11 to 15'==$household_membersCount) {echo " selected";}?>>11 to 15</option>
-                                    <option value="16 to 20" <?php if ('16 to 20'==$household_membersCount) {echo " selected";}?>>16 to 20</option>
-                                    <option value="MORE THAN 20" <?php if ('MORE THAN 20'==$household_membersCount) {echo " selected";}?> >More than 20</option>
+                                    <option value="LESS THAN 5" <?php if ('LESS THAN 5'==$membersCount) {echo " selected";}?>>Less than 5</option>
+                                    <option value="5 to 10" <?php if ('5 to 10'==$membersCount) {echo " selected";}?>>5 to 10</option>
+                                    <option value="11 to 15" <?php if ('11 to 15'==$membersCount) {echo " selected";}?>>11 to 15</option>
+                                    <option value="16 to 20" <?php if ('16 to 20'==$membersCount) {echo " selected";}?>>16 to 20</option>
+                                    <option value="MORE THAN 20" <?php if ('MORE THAN 20'==$membersCount) {echo " selected";}?> >More than 20</option>
                                     <?php
                                     } 
                                     ?>
