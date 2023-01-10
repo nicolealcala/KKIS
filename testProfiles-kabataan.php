@@ -3,7 +3,8 @@ session_start();
 require "connection.php";
 require "modals.php";
 
-$queryKabataan = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age, households.head_remarks FROM `residents` LEFT JOIN `households` ON residents.household_id = households.household_id WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 14 AND 31"; //query to select all data from table
+//query to select all data from table
+$queryKabataan = "SELECT *, CONCAT(`last_name`, ', ', `first_name`, ' ', `middle_name`) AS  full_name, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 AS age FROM `residents` WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), birthday)), '%Y') + 0 BETWEEN 14 AND 31"; 
 $queryKabataanResult = executeQuery($queryKabataan); //execute query
 ?>
 
@@ -121,6 +122,16 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                             while ($kabataan = mysqli_fetch_array($queryKabataanResult)) {
                                 $kabataanID = $kabataan["resident_id"]; //get resident id
                                 $kabataanEID = $kabataan["rencrypted_id"];
+
+                                $employmentCheck = "SELECT * FROM employment_info WHERE resident_id = $kabataanID"; //check if resident has employment info
+                                $employmentCheckResult = executeQuery($employmentCheck);
+
+                                $educationCheck = "SELECT * FROM educational_info WHERE resident_id = $kabataanID"; //check if resident has educational info
+                                $educationCheckResult = executeQuery($educationCheck);
+
+                                $deleteResidentQuery = "DELETE FROM `residents` WHERE  `resident_id` = $kabataanID";
+                                $deleteEmployQuery = "DELETE FROM `employment_info` WHERE `resident_id` = $kabataanID";
+                                $deleteEducQuery = "DELETE FROM `educational_info` WHERE `resident_id`=$kabataanID";
                             ?>
 
                                 <tr>
@@ -189,43 +200,47 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                     <div class="col" id="row2Body">
                                                         <div class="row gy-1" id="row2Content">
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Birthday:</label>
+                                                                <label class="form-label modalLabel">Birthday:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["birthday"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Voter Type:</label>
+                                                                <label class="form-label modalLabel">Voter Type:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["voter_type"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Birthplace:</label>
+                                                                <label class="form-label modalLabel">Birthplace:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["birthplace"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Contact No:</label>
+                                                                <label class="form-label modalLabel">Contact No:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["contact_no"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Marital Status:</label>
+                                                                <label class="form-label modalLabel">Marital Status:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["marital_status"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Religion:</label>
+                                                                <label class="form-label modalLabel">Religion:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["religion"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Disability:</label>
+                                                                <label class="form-label modalLabel">Disability:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["disability"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Organization/s (if any):</label>
+                                                                <label class="form-label modalLabel">Organization/s (if any):&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["organization"]; ?></p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">House No./St./Subd.:</label>
+                                                                <label class="form-label modalLabel">House No./St./Subd.&nbsp;:</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["house_address"]; ?>.&nbsp;</p>
                                                             </div>
                                                             <div class="col-6" id="row2ContentDiv">
-                                                                <label class="form-label modalLabel">Purok:</label>
+                                                                <label class="form-label modalLabel">Purok:&nbsp;</label>
+                                                                <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["purok"]; ?></p>
+                                                            </div>
+                                                            <div class="col-6" id="row2ContentDiv">
+                                                                <label class="form-label modalLabel">Remarks:&nbsp;</label>
                                                                 <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataan["purok"]; ?></p>
                                                             </div>
                                                         </div>
@@ -240,12 +255,6 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                     </div>
 
                                                     <?php
-                                                    $employmentCheck = "SELECT * FROM employment_info WHERE resident_id = $kabataanID"; //check if resident has employment info
-                                                    $employmentCheckResult = executeQuery($employmentCheck);
-
-                                                    $educationCheck = "SELECT * FROM educational_info WHERE resident_id = $kabataanID"; //check if resident has educational info
-                                                    $educationCheckResult = executeQuery($educationCheck);
-
                                                     if ($employment = mysqli_fetch_array($employmentCheckResult)) { //checking if the user is an employee
                                                     ?>
                                                         <div class="col" id="row2Body">
@@ -414,6 +423,8 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                     ?>
                                                 </div>
 
+                                                <?php 
+                                                ?>
                                                 <div class="row rowContainer my-4 mx-2" id="modalRow2">
                                                     <div class="col col-12 p-0">
                                                         <div class="markerContainer px-3" id="row2Header">
@@ -429,10 +440,7 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                                     <label class="form-label modalLabel">Head of the family:</label>
                                                                     <p class="textRetrieved" id="FamHead"><?php echo $household["head_name"]; ?></p>
                                                                 </div>
-                                                                <div class="col col-12" id="row4ContentDiv">
-                                                                    <label class="form-label modalLabel">Remarks:</label>
-                                                                    <p class="textRetrieved" id="textRetrievedID1"><?php echo $household["head_remarks"]; ?></p>
-                                                                </div>
+                                                            
                                                                 <div class="col col-12" id="row4ContentDiv">
                                                                     <label class="form-label modalLabel">No. of members:</label>
                                                                     <p class="textRetrieved" id="textRetrievedID1"><?php echo $household["members_count"]; ?></p>
@@ -473,23 +481,23 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                 </form>
                                                 <?php
                                                 if (isset($_POST["delete"])) {
-                                                    $deleteResidentQuery = "DELETE FROM `residents` WHERE  `resident_id` = $kabataanID";
-                                                    $deleteEducQuery = "DELETE FROM `educational_info` WHERE `resident_id`=$kabataanID";
-                                                    $deleteEmployQuery = "DELETE FROM `employment_info` WHERE `resident_id` = $kabataanID";
-
-                                                    executeQuery($deleteResidentQuery);
-                                                    executeQuery($deleteEmployQuery);
-                                                    executeQuery($deleteEducQuery);
+                                                    if ($employmentCheckResult) {
+                                                        executeQuery($deleteResidentQuery);
+                                                        executeQuery($deleteEmployQuery);
+                                                    } else if ($educationCheckResult) {
+                                                        executeQuery($deleteResidentQuery);
+                                                        executeQuery($deleteEducQuery);
+                                                    }
 
                                                     echo '<script>
                                                     Swal.fire({
                                                         icon: "success",
-                                                        title: "Entry deleted!",
-                                                        showConfirmButton: false,
-                                                        timer: 1500
+                                                        title: "Entry deleted!"
+                                                    }).then((result) => {
+                                                        if (result.isConfirmed) {   
+                                                            window.location.reload();
+                                                        }
                                                     });
-
-                                                      window.location.href = "./dashboard.php";
                                                     </script>';
                                                 };
                                                 ?>
