@@ -92,7 +92,7 @@ $queryEmployedResult = executeQuery($queryEmployed); //execute query
                                 <th class="tblHead">Civil status</th>
                                 <th class="tblHead">Contatct No.</th>
                                 <th class="tblHead">Purok</th>
-                                <th class="tblHead">Status</th>
+                                <th class="tblHead">Employer Type</th>
                                 <th class="tblHead actions">Actions</th>
                             </tr>
                         </thead>
@@ -135,7 +135,7 @@ $queryEmployedResult = executeQuery($queryEmployed); //execute query
 
                                     <td id="purok" class="entryRow" scope="col" data-label="Purok"><?php echo $employed["purok"]; ?></td>
 
-                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $employed["employment_status"]; ?></td>
+                                    <td id="employer_type" class="entryRow" scope="col" data-label="Employer Type"><?php echo $employed["employer_type"]; ?></td>
 
                                     <td id="actions" class="entryRow" scope="col" data-label="Actions">
                                         <div class="row mx-0 p-0">
