@@ -410,6 +410,11 @@ ul.pagination {
   margin-left: 10px;
 }
 
+#proceedBtn {
+  background-color: #9598ae;
+  color: white;
+}
+
 @media screen and (max-width: 991px) {
   .full-width {
     padding: 20px 0;

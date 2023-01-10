@@ -67,7 +67,7 @@ $kabataanID = $kabataanRow["resident_id"];
             <div class="sectionDiv">
                 <!-- Menu Buttons -->
                 <div class="row d-flex justify-content-end align-ittems-center m-0">
-                    <button class="menuBtn menu1 rounded-pill clicked" id="kabataan">Kabataan</button>
+                    <button class="menuBtn menu1 rounded-pill me-3" id="kabataan">Kabataan</button>
                     <button class="menuBtn menu2 rounded-pill" id="residents">Residents</button>
                 </div>
 
@@ -103,6 +103,18 @@ $kabataanID = $kabataanRow["resident_id"];
                             </tr>
                         </thead>
 
+                        <thead id="kabataanTblHead">
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+
                         <tbody>
                             <?php
                             // While start
@@ -134,31 +146,9 @@ $kabataanID = $kabataanRow["resident_id"];
                                         </div>
                                     </td>
                                 </tr>
-                            <?php
-                            };
-                            ?>
 
-                        <tfoot>
-                            <tr id="kabataanFooter">
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tfoot>
-                        </tbody>
-                    </table>
-
-                    <!-- Kabataan Modal -->
-                    <?php
-                    // While start
-                    while ($kabataanStatus = mysqli_fetch_array($kabataanResult)) {
-                        $kabataanStatusID = $kabataanStatus["resident_id"];
-                    ?>
-                        <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $kabataanStatus["resident_id"];?>">
+                        <!-- Kabataan Modal -->
+                        <div class="modal fade" role="dialog" tabindex="1" id="viewMore<?php echo $kabataanRow["resident_id"];?>">
                             <div class="modal-dialog" id="modalDialogID" role="document">
                                 <div class="modal-content" id="modalContentID">
                                     <div class="modal-header" id="modalHeaderID">
@@ -171,8 +161,8 @@ $kabataanID = $kabataanRow["resident_id"];
                                         <div class="row rowContainer mx-2" id="modalRow1">
                                             <div class="col col-lg-8 col-md-8 col-sm-12 col-12" id='textDiv'>
                                                 <p class="textName lastName w-100 my-1" id="textNameID"><?php echo $kabataanStatus["full_name"];?></p>
-                                                <p class="textGender w-100 my-1 mt-2" id="textAgeID"><?php echo $kabataanStatus["age"];?> YEARS OLD</p>
-                                                <p class="textAge w-100 my-1" id="textGenderID"><?php echo $kabataanStatus["gender_preference"];?></p>
+                                                <p class="textGender w-100 my-1 mt-2" id="textAgeID"><?php echo $kabataanRow["age"];?> YEARS OLD</p>
+                                                <p class="textAge w-100 my-1" id="textGenderID"><?php echo $kabataanRow["gender_preference"];?></p>
                                             </div>
                                             <div class="col align-self-center" id="divQR">
                                                 <img class="imgContainer" id="imgQR" src="assets/img/misc/qrcode.png">
@@ -190,48 +180,48 @@ $kabataanID = $kabataanRow["resident_id"];
                                                 <div class="row gy-1" id="row2Content">
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Birthday:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["birthday"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["birthday"];?></p>
                                                     </div>
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Voter Type:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["voter_type"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["voter_type"];?></p>
                                                     </div>
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Birthplace:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["birthplace"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["birthplace"];?></p>
                                                     </div>
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Contact No:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["contact_no"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["contact_no"];?></p>
                                                     </div>
 
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Marital Status:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["marital_status"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["marital_status"];?></p>
                                                     </div>
 
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Religion:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["religion"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["religion"];?></p>
                                                     </div>
 
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Disability:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["disability"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["disability"];?></p>
                                                     </div>
 
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Organization/s (if any):&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["organization"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["organization"];?></p>
                                                     </div>
 
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">House No./St./Subd.:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["house_address"];?>.&nbsp;</p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["house_address"];?>.&nbsp;</p>
                                                     </div>
                                                     <div class="col-6" id="row2ContentDiv">
                                                         <label class="form-label modalLabel">Purok:&nbsp;</label>
-                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanStatus["purok"];?></p>
+                                                        <p class="textRetrieved" id="textRetrievedID"><?php echo $kabataanRow["purok"];?></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -245,10 +235,10 @@ $kabataanID = $kabataanRow["resident_id"];
                                             </div>
                                             <?php
 
-                                            $employmentCheck = "SELECT * FROM `employment_info` WHERE `resident_id` = $kabataanStatusID";
+                                            $employmentCheck = "SELECT * FROM `employment_info` WHERE `resident_id` = $kabataanID";
                                             $employmentResult = executeQuery($employmentCheck);
 
-                                            $educationCheck = "SELECT * FROM educational_info WHERE `resident_id` = $kabataanStatusID";
+                                            $educationCheck = "SELECT * FROM educational_info WHERE `resident_id` = $kabataanID";
                                             $educationResult = executeQuery($educationCheck);
 
                                             if ($employmentInfo = mysqli_fetch_array($employmentResult)) { //checking if the user is an employee
@@ -456,11 +446,24 @@ $kabataanID = $kabataanRow["resident_id"];
                                 </div>
                             </div>
                             <!-- Modal end -->
-                            <!-- </div> -->
-                        <?php
-                    };
-                        ?>
                         </div>
+                            <?php
+                            };
+                            ?>
+
+                        <tfoot>
+                            <tr id="kabataanFooter">
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -489,6 +492,7 @@ $kabataanID = $kabataanRow["resident_id"];
             $(document).ready(function() {
                 $("#profiles-link").addClass('nav-active');
                 $("#profiles-md-link").addClass("nav-md-active");
+                $("#kabataan").addClass("nav-md-active");
             });
         </script>
 </body>
