@@ -51,7 +51,7 @@ $queryPWDResult = executeQuery($queryPWD); //execute query
                 <div class="col-md-8 col-12 d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-bars me-4 d-none" id="hamburger" role="button"></i>
                     <i class="fa-solid fa-xmark me-4" id="close" role="button"></i>
-                    <span class="pageTitle">Registered Voters</span>
+                    <span class="pageTitle">PWDs</span>
                 </div>
 
                 <div class="col-md-4 d-none d-md-flex justify-content-end align-items-center">
@@ -141,7 +141,7 @@ $queryPWDResult = executeQuery($queryPWD); //execute query
                                         <div class="row mx-0 p-0">
                                             <!-- View More -->
                                             <div class="col-lg-12 col-12 d-flex justify-content-center align-items-center p-0">
-                                                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $outOfSchool["resident_id"]; ?>" data-id="<?php echo $outOfSchool["resident_id"]; ?>" href="#viewMore">View More</a>
+                                                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $pwd["resident_id"]; ?>" data-id="<?php echo $pwd["resident_id"]; ?>" href="#viewMore">View More</a>
                                             </div>
                                         </div>  
                                     </td>

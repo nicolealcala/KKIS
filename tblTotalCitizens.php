@@ -141,7 +141,7 @@ $queryTotalCitizensResult = executeQuery($queryTotalCitizens); //execute query
                                         <div class="row mx-0 p-0">
                                             <!-- View More -->
                                             <div class="col-lg-12 col-12 d-flex justify-content-center align-items-center p-0">
-                                                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $outOfSchool["resident_id"]; ?>" data-id="<?php echo $outOfSchool["resident_id"]; ?>" href="#viewMore">View More</a>
+                                                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#viewMore<?php echo $totalCitizens["resident_id"]; ?>" data-id="<?php echo $totalCitizens["resident_id"]; ?>" href="#viewMore">View More</a>
                                             </div>
                                         </div>  
                                     </td>
