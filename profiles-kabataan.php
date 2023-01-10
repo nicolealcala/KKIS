@@ -135,7 +135,7 @@ $resultKabataan = executeQuery($queryKabataan);
                                         <td class="entryRow text-center" scope="col" data-label="Actions">
                                             <div class="row gy-2 mx-0" height="100%">
                                                 <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-                                                    <a class="btn btn-warning actionBtn" role="button" data-bs-toggle="modal" data-bs-target="#viewMore-' . $rowKabataan['resident_id'] . '" data-id="' . $rowKabataan['rencrypted_id'] . '" href="#viewMore' . $rowKabataan['resident_id'].'"><i class="fa-regular fa-eye"></i></a> 
+                                                    <a class="btn btn-warning actionBtn" role="button" data-bs-toggle="modal" data-bs-target="#viewMore' . $rowKabataan['resident_id'] . '" data-id="' . $rowKabataan['resident_id'] . '" href="#viewMore"><i class="fa-regular fa-eye"></i></a> 
                                                 </div>
                                             
                                                 <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
@@ -182,10 +182,10 @@ $resultKabataan = executeQuery($queryKabataan);
 
                     <!-- Kabataan Modal -->
                     <?php
-                    while ($rowKabataan = mysqli_fetch_array($resultKabataan)) {
-                        $kabataanID = $rowKabataan['resident_id'];
+                    while ($rowKabataaanStatus = mysqli_fetch_array($resultKabataan)) {
+                        $kabataanID = $rowKabataaanStatus['resident_id'];
                         echo '
-                    <div class="modal fade" role="dialog" tabindex="1" id="viewMore' . $rowKabataan['resident_id'] . '">
+                    <div class="modal fade" role="dialog" tabindex="1" id="viewMore' . $rowKabataaanStatus['resident_id'] .'">
                         <div class="modal-dialog" id="modalDialogID" role="document">
                             <div class="modal-content" id="modalContentID">
                                 <div class="modal-header" id="modalHeaderID">
@@ -196,10 +196,10 @@ $resultKabataan = executeQuery($queryKabataan);
                                 <div class="modal-body m-0" id="modalBodyID">
                                     <div class="row rowContainer mx-2" id="modalRow1">
                                         <div class="col col-lg-8 col-md-8 col-sm-12 col-12" id="textDiv">
-                                            <p class="textName lastName w-100 my-1" id="textNameID">' . $rowKabataan['full_name'] . '</p>
-                                            <p class="textAge w-100 my-1 mt-2" id="textAgeID">' . $rowKabataan['age'] . ' ' . 'YEARS OLD
+                                            <p class="textName lastName w-100 my-1" id="textNameID">' . $rowKabataaanStatus['full_name'] . '</p>
+                                            <p class="textAge w-100 my-1 mt-2" id="textAgeID">' . $rowKabataaanStatus['age'] . ' ' . 'YEARS OLD
                                             </p>
-                                            <p class="textGender w-100 my-1" id="textGenderID">' . $rowKabataan['gender_preference'] . '
+                                            <p class="textGender w-100 my-1" id="textGenderID">' . $rowKabataaanStatus['gender_preference'] . '
                                             </p>
                                         </div>
 
@@ -219,53 +219,53 @@ $resultKabataan = executeQuery($queryKabataan);
                                             <div class="row gy-1" id="row2Content">
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Birthday:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['birthday'] . ' </p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['birthday'] . ' </p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Voter Type:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['voter_type'] . '
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['voter_type'] . '
                                                     </p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Birthplace:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['birthplace'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['birthplace'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Contact No:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['contact_no'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['contact_no'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Marital Status:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['marital_status'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['marital_status'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Religion:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['religion'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['religion'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Disability:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['disability'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['disability'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Organization/s (if any):</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['organization'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['organization'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">House No./St./Subd.:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['house_address'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['house_address'] . '</p>
                                                 </div>
 
                                                 <div class="col-6" id="row2ContentDiv">
                                                     <label class="form-label modalLabel">Purok:</label>
-                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataan['purok'] . '</p>
+                                                    <p class="textRetrieved" id="textRetrievedID">' . $rowKabataaanStatus['purok'] . '</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -428,7 +428,7 @@ $resultKabataan = executeQuery($queryKabataan);
                                                 </div>
                                             </div>';
 
-                        $householdID = $rowKabataan['household_id']; //getting the household id of the user
+                        $householdID = $rowKabataaanStatus['household_id']; //getting the household id of the user
                         $queryHouseholds = "SELECT * FROM `households` WHERE household_id='$householdID'"; //getting the household details of the user
                         $householdResult = executeQuery($queryHouseholds);
                         $householdInfo = mysqli_fetch_array($householdResult);

@@ -65,9 +65,9 @@ $(document).ready(function () {
       { width: "10%", targets: 3 },
       { width: "10%", targets: 4 },
       { width: "10%", targets: 5 },
-      { width: "15%", targets: 6 },
+      { width: "10%", targets: 6 },
       { width: "10%", targets: 7 },
-      { width: "5%", targets: 7 },
+      // { width: "10%", targets: 8 },
     ],
 
     initComplete: function () {
