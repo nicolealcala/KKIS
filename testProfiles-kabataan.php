@@ -177,7 +177,7 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                         <p class="textGender w-100 my-1 mt-2" id="textAgeID"><?php echo $kabataan["age"]; ?> YEARS OLD</p>
                                                         <p class="textAge w-100 my-1" id="textGenderID"><?php echo $kabataan["gender_preference"]; ?></p>
                                                     </div>
-                                                    <div class="col align-self-center" id="divQR"><img class="imgContainer" id="imgQR" src="assets/img/misc/qrcode.png"></div>
+                                                    <div class="col align-self-center" id="divQR"><img class="imgContainer" id="imgQR" src="<?php echo $kabataan["qr_code"]; ?>"></div>
                                                 </div>
 
                                                 <div class="row rowContainer my-4 mx-2" id="modalRow2">
@@ -451,7 +451,6 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                     <!-- Kabataan Modal End -->
                                 </div>
 
-
                                 <!-- Delete Entry modal -->
                                 <div class="modal fade" role="dialog" tabindex="-1" id="delete<?php echo $kabataan["resident_id"]; ?>">
                                     <div class="modal-dialog modal-dialog-centered">
@@ -475,27 +474,22 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
                                                 <?php
                                                 if (isset($_POST["delete"])) {
                                                     $deleteResidentQuery = "DELETE FROM `residents` WHERE  `resident_id` = $kabataanID";
-                                                    $deleteEducQuery = "DELETE FROM `educational_info` INNER JOIN `residents` ON educational_info.resident_id = residents.resident_id";
-                                                    $deleteEmployQuery = "DELETE FROM `employment_info` INNER JOIN `residents` ON employment_info.resident_id = residents.resident_id";
+                                                    $deleteEducQuery = "DELETE FROM `educational_info` WHERE `resident_id`=$kabataanID";
+                                                    $deleteEmployQuery = "DELETE FROM `employment_info` WHERE `resident_id` = $kabataanID";
 
                                                     executeQuery($deleteResidentQuery);
-
-
-                                                    if ($employment = mysqli_fetch_array($employmentCheckResult)) {
-                                                        executeQuery($deleteResidentQuery);
-                                                    } else {
-                                                        executeQuery($deleteEducQuery);
-                                                    }
+                                                    executeQuery($deleteEmployQuery);
+                                                    executeQuery($deleteEducQuery);
 
                                                     echo '<script>
                                                     Swal.fire({
                                                         icon: "success",
-                                                        title: "Enty deleted!",
+                                                        title: "Entry deleted!",
                                                         showConfirmButton: false,
                                                         timer: 1500
-                                                      });
+                                                    });
 
-                                                      window.location.href
+                                                      window.location.href = "./dashboard.php";
                                                     </script>';
                                                 };
                                                 ?>
