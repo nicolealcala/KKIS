@@ -151,7 +151,7 @@ $queryKabataanResult = executeQuery($queryKabataan); //execute query
 
                                     <td id="purok" class="entryRow" scope="col" data-label="Purok"><?php echo $kabataan["purok"]; ?></td>
 
-                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $kabataan["head_remarks"]; ?></td>
+                                    <td id="remarks" class="entryRow" scope="col" data-label="Remarks"><?php echo $kabataan["remarks"]; ?></td>
 
                                     <td id="actions" class="entryRow" scope="col" data-label="Actions">
                                         <div class="row mx-0 p-0">
