@@ -68,7 +68,7 @@ if (isset($_POST['submitBtn'])) {
     $encryptedHousehold = openssl_encrypt($hEncrypt, $ciphering, $encryption_key, $options, $encryption_iv);
 
     //Query for Households
-    $queryHousehold = "INSERT INTO `households` (`hencrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `head_remarks`, `members_count`) VALUES ('" . $encryptedHousehold . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $remarks . "', '" . $membersCount . "')";
+    $queryHousehold = "INSERT INTO `households` (`hencrypted_id`, `head_first_name`, `head_middle_name`, `head_last_name`, `members_count`) VALUES ('" . $encryptedHousehold . "','" . $hFname . "' , '" . $hMname . "', '" . $hLname . "', '" . $membersCount . "')";
 
     //Query for checking if RESIDENT entry already exists
     $checkResidents = "SELECT * FROM `residents` WHERE `rencrypted_id` = '$encryptedResident'";
@@ -92,7 +92,7 @@ if (isset($_POST['submitBtn'])) {
         $checkHouseholds = "SELECT * FROM `households` WHERE `hencrypted_id` = '$encryptedHousehold'";
         $existingHousehold = executeQuery($checkHouseholds);
         
-        $updateHousehold = "UPDATE `households` SET `head_remarks` = '$remarks' WHERE `hencrypted_id` = '$encryptedHousehold'";
+        $updateHousehold = "UPDATE `households` SET `members_count` = '$membersCount' WHERE `hencrypted_id` = '$encryptedHousehold'";
 
         if ($householdCount = mysqli_num_rows($existingHousehold) > 0) {
             //If entry already exists, update the Remarks column and get the updated row ID
